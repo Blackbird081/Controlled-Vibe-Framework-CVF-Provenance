@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `35c8dd6003494ccca653fb20f5f06b71ba4e4f2b`. Material SHA: `35c8dd6003494ccca653fb20f5f06b71ba4e4f2b`. Batch ID: CVF-NCR-HTML-CURRENT-SOURCE-QUALIFICATION-20261017. Exact6 actual-material continuity; clean split closure follows.
+Current HEAD recorded for this handoff: `47ef5cacfe40420389cadb0e62ebe206e4808f84`. Material SHA: `47ef5cacfe40420389cadb0e62ebe206e4808f84`. Batch ID: CVF-NCR-HTML-CURRENT-SOURCE-QUALIFICATION-20261017. Exact6 actual-material continuity; clean split closure follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -17,7 +17,7 @@ Frozen worker2/three-row evidence consumed; independent Local PURE10 accepted; s
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_current_source_qualification_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=plan fresh BE-R01 admission against accepted current identity; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=cap1 actual/product/provider/deletion separately admitted, old grants retired; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_current_source_qualification_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=plan fresh BE-R01 admission against accepted current identity; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=cap1 actual/product/provider/deletion separately admitted, old grants retired; no generic operator checkpoint.
 
 ## Current Mode
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-CURRENT-SOURCE-QUALIFICATION-20261017. Current-source cap2 actual9/26 and Docker4 qualification accepted bounded with distinct Local PURE10; consume docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-current-source-qualification-local-20261017.json. BE-Q02 checked bounded, BE-R01/BE-R02 remain open. Next Local plans fresh separately admitted cap2 product invocation against immutable new source identity, no automatic EXECUTE. Cap1 actual waits for accepted future cap2 product predecessor. Source18/accepted source authority/release unchanged; no old-grant replay/provider/deletion or generic documentary operator checkpoint. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Material/actual-SHA continuity and clean split gates pending.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-CURRENT-SOURCE-QUALIFICATION-20261017. Current-source cap2 actual9/26 and Docker4 qualification accepted bounded with distinct Local PURE10; consume docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-current-source-qualification-local-20261017.json. BE-Q02 checked bounded, BE-R01/BE-R02 remain open. Next Local plans fresh separately admitted cap2 product invocation against immutable new source identity, no automatic EXECUTE. Cap1 actual waits for accepted future cap2 product predecessor. Source18/accepted source authority/release unchanged; no old-grant replay/provider/deletion or generic documentary operator checkpoint. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Qualification material 47ef5cacfe40420389cadb0e62ebe206e4808f84 committed; exact6 actual-material-SHA continuity prepared; clean split gates pending.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -66,7 +66,7 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
-Current qualification material `35c8dd6003494ccca653fb20f5f06b71ba4e4f2b`: normal automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE. Continuity outcome inspected after its normal commit; no manual rerun/promotion or prior7 exclusion change. M5/M10/safety/M20 retained.
+Qualification material `47ef5cacfe40420389cadb0e62ebe206e4808f84`: normal automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE. No manual rerun/promotion or prior7 exclusion change; continuity outcome inspected after normal commit. M5/M10/safety/M20 retained.
 
 ## Mixed Protected-Path Atomicity Authorization
 
@@ -76,13 +76,6 @@ Atomicity reason: qualification closure/raw authority/current mode/roadmap and s
 
 Exact changed manifest:
 
-- `docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md`
-- `docs/reviews/evidence/ncr-html-current-source-qualification-worker-20261017.json`
-- `docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md`
-- `docs/reviews/evidence/ncr-html-current-source-qualification-local-20261017.json`
-- `docs/baselines/CVF_GC018_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -96,13 +89,6 @@ Rollback boundary: listed paths only; no source/effect mutation.
 
 Authorized guard-maintenance scope: qualification evidence/authority/roadmap and source6 current raw-hash/mode/next continuity only; no source/checker/hook semantics.
 Protected paths:
-- `docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md`
-- `docs/reviews/evidence/ncr-html-current-source-qualification-worker-20261017.json`
-- `docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md`
-- `docs/reviews/evidence/ncr-html-current-source-qualification-local-20261017.json`
-- `docs/baselines/CVF_GC018_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -118,21 +104,21 @@ Rollback boundary: listed metadata paths only; frozen worker2/execution authorit
 |---|---|
 | Actor | Local INTERNAL_AGENT reviewer/closer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-current-source-qualification-material-20261017 |
+| Session or invocation | ncr-current-source-qualification-continuity-20261017 |
 | Working directory | repository root |
 | Command or tool surface | consume frozen worker proof and Local pure10; metadata closure/canonical generation; normal gates/commits separately owned by root |
-| Target paths | `docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-current-source-qualification-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-current-source-qualification-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | qualification order and standing Local closure/steward authority |
-| Before status evidence | HEAD ff0f7b20acfa0de39dddedce127cb0d585124025; terminal worker captured, lane released |
+| Before status evidence | HEAD 47ef5cacfe40420389cadb0e62ebe206e4808f84; terminal worker captured, lane released |
 | After status evidence | bounded qualification accepted; BE-R01/R02 product exits open; final committed-range proof pending |
-| Diff evidence | exact13 material manifest |
+| Diff evidence | exact6 continuity manifest |
 | Approval boundary | metadata/evidence only; no source/cap1/product/provider/deletion |
 | Claim boundary | qualification is not product B-E or AI governance efficacy |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-current-source-qualification-material-20261017 |
-| Expected manifest | `docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-current-source-qualification-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-current-source-qualification-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-current-source-qualification-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-current-source-qualification-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact13 |
+| Invocation ID | ncr-current-source-qualification-continuity-20261017 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact6 |
 | Deletion or rename disposition | none; old grants/source/proof/custody retained |
 
 ## Claim Boundary
