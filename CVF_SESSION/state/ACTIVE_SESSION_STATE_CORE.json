@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md",
     "workOrderSha256": "e28ee680db2513e271064602ee5f26655484d89e7e46bdb1246e3aeed47b4b9b"
   },
-  "currentAuthoritySyncReason": "Main-entry/observer source material: bounded source identity only; BE-R01/02 open.",
+  "currentAuthoritySyncReason": "Main-entry/observer source continuity: bounded source identity only; BE-R01/02 open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
