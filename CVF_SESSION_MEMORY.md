@@ -35,7 +35,7 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_fresh_be_r01_blocked_spent`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local PLAN minimal MAIN_ENTRY_CACHE_SOURCE correction under unchecked BE-S09 only; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=cap1/any runtime retry/provider/deletion separately unadmitted; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_fresh_be_r01_blocked_spent`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local PLAN minimal MAIN_ENTRY_CACHE_SOURCE correction under unchecked BE-S09 only; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=cap1/any runtime retry/provider/deletion separately unadmitted; no generic operator checkpoint.
 
 ## Current Mode
 
@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_fresh_be_r01_blocked_spent`; previous mode marker: `
 
 Mode: `cvf_ncr_html_fresh_be_r01_blocked_spent`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-FRESH-RUNTIME-20261016. BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; consume docs/reviews/CVF_NCR_HTML_B_E_FRESH_RUNTIME_LOCAL_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-b-e-fresh-runtime-local-20261016.json. r1b exhausted. Next Local may PLAN minimal MAIN_ENTRY_CACHE_SOURCE correction under unchecked BE-S09, using the evidenced cached CommonJS main-entry/helper exit0 empty-log defect plus root-observed empty readiness GET405/malformed-JSON observer exception in the same existing journey owner/tests; source implementation/proof needs its concrete new order. This is not effects/retry: no new slot, cap1, provider or cleanup/deletion grant. Source18/accepted source B/W/release/qualification immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Final material/actual-SHA continuity and clean split closure pending.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-FRESH-RUNTIME-20261016. BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; consume docs/reviews/CVF_NCR_HTML_B_E_FRESH_RUNTIME_LOCAL_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-b-e-fresh-runtime-local-20261016.json. r1b exhausted. Next Local may PLAN minimal MAIN_ENTRY_CACHE_SOURCE correction under unchecked BE-S09, using the evidenced cached CommonJS main-entry/helper exit0 empty-log defect plus root-observed empty readiness GET405/malformed-JSON observer exception in the same existing journey owner/tests; source implementation/proof needs its concrete new order. This is not effects/retry: no new slot, cap1, provider or cleanup/deletion grant. Source18/accepted source B/W/release/qualification immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Actual result material 6d5ffd0a9a7fb04b99f9f594ca35f1fabbfc4504 committed; exact6 actual-SHA continuity prepared; clean split closure pending.
 
 ## Parked Checkpoints
 
