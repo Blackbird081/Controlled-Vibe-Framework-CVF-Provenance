@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_SOURCE_QUALIFICATION_2026-10-17.md",
     "workOrderSha256": "1baaee3195645f452f290c5e44192c2578aabf81c7ed559fd6317b4de44de602"
   },
-  "currentAuthoritySyncReason": "Qualification material at 1e0f835b36d9007d04cc0b3d6dad406d2637340a; bounded control/Docker reads only, source authority frozen.",
+  "currentAuthoritySyncReason": "Qualification continuity at 3ab5a12079159ddcdd75781f05361cea4f52022b; bounded control/Docker reads only, source authority frozen.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
