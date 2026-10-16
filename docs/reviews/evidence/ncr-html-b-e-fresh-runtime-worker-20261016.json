@@ -1,0 +1,848 @@
+{
+  "schemaVersion": "cvf.ncrHtmlFreshBERuntimeWorker@1",
+  "status": "BLOCKED_WITH_REASON",
+  "executionBaseHead": "ba04bfc12f14b265e5cf13f981ec9083e6cb8797",
+  "role": "INTERNAL_AGENT_IMPLEMENTATION_WORKER",
+  "decisionOwner": "LOCAL",
+  "invocation": {
+    "actor": "IMPLEMENTATION_WORKER",
+    "cap": 2,
+    "inputsSha256": "86f6c7a3ad4a13f288f4417591e175041a725d8f208df956eef04f58ad0cf767",
+    "namespace": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b",
+    "ordinal": 1,
+    "runId": "ncr-be-fresh-worker-20261016-r1b"
+  },
+  "externalEnvelopeSha256": "e360bac324c2f59d9a8edbcb9bf3fb065771c4e535b9687e6c1547c5f589af8c",
+  "externalGrantSha256": "cf85ab20312f61d297a3311e96058f1ca70cf939d5fd15637b459c2c9b19684c",
+  "admissionSha256": "53cc94b22ea4d4529eddd6fd7e0e7c9d1ca41c7724a61561c20f46564d890d25",
+  "pinsSha256": "c00c45a5bab3f2ba4ebb22346f027b9ac2705278316eb2a72d592115c457e220",
+  "inputsSha256": "86f6c7a3ad4a13f288f4417591e175041a725d8f208df956eef04f58ad0cf767",
+  "selectedCommand": [
+    "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "-B",
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-fresh-runtime-20261016\\launch_once.py",
+    "worker",
+    "cf85ab20312f61d297a3311e96058f1ca70cf939d5fd15637b459c2c9b19684c"
+  ],
+  "preEffectBinding": {
+    "observedUtc": "2026-10-16T17:06:10.660215+00:00",
+    "head": "ba04bfc12f14b265e5cf13f981ec9083e6cb8797",
+    "stageWorktreeClean": true,
+    "envelopeSha256": "e360bac324c2f59d9a8edbcb9bf3fb065771c4e535b9687e6c1547c5f589af8c",
+    "pinsSha256": "c00c45a5bab3f2ba4ebb22346f027b9ac2705278316eb2a72d592115c457e220",
+    "admissionSha256": "53cc94b22ea4d4529eddd6fd7e0e7c9d1ca41c7724a61561c20f46564d890d25",
+    "grantSha256": "cf85ab20312f61d297a3311e96058f1ca70cf939d5fd15637b459c2c9b19684c",
+    "inputSha256": "86f6c7a3ad4a13f288f4417591e175041a725d8f208df956eef04f58ad0cf767",
+    "programHashesMatch": true,
+    "authorityHashesMatch": true,
+    "freshNamespaceAbsent": true,
+    "custodyExists": true,
+    "entryAndSpentAbsent": true,
+    "ambientOverridesAbsent": true,
+    "deadlineReserveSeconds": 3949.339785,
+    "sourceAdmission": "DEFERRED_TO_SINGLE_ORIGINAL_PROGRAM",
+    "independentOracleRead": false
+  },
+  "qualificationConsumed": {
+    "receiptSha256": "536ce179c4f1df40542f94ca832a4460b1e22f2c73ad434cd77b58799b627b66",
+    "readinessEvidence": [
+      {
+        "path": "docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_COMPLETION_2026-10-16.md",
+        "sha256": "12c1be7d5a42cddab02e82ee999c03bb73992eb27ec7d689d3263edebd6e1c42"
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-html-windows-qualification-local-20261016.json",
+        "sha256": "fe88db43cd58590d34e989a696098e5b4b2517161f9b1ac545dfa51452b9fa2f"
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md",
+        "sha256": "4ea6e49a0b31700214558e2841c32338c44b8ea0e69bb9443df494927fb638b3"
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-html-windows-source-local-20261016.json",
+        "sha256": "6752a43a5c5b6991e803a603c6f317092abd2c666e693eb35ef31fae190e8e7b"
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-html-native-binding-local-20261016.json",
+        "sha256": "c5fb1711022df8e8f699faca9ca80e0e44d272fd98f09d95bfa137beb9f2befa"
+      }
+    ],
+    "sourceRelease": {
+      "path": "docs/reviews/evidence/ncr-html-windows-source-release-20261016.json",
+      "sha256": "ab30a0de37c4f93832117833f1e7093d9a97c2f3e8d08ae7325f0047230cfc9c"
+    },
+    "rerun": false
+  },
+  "actorProgramEntry": {
+    "actor": "worker",
+    "attempt": 1,
+    "deadlineUtc": "2026-10-16T18:12:00+00:00",
+    "enteredUtc": "2026-10-16T17:06:23.492371+00:00",
+    "launchAuthoritySha256": "cf85ab20312f61d297a3311e96058f1ca70cf939d5fd15637b459c2c9b19684c",
+    "watchdogSeconds": 1080
+  },
+  "actorProgramResult": {
+    "actor": "worker",
+    "launchAuthoritySha256": "cf85ab20312f61d297a3311e96058f1ca70cf939d5fd15637b459c2c9b19684c",
+    "enteredUtc": "2026-10-16T17:06:23.492371+00:00",
+    "watchdogSeconds": 1080,
+    "deadlineUtc": "2026-10-16T18:12:00+00:00",
+    "attempt": 1,
+    "controllerPid": 33000,
+    "exitCode": 1,
+    "timedOut": false,
+    "elapsedSeconds": 80.047,
+    "finishedUtc": "2026-10-16T17:07:43.534944+00:00",
+    "stdoutSha256": "6635523b89d5b432be9d56d4b932e63e280912b88a8b61ea55f70603ada14162",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "terminalDisposition": "UNKNOWN_REQUIRES_LOCAL_REVIEW"
+  },
+  "source18PreservedAfter": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": {
+      "expectedSha256": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+      "actualSha256": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8"
+    },
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": {
+      "expectedSha256": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+      "actualSha256": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491"
+    },
+    "scripts/cvf_ncr_html_owned_profile/profile.py": {
+      "expectedSha256": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+      "actualSha256": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": {
+      "expectedSha256": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+      "actualSha256": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1"
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": {
+      "expectedSha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "actualSha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0"
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": {
+      "expectedSha256": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+      "actualSha256": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e"
+    },
+    "scripts/cvf_ncr_html_owned_profile/execution.py": {
+      "expectedSha256": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "actualSha256": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": {
+      "expectedSha256": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "actualSha256": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357"
+    },
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": {
+      "expectedSha256": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "actualSha256": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": {
+      "expectedSha256": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "actualSha256": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_win32.py": {
+      "expectedSha256": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "actualSha256": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py": {
+      "expectedSha256": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "actualSha256": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702"
+    },
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": {
+      "expectedSha256": "62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a",
+      "actualSha256": "62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a"
+    },
+    "scripts/cvf_ncr_html_browser_fence.cjs": {
+      "expectedSha256": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+      "actualSha256": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6"
+    },
+    "scripts/cvf_ncr_html_browser_fence.test.cjs": {
+      "expectedSha256": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+      "actualSha256": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf"
+    },
+    "scripts/cvf_ncr_html_effect_fence.py": {
+      "expectedSha256": "8feaf4f516219119390c3cd8351da99ece0c4f8bc5049068b5d6ccac6940d4d3",
+      "actualSha256": "8feaf4f516219119390c3cd8351da99ece0c4f8bc5049068b5d6ccac6940d4d3"
+    },
+    "scripts/run_cvf_ncr_html_effect_driver.py": {
+      "expectedSha256": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+      "actualSha256": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf"
+    },
+    "scripts/test_cvf_ncr_html_effect_driver.py": {
+      "expectedSha256": "578c8f10c2fea54c1dd71636109befeb680cfaa5eb608d440690635dc74725a0",
+      "actualSha256": "578c8f10c2fea54c1dd71636109befeb680cfaa5eb608d440690635dc74725a0"
+    }
+  },
+  "frozenInputsAndPayloadsPreserved": true,
+  "rawArtifacts": {
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-fresh-runtime-20261016\\worker-program-entry.json": {
+      "sha256": "43700a8a5cb6cea66b5e1b09e1e5313f75f0911acbe325a0c0545e16ea4ec3a4",
+      "bytes": 245
+    },
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-fresh-runtime-20261016\\worker-program-result.json": {
+      "sha256": "1ca734a1ced57e371b5aa4fbacef34bed27a77485fb935df1e3ba5a77c5f2720",
+      "bytes": 651
+    },
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-fresh-runtime-20261016\\worker-launch-outer.log": {
+      "sha256": "5c40eb7a42807bc26c61c0e4eac64c758ee9d483a7d9234f6e7cc37c2e5626fb",
+      "bytes": 81
+    },
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-fresh-runtime-20261016\\worker-stdout.log": {
+      "sha256": "6635523b89d5b432be9d56d4b932e63e280912b88a8b61ea55f70603ada14162",
+      "bytes": 185
+    },
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-fresh-runtime-20261016\\worker-stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-fresh-runtime-20261016\\worker-driver-result.json": {
+      "sha256": "ad2ffa67507a1e4df9d2b42d958fec9bbdd1d5a7678eae7717ff024ae25493f4",
+      "bytes": 24538
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\runner-result.json": {
+      "sha256": "7f182d3b3c4552bd0983cd7119436b729678a6ca76a44fa2e1b4e495f65fcc4b",
+      "bytes": 20207
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\terminal-evidence.json": {
+      "sha256": "002b8dbb9af2c5c1540bc93c78ea168e6c5a4086204ab806d572eb2f05fb6693",
+      "bytes": 9556
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\helper.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\web.log": {
+      "sha256": "bbf63992aaf68602882ce5487042b1090398e78107087a8e60e462771b48762c",
+      "bytes": 1096
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\engine.log": {
+      "sha256": "3b572d7408206728d9889cb456e2ede7f108a8aba88ebd0fc2075026f527c036",
+      "bytes": 259
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\browser-binding.json": {
+      "sha256": "e298dbf842de18091353f12df81c7d14c6729d7368f9d04f7da2cf2edd341596",
+      "bytes": 1433
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\process-roots.json": {
+      "sha256": "d0d6bac8ba43acb0b34411a7968908cb6e73c992cbf1b2a4d1ed8656f8f8d7c2",
+      "bytes": 10538
+    },
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-fresh-runtime-20261016\\worker-diagnostic.json": {
+      "sha256": "869913a049700e1f6fd331d5f2e26e154b65c0baa96b0bf5c98c822c2760941f",
+      "bytes": 4101
+    },
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-fresh-runtime-20261016\\worker-terminal-joins.json": {
+      "sha256": "d9beb06c2b918f4a29e71473eeb5c9621bb267a34ce440f176df50290ec97185",
+      "bytes": 2944
+    },
+    "D:\\CVF_NCR_RUNTIME\\custody-be-fresh-20261016-b\\ncr-be-fresh-worker-20261016-r1b.spent.json": {
+      "sha256": "6a5d618463e860677744bf2eceffcd0978b265e43e49bab69e1f3a411926f52a",
+      "bytes": 241
+    },
+    "D:\\CVF_NCR_RUNTIME\\custody-be-fresh-20261016-b\\ncr-be-fresh-worker-20261016-r1b.starts.json": {
+      "sha256": "41e992152f8deacd9baf0a9639c7368ace732fe437401541dc5f26a31f83f5a0",
+      "bytes": 2125
+    }
+  },
+  "spentMarker": {
+    "actor": "IMPLEMENTATION_WORKER",
+    "admissionSha256": "53cc94b22ea4d4529eddd6fd7e0e7c9d1ca41c7724a61561c20f46564d890d25",
+    "namespace": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b",
+    "ordinal": 1,
+    "runId": "ncr-be-fresh-worker-20261016-r1b"
+  },
+  "startLedger": {
+    "attempts": [
+      {
+        "cleanup": false,
+        "kind": "docker-context",
+        "opId": 1,
+        "ordinal": 1,
+        "partition": "work",
+        "seq": 1
+      },
+      {
+        "cleanup": false,
+        "kind": "docker-context-inspect",
+        "opId": 2,
+        "ordinal": 2,
+        "partition": "work",
+        "seq": 2
+      },
+      {
+        "cleanup": false,
+        "kind": "docker-local-server",
+        "opId": 3,
+        "ordinal": 3,
+        "partition": "work",
+        "seq": 3
+      },
+      {
+        "cleanup": false,
+        "kind": "cached-image",
+        "opId": 4,
+        "ordinal": 4,
+        "partition": "work",
+        "seq": 4
+      },
+      {
+        "cleanup": false,
+        "kind": "installed-browser-path",
+        "opId": 5,
+        "ordinal": 5,
+        "partition": "work",
+        "seq": 5
+      },
+      {
+        "cleanup": false,
+        "kind": "dependency-junction",
+        "opId": 6,
+        "ordinal": 6,
+        "partition": "work",
+        "seq": 6
+      },
+      {
+        "cleanup": false,
+        "kind": "netstat",
+        "opId": 7,
+        "ordinal": 7,
+        "partition": "work",
+        "seq": 7
+      },
+      {
+        "cleanup": false,
+        "kind": "engine-create",
+        "opId": 8,
+        "ordinal": 8,
+        "partition": "work",
+        "seq": 8
+      },
+      {
+        "cleanup": false,
+        "kind": "engine-identity",
+        "opId": 9,
+        "ordinal": 9,
+        "partition": "work",
+        "seq": 9
+      },
+      {
+        "cleanup": false,
+        "kind": "launch",
+        "opId": 10,
+        "ordinal": 10,
+        "partition": "work",
+        "seq": 10
+      },
+      {
+        "cleanup": false,
+        "kind": "engine-GET",
+        "opId": 11,
+        "ordinal": 11,
+        "partition": "work",
+        "seq": 11
+      },
+      {
+        "cleanup": false,
+        "kind": "engine-GET",
+        "opId": 12,
+        "ordinal": 12,
+        "partition": "work",
+        "seq": 12
+      },
+      {
+        "cleanup": false,
+        "kind": "engine-GET",
+        "opId": 13,
+        "ordinal": 13,
+        "partition": "work",
+        "seq": 13
+      },
+      {
+        "cleanup": false,
+        "kind": "engine-GET",
+        "opId": 14,
+        "ordinal": 14,
+        "partition": "work",
+        "seq": 14
+      },
+      {
+        "cleanup": false,
+        "kind": "engine-network-proof",
+        "opId": 15,
+        "ordinal": 15,
+        "partition": "work",
+        "seq": 15
+      },
+      {
+        "cleanup": false,
+        "kind": "launch",
+        "opId": 16,
+        "ordinal": 16,
+        "partition": "work",
+        "seq": 16
+      },
+      {
+        "cleanup": false,
+        "kind": "netstat",
+        "opId": 22,
+        "ordinal": 17,
+        "partition": "work",
+        "seq": 17
+      },
+      {
+        "cleanup": false,
+        "kind": "launch",
+        "opId": 23,
+        "ordinal": 18,
+        "partition": "work",
+        "seq": 18
+      },
+      {
+        "cleanup": true,
+        "kind": "container-identity",
+        "opId": 28,
+        "ordinal": 1,
+        "partition": "cleanup",
+        "seq": 19
+      },
+      {
+        "cleanup": true,
+        "kind": "container-remove",
+        "opId": 29,
+        "ordinal": 2,
+        "partition": "cleanup",
+        "seq": 20
+      },
+      {
+        "cleanup": true,
+        "kind": "tasklist",
+        "opId": 30,
+        "ordinal": 3,
+        "partition": "cleanup",
+        "seq": 21
+      },
+      {
+        "cleanup": true,
+        "kind": "docker-ps",
+        "opId": 31,
+        "ordinal": 4,
+        "partition": "cleanup",
+        "seq": 22
+      },
+      {
+        "cleanup": true,
+        "kind": "netstat",
+        "opId": 32,
+        "ordinal": 5,
+        "partition": "cleanup",
+        "seq": 23
+      }
+    ],
+    "cleanupUsed": 5,
+    "workUsed": 18
+  },
+  "driverOutput": {"actualDataConfigStoreReads":0,"caps":{"cleanupSeconds":120,"evaluates":2,"exports":2,"readinessBuckets":{"engine":4,"route":2,"web":6},"readinessGets":12,"runtimeSeconds":900},"checkpoints":[],"controllerIdentity":{"creation100ns":134366439834954991,"image":"C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe","pid":33000},"effectFence":{"browserVerification":null,"joinsAccepted":false,"ledger":{"attempts":[{"cleanup":false,"kind":"docker-context","opId":1,"ordinal":1,"partition":"work","seq":1},{"cleanup":false,"kind":"docker-context-inspect","opId":2,"ordinal":2,"partition":"work","seq":2},{"cleanup":false,"kind":"docker-local-server","opId":3,"ordinal":3,"partition":"work","seq":3},{"cleanup":false,"kind":"cached-image","opId":4,"ordinal":4,"partition":"work","seq":4},{"cleanup":false,"kind":"installed-browser-path","opId":5,"ordinal":5,"partition":"work","seq":5},{"cleanup":false,"kind":"dependency-junction","opId":6,"ordinal":6,"partition":"work","seq":6},{"cleanup":false,"kind":"netstat","opId":7,"ordinal":7,"partition":"work","seq":7},{"cleanup":false,"kind":"engine-create","opId":8,"ordinal":8,"partition":"work","seq":8},{"cleanup":false,"kind":"engine-identity","opId":9,"ordinal":9,"partition":"work","seq":9},{"cleanup":false,"kind":"launch","opId":10,"ordinal":10,"partition":"work","seq":10},{"cleanup":false,"kind":"engine-GET","opId":11,"ordinal":11,"partition":"work","seq":11},{"cleanup":false,"kind":"engine-GET","opId":12,"ordinal":12,"partition":"work","seq":12},{"cleanup":false,"kind":"engine-GET","opId":13,"ordinal":13,"partition":"work","seq":13},{"cleanup":false,"kind":"engine-GET","opId":14,"ordinal":14,"partition":"work","seq":14},{"cleanup":false,"kind":"engine-network-proof","opId":15,"ordinal":15,"partition":"work","seq":15},{"cleanup":false,"kind":"launch","opId":16,"ordinal":16,"partition":"work","seq":16},{"cleanup":false,"kind":"netstat","opId":22,"ordinal":17,"partition":"work","seq":17},{"cleanup":false,"kind":"launch","opId":23,"ordinal":18,"partition":"work","seq":18},{"cleanup":true,"kind":"container-identity","opId":28,"ordinal":1,"partition":"cleanup","seq":19},{"cleanup":true,"kind":"container-remove","opId":29,"ordinal":2,"partition":"cleanup","seq":20},{"cleanup":true,"kind":"tasklist","opId":30,"ordinal":3,"partition":"cleanup","seq":21},{"cleanup":true,"kind":"docker-ps","opId":31,"ordinal":4,"partition":"cleanup","seq":22},{"cleanup":true,"kind":"netstat","opId":32,"ordinal":5,"partition":"cleanup","seq":23}],"cleanupUsed":5,"workUsed":18}},"elapsedSeconds":79.172,"engineCandidate":{"context":"desktop-linux","image":"sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294","name":"cvf-ncr-html-a9da74a08b862e29"},"engineIdentity":{"id":"4ed2262f149061e5567515311b06ea206070aa7dc727aa6630cfb7cb954fa92e","image":"sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294","mounts":[{"destination":"/data","rw":true,"source":"D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\stores\\engine"},{"destination":"/engine","rw":false,"source":"D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\source\\EXTENSIONS\\CVF_v1.6.1_GOVERNANCE_ENGINE\\ai_governance_core"}],"name":"cvf-ncr-html-a9da74a08b862e29","networkMode":"none","portBindings":null},"engineNetworkProbe":["lo","BLOCKED"],"failures":["FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\CVF_NCR_RUNTIME\\\\ncr-be-fresh-worker-20261016-r1b\\\\custody\\\\browser.json'"],"listenerIdentity":[{"address":"127.0.0.1:52350","pid":28084},{"address":"127.0.0.1:52351","pid":33000}],"namespace":"D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b","ok":false,"origin":"http://localhost:52350","ports":[52350,52351],"prerequisites":{"browserExecutable":"C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium-1208\\chrome-win64\\chrome.exe","dependencyAccess":"PRE_EXISTING_READ_ONLY_NOT_DISPOSABLE","dockerContext":"desktop-linux","dockerEndpoint":"npipe:////./pipe/dockerDesktopLinuxEngine","dockerPrefix":["C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.EXE","--context","desktop-linux"],"image":"sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294","modules":"D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules","tools":{"docker":"C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.EXE","git":"C:\\Program Files\\Git\\cmd\\git.EXE","netstat":"C:\\WINDOWS\\system32\\netstat.EXE","node":"C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.EXE","taskkill":"C:\\WINDOWS\\system32\\taskkill.EXE","tasklist":"C:\\WINDOWS\\system32\\tasklist.EXE"}},"providerStarts":0,"retentionSeconds":null,"schemaVersion":"cvf.ncrHtmlOwnedProfile.v1","sources":{"executionBaseHead":"ba04bfc12f14b265e5cf13f981ec9083e6cb8797","immutablePins":{"docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md":"1d1a42f2c3f1e9d573b30cb46221e24ea1365d9f60aec95b6938e9fd10fb6a83","docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md":"ccd4e247ff6aac95b3b53040d449d67505394b7da504ddbd87b43ecdf0f3cf6b","docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md":"f9367246a646efb81ef42308007a016031ee690b4f57b7c050cbffd555a788c8","scripts/cvf_ncr_html_owned_profile/__init__.py":"1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8","scripts/cvf_ncr_html_owned_profile/execution.py":"937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d","scripts/cvf_ncr_html_owned_profile/journey.cjs":"f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0","scripts/cvf_ncr_html_owned_profile/journey.test.cjs":"a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e","scripts/cvf_ncr_html_owned_profile/lifecycle.py":"465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491","scripts/cvf_ncr_html_owned_profile/profile.py":"0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825","scripts/cvf_ncr_html_owned_profile/protocol.py":"7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277","scripts/cvf_ncr_html_owned_profile/source_release.py":"62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a","scripts/cvf_ncr_html_owned_profile/test_admission.py":"e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702","scripts/cvf_ncr_html_owned_profile/test_control.py":"f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1","scripts/cvf_ncr_html_owned_profile/test_execution.py":"7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357","scripts/cvf_ncr_html_owned_profile/test_protocol.py":"4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba","scripts/cvf_ncr_html_owned_profile/test_win32.py":"ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228","scripts/probe_cvf_q001_synthetic_system_chain.py":"b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662","scripts/probe_cvf_w05_browser_chain.cjs":"0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494"},"implementedHelpers":{"scripts/cvf_ncr_html_owned_profile/__init__.py":"1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8","scripts/cvf_ncr_html_owned_profile/execution.py":"937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d","scripts/cvf_ncr_html_owned_profile/journey.cjs":"f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0","scripts/cvf_ncr_html_owned_profile/journey.test.cjs":"a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e","scripts/cvf_ncr_html_owned_profile/lifecycle.py":"465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491","scripts/cvf_ncr_html_owned_profile/profile.py":"0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825","scripts/cvf_ncr_html_owned_profile/protocol.py":"7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277","scripts/cvf_ncr_html_owned_profile/source_release.py":"62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a","scripts/cvf_ncr_html_owned_profile/test_admission.py":"e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702","scripts/cvf_ncr_html_owned_profile/test_control.py":"f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1","scripts/cvf_ncr_html_owned_profile/test_execution.py":"7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357","scripts/cvf_ncr_html_owned_profile/test_protocol.py":"4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba","scripts/cvf_ncr_html_owned_profile/test_win32.py":"ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228"},"productBinding":{"productCommit":"8b75bde5299335f94de254078b39bcffc31cdd40","productScopeGitObjects":{"EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE":"b559cbecd10ab83a5a36b282b1932fe794bbd18e","EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web":"01ada06d232d140277a1c682a0fb675d7c0e435c","docs/reference/CVF_GOVERNANCE_STATE_REGISTRY.json":"7d245836bc11cf727e7f2a4ff2aa1a77d927238c","governance/toolkit/03_CONTROL/CVF_AGENT_REGISTRY.md":"89e7ad8a778b0ff70f13b07474f7a31def019158","governance/toolkit/04_TESTING/CVF_SELF_UAT_DECISION_LOG.md":"5f717b25b4de774683f4ef920c035052058816e5"}},"sourceRelease":{"path":"docs/reviews/evidence/ncr-html-windows-source-release-20261016.json","scope":"SOURCE_IDENTITY_ONLY","sha256":"ab30a0de37c4f93832117833f1e7093d9a97c2f3e8d08ae7325f0047230cfc9c"}},"staging":{"envAndActiveLedgerExcluded":true,"fileCount":1238,"manifestSha256":"7e9b3cf85aab3acaa06ae6974c6fb0f013c39a545a6ba71f143c280e2a9b7ce1","sourceCwd":"D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web"},"state":{"exports":0,"readinessGets":{"engine":4,"route":2,"web":3}},"terminal":{"accepted":false,"acknowledgment":{"error":null,"readBack":"MATCH","write":"ACKNOWLEDGED"},"actualDisposal":"NOT_ATTEMPTED","disposalEligible":false,"evidence":{"actions":[{"action":"proxy-shutdown","outcome":"CONFIRMED"},{"action":"proxy-close","outcome":"CONFIRMED"},{"action":"proxy-join","outcome":"CONFIRMED"},{"action":"reservation-0","outcome":"CONFIRMED"},{"action":"reservation-1","outcome":"CONFIRMED"},{"action":"child-evidence","outcome":"CONFIRMED"},{"action":"identity","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"CONFIRMED"},{"action":"container-remove","outcome":"CONFIRMED"},{"action":"tasklist","outcome":"CONFIRMED"},{"action":"docker-ps","outcome":"CONFIRMED"},{"action":"descendants","outcome":"CONFIRMED"},{"action":"listeners","outcome":"CONFIRMED"},{"action":"reader-join","outcome":"CONFIRMED"},{"action":"log-0","outcome":"CONFIRMED"},{"action":"log-1","outcome":"CONFIRMED"},{"action":"log-2","outcome":"CONFIRMED"},{"action":"disposal-target","outcome":"CONFIRMED"},{"action":"handle-close","outcome":"CONFIRMED"}],"child":{"claimMatch":false,"confirmed":false,"exit":"SUCCESS","reason":"FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\CVF_NCR_RUNTIME\\\\ncr-be-fresh-worker-20261016-r1b\\\\custody\\\\browser.json'","snapshot":"MISSING","teardown":null},"containerQuery":"ABSENT","descendantQuery":"ABSENT","disposalTarget":"SAFE","errors":[],"listenerQuery":"ABSENT","ownedIdentities":[{"creation100ns":134366439952807071,"image":"C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe","pid":19792},{"creation100ns":134366440024360461,"image":"C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe","pid":28084},{"creation100ns":134366439987559039,"image":"C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe","pid":32420}],"preAckDisposition":"NOT_ACCEPTED_UNKNOWN","primaryFailures":["FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\CVF_NCR_RUNTIME\\\\ncr-be-fresh-worker-20261016-r1b\\\\custody\\\\browser.json'"],"processQuery":"ABSENT","protocol":{"cleanupSeconds":120,"closedBy":"RUN_END","generation":"g6e16b08e","operations":[{"cleanup":false,"id":1,"inflightAtClose":false,"kind":"docker-context","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":2,"inflightAtClose":false,"kind":"docker-context-inspect","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":3,"inflightAtClose":false,"kind":"docker-local-server","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":4,"inflightAtClose":false,"kind":"cached-image","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":5,"inflightAtClose":false,"kind":"installed-browser-path","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":6,"inflightAtClose":false,"kind":"dependency-junction","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":7,"inflightAtClose":false,"kind":"netstat","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":8,"inflightAtClose":false,"kind":"engine-create","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":9,"inflightAtClose":false,"kind":"engine-identity","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":10,"inflightAtClose":false,"kind":"launch","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":11,"inflightAtClose":false,"kind":"engine-GET","outcome":"NONZERO_EXIT","state":"FAILED","uncertain":false},{"cleanup":false,"id":12,"inflightAtClose":false,"kind":"engine-GET","outcome":"NONZERO_EXIT","state":"FAILED","uncertain":false},{"cleanup":false,"id":13,"inflightAtClose":false,"kind":"engine-GET","outcome":"NONZERO_EXIT","state":"FAILED","uncertain":false},{"cleanup":false,"id":14,"inflightAtClose":false,"kind":"engine-GET","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":15,"inflightAtClose":false,"kind":"engine-network-proof","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":16,"inflightAtClose":false,"kind":"launch","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":17,"inflightAtClose":false,"kind":"web-ready","outcome":"URLError","state":"FAILED","uncertain":false},{"cleanup":false,"id":18,"inflightAtClose":false,"kind":"web-ready","outcome":"URLError","state":"FAILED","uncertain":false},{"cleanup":false,"id":19,"inflightAtClose":false,"kind":"web-ready","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":20,"inflightAtClose":false,"kind":"route-compile","outcome":"HTTPError","state":"FAILED","uncertain":false},{"cleanup":false,"id":21,"inflightAtClose":false,"kind":"route-compile","outcome":"HTTPError","state":"FAILED","uncertain":false},{"cleanup":false,"id":22,"inflightAtClose":false,"kind":"netstat","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":23,"inflightAtClose":false,"kind":"launch","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":24,"inflightAtClose":false,"kind":"helper-exit","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":25,"inflightAtClose":false,"kind":"owned-handle-stop","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":26,"inflightAtClose":false,"kind":"owned-handle-stop","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":27,"inflightAtClose":false,"kind":"owned-handle-stop","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":28,"inflightAtClose":false,"kind":"container-identity","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":29,"inflightAtClose":false,"kind":"container-remove","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":30,"inflightAtClose":false,"kind":"tasklist","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":31,"inflightAtClose":false,"kind":"docker-ps","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":32,"inflightAtClose":false,"kind":"netstat","outcome":null,"state":"DONE","uncertain":false}],"phase":"CLEANUP","workSeconds":900},"stageRetained":true,"uncertainOperations":[]},"evidenceBytes":9556,"evidenceSha256":"002b8dbb9af2c5c1540bc93c78ea168e6c5a4086204ab806d572eb2f05fb6693","stageRetained":true}},
+  "terminalRawEvidence": {"actions":[{"action":"proxy-shutdown","outcome":"CONFIRMED"},{"action":"proxy-close","outcome":"CONFIRMED"},{"action":"proxy-join","outcome":"CONFIRMED"},{"action":"reservation-0","outcome":"CONFIRMED"},{"action":"reservation-1","outcome":"CONFIRMED"},{"action":"child-evidence","outcome":"CONFIRMED"},{"action":"identity","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"CONFIRMED"},{"action":"container-remove","outcome":"CONFIRMED"},{"action":"tasklist","outcome":"CONFIRMED"},{"action":"docker-ps","outcome":"CONFIRMED"},{"action":"descendants","outcome":"CONFIRMED"},{"action":"listeners","outcome":"CONFIRMED"},{"action":"reader-join","outcome":"CONFIRMED"},{"action":"log-0","outcome":"CONFIRMED"},{"action":"log-1","outcome":"CONFIRMED"},{"action":"log-2","outcome":"CONFIRMED"},{"action":"disposal-target","outcome":"CONFIRMED"},{"action":"handle-close","outcome":"CONFIRMED"}],"child":{"claimMatch":false,"confirmed":false,"exit":"SUCCESS","reason":"FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\CVF_NCR_RUNTIME\\\\ncr-be-fresh-worker-20261016-r1b\\\\custody\\\\browser.json'","snapshot":"MISSING","teardown":null},"containerQuery":"ABSENT","descendantQuery":"ABSENT","disposalTarget":"SAFE","errors":[],"listenerQuery":"ABSENT","ownedIdentities":[{"creation100ns":134366439952807071,"image":"C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe","pid":19792},{"creation100ns":134366440024360461,"image":"C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe","pid":28084},{"creation100ns":134366439987559039,"image":"C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe","pid":32420}],"preAckDisposition":"NOT_ACCEPTED_UNKNOWN","primaryFailures":["FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\CVF_NCR_RUNTIME\\\\ncr-be-fresh-worker-20261016-r1b\\\\custody\\\\browser.json'"],"processQuery":"ABSENT","protocol":{"cleanupSeconds":120,"closedBy":"RUN_END","generation":"g6e16b08e","operations":[{"cleanup":false,"id":1,"inflightAtClose":false,"kind":"docker-context","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":2,"inflightAtClose":false,"kind":"docker-context-inspect","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":3,"inflightAtClose":false,"kind":"docker-local-server","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":4,"inflightAtClose":false,"kind":"cached-image","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":5,"inflightAtClose":false,"kind":"installed-browser-path","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":6,"inflightAtClose":false,"kind":"dependency-junction","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":7,"inflightAtClose":false,"kind":"netstat","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":8,"inflightAtClose":false,"kind":"engine-create","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":9,"inflightAtClose":false,"kind":"engine-identity","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":10,"inflightAtClose":false,"kind":"launch","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":11,"inflightAtClose":false,"kind":"engine-GET","outcome":"NONZERO_EXIT","state":"FAILED","uncertain":false},{"cleanup":false,"id":12,"inflightAtClose":false,"kind":"engine-GET","outcome":"NONZERO_EXIT","state":"FAILED","uncertain":false},{"cleanup":false,"id":13,"inflightAtClose":false,"kind":"engine-GET","outcome":"NONZERO_EXIT","state":"FAILED","uncertain":false},{"cleanup":false,"id":14,"inflightAtClose":false,"kind":"engine-GET","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":15,"inflightAtClose":false,"kind":"engine-network-proof","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":16,"inflightAtClose":false,"kind":"launch","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":17,"inflightAtClose":false,"kind":"web-ready","outcome":"URLError","state":"FAILED","uncertain":false},{"cleanup":false,"id":18,"inflightAtClose":false,"kind":"web-ready","outcome":"URLError","state":"FAILED","uncertain":false},{"cleanup":false,"id":19,"inflightAtClose":false,"kind":"web-ready","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":20,"inflightAtClose":false,"kind":"route-compile","outcome":"HTTPError","state":"FAILED","uncertain":false},{"cleanup":false,"id":21,"inflightAtClose":false,"kind":"route-compile","outcome":"HTTPError","state":"FAILED","uncertain":false},{"cleanup":false,"id":22,"inflightAtClose":false,"kind":"netstat","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":23,"inflightAtClose":false,"kind":"launch","outcome":null,"state":"DONE","uncertain":false},{"cleanup":false,"id":24,"inflightAtClose":false,"kind":"helper-exit","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":25,"inflightAtClose":false,"kind":"owned-handle-stop","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":26,"inflightAtClose":false,"kind":"owned-handle-stop","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":27,"inflightAtClose":false,"kind":"owned-handle-stop","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":28,"inflightAtClose":false,"kind":"container-identity","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":29,"inflightAtClose":false,"kind":"container-remove","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":30,"inflightAtClose":false,"kind":"tasklist","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":31,"inflightAtClose":false,"kind":"docker-ps","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":32,"inflightAtClose":false,"kind":"netstat","outcome":null,"state":"DONE","uncertain":false}],"phase":"CLEANUP","workSeconds":900},"stageRetained":true,"uncertainOperations":[]},
+  "terminalJoin": {
+    "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\terminal-evidence.json",
+    "bytes": 9556,
+    "sha256": "002b8dbb9af2c5c1540bc93c78ea168e6c5a4086204ab806d572eb2f05fb6693",
+    "rawMatchesDeclaration": true,
+    "acknowledgment": {
+      "error": null,
+      "readBack": "MATCH",
+      "write": "ACKNOWLEDGED"
+    },
+    "accepted": false,
+    "fourQueries": {
+      "processQuery": "ABSENT",
+      "containerQuery": "ABSENT",
+      "descendantQuery": "ABSENT",
+      "listenerQuery": "ABSENT"
+    },
+    "child": {
+      "claimMatch": false,
+      "confirmed": false,
+      "exit": "SUCCESS",
+      "reason": "FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\CVF_NCR_RUNTIME\\\\ncr-be-fresh-worker-20261016-r1b\\\\custody\\\\browser.json'",
+      "snapshot": "MISSING",
+      "teardown": null
+    },
+    "disposalTarget": "SAFE",
+    "stageRetained": true,
+    "actualDisposal": "NOT_ATTEMPTED"
+  },
+  "browser": {
+    "binding": {
+      "actor": "IMPLEMENTATION_WORKER",
+      "cap": 2,
+      "chrome": {
+        "path": "C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium-1208\\chrome-win64\\chrome.exe",
+        "sha256": "ff0c99fc5bb2301cad77930aa76e5354cf2a5fefb7efdcf3b3bc10ba0550c015"
+      },
+      "config": {
+        "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\journey-input.json",
+        "sha256": "77186d34881a73b50956e6116d5c1062653a8aa87be66631ed66a2c06e0b2b80"
+      },
+      "entry": {
+        "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\probe_cvf_w05_browser_chain.cjs",
+        "sha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494"
+      },
+      "journey": {
+        "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_ncr_html_owned_profile\\journey.cjs",
+        "sha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0"
+      },
+      "modulesPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules",
+      "observationPath": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\browser-fence.json",
+      "preload": {
+        "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_ncr_html_browser_fence.cjs",
+        "sha256": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6"
+      },
+      "profilePath": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\source\\browser-profile",
+      "runId": "ncr-be-fresh-worker-20261016-r1b",
+      "schemaVersion": "cvf.ncrHtmlBrowserBinding@1"
+    },
+    "snapshotExists": false,
+    "fenceObservationExists": false,
+    "launchAndTeardown": "NOT_PROVEN",
+    "helperExit": "SUCCESS",
+    "helperCombinedLogBytes": 0,
+    "claimedSnapshot": "NONE",
+    "downloadRecipientSqlAssociation": "NOT_PRODUCED"
+  },
+  "diagnostic": {
+    "helper.log": {
+      "exists": true,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "web.log": {
+      "exists": true,
+      "bytes": 1096,
+      "sha256": "bbf63992aaf68602882ce5487042b1090398e78107087a8e60e462771b48762c"
+    },
+    "browser-fence.json": {
+      "exists": false
+    },
+    "browser-binding.json": {
+      "exists": true,
+      "bytes": 1433,
+      "sha256": "e298dbf842de18091353f12df81c7d14c6729d7368f9d04f7da2cf2edd341596"
+    },
+    "browser.json": {
+      "exists": false
+    },
+    "process-roots.json": {
+      "exists": true,
+      "bytes": 10538,
+      "sha256": "d0d6bac8ba43acb0b34411a7968908cb6e73c992cbf1b2a4d1ed8656f8f8d7c2"
+    },
+    "helperRoots": [
+      {
+        "argc": 9,
+        "args": [
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\probe_cvf_w05_browser_chain.cjs",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules",
+          "http://localhost:52350",
+          "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\browser.json",
+          "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody",
+          "owned-profile",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_ncr_html_owned_profile\\journey.cjs",
+          "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\journey-input.json"
+        ],
+        "executable": "node.EXE",
+        "identity": {
+          "creation100ns": 134366440605429259,
+          "image": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe",
+          "pid": 33420
+        }
+      }
+    ],
+    "binding": {
+      "schemaVersion": "cvf.ncrHtmlBrowserBinding@1",
+      "runId": "ncr-be-fresh-worker-20261016-r1b",
+      "actor": "IMPLEMENTATION_WORKER",
+      "cap": 2,
+      "entry": {
+        "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\probe_cvf_w05_browser_chain.cjs",
+        "sha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494"
+      },
+      "journey": {
+        "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_ncr_html_owned_profile\\journey.cjs",
+        "sha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0"
+      },
+      "preload": {
+        "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_ncr_html_browser_fence.cjs",
+        "sha256": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6"
+      },
+      "config": {
+        "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\journey-input.json",
+        "sha256": "77186d34881a73b50956e6116d5c1062653a8aa87be66631ed66a2c06e0b2b80"
+      },
+      "observationPath": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\browser-fence.json"
+    },
+    "workerStderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "sourceCause": {
+      "classification": "SOURCE_DERIVED_ENTRY_MODULE_PRELOAD_CACHE_SHORT_CIRCUIT",
+      "chain": [
+        "journey.installOwnedGuard requires the same legacy entry script during --require preload",
+        "legacy entry require.main !== module branch installs guard then returns; CommonJS caches it",
+        "Node later resolves its main entry from that already-loaded module; owned-profile main dispatch is bypassed",
+        "helper exits0 with no stdout/snapshot/browser file; browser-fence observation remains absent"
+      ],
+      "observed": "helper combined stdout/stderr0bytes, exitSUCCESS, browser.json MISSING, browser binding exists, no browser-fence observation",
+      "limit": "source-derived causal explanation with original saved evidence; no reproducer/native effect permitted under spent grant"
+    },
+    "metadataPreparationLimitation": "First diagnostic console print of a Web checkmark failed CP1252 UnicodeEncodeError; safe ASCII serialization used subsequently. Runtime evidence untouched.",
+    "recordedUtc": "2026-10-16T17:09:31.479778+00:00"
+  },
+  "terminalSupplementalJoins": {
+    "recordedUtc": "2026-10-16T17:10:55.661889+00:00",
+    "terminalRawPath": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\custody\\terminal-evidence.json",
+    "terminalRawSha256": "002b8dbb9af2c5c1540bc93c78ea168e6c5a4086204ab806d572eb2f05fb6693",
+    "terminalRawBytes": 9556,
+    "helperPid": 33420,
+    "helperEgressEventsMetadata": [
+      {
+        "pid": 33420,
+        "event": "loaded",
+        "title": "next-server (v16.2.7)",
+        "argv": [
+          "probe_cvf_w05_browser_chain.cjs",
+          "node_modules",
+          "localhost:52350"
+        ],
+        "nodeOptionsActive": true
+      },
+      {
+        "pid": 33420,
+        "event": "denied",
+        "title": "next-server (v16.2.7)",
+        "argv": [
+          "probe_cvf_w05_browser_chain.cjs",
+          "node_modules",
+          "localhost:52350"
+        ],
+        "host": "egress-selftest.invalid",
+        "via": "tcp"
+      },
+      {
+        "pid": 33420,
+        "event": "denied",
+        "title": "next-server (v16.2.7)",
+        "argv": [
+          "probe_cvf_w05_browser_chain.cjs",
+          "node_modules",
+          "localhost:52350"
+        ],
+        "host": "egress-selftest.invalid",
+        "via": "udp"
+      }
+    ],
+    "egressRawSha256": "bea8236f86410f2900e6d4dfcaf4e90839a9c7efaaeff15f685e7674a1696c28",
+    "egressRawBytes": 2387,
+    "disposalTarget": "SAFE",
+    "resourceIdentities": {
+      "engineIdentity": {
+        "id": "4ed2262f149061e5567515311b06ea206070aa7dc727aa6630cfb7cb954fa92e",
+        "image": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+        "mounts": [
+          {
+            "destination": "/data",
+            "rw": true,
+            "source": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\stores\\engine"
+          },
+          {
+            "destination": "/engine",
+            "rw": false,
+            "source": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\source\\EXTENSIONS\\CVF_v1.6.1_GOVERNANCE_ENGINE\\ai_governance_core"
+          }
+        ],
+        "name": "cvf-ncr-html-a9da74a08b862e29",
+        "networkMode": "none",
+        "portBindings": null
+      },
+      "origin": "http://localhost:52350",
+      "ports": [
+        52350,
+        52351
+      ],
+      "ownedIdentities": [
+        {
+          "creation100ns": 134366439952807071,
+          "image": "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+          "pid": 19792
+        },
+        {
+          "creation100ns": 134366440024360461,
+          "image": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe",
+          "pid": 28084
+        },
+        {
+          "creation100ns": 134366439987559039,
+          "image": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe",
+          "pid": 32420
+        }
+      ]
+    },
+    "sourceExplanation": "Entry caching during journey preload explains helper main dispatch bypass; observed loaded event/exit0/no snapshot corroborate, no new reproducer permitted."
+  },
+  "firstOutcome": {
+    "ok": false,
+    "failureClass": "HELPER_ENTRY_PRELOAD_CACHE_SHORT_CIRCUIT_SOURCE_DERIVED",
+    "reportedException": [
+      "FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\CVF_NCR_RUNTIME\\\\ncr-be-fresh-worker-20261016-r1b\\\\custody\\\\browser.json'"
+    ],
+    "observedExports": 0,
+    "finalCounters": null,
+    "browserAndFinalRows": "NOT_PRODUCED",
+    "helperNoSnapshot": "OBSERVED",
+    "explanationConfidence": "Source-derived causal classification corroborated by saved exact helper argv, loaded event, exit0/empty logs/missing snapshot; no new reproducer authorized"
+  },
+  "preparation": {
+    "startup": "progressive bootstrap/front/handoff/current B/W and frozen envelope; current accepted source/qualification/native proof consumed, no rerun",
+    "preImplementation": {
+      "exit": 0,
+      "elapsedSeconds": 10.26,
+      "logSha256": "b63a4915a1d28370f06920a6108cb5f2c8040b26296e3397608e7c3d835677f6"
+    },
+    "ignoredScaffoldBeforeEffect": true,
+    "externalBindingBeforeTargetImport": true,
+    "adifWorkerCandidates": 0,
+    "readScope": "current packet and fixed payloads; immediate-prior inspected unchanged owners reused with current18 raw-hash join; exact helper preload/entry dispatch sections read after observed failure for bounded diagnosis; no full corpus/every-checker-body claim",
+    "metadataDiagnosticFailure": "one CP1252 UnicodeEncodeError printing a Web checkmark; no target effect or evidence mutation; subsequent diagnostic output uses ensure_ascii"
+  },
+  "programEffects": {
+    "actorPrograms": 1,
+    "controlledWorkRoots": 18,
+    "controlledCleanupRoots": 5,
+    "readinessGets": {
+      "engine": 4,
+      "route": 2,
+      "web": 3
+    },
+    "retry": 0,
+    "cap1": 0,
+    "provider": 0,
+    "stageDeletion": 0,
+    "extraNativeQueries": 0,
+    "additionalCleanup": 0,
+    "sourceEdits": 0,
+    "independentLocalOracleReadOrInvoked": false
+  },
+  "custody": {
+    "owner": "LOCAL",
+    "namespace": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b",
+    "custodyRoot": "D:\\CVF_NCR_RUNTIME\\custody-be-fresh-20261016-b",
+    "stage": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\source",
+    "retentionReason": "failed single runtime evidence and verified shared dependency; no filesystem disposal grant",
+    "resourceIdentities": {
+      "engineIdentity": {
+        "id": "4ed2262f149061e5567515311b06ea206070aa7dc727aa6630cfb7cb954fa92e",
+        "image": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+        "mounts": [
+          {
+            "destination": "/data",
+            "rw": true,
+            "source": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\stores\\engine"
+          },
+          {
+            "destination": "/engine",
+            "rw": false,
+            "source": "D:\\CVF_NCR_RUNTIME\\ncr-be-fresh-worker-20261016-r1b\\source\\EXTENSIONS\\CVF_v1.6.1_GOVERNANCE_ENGINE\\ai_governance_core"
+          }
+        ],
+        "name": "cvf-ncr-html-a9da74a08b862e29",
+        "networkMode": "none",
+        "portBindings": null
+      },
+      "origin": "http://localhost:52350",
+      "ports": [
+        52350,
+        52351
+      ],
+      "ownedIdentities": [
+        {
+          "creation100ns": 134366439952807071,
+          "image": "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+          "pid": 19792
+        },
+        {
+          "creation100ns": 134366440024360461,
+          "image": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe",
+          "pid": 28084
+        },
+        {
+          "creation100ns": 134366439987559039,
+          "image": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe",
+          "pid": 32420
+        }
+      ]
+    },
+    "scope": "only this new namespace/custody read; no retired stage access"
+  },
+  "requirementResults": [
+    {
+      "requirementId": "REQ-RUNTIME",
+      "actualArtifacts": [
+        "docs/reviews/CVF_NCR_HTML_B_E_FRESH_RUNTIME_WORKER_RETURN_2026-10-16.md",
+        "docs/reviews/evidence/ncr-html-b-e-fresh-runtime-worker-20261016.json"
+      ],
+      "proofRefs": [
+        "PROOF-ADMISSION",
+        "PROOF-JOURNEY"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "requirementId": "REQ-TERMINAL",
+      "actualArtifacts": [
+        "docs/reviews/CVF_NCR_HTML_B_E_FRESH_RUNTIME_WORKER_RETURN_2026-10-16.md",
+        "docs/reviews/evidence/ncr-html-b-e-fresh-runtime-worker-20261016.json"
+      ],
+      "proofRefs": [
+        "PROOF-TERMINAL"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "requirementId": "REQ-RETURN",
+      "actualArtifacts": [
+        "docs/reviews/CVF_NCR_HTML_B_E_FRESH_RUNTIME_WORKER_RETURN_2026-10-16.md",
+        "docs/reviews/evidence/ncr-html-b-e-fresh-runtime-worker-20261016.json"
+      ],
+      "proofRefs": [
+        "PROOF-RETURN"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "gateEvidence": {
+    "preImplementationExit": 0,
+    "preImplementationElapsedSeconds": 10.26,
+    "finalFullReturnGate": "actual frozen exit/timing/log/hash in ignored worker-fullgate-result.json and worker-terminal.json; no tracked append after final gate"
+  },
+  "publication": {
+    "effectProgramAndOriginalCleanupTerminated": true,
+    "trackedCleanUntilNow": true,
+    "publishedUtc": "2026-10-16T17:14:27.832183+00:00",
+    "exactPaths": [
+      "docs/reviews/CVF_NCR_HTML_B_E_FRESH_RUNTIME_WORKER_RETURN_2026-10-16.md",
+      "docs/reviews/evidence/ncr-html-b-e-fresh-runtime-worker-20261016.json"
+    ]
+  },
+  "claimBoundary": "Single new cap2 failed/spent, old1spent/2retired unchanged. ACK/four ABSENT/disposal SAFE are observed but child snapshot/browser/journey missing and terminal unaccepted. No cap1/provider/deletion/retry or B-E acceptance.",
+  "REQ-RUNTIME": {
+    "status": "BLOCKED",
+    "evidence": "new admission executed once; Web readiness reached; helper exit0/empty output and browser.json absent; exports0, complete journey/recipient/download/SQL associations absent"
+  },
+  "REQ-TERMINAL": {
+    "status": "BLOCKED",
+    "evidence": "raw9556bytes/hash matches, separate ACK/fourABSENT and disposalSAFE observed; child unconfirmed/snapshotmissing, no browser verification/teardown; acceptedfalse"
+  },
+  "REQ-RETURN": {
+    "status": "PASS",
+    "evidence": "exact2, actual failures/limits/custody/read order and single-program outcome retained; full frozen gate outcome detached and required before terminal handoff"
+  }
+}

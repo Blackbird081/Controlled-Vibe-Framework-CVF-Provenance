@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | qualification accepted; one fresh conditional BE-R01 grant, product acceptance open |
+| Parent maintenance | BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; fresh grant exhausted, BE-R02 remains open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_fresh_be_r01_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one new conditional fresh cap2 BE-R01 after committed bound release/external freeze/worker preimplementation; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=old grants/cap1/provider/deletion and unrelated effects, no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_fresh_be_r01_blocked_spent`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local PLAN minimal MAIN_ENTRY_CACHE_SOURCE correction under unchecked BE-S09 only; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=cap1/any runtime retry/provider/deletion separately unadmitted; no generic operator checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_fresh_be_r01_dispatched`
-Current mode: `cvf_ncr_html_fresh_be_r01_dispatched`; previous mode marker: `cvf_ncr_html_windows_qualification_accepted_bounded`
+Current mode marker: `cvf_ncr_html_fresh_be_r01_blocked_spent`
+Current mode: `cvf_ncr_html_fresh_be_r01_blocked_spent`; previous mode marker: `cvf_ncr_html_fresh_be_r01_dispatched`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_fresh_be_r01_dispatched`
+Mode: `cvf_ncr_html_fresh_be_r01_blocked_spent`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-FRESH-RUNTIME-20261016. Root selected new one-actor fresh BE-R01 under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md and docs/baselines/CVF_GC018_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md. Execute only after committed pair/currentAuthority, actual-material source6 continuity, bound pre-dispatch PASS, frozen external admission/pins/inputs/independent envelope digest and worker pre-implementation PASS. One default D.execute ordinal1/IMPLEMENTATION_WORKER/cap2/runId=ncr-be-fresh-worker-20261016-r1b, namespace D:/CVF_NCR_RUNTIME/ncr-be-fresh-worker-20261016-r1b, custody D:/CVF_NCR_RUNTIME/custody-be-fresh-20261016-b. Prep16:42Z; worker deadline18:12Z/latest launch17:54Z, Local19:42Z; work900s/cleanup120s,56work+8cleanup controlled roots,outer1080s,retry0/provider0/stageDeletion0. Refusal/ambiguous start spends new slot; no old replay/cap1/provider/deletion. Source18/accepted Windows source B/W/release immutable. Qualification cap2 actual9/26+Docker4+Local PURE10 accepted; qualification split13/6 PASS consumed from prior final-result, no rerun. BE-Q01 checked bounded; BE-R01 in-progress conditional grant remains unchecked, BE-R02 open; support8 retained. Metadata file-only preparation16:43:31Z starts0/source-tools/namespace absence/input spec join is preparation, recheck before consume. Root external freeze occurs after bound gate; pure closed-schema metadata validation adds no runtime slot. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Current continuity anchor d99f0d89d03228c487feb8e8a3980bab444018f7; no fresh runtime outcome claimed. Ordinary technical detail Local, no generic operator checkpoint.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-FRESH-RUNTIME-20261016. BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; consume docs/reviews/CVF_NCR_HTML_B_E_FRESH_RUNTIME_LOCAL_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-b-e-fresh-runtime-local-20261016.json. r1b exhausted. Next Local may PLAN minimal MAIN_ENTRY_CACHE_SOURCE correction under unchecked BE-S09, using the evidenced cached CommonJS main-entry/helper exit0 empty-log defect plus root-observed empty readiness GET405/malformed-JSON observer exception in the same existing journey owner/tests; source implementation/proof needs its concrete new order. This is not effects/retry: no new slot, cap1, provider or cleanup/deletion grant. Source18/accepted source B/W/release/qualification immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Final material/actual-SHA continuity and clean split closure pending.
 
 ## Parked Checkpoints
 
