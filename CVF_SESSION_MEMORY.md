@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | BE-S09 source support accepted bounded; BE-R01/R02 open |
+| Parent maintenance | lasting support ledger checked; bounded qualification; product B-E open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_main_entry_cache_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN separately governed changed-source qualification and fresh cap2 admission; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=old grant retry/cap1/provider/deletion; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_current_source_qualification_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=finite current-source qualification after committed bound release; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=old runtime grants retired, product/cap1/provider/deletion separate; no generic operator checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_main_entry_cache_source_accepted_bounded`
-Current mode: `cvf_ncr_html_main_entry_cache_source_accepted_bounded`; previous mode marker: `cvf_ncr_html_main_entry_cache_source_dispatched`
+Current mode marker: `cvf_ncr_html_current_source_qualification_dispatched`
+Current mode: `cvf_ncr_html_current_source_qualification_dispatched`; previous mode marker: `cvf_ncr_html_main_entry_cache_source_accepted_bounded`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_main_entry_cache_source_accepted_bounded`
+Mode: `cvf_ncr_html_current_source_qualification_dispatched`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-MAIN-ENTRY-CACHE-SOURCE-20261017. BE-S09 source support accepted bounded from two-seam worker proof/current SOURCE_IDENTITY_ONLY release and distinct Local one-Node probe; consume docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-main-entry-cache-source-local-20261017.json. Next Local plans separately governed changed-source qualification/control and fresh cap2 runtime authority; prior controls9/26 are not current-source proof. BE-R01/BE-R02 open; no automatic actual effect. Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24 unchanged. BE-R01 failed/unchecked; BE-R02 cap1 open; no prior actor replay. Actual result material e9f50dcc3194bd25e6b84ac899139da012a851d4 committed; exact6 actual-SHA continuity prepared; clean split closure pending.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-CURRENT-SOURCE-QUALIFICATION-20261017. Under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md and docs/baselines/CVF_GC018_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md, release INTERNAL_AGENT qualification worker only after bound pre-dispatch PASS and frozen invocation-envelope/pins external hashes. One actual cap2 control matrix9cases/26inert Python children, one Docker4 read-only group;2one-shot programs,90s/60s outer,12s Docker child,retry0; worker deadline19:17Z, Local20:47Z. Source13/adjunct5/frozen source authority unchanged; no fake/broad/native-seam rerun. Worker exact2 publishes after both programs; Local PURE independent receipt oracle then closure. Roadmap BE-S01..08 checked bounded support; BE-Q02 open until actual qualification, BE-R01/R02 open. Preparation inclusive start17:47Z; hard worker19:17Z/Local20:47Z. BE-S09 checked source support and historical BE-Q01 accepted remain retained. No product/cap1/provider/deletion or old grant replay; gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and parked states retained. Ordinary details Local; no generic operator checkpoint. Qualification material b3c6cfb55e089dc3e93735a5394fba37328cf2bc; source6 records the actual material anchor before worker release.
 
 ## Parked Checkpoints
 
