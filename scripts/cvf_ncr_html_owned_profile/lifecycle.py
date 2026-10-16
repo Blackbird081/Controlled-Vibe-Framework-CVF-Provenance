@@ -13,6 +13,7 @@ from ctypes import wintypes as W
 from pathlib import Path
 
 from .execution import argv_evidence, bounded, bounded_communicate, completion, dumps, sha
+from .source_release import check_disposable, no_reparse
 
 JOB_LIMIT, ACTIVE, BREAKAWAY, SILENT, KILL_CLOSE, EXTENDED = 32, 0x8, 0x800, 0x1000, 0x2000, 9
 
@@ -29,30 +30,6 @@ def parse_docker_ids(raw):
     if any(not re.fullmatch(r"[a-f0-9]{64}", r) for r in rows):
         raise RuntimeError("Docker query was malformed, not proof of absence")
     return set(rows)
-
-
-def no_reparse(path: Path):
-    if path.is_symlink() or (path.exists() and getattr(path.lstat(), "st_file_attributes", 0) & 0x400):
-        raise RuntimeError(f"reparse path refused: {path.name}")
-
-
-def check_disposable(stage: Path, namespace: Path, dependency=None):
-    """Modeled disposal eligibility only: verify the exact target and the dependency link identity. Nothing is ever deleted here;
-    actual deletion is a separate future admitted action that must cite accepted terminal evidence."""
-    no_reparse(namespace)
-    no_reparse(stage)
-    if stage.resolve() != namespace.resolve() / "source" or not (namespace / "owner.json").is_file():
-        raise RuntimeError("unsafe disposal target")
-    link = None
-    if dependency:
-        link, target = dependency
-        if link.exists() and (link.resolve() != target.resolve() or not link.is_relative_to(stage)):
-            raise RuntimeError("dependency link identity changed")
-    for base, dirs, files in os.walk(stage, followlinks=False):
-        for name in dirs + files:
-            if Path(base) / name != link:  # the one admitted junction is identity-checked above and never traversed
-                no_reparse(Path(base) / name)
-    return True
 
 
 def child_evidence(read, exit_code, claim):

@@ -187,7 +187,7 @@ def run(namespace, image, *, inputs=None, cap=2, controls_receipt=None, controls
         thread.start()
         guard = P.ROOT / P.JOURNEY
         egress_log = custody / "egress.jsonl"
-        env.update({"NODE_ENV": "development", "NODE_OPTIONS": f'--require "{guard}"', "CVF_HCR_EGRESS_LOG": str(egress_log),
+        env.update({"NODE_ENV": "development", "NODE_OPTIONS": P.node_preload_options(guard), "CVF_HCR_EGRESS_LOG": str(egress_log),
             "CVF_NCR_ALLOWED_PORTS": json.dumps(ops.ports), "NEXT_TELEMETRY_DISABLED": "1", "AUTH_URL": base, "NEXTAUTH_URL": base,
             "AUTH_SECRET": secrets.token_hex(24), "NEXTAUTH_SECRET": secrets.token_hex(24), "CVF_SERVICE_TOKEN": "synthetic-ncr-" + secrets.token_hex(24),
             "CVF_STORAGE_ADAPTER_TYPE": "file", "CVF_CONTROL_PLANE_EVENTS_PATH": str(events), "GOVERNANCE_ENGINE_ENABLED": "true",

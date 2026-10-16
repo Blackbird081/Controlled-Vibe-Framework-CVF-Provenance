@@ -20,8 +20,8 @@ ROOT = owned.P.ROOT
 SOURCES = ("scripts/cvf_ncr_html_effect_fence.py", "scripts/run_cvf_ncr_html_effect_driver.py",
            "scripts/test_cvf_ncr_html_effect_driver.py", "scripts/cvf_ncr_html_browser_fence.cjs",
            "scripts/cvf_ncr_html_browser_fence.test.cjs")
-RELEASE = "docs/reviews/evidence/ncr-html-source-release-20261016.json"
-RELEASE_SHA = "d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5"
+RELEASE = 'docs/reviews/evidence/ncr-html-windows-source-release-20261016.json'
+RELEASE_SHA = 'ab30a0de37c4f93832117833f1e7093d9a97c2f3e8d08ae7325f0047230cfc9c'
 CHROME = {"path": r"C:\Users\DELL\AppData\Local\ms-playwright\chromium-1208\chrome-win64\chrome.exe",
           "sha256": "ff0c99fc5bb2301cad77930aa76e5354cf2a5fefb7efdcf3b3bc10ba0550c015"}
 DOCKER = {"context": "desktop-linux", "endpoint": "npipe:////./pipe/dockerDesktopLinuxEngine",
@@ -227,8 +227,8 @@ def installed_fences(policy, pins, persist_attempt, *, api_factory=None, popen=N
                         raw, location = canonical(binding), str(self.c.custody / "browser-binding.json")
                         io.write(location, raw)
                         env = dict(kwargs["env"])
-                        require(env.get("NODE_OPTIONS") == f'--require "{argv[7]}"', "existing preload mismatch")
-                        env["NODE_OPTIONS"] += f' --require "{binding["preload"]["path"]}"'
+                        require(env.get("NODE_OPTIONS") == owned.P.node_preload_options(argv[7]), "existing preload mismatch")
+                        env["NODE_OPTIONS"] = owned.P.node_preload_options(argv[7], binding["preload"]["path"])
                         env.update({KEYS[0]: location, KEYS[1]: digest(raw)})
                         kwargs["env"] = env
                         policy["binding"] = binding

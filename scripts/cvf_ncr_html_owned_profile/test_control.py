@@ -190,7 +190,7 @@ def scratch(request):
 def effects(monkeypatch, scratch):
     hits = []
     pins = json.loads((P.ROOT / P.PINS).read_bytes())
-    pins["sourcePins"].update({p: E.sha((P.ROOT / p).read_bytes()) for p in P.HELPERS})
+    pins["sourcePins"].update({p: E.sha((P.ROOT / p).read_bytes()) for p in pins["sourcePins"].keys() | set(P.HELPERS)})
     (scratch / "released-pins.json").write_text(json.dumps(pins), encoding="utf-8")  # hash map, not redactable evidence; historical bytes untouched
     monkeypatch.setattr(P, "PINS", str(scratch / "released-pins.json"))
     sentinel = lambda name: lambda *_a, **_k: (hits.append(name), (_ for _ in ()).throw(AssertionError("effect: " + name)))  # an ordinary Exception, as the run reports it

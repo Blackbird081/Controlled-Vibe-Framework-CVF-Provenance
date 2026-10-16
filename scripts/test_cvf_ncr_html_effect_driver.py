@@ -1,7 +1,12 @@
-"""Focused in-process models only: no native, subprocess, network or provider effects."""
+"""Pure boundary models plus explicitly selected, finite owned Windows fixtures; no product/provider effects."""
 import copy
 import json
+import os
+import stat
+import subprocess
 import threading
+import time
+import uuid
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -290,3 +295,251 @@ def test_terminal_and_browser_joins_are_required(model):
     io.write("fake-observation", F.canonical(observation))
     with pytest.raises(ValueError): D._terminal_join({"terminal": terminal}, policy, io)
     assert terminal == before
+
+
+@pytest.mark.parametrize("name", ['relative.cjs', 'C:relative.cjs', 'bad"name', 'bad\x00name', 'bad\rname', 'bad\nname'])
+def test_preload_renderer_refuses_ambiguous_paths(name):
+    with pytest.raises((ValueError, OSError)):
+        F.owned.P.node_preload_options(name if name in ('relative.cjs', 'C:relative.cjs') else F.ROOT / name)
+
+
+def test_preload_renderer_preserves_identity_and_order():
+    first, second = F.ROOT / "space \u0111" / "one.cjs", F.ROOT / "two.cjs"
+    assert F.owned.P.node_preload_options(first, second) == f'--require "{first.as_posix()}" --require "{second.as_posix()}"'
+    with pytest.raises(ValueError): F.owned.P.node_preload_options()
+    assert F.owned.P.S.AUTHORITY == {
+        "docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md"}
+    assert len(F.owned.P.HELPERS) == 13 and len(F.SOURCES) == 5
+
+
+@pytest.mark.parametrize("mutation", [None, "old", "extra", "order", "missing", "helper", "cap", "inputs"])
+def test_actual_helper_spawn_captures_only_canonical_preloads(model, monkeypatch, mutation):
+    io, pins, admission, inputs, _ = model
+    captured = []
+    class API:
+        def create_job(self): return 1
+        def set_limits(self, *_): pass
+        def query_limits(self, *_): return {"active": 32, "killOnClose": True, "breakaway": False, "silentBreakaway": False}
+        def assign(self, *_): pass
+        def identity(self, pid, _): return {"pid": pid}
+        def resume(self, *_): pass
+    def spawn(argv, **kw):
+        captured.append((argv, kw))
+        return SimpleNamespace(pid=7, _handle=7)
+    monkeypatch.setattr(F.owned.Native, "_record", lambda self: None)
+    policy = {"io": io, "invocation": admission["invocation"], "inputs": inputs}
+    journey, preload = pins["helpers"]["journey"]["path"], str(F.ROOT / F.SOURCES[3])
+    argv = ["node", pins["helpers"]["entry"]["path"], pins["modules"]["path"], "unused", "unused", "unused", "owned-profile", journey, "config"]
+    config = {"cap": admission["invocation"]["cap"], "inputs": inputs, "browserProfile": "unused"}
+    env = {"NODE_OPTIONS": F.owned.P.node_preload_options(journey)}
+    if mutation == "old": env["NODE_OPTIONS"] = f'--require "{journey}"'
+    if mutation == "extra": env["NODE_OPTIONS"] += ' --trace-warnings'
+    if mutation == "order": env["NODE_OPTIONS"] = F.owned.P.node_preload_options(preload, journey)
+    if mutation == "missing": env.clear()
+    if mutation == "helper": argv[7] = str(F.ROOT / "other.cjs")
+    if mutation == "cap": config["cap"] = 1
+    if mutation == "inputs": config["inputs"] = []
+    io.write("config", F.canonical(config))
+    with F.installed_fences(policy, pins, lambda row: None, api_factory=API, popen=spawn) as ledger:
+        collector = F.owned.E.Collector(Path("unused"), proto=F.owned.PR.Protocol(clock=lambda: 0).start())
+        native = F.owned.Native(collector, [], Path("unused"), Path("unused"))
+        if mutation and not (mutation == "old" and "\\" not in journey):
+            with pytest.raises(ValueError): native.launch(argv, cwd="unused", env=env, stdout=None)
+            assert captured == [] and ledger.work == 0
+        else:
+            native.launch(argv, cwd="unused", env=env, stdout=None)
+            actual = captured[0][1]["env"]
+            assert actual["NODE_OPTIONS"] == F.owned.P.node_preload_options(journey, preload)
+            assert actual[F.KEYS[1]] == F.digest(io.read(actual[F.KEYS[0]]))
+            assert env == {"NODE_OPTIONS": F.owned.P.node_preload_options(journey)}
+            assert ledger.work == 1
+
+
+def disposal_tree(root):
+    namespace, shared = root / "namespace", root / "shared"
+    stage = namespace / "source"
+    link = stage / F.owned.P.WEB / "node_modules"
+    link.parent.mkdir(parents=True)
+    shared.mkdir()
+    (namespace / "owner.json").write_text('{}', encoding="utf-8")
+    return stage, namespace, link, shared
+
+
+@pytest.fixture
+def disposal_model(monkeypatch):
+    root = F.ROOT / ".cvf/runtime/ncr-source-admission-20261016/worker" / ("worker-disposal-" + uuid.uuid4().hex)
+    stage, namespace, link, shared = disposal_tree(root)
+    link.mkdir()
+    original_stat, original_resolve = Path.lstat, Path.resolve
+    state = {"attributes": 0x400, "tag": 0xA0000003, "mode": stat.S_IFDIR, "target": shared, "hostile": None}
+    def lstat(path, *a, **kw):
+        info = original_stat(path, *a, **kw)
+        if path == link:
+            return SimpleNamespace(st_mode=state["mode"], st_file_attributes=state["attributes"], st_reparse_tag=state["tag"])
+        if path == state["hostile"]:
+            return SimpleNamespace(st_mode=info.st_mode, st_file_attributes=0x400)
+        return info
+    def resolve(path, *a, **kw):
+        return state["target"] if path == link else original_resolve(path, *a, **kw)
+    monkeypatch.setattr(Path, "lstat", lstat)
+    monkeypatch.setattr(Path, "resolve", resolve)
+    return stage, namespace, link, shared, state
+
+
+def test_verified_dependency_is_pruned_before_scandir(disposal_model, monkeypatch):
+    stage, namespace, link, target, _ = disposal_model
+    original, visited = os.scandir, []
+    def scandir(path):
+        path = Path(path)
+        assert path != link and not path.is_relative_to(target)
+        visited.append(path)
+        return original(path)
+    monkeypatch.setattr(os, "scandir", scandir)
+    assert F.owned.P.S.check_disposable(stage, namespace, (link, target))
+    assert link.parent in visited and link not in visited
+    assert F.owned.no_reparse is F.owned.P.S.no_reparse
+    F.owned.no_reparse(namespace / "future-destination")
+
+
+@pytest.mark.parametrize("case", ["ordinary", "symlink", "wrong-tag", "retargeted", "escape", "missing-target",
+    "wrong-stage", "owner", "ancestor", "unknown-dir", "unknown-file", "unadmitted", "walk-error", "missing-link"])
+def test_disposal_identity_containment_and_refusal(disposal_model, monkeypatch, case):
+    stage, namespace, link, target, state = disposal_model
+    dependency = (link, target)
+    if case == "ordinary": state["attributes"] = 0
+    if case == "symlink": state["mode"], state["tag"] = stat.S_IFLNK, 0xA000000C
+    if case == "wrong-tag": state["tag"] = 7
+    if case == "retargeted": state["target"] = namespace
+    if case == "escape": dependency = (namespace / "node_modules", target)
+    if case == "missing-target": dependency = (link, namespace / "missing")
+    if case == "wrong-stage": stage = namespace
+    if case == "owner": state["hostile"] = namespace / "owner.json"
+    if case == "ancestor": state["hostile"] = link.parent
+    if case in ("unknown-dir", "unknown-file"):
+        state["hostile"] = stage / "unexpected"
+        if case == "unknown-dir": state["hostile"].mkdir()
+        else: state["hostile"].write_text("fixture", encoding="utf-8")
+    if case == "unadmitted": dependency = None
+    if case == "walk-error":
+        def walk(*a, **kw): kw["onerror"](OSError("fixture walk refusal"))
+        monkeypatch.setattr(os, "walk", walk)
+    if case == "missing-link":
+        original = Path.lstat
+        def missing(path, *a, **kw):
+            if path == link: raise FileNotFoundError("fixture missing link")
+            return original(path, *a, **kw)
+        monkeypatch.setattr(Path, "lstat", missing)
+    with pytest.raises((RuntimeError, OSError)):
+        F.owned.P.S.check_disposable(stage, namespace, dependency)
+
+
+@pytest.fixture(scope="module")
+def windows_fixture():
+    if os.name != "nt" or os.environ.get("CVF_NCR_WINDOWS_FIXTURE_ROLE") != "WORKER":
+        pytest.skip("separately selected Windows worker fixture admission required")
+    custody = F.ROOT / ".cvf/runtime/ncr-windows-source-20261016"
+    pins = json.loads((custody / "native-tool-pins.json").read_bytes())
+    for tool in pins.values():
+        assert F.digest(Path(tool["path"]).read_bytes()) == tool["sha256"], "native tool drift"
+    root = custody / "worker-native" / ("fixture-" + uuid.uuid4().hex)
+    root.mkdir(parents=True)
+    ledger = {"owner": "INTERNAL_AGENT_WORKER", "root": str(root), "retainedReason": "source proof; no deletion admitted",
+              "nodeStarts": 0, "cmdStarts": 0, "attempts": [], "failed": False, "observations": {}}
+    ledger_path = custody / "worker-native-budget.json"
+    with ledger_path.open("x", encoding="utf-8") as output: json.dump(ledger, output)
+    payload = root / "space \u0111"
+    payload.mkdir()
+    first, second, script = [payload / name for name in ("journey.cjs", "browser.cjs", "assert.cjs")]
+    first.write_text("global.__cvfLoads=['journey'];\n", encoding="utf-8")
+    second.write_text("global.__cvfLoads.push('browser');\n", encoding="utf-8")
+    script.write_text("require('node:assert/strict').deepEqual(global.__cvfLoads,JSON.parse(process.argv[2]));process.stdout.write('CVF_PRELOAD_OK\\n');\n", encoding="utf-8")
+    started = time.monotonic()
+    def save(): ledger_path.write_text(json.dumps(ledger, indent=2), encoding="utf-8")
+    def check(condition):
+        if not condition:
+            ledger["failed"] = True
+            save()
+        assert condition
+    def run(tool, args, *, options=None, expected_failure=False):
+        assert not ledger["failed"] and time.monotonic() - started < 120, "native suite stopped/exhausted"
+        key, limit = ("nodeStarts", 3) if tool == "node" else ("cmdStarts", 5)
+        assert ledger[key] < limit
+        ledger[key] += 1
+        row = {"tool": tool, "argv": [pins[tool]["path"], *map(str, args)], "timeout": 10, "state": "STARTING"}
+        ledger["attempts"].append(row)
+        save()
+        env = {k: v for k, v in os.environ.items() if k.upper() in F.owned.P.SAFE_ENV}
+        if options is not None: env["NODE_OPTIONS"] = options
+        try:
+            result = subprocess.run(row["argv"], env=env, cwd=root, capture_output=True, text=True, encoding="utf-8", errors="replace",
+                                    timeout=min(10, 120 - (time.monotonic() - started)))
+            row.update(state="FINISHED", exit=result.returncode, stdout=result.stdout, stderr=result.stderr)
+            if result.returncode and not expected_failure: ledger["failed"] = True
+            save()
+            assert expected_failure or result.returncode == 0, row
+            return result
+        except BaseException:
+            ledger["failed"] = True
+            save()
+            raise
+    yield SimpleNamespace(root=root, ledger=ledger, run=run, first=first, second=second, script=script, save=save, check=check)
+    ledger["elapsedSeconds"] = time.monotonic() - started
+    save()
+    assert ledger["elapsedSeconds"] < 120
+
+
+def test_windows_original_preload_regression(windows_fixture):
+    w = windows_fixture
+    result = w.run("node", [w.script, '["journey"]'], options=f'--require "{w.first}"', expected_failure=True)
+    w.ledger["observations"]["originalPreload"] = "UNEXPECTED_SUCCESS_DISCLOSED" if result.returncode == 0 else "ORIGINAL_LOCATOR_FAILURE"
+    w.save()
+    w.check(result.returncode == 0 or "MODULE_NOT_FOUND" in result.stderr)
+
+
+def test_windows_canonical_single_preload(windows_fixture):
+    w = windows_fixture
+    result = w.run("node", [w.script, '["journey"]'], options=F.owned.P.node_preload_options(w.first))
+    w.check(result.stdout == "CVF_PRELOAD_OK\n")
+
+
+def test_windows_canonical_ordered_preloads(windows_fixture):
+    w = windows_fixture
+    result = w.run("node", [w.script, '["journey","browser"]'], options=F.owned.P.node_preload_options(w.first, w.second))
+    w.check(result.stdout == "CVF_PRELOAD_OK\n")
+
+
+def test_windows_junction_prune_and_refusal(windows_fixture, monkeypatch):
+    w = windows_fixture
+    stage, namespace, link, target = disposal_tree(w.root / "junctions")
+    sentinel = w.root / "sentinel"
+    sentinel.mkdir()
+    def junction(path, destination):
+        w.run("cmd", ["/d", "/c", "mklink", "/J", path, destination])
+    junction(link, target)
+    junction(target / "cvf-control-plane-foundation", sentinel)
+    original, visits = os.scandir, []
+    def guarded(path):
+        path = Path(path)
+        assert path != link and not path.is_relative_to(target) and not path.is_relative_to(sentinel), "shared descent refused before enumeration"
+        visits.append(str(path))
+        return original(path)
+    monkeypatch.setattr(os, "scandir", guarded)
+    with pytest.raises(AssertionError, match="shared descent refused"):
+        for base, dirs, files in os.walk(stage, followlinks=False):
+            for name in dirs + files:
+                if Path(base) / name != link:
+                    F.owned.no_reparse(Path(base) / name)
+    assert F.owned.P.S.check_disposable(stage, namespace, (link, target))
+    unknown = stage / "unknown"
+    junction(unknown, sentinel)
+    with pytest.raises(RuntimeError): F.owned.P.S.check_disposable(stage, namespace, (link, target))
+    bad_stage, bad_namespace, bad_link, bad_target = disposal_tree(w.root / "wrong-target")
+    junction(bad_link, sentinel)
+    with pytest.raises(RuntimeError): F.owned.P.S.check_disposable(bad_stage, bad_namespace, (bad_link, bad_target))
+    alias = w.root / "ancestor-alias"
+    junction(alias, namespace)
+    with pytest.raises(RuntimeError): F.owned.P.S.check_disposable(alias / "source", alias, (link, target))
+    w.ledger["observations"]["junctions"] = {"legacyDescentAttempted": True, "pruned": True, "unknownRefused": True, "wrongTargetRefused": True,
+        "ancestorRefused": True, "enumerated": visits}
+    w.save()

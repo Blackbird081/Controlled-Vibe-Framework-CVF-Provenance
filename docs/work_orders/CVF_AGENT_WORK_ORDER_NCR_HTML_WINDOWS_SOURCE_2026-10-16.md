@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: REVIEWER_ACCEPTED_ROOT_REPAIRED_SOURCE_BOUNDED
 Date: 2026-10-16
 Batch ID: CVF-NCR-HTML-WINDOWS-SOURCE-20261016
 Dispatch inspection base: 84f4a321e48224e37debc1573906ef7999b6ed9e
@@ -49,6 +49,62 @@ INTERNAL_AGENT worker exact8 only, no stage/commit. Local root owns source revie
 | scripts/cvf_ncr_html_owned_profile/test_admission.py; scripts/cvf_ncr_html_owned_profile/test_control.py; test_execution.py | REQ-04 MANDATORY | real current tests, missing-path compatibility and identity contracts |
 | Actual full fast-gate composition and output predicates; existing return scaffold helper | REQ-05 MANDATORY | complete return shape before implementation |
 | Existing October16 O10-O14 learning and finite native tool pins | REQ-03/05 MANDATORY | real Windows seams, finite effects and honest outcomes |
+
+## Local Reviewer Repair Amendment
+
+
+Repair owner: Local reviewer/closer. Route: REVIEWER_LOCAL_REPAIR. This is a root-only scope amendment of the earlier selected6 source/test limit, not a worker redispatch or retroactive worker authorization.
+
+Locked repair scope: add only `scripts/cvf_ncr_html_owned_profile/test_control.py` to the root final source/material manifest. Within the existing synthetic `effects` fixture, refresh all existing declared pins against the current synthetic test inputs, including nonhelper pins omitted by the old helper-only refresh. Preserve the production historical P.PINS bytes/meaning and production source-admission refusal. Do not widen pin membership, weaken refusal, alter production admission, edit another source path, add a new fixture owner or refresh historical canonical evidence.
+
+Named cause/information gain: worker isolated pure group reported434PASS/1FAIL/4deselected; the reported failure is the synthetic fixture's stale nonhelper learning-document pin. The focused root check establishes whether that fixture-only repair resolves this exact admission-before-effects contradiction; it is separate from worker proof. Root confirms the actual failure/test identity from terminal returned evidence before editing.
+
+Root-only verification command once:
+
+`python -B -m pytest scripts/cvf_ncr_html_owned_profile/test_control.py -q -k TestAdmissionBeforeEffects`
+
+Pure/inert environment: CVF_LOCAL_REPAIR_SUBSTITUTE != subprocess; CVF_NCR_ALLOWED_PORTS and CVF_HCR_EGRESS_LOG absent. Existing authorized newly random synthetic children only. No native fixture rerun or program-start budget expansion. Record exact selected/pass/fail counts, elapsed time, exit and log SHA256; zero selected tests is not acceptance. A failed focused result returns to Local disposition; no automatic broader suite or second invocation.
+
+Worker ledger remains exact8/five rows with REQ-04 BLOCKED and Status BLOCKED_WITH_REASON. Preserve original434PASS/1FAIL/4deselected and worker closeability contradiction in original evidence. Root fixture repair and focused acceptance are separate Local evidence, never a rewritten worker PASS or assertion that the original full pure group passed. Root may report the original failed case's fixture cause resolved only if the focused real group supplies that evidence.
+
+Source13/adjunct5 membership remains fixed, union18. Root final selected code/test paths become7 and the other11 family paths remain unchanged; test_control.py receives a new current raw hash. Regenerate final source release/current identity joins after this edit and after accepted B/W amendment bytes are frozen. Preserve immutable old releases/retired B-E authorities/negative stage and custody. No final release digest/source-hash back-edge in frozen B/W.
+
+Operator authorization: current autonomous source correction and standing Local reviewer repair/closure authority; no new generic operator checkpoint. Rollback boundary: fixture-only test_control.py diff plus this declared amendment/current task closure metadata; preserve original worker bytes, historical production pins, old evidence/retired grants, parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and parked effects. No product/runtime/provider/public/deploy/deletion grant.
+
+Root repair result: 23 passed, 34 deselected in 1.25s; exit0; elapsedSeconds=2.125; raw logSHA256 a9f359bdcc5a533ae6840090488901da5f1a957250c6fb77854eafee800dc057.
+Root final technical source disposition: LOCAL_FIXTURE_CAUSE_RESOLVED; original worker ledger remains blocked; final source identity and independent oracle recorded separately in fixed Local closure paths.
+
+### Exact Root Final Material Manifest
+
+- `scripts/cvf_ncr_html_owned_profile/__init__.py`
+- `scripts/cvf_ncr_html_owned_profile/profile.py`
+- `scripts/cvf_ncr_html_owned_profile/lifecycle.py`
+- `scripts/cvf_ncr_html_owned_profile/source_release.py`
+- `scripts/cvf_ncr_html_effect_fence.py`
+- `scripts/test_cvf_ncr_html_effect_driver.py`
+- `docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_WORKER_RETURN_2026-10-16.md`
+- `docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json`
+- `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md`
+- `docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md`
+- `docs/reviews/evidence/ncr-html-windows-source-local-20261016.json`
+- `docs/reviews/evidence/ncr-html-windows-source-release-20261016.json`
+- `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `scripts/cvf_ncr_html_owned_profile/test_control.py`
+
+Exact20 root material only. The original worker manifest stays8. Following actual-material-SHA continuity stays exact6.
+
+
+
+
+### Local Named Fixture Follow-Up Disposition
+
+First Local focused group22PASS/1FAIL/34deselected: the proposed refresh-only loop inadvertently omitted current helper keys that the original fixture added. Historical old pin document does not contain every current source13 helper. Local rejects that candidate, preserves its failed log, and refines the one-line synthetic repair to refresh the union of existing historical keys and P.HELPERS, matching original fixture membership plus current bytes. No production pin, source family membership or refusal changes. Before another invocation, Local expressly admits exactly one focused repeat of the same23-case admission group, no broad/native rerun, for this named missing-helper contradiction. No further automatic retry. Root final acceptance remains dependent on actual outcome; first failure retained.
 
 ## Locked Action Contract
 
@@ -728,3 +784,7 @@ Private source correction; no public catalog/export.
 ## Claim Boundary
 
 Source-only correction and finite synthetic proof, never old B-E retry/acceptance. Preserve original1spent/2retired; parent generation9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions/LHW24; R1/R2partial,R3/R4open,R5/R6deferred. This INITIAL source implementation grants no old runtime retry or B-E acceptance.
+
+## Local Source Disposition
+
+Worker return remains BLOCKED_WITH_REASON with REQ-04 BLOCKED and first pure434PASS/1FAIL/4deselected retained. Local amended only the existing synthetic admission fixture, verified its admission-before-effects group, and separately accepts the bounded corrected source. Worker fulfillment is not relabelled. Current fixed closure/evidence paths carry final Local probe and identity evidence; SOURCE_IDENTITY_ONLY grants no product runtime. This frozen authority deliberately embeds no final release digest or final source hashes.

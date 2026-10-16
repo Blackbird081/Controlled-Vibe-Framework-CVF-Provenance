@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Consolidated source-only worker exact8; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md. Root final release/binding/closure remains a separate Local lane after worker return. No retained old stage/custody/release mutation or disposal. Product B-E remains unaccepted.
+Worker exact8/five-row return preserved BLOCKED_WITH_REASON. Local reviewed source seams, repaired only the synthetic test_control fixture under explicit amendment, and owns final selected7/source13/adjunct5/union18 identity and independent oracle. Material exact20, following actual-SHA continuity exact6. docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md; docs/reviews/evidence/ncr-html-windows-source-local-20261016.json. No old stage/custody/release mutation or product effect.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_windows_source_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute one consolidated source-only correction under committed pair and bound gates; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=old runtime grants retired, product/provider/deletion and unrelated effects parked, no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_windows_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=complete material/actual-SHA continuity then current-source qualification planning; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=LOCAL_CLOSURE; decision owner=LOCAL; parked checkpoint=old grants retired and product/effect admission separate, no generic operator checkpoint.
 
 ## Current Mode
 
-`cvf_ncr_html_windows_source_dispatched`. Worker source correction and finite synthetic Windows fixtures released only after bound pre-dispatch PASS. Gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; old runtime1spent/2retired.
+`cvf_ncr_html_windows_source_accepted_bounded`. Bounded source/native proof and Local fixture repair; final material and clean metadata admission pending. Original worker REQ04BLOCKED retained; no product B-E acceptance.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md` SHA256 `c63d94eab84910808ae703821f28bb82eee4658f621a6cca9c5182266330e263`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md` SHA256 `5d0217866d82f8268af09ddcdc377490ed66c9912b1e04bfacaffbca2a43edad`. Source-only grant, finite test fixture effects; no product runtime.
+Baseline `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md` SHA256 `ccd4e247ff6aac95b3b53040d449d67505394b7da504ddbd87b43ecdf0f3cf6b`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md` SHA256 `f9367246a646efb81ef42308007a016031ee690b4f57b7c050cbffd555a788c8`. Frozen bounded source authority with Local fixture amendment; no runtime grant.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-WINDOWS-SOURCE-20261016. Local releases INTERNAL_AGENT source worker under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md and docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md at material 6aab58dadf64a31b90edddcb19af15f28c8b1eb2. Worker exact6 planned code/test plus return/evidence2, no commit; one consolidated Windows preload/strict adjunct and verified-junction pruning/refusal correction. Read accepted PLAN and required owners. One pure Python group; exact native fixture suite once max3Node/5mklink,10seconds/child,120seconds total,retry0. Local separate1Node/2mklink,60seconds. Root later freezes accepted B/W bytes, creates new SOURCE_IDENTITY_ONLY release, binds only F release constants and final identity proof after worker lane returns. No source edits by Local during active lane. No old runtime replay, product/browser/Docker/provider/network/deletion. Old1spent/2retired, gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 retained; no generic operator checkpoint.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-WINDOWS-SOURCE-QUALIFICATION-20261016. Consume docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-windows-source-local-20261016.json. Bounded Windows source correction and Local synthetic fixture repair accepted; original worker pure434PASS/1FAIL and REQ04BLOCKED retained, focused root admission group resolved its fixture cause. New SOURCE_IDENTITY_ONLY release is not product runtime admission. Final material/actual-SHA continuity and clean source-admission metadata proof pending. Next Local plans current-source qualification/control/readiness and fresh independent runtime admission against NEW identity. Old1spent/2retired never replayed. Gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged. No product/browser/Docker/provider/network/deletion effect or generic operator checkpoint.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -72,54 +72,82 @@ Current material `6aab58dadf64a31b90edddcb19af15f28c8b1eb2`: normal automatic co
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: paired authority raw hashes, current source-only mode/next and material SHA align across source/generated startup.
+Atomicity reason: accepted current authority, selected7 source identity, final F binding, new release and Local proof must align with raw-hash source/generated continuity.
 
 Exact changed manifest:
 
+- `scripts/cvf_ncr_html_owned_profile/__init__.py`
+- `scripts/cvf_ncr_html_owned_profile/profile.py`
+- `scripts/cvf_ncr_html_owned_profile/lifecycle.py`
+- `scripts/cvf_ncr_html_owned_profile/source_release.py`
+- `scripts/cvf_ncr_html_effect_fence.py`
+- `scripts/test_cvf_ncr_html_effect_driver.py`
+- `docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_WORKER_RETURN_2026-10-16.md`
+- `docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json`
+- `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md`
+- `docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md`
+- `docs/reviews/evidence/ncr-html-windows-source-local-20261016.json`
+- `docs/reviews/evidence/ncr-html-windows-source-release-20261016.json`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `scripts/cvf_ncr_html_owned_profile/test_control.py`
 
-Rollback boundary: listed six continuity paths only.
+Rollback boundary: exact listed20; following actual-material continuity6 separate.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 mode/next/currentAuthority raw-hash continuity and canonical generation only.
+Authorized guard-maintenance scope: final selected7 source/test, original worker8 return, frozen pair/new release/Local closure and source-generated continuity.
 Protected paths:
+- `scripts/cvf_ncr_html_owned_profile/__init__.py`
+- `scripts/cvf_ncr_html_owned_profile/profile.py`
+- `scripts/cvf_ncr_html_owned_profile/lifecycle.py`
+- `scripts/cvf_ncr_html_owned_profile/source_release.py`
+- `scripts/cvf_ncr_html_effect_fence.py`
+- `scripts/test_cvf_ncr_html_effect_driver.py`
+- `docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_WORKER_RETURN_2026-10-16.md`
+- `docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json`
+- `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md`
+- `docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md`
+- `docs/reviews/evidence/ncr-html-windows-source-local-20261016.json`
+- `docs/reviews/evidence/ncr-html-windows-source-release-20261016.json`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current next and standing Local roadmap/orchestrator/reviewer/continuity authority.
-Rollback boundary: exact six paths, no product/native effect, old runtime/evidence, counters/freeze/exclusions or parked lane change.
+- `scripts/cvf_ncr_html_owned_profile/test_control.py`
+Operator authorization: standing autonomous Local source repair/review/closure/steward authority.
+Rollback boundary: exact20 only; original records/old pins/effects and other11 source paths unchanged.
 
 ## Agent Operation Trace Block
 
 | Field | Value |
 |---|---|
-| Actor | Local INTERNAL_AGENT orchestrator/reviewer/session-sync steward |
+| Actor | Local INTERNAL_AGENT orchestrator/reviewer/closer |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-windows-source-dispatch-continuity-20261016 |
+| Session or invocation | ncr-windows-source-local-material-20261016 |
 | Working directory | repository root |
-| Command or tool surface | source6 edits, canonical generation, explicit staged/gated normal continuity commit |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator next and standing Local roadmap/continuity authority |
-| Before status evidence | material 6aab58dadf64a31b90edddcb19af15f28c8b1eb2 committed, clean worktree/stage empty |
-| After status evidence | current raw pair/mode/next and actual material SHA synchronized |
-| Diff evidence | exact6 manifest; no product/runtime acceptance |
-| Approval boundary | source-only work; old runtime/effects not reopened |
-| Claim boundary | startup continuity only |
+| Command or tool surface | consume worker proof; Local amendment/fixture group/native oracle; final source identity and checked normal commit |
+| Target paths | `scripts/cvf_ncr_html_owned_profile/__init__.py`; `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/lifecycle.py`; `scripts/cvf_ncr_html_owned_profile/source_release.py`; `scripts/cvf_ncr_html_effect_fence.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json`; `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-source-local-20261016.json`; `docs/reviews/evidence/ncr-html-windows-source-release-20261016.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `scripts/cvf_ncr_html_owned_profile/test_control.py` |
+| Allowed scope source | operator next and standing Local review/repair/closure authority |
+| Before status evidence | HEAD 2f48b11d47d8206425544002345b0159b26f3283; terminal exact8 preserved, no worker commit |
+| After status evidence | bounded source accepted; final material/actual-SHA continuity and clean admission metadata proof pending |
+| Diff evidence | exact20 material |
+| Approval boundary | source-only and finite synthetic fixtures; no product/effect successor |
+| Claim boundary | source behavior only; worker initial failure retained |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-windows-source-dispatch-continuity-20261016 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH six continuity paths |
-| Deletion or rename disposition | none; prior custody and task-owned synthetic proof retained under Local |
+| Invocation ID | ncr-windows-source-local-material-20261016 |
+| Expected manifest | `scripts/cvf_ncr_html_owned_profile/__init__.py`; `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/lifecycle.py`; `scripts/cvf_ncr_html_owned_profile/source_release.py`; `scripts/cvf_ncr_html_effect_fence.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json`; `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-source-local-20261016.json`; `docs/reviews/evidence/ncr-html-windows-source-release-20261016.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `scripts/cvf_ncr_html_owned_profile/test_control.py` |
+| Actual changed set | `scripts/cvf_ncr_html_owned_profile/__init__.py`; `scripts/cvf_ncr_html_owned_profile/profile.py`; `scripts/cvf_ncr_html_owned_profile/lifecycle.py`; `scripts/cvf_ncr_html_owned_profile/source_release.py`; `scripts/cvf_ncr_html_effect_fence.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json`; `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-source-local-20261016.json`; `docs/reviews/evidence/ncr-html-windows-source-release-20261016.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `scripts/cvf_ncr_html_owned_profile/test_control.py` |
+| Manifest delta | MATCH exact20 |
+| Deletion or rename disposition | none; synthetic roots retained under Local |
 
 ## Claim Boundary
 

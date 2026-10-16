@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import stat
 from pathlib import Path
@@ -13,8 +14,8 @@ PROFILE = "NCR_HTML_OWNED_SYNTHETIC_FRESH_SOURCE_V1"
 KEYS = {"schemaVersion", "profile", "scope", "sourcePins", "productCommit", "productScopeGitObjects", "fixture", "entrypoints", "authority"}
 SPEC = "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md"
 ENTRYPOINTS = {"scripts/probe_cvf_q001_synthetic_system_chain.py", "scripts/probe_cvf_w05_browser_chain.cjs"}
-AUTHORITY = {"docs/baselines/CVF_GC018_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md",
-             "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md"}
+AUTHORITY = {"docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md",
+             "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md"}
 SCOPES = ("EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web", "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE",
           "governance/toolkit/03_CONTROL/CVF_AGENT_REGISTRY.md", "governance/toolkit/04_TESTING/CVF_SELF_UAT_DECISION_LOG.md",
           "docs/reference/CVF_GOVERNANCE_STATE_REGISTRY.json")
@@ -22,6 +23,77 @@ SCOPES = ("EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web", "EXTENSIONS/CVF_v1.6.1_G
 
 def reject(message):
     raise RuntimeError("explicit source release: " + message)
+
+
+def no_reparse(path: Path):
+    """Missing IO destinations remain allowed; any observed reparse refuses."""
+    try:
+        info = path.lstat()
+    except FileNotFoundError:
+        return
+    if stat.S_ISLNK(info.st_mode) or getattr(info, "st_file_attributes", 0) & 0x400:
+        raise RuntimeError(f"reparse path refused: {path.name}")
+
+
+def _existing_directory(path):
+    for ancestor in (path, *path.parents):
+        ancestor.lstat()  # mandatory existence here, unlike the general IO helper
+        no_reparse(ancestor)
+    if not path.is_dir():
+        raise RuntimeError("required directory missing")
+
+
+def check_disposable(stage: Path, namespace: Path, dependency=None):
+    """Read-only eligibility. Prune only the verified dependency; nothing is deleted or locked."""
+    if (not namespace.is_absolute() or not stage.is_absolute() or ".." in namespace.parts
+            or stage != namespace / "source"):
+        raise RuntimeError("unsafe disposal target")
+    _existing_directory(namespace)
+    _existing_directory(stage)
+    owner = namespace / "owner.json"
+    no_reparse(owner)
+    if not stat.S_ISREG(owner.lstat().st_mode) or stage.resolve(strict=True) != namespace.resolve(strict=True) / "source":
+        raise RuntimeError("unsafe disposal owner or stage")
+    link, target, seen = None, None, False
+    if dependency is not None:
+        link, target = map(Path, dependency)
+        if link != stage / SCOPES[0] / "node_modules" or not target.is_absolute() or ".." in target.parts:
+            raise RuntimeError("dependency lexical identity changed")
+        _existing_directory(link.parent)
+        _existing_directory(target)
+        resolved_target = target.resolve(strict=True)
+        if resolved_target.is_relative_to(namespace.resolve(strict=True)):
+            raise RuntimeError("dependency target is disposable data")
+
+        def verify_link():
+            info = link.lstat()
+            if (not stat.S_ISDIR(info.st_mode) or not getattr(info, "st_file_attributes", 0) & 0x400
+                    or getattr(info, "st_reparse_tag", None) != 0xA0000003
+                    or link.resolve(strict=True) != resolved_target):
+                raise RuntimeError("dependency junction identity changed")
+        verify_link()
+
+    def walk_error(error):
+        raise error
+
+    for base, dirs, files in os.walk(stage, topdown=True, followlinks=False, onerror=walk_error):
+        base = Path(base)
+        _existing_directory(base)
+        for name in dirs[:]:
+            child = base / name
+            if child == link:
+                verify_link()
+                dirs.remove(name)
+                seen = True
+            else:
+                child.lstat()
+                no_reparse(child)
+        for name in files:
+            (base / name).lstat()
+            no_reparse(base / name)
+    if link is not None and not seen:
+        raise RuntimeError("dependency junction was not observed")
+    return True
 
 
 def digest(value, size=64):

@@ -69,6 +69,20 @@ def git(*args):
     return subprocess.check_output(["git", *args], cwd=ROOT, timeout=30)
 
 
+def node_preload_options(*paths):
+    """Canonical Node option spelling; filesystem identity remains the caller's pinned path."""
+    options = []
+    for value in paths:
+        path = Path(value)
+        text = str(path)
+        if not path.is_absolute() or any(c in text for c in ('"', "\x00", "\r", "\n")):
+            raise ValueError("absolute unambiguous preload path required")
+        options.append('--require "' + text.replace("\\", "/") + '"')
+    if not options:
+        raise ValueError("preload path required")
+    return " ".join(options)
+
+
 def admit_sources(release_path=None, release_sha256=None):
     """Four read-only Git commands; current Local authorization/contract/evidence pins must match. Runtime needs separate admission."""
     if release_path is not None or release_sha256 is not None:

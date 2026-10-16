@@ -1,0 +1,394 @@
+{
+  "schemaVersion": "cvf.ncrHtmlWindowsSourceLocalEvidence@1",
+  "role": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "invocation": "ncr-html-windows-source-local-review-20261016",
+  "decision": "ACCEPTED_BOUNDED_SOURCE_WITH_PROCEDURE_LIMITS",
+  "workerOriginal": {
+    "returnPath": "docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_WORKER_RETURN_2026-10-16.md",
+    "returnSha256": "cf5a2d5e9e65e73bcf6bb23c2905980ebf5ad584cec91aa5a181e354d675d5c4",
+    "evidencePath": "docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json",
+    "evidenceSha256": "0ec0b3943df72fc1f21e193da3d921c9cf7b332653b136c896b9d7bc75113d71",
+    "snapshot": {
+      "base": "2f48b11d47d8206425544002345b0159b26f3283",
+      "files": {
+        "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+        "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+        "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+        "scripts/cvf_ncr_html_owned_profile/source_release.py": "62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a",
+        "scripts/cvf_ncr_html_effect_fence.py": "06916bb6259a1884686c7583f64ab88a5515640afecc7ce59e02d3cf6419400a",
+        "scripts/test_cvf_ncr_html_effect_driver.py": "578c8f10c2fea54c1dd71636109befeb680cfaa5eb608d440690635dc74725a0",
+        "docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_WORKER_RETURN_2026-10-16.md": "cf5a2d5e9e65e73bcf6bb23c2905980ebf5ad584cec91aa5a181e354d675d5c4",
+        "docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json": "0ec0b3943df72fc1f21e193da3d921c9cf7b332653b136c896b9d7bc75113d71"
+      },
+      "capturedAtUnix": 1792164407.2915232
+    },
+    "status": "BLOCKED_WITH_REASON",
+    "REQ-04": "BLOCKED",
+    "originalPure": "434PASS/1FAIL/4deselected; not rerun"
+  },
+  "rootFixtureRepair": {
+    "path": "scripts/cvf_ncr_html_owned_profile/test_control.py",
+    "change": "refresh original synthetic union of historical declared keys and current P.HELPERS; production unchanged",
+    "firstFocusedFailure": {
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "scripts/cvf_ncr_html_owned_profile/test_control.py",
+        "-q",
+        "-k",
+        "TestAdmissionBeforeEffects"
+      ],
+      "exitCode": 1,
+      "elapsedSeconds": 2.5160000000032596,
+      "logPath": ".cvf/runtime/ncr-windows-source-20261016/root-fixture-focused.log",
+      "logSha256": "ab1254381cbf6832a16fc3f3c048c9cee0a4bdd40da133bc04e634be9d1d7c5f"
+    },
+    "productionHistoricalPins": "UNCHANGED",
+    "focusedGate": {
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "scripts/cvf_ncr_html_owned_profile/test_control.py",
+        "-q",
+        "-k",
+        "TestAdmissionBeforeEffects"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 2.125,
+      "logPath": ".cvf/runtime/ncr-windows-source-20261016/root-fixture-confirmation.log",
+      "logSha256": "a9f359bdcc5a533ae6840090488901da5f1a957250c6fb77854eafee800dc057"
+    },
+    "observedSummary": "23 passed, 34 deselected in 1.25s"
+  },
+  "localNativeOracle": {
+    "schemaVersion": "cvf.ncrWindowsLocalOracle@1",
+    "role": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "invocation": "ncr-windows-local-oracle-20261016",
+    "result": "PASS",
+    "cases": {
+      "orderedPreloads": true,
+      "ambiguousPreloadsRefuse": true,
+      "verifiedJunctionPrunedWithoutTargetTraversal": true,
+      "unexpectedJunctionRefused": true,
+      "compatibilityReexport": true
+    },
+    "toolPins": {
+      "node": {
+        "path": "C:\\nvm4w\\nodejs\\node.exe",
+        "sha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636"
+      },
+      "cmd": {
+        "path": "C:\\WINDOWS\\system32\\cmd.exe",
+        "sha256": "15cd209c995b7d3009c91ca40892d5b8f1fb162f3e5f10716642ea278e8e0d7b"
+      }
+    },
+    "nativeStarts": [
+      {
+        "tool": "node",
+        "ordinal": 1,
+        "args": [
+          "-e",
+          "process.stdout.write(JSON.stringify(global.__cvfLocalOrder))"
+        ],
+        "exitCode": 0,
+        "stdoutSha256": "b64e3448a83a5b86466465080361c1a7e1157a27ddccd4b68069cb18caffb74a",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "tool": "cmd",
+        "ordinal": 2,
+        "args": [
+          "/d",
+          "/c",
+          "mklink",
+          "/J",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\local-native\\fixture-386fd980441f4720abd34b28c0ba6a9b\\owned\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\local-native\\fixture-386fd980441f4720abd34b28c0ba6a9b\\synthetic-shared"
+        ],
+        "exitCode": 0,
+        "stdoutSha256": "f547596fec4f4c15e1fc76ee1a4c27128b11ec1e93fcd49d6cbf8af1b14b20c6",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "tool": "cmd",
+        "ordinal": 3,
+        "args": [
+          "/d",
+          "/c",
+          "mklink",
+          "/J",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\local-native\\fixture-386fd980441f4720abd34b28c0ba6a9b\\owned\\source\\unknown-junction",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\local-native\\fixture-386fd980441f4720abd34b28c0ba6a9b\\synthetic-shared"
+        ],
+        "exitCode": 0,
+        "stdoutSha256": "f6fd94e610f172f8c60aa8a6fdd344c84997fe5ef0cb059591511b32ef7caa67",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "elapsedSeconds": 0.1879999999946449,
+    "fixtureRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\local-native\\fixture-386fd980441f4720abd34b28c0ba6a9b",
+    "retentionOwner": "LOCAL",
+    "retentionReason": "source-seam proof; no deletion or product runtime",
+    "visitedStageDirectories": [
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\local-native\\fixture-386fd980441f4720abd34b28c0ba6a9b\\owned\\source",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\local-native\\fixture-386fd980441f4720abd34b28c0ba6a9b\\owned\\source\\EXTENSIONS",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\local-native\\fixture-386fd980441f4720abd34b28c0ba6a9b\\owned\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\local-native\\fixture-386fd980441f4720abd34b28c0ba6a9b\\owned\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web"
+    ],
+    "sourcePins": {
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+      "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "scripts/cvf_ncr_html_owned_profile/source_release.py": "62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a",
+      "scripts/cvf_ncr_html_effect_fence.py": "8feaf4f516219119390c3cd8351da99ece0c4f8bc5049068b5d6ccac6940d4d3"
+    }
+  },
+  "preNativeImportPreparationFailure": {
+    "argv": [
+      "python",
+      "-B",
+      ".cvf/runtime/ncr-windows-source-20261016/local_oracle.py"
+    ],
+    "exitCode": 1,
+    "elapsedSeconds": 0.15600000000267755,
+    "logPath": ".cvf/runtime/ncr-windows-source-20261016/root-native-oracle.log",
+    "logSha256": "b642a6166f303b70248e00981a4d3f34e546a17711af70b7f9e0d300eec1ede8"
+  },
+  "localNativeExecution": {
+    "argv": [
+      "python",
+      "-B",
+      ".cvf/runtime/ncr-windows-source-20261016/local_oracle.py"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 0.5939999999973224,
+    "logPath": ".cvf/runtime/ncr-windows-source-20261016/root-native-admitted.log",
+    "logSha256": "1bc8950d44209862e388ee62e84164ee5e5fa08f2ad17f614f81f13991d6fbdb"
+  },
+  "identityHarnessPreparation": "First pure negative binding check correctly raised ValueError; helper initially caught RuntimeError only. Corrected exception-class assertion without source/native changes.",
+  "localOracleCodeSha256": "7b8c1fe1027ebe1759c811ecdf8eff8ab17bc658d94216316688be4c354d44a9",
+  "sourceIdentity": {
+    "result": "PASS",
+    "scope": "SOURCE_IDENTITY_ONLY",
+    "source13": {
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+      "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "scripts/cvf_ncr_html_owned_profile/source_release.py": "62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a"
+    },
+    "adjunct5": {
+      "scripts/cvf_ncr_html_effect_fence.py": "8feaf4f516219119390c3cd8351da99ece0c4f8bc5049068b5d6ccac6940d4d3",
+      "scripts/run_cvf_ncr_html_effect_driver.py": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+      "scripts/test_cvf_ncr_html_effect_driver.py": "578c8f10c2fea54c1dd71636109befeb680cfaa5eb608d440690635dc74725a0",
+      "scripts/cvf_ncr_html_browser_fence.cjs": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+      "scripts/cvf_ncr_html_browser_fence.test.cjs": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf"
+    },
+    "familyUnion18": {
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+      "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "scripts/cvf_ncr_html_owned_profile/source_release.py": "62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a",
+      "scripts/cvf_ncr_html_browser_fence.cjs": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+      "scripts/cvf_ncr_html_browser_fence.test.cjs": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+      "scripts/cvf_ncr_html_effect_fence.py": "8feaf4f516219119390c3cd8351da99ece0c4f8bc5049068b5d6ccac6940d4d3",
+      "scripts/run_cvf_ncr_html_effect_driver.py": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+      "scripts/test_cvf_ncr_html_effect_driver.py": "578c8f10c2fea54c1dd71636109befeb680cfaa5eb608d440690635dc74725a0"
+    },
+    "selected7": [
+      "scripts/cvf_ncr_html_effect_fence.py",
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/source_release.py",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "scripts/test_cvf_ncr_html_effect_driver.py"
+    ],
+    "unchanged11": [
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+        "sha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+        "lines": 258
+      },
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+        "sha256": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+        "lines": 240
+      },
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/execution.py",
+        "sha256": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+        "lines": 348
+      },
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+        "sha256": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+        "lines": 333
+      },
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/protocol.py",
+        "sha256": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+        "lines": 276
+      },
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/test_protocol.py",
+        "sha256": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+        "lines": 343
+      },
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/test_win32.py",
+        "sha256": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+        "lines": 258
+      },
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/test_admission.py",
+        "sha256": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+        "lines": 311
+      },
+      {
+        "path": "scripts/cvf_ncr_html_browser_fence.cjs",
+        "sha256": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+        "lines": 125
+      },
+      {
+        "path": "scripts/cvf_ncr_html_browser_fence.test.cjs",
+        "sha256": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+        "lines": 124
+      },
+      {
+        "path": "scripts/run_cvf_ncr_html_effect_driver.py",
+        "sha256": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+        "lines": 221
+      }
+    ],
+    "oldRecords4": [
+      {
+        "path": "docs/reviews/evidence/ncr-html-source-release-20261016.json",
+        "sha256": "d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5"
+      },
+      {
+        "path": "docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md",
+        "sha256": "42b53a83ee274be0508828dd54e958e247f94428c3a59a00c92893ea8dda29f3"
+      },
+      {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md",
+        "sha256": "bd31d45988c74b2e8e6b8e2f03547daaec2760ee65aa26e56707fafa9afcacdb"
+      },
+      {
+        "path": "docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json",
+        "sha256": "42d8cf94a55ce14b888fa1ed0db957936333ebae6f8e6079fe542de6abe8a7d7"
+      }
+    ],
+    "newRelease": {
+      "authority": {
+        "docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md": "ccd4e247ff6aac95b3b53040d449d67505394b7da504ddbd87b43ecdf0f3cf6b",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md": "f9367246a646efb81ef42308007a016031ee690b4f57b7c050cbffd555a788c8"
+      },
+      "releasePath": "docs/reviews/evidence/ncr-html-windows-source-release-20261016.json",
+      "releaseSha256": "ab30a0de37c4f93832117833f1e7093d9a97c2f3e8d08ae7325f0047230cfc9c",
+      "fenceBefore": "06916bb6259a1884686c7583f64ab88a5515640afecc7ce59e02d3cf6419400a",
+      "fenceFinal": "8feaf4f516219119390c3cd8351da99ece0c4f8bc5049068b5d6ccac6940d4d3",
+      "fenceDelta": "ONLY_RELEASE_AND_RELEASE_SHA_ASSIGNMENTS"
+    },
+    "newBindingAcceptedByPureDriverShapeCheck": true,
+    "oldBindingRejectedByPureDriverShapeCheck": true,
+    "fullCleanSourceAdmission": "PENDING_POST_MATERIAL_CLEAN_GIT_METADATA_CHECK; no runtime"
+  },
+  "preparation": "PARTIAL: rejected advisory and repaired initial dispatch literals retained; original worker stale fixture failure retained",
+  "rootRepairPreImplementation": {
+    "argv": [
+      "python",
+      "-B",
+      "governance/compat/run_agent_autorun_workflow_gate.py",
+      "--phase",
+      "pre-implementation",
+      "--base",
+      "2f48b11d47d8206425544002345b0159b26f3283",
+      "--head",
+      "HEAD"
+    ],
+    "exitCode": 0,
+    "elapsedSeconds": 39.01599999998871,
+    "logPath": ".cvf/runtime/ncr-windows-source-20261016/root-amendment-final.log",
+    "logSha256": "8a681c5f0d99d27433f4cb483d84843b3eca7fad0a90d9b50c929e6c0272777a"
+  },
+  "rootPreparationFailures": [
+    {
+      "argv": [
+        "python",
+        "-B",
+        "governance/compat/run_agent_autorun_workflow_gate.py",
+        "--phase",
+        "pre-implementation",
+        "--base",
+        "2f48b11d47d8206425544002345b0159b26f3283",
+        "--head",
+        "HEAD",
+        "--active-work-order",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md"
+      ],
+      "exitCode": 1,
+      "elapsedSeconds": 21.890999999988708,
+      "logPath": ".cvf/runtime/ncr-windows-source-20261016/root-amendment-preimplementation.log",
+      "logSha256": "34e5751c6a85d45ff022b4b866c90304f9e186a08e603f9447e3b1e9101698b4"
+    },
+    {
+      "argv": [
+        "python",
+        "-B",
+        "governance/compat/run_agent_autorun_workflow_gate.py",
+        "--phase",
+        "pre-implementation",
+        "--base",
+        "2f48b11d47d8206425544002345b0159b26f3283",
+        "--head",
+        "HEAD"
+      ],
+      "exitCode": 1,
+      "elapsedSeconds": 19.14100000000326,
+      "logPath": ".cvf/runtime/ncr-windows-source-20261016/root-amendment-confirmation.log",
+      "logSha256": "6023b4f364204326113954ef96b913f8be9eabec0c32d65e3543e6122e696e7b"
+    }
+  ],
+  "effects": {
+    "providerCalls": 0,
+    "productStarts": 0,
+    "browserStarts": 0,
+    "dockerStarts": 0,
+    "deletions": 0,
+    "workerNative": "3Node+5cmd/mklink",
+    "rootNative": "1Node+2cmd/mklink",
+    "retentionOwner": "LOCAL"
+  },
+  "claimBoundary": "Source/native seam and identity proof only; no B-E acceptance, current AI governance/live efficacy or readiness grant. Worker mandatory regression fulfillment remains partial; root focused evidence resolves only the named stale synthetic fixture cause."
+}

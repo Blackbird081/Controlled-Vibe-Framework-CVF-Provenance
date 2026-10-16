@@ -1,0 +1,388 @@
+{
+  "schemaVersion": "cvf.ncrHtmlWindowsSourceWorkerEvidence@1",
+  "executionBaseHead": "2f48b11d47d8206425544002345b0159b26f3283",
+  "role": "INTERNAL_AGENT_WORKER",
+  "decisionOwner": "LOCAL_REVIEWER",
+  "phase": "WORKER_RETURN_BLOCKED_FULL_REGRESSION_WITH_BOUNDED_NATIVE_PROOF",
+  "preparation": {
+    "preImplementationExit": 0,
+    "elapsedSeconds": 10.5,
+    "scaffoldBeforeSourceEdits": true,
+    "adifTaskClass": "Worker execution",
+    "adifRole": "worker",
+    "adifLifecyclePhase": "implementation",
+    "adifCandidates": 0,
+    "readScope": "Progressive current bootstrap/front/handoff and canonical pair/plan; six source/test owners; IO/import and existing pure test seams; actual full fast-gate composition and required predicate constants. Targeted checker reads, no corpus completeness claim.",
+    "procedureDisposition": "PARTIAL_WITH_REASON: scaffold and preimplementation preceded source edits, but exact blocked-return predicates were incompletely read before candidate full gate; failed log preserved and late predicate reads disclosed."
+  },
+  "sourceFiles": [
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "sha256": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+      "lines": 325
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "sha256": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+      "lines": 318
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "sha256": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+      "lines": 320
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/source_release.py",
+      "sha256": "62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a",
+      "lines": 196
+    },
+    {
+      "path": "scripts/cvf_ncr_html_effect_fence.py",
+      "sha256": "06916bb6259a1884686c7583f64ab88a5515640afecc7ce59e02d3cf6419400a",
+      "lines": 243
+    },
+    {
+      "path": "scripts/test_cvf_ncr_html_effect_driver.py",
+      "sha256": "578c8f10c2fea54c1dd71636109befeb680cfaa5eb608d440690635dc74725a0",
+      "lines": 545
+    }
+  ],
+  "pureFirstRun": {
+    "exit": 1,
+    "passed": 434,
+    "failed": 1,
+    "deselected": 4,
+    "elapsedSeconds": 6.27,
+    "log": ".cvf/runtime/ncr-windows-source-20261016/worker-pure.log",
+    "logSha256": "6833b0d0cd1dd9739b33a0789ecd6c9df5cd74d01f8bc094e7c3bd73dc632590",
+    "failure": "Existing test_control synthetic fixture refreshes source13 but retains historical learning-source pin that has drifted; production correctly refuses it."
+  },
+  "native": {
+    "owner": "INTERNAL_AGENT_WORKER",
+    "root": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c",
+    "retainedReason": "source proof; no deletion admitted",
+    "nodeStarts": 3,
+    "cmdStarts": 5,
+    "attempts": [
+      {
+        "tool": "node",
+        "argv": [
+          "C:\\nvm4w\\nodejs\\node.exe",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\space \u0111\\assert.cjs",
+          "[\"journey\"]"
+        ],
+        "timeout": 10,
+        "state": "FINISHED",
+        "exit": 1,
+        "stdout": "",
+        "stderr": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module 'D:UNG DUNG AITOOL AI 2026Controlled-Vibe-Framework-CVF.cvfruntimencr-windows-source-20261016worker-nativefixture-9c705c57c6b54b38a4561c9025f2099cspace \u0111journey.cjs'\nRequire stack:\n- internal/preload\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Module.require (node:internal/modules/cjs/loader:1487:12)\n    at node:internal/modules/cjs/loader:2045:12\n    at loadPreloadModules (node:internal/process/pre_execution:743:5)\n    at setupUserModules (node:internal/process/pre_execution:208:5) {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: [ 'internal/preload' ]\n}\n\nNode.js v22.17.0\n"
+      },
+      {
+        "tool": "node",
+        "argv": [
+          "C:\\nvm4w\\nodejs\\node.exe",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\space \u0111\\assert.cjs",
+          "[\"journey\"]"
+        ],
+        "timeout": 10,
+        "state": "FINISHED",
+        "exit": 0,
+        "stdout": "CVF_PRELOAD_OK\n",
+        "stderr": ""
+      },
+      {
+        "tool": "node",
+        "argv": [
+          "C:\\nvm4w\\nodejs\\node.exe",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\space \u0111\\assert.cjs",
+          "[\"journey\",\"browser\"]"
+        ],
+        "timeout": 10,
+        "state": "FINISHED",
+        "exit": 0,
+        "stdout": "CVF_PRELOAD_OK\n",
+        "stderr": ""
+      },
+      {
+        "tool": "cmd",
+        "argv": [
+          "C:\\WINDOWS\\system32\\cmd.exe",
+          "/d",
+          "/c",
+          "mklink",
+          "/J",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\shared"
+        ],
+        "timeout": 10,
+        "state": "FINISHED",
+        "exit": 0,
+        "stdout": "Junction created for D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules <<===>> D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\shared\n",
+        "stderr": ""
+      },
+      {
+        "tool": "cmd",
+        "argv": [
+          "C:\\WINDOWS\\system32\\cmd.exe",
+          "/d",
+          "/c",
+          "mklink",
+          "/J",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\shared\\cvf-control-plane-foundation",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\sentinel"
+        ],
+        "timeout": 10,
+        "state": "FINISHED",
+        "exit": 0,
+        "stdout": "Junction created for D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\shared\\cvf-control-plane-foundation <<===>> D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\sentinel\n",
+        "stderr": ""
+      },
+      {
+        "tool": "cmd",
+        "argv": [
+          "C:\\WINDOWS\\system32\\cmd.exe",
+          "/d",
+          "/c",
+          "mklink",
+          "/J",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source\\unknown",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\sentinel"
+        ],
+        "timeout": 10,
+        "state": "FINISHED",
+        "exit": 0,
+        "stdout": "Junction created for D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source\\unknown <<===>> D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\sentinel\n",
+        "stderr": ""
+      },
+      {
+        "tool": "cmd",
+        "argv": [
+          "C:\\WINDOWS\\system32\\cmd.exe",
+          "/d",
+          "/c",
+          "mklink",
+          "/J",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\wrong-target\\namespace\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\sentinel"
+        ],
+        "timeout": 10,
+        "state": "FINISHED",
+        "exit": 0,
+        "stdout": "Junction created for D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\wrong-target\\namespace\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules <<===>> D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\sentinel\n",
+        "stderr": ""
+      },
+      {
+        "tool": "cmd",
+        "argv": [
+          "C:\\WINDOWS\\system32\\cmd.exe",
+          "/d",
+          "/c",
+          "mklink",
+          "/J",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\ancestor-alias",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace"
+        ],
+        "timeout": 10,
+        "state": "FINISHED",
+        "exit": 0,
+        "stdout": "Junction created for D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\ancestor-alias <<===>> D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\n",
+        "stderr": ""
+      }
+    ],
+    "failed": false,
+    "observations": {
+      "originalPreload": "ORIGINAL_LOCATOR_FAILURE",
+      "junctions": {
+        "legacyDescentAttempted": true,
+        "pruned": true,
+        "unknownRefused": true,
+        "wrongTargetRefused": true,
+        "ancestorRefused": true,
+        "enumerated": [
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source\\EXTENSIONS",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source\\EXTENSIONS",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c\\junctions\\namespace\\source"
+        ]
+      }
+    },
+    "elapsedSeconds": 0.7970000000059372,
+    "pytest": {
+      "exit": 0,
+      "passed": 4,
+      "deselected": 65,
+      "elapsedSeconds": 1.37,
+      "externalSeconds": 3.2487603
+    },
+    "logSha256": "1cd26c6e91f6ea02827aa120c59198618c854733576b3b9e768a0642eed052ba"
+  },
+  "effects": {
+    "provider": 0,
+    "network": 0,
+    "product": 0,
+    "browser": 0,
+    "Docker": 0,
+    "deletion": 0,
+    "commit": 0
+  },
+  "sourceRelease": "UNCHANGED_LEGACY_F_RELEASE_CONSTANTS; NEW_RELEASE_AND_FINAL_BINDING_LOCAL_OWNED",
+  "claimBoundary": "No corrected Windows seam or B-E acceptance claimed while native proof pending; old1spent/2retired and original evidence retained.",
+  "authority": {
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md": "5d0217866d82f8268af09ddcdc377490ed66c9912b1e04bfacaffbca2a43edad",
+    "docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md": "c63d94eab84910808ae703821f28bb82eee4658f621a6cca9c5182266330e263"
+  },
+  "contradiction": {
+    "kind": "PRE_EXISTING_LEGACY_TEST_FIXTURE_STALE_PIN",
+    "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+    "legacyExpected": "946c7f0988e5ebbc9d26899934f016ce979903f55b51d9c13e057da0afa6758a",
+    "currentActual": "3d004c1de601a352ffc215fedd9b059f67b342d3ac378685dcfb3bb581e1cf2b",
+    "pureFirstRun": {
+      "passed": 434,
+      "failed": 1,
+      "deselected": 4,
+      "elapsedSeconds": 6.27,
+      "exit": 1
+    },
+    "nativeStarts": 0,
+    "outsideManifestEdit": false,
+    "productionDriftRefusal": "PRESERVED"
+  },
+  "localDisposition": "Preserve exact8 and immutable pins; no pure rerun or test_control edit. Native continuation explicitly admitted. Root separately owns legacy synthetic fixture correction; worker return stays blocked.",
+  "resultSummary": {
+    "sourceSeam": "BOUNDED_TECHNICAL_EVIDENCE_PASS",
+    "pureRegression": "434_PASS_1_FAIL_4_DESELECTED",
+    "native": "4_PASS_3_NODE_5_MKLINK",
+    "fullRegressionClosure": "BLOCKED_LEGACY_CONTROL_FIXTURE_STALE_NON_HELPER_PIN",
+    "B_E": "NOT_ACCEPTED_NO_RUNTIME"
+  },
+  "implementedContract": [
+    "profile.node_preload_options canonical quoted absolute forward-slash locators; producer and actual strict helper fence call same renderer",
+    "source_release owns extracted no_reparse/check_disposable; lifecycle callable identity reexport; no import cycle",
+    "missing-path IO compatibility preserved; strict existing stage/namespace/owner ancestry and exact junction tag/target/containment only in disposal admission",
+    "top-down dirs removal before descent; all other reparses and walker errors refuse; eligibility only, no filesystem deletion",
+    "source_release.AUTHORITY exact new B/W pair; old F release constants/source family membership unchanged until Local final binding"
+  ],
+  "requirementResults": [
+    {
+      "requirementId": "REQ-01",
+      "actualArtifacts": [
+        "scripts/cvf_ncr_html_owned_profile/__init__.py",
+        "scripts/cvf_ncr_html_owned_profile/profile.py",
+        "scripts/cvf_ncr_html_effect_fence.py",
+        "docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json"
+      ],
+      "proofRefs": [
+        "PROOF-REQ-01"
+      ],
+      "status": "PASS"
+    },
+    {
+      "requirementId": "REQ-02",
+      "actualArtifacts": [
+        "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+        "scripts/cvf_ncr_html_owned_profile/source_release.py",
+        "scripts/test_cvf_ncr_html_effect_driver.py",
+        "docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json"
+      ],
+      "proofRefs": [
+        "PROOF-REQ-02"
+      ],
+      "status": "PASS"
+    },
+    {
+      "requirementId": "REQ-03",
+      "actualArtifacts": [
+        "scripts/test_cvf_ncr_html_effect_driver.py",
+        "docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json"
+      ],
+      "proofRefs": [
+        "PROOF-REQ-03"
+      ],
+      "status": "PASS"
+    },
+    {
+      "requirementId": "REQ-04",
+      "actualArtifacts": [
+        "scripts/cvf_ncr_html_owned_profile/__init__.py",
+        "scripts/cvf_ncr_html_owned_profile/profile.py",
+        "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+        "scripts/cvf_ncr_html_owned_profile/source_release.py",
+        "scripts/cvf_ncr_html_effect_fence.py",
+        "scripts/test_cvf_ncr_html_effect_driver.py",
+        "docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json"
+      ],
+      "proofRefs": [
+        "PROOF-REQ-04"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "requirementId": "REQ-05",
+      "actualArtifacts": [
+        "docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_WORKER_RETURN_2026-10-16.md",
+        "docs/reviews/evidence/ncr-html-windows-source-worker-20261016.json"
+      ],
+      "proofRefs": [
+        "PROOF-REQ-05"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "REQ-01": {
+    "status": "PASS",
+    "evidence": "pure actual strict _spawn accepts canonical and rejects hostile env/helper/cap/inputs; installed Node old1/single0/ordered0"
+  },
+  "REQ-02": {
+    "status": "PASS",
+    "evidence": "pure identity/refusal matrix; native exact admitted prune, legacy attempted descent, unrelated/wrong-target/ancestor refusal; no target enumeration"
+  },
+  "REQ-03": {
+    "status": "PASS",
+    "evidence": "native4/4; three pinned Node and five pinned cmd programs, no retries,0.797s ledger wall, no deletion"
+  },
+  "REQ-04": {
+    "status": "BLOCKED",
+    "evidence": "imports/family/size pass; full pure group includes one unrelated pre-existing stale non-helper fixture pin, unresolved inside exact8"
+  },
+  "REQ-05": {
+    "status": "PASS",
+    "evidence": "Startup/mapping/scaffold before edits, preimplementation PASS, honest first full bound FAIL and consolidated return-only repair; final frozen confirmation detached. Procedure PARTIAL_WITH_REASON retained; no perfect preparation claim."
+  },
+  "custody": {
+    "owner": "LOCAL",
+    "nativeRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-source-20261016\\worker-native\\fixture-9c705c57c6b54b38a4561c9025f2099c",
+    "retentionReason": "required source proof; no removal admitted",
+    "pureScratchPrefixes": [
+      ".cvf/runtime/ncr-source-admission-20261016/worker/worker-*",
+      ".cvf/runtime/ncr-source-admission-20261016/worker/admission-*",
+      ".cvf/runtime/ncr-html-root-local-repair-20261016/proto-*",
+      ".cvf/runtime/ncr-html-root-local-repair-20261016/exec-*"
+    ],
+    "resources": "child programs exited; no owned listener/server/browser/container created; fixture links/targets retained"
+  },
+  "gateEvidence": {
+    "preImplementation": {
+      "exit": 0,
+      "elapsedSeconds": 10.5,
+      "rawLogSha256": "0439028adaa8a54d68f67e39d31a11dc5f45eb369c23256c67ef83b97984b02e"
+    },
+    "firstFullReturnGate": {
+      "exit": 1,
+      "elapsedSeconds": 7.58,
+      "rawLogSha256": "4c5c08072cc81b75337ca285f93ea89fff23c21adf61d71a72ae6338e4ad33e1",
+      "failure": "Return-only controlled enum/scalar/manifest/intake/rescan/recurrence literals, consolidated repaired before final full bound confirmation; source/tests unchanged"
+    },
+    "finalFullReturnGate": "actual final frozen command .cvf/runtime/ncr-windows-source-20261016/worker-return-final.log plus detached final receipt; no tracked append after final run",
+    "secondFullReturnGate": {
+      "exit": 1,
+      "elapsedSeconds": 9.88,
+      "rawLogSha256": "0236cb349f92d81b3b619e7ca8476bd7b05e4c969ebf98cb25606e10bf0f981b",
+      "failure": "Documentary rescan-reason self-trigger plus missing companion blocked-recurrence fields; repaired together; source/tests unchanged"
+    }
+  }
+}

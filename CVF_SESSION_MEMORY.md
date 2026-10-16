@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Windows source correction dispatch; product B-E not accepted |
+| Parent maintenance | bounded Windows source acceptance; product B-E unaccepted |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_windows_source_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute one consolidated source-only correction under committed pair and bound gates; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=old runtime grants retired, product/provider/deletion and unrelated effects parked, no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_windows_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=complete material/actual-SHA continuity then current-source qualification planning; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=LOCAL_CLOSURE; decision owner=LOCAL; parked checkpoint=old grants retired and product/effect admission separate, no generic operator checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_windows_source_dispatched`
-Current mode: `cvf_ncr_html_windows_source_dispatched`; previous mode marker: `cvf_ncr_html_windows_source_correction_plan_ready`
+Current mode marker: `cvf_ncr_html_windows_source_accepted_bounded`
+Current mode: `cvf_ncr_html_windows_source_accepted_bounded`; previous mode marker: `cvf_ncr_html_windows_source_dispatched`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_windows_source_dispatched`
+Mode: `cvf_ncr_html_windows_source_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-WINDOWS-SOURCE-20261016. Local releases INTERNAL_AGENT source worker under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md and docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md at material 6aab58dadf64a31b90edddcb19af15f28c8b1eb2. Worker exact6 planned code/test plus return/evidence2, no commit; one consolidated Windows preload/strict adjunct and verified-junction pruning/refusal correction. Read accepted PLAN and required owners. One pure Python group; exact native fixture suite once max3Node/5mklink,10seconds/child,120seconds total,retry0. Local separate1Node/2mklink,60seconds. Root later freezes accepted B/W bytes, creates new SOURCE_IDENTITY_ONLY release, binds only F release constants and final identity proof after worker lane returns. No source edits by Local during active lane. No old runtime replay, product/browser/Docker/provider/network/deletion. Old1spent/2retired, gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 retained; no generic operator checkpoint.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-WINDOWS-SOURCE-QUALIFICATION-20261016. Consume docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-windows-source-local-20261016.json. Bounded Windows source correction and Local synthetic fixture repair accepted; original worker pure434PASS/1FAIL and REQ04BLOCKED retained, focused root admission group resolved its fixture cause. New SOURCE_IDENTITY_ONLY release is not product runtime admission. Final material/actual-SHA continuity and clean source-admission metadata proof pending. Next Local plans current-source qualification/control/readiness and fresh independent runtime admission against NEW identity. Old1spent/2retired never replayed. Gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged. No product/browser/Docker/provider/network/deletion effect or generic operator checkpoint.
 
 ## Parked Checkpoints
 

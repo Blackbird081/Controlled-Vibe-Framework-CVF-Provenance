@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md",
-    "baselineSha256": "c63d94eab84910808ae703821f28bb82eee4658f621a6cca9c5182266330e263",
+    "baselineSha256": "ccd4e247ff6aac95b3b53040d449d67505394b7da504ddbd87b43ecdf0f3cf6b",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md",
-    "workOrderSha256": "5d0217866d82f8268af09ddcdc377490ed66c9912b1e04bfacaffbca2a43edad"
+    "workOrderSha256": "f9367246a646efb81ef42308007a016031ee690b4f57b7c050cbffd555a788c8"
   },
-  "currentAuthoritySyncReason": "Windows source dispatch material 6aab58dadf64a31b90edddcb19af15f28c8b1eb2; raw paired authority synchronized. Source/test-only grant and finite synthetic Windows fixtures; no product runtime.",
+  "currentAuthoritySyncReason": "Windows source accepted bounded; Local fixture repair and distinct native oracle; final material commit pending.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_windows_source_dispatched",
-  "previousMode": "cvf_ncr_html_windows_source_correction_plan_ready",
+  "currentMode": "cvf_ncr_html_windows_source_accepted_bounded",
+  "previousMode": "cvf_ncr_html_windows_source_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
