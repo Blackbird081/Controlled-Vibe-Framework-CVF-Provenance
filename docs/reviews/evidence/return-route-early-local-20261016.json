@@ -1,0 +1,570 @@
+{
+  "schemaVersion": "cvf.returnRouteEarlyLocalReview@1",
+  "date": "2026-10-16",
+  "reviewBaseHead": "8a36fbe59285eea4bd496b2d93cab9b4df000882",
+  "decision": "ACCEPTED_BOUNDED_STATIC_GUARD_ROOT_PROCEDURE_PARTIAL",
+  "workerInvocation": "early_route_worker",
+  "localInvocation": "return-route-early-local-review-20261016",
+  "workerArtifacts": [
+    {
+      "path": "governance/compat/check_work_order_dispatch_quality.py",
+      "sha256": "d819fca033eb40f443c494bc54f80a89c78cf242f6727f0d1b0f53860a13da46",
+      "bytes": 15439
+    },
+    {
+      "path": "governance/compat/check_work_order_dispatch_quality_range.py",
+      "sha256": "5fae043bb5e873c0fff5708e8acd47de0b20caca176010356894ec4f70f7d0b1",
+      "bytes": 47088
+    },
+    {
+      "path": "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
+      "sha256": "9c77e1599511030385b2005bb8c750f80d22cf91b3d319fef6169221c5bf3135",
+      "bytes": 12420
+    },
+    {
+      "path": "docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md",
+      "sha256": "0f8f2160a1fe40b58e12215127d8e45ea2b8277e7337f317531b0fd486c1677b",
+      "bytes": 35989
+    },
+    {
+      "path": "docs/reviews/evidence/return-route-early-worker-20261016.json",
+      "sha256": "67813ae08994f6a40adc67b7c54e40d14d341d18494f9ca18d9429e6bf972b10",
+      "bytes": 15744
+    }
+  ],
+  "workerEvidenceRef": "docs/reviews/evidence/return-route-early-worker-20261016.json",
+  "workerEvidenceSha256": "67813ae08994f6a40adc67b7c54e40d14d341d18494f9ca18d9429e6bf972b10",
+  "workerSummary": {
+    "accepted": true,
+    "fullFulfillment": false,
+    "workerSummary": "Final source has seven contract tests PASS (0.40s), following the original focused subset9 PASS/168 deselected (1.98s) and named delimiter follow-up7 PASS (0.57s). Two dependent fence/section corrections were completed inside the same worker invocation before final source freeze. Final full return gate attempt3 PASS/exit0/8.46s; attempts1/2 failed only return/claimed-procedure metadata and are retained. REQ01..07 technical PASS; REQ08 mandatory prior-read order BLOCKED.",
+    "costSummary": "worker final helper fixtures:100 valid/100 invalid,183.641/188.243 microseconds per call after2 warmups; Local actual released packet 720lines/45301bytes,10 measured calls after1 warmup,mean 0.7271ms/call; subprocess count0",
+    "procedureSummary": "Worker admits gate-to-role closeability and external-intake checker predicates were first consulted after initial full-gate diagnosis. Corrected format and final gate PASS do not fulfill historical REQ08; no full work-order fulfillment or universal reading/adherence is claimed. Root initial review also missed the whole-document fence/section dependency and required a second follow-up.",
+    "elapsedReviewMinutes": "NOT_AVAILABLE_WITH_REASON: review-start clock not captured; task-start and individual command durations retained",
+    "workerTests": [
+      {
+        "name": "mandated focused subset",
+        "command": "python -B -m pytest -q governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py governance/compat/test_run_worker_return_fast_gate.py scripts/test_cvf_commit_tranche.py -k \"WorkerReturnContractDispatchQualityTests or worker_return_path or material_child_failure or command_success\"",
+        "result": "PASS",
+        "selected": 9,
+        "deselected": 168,
+        "elapsedSeconds": 1.98,
+        "log": ".cvf/runtime/return-route-early-20261016/focused-worker-tests.log"
+      },
+      {
+        "name": "targeted fence-delimiter correction following source review",
+        "command": "python -B -m pytest -q governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
+        "result": "PASS",
+        "selected": 7,
+        "elapsedSeconds": 0.57,
+        "log": ".cvf/runtime/return-route-early-20261016/fence-correction-contract-tests.log"
+      },
+      {
+        "name": "targeted full-document fence/section-join correction following read-only reviewer reproduction",
+        "command": "python -B -m pytest -q governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
+        "result": "PASS",
+        "selected": 7,
+        "elapsedSeconds": 0.4,
+        "log": ".cvf/runtime/return-route-early-20261016/section-join-contract-tests.log"
+      }
+    ],
+    "incrementalCost": {
+      "scope": "final section-join-corrected helper only; excludes full gate and hook startup",
+      "warmupCalls": 2,
+      "valid": {
+        "calls": 100,
+        "elapsedNs": 18364100,
+        "microsecondsPerCall": 183.641
+      },
+      "invalid": {
+        "calls": 100,
+        "elapsedNs": 18824300,
+        "microsecondsPerCall": 188.243
+      },
+      "measuredCalls": 200,
+      "newSubprocessCalls": 0,
+      "rawEvidence": ".cvf/runtime/return-route-early-20261016/helper-cost.json"
+    },
+    "actualPacketCost": {
+      "samples": 10,
+      "warmups": 1,
+      "packetLines": 720,
+      "packetBytes": 45301,
+      "elapsedSeconds": 0.007271199996466748,
+      "meanMilliseconds": 0.7271199996466748,
+      "subprocessCalls": 0,
+      "scope": "actual released work order; incremental helper only"
+    },
+    "fullGateLogs": [
+      {
+        "path": ".cvf/runtime/return-route-early-20261016/root-retained-first-worker-return-gate.log",
+        "sha256": "d699a14cf29965981f441b127f5fee2d7dfc3e68d62c0964b9fa1e5e1a060cd1",
+        "bytes": 15778,
+        "tail": "egistry (0.29s)\r\n[CVF hook] START [65/70] as-built system catalog drift\r\n[CVF hook] PASS [59/70] session mode consistency (0.16s)\r\n[CVF hook] START [66/70] memory consolidation artifact quality\r\n[CVF hook] PASS [60/70] KIOD runtime candidate reopen inventory (0.42s)\r\n[CVF hook] START [67/70] epistemic process packet\r\n[CVF hook] PASS [61/70] system chain map freshness (0.14s)\r\n[CVF hook] START [68/70] equivalence claim evidence\r\n[CVF hook] PASS [62/70] changed corpus registry coverage (0.40s)\r\n[CVF hook] START [69/70] dispatch scaffold provenance\r\n[CVF hook] PASS [63/70] next-move freshness (0.37s)\r\n[CVF hook] START [70/70] agent instruction carrier compaction\r\n[CVF hook] PASS [64/70] memory consolidation artifact quality (0.31s)\r\n[CVF hook] PASS [65/70] as-built system catalog drift (0.39s)\r\n[CVF hook] PASS [66/70] agent instruction carrier compaction (0.16s)\r\n[CVF hook] PASS [67/70] equivalence claim evidence (0.33s)\r\n[CVF hook] PASS [68/70] epistemic process packet (0.46s)\r\n[CVF hook] PASS [69/70] dispatch scaffold provenance (0.29s)\r\n[CVF hook] PASS [70/70] active session state compatibility (1.19s)\r\n[CVF hook] Parallel preflight failures:\r\n  - [2/70] agent packet authority and encoding exited 1\r\n  - [5/70] semantic convergence and escalation control exited 1\r\n  - [11/70] governed artifact checker read-ahead exited 1\r\n  - [16/70] worker-return quality gate exited 1\r\n  - [29/70] finding-to-governance learning quality exited 2\r\n  - [31/70] external knowledge intake routing exited 1\r\nFAIL: reviewer-fast governance gate exited 1 (5.59s)\r\n\r\n=== git diff whitespace check ===\r\ngit diff --check\r\nwarning: in the working copy of 'governance/compat/check_work_order_dispatch_quality_range.py', LF will be replaced by CRLF the next time Git touches it\r\nwarning: in the working copy of 'governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py', LF will be replaced by CRLF the next time Git touches it\r\nPASS: git diff whitespace check (0.06s)\r\n\r\nVIOLATION: worker-return fast gate blocked by 2 failure(s) in 7.18s.\r\nworkerGateExit=1; elapsedSeconds=7.36\r\n"
+      },
+      {
+        "path": ".cvf/runtime/return-route-early-20261016/final-worker-return-gate-corrected.log",
+        "sha256": "913053cfbbf8bb7562209d27794572db9c6ad2dd5d13578f6570be565b56afea",
+        "bytes": 14045,
+        "tail": "hook] START [63/70] next-move freshness\r\n[CVF hook] PASS [57/70] corpus scan registry (0.30s)\r\n[CVF hook] START [64/70] system chain map freshness\r\n[CVF hook] PASS [58/70] ASSF external-agent metadata readout (0.14s)\r\n[CVF hook] START [65/70] as-built system catalog drift\r\n[CVF hook] PASS [59/70] KIOD runtime candidate reopen inventory (0.40s)\r\n[CVF hook] START [66/70] memory consolidation artifact quality\r\n[CVF hook] PASS [60/70] system chain map freshness (0.14s)\r\n[CVF hook] START [67/70] epistemic process packet\r\n[CVF hook] PASS [61/70] session mode consistency (0.18s)\r\n[CVF hook] START [68/70] equivalence claim evidence\r\n[CVF hook] PASS [62/70] changed corpus registry coverage (0.45s)\r\n[CVF hook] START [69/70] dispatch scaffold provenance\r\n[CVF hook] PASS [63/70] next-move freshness (0.41s)\r\n[CVF hook] START [70/70] agent instruction carrier compaction\r\n[CVF hook] PASS [64/70] memory consolidation artifact quality (0.36s)\r\n[CVF hook] PASS [65/70] as-built system catalog drift (0.45s)\r\n[CVF hook] PASS [66/70] epistemic process packet (0.51s)\r\n[CVF hook] PASS [67/70] equivalence claim evidence (0.40s)\r\n[CVF hook] PASS [68/70] agent instruction carrier compaction (0.21s)\r\n[CVF hook] PASS [69/70] dispatch scaffold provenance (0.36s)\r\n[CVF hook] PASS [70/70] active session state compatibility (1.04s)\r\n[CVF hook] Parallel preflight failures:\r\n  - [5/70] semantic convergence and escalation control exited 1\r\n  - [11/70] governed artifact checker read-ahead exited 1\r\n  - [29/70] finding-to-governance learning quality exited 2\r\nFAIL: reviewer-fast governance gate exited 1 (5.14s)\r\n\r\n=== git diff whitespace check ===\r\ngit diff --check\r\nwarning: in the working copy of 'governance/compat/check_work_order_dispatch_quality_range.py', LF will be replaced by CRLF the next time Git touches it\r\nwarning: in the working copy of 'governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py', LF will be replaced by CRLF the next time Git touches it\r\nPASS: git diff whitespace check (0.06s)\r\n\r\nVIOLATION: worker-return fast gate blocked by 1 failure(s) in 6.61s.\r\n"
+      },
+      {
+        "path": ".cvf/runtime/return-route-early-20261016/final-worker-return-gate-final.log",
+        "sha256": "b1f6b482240861f8eeeadcafced5296fbfd854ceb23a0da45c242d8fc0ad3f3f",
+        "bytes": 11349,
+        "tail": "ompatibility\r\n[CVF hook] PASS [55/70] raw memory release invariant (0.58s)\r\n[CVF hook] START [62/70] session mode consistency\r\n[CVF hook] PASS [56/70] ASSF package candidate anatomy (0.17s)\r\n[CVF hook] START [63/70] next-move freshness\r\n[CVF hook] PASS [57/70] corpus scan registry (0.36s)\r\n[CVF hook] START [64/70] system chain map freshness\r\n[CVF hook] PASS [58/70] ASSF external-agent metadata readout (0.19s)\r\n[CVF hook] START [65/70] as-built system catalog drift\r\n[CVF hook] PASS [59/70] KIOD runtime candidate reopen inventory (0.48s)\r\n[CVF hook] START [66/70] memory consolidation artifact quality\r\n[CVF hook] PASS [60/70] session mode consistency (0.17s)\r\n[CVF hook] START [67/70] epistemic process packet\r\n[CVF hook] PASS [61/70] system chain map freshness (0.16s)\r\n[CVF hook] START [68/70] equivalence claim evidence\r\n[CVF hook] PASS [62/70] changed corpus registry coverage (0.45s)\r\n[CVF hook] START [69/70] dispatch scaffold provenance\r\n[CVF hook] PASS [63/70] next-move freshness (0.36s)\r\n[CVF hook] START [70/70] agent instruction carrier compaction\r\n[CVF hook] PASS [64/70] memory consolidation artifact quality (0.31s)\r\n[CVF hook] PASS [65/70] as-built system catalog drift (0.41s)\r\n[CVF hook] PASS [66/70] equivalence claim evidence (0.33s)\r\n[CVF hook] PASS [67/70] agent instruction carrier compaction (0.17s)\r\n[CVF hook] PASS [68/70] epistemic process packet (0.47s)\r\n[CVF hook] PASS [69/70] dispatch scaffold provenance (0.30s)\r\n[CVF hook] PASS [70/70] active session state compatibility (1.48s)\r\n[CVF hook] All reviewer-fast governance checks passed.\r\nPASS: reviewer-fast governance gate (6.44s)\r\n\r\n=== git diff whitespace check ===\r\ngit diff --check\r\nwarning: in the working copy of 'governance/compat/check_work_order_dispatch_quality_range.py', LF will be replaced by CRLF the next time Git touches it\r\nwarning: in the working copy of 'governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py', LF will be replaced by CRLF the next time Git touches it\r\nPASS: git diff whitespace check (0.09s)\r\n\r\nCOMPLIANT: worker-return fast gate passed in 8.25s.\r\n"
+      }
+    ],
+    "finalFullGateExitCode": 0,
+    "fullGateAttemptCount": 3
+  },
+  "localProbe": {
+    "schemaVersion": "cvf.returnRouteEarlyLocalProbe@1",
+    "actor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "cases": [
+      {
+        "name": "valid",
+        "passed": true,
+        "routeRejected": false,
+        "builderCalls": 1,
+        "elapsedSeconds": 0.1002745000005234,
+        "routeIssues": [],
+        "unrelatedIssueCount": 0
+      },
+      {
+        "name": "bare",
+        "passed": true,
+        "routeRejected": true,
+        "builderCalls": 1,
+        "elapsedSeconds": 0.06859840000106487,
+        "routeIssues": [
+          "declared requiredGate cannot build the worker-return fast gate: active work order lacks an exact workerReturnPath"
+        ],
+        "unrelatedIssueCount": 0
+      },
+      {
+        "name": "missing",
+        "passed": true,
+        "routeRejected": true,
+        "builderCalls": 1,
+        "elapsedSeconds": 0.06860620000225026,
+        "routeIssues": [
+          "declared requiredGate cannot build the worker-return fast gate: active work order lacks an exact workerReturnPath"
+        ],
+        "unrelatedIssueCount": 1
+      },
+      {
+        "name": "duplicate",
+        "passed": true,
+        "routeRejected": true,
+        "builderCalls": 1,
+        "elapsedSeconds": 0.07384260000253562,
+        "routeIssues": [
+          "declared requiredGate cannot build the worker-return fast gate: active work order lacks an exact workerReturnPath"
+        ],
+        "unrelatedIssueCount": 1
+      },
+      {
+        "name": "draft",
+        "passed": true,
+        "routeRejected": false,
+        "builderCalls": 0,
+        "elapsedSeconds": 0.032129300001543015,
+        "routeIssues": [],
+        "unrelatedIssueCount": 0
+      },
+      {
+        "name": "without-fast-declaration",
+        "passed": true,
+        "routeRejected": false,
+        "builderCalls": 0,
+        "elapsedSeconds": 0.06676400000287686,
+        "routeIssues": [],
+        "unrelatedIssueCount": 1
+      },
+      {
+        "name": "frozen-real-negative",
+        "passed": true,
+        "routeRejected": true,
+        "builderCalls": 1,
+        "elapsedSeconds": 0.08544609999808017,
+        "routeIssues": [
+          "declared requiredGate cannot build the worker-return fast gate: active work order lacks an exact workerReturnPath"
+        ],
+        "unrelatedIssueCount": 0
+      }
+    ],
+    "frozenPreimage": {
+      "revision": "27dff0217",
+      "sha256": "e77d463a22ff1672111eb779ac6eae570f807b79a1a206ac0d0e48519d754a68"
+    },
+    "newCheckSubprocessCount": 0,
+    "actualPacketCostMeasurement": {
+      "samples": 10,
+      "warmups": 1,
+      "packetLines": 720,
+      "packetBytes": 45301,
+      "elapsedSeconds": 0.013134900000295602,
+      "meanMilliseconds": 1.3134900000295602,
+      "subprocessCalls": 0,
+      "scope": "actual released work order; incremental helper only"
+    },
+    "scope": "production validator; guarded real production builder; no worker test helper or provider/runtime"
+  },
+  "localOracleSourceSha256": "a9d8609147d183401a57535f128cda10e016a548a0b7985d49f1ba30371532e9",
+  "sourceAfterReview": [
+    {
+      "path": "governance/compat/check_work_order_dispatch_quality_artifacts.py",
+      "sha256": "6db4763cae1fd62c41ce0d4af4707d6f8512d93c3dac9097e584218213ea267b",
+      "lines": 757
+    },
+    {
+      "path": "governance/compat/check_work_order_dispatch_quality_range.py",
+      "sha256": "5fae043bb5e873c0fff5708e8acd47de0b20caca176010356894ec4f70f7d0b1",
+      "lines": 972
+    },
+    {
+      "path": "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
+      "sha256": "9c77e1599511030385b2005bb8c750f80d22cf91b3d319fef6169221c5bf3135",
+      "lines": 274
+    }
+  ],
+  "currentClosedPair": {
+    "baselinePath": "docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md",
+    "baselineSha256": "e85d2d4cae3ae20a1ad86af46a7b7871004a46a2b5ae16b5990e236e4974e1dc",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md",
+    "workOrderSha256": "46a61fced477f2b42d94cc5b818ec3b56d23e0542c04abf7af1f8ab136ff7b00"
+  },
+  "priorImmutableSourceChecks": [
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "sha256": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "sha256": "c4fab8696982227bc202ae969d72f193448e504ca4a6d7d579e609dbd7764605"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "sha256": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "sha256": "829f6f28863a945e6c8a889332d82ff01875bce769efe0696df70c1caa09243c"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "sha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "sha256": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "sha256": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+      "sha256": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/protocol.py",
+      "sha256": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_protocol.py",
+      "sha256": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_win32.py",
+      "sha256": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_admission.py",
+      "sha256": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/source_release.py",
+      "sha256": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_browser_fence.cjs",
+      "sha256": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_browser_fence.test.cjs",
+      "sha256": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf"
+    },
+    {
+      "path": "scripts/cvf_ncr_html_effect_fence.py",
+      "sha256": "086668fd5daae6f2f52feeb3e94a30262fb031c840b627a9a717e7b0f9ca6fde"
+    },
+    {
+      "path": "scripts/run_cvf_ncr_html_effect_driver.py",
+      "sha256": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf"
+    },
+    {
+      "path": "scripts/test_cvf_ncr_html_effect_driver.py",
+      "sha256": "80236c0e191721eb6e5f74effb1e031a10d5226753dc8588cc6c3ce99fb9f4d2"
+    }
+  ],
+  "source13Adjunct5": "UNCHANGED",
+  "dispatcherPreparation": {
+    "firstNarrowDispatch": "missing risk label, corrected",
+    "firstPreflight": "four documentary gate families failed; corrected",
+    "preEditWorkerFinding": "required test omitted from ledger coverage; Local pair/current-hash correction before any worker gate/edit/test",
+    "extraMaterialAndContinuityPairs": 1,
+    "lateReadAhead": "PARTIAL_ROOT_PREPARATION_NOT_RETROACTIVELY_REPAIRED",
+    "workerAttribution": "not worker implementation defect"
+  },
+  "failFastReuse": {
+    "materialHelper": "scripts/cvf_commit_tranche.py",
+    "dispatchAndAmendMaterialUsed": true,
+    "continuity": "explicit exact6 steward and checked subprocess sequencing; helper resume requires another state entry, not admitted",
+    "limitation": "no interception of arbitrary out-of-band shell; release-after-commit failure cannot undo that commit"
+  },
+  "materialManifest": [
+    "governance/compat/check_work_order_dispatch_quality_artifacts.py",
+    "governance/compat/check_work_order_dispatch_quality_range.py",
+    "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
+    "docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md",
+    "docs/reviews/evidence/return-route-early-worker-20261016.json",
+    "docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md",
+    "docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md",
+    "docs/reviews/evidence/return-route-early-local-20261016.json",
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+    "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+    "docs/reviews/learnings/README.md",
+    "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json"
+  ],
+  "trace": "| Field | Evidence |\n|---|---|\n| Actor | Local INTERNAL_AGENT orchestrator/reviewer/closer |\n| Provider or surface | private shared workspace |\n| Session or invocation | return-route-early-local-review-20261016 |\n| Working directory | repository root |\n| Command or tool surface | consume frozen exact5 worker proof, source diff review, seven-case own production oracle, fail-fast material helper and canonical continuity/gates |\n| Target paths | `governance/compat/check_work_order_dispatch_quality_artifacts.py`; `governance/compat/check_work_order_dispatch_quality_range.py`; `governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/return-route-early-worker-20261016.json`; `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/return-route-early-local-20261016.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` |\n| Allowed scope source | operator explicit low-latency guard correction and standing Local maintenance/commit authority |\n| Before status evidence | 8a36fbe59285eea4bd496b2d93cab9b4df000882; terminal exact5 worker lane released; source edits not staged/committed by worker |\n| After status evidence | bounded static checker accepted; current pair closed/currentAuthority aligned; product source correction stays PLAN |\n| Diff evidence | exact18 source/worker/closure/current-hash material, followed by exact6 actual-SHA continuity |\n| Approval boundary | guard source/test plus metadata only; no retired runtime grant |\n| Claim boundary | declared-state parsing/buildability, not universal agent adherence or B-E success |\n| Agent type | INTERNAL_AGENT |\n| Invocation ID | return-route-early-local-review-20261016 |\n| Expected manifest | `governance/compat/check_work_order_dispatch_quality_artifacts.py`; `governance/compat/check_work_order_dispatch_quality_range.py`; `governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/return-route-early-worker-20261016.json`; `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/return-route-early-local-20261016.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` |\n| Actual changed set | `governance/compat/check_work_order_dispatch_quality_artifacts.py`; `governance/compat/check_work_order_dispatch_quality_range.py`; `governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/return-route-early-worker-20261016.json`; `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/return-route-early-local-20261016.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` |\n| Manifest delta | MATCH eighteen paths |\n| Deletion or rename disposition | none; prior failed runtime and stage/custody retained |\n",
+  "claimBoundary": {
+    "providerCalls": 0,
+    "runtimePrograms": 0,
+    "roadmapStageAdvanced": false,
+    "windowsCorrection": "NOT_IMPLEMENTED_NOT_PROVEN",
+    "oldRuntime1": "SPENT_FAILED",
+    "oldRuntime2": "NOT_RELEASED_DEPENDENCY_FAILED_RETIRED",
+    "generation": 9,
+    "scecOrdinal": 2,
+    "counters": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "blockers": 2,
+    "priorP4Exclusions": 7,
+    "wholeLearningEffectiveness": "NOT_PROVEN"
+  },
+  "frozenWorkerSourceAfterReview": [
+    {
+      "path": "governance/compat/check_work_order_dispatch_quality.py",
+      "sha256": "d819fca033eb40f443c494bc54f80a89c78cf242f6727f0d1b0f53860a13da46",
+      "lines": 368
+    },
+    {
+      "path": "governance/compat/check_work_order_dispatch_quality_range.py",
+      "sha256": "5fae043bb5e873c0fff5708e8acd47de0b20caca176010356894ec4f70f7d0b1",
+      "lines": 972
+    },
+    {
+      "path": "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
+      "sha256": "9c77e1599511030385b2005bb8c750f80d22cf91b3d319fef6169221c5bf3135",
+      "lines": 274
+    }
+  ],
+  "preRelocationLocalProbe": {
+    "schemaVersion": "cvf.returnRouteEarlyLocalProbe@1",
+    "actor": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "cases": [
+      {
+        "name": "valid",
+        "passed": true,
+        "routeRejected": false,
+        "builderCalls": 1,
+        "elapsedSeconds": 0.06688810000196099,
+        "routeIssues": [],
+        "unrelatedIssueCount": 0
+      },
+      {
+        "name": "bare",
+        "passed": true,
+        "routeRejected": true,
+        "builderCalls": 1,
+        "elapsedSeconds": 0.05144819999986794,
+        "routeIssues": [
+          "declared requiredGate cannot build the worker-return fast gate: active work order lacks an exact workerReturnPath"
+        ],
+        "unrelatedIssueCount": 0
+      },
+      {
+        "name": "missing",
+        "passed": true,
+        "routeRejected": true,
+        "builderCalls": 1,
+        "elapsedSeconds": 0.062413400009972975,
+        "routeIssues": [
+          "declared requiredGate cannot build the worker-return fast gate: active work order lacks an exact workerReturnPath"
+        ],
+        "unrelatedIssueCount": 1
+      },
+      {
+        "name": "duplicate",
+        "passed": true,
+        "routeRejected": true,
+        "builderCalls": 1,
+        "elapsedSeconds": 0.0631503999902634,
+        "routeIssues": [
+          "declared requiredGate cannot build the worker-return fast gate: active work order lacks an exact workerReturnPath"
+        ],
+        "unrelatedIssueCount": 1
+      },
+      {
+        "name": "draft",
+        "passed": true,
+        "routeRejected": false,
+        "builderCalls": 0,
+        "elapsedSeconds": 0.03135099999781232,
+        "routeIssues": [],
+        "unrelatedIssueCount": 0
+      },
+      {
+        "name": "without-fast-declaration",
+        "passed": true,
+        "routeRejected": false,
+        "builderCalls": 0,
+        "elapsedSeconds": 0.06303390000539366,
+        "routeIssues": [],
+        "unrelatedIssueCount": 1
+      },
+      {
+        "name": "frozen-real-negative",
+        "passed": true,
+        "routeRejected": true,
+        "builderCalls": 1,
+        "elapsedSeconds": 0.07034839999687392,
+        "routeIssues": [
+          "declared requiredGate cannot build the worker-return fast gate: active work order lacks an exact workerReturnPath"
+        ],
+        "unrelatedIssueCount": 0
+      }
+    ],
+    "frozenPreimage": {
+      "revision": "27dff0217",
+      "sha256": "e77d463a22ff1672111eb779ac6eae570f807b79a1a206ac0d0e48519d754a68"
+    },
+    "newCheckSubprocessCount": 0,
+    "actualPacketCostMeasurement": {
+      "samples": 10,
+      "warmups": 1,
+      "packetLines": 720,
+      "packetBytes": 45301,
+      "elapsedSeconds": 0.007271199996466748,
+      "meanMilliseconds": 0.7271199996466748,
+      "subprocessCalls": 0,
+      "scope": "actual released work order; incremental helper only"
+    },
+    "scope": "production validator; guarded real production builder; no worker test helper or provider/runtime"
+  },
+  "localFinalTopologyCorrection": {
+    "owner": "LOCAL_ROOT",
+    "reason": "approved exception313 contradicted erroneous packet400 budget",
+    "description": "Local final approved-size gate found the dispatcher budget was wrong: main was frozen at approved313, not the packet400. Original worker return/source/proof bytes remain unchanged in custody; this is a Local preparation defect. Local relocated the exact two helper bodies and runner import into the existing exec-loaded artifacts module, restoring the main file byte-identical to the release HEAD304. Final source3 is artifacts757/range972/test274; no new module, registry exception, checker or hook. Existing class hard1000 remains; artifacts757 is a soft advisory under existing policy. This bounded topology amendment authorizes only governance/compat/check_work_order_dispatch_quality_artifacts.py in addition to the original historical worker scope; final material replaces the unchanged main with artifacts and remains exact18. No redispatch, business effect or runtime grant. Named information gain for focused rerun: approved-size contradiction and import/exec placement changed; contract module7PASS0.68s and Local seven-case production oracle passed after relocation. Worker full gate applies to frozen returned layout; final Local gates bind final layout. Historical REQ08 remains BLOCKED.",
+    "semanticChange": "NONE: exact helper bodies/import relocation; main restored to HEAD",
+    "finalContractTest": {
+      "command": "python -B -m pytest governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py -q",
+      "passed": 7,
+      "seconds": 0.68
+    },
+    "originalFrozenWorkerProofNotReplaced": true
+  },
+  "finalIndependentLayoutReview": {
+    "evidenceSha256": "a72026e9a6031de28dd901c45d480b707db672c701727e00c71c9fcad8c82e26",
+    "evidence": {
+      "schemaVersion": "1.0",
+      "invocation": "sol-layout-review-20261016",
+      "role": "INTERNAL_AGENT independent Local reviewer",
+      "phase": "REVIEW",
+      "decisionOwner": "root",
+      "verdict": "PASS_BOUNDED",
+      "findings": [],
+      "scope": "Import/exec integration and source relocation only",
+      "head": "8a36fbe59285eea4bd496b2d93cab9b4df000882",
+      "sourceHashes": {
+        "governance/compat/check_work_order_dispatch_quality.py": "b6a42e78898a11cdb8ed85775226753de61c70c6e2fb9c454aa8d0949c05f67b",
+        "governance/compat/check_work_order_dispatch_quality_artifacts.py": "6db4763cae1fd62c41ce0d4af4707d6f8512d93c3dac9097e584218213ea267b",
+        "governance/compat/check_work_order_dispatch_quality_range.py": "5fae043bb5e873c0fff5708e8acd47de0b20caca176010356894ec4f70f7d0b1",
+        "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py": "9c77e1599511030385b2005bb8c750f80d22cf91b3d319fef6169221c5bf3135"
+      },
+      "sourceLines": {
+        "governance/compat/check_work_order_dispatch_quality.py": 304,
+        "governance/compat/check_work_order_dispatch_quality_artifacts.py": 757,
+        "governance/compat/check_work_order_dispatch_quality_range.py": 972,
+        "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py": 274
+      },
+      "frozenWorkerSource": {
+        "path": ".cvf/runtime/return-route-early-20261016/returned-0.bytes",
+        "sha256": "d819fca033eb40f443c494bc54f80a89c78cf242f6727f0d1b0f53860a13da46"
+      },
+      "integration": {
+        "mainByteIdenticalToHEAD": true,
+        "execGlobalsShared": true,
+        "movedHelpersAstExact": true,
+        "loadOrder": "artifacts before range; functions resolve shared globals at invocation"
+      },
+      "semanticEquivalenceObservation": "MATCH: both moved helper ASTs equal frozen worker source; independent oracle matches production and frozen functions for valid bare requiredGate with quoted return path, invalid bare return path, and fenced-only gate exclusion. No change to helper semantics observed.",
+      "oracle": {
+        "command": "python -B .cvf/runtime/return-route-early-20261016/sol_layout_oracle.py",
+        "cases": [
+          {
+            "case": "valid",
+            "text": "Status: READY_FOR_DISPATCH\n## Worker Return Packet Shape Contract\nrequiredGate: python governance/compat/run_worker_return_fast_gate.py\nworkerReturnPath: `docs/reviews/CVF_LAYOUT_ORACLE_RETURN.md`\n",
+            "expectedViolation": false,
+            "production": [],
+            "frozen": [],
+            "result": "PASS"
+          },
+          {
+            "case": "bare-worker-return",
+            "text": "Status: READY_FOR_DISPATCH\n## Worker Return Packet Shape Contract\nrequiredGate: python governance/compat/run_worker_return_fast_gate.py\nworkerReturnPath: docs/reviews/CVF_LAYOUT_ORACLE_RETURN.md\n",
+            "expectedViolation": true,
+            "production": [
+              "declared requiredGate cannot build the worker-return fast gate: active work order lacks an exact workerReturnPath"
+            ],
+            "frozen": [
+              "declared requiredGate cannot build the worker-return fast gate: active work order lacks an exact workerReturnPath"
+            ],
+            "result": "PASS"
+          },
+          {
+            "case": "fenced-requiredGate",
+            "text": "Status: READY_FOR_DISPATCH\n## Worker Return Packet Shape Contract\n~~~text\nrequiredGate: python governance/compat/run_worker_return_fast_gate.py\n~~~\n",
+            "expectedViolation": false,
+            "production": [],
+            "frozen": [],
+            "result": "PASS"
+          }
+        ],
+        "subprocessCalls": {
+          "run": 0,
+          "Popen": 0
+        },
+        "result": "PASS"
+      },
+      "limits": [
+        "No broad gates/suites or provider/runtime invocation",
+        "Original worker read-order REQ08 remains BLOCKED; this review does not repair history",
+        "No unrelated artifacts reviewed"
+      ],
+      "elapsedSeconds": 0.11526649999723304
+    }
+  }
+}

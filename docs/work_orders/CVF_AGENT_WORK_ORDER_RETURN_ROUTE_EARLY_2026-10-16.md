@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BOUNDED_PROCEDURE_PARTIAL
 Date: 2026-10-16
 Batch ID: CVF-RETURN-ROUTE-EARLY-20261016
 Dispatch inspection base: a6057f3eff1d0e983fdd8b7c8a9dd8da69b3bbe2
@@ -235,6 +235,7 @@ laneReleaseEvidence: terminal worker return, exact5 reconciliation and stage emp
 |---|---|
 | completionReviewPath | docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md |
 | reviewerOwnedClosurePaths | docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md; docs/reviews/evidence/return-route-early-local-20261016.json; docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md status only; docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md status/acceptance only |
+| learningClosurePaths | docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md; docs/reviews/learnings/README.md; docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json; Local documentary closure only, worker exact5 unchanged |
 | closureOwner | Local reviewer/closer; exact6 continuity separately |
 | workerCommitPermission | FORBIDDEN |
 
@@ -431,6 +432,8 @@ classifierEventCaptureRequired: YES
 If a tool/classifier rejects an action, retain the exact secret-safe event, recover only inside scope and never drop a required control. Record Tool / Classifier Block Event counts, worker-authored question versus platform-forced prompt, bounded recovery and final disposition under current acceptance-ledger checker. No event means all four event/question/recovery counts0 and NO_EVENT with concrete reason. A platform denial is not consent to widen scope.
 
 ## Core Guard Self-Protection Authorization
+
+Additional Local final topology protected path: `governance/compat/check_work_order_dispatch_quality_artifacts.py`. Explicit operator-authorized guard correction; exact body relocation only.
 
 Authorized guard-maintenance scope: extend existing dispatch-quality return-route construction and focused regression only.
 Protected paths:
@@ -673,7 +676,11 @@ Read the control operative binding before authoring. Existing historical receipt
     "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
     "CVF_SESSION/state/entries/nextAllowedMove.json",
     "CVF_SESSION/ACTIVE_SESSION_STATE.json",
-    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+    "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
+    "docs/reviews/learnings/README.md",
+    "docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json",
+    "governance/compat/check_work_order_dispatch_quality_artifacts.py"
   ],
   "claims": [
     "DECLARED_STATE_PREFLIGHT_ONLY",
@@ -718,3 +725,26 @@ Private bounded owner amendment, no public artifact/catalog/export.
 ## Claim Boundary
 
 Bounded static early-return-route integration only. Windows preload/junction source repair and proof remain consolidated PLAN; old B-E1 spent and2 retired. Source13/adjunct5, original failures/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions and parked effects/LHW24 retained. No live/AI governance behavior, runtime readiness, business/public/deploy or universal shell interception claim.
+
+## Local Closure Disposition
+
+ACCEPTED_TECHNICAL_BOUNDED_PROCEDURE_PARTIAL: Local accepted the static early return-route repair after consumed worker evidence and distinct seven-case production-validator oracle. REQ01..07 technical requirements accepted; REQ08 historical mandatory read order remains BLOCKED. Full work-order fulfillment is not asserted and cannot be repaired retroactively. No B-E functionality, Windows source repair or universal learning effectiveness claim. Original dispatch pair/worker bytes retained in Local custody; no successor grant.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md; docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md | eight result rows and Local proof; REQ08 procedure limit retained | PASS - bounded technical disposition only |
+| Completion or reviewer artifact | docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md; docs/reviews/evidence/return-route-early-local-20261016.json | distinct Local7/7 and frozen source/worker hashes | PASS - accepted static scope |
+| Roadmap state | existing NCR Windows source-correction PLAN | source13/adjunct5/gen9/SCEC2 remain | PASS - no product stage advanced |
+| Registry JSON | docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json | two learning raw source pins refreshed; typed lifecycle decisions/receipts unchanged | PASS - source pins only |
+| Registry Markdown | docs/reviews/learnings/README.md | existing learning discovery updated | PASS - no new guard family |
+| External evidence digest | docs/reviews/evidence/return-route-early-local-20261016.json | internal worker/source and Local proof only | N/A with reason - no external intake |
+| System loop interlock | existing parent NCR state | no parent runtime/counter transition | N/A with reason - no loop change |
+| Session continuity | active handoff/front/core/entry and generated source6 | paired raw hashes atomic; actual material SHA in following exact6 | PASS - source-owned continuity; clean split closure follows |
+
+## Local Final Topology Correction
+
+Local final approved-size gate found the dispatcher budget was wrong: main was frozen at approved313, not the packet400. Original worker return/source/proof bytes remain unchanged in custody; this is a Local preparation defect. Local relocated the exact two helper bodies and runner import into the existing exec-loaded artifacts module, restoring the main file byte-identical to the release HEAD304. Final source3 is artifacts757/range972/test274; no new module, registry exception, checker or hook. Existing class hard1000 remains; artifacts757 is a soft advisory under existing policy. This bounded topology amendment authorizes only governance/compat/check_work_order_dispatch_quality_artifacts.py in addition to the original historical worker scope; final material replaces the unchanged main with artifacts and remains exact18. No redispatch, business effect or runtime grant. Named information gain for focused rerun: approved-size contradiction and import/exec placement changed; contract module7PASS0.68s and Local seven-case production oracle passed after relocation. Worker full gate applies to frozen returned layout; final Local gates bind final layout. Historical REQ08 remains BLOCKED.
+
+Final governing size budgets: main<=313 and net delta0; existing artifacts<=800 task budget within hard1000; range<=985; test<=300. Earlier main<=400 and no foreseeable relocation estimates are superseded at this Local final boundary. Original ledger/proof remains the worker historical contract, not a rewritten claim of original preparation.

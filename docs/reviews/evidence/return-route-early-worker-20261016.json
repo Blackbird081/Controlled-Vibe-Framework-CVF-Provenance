@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "cvf.returnRouteEarlyWorkerEvidence@1.0.0",
+  "role": "INTERNAL_AGENT",
+  "phase": "IMPLEMENTATION",
+  "decisionOwner": "LOCAL",
+  "executionBaseHead": "8a36fbe59285eea4bd496b2d93cab9b4df000882",
+  "release": {
+    "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md",
+    "workOrderSha256": "ddd8915bc528b462de309941bb0e386beed2bc3456e56b2df38ab5c97a48c832",
+    "baseline": "docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md",
+    "baselineSha256": "50d2ad7ea2a43bddbfe55d40aefe940a0e71077b05a0399bd34016c49fa7a175",
+    "boundPreDispatchGate": {
+      "path": ".cvf/runtime/return-route-early-20261016/bound-pre-dispatch-amended.log",
+      "result": "PASS",
+      "commandCount": 86,
+      "elapsedSeconds": 13.63
+    },
+    "correctedPairCommit": "8a36fbe59285eea4bd496b2d93cab9b4df000882",
+    "initialPairBeforeLedgerCorrection": {
+      "releaseHead": "e9699f81c0bf0610a5bde0d981d7829637c61177",
+      "baselineSha256": "96f2521f154bbf5518a1d5969722c34618a753231031aec7d7c70dc17801cb90",
+      "workOrderSha256": "714e5469674c5a1526176dfb2fe96b548575e99f6c819c243fd7b02f4bda4261"
+    },
+    "preEffectLocalPacketCorrection": "Worker identified that the initial REQ-01..07 expectedArtifacts omitted the required test source before any gate, edit, or test. Local amended baseline and work order together, re-released the same source/effect/role envelope, and retained the original pair preimages. This was a Local packet defect, not a worker implementation defect."
+  },
+  "startup": {
+    "acknowledgment": "Startup acknowledged: current mode=cvf_return_route_early_guard_dispatched; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=bounded worker implementation and final bound return gate; parked checkpoint=retired runtime grants and separate Windows preload/junction correction plan.",
+    "progressiveReads": [
+      "AGENTS.md; CVF_SESSION_MEMORY.md; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json; active handoff AGENT_HANDOFF_V63_2026-09-18.md; targeted ACTIVE_SESSION_STATE.json lookup",
+      "docs/reference/guard_orientation/README.md; docs/reference/CVF_GOVERNED_ARTIFACT_LITERAL_FORMAT_GOTCHAS_2026-06-25.md; docs/reference/CVF_AGENT_INSTRUCTION_CARRIER_ROUTING_INDEX_2026-08-11.md",
+      "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md; docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md; external/local coordination method owners",
+      "released baseline and work order, including amendment diff, exact source pins, expected artifacts, core authorization, cost boundary, return and acceptance contracts"
+    ],
+    "preImplementationGate": {
+      "path": ".cvf/runtime/return-route-early-20261016/pre-implementation.log",
+      "result": "PASS",
+      "commandCount": 88,
+      "elapsedSeconds": 13.56,
+      "range": "8a36fbe59285eea4bd496b2d93cab9b4df000882..8a36fbe59285eea4bd496b2d93cab9b4df000882"
+    },
+    "scaffold": {
+      "command": "python -B governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md --title \"Return Route Early Worker Return\" --check-shape",
+      "result": "PREPARATION_SHAPE_PRESENT; exit 0",
+      "preparedBeforeLongDraft": true,
+      "manualRepairCount": 1,
+      "missingRequiredSectionAdded": "Target / Source"
+    }
+  },
+  "sourcePins": [
+    {"path": "governance/compat/check_work_order_dispatch_quality.py", "dispatchSha256": "a2356b1d86c32ddd3773eb908e13d0ef698d4cbc58500da2bb983a718caa8988", "finalSha256": "d819fca033eb40f443c494bc54f80a89c78cf242f6727f0d1b0f53860a13da46"},
+    {"path": "governance/compat/check_work_order_dispatch_quality_range.py", "dispatchSha256": "980e52435ea3e02dd0a1065c4f2c95d7fe6c0d1896ee83a34123b3bea4763c7f", "finalSha256": "5fae043bb5e873c0fff5708e8acd47de0b20caca176010356894ec4f70f7d0b1"},
+    {"path": "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py", "dispatchSha256": "54a91271d2bd6badff47a40c6666d121ab689936df2758785c4ae71880a18d09", "finalSha256": "9c77e1599511030385b2005bb8c750f80d22cf91b3d319fef6169221c5bf3135"},
+    {"path": "governance/compat/run_worker_return_fast_gate.py", "dispatchSha256": "8132cd26c46bb9a2c26e2dd86a13a45b07cdbbe822f62011adee1af6b801e8ee", "finalSha256": "8132cd26c46bb9a2c26e2dd86a13a45b07cdbbe822f62011adee1af6b801e8ee"},
+    {"path": "scripts/cvf_commit_tranche.py", "dispatchSha256": "1a296b55e9590d80f83f3a57f9f88f0ddc3d8071c7ca909682a817ac38284754", "finalSha256": "1a296b55e9590d80f83f3a57f9f88f0ddc3d8071c7ca909682a817ac38284754"},
+    {"path": "scripts/test_cvf_commit_tranche.py", "dispatchSha256": "d9cc5479e57286a9f96f090f45def137a6193b0bcde59f3d7054f3fef016169e", "finalSha256": "d9cc5479e57286a9f96f090f45def137a6193b0bcde59f3d7054f3fef016169e"},
+    {"path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md", "dispatchSha256": "2e27b93ec2ddf2197ed7320357647c3f84ba36b154ebd310b1935970ccf34c40", "finalSha256": "2e27b93ec2ddf2197ed7320357647c3f84ba36b154ebd310b1935970ccf34c40"}
+  ],
+  "implementation": {
+    "summary": "Added one helper in the existing dispatch-quality module to mask Markdown fenced blocks across the full work-order text, extract the real Worker Return Packet Shape Contract, detect an anchored requiredGate scalar declaring the production fast gate, and reuse runner.build_commands with exact path, repository root, and work-order text. Added one call in the existing dispatching range branch. Added focused cases to the existing worker return contract module.",
+    "unchangedBoundaries": [
+      "Production _worker_return_path parser and its actionable error text remain unchanged.",
+      "No return-value containment/path policy expansion, new checker, hook, whole-repository scan, subprocess, browser, provider, Docker, runtime, or B-E replay.",
+      "Draft, HOLD, closed, non-fast, prose and fenced examples do not activate the added validation; existing opt-in semantics and changed/inherited behavior remain in the existing owners."
+    ],
+    "lineCounts": {
+      "governance/compat/check_work_order_dispatch_quality.py": 368,
+      "governance/compat/check_work_order_dispatch_quality_range.py": 972,
+      "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py": 274,
+      "limits": {"main": 400, "range": 985, "test": 300}
+    }
+  },
+  "tests": [
+    {
+      "name": "mandated focused subset",
+      "command": "python -B -m pytest -q governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py governance/compat/test_run_worker_return_fast_gate.py scripts/test_cvf_commit_tranche.py -k \"WorkerReturnContractDispatchQualityTests or worker_return_path or material_child_failure or command_success\"",
+      "result": "PASS",
+      "selected": 9,
+      "deselected": 168,
+      "elapsedSeconds": 1.98,
+      "log": ".cvf/runtime/return-route-early-20261016/focused-worker-tests.log"
+    },
+    {
+      "name": "targeted fence-delimiter correction following source review",
+      "command": "python -B -m pytest -q governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
+      "result": "PASS",
+      "selected": 7,
+      "elapsedSeconds": 0.57,
+      "log": ".cvf/runtime/return-route-early-20261016/fence-correction-contract-tests.log"
+    },
+    {
+      "name": "targeted full-document fence/section-join correction following read-only reviewer reproduction",
+      "command": "python -B -m pytest -q governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
+      "result": "PASS",
+      "selected": 7,
+      "elapsedSeconds": 0.40,
+      "log": ".cvf/runtime/return-route-early-20261016/section-join-contract-tests.log"
+    }
+  ],
+  "readAheadDisposition": {
+    "status": "PARTIAL; REQ-08 BLOCKED",
+    "reason": "check_gate_to_role_closeability.py and check_external_knowledge_intake_routing.py were first consulted after authoring and the first full-gate diagnostic. These later reads are disclosed and do not retroactively satisfy the required read-ahead sequence.",
+    "reviewerDecisionOwner": "LOCAL"
+  },
+  "fullGateHistory": [
+    {
+      "attempt": 1,
+      "result": "FAIL",
+      "exitCode": 1,
+      "elapsedSeconds": 7.36,
+      "log": ".cvf/runtime/return-route-early-20261016/final-worker-return-gate.log",
+      "logBytes": 15778,
+      "logSha256": "d699a14cf29965981f441b127f5fee2d7dfc3e68d62c0964b9fa1e5e1a060cd1",
+      "findings": [
+        "required full-gate evidence row lacked the literal command and PASS/COMPLIANT token",
+        "scaffold example path docs/reviews/x.md was treated as a missing authority artifact",
+        "the initially added SCEC claim omitted claimId, claimClass, proofClass and evidenceRef; corrected to the governing INITIAL empty claims array",
+        "read-ahead cited nonexistent governance/compat/check_work_order_closure_quality.py",
+        "internal-only external-routing disposition lacked an existing governed Internal source path",
+        "preserved historical runtime failure lacked a RUNTIME_BEHAVIOR_LEARNING row"
+      ]
+    },
+    {
+      "attempt": 2,
+      "result": "FAIL; return-only corrections required; REQ-08 remains BLOCKED for late read-ahead",
+      "exitCode": 1,
+      "elapsedSeconds": 6.76,
+      "log": ".cvf/runtime/return-route-early-20261016/final-worker-return-gate-corrected.log",
+      "logBytes": 14045,
+      "logSha256": "913053cfbbf8bb7562209d27794572db9c6ad2dd5d13578f6570be565b56afea",
+      "findings": [
+        "SCEC resolutionEvidence contained keys absent from the empty blockerDelta.resolved set",
+        "gateRunPurpose did not explicitly describe the corrected final gate as confirmation/evidence while distinguishing earlier discovery",
+        "blocked return lacked recurrenceDisposition"
+      ]
+    },
+    {
+      "attempt": 3,
+      "result": "PASS after return-only corrections; REQ-08 remains BLOCKED for late read-ahead",
+      "exitCode": 0,
+      "log": ".cvf/runtime/return-route-early-20261016/final-worker-return-gate-final.log"
+    }
+  ],
+  "namedReviewCorrections": [
+    "Fence close now requires matching delimiter character, length at least the opener, and whitespace-only tail; mixed tilde/backtick and shorter-close examples are covered.",
+    "Fences are filtered across the full document before section extraction, so a fenced Worker Return Packet Shape Contract heading cannot select an example section; regression case passes."
+  ],
+  "productionParserOutcomes": {
+    "validExactReturnPath": "production build_commands called once with empty test targets, exact path, repository root and original text; no parser issue",
+    "bareMissingDuplicate": "each reaches the production builder and preserves its issue text: active work order lacks an exact workerReturnPath",
+    "frozenHistoricalPacket": {
+      "revision": "27dff0217",
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md",
+      "bytes": 49161,
+      "sha256": "e77d463a22ff1672111eb779ac6eae570f807b79a1a206ac0d0e48519d754a68",
+      "fixturePolicy": "read immutable Git preimage; copy to temporary fixture only"
+    },
+    "newSubprocessesDuringConstruction": 0
+  },
+  "incrementalCost": {
+    "scope": "final section-join-corrected helper only; excludes full gate and hook startup",
+    "warmupCalls": 2,
+    "valid": {"calls": 100, "elapsedNs": 18364100, "microsecondsPerCall": 183.641},
+    "invalid": {"calls": 100, "elapsedNs": 18824300, "microsecondsPerCall": 188.243},
+    "measuredCalls": 200,
+    "newSubprocessCalls": 0,
+    "rawEvidence": ".cvf/runtime/return-route-early-20261016/helper-cost.json"
+  },
+  "existingFailFastAndHistoricalOutcome": {
+    "existingHelper": "scripts/cvf_commit_tranche.py _command/_material/_run_checks and existing failure tests read; mandated focused selection passed, with no new runner and no commit",
+    "postCommitLimit": "A release rejection after a continuity commit cannot undo that commit; this worker made no commit.",
+    "priorMandatoryGate": {
+      "result": "FAILED_PACKET_LITERAL_NOT_UPGRADED",
+      "failedCommand": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md",
+      "originalWorkOrderSha256": "e77d463a22ff1672111eb779ac6eae570f807b79a1a206ac0d0e48519d754a68",
+      "originalWorkerReturnSha256": "9992d5dce1e28fefb53c0b22d76df7903c05496e90393eb9e09f0e67c3c4383c",
+      "amendedRetainedWorkerReturnSha256": "6832fee51417210ac463703f9f88d8e14a5fbcb30bf344cc11c59a6a3ef2d59"
+    },
+    "priorRuntimeOutcome": {
+      "localEvidence": "docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json",
+      "localEvidenceSha256": "42d8cf94a55ce14b888fa1ed0db957936333ebae6f8e6079fe542de6abe8a7d7",
+      "workerEvidence": "docs/reviews/evidence/ncr-html-b-e-runtime-worker-20261016.json",
+      "workerEvidenceSha256": "7242f15c8c9ccd828759703d7692215e7ef71ce34a5a0b235b9f0149f69af49b",
+      "firstDispositionAccepted": false,
+      "dependentActor2": "NOT_RELEASED_DEPENDENCY_FAILED",
+      "webOutcome": "Web exited before readiness with Node MODULE_NOT_FOUND in internal/preload; browser/helper/journey never launched; no replay is claimed."
+    }
+  },
+  "requirementEvidence": [
+    {"requirementId": "REQ-01", "proofId": "PROOF-REQ-01", "status": "PASS", "evidence": "Dispatch branch invokes helper without requiring preapproval; valid declared fast-gate case composes through production builder."},
+    {"requirementId": "REQ-02", "proofId": "PROOF-REQ-02", "status": "PASS", "evidence": "Valid, bare, missing and duplicate workerReturnPath variants exercise production command construction and preserve actionable parser text."},
+    {"requirementId": "REQ-03", "proofId": "PROOF-REQ-03", "status": "PASS", "evidence": "Builder receives empty test-target tuple, exact work-order path, exact repository root and exact snapshotted text; construction is in-process and launches no subprocess."},
+    {"requirementId": "REQ-04", "proofId": "PROOF-REQ-04", "status": "PASS", "evidence": "Draft, HOLD, closed, non-fast, prose, outside-section and mixed/short/full fenced-example cases do not activate builder; existing parser and opt-in path remain unchanged."},
+    {"requirementId": "REQ-05", "proofId": "PROOF-REQ-05", "status": "PASS", "evidence": "Immutable 27dff0217 real packet preimage is copied to a temporary fixture and fails closed on its bare workerReturnPath."},
+    {"requirementId": "REQ-06", "proofId": "PROOF-REQ-06", "status": "PASS", "evidence": "Finite final-source timing: 100 valid and 100 invalid calls; 183.641 and 188.243 microseconds/call; 0 new subprocesses."},
+    {"requirementId": "REQ-07", "proofId": "PROOF-REQ-07", "status": "PASS", "evidence": "Existing cvf_commit_tranche fail-fast implementation/tests were reused; focused selection passed; no new runner or commit; post-commit limitation retained."},
+    {"requirementId": "REQ-08", "proofId": "PROOF-REQ-08", "status": "BLOCKED", "evidence": "The return/evidence contain exact5 and all prescribed details, but mandatory checker read-ahead was partial; two checker sources were first consulted after return authoring. No retroactive PASS is claimed."}
+  ],
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "claimBoundary": "Bounded static dispatch-time construction of the existing worker-return fast gate for changed READY/DISPATCHED work orders with an actual anchored requiredGate scalar in the real contract section. No runtime journey, B-E acceptance, universal coverage, provider, product, deployment, public-export, or arbitrary shell-interception claim."
+}

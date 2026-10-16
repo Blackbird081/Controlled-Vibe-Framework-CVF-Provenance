@@ -631,7 +631,7 @@ Current extension states: RECORDED; delivery NOT_RETURNED; application NOT_APPLI
 
 Learning/discovery/raw source pins are updated first; exact6 continuity then records the actual material SHA and this next application requirement. No roadmap advancement occurs in this task. Retired runtime pair, source13/adjunct5, generation9/SCEC2/counters2,0,2,0/blockers2/freeze, prior7 P4 exclusions and all parked effects remain unchanged. Required repository gates verify documentary integrity only; no AI governance/provider or product readiness claim.
 
-## Agent Operation Trace Block
+## Historical Learning Recording Operation Trace - 2026-10-16
 
 | Field | Evidence |
 |---|---|
@@ -653,3 +653,38 @@ Learning/discovery/raw source pins are updated first; exact6 continuity then rec
 | Actual changed set | `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`; `docs/reviews/evidence/cvf-orchestrator-runtime-recurrence-learning-20261016.json` |
 | Manifest delta | MATCH four documentary paths |
 | Deletion or rename disposition | none; original proof, returns, stage and custody retained |
+
+## Early Return Route Control - 2026-10-16
+
+Technical bounded control is implemented in the existing dispatch-quality gate; source review docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md and proof docs/reviews/evidence/return-route-early-local-20261016.json. Production return command construction is now called for declared fast-gate READY/DISPATCHED packets without opt-in. Missing/bare/duplicate scalars reject; fenced headings/declarations are excluded before section selection. Existing draft/HOLD/closed/non-fast and inherited-violation semantics remain. New-check subprocess count0; actual costs and exact source hashes are in proof. No new checker/catalog/runner.
+
+Original first return-gate failure is retained. REQ08 late mandatory checker read remains BLOCKED; Local packet/ledger preparation and initial fence-class review were partial. Technical acceptance does not assert full work-order fulfillment or repaired history. Existing material helper fail-fast was used, with its postcommit release limit preserved. Source13/adjunct5, old runtime grants/counters/freeze/exclusions are unchanged; Windows source/junction correction remains PLAN.
+
+Current October16 extension: bounded static control IMPLEMENTED; whole agent/application effectiveness NOT_PROVEN, project OPEN. No new typed delivery/application receipt or October9 receipt promotion. Next source dispatch consumes this control and retained procedural findings; real Windows proof is still needed.
+
+## Local Final Size And Closure Correction
+
+Local final approved-size gate found the dispatcher budget was wrong: main was frozen at approved313, not the packet400. Original worker return/source/proof bytes remain unchanged in custody; this is a Local preparation defect. Local relocated the exact two helper bodies and runner import into the existing exec-loaded artifacts module, restoring the main file byte-identical to the release HEAD304. Final source3 is artifacts757/range972/test274; no new module, registry exception, checker or hook. Existing class hard1000 remains; artifacts757 is a soft advisory under existing policy. This bounded topology amendment authorizes only governance/compat/check_work_order_dispatch_quality_artifacts.py in addition to the original historical worker scope; final material replaces the unchanged main with artifacts and remains exact18. No redispatch, business effect or runtime grant. Named information gain for focused rerun: approved-size contradiction and import/exec placement changed; contract module7PASS0.68s and Local seven-case production oracle passed after relocation. Worker full gate applies to frozen returned layout; final Local gates bind final layout. Historical REQ08 remains BLOCKED. Root closure metadata also required controlled status, exception telemetry and owner-row/selected-evidence wording correction. These corrections are retained as partial preparation, not worker fault or new runtime authority.
+
+## Agent Operation Trace Block
+
+| Field | Evidence |
+|---|---|
+| Actor | Local INTERNAL_AGENT orchestrator/reviewer/closer |
+| Provider or surface | private shared workspace |
+| Session or invocation | return-route-early-local-review-20261016 |
+| Working directory | repository root |
+| Command or tool surface | consume frozen exact5 worker proof, source diff review, seven-case own production oracle, fail-fast material helper and canonical continuity/gates |
+| Target paths | `governance/compat/check_work_order_dispatch_quality_artifacts.py`; `governance/compat/check_work_order_dispatch_quality_range.py`; `governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/return-route-early-worker-20261016.json`; `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/return-route-early-local-20261016.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` |
+| Allowed scope source | operator explicit low-latency guard correction and standing Local maintenance/commit authority |
+| Before status evidence | 8a36fbe59285eea4bd496b2d93cab9b4df000882; terminal exact5 worker lane released; source edits not staged/committed by worker |
+| After status evidence | bounded static checker accepted; current pair closed/currentAuthority aligned; product source correction stays PLAN |
+| Diff evidence | exact18 source/worker/closure/current-hash material, followed by exact6 actual-SHA continuity |
+| Approval boundary | guard source/test plus metadata only; no retired runtime grant |
+| Claim boundary | declared-state parsing/buildability, not universal agent adherence or B-E success |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | return-route-early-local-review-20261016 |
+| Expected manifest | `governance/compat/check_work_order_dispatch_quality_artifacts.py`; `governance/compat/check_work_order_dispatch_quality_range.py`; `governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/return-route-early-worker-20261016.json`; `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/return-route-early-local-20261016.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` |
+| Actual changed set | `governance/compat/check_work_order_dispatch_quality_artifacts.py`; `governance/compat/check_work_order_dispatch_quality_range.py`; `governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/return-route-early-worker-20261016.json`; `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/return-route-early-local-20261016.json`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` |
+| Manifest delta | MATCH eighteen paths |
+| Deletion or rename disposition | none; prior failed runtime and stage/custody retained |

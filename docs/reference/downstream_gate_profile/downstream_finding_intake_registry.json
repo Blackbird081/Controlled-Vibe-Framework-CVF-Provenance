@@ -253,7 +253,7 @@
               "sourceProject": "CVF-CORE",
               "evidence": {
                 "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
-                "sha256": "2e27b93ec2ddf2197ed7320357647c3f84ba36b154ebd310b1935970ccf34c40",
+                "sha256": "3d004c1de601a352ffc215fedd9b059f67b342d3ac378685dcfb3bb581e1cf2b",
                 "fragment": "Forward Application Control",
                 "evidenceClass": "OBSERVED_LOCAL"
               }
@@ -265,7 +265,7 @@
                 "evidence": [
                   {
                     "path": "docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md",
-                    "sha256": "2e27b93ec2ddf2197ed7320357647c3f84ba36b154ebd310b1935970ccf34c40",
+                    "sha256": "3d004c1de601a352ffc215fedd9b059f67b342d3ac378685dcfb3bb581e1cf2b",
                     "fragment": "R2 Result And Cost-Aware Dispatcher Learning",
                     "evidenceClass": "OBSERVED_LOCAL"
                   }
@@ -716,7 +716,7 @@
         "sha256": "b7e2a9d8833c9515f3efa0131a318900812fad537abb8c1da62e3bf8cda82796"
       },
       "authority": "SELECTED_PROJECT_EVIDENCE_PARENT_LOCAL_DISPOSITION",
-  "sourceProjectClaims": "Three final Local project reviews accepted bounded fixes; historical execution is attributed, selected source comparison performed in Core intake. Later prospective documentary application is recorded in the typed project loopback receipts.",
+      "sourceProjectClaims": "Three final Local project reviews accepted bounded fixes; historical execution is attributed, selected source comparison performed in Core intake. Later prospective documentary application is recorded in the typed project loopback receipts.",
       "findings": [
         {
           "id": "CCMA-OUTPUT-DELIVERY-TRUTH-20261013",

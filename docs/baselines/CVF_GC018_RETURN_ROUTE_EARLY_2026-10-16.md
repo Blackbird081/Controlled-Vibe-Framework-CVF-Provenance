@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BOUNDED_PROCEDURE_PARTIAL
 Date: 2026-10-16
 Batch ID: CVF-RETURN-ROUTE-EARLY-20261016
 Commit mode: WORKER_MUST_NOT_COMMIT
@@ -38,7 +38,7 @@ earlyRouteSpecVersion: RETURN_ROUTE_EARLY_V1
 - `docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md`
 - `docs/reviews/evidence/return-route-early-worker-20261016.json`
 
-Only these five paths are worker writable. Main<=400lines; range<=985lines (current971); existing test<=300lines (current112). No source split or exception. Fixtures live under worker-owned temporary/ignored custody; installed local tools only. Root task-source edits are confined to baseline/order/status/completion/evidence and exact6 continuity.
+Only these five paths are worker writable. Main<=400lines; range<=985lines (current971); existing test<=300lines (current112). No source split or exception. Fixtures live under worker-owned temporary/ignored custody; installed local tools only. Root task-source edits include baseline/order/status/completion/evidence, related existing shared learning/discovery/parent raw source pins and exact6 continuity. Local documentary closure topology only; worker exact5/effect/source3 scope unchanged.
 
 ## Source / Predecessor Evidence
 
@@ -82,6 +82,8 @@ Current raw pin identity is checked before worker edits; historical pins remain 
 REQ-01 trigger/current dispatch coverage; REQ-02 exact production parser negatives; REQ-03 command binding/static buildability; REQ-04 compatibility; REQ-05 frozen real-packet regression; REQ-06 cost/no-subprocess evidence; REQ-07 fail-fast reuse/outcome boundary; REQ-08 full return/source/learning/manifest/gate evidence. All mandatory. Distinct Local probe remains pending until actually executed; worker tests are consumed once. Normal required full gates remain; extra repeated suites or runtime calls are not authorized by this SPEC.
 
 ## Core Guard Self-Protection Authorization
+
+Additional Local final topology protected path: `governance/compat/check_work_order_dispatch_quality_artifacts.py`. Explicit operator-authorized guard correction; exact body relocation only.
 
 Authorized guard-maintenance scope: extend existing dispatch-quality return-route construction and focused regression only.
 Protected paths:
@@ -140,3 +142,26 @@ Actual query exit0 retained in task custody; relevant source/ownership/closeabil
 ## Pre-Implementation Ledger Correction
 
 The required test file is included in REQ-01..07 expectedArtifacts so the union of eight requirements covers every exact5 worker deliverable. Worker caught this Local packet omission during read-ahead before any gate/edit/test. This corrects ledger coverage only; source/effect/role/budget scope unchanged. Original release preimages retained in ignored custody.
+
+## Local Closure Disposition
+
+ACCEPTED_TECHNICAL_BOUNDED_PROCEDURE_PARTIAL: Local accepted the static early return-route repair after consumed worker evidence and distinct seven-case production-validator oracle. REQ01..07 technical requirements accepted; REQ08 historical mandatory read order remains BLOCKED. Full work-order fulfillment is not asserted and cannot be repaired retroactively. No B-E functionality, Windows source repair or universal learning effectiveness claim. Original dispatch pair/worker bytes retained in Local custody; no successor grant.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md; docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md | eight result rows and Local proof; REQ08 procedure limit retained | PASS - bounded technical disposition only |
+| Completion or reviewer artifact | docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md; docs/reviews/evidence/return-route-early-local-20261016.json | distinct Local7/7 and frozen source/worker hashes | PASS - accepted static scope |
+| Roadmap state | existing NCR Windows source-correction PLAN | source13/adjunct5/gen9/SCEC2 remain | PASS - no product stage advanced |
+| Registry JSON | docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json | two learning raw source pins refreshed; typed lifecycle decisions/receipts unchanged | PASS - source pins only |
+| Registry Markdown | docs/reviews/learnings/README.md | existing learning discovery updated | PASS - no new guard family |
+| External evidence digest | docs/reviews/evidence/return-route-early-local-20261016.json | internal worker/source and Local proof only | N/A with reason - no external intake |
+| System loop interlock | existing parent NCR state | no parent runtime/counter transition | N/A with reason - no loop change |
+| Session continuity | active handoff/front/core/entry and generated source6 | paired raw hashes atomic; actual material SHA in following exact6 | PASS - source-owned continuity; clean split closure follows |
+
+## Local Final Topology Correction
+
+Local final approved-size gate found the dispatcher budget was wrong: main was frozen at approved313, not the packet400. Original worker return/source/proof bytes remain unchanged in custody; this is a Local preparation defect. Local relocated the exact two helper bodies and runner import into the existing exec-loaded artifacts module, restoring the main file byte-identical to the release HEAD304. Final source3 is artifacts757/range972/test274; no new module, registry exception, checker or hook. Existing class hard1000 remains; artifacts757 is a soft advisory under existing policy. This bounded topology amendment authorizes only governance/compat/check_work_order_dispatch_quality_artifacts.py in addition to the original historical worker scope; final material replaces the unchanged main with artifacts and remains exact18. No redispatch, business effect or runtime grant. Named information gain for focused rerun: approved-size contradiction and import/exec placement changed; contract module7PASS0.68s and Local seven-case production oracle passed after relocation. Worker full gate applies to frozen returned layout; final Local gates bind final layout. Historical REQ08 remains BLOCKED.
+
+Final governing size budgets: main<=313 and net delta0; existing artifacts<=800 task budget within hard1000; range<=985; test<=300. Earlier main<=400 and no foreseeable relocation estimates are superseded at this Local final boundary. Original ledger/proof remains the worker historical contract, not a rewritten claim of original preparation.
