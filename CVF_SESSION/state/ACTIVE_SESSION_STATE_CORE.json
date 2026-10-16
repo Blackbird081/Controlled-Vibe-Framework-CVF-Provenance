@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md",
-    "baselineSha256": "5915cfb0d9c8cdce316a383c97c51c59bd214c23ae925fedc2d09ac9882b87ef",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md",
-    "workOrderSha256": "0065807778e47a02808d30b6409cbcafac497d0f5ad40912bccd29755b5c9a40"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md",
+    "baselineSha256": "d0a1bff7123dd5ccb4a13b2b5800f677918b882dc8cdfc682917d3a87167c903",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md",
+    "workOrderSha256": "91c68300c20a40bf380329f8c4247adb1a7f692851567846c607d53c17332b5f"
   },
-  "currentAuthoritySyncReason": "Fresh first-result continuity: Reviewer adjudication complete; runtime acceptance remains blocked and grant spent. First material dbb07364863ea627c22b07fd23b62a574b10aea0/continuity e4497e82cafe81b302d30aa5cbaa2331f6397a35 passed normal91/91, but automatic P4 committed-range generation failed RIPA on root-selected invalid reviewer Status. That unsafe automatic result is retained, never promoted. Existing canonical Recurring Blocked-Return Escalation governs blocked worker returns; explicit completion_review negative adjudication is not a new worker return. The narrow existing checker correction retains generic finding validation, actual/ambiguous worker enforcement and original FIRST_OCCURRENCE worker bytes. Worker focused tests and distinct root five-case metadata probe passed; no runtime/provider/native effect or worker repair/replay. Final first-result combined material range has15 paths (original13 plus checker2), following actual-SHA continuity6. Root corrective metadata helper first stopped on a Windows default-codepage read after partial documentary writes; exact preimages restored, UTF-8 explicit, no tests/effects replayed. Worker encoding inspection followed its initial patch and is recorded as partial preparation. BE-S10-G tracks this prerequisite; BE-S10 passive observer source work remains pending separate authority. Corrective normal hook attempt90/91 passed, active continuity failed because root move omitted explicit LHW24; existing marker restored, no new rule/checker or effect rerun.; exhausted grant, source identity unchanged.",
+  "currentAuthoritySyncReason": "Passive request observer material; actual blocked result split PASS consumed, prior evidence/source identity immutable.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_r1c_be_r01_blocked_spent",
-  "previousMode": "cvf_ncr_html_r1c_be_r01_dispatched",
+  "currentMode": "cvf_ncr_html_passive_request_observer_source_dispatched",
+  "previousMode": "cvf_ncr_html_r1c_be_r01_blocked_spent",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
