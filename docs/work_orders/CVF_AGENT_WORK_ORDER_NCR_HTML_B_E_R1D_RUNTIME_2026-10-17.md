@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: BLOCKED_WITH_REASON
 Date: 2026-10-17
 Batch ID: CVF-NCR-HTML-B-E-R1D-RUNTIME-20261017
 Inspection base: 35e398c29ac5a773f20766f1b4840d7b57882aca
@@ -454,10 +454,14 @@ Current file-only observation 2026-10-16T22:50:24.072087+00:00 is recorded in Cu
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: conditional new-actor runtime authority, milestone ledger, current mode/next and generated raw authority hashes align in the same commit.
+Atomicity reason: exhausted current grant, actual first-result disposition, raw closed authority hashes/roadmap and source-generated projection align atomically. Following actual-material-SHA continuity exact6 separate.
 
 Exact changed manifest:
 
+- `docs/reviews/CVF_NCR_HTML_B_E_R1D_RUNTIME_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-b-e-r1d-runtime-worker-20261017.json`
+- `docs/reviews/CVF_NCR_HTML_B_E_R1D_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-b-e-r1d-runtime-local-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
@@ -468,7 +472,7 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: listed paths only; following actual-material-SHA exact6 continuity remains separate.
+Rollback boundary: listed metadata only; no new effects/retry/cleanup/deletion.
 
 ## Source Verification Block
 
@@ -527,8 +531,12 @@ MATCH: current file hashes verified against fixed source release, canonical sour
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: one-actor r1d runtime authority, roadmap support/progress ledger and exact6 source/generated current mode/next/raw authority continuity only; no source/checker/hook/carrier semantics.
+Authorized guard-maintenance scope: close fresh one-actor grant/result/roadmap and current6 only; no source/checker/hook semantics.
 Protected paths:
+- `docs/reviews/CVF_NCR_HTML_B_E_R1D_RUNTIME_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-b-e-r1d-runtime-worker-20261017.json`
+- `docs/reviews/CVF_NCR_HTML_B_E_R1D_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-b-e-r1d-runtime-local-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
@@ -538,8 +546,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current autonomous continuation and explicit lasting-support roadmap tracking; Local selected one fresh cap2 product actor after accepted Q03.
-Rollback boundary: listed paths only; frozen source18/source-release/accepted source B/W and old evidence/grants/stages/parent/freeze/exclusions/parked effects unchanged.
+Operator authorization: current one-actor order and standing Local first-result review/closure/steward authority.
+Rollback boundary: listed metadata only; worker2/actual execution authority and all immutable source/qualification/old custody preserved. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed.
 
 ## ADIF Defect Registry Disclosure
 
@@ -568,26 +576,26 @@ Resolver query: taskClass=`Work-order authoring / dispatch`, role=`dispatcher`, 
 
 ## Agent Operation Trace Block
 
-| Field | Value |
+| Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT orchestrator/reviewer/steward |
+| Actor | Local INTERNAL_AGENT reviewer/closer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-r1d-runtime-material-20261017 |
+| Session or invocation | ncr-be-r1d-r01-material-20261017 |
 | Working directory | repository root |
-| Command or tool surface | root-reviewed new-actor authority/metadata preparation, roadmap progress ledger, current authority generation and normal commits separately owned by root |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator continuation; new one-actor r1d cap2 runtime pair after accepted Q03 |
-| Before status evidence | HEAD 35e398c29ac5a773f20766f1b4840d7b57882aca; clean worktree; git status --short empty; original source18/source authority remain frozen; no effect program started |
-| After status evidence | conditional fresh r1d cap2 runtime release; actual product outcome pending; source18 and accepted Q03 unchanged |
-| Diff evidence | exact9 material manifest |
-| Approval boundary | one new cap2 product program only after committed bound admission/external freeze; no cap1/provider/deletion or prior actor retry |
-| Claim boundary | new r1d actor grant conditional; no product outcome claimed |
+| Command or tool surface | consume frozen first-result/terminal worker gate and independent Local pure output; documentary closure/current6 generation; normal gates/commits separately owned by root |
+| Target paths | `docs/reviews/CVF_NCR_HTML_B_E_R1D_RUNTIME_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1d-runtime-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_B_E_R1D_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1d-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | one-actor first-result review and standing Local closure/steward authority |
+| Before status evidence | HEAD 29ca1c006a03a459030a69eff467a7b3e5c85fdb; worker terminal lane released/frozen |
+| After status evidence | BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; grant exhausted, cap1/provider/deletion/retry not granted |
+| Diff evidence | exact13 material manifest |
+| Approval boundary | metadata first-result closure only; no further runtime/native/provider/deletion |
+| Claim boundary | actual cap2 first result only, not cap1/final B-E/live governance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-r1d-runtime-material-20261017 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
-| Deletion or rename disposition | none; source/old grants/proofs/stages retained |
+| Invocation ID | ncr-be-r1d-r01-material-20261017 |
+| Expected manifest | `docs/reviews/CVF_NCR_HTML_B_E_R1D_RUNTIME_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1d-runtime-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_B_E_R1D_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1d-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/reviews/CVF_NCR_HTML_B_E_R1D_RUNTIME_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1d-runtime-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_B_E_R1D_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1d-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact13 |
+| Deletion or rename disposition | none; actual resources/custody retained as observed |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -720,3 +728,11 @@ Original R1C HTTP500 disturbed/locked request failure is immutable SPENT_BLOCKED
 ## R1D Admission Preparation Correction
 
 First pre-implementation gate exit1/14.281s found only missing scaffoldHelperCommand in both authority artifacts after root simplified provenance. Root owns this ORCHESTRATOR_PACKET_GAP / RULE_EXISTS error; existing checker predicate read, missing literal restored with truthful historical-only command disposition, current raw authority regenerated. Original failed receipt `.cvf/runtime/ncr-be-fresh-runtime-20261016/r1d-dispatch-preimplementation.log` SHA256 9bce73477a59cdf073f1d60894685a3203f15b874f2f6b49daf8220ac92cb606 retained. No product/program slot or provider effect. Earlier ignored finalization assertion caught an unbound duplicate freshness section before tracked adoption; root bound it with actual file-only evidence. No procedure PASS or new capability credit.
+
+## Local First-Result Grant Disposition
+
+BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False. This r1d grant is exhausted/spent; no further EXECUTE, retry, cap1, provider or deletion. Original worker ledger/status and actual execution B/W/admission/pins/grant/envelope remain immutable history. Fixed Local closure: docs/reviews/CVF_NCR_HTML_B_E_R1D_RUNTIME_LOCAL_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-b-e-r1d-runtime-local-20261017.json. Root accepted prior Q03/source clean split proof once; fresh metadata0.922s, ADIF27 untruncated,63immutable pins, scoped explicit inputs554035ab5c669a298006e2fc8df9adf81d81f23f3f9df8c0ce6339375605bff8. Original R1C DISPATCH_READY preimages reused as authoring aid; stale source/scaffold anchors corrected pre-adoption. Initial root52 pin projection supplemented by final Q03 five historical pins before adoption;63current pins. Ignored finalization assertion caught unbound duplicate freshness section before tracked adoption. Root first preimplementation exit1/14.281s missing scaffoldHelperCommand exact2, one consolidated root correction then finalPASS13.359s. Dispatch actual9/6 committed normal91each, clean split/bound gatesPASS, metadata freeze0.5s; one original effect only. Root private oracle corrected prefreeze to read original browser/egress custody because E.dumps redacts session/token fields and bounds strings, source frozen8a1f388e5953d0b2fc03b760112772b9d6b58b7c3500bd9892905eca5e316566. Source-backed DOM diagnostic used current staged renderer and original failure only, no new native/browser test. Closure aids adapted file-only to actual original WE/terminal/three-attempt schema, existing recursive publication predicate and valid negative RIPA status, no original evidence mutation or global checker. All combined-read truncation and metadata limits retained. Root ignored capture adapter initially required a globally unique executionBaseHead, but frozen WR repeats the identical canonical value in its convergence block; capture failed before writes and a downstream close call refused missing snapshot. Root corrected adapter to unique preamble plus identical-value reconciliation for all repeats; two original failed helper receipts retained, no tracked mutation or runtime/probe replay. Required ignored scaffold and bound preimplementation PASS before original effect. One shell read command had PowerShell brace parse failure before source reads; corrected scoped reads. Some combined outputs truncated; no full-file/corpus claim. First full gate exit1/7.875s found diff-literal, closeability enum and rescan checker prefix groups. Two metadata-only corrections; gate2 exit1/6.797s retained for the remaining checker self-discussion trigger. Relevant exact predicates read late and disclosed. Original first candidate preimages/streams/argv/timers retained. No extra effect, test, qualification, private oracle read or source edit. Final three original gate exits1/1/0, external elapsed7.875/6.797/7.125s; all argv/raw streams/timers/preimages retained. Worker frozen2/raw terminal unchanged; Local reviewer-return preflight PASS6.625s without runtime/control replay. Actual first failures retained; existing RULE_EXISTS/ORCHESTRATOR_PACKET_GAP rework receives no new capability/checker credit or perfect-history claim. Current closed B/W digests are documentary continuity, not a rewrite of execution authority. No Local proof digest back-edge.
+
+## Reviewer-Local Metadata Clarification Authority
+
+Reviewer-local metadata wording correction after first normal commit hook refusal (27.0s; two documentary wording classifications only). Standing Local authority and First-Return Orchestrator And Reviewer Duty / Reviewer-Local Repair Versus Worker Return Routing authorize this same-path, same-claim clarification. Original worker WR/WE seal and all three full-gate logs remain immutable in terminal custody; tracked WR is explicitly a reviewer wording derivative, not the original byte-gated worker artifact. Changed only its negated scan-claim phrase to bounded named-file evidence. Completion history uses neutral wording for checker failures, with named guard discussion below. Runtime BLOCKED, worker/probe outcomes and ledgers unchanged; no source/checker/hook/native/provider/runtime/probe mutation or replay. No new capability credit. Original worker WR SHA256 20342d82c8dcda8c5ac93d946e84b09e212cc4c51460079658e497b85f8ad963; current reviewer wording SHA256 b717b0eb9fd58487f40dee046ee3112d3c6116c03e6b60dfb807f325af69737d. Exact13 remains unchanged. Original frozen custody, not the updated presentation, owns the worker final-byte gate claim.

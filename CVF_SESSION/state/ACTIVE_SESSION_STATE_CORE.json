@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md",
-    "baselineSha256": "ec89ce0335f79876688d193a7432233cf0622620d4b6f34b79355cc687a5114d",
+    "baselineSha256": "b20bacaff217e3a0b3718187885eb98f5bf741f4b028a6d1cc81401aac1e6877",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md",
-    "workOrderSha256": "1debd5277186a4936f0d570c4e7d44630d33cbe553752c2502b45567fb521e81"
+    "workOrderSha256": "4091a828d721a920e65e8d962ba5abadf4f27127c540f4c1342ce2f7ae479317"
   },
-  "currentAuthoritySyncReason": "r1d runtime dispatch continuity at 2d3199093bb14f2e00d7800c20ad6b5d8fd6dbfd; conditional one fresh cap2 actor, accepted Q03/source authority frozen.",
+  "currentAuthoritySyncReason": "Fresh first-result material: BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; exhausted grant, source identity unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_r1d_be_r01_dispatched",
-  "previousMode": "cvf_ncr_html_passive_source_qualification_accepted_bounded",
+  "currentMode": "cvf_ncr_html_r1d_be_r01_blocked_spent",
+  "previousMode": "cvf_ncr_html_r1d_be_r01_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
