@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_html_windows_qualification_dispatched",
+  "currentMode": "cvf_ncr_html_windows_qualification_accepted_bounded",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-WINDOWS-QUALIFICATION-20261016. Under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md and docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md, release INTERNAL_AGENT qualification worker only after bound pre-dispatch PASS and frozen invocation-envelope/pins external hashes. One actual cap2 control matrix9cases/26inert Python children, one Docker4 read-only group;2one-shot programs,90s/60s outer,12s Docker child,retry0; worker deadline17:18Z, Local18:48Z. Source13/adjunct5/frozen source authority unchanged; no fake/broad/native-seam rerun. Worker exact2 publishes after both programs; Local PURE independent receipt oracle then closure. Roadmap BE-S01..08 checked bounded support; BE-Q01 open until actual qualification, BE-R01/R02 open. No product/cap1/provider/deletion or old grant replay; gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and parked states retained. Ordinary details Local; no generic operator checkpoint. Qualification material 657d7c6d596ea9cf4631902ca77b551b1ee237fa; source6 records the actual material anchor before worker release.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-FRESH-BE-R01-ADMISSION-20261016. Current-source cap2 actual9/26 and Docker4 qualification accepted bounded with distinct Local PURE10; consume docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-windows-qualification-local-20261016.json. BE-Q01 checked bounded, BE-R01/BE-R02 remain open. Next Local plans fresh separately admitted cap2 product invocation against immutable new source identity, no automatic EXECUTE. Cap1 actual waits for accepted future cap2 product predecessor. Source18/accepted source authority/release unchanged; no old-grant replay/provider/deletion or generic documentary operator checkpoint. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Material/actual-SHA continuity and clean split gates pending.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md",
-    "baselineSha256": "b51cad9ce393d5b74076c816321131ecce26b4c7dde89c371bbcf015b91e5884",
+    "baselineSha256": "c51c72798fcc2c8964de34da12a88105c95b25ae7a49da823b6ff5f0e293b369",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md",
-    "workOrderSha256": "29348925fb45ad468d797b4a026fd81b67a07fdac7878b8176575dceae652c4a"
+    "workOrderSha256": "4d1c34f7cd71367d0ff5d1df9d9b9bcbda5a5a7250f2e9427d26167bd54eb1f6"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

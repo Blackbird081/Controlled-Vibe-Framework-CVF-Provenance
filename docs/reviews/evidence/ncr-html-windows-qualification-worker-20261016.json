@@ -1,0 +1,748 @@
+{
+  "schemaVersion": "cvf.ncrHtmlWindowsQualificationWorker@1",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "executionBaseHead": "51e4b00f232d9087342e45fe3e91b7c038045ca1",
+  "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md",
+  "role": "INTERNAL_AGENT_WORKER",
+  "decisionOwner": "LOCAL",
+  "envelopeBinding": {
+    "observedUtc": "2026-10-16T16:19:05.646337+00:00",
+    "head": "51e4b00f232d9087342e45fe3e91b7c038045ca1",
+    "clean": true,
+    "envelopeSha256": "db6ca0b212fbf5d73d73927b75f7a57183346917955d2ea5857a01fc9d496f5f",
+    "pinsSha256": "9982ad5df0f2e4f759cfd8c2c74c95a280f184798555b6f8914ae683069953ce",
+    "programs3Match": true,
+    "authority2Match": true,
+    "environmentOverridesAbsent": true,
+    "ignoredSkeletonBeforeEffects": true,
+    "independentOracleRead": false
+  },
+  "pinsSha256": "9982ad5df0f2e4f759cfd8c2c74c95a280f184798555b6f8914ae683069953ce",
+  "qualificationAuthority": {
+    "docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md": "b51cad9ce393d5b74076c816321131ecce26b4c7dde89c371bbcf015b91e5884",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md": "29348925fb45ad468d797b4a026fd81b67a07fdac7878b8176575dceae652c4a"
+  },
+  "source18Preserved": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": {
+      "expected": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+      "actual": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8"
+    },
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": {
+      "expected": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+      "actual": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491"
+    },
+    "scripts/cvf_ncr_html_owned_profile/profile.py": {
+      "expected": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+      "actual": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": {
+      "expected": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+      "actual": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1"
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": {
+      "expected": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "actual": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0"
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": {
+      "expected": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+      "actual": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e"
+    },
+    "scripts/cvf_ncr_html_owned_profile/execution.py": {
+      "expected": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "actual": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": {
+      "expected": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "actual": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357"
+    },
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": {
+      "expected": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "actual": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": {
+      "expected": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "actual": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_win32.py": {
+      "expected": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "actual": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py": {
+      "expected": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "actual": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702"
+    },
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": {
+      "expected": "62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a",
+      "actual": "62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a"
+    },
+    "scripts/cvf_ncr_html_effect_fence.py": {
+      "expected": "8feaf4f516219119390c3cd8351da99ece0c4f8bc5049068b5d6ccac6940d4d3",
+      "actual": "8feaf4f516219119390c3cd8351da99ece0c4f8bc5049068b5d6ccac6940d4d3"
+    },
+    "scripts/run_cvf_ncr_html_effect_driver.py": {
+      "expected": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+      "actual": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf"
+    },
+    "scripts/test_cvf_ncr_html_effect_driver.py": {
+      "expected": "578c8f10c2fea54c1dd71636109befeb680cfaa5eb608d440690635dc74725a0",
+      "actual": "578c8f10c2fea54c1dd71636109befeb680cfaa5eb608d440690635dc74725a0"
+    },
+    "scripts/cvf_ncr_html_browser_fence.cjs": {
+      "expected": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+      "actual": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6"
+    },
+    "scripts/cvf_ncr_html_browser_fence.test.cjs": {
+      "expected": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+      "actual": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf"
+    }
+  },
+  "sourceRelease": {
+    "path": "docs/reviews/evidence/ncr-html-windows-source-release-20261016.json",
+    "sha256": "ab30a0de37c4f93832117833f1e7093d9a97c2f3e8d08ae7325f0047230cfc9c",
+    "scope": "SOURCE_IDENTITY_ONLY"
+  },
+  "frozenSourceAuthorityPreserved": {
+    "docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md": {
+      "expected": "ccd4e247ff6aac95b3b53040d449d67505394b7da504ddbd87b43ecdf0f3cf6b",
+      "actual": "ccd4e247ff6aac95b3b53040d449d67505394b7da504ddbd87b43ecdf0f3cf6b"
+    },
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md": {
+      "expected": "f9367246a646efb81ef42308007a016031ee690b4f57b7c050cbffd555a788c8",
+      "actual": "f9367246a646efb81ef42308007a016031ee690b4f57b7c050cbffd555a788c8"
+    }
+  },
+  "selectedToolMetadataAfter": {
+    "node": {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe",
+      "expectedSha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+      "actualSha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+      "reparseAncestors": []
+    },
+    "docker": {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+      "expectedSha256": "6c699720bb9523dedb9eb5d22a49951ea9210dbdb1314a3554029eee9be76896",
+      "actualSha256": "6c699720bb9523dedb9eb5d22a49951ea9210dbdb1314a3554029eee9be76896",
+      "reparseAncestors": []
+    },
+    "git": {
+      "path": "C:\\Program Files\\Git\\cmd\\git.exe",
+      "expectedSha256": "7b7971dd13f0c3a284e538601f2f9770b3a87dfaccb5fb52d68141c67ed22364",
+      "actualSha256": "7b7971dd13f0c3a284e538601f2f9770b3a87dfaccb5fb52d68141c67ed22364",
+      "reparseAncestors": []
+    },
+    "taskkill": {
+      "path": "C:\\Windows\\System32\\taskkill.exe",
+      "expectedSha256": "1249717315fc8f4d2df17d5db9da0444795fdb9fb83dfb1f763c3f39282244f7",
+      "actualSha256": "1249717315fc8f4d2df17d5db9da0444795fdb9fb83dfb1f763c3f39282244f7",
+      "reparseAncestors": []
+    },
+    "tasklist": {
+      "path": "C:\\Windows\\System32\\tasklist.exe",
+      "expectedSha256": "62800679c55682f2f5f38b3df9080d12480bea78b5b8476eace9df014f353b14",
+      "actualSha256": "62800679c55682f2f5f38b3df9080d12480bea78b5b8476eace9df014f353b14",
+      "reparseAncestors": []
+    },
+    "netstat": {
+      "path": "C:\\Windows\\System32\\NETSTAT.EXE",
+      "expectedSha256": "23ca543c858f0e725fd2c7f142bfc9ddbf3b7e4320737c6e904cb9cae6fc7c6d",
+      "actualSha256": "23ca543c858f0e725fd2c7f142bfc9ddbf3b7e4320737c6e904cb9cae6fc7c6d",
+      "reparseAncestors": []
+    },
+    "python": {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "expectedSha256": "5f7b89a612c9b8af1d6456cdfcd1dbe5ca630849e79aebced9bee9a6694952ec",
+      "actualSha256": "5f7b89a612c9b8af1d6456cdfcd1dbe5ca630849e79aebced9bee9a6694952ec",
+      "reparseAncestors": []
+    },
+    "cmd": {
+      "path": "C:\\Windows\\System32\\cmd.exe",
+      "expectedSha256": "15cd209c995b7d3009c91ca40892d5b8f1fb162f3e5f10716642ea278e8e0d7b",
+      "actualSha256": "15cd209c995b7d3009c91ca40892d5b8f1fb162f3e5f10716642ea278e8e0d7b",
+      "reparseAncestors": []
+    }
+  },
+  "fixedProgramsPreserved": {
+    "worker/driver.py": {
+      "expected": "424e8b8744bf7a1614128c193d2b50a188fbc873e3acb5172afdf9ced7c1ef7f",
+      "actual": "424e8b8744bf7a1614128c193d2b50a188fbc873e3acb5172afdf9ced7c1ef7f"
+    },
+    "launch_controls.py": {
+      "expected": "6cbe900f9e9befcff857b83c21a9e28c3466e8d6be63375c44a99d4b23ef369c",
+      "actual": "6cbe900f9e9befcff857b83c21a9e28c3466e8d6be63375c44a99d4b23ef369c"
+    },
+    "qualify_docker.py": {
+      "expected": "e5b89df6393e0dd36b02293695f5ef2395039f7e1f539b583bef9f966bf8901e",
+      "actual": "e5b89df6393e0dd36b02293695f5ef2395039f7e1f539b583bef9f966bf8901e"
+    }
+  },
+  "pinsPreserved": true,
+  "programLedger": {
+    "schemaVersion": "cvf.ncrWindowsQualificationPrograms@1",
+    "ceiling": 2,
+    "actualMatrixCeiling": 1,
+    "actualChildCeiling": 26,
+    "dockerQueryCeiling": 4,
+    "actions": {
+      "worker-actual": {
+        "status": "PASS",
+        "actor": "INTERNAL_AGENT_WORKER",
+        "mode": "actual",
+        "chargedAt": 1792167572.7562506,
+        "watchdogSeconds": 90,
+        "expectedActualChildren": 26,
+        "pinsSha256": "9982ad5df0f2e4f759cfd8c2c74c95a280f184798555b6f8914ae683069953ce",
+        "driverSha256": "424e8b8744bf7a1614128c193d2b50a188fbc873e3acb5172afdf9ced7c1ef7f",
+        "command": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-qualification-20261016\\worker\\driver.py",
+          "--mode",
+          "actual",
+          "--pins",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-qualification-20261016\\release-pins.json",
+          "--driver-sha",
+          "424e8b8744bf7a1614128c193d2b50a188fbc873e3acb5172afdf9ced7c1ef7f"
+        ],
+        "exit": 0,
+        "watchdogExpired": false,
+        "elapsedSeconds": 2.1410000000032596,
+        "stdoutSha256": "1e7fb4431e5efaceff1cddde9060b9db38640c82e062b715121079c0289cca2d",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "summaryPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-qualification-20261016\\worker\\cap2-actual-c2272db536472f21\\summary.json",
+        "summarySha256": "3f9385ee0908b3dc893c338ab2a227af530553bbc7d531e6c8562564d64bd183",
+        "receiptPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-qualification-20261016\\worker\\cap2-actual-c2272db536472f21\\receipt.json",
+        "receiptSha256": "536ce179c4f1df40542f94ca832a4460b1e22f2c73ad434cd77b58799b627b66"
+      },
+      "docker-readiness": {
+        "status": "PASS_CURRENT_READINESS_ONLY",
+        "chargedAt": 1792167575.1511881,
+        "pinsSha256": "9982ad5df0f2e4f759cfd8c2c74c95a280f184798555b6f8914ae683069953ce",
+        "queryCeiling": 4,
+        "queries": [
+          {
+            "ordinal": 1,
+            "argv": [
+              "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+              "context",
+              "show"
+            ],
+            "state": "FINISHED",
+            "timeoutSeconds": 12,
+            "exit": 0,
+            "stdout": "desktop-linux",
+            "stderr": ""
+          },
+          {
+            "ordinal": 2,
+            "argv": [
+              "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+              "--context",
+              "desktop-linux",
+              "context",
+              "inspect",
+              "desktop-linux",
+              "--format",
+              "{{(index .Endpoints \"docker\").Host}}"
+            ],
+            "state": "FINISHED",
+            "timeoutSeconds": 12,
+            "exit": 0,
+            "stdout": "npipe:////./pipe/dockerDesktopLinuxEngine",
+            "stderr": ""
+          },
+          {
+            "ordinal": 3,
+            "argv": [
+              "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+              "--context",
+              "desktop-linux",
+              "version",
+              "--format",
+              "{{.Server.Os}}|{{.Server.Arch}}|{{.Server.Version}}"
+            ],
+            "state": "FINISHED",
+            "timeoutSeconds": 12,
+            "exit": 0,
+            "stdout": "linux|amd64|29.8.2",
+            "stderr": ""
+          },
+          {
+            "ordinal": 4,
+            "argv": [
+              "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+              "--context",
+              "desktop-linux",
+              "image",
+              "inspect",
+              "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+              "--format",
+              "{{.Id}}|{{.Os}}|{{.Architecture}}"
+            ],
+            "state": "FINISHED",
+            "timeoutSeconds": 12,
+            "exit": 0,
+            "stdout": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294|linux|amd64",
+            "stderr": ""
+          }
+        ],
+        "elapsedSeconds": 0.7179999999934807
+      }
+    }
+  },
+  "outerPrograms": [
+    {
+      "commandOrdinal": 1,
+      "label": "controls",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-qualification-20261016\\launch_controls.py",
+        "worker",
+        "actual",
+        "--pins-sha",
+        "9982ad5df0f2e4f759cfd8c2c74c95a280f184798555b6f8914ae683069953ce"
+      ],
+      "startedUtc": "2026-10-16T16:19:32.632185+00:00",
+      "timeoutSeconds": 90,
+      "timeout": false,
+      "exit": 0,
+      "elapsedSeconds": 2.2810000000026776,
+      "stdoutSha256": "9f782a498251e382b43f31505fa23c0e6daafc83f7b84f827ca002b297be6f6d",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "commandOrdinal": 2,
+      "label": "docker",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-qualification-20261016\\qualify_docker.py",
+        "--pins-sha",
+        "9982ad5df0f2e4f759cfd8c2c74c95a280f184798555b6f8914ae683069953ce"
+      ],
+      "startedUtc": "2026-10-16T16:19:34.991121+00:00",
+      "timeoutSeconds": 60,
+      "timeout": false,
+      "exit": 0,
+      "elapsedSeconds": 0.8910000000032596,
+      "stdoutSha256": "2ac27744da54331629f472763797f52bd973c9488500a3a4c4e7535e00c0e505",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "controls": {
+    "receiptPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-qualification-20261016\\worker\\cap2-actual-c2272db536472f21\\receipt.json",
+    "receiptSha256": "536ce179c4f1df40542f94ca832a4460b1e22f2c73ad434cd77b58799b627b66",
+    "canonicalDigest": "536ce179c4f1df40542f94ca832a4460b1e22f2c73ad434cd77b58799b627b66",
+    "summary": {
+      "actor": "IMPLEMENTATION_WORKER",
+      "mode": "actual",
+      "passed": 9,
+      "actualChildren": 26,
+      "fakeCalls": 0,
+      "receipt": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-qualification-20261016\\worker\\cap2-actual-c2272db536472f21\\receipt.json",
+      "receiptSha256": "536ce179c4f1df40542f94ca832a4460b1e22f2c73ad434cd77b58799b627b66",
+      "ledger": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-qualification-20261016\\worker\\cap2-actual-c2272db536472f21\\child-ledger.json",
+      "source13": {
+        "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+        "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+        "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+        "scripts/cvf_ncr_html_owned_profile/test_control.py": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+        "scripts/cvf_ncr_html_owned_profile/journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+        "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+        "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+        "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+        "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+        "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+        "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+        "scripts/cvf_ncr_html_owned_profile/source_release.py": "62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a"
+      },
+      "runtimeEffects": 0
+    },
+    "childLedger": {
+      "mode": "actual",
+      "actor": "IMPLEMENTATION_WORKER",
+      "charged": 26,
+      "fakeCalls": 0,
+      "ceiling": 26,
+      "attempts": [
+        {
+          "number": 1,
+          "argvSha256": "fab3a63575e7a4c9b42e4279a2700cf71fee35420437b02418bae421b4f30508",
+          "chargedAt": 1792167573602473200
+        },
+        {
+          "number": 2,
+          "argvSha256": "a9aaf9bd6caeb998c8d22c706de8093a29246f887d0a671a133aac2b8858fe52",
+          "chargedAt": 1792167573648497200
+        },
+        {
+          "number": 3,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167573695635400
+        },
+        {
+          "number": 4,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167573753395800
+        },
+        {
+          "number": 5,
+          "argvSha256": "c0a5f15846a0ed9268adebb508c9ddbb0bfb7dead53826ec9fe2099c4a3a64d0",
+          "chargedAt": 1792167573792642300
+        },
+        {
+          "number": 6,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167573835886400
+        },
+        {
+          "number": 7,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167573874995700
+        },
+        {
+          "number": 8,
+          "argvSha256": "a9aaf9bd6caeb998c8d22c706de8093a29246f887d0a671a133aac2b8858fe52",
+          "chargedAt": 1792167573912210100
+        },
+        {
+          "number": 9,
+          "argvSha256": "82320ff9c9171b184c0562bc382d3e6386ffa15db2c2cc75710b48d98779db0f",
+          "chargedAt": 1792167573949562500
+        },
+        {
+          "number": 10,
+          "argvSha256": "73c732a0357db9342055b5518782ee9e6d3b1f128da369a24687f4ac805b5638",
+          "chargedAt": 1792167574002720700
+        },
+        {
+          "number": 11,
+          "argvSha256": "a9aaf9bd6caeb998c8d22c706de8093a29246f887d0a671a133aac2b8858fe52",
+          "chargedAt": 1792167574183886000
+        },
+        {
+          "number": 12,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167574228601200
+        },
+        {
+          "number": 13,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167574272231400
+        },
+        {
+          "number": 14,
+          "argvSha256": "dad636599fc4efb67eb5b4921391c7e482251ce17ddb996923ab5cf1b6557e93",
+          "chargedAt": 1792167574308205700
+        },
+        {
+          "number": 15,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167574356216000
+        },
+        {
+          "number": 16,
+          "argvSha256": "a9aaf9bd6caeb998c8d22c706de8093a29246f887d0a671a133aac2b8858fe52",
+          "chargedAt": 1792167574394833000
+        },
+        {
+          "number": 17,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167574431067800
+        },
+        {
+          "number": 18,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167574468945800
+        },
+        {
+          "number": 19,
+          "argvSha256": "638ae3e281e3a6bc53ebdd0243b840ff469f3b76d972c58200bf3e1f8226ff58",
+          "chargedAt": 1792167574503281400
+        },
+        {
+          "number": 20,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167574567224300
+        },
+        {
+          "number": 21,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167574627458300
+        },
+        {
+          "number": 22,
+          "argvSha256": "a9aaf9bd6caeb998c8d22c706de8093a29246f887d0a671a133aac2b8858fe52",
+          "chargedAt": 1792167574662612200
+        },
+        {
+          "number": 23,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167574698310500
+        },
+        {
+          "number": 24,
+          "argvSha256": "8a8401714923cd9fa608df07ec248f24409e9f108ee59fad57a0c547dada4379",
+          "chargedAt": 1792167574736177700
+        },
+        {
+          "number": 25,
+          "argvSha256": "a9aaf9bd6caeb998c8d22c706de8093a29246f887d0a671a133aac2b8858fe52",
+          "chargedAt": 1792167574775088700
+        },
+        {
+          "number": 26,
+          "argvSha256": "12de260ed94f3cdd40e7f0aede839ac0fa21142d70fc843c80e8c324a1f5717f",
+          "chargedAt": 1792167574814464400
+        }
+      ]
+    },
+    "caseJoins": [
+      {
+        "case": "taskkill-nonzero",
+        "substituteStarts": 3,
+        "commandsSha256": "b519164f9e3057c160122223d16ab24fbc540c9494b748d9893b4160466b88dc",
+        "terminalEvidenceSha256": "23aace1a9f9747abd24ea2c8be87c94a921f8120268dccfd00d8e30bd9fabeba",
+        "accepted": false,
+        "failureClasses": [
+          "NONZERO_EXIT"
+        ]
+      },
+      {
+        "case": "tasklist-nonzero",
+        "substituteStarts": 3,
+        "commandsSha256": "7aa8bea4af90a15306c76f199b28306f69f5c2709143a7eb7f56638eb1c08870",
+        "terminalEvidenceSha256": "7f49635020f619b69cdb26c60af4dd42d03777edea909e1277e04668d417a438",
+        "accepted": false,
+        "failureClasses": [
+          "NONZERO_EXIT"
+        ]
+      },
+      {
+        "case": "docker-ps-nonzero",
+        "substituteStarts": 3,
+        "commandsSha256": "e083f6e440bf6742fad9bfb4f1b84e3728ee3580b3e94da82e4b4bb17b8346ca",
+        "terminalEvidenceSha256": "9ce5426e77c2291a20ee54cf601092815b17c3e690ac687ac6f2f2b320f574d7",
+        "accepted": false,
+        "failureClasses": [
+          "NONZERO_EXIT"
+        ]
+      },
+      {
+        "case": "timeout",
+        "substituteStarts": 3,
+        "commandsSha256": "bfda45928eb394c4dece09dfc2c9891b72692f59ce7e0e7761da7bee4d88d9ef",
+        "terminalEvidenceSha256": "640f1c6540f216492e7df05d2d5e7b452044fd155dbc40c54d4b38c5af15b718",
+        "accepted": false,
+        "failureClasses": [
+          "TIMEOUT"
+        ]
+      },
+      {
+        "case": "tasklist-malformed",
+        "substituteStarts": 3,
+        "commandsSha256": "9e195a00a0080b5ea103f95346f8837a83d504ce5c6b20b9a84368c96355aa75",
+        "terminalEvidenceSha256": "17ee5be0f90c9d77f756a0318c4620c581b17f8c36cdc7f0cfce394cebca5333",
+        "accepted": false,
+        "failureClasses": [
+          "PARSE"
+        ]
+      },
+      {
+        "case": "identity-mismatch",
+        "substituteStarts": 2,
+        "commandsSha256": "34b069d32c3f67e448ff99b574825103fa658f7d5e6b6ecfd012fe9142f428f2",
+        "terminalEvidenceSha256": "3574e123f07601dfea51416222951518935668b883278dc296e36fcc6af0457e",
+        "accepted": false,
+        "failureClasses": []
+      },
+      {
+        "case": "still-live",
+        "substituteStarts": 3,
+        "commandsSha256": "51165d42a531d17938407943200ab25510805aebc8f443d3d9c9827d924ccf42",
+        "terminalEvidenceSha256": "fed99eaa71b95266e97d8d85419b6ac9fd66820abed0e2bcde8f428038148a40",
+        "accepted": false,
+        "failureClasses": []
+      },
+      {
+        "case": "unsafe-path",
+        "substituteStarts": 3,
+        "commandsSha256": "8f856d4962d678fff91f693c6d1176ab1c1afe0731b42796f36c928b32cfa81a",
+        "terminalEvidenceSha256": "a135faa5c45daff505d069616e5c1e2cac3030a396fdc09d3ebaeddc39e46de1",
+        "accepted": false,
+        "failureClasses": []
+      },
+      {
+        "case": "docker-ps-malformed",
+        "substituteStarts": 3,
+        "commandsSha256": "762ab56ee71b47ce746cf4a22d8213690a98dfcc10c989e551d2a2f05549cde6",
+        "terminalEvidenceSha256": "628e5be9eb5f6436b593c973e50d7a54918a7f369924872cfd5cb0222693793d",
+        "accepted": false,
+        "failureClasses": [
+          "PARSE"
+        ]
+      }
+    ],
+    "controlReceipt": {"actor":"IMPLEMENTATION_WORKER","cases":[{"case":"taskkill-nonzero","commands":[{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(7)"],"elapsedSeconds":0.047,"executable":"python.exe","exitCode":7,"failureClass":"NONZERO_EXIT","inputBytes":0,"kind":"taskkill","seq":1,"startedAt":107977.078,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(0)"],"elapsedSeconds":0.046,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"tasklist","seq":2,"startedAt":107977.125,"state":"FINISHED","stderr":"","stdout":"\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.047,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"docker-ps","seq":3,"startedAt":107977.171,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2}],"commandsSha256":"b519164f9e3057c160122223d16ab24fbc540c9494b748d9893b4160466b88dc","effects":{"engineStarts":0,"nativeChildren":0,"networkCalls":0,"productStarts":0,"providerStarts":0},"invocation":"cap2-actual-c2272db536472f21","substituteStarts":3,"terminal":{"accepted":false,"acknowledgment":{"error":null,"readBack":"NOT_ATTEMPTED","write":"NOT_ATTEMPTED"},"actualDisposal":"NOT_ATTEMPTED","disposalEligible":false,"evidence":{"actions":[{"action":"identity","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"FAILED"},{"action":"container-remove","outcome":"CONFIRMED"},{"action":"tasklist","outcome":"CONFIRMED"},{"action":"docker-ps","outcome":"CONFIRMED"},{"action":"descendants","outcome":"CONFIRMED"},{"action":"listeners","outcome":"CONFIRMED"},{"action":"disposal-target","outcome":"CONFIRMED"},{"action":"handle-close","outcome":"CONFIRMED"}],"child":{"confirmed":true,"reason":"NOT_LAUNCHED"},"containerQuery":"ABSENT","descendantQuery":"ABSENT","disposalTarget":"SAFE","errors":["taskkill: CommandFailure: taskkill: NONZERO_EXIT; evidence retained"],"listenerQuery":"ABSENT","ownedIdentities":[{"creation100ns":123,"image":"INERT_NO_PRODUCT","pid":43210}],"preAckDisposition":"NOT_ACCEPTED_UNKNOWN","primaryFailures":[],"processQuery":"ABSENT","protocol":{"cleanupSeconds":120,"closedBy":"TERMINAL","generation":"gfeab2033","operations":[{"cleanup":true,"id":1,"inflightAtClose":false,"kind":"taskkill","outcome":"NONZERO_EXIT","state":"FAILED","uncertain":false},{"cleanup":true,"id":2,"inflightAtClose":false,"kind":"tasklist","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":3,"inflightAtClose":false,"kind":"docker-ps","outcome":null,"state":"DONE","uncertain":false}],"phase":"CLEANUP","workSeconds":900},"stageRetained":true,"uncertainOperations":[]},"evidenceBytes":2016,"evidenceSha256":"23aace1a9f9747abd24ea2c8be87c94a921f8120268dccfd00d8e30bd9fabeba","stageRetained":true}},{"case":"tasklist-nonzero","commands":[{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.031,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"taskkill","seq":1,"startedAt":107977.234,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(9)"],"elapsedSeconds":0.047,"executable":"python.exe","exitCode":9,"failureClass":"NONZERO_EXIT","inputBytes":0,"kind":"tasklist","seq":2,"startedAt":107977.265,"state":"FINISHED","stderr":"","stdout":"\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.031,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"docker-ps","seq":3,"startedAt":107977.312,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2}],"commandsSha256":"7aa8bea4af90a15306c76f199b28306f69f5c2709143a7eb7f56638eb1c08870","effects":{"engineStarts":0,"nativeChildren":0,"networkCalls":0,"productStarts":0,"providerStarts":0},"invocation":"cap2-actual-c2272db536472f21","substituteStarts":3,"terminal":{"accepted":false,"acknowledgment":{"error":null,"readBack":"NOT_ATTEMPTED","write":"NOT_ATTEMPTED"},"actualDisposal":"NOT_ATTEMPTED","disposalEligible":false,"evidence":{"actions":[{"action":"identity","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"CONFIRMED"},{"action":"container-remove","outcome":"CONFIRMED"},{"action":"tasklist","outcome":"FAILED"},{"action":"docker-ps","outcome":"CONFIRMED"},{"action":"descendants","outcome":"CONFIRMED"},{"action":"listeners","outcome":"CONFIRMED"},{"action":"disposal-target","outcome":"CONFIRMED"},{"action":"handle-close","outcome":"CONFIRMED"}],"child":{"confirmed":true,"reason":"NOT_LAUNCHED"},"containerQuery":"ABSENT","descendantQuery":"ABSENT","disposalTarget":"SAFE","errors":["tasklist: CommandFailure: tasklist: NONZERO_EXIT; evidence retained"],"listenerQuery":"ABSENT","ownedIdentities":[{"creation100ns":123,"image":"INERT_NO_PRODUCT","pid":43210}],"preAckDisposition":"NOT_ACCEPTED_UNKNOWN","primaryFailures":[],"processQuery":"UNKNOWN","protocol":{"cleanupSeconds":120,"closedBy":"TERMINAL","generation":"g26bed719","operations":[{"cleanup":true,"id":1,"inflightAtClose":false,"kind":"taskkill","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":2,"inflightAtClose":false,"kind":"tasklist","outcome":"NONZERO_EXIT","state":"FAILED","uncertain":false},{"cleanup":true,"id":3,"inflightAtClose":false,"kind":"docker-ps","outcome":null,"state":"DONE","uncertain":false}],"phase":"CLEANUP","workSeconds":900},"stageRetained":true,"uncertainOperations":[]},"evidenceBytes":2017,"evidenceSha256":"7f49635020f619b69cdb26c60af4dd42d03777edea909e1277e04668d417a438","stageRetained":true}},{"case":"docker-ps-nonzero","commands":[{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.047,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"taskkill","seq":1,"startedAt":107977.343,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(0)"],"elapsedSeconds":0.031,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"tasklist","seq":2,"startedAt":107977.39,"state":"FINISHED","stderr":"","stdout":"\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(8)"],"elapsedSeconds":0.047,"executable":"python.exe","exitCode":8,"failureClass":"NONZERO_EXIT","inputBytes":0,"kind":"docker-ps","seq":3,"startedAt":107977.421,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2}],"commandsSha256":"e083f6e440bf6742fad9bfb4f1b84e3728ee3580b3e94da82e4b4bb17b8346ca","effects":{"engineStarts":0,"nativeChildren":0,"networkCalls":0,"productStarts":0,"providerStarts":0},"invocation":"cap2-actual-c2272db536472f21","substituteStarts":3,"terminal":{"accepted":false,"acknowledgment":{"error":null,"readBack":"NOT_ATTEMPTED","write":"NOT_ATTEMPTED"},"actualDisposal":"NOT_ATTEMPTED","disposalEligible":false,"evidence":{"actions":[{"action":"identity","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"CONFIRMED"},{"action":"container-remove","outcome":"CONFIRMED"},{"action":"tasklist","outcome":"CONFIRMED"},{"action":"docker-ps","outcome":"FAILED"},{"action":"descendants","outcome":"CONFIRMED"},{"action":"listeners","outcome":"CONFIRMED"},{"action":"disposal-target","outcome":"CONFIRMED"},{"action":"handle-close","outcome":"CONFIRMED"}],"child":{"confirmed":true,"reason":"NOT_LAUNCHED"},"containerQuery":"UNKNOWN","descendantQuery":"ABSENT","disposalTarget":"SAFE","errors":["docker-ps: CommandFailure: docker-ps: NONZERO_EXIT; evidence retained"],"listenerQuery":"ABSENT","ownedIdentities":[{"creation100ns":123,"image":"INERT_NO_PRODUCT","pid":43210}],"preAckDisposition":"NOT_ACCEPTED_UNKNOWN","primaryFailures":[],"processQuery":"ABSENT","protocol":{"cleanupSeconds":120,"closedBy":"TERMINAL","generation":"gb3752d2b","operations":[{"cleanup":true,"id":1,"inflightAtClose":false,"kind":"taskkill","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":2,"inflightAtClose":false,"kind":"tasklist","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":3,"inflightAtClose":false,"kind":"docker-ps","outcome":"NONZERO_EXIT","state":"FAILED","uncertain":false}],"phase":"CLEANUP","workSeconds":900},"stageRetained":true,"uncertainOperations":[]},"evidenceBytes":2019,"evidenceSha256":"9ce5426e77c2291a20ee54cf601092815b17c3e690ac687ac6f2f2b320f574d7","stageRetained":true}},{"case":"timeout","commands":[{"argc":4,"args":["-B","-c","import time,sys;time.sleep(1);sys.stdout.write('');sys.exit(0)"],"cleanupError":null,"elapsedSeconds":0.172,"executable":"python.exe","exitCode":null,"failureClass":"TIMEOUT","inputBytes":0,"kind":"taskkill","seq":1,"startedAt":107977.484,"state":"FINISHED","stderr":"","stdout":"","timedOut":true,"timeoutSeconds":0.15},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(0)"],"elapsedSeconds":0.047,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"tasklist","seq":2,"startedAt":107977.656,"state":"FINISHED","stderr":"","stdout":"\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.047,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"docker-ps","seq":3,"startedAt":107977.703,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2}],"commandsSha256":"bfda45928eb394c4dece09dfc2c9891b72692f59ce7e0e7761da7bee4d88d9ef","effects":{"engineStarts":0,"nativeChildren":0,"networkCalls":0,"productStarts":0,"providerStarts":0},"invocation":"cap2-actual-c2272db536472f21","substituteStarts":3,"terminal":{"accepted":false,"acknowledgment":{"error":null,"readBack":"NOT_ATTEMPTED","write":"NOT_ATTEMPTED"},"actualDisposal":"NOT_ATTEMPTED","disposalEligible":false,"evidence":{"actions":[{"action":"identity","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"FAILED"},{"action":"container-remove","outcome":"CONFIRMED"},{"action":"tasklist","outcome":"CONFIRMED"},{"action":"docker-ps","outcome":"CONFIRMED"},{"action":"descendants","outcome":"CONFIRMED"},{"action":"listeners","outcome":"CONFIRMED"},{"action":"disposal-target","outcome":"CONFIRMED"},{"action":"handle-close","outcome":"CONFIRMED"}],"child":{"confirmed":true,"reason":"NOT_LAUNCHED"},"containerQuery":"ABSENT","descendantQuery":"ABSENT","disposalTarget":"SAFE","errors":["taskkill: CommandFailure: taskkill: TIMEOUT; evidence retained"],"listenerQuery":"ABSENT","ownedIdentities":[{"creation100ns":123,"image":"INERT_NO_PRODUCT","pid":43210}],"preAckDisposition":"NOT_ACCEPTED_UNKNOWN","primaryFailures":[],"processQuery":"ABSENT","protocol":{"cleanupSeconds":120,"closedBy":"TERMINAL","generation":"g9f0858f9","operations":[{"cleanup":true,"id":1,"inflightAtClose":false,"kind":"taskkill","outcome":"TIMEOUT","state":"FAILED","uncertain":false},{"cleanup":true,"id":2,"inflightAtClose":false,"kind":"tasklist","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":3,"inflightAtClose":false,"kind":"docker-ps","outcome":null,"state":"DONE","uncertain":false}],"phase":"CLEANUP","workSeconds":900},"stageRetained":true,"uncertainOperations":[]},"evidenceBytes":2006,"evidenceSha256":"640f1c6540f216492e7df05d2d5e7b452044fd155dbc40c54d4b38c5af15b718","stageRetained":true}},{"case":"tasklist-malformed","commands":[{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.031,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"taskkill","seq":1,"startedAt":107977.75,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('not CSV');sys.exit(0)"],"elapsedSeconds":0.047,"executable":"python.exe","exitCode":0,"failureClass":"PARSE","inputBytes":0,"kind":"tasklist","parseError":"RuntimeError('tasklist query was malformed, not proof of absence')","seq":2,"startedAt":107977.781,"state":"FINISHED","stderr":"","stdout":"not CSV","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.031,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"docker-ps","seq":3,"startedAt":107977.828,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2}],"commandsSha256":"9e195a00a0080b5ea103f95346f8837a83d504ce5c6b20b9a84368c96355aa75","effects":{"engineStarts":0,"nativeChildren":0,"networkCalls":0,"productStarts":0,"providerStarts":0},"invocation":"cap2-actual-c2272db536472f21","substituteStarts":3,"terminal":{"accepted":false,"acknowledgment":{"error":null,"readBack":"NOT_ATTEMPTED","write":"NOT_ATTEMPTED"},"actualDisposal":"NOT_ATTEMPTED","disposalEligible":false,"evidence":{"actions":[{"action":"identity","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"CONFIRMED"},{"action":"container-remove","outcome":"CONFIRMED"},{"action":"tasklist","outcome":"FAILED"},{"action":"docker-ps","outcome":"CONFIRMED"},{"action":"descendants","outcome":"CONFIRMED"},{"action":"listeners","outcome":"CONFIRMED"},{"action":"disposal-target","outcome":"CONFIRMED"},{"action":"handle-close","outcome":"CONFIRMED"}],"child":{"confirmed":true,"reason":"NOT_LAUNCHED"},"containerQuery":"ABSENT","descendantQuery":"ABSENT","disposalTarget":"SAFE","errors":["tasklist: CommandFailure: tasklist: PARSE; evidence retained"],"listenerQuery":"ABSENT","ownedIdentities":[{"creation100ns":123,"image":"INERT_NO_PRODUCT","pid":43210}],"preAckDisposition":"NOT_ACCEPTED_UNKNOWN","primaryFailures":[],"processQuery":"UNKNOWN","protocol":{"cleanupSeconds":120,"closedBy":"TERMINAL","generation":"g1abe609b","operations":[{"cleanup":true,"id":1,"inflightAtClose":false,"kind":"taskkill","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":2,"inflightAtClose":false,"kind":"tasklist","outcome":"PARSE","state":"FAILED","uncertain":false},{"cleanup":true,"id":3,"inflightAtClose":false,"kind":"docker-ps","outcome":null,"state":"DONE","uncertain":false}],"phase":"CLEANUP","workSeconds":900},"stageRetained":true,"uncertainOperations":[]},"evidenceBytes":2003,"evidenceSha256":"17ee5be0f90c9d77f756a0318c4620c581b17f8c36cdc7f0cfce394cebca5333","stageRetained":true}},{"case":"identity-mismatch","commands":[{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(0)"],"elapsedSeconds":0.031,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"tasklist","seq":1,"startedAt":107977.875,"state":"FINISHED","stderr":"","stdout":"\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.031,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"docker-ps","seq":2,"startedAt":107977.906,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2}],"commandsSha256":"34b069d32c3f67e448ff99b574825103fa658f7d5e6b6ecfd012fe9142f428f2","effects":{"engineStarts":0,"nativeChildren":0,"networkCalls":0,"productStarts":0,"providerStarts":0},"invocation":"cap2-actual-c2272db536472f21","substituteStarts":2,"terminal":{"accepted":false,"acknowledgment":{"error":null,"readBack":"NOT_ATTEMPTED","write":"NOT_ATTEMPTED"},"actualDisposal":"NOT_ATTEMPTED","disposalEligible":false,"evidence":{"actions":[{"action":"identity","outcome":"FAILED"},{"action":"container-remove","outcome":"CONFIRMED"},{"action":"tasklist","outcome":"CONFIRMED"},{"action":"docker-ps","outcome":"CONFIRMED"},{"action":"descendants","outcome":"CONFIRMED"},{"action":"listeners","outcome":"CONFIRMED"},{"action":"disposal-target","outcome":"CONFIRMED"},{"action":"handle-close","outcome":"CONFIRMED"}],"child":{"confirmed":true,"reason":"NOT_LAUNCHED"},"containerQuery":"ABSENT","descendantQuery":"LIVE","disposalTarget":"SAFE","errors":["identity: RuntimeError: creation identity differs from recorded owner"],"listenerQuery":"ABSENT","ownedIdentities":[],"preAckDisposition":"NOT_ACCEPTED_UNKNOWN","primaryFailures":[],"processQuery":"ABSENT","protocol":{"cleanupSeconds":120,"closedBy":"TERMINAL","generation":"gbb6fc142","operations":[{"cleanup":true,"id":1,"inflightAtClose":false,"kind":"tasklist","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":2,"inflightAtClose":false,"kind":"docker-ps","outcome":null,"state":"DONE","uncertain":false}],"phase":"CLEANUP","workSeconds":900},"stageRetained":true,"uncertainOperations":[]},"evidenceBytes":1639,"evidenceSha256":"3574e123f07601dfea51416222951518935668b883278dc296e36fcc6af0457e","stageRetained":true}},{"case":"still-live","commands":[{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.047,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"taskkill","seq":1,"startedAt":107977.937,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('\"inert.exe\",\"43210\",\"Console\",\"1\",\"1 K\"');sys.exit(0)"],"elapsedSeconds":0.062,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"tasklist","seq":2,"startedAt":107977.984,"state":"FINISHED","stderr":"","stdout":"\"inert.exe\",\"43210\",\"Console\",\"1\",\"1 K\"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.047,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"docker-ps","seq":3,"startedAt":107978.046,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2}],"commandsSha256":"51165d42a531d17938407943200ab25510805aebc8f443d3d9c9827d924ccf42","effects":{"engineStarts":0,"nativeChildren":0,"networkCalls":0,"productStarts":0,"providerStarts":0},"invocation":"cap2-actual-c2272db536472f21","substituteStarts":3,"terminal":{"accepted":false,"acknowledgment":{"error":null,"readBack":"NOT_ATTEMPTED","write":"NOT_ATTEMPTED"},"actualDisposal":"NOT_ATTEMPTED","disposalEligible":false,"evidence":{"actions":[{"action":"identity","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"CONFIRMED"},{"action":"container-remove","outcome":"CONFIRMED"},{"action":"tasklist","outcome":"CONFIRMED"},{"action":"docker-ps","outcome":"CONFIRMED"},{"action":"descendants","outcome":"CONFIRMED"},{"action":"listeners","outcome":"CONFIRMED"},{"action":"disposal-target","outcome":"CONFIRMED"},{"action":"handle-close","outcome":"CONFIRMED"}],"child":{"confirmed":true,"reason":"NOT_LAUNCHED"},"containerQuery":"ABSENT","descendantQuery":"LIVE","disposalTarget":"SAFE","errors":[],"listenerQuery":"ABSENT","ownedIdentities":[{"creation100ns":123,"image":"INERT_NO_PRODUCT","pid":43210}],"preAckDisposition":"NOT_ACCEPTED_UNKNOWN","primaryFailures":[],"processQuery":"LIVE","protocol":{"cleanupSeconds":120,"closedBy":"TERMINAL","generation":"gaae4cc6f","operations":[{"cleanup":true,"id":1,"inflightAtClose":false,"kind":"taskkill","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":2,"inflightAtClose":false,"kind":"tasklist","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":3,"inflightAtClose":false,"kind":"docker-ps","outcome":null,"state":"DONE","uncertain":false}],"phase":"CLEANUP","workSeconds":900},"stageRetained":true,"uncertainOperations":[]},"evidenceBytes":1926,"evidenceSha256":"fed99eaa71b95266e97d8d85419b6ac9fd66820abed0e2bcde8f428038148a40","stageRetained":true}},{"case":"unsafe-path","commands":[{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.031,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"taskkill","seq":1,"startedAt":107978.109,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(0)"],"elapsedSeconds":0.031,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"tasklist","seq":2,"startedAt":107978.14,"state":"FINISHED","stderr":"","stdout":"\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.032,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"docker-ps","seq":3,"startedAt":107978.171,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2}],"commandsSha256":"8f856d4962d678fff91f693c6d1176ab1c1afe0731b42796f36c928b32cfa81a","effects":{"engineStarts":0,"nativeChildren":0,"networkCalls":0,"productStarts":0,"providerStarts":0},"invocation":"cap2-actual-c2272db536472f21","substituteStarts":3,"terminal":{"accepted":false,"acknowledgment":{"error":null,"readBack":"NOT_ATTEMPTED","write":"NOT_ATTEMPTED"},"actualDisposal":"NOT_ATTEMPTED","disposalEligible":false,"evidence":{"actions":[{"action":"identity","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"CONFIRMED"},{"action":"container-remove","outcome":"CONFIRMED"},{"action":"tasklist","outcome":"CONFIRMED"},{"action":"docker-ps","outcome":"CONFIRMED"},{"action":"descendants","outcome":"CONFIRMED"},{"action":"listeners","outcome":"CONFIRMED"},{"action":"disposal-target","outcome":"FAILED"},{"action":"handle-close","outcome":"CONFIRMED"}],"child":{"confirmed":true,"reason":"NOT_LAUNCHED"},"containerQuery":"ABSENT","descendantQuery":"ABSENT","disposalTarget":"UNSAFE_OR_UNKNOWN","errors":["disposal-target: RuntimeError: unsafe disposal target"],"listenerQuery":"ABSENT","ownedIdentities":[{"creation100ns":123,"image":"INERT_NO_PRODUCT","pid":43210}],"preAckDisposition":"NOT_ACCEPTED_UNKNOWN","primaryFailures":[],"processQuery":"ABSENT","protocol":{"cleanupSeconds":120,"closedBy":"TERMINAL","generation":"gd0227e50","operations":[{"cleanup":true,"id":1,"inflightAtClose":false,"kind":"taskkill","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":2,"inflightAtClose":false,"kind":"tasklist","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":3,"inflightAtClose":false,"kind":"docker-ps","outcome":null,"state":"DONE","uncertain":false}],"phase":"CLEANUP","workSeconds":900},"stageRetained":true,"uncertainOperations":[]},"evidenceBytes":2003,"evidenceSha256":"a135faa5c45daff505d069616e5c1e2cac3030a396fdc09d3ebaeddc39e46de1","stageRetained":true}},{"case":"docker-ps-malformed","commands":[{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('');sys.exit(0)"],"elapsedSeconds":0.032,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"taskkill","seq":1,"startedAt":107978.218,"state":"FINISHED","stderr":"","stdout":"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"');sys.exit(0)"],"elapsedSeconds":0.046,"executable":"python.exe","exitCode":0,"failureClass":null,"inputBytes":0,"kind":"tasklist","seq":2,"startedAt":107978.25,"state":"FINISHED","stderr":"","stdout":"\"system.exe\",\"4\",\"Services\",\"0\",\"1 K\"","timedOut":false,"timeoutSeconds":2},{"argc":4,"args":["-B","-c","import time,sys;time.sleep(0);sys.stdout.write('not-an-id');sys.exit(0)"],"elapsedSeconds":0.032,"executable":"python.exe","exitCode":0,"failureClass":"PARSE","inputBytes":0,"kind":"docker-ps","parseError":"RuntimeError('Docker query was malformed, not proof of absence')","seq":3,"startedAt":107978.296,"state":"FINISHED","stderr":"","stdout":"not-an-id","timedOut":false,"timeoutSeconds":2}],"commandsSha256":"762ab56ee71b47ce746cf4a22d8213690a98dfcc10c989e551d2a2f05549cde6","effects":{"engineStarts":0,"nativeChildren":0,"networkCalls":0,"productStarts":0,"providerStarts":0},"invocation":"cap2-actual-c2272db536472f21","substituteStarts":3,"terminal":{"accepted":false,"acknowledgment":{"error":null,"readBack":"NOT_ATTEMPTED","write":"NOT_ATTEMPTED"},"actualDisposal":"NOT_ATTEMPTED","disposalEligible":false,"evidence":{"actions":[{"action":"identity","outcome":"CONFIRMED"},{"action":"taskkill","outcome":"CONFIRMED"},{"action":"container-remove","outcome":"CONFIRMED"},{"action":"tasklist","outcome":"CONFIRMED"},{"action":"docker-ps","outcome":"FAILED"},{"action":"descendants","outcome":"CONFIRMED"},{"action":"listeners","outcome":"CONFIRMED"},{"action":"disposal-target","outcome":"CONFIRMED"},{"action":"handle-close","outcome":"CONFIRMED"}],"child":{"confirmed":true,"reason":"NOT_LAUNCHED"},"containerQuery":"UNKNOWN","descendantQuery":"ABSENT","disposalTarget":"SAFE","errors":["docker-ps: CommandFailure: docker-ps: PARSE; evidence retained"],"listenerQuery":"ABSENT","ownedIdentities":[{"creation100ns":123,"image":"INERT_NO_PRODUCT","pid":43210}],"preAckDisposition":"NOT_ACCEPTED_UNKNOWN","primaryFailures":[],"processQuery":"ABSENT","protocol":{"cleanupSeconds":120,"closedBy":"TERMINAL","generation":"g142de7ad","operations":[{"cleanup":true,"id":1,"inflightAtClose":false,"kind":"taskkill","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":2,"inflightAtClose":false,"kind":"tasklist","outcome":null,"state":"DONE","uncertain":false},{"cleanup":true,"id":3,"inflightAtClose":false,"kind":"docker-ps","outcome":"PARSE","state":"FAILED","uncertain":false}],"phase":"CLEANUP","workSeconds":900},"stageRetained":true,"uncertainOperations":[]},"evidenceBytes":2005,"evidenceSha256":"628e5be9eb5f6436b593c973e50d7a54918a7f369924872cfd5cb0222693793d","stageRetained":true}}],"invocation":"cap2-actual-c2272db536472f21","oracles":{"scripts/cvf_ncr_html_owned_profile/journey.test.cjs":"a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e","scripts/cvf_ncr_html_owned_profile/test_admission.py":"e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702","scripts/cvf_ncr_html_owned_profile/test_control.py":"f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1","scripts/cvf_ncr_html_owned_profile/test_execution.py":"7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357","scripts/cvf_ncr_html_owned_profile/test_protocol.py":"4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba","scripts/cvf_ncr_html_owned_profile/test_win32.py":"ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228"},"passed":9,"production":{"scripts/cvf_ncr_html_owned_profile/__init__.py":"1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8","scripts/cvf_ncr_html_owned_profile/execution.py":"937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d","scripts/cvf_ncr_html_owned_profile/journey.cjs":"f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0","scripts/cvf_ncr_html_owned_profile/lifecycle.py":"465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491","scripts/cvf_ncr_html_owned_profile/profile.py":"0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825","scripts/cvf_ncr_html_owned_profile/protocol.py":"7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277","scripts/cvf_ncr_html_owned_profile/source_release.py":"62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a"},"runner":"SUBPROCESS","schema":"cvf.ncrHtmlInertControls@3","substituteStarts":26}
+  },
+  "docker": {
+    "scope": "LOCAL_DOCKER_READ_ONLY_TIMESTAMPED_READINESS",
+    "tool": {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+      "sha256": "6c699720bb9523dedb9eb5d22a49951ea9210dbdb1314a3554029eee9be76896"
+    },
+    "image": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+    "status": "PASS_CURRENT_READINESS_ONLY",
+    "chargedAt": 1792167575.1511881,
+    "pinsSha256": "9982ad5df0f2e4f759cfd8c2c74c95a280f184798555b6f8914ae683069953ce",
+    "queryCeiling": 4,
+    "queries": [
+      {
+        "ordinal": 1,
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+          "context",
+          "show"
+        ],
+        "state": "FINISHED",
+        "timeoutSeconds": 12,
+        "exit": 0,
+        "stdout": "desktop-linux",
+        "stderr": ""
+      },
+      {
+        "ordinal": 2,
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+          "--context",
+          "desktop-linux",
+          "context",
+          "inspect",
+          "desktop-linux",
+          "--format",
+          "{{(index .Endpoints \"docker\").Host}}"
+        ],
+        "state": "FINISHED",
+        "timeoutSeconds": 12,
+        "exit": 0,
+        "stdout": "npipe:////./pipe/dockerDesktopLinuxEngine",
+        "stderr": ""
+      },
+      {
+        "ordinal": 3,
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+          "--context",
+          "desktop-linux",
+          "version",
+          "--format",
+          "{{.Server.Os}}|{{.Server.Arch}}|{{.Server.Version}}"
+        ],
+        "state": "FINISHED",
+        "timeoutSeconds": 12,
+        "exit": 0,
+        "stdout": "linux|amd64|29.8.2",
+        "stderr": ""
+      },
+      {
+        "ordinal": 4,
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+          "--context",
+          "desktop-linux",
+          "image",
+          "inspect",
+          "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+          "--format",
+          "{{.Id}}|{{.Os}}|{{.Architecture}}"
+        ],
+        "state": "FINISHED",
+        "timeoutSeconds": 12,
+        "exit": 0,
+        "stdout": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294|linux|amd64",
+        "stderr": ""
+      }
+    ],
+    "elapsedSeconds": 0.7179999999934807,
+    "containerStarts": 0,
+    "imageMutation": 0,
+    "providerCalls": 0
+  },
+  "publication": {
+    "bothProgramsTerminated": true,
+    "trackedCleanThroughBoth": true,
+    "publishedUtc": "2026-10-16T16:22:58.072803+00:00",
+    "exactPaths": [
+      "docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_WORKER_RETURN_2026-10-16.md",
+      "docs/reviews/evidence/ncr-html-windows-qualification-worker-20261016.json"
+    ]
+  },
+  "preparation": {
+    "preImplementationExit": 0,
+    "preImplementationSeconds": 10.32,
+    "preImplementationLogSha256": "bc68eaee11fd666bbdb4d4520a17f160faf36f22694f4d483f348810fcde2faa",
+    "scaffoldEmitShapeBeforeEffects": true,
+    "workerAdifCandidates": 0,
+    "workerFailures": [
+      "First full bound return gate failed worker literal/link/convergence application; original raw log preserved; procedure PARTIAL_WITH_REASON, no retroactive perfect preparation."
+    ],
+    "readOrder": "progressive startup/current W/B and named exact guards; fixed current payloads/pins/envelope/template; inherited unchanged owner contracts reused with current source18 raw-hash join. Combined long output truncation followed by focused payload/template reads; no all-checker-body or corpus scan claim.",
+    "rootHistory": "author ignored --write refusal/guessed checker path and root initial material invariant/source-authority literal repair retained as author history, not worker proof defects"
+  },
+  "effects": {
+    "programs": 2,
+    "actualControlMatrices": 1,
+    "inertCaseChildren": 26,
+    "dockerQueryChildren": 4,
+    "fakeRuns": 0,
+    "cap1Actual": 0,
+    "nativeJobs": 0,
+    "browserStarts": 0,
+    "productStarts": 0,
+    "containerStarts": 0,
+    "providerCalls": 0,
+    "networkCalls": 0,
+    "deletions": 0,
+    "retries": 0,
+    "localOracleReadOrInvoked": false
+  },
+  "accounting": {
+    "effectInterpreterRoots": 3,
+    "basis": "controls launcher1+driver1+Docker qualifier1, separately from26 inert Python+4Docker query children",
+    "sourceAdmissionGitCalls": 15,
+    "wrapperGitCleanChecks": 2,
+    "workerMetadataGitChecks": "base/status/publication and later final reconciliation; normal gate subprocesses separately owned"
+  },
+  "custody": {
+    "owner": "LOCAL",
+    "controlRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-qualification-20261016\\worker\\cap2-actual-c2272db536472f21",
+    "taskRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-qualification-20261016",
+    "retentionReason": "qualification evidence and raw one-shot program custody; no deletion authorized",
+    "children": "all selected programs terminated, no listener/server/container started"
+  },
+  "gateEvidence": {
+    "preImplementation": "PASS10.32s",
+    "finalBoundGate": "conditional frozen run; actual output/hash only in ignored worker-return-final.log and worker-terminal.json, no tracked append",
+    "firstFullReturnGate": {
+      "exit": 1,
+      "elapsedSeconds": 12.62,
+      "rawLog": ".cvf/runtime/ncr-windows-qualification-20261016/worker-return-first.log",
+      "rawLogSha256": "4bdc6b2982e34665e4e083df8a0064474cc4d62609a94e3de54a58ac495aa080",
+      "finding": "Task template inline dispatch marker does not satisfy active-W scalar; convergence block missing. Consolidated exact2 documentary repair, no effect retry."
+    }
+  },
+  "claimBoundary": "current cap2 mechanical controls and timestamped local Docker readiness only; root pure oracle/BE-Q01 disposition pending, BE-R01/R02/cap1/product separate",
+  "REQ-CONTROL": {
+    "status": "PASS",
+    "evidence": "current source13 actor-specific actual9/26 receipt and raw/canonical/slot/program joins"
+  },
+  "REQ-DOCKER": {
+    "status": "PASS",
+    "evidence": "current pinned Docker4 first observations; linux/amd6429.8.2/local endpoint/exact image; no mutation"
+  },
+  "REQ-RETURN": {
+    "status": "PASS",
+    "evidence": "required startup/envelope/clean publication/scaffold/preimplementation/three rows/exact2; actual full frozen gate outcome detached, completion conditional on exit0"
+  }
+}

@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md",
-    "baselineSha256": "b51cad9ce393d5b74076c816321131ecce26b4c7dde89c371bbcf015b91e5884",
+    "baselineSha256": "c51c72798fcc2c8964de34da12a88105c95b25ae7a49da823b6ff5f0e293b369",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md",
-    "workOrderSha256": "29348925fb45ad468d797b4a026fd81b67a07fdac7878b8176575dceae652c4a"
+    "workOrderSha256": "4d1c34f7cd71367d0ff5d1df9d9b9bcbda5a5a7250f2e9427d26167bd54eb1f6"
   },
-  "currentAuthoritySyncReason": "Qualification continuity at 657d7c6d596ea9cf4631902ca77b551b1ee237fa; bounded control/Docker reads only, source authority frozen.",
+  "currentAuthoritySyncReason": "Bounded qualification material; source18/source authority/release immutable; BE-R01/R02 open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_windows_qualification_dispatched",
-  "previousMode": "cvf_ncr_html_windows_source_accepted_bounded",
+  "currentMode": "cvf_ncr_html_windows_qualification_accepted_bounded",
+  "previousMode": "cvf_ncr_html_windows_qualification_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

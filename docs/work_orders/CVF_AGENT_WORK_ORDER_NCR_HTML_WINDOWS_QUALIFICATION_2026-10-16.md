@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: READY
+Status: REVIEWER_ACCEPTED_BOUNDED_QUALIFICATION_WITH_PROCEDURE_LIMITS
 Date: 2026-10-16
 Batch ID: CVF-NCR-HTML-WINDOWS-QUALIFICATION-20261016
 Dispatch inspection base: 7d832febc0496d071308aeae3bf10d00d138af81
@@ -417,8 +417,12 @@ If a tool/classifier rejects an action, retain the exact secret-safe event, reco
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: bounded qualification authority, roadmap support/progress ledger and exact6 source/generated current mode/next/raw authority continuity only; no source/checker/hook/carrier semantics.
+Authorized guard-maintenance scope: qualification evidence/authority/roadmap and source6 current raw-hash/mode/next continuity only; no source/checker/hook semantics.
 Protected paths:
+- `docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_WORKER_RETURN_2026-10-16.md`
+- `docs/reviews/evidence/ncr-html-windows-qualification-worker-20261016.json`
+- `docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_COMPLETION_2026-10-16.md`
+- `docs/reviews/evidence/ncr-html-windows-qualification-local-20261016.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
@@ -428,8 +432,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current autonomous continuation and explicit lasting-support roadmap tracking; Local selected finite control/Docker4 qualification.
-Rollback boundary: listed paths only; frozen source18/source-release/accepted source B/W and old evidence/grants/stages/parent/freeze/exclusions/parked effects unchanged.
+Operator authorization: current autonomous qualification review/closure and standing Local stewardship.
+Rollback boundary: listed metadata paths only; frozen worker2/execution authority preimages/source18/accepted source B/W/release/old grants/negative custody and gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed.
 
 ## Scaffold Provenance Block
 
@@ -523,26 +527,26 @@ Provider-specific memory is an execution aid, never canonical source or acceptan
 
 ## Agent Operation Trace Block
 
-| Field | Value |
+| Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT orchestrator/reviewer/steward |
+| Actor | Local INTERNAL_AGENT reviewer/closer/steward |
 | Provider or surface | private shared workspace |
 | Session or invocation | ncr-windows-qualification-material-20261016 |
 | Working directory | repository root |
-| Command or tool surface | root-reviewed fixed payload/metadata preparation, roadmap support ledger, current authority generation and checked normal commits |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator continuation and lasting-support roadmap clarification; new bounded qualification pair |
-| Before status evidence | HEAD 7d832febc0496d071308aeae3bf10d00d138af81; original source18/source authority remain frozen; no effect program started |
-| After status evidence | conditional qualification release; current cap2 and Docker proof pending; source/product/provider unchanged |
-| Diff evidence | exact9 material manifest |
-| Approval boundary | 26 inert Python cases and4 local Docker reads only after committed bound admission; no product/cap1/deletion |
-| Claim boundary | support deliverables tracked; current qualification not yet executed |
+| Command or tool surface | consume frozen worker proof and Local pure10; metadata closure/canonical generation; normal gates/commits separately owned by root |
+| Target paths | `docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-qualification-worker-20261016.json`; `docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-qualification-local-20261016.json`; `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | qualification order and standing Local closure/steward authority |
+| Before status evidence | HEAD 51e4b00f232d9087342e45fe3e91b7c038045ca1; terminal worker captured, lane released |
+| After status evidence | bounded qualification accepted; BE-R01/R02 product exits open; final committed-range proof pending |
+| Diff evidence | exact13 material manifest |
+| Approval boundary | metadata/evidence only; no source/cap1/product/provider/deletion |
+| Claim boundary | qualification is not product B-E or AI governance efficacy |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-windows-qualification-material-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
-| Deletion or rename disposition | none; source/old grants/proofs/stages retained |
+| Expected manifest | `docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-qualification-worker-20261016.json`; `docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-qualification-local-20261016.json`; `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-qualification-worker-20261016.json`; `docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-qualification-local-20261016.json`; `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact13 |
+| Deletion or rename disposition | none; old grants/source/proof/custody retained |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -709,10 +713,14 @@ prospective qualification fixed-source qualification only; no effect yet. Once s
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: conditional qualification authority, milestone ledger, current mode/next and generated raw authority hashes align in the same commit.
+Atomicity reason: qualification closure/raw authority/current mode/roadmap and source-generated projection align atomically; following actual-material-SHA source6 separate.
 
 Exact changed manifest:
 
+- `docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_WORKER_RETURN_2026-10-16.md`
+- `docs/reviews/evidence/ncr-html-windows-qualification-worker-20261016.json`
+- `docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_COMPLETION_2026-10-16.md`
+- `docs/reviews/evidence/ncr-html-windows-qualification-local-20261016.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
@@ -723,8 +731,12 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: listed paths only; following actual-material-SHA exact6 continuity remains separate.
+Rollback boundary: listed paths only; no source/effect mutation.
 
 ## Root Adoption Preparation Disclosure
 
 First prospective material preflight refused missing rawMemoryReleased=false and two ignored technical paths presented as canonical Source Verification ACCEPT rows. Root added the explicit invariant and cited governed program/ledger proof fields; fixed ignored payload bytes remain technical inputs admitted by this baseline. No control/Docker/product program had started. Original failure log retained in task custody; preparation is PARTIAL_WITH_REASON, not retroactive perfect read-ahead.
+
+## Local Qualification Disposition
+
+Local accepts bounded current-source qualification using fixed worker actual cap2/Docker4 and independently authored PURE10 proof. All three original worker rows PASS; original COMPLETE_PENDING_REVIEW and exact2 bytes frozen. Worker full-gate exit0/6.82s, logSHA256 355e5af6e734d47fd692304092bf48726db873af70466772afa01ee241607033. Actual9cases/26inert Python starts, IMPLEMENTATION_WORKER/cap2/SUBPROCESS; receiptSHA256 536ce179c4f1df40542f94ca832a4460b1e22f2c73ad434cd77b58799b627b66; driver 2.141s, no retry/watchdog expiry. Nine raw command/result/terminal joins retained. Four pinned read-only Docker queries PASS, 0.718s; desktop-linux/local npipe/linux-amd64; server linux|amd64|29.8.2; exact cached image. Timestamp/custody in durable Docker/program ledger; no container/image effect or new capability. Independent PURE10/10 PASS, zero native/utility/casechild starts; raw oracleSHA256 c1d564c7459c26242d79cba73d03d736fa1efc71f4413ed127077573fc50a686; sourceSHA256 ba4456fc9845e3b3e4b6ba9b71ae879bec7457adfc88665d34c62a640b73615a; run exit0/0.265s/logSHA256 6f86db9a1a63bc95e39e9df6070fc89235ddcdfe89ea3f3bf626c885154c7e69. Preparation remains PARTIAL_WITH_REASON: author ignored --write refusal and guessed checker-path lookup retained; root first material preflight missed rawMemoryReleased=false and treated ignored technical paths as canonical ACCEPT sources, corrected before effects. Dispatch continuity first exact6 assertion failed and was corrected; original failure retained. Author return template inline dispatchWorkOrder compatibility marker did not satisfy the active-order scalar and omitted Worker Convergence Block; existing checker caught both, worker corrected only exact2 without effect rerun. These are ORCHESTRATOR_PACKET_GAP/RULE_EXISTS template defects. Actual worker gate history exit1/12.62s/logSHA256 4bdc6b2982e34665e4e083df8a0064474cc4d62609a94e3de54a58ac495aa080; exit0/6.82s/logSHA256 355e5af6e734d47fd692304092bf48726db873af70466772afa01ee241607033. PARTIAL_WITH_REASON first return-only active dispatch scalar/convergence omissions; corrected exact2, original failed log retained; effects passed first attempt; targeted read scope, no universal/full-body/source scan claim No retroactive perfect procedure or new capability credit for metadata repairs. BE-Q01 checked bounded; BE-R01/R02 open. No cap1 actual until accepted future cap2 product predecessor. Fixed source18/accepted Windows source B/W/source release remain immutable. Released execution authority preimages and pins are retained; current closed qualification hashes are metadata only. Fixed Local closure paths: docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_COMPLETION_2026-10-16.md; docs/reviews/evidence/ncr-html-windows-qualification-local-20261016.json. No final Local proof digest is embedded here; no hash back-edge.
