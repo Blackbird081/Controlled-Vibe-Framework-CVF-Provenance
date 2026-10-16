@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Dispatch9 B/W2+roadmap1+source6, worker6 per new order, root final source identity/release closure separate. Prior result worker2/CP/LP/BW frozen, old source18 before-image captured. Prior actual result13/6 split PASS consumed, not rerun. BE-S10 source-only unchecked/in progress; BE-R01 failed/open, BE-R02 unadmitted. No runtime retry/provider/deletion or secret-bearing proof publication.
+Worker6/source4 plus root F/release/Local proof; exact19 material, following actual-SHA continuity6. docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json. BE-S10 support checked; BE-R01/02 open. Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24 unchanged. BE-R01 failed/unchecked; BE-R02 cap1 open; no prior actor replay.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_passive_request_observer_source_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=conditional exact6 PASSIVE_REQUEST_OBSERVER_SOURCE worker after committed bound source release/preimplementation; role=INTERNAL_AGENT Local dispatcher/reviewer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=all browser runtime/cap1/provider/deletion/retry effects unadmitted; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_passive_request_observer_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN separately governed changed-source qualification and fresh cap2 admission; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=old grant retry/cap1/provider/deletion; no generic operator checkpoint.
 
 ## Current Mode
 
-`cvf_ncr_html_passive_request_observer_source_dispatched`. Source-only PASSIVE_REQUEST_OBSERVER_SOURCE passive HTTP request observer correction conditionally dispatched; source/native proof pending. Prior failed cap2 result closed with actual split13/6 PASS. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired and r1b/r1c spent blocked retained.
+`cvf_ncr_html_passive_request_observer_source_accepted_bounded`. Bounded source accepted; runtime BE-R01/02 open. Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24 unchanged. BE-R01 failed/unchecked; BE-R02 cap1 open; no prior actor replay.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md` SHA256 `d0a1bff7123dd5ccb4a13b2b5800f677918b882dc8cdfc682917d3a87167c903`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md` SHA256 `91c68300c20a40bf380329f8c4247adb1a7f692851567846c607d53c17332b5f`. New source-only authority; accepted main-entry source B/W/release and historical Windows authority/qualification/closed runtime first-result evidence remain immutable.
+Baseline `docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md` SHA256 `ccc9caa02ba00432908eeb5b2d1cbb9ee8f76b43dbbd3b36c034408f686644aa`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md` SHA256 `e155112afb42beca9dd34042bf8db6320a8a85030d829c04c0d4da4105790e99`. SOURCE_IDENTITY_ONLY; no browser runtime grant.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-PASSIVE-REQUEST-OBSERVER-SOURCE-20261017. Under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md and docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md, conditionally release one INTERNAL_AGENT exact6 source worker after committed dispatch/current authority/actual-SHA continuity, bound pre-dispatch and worker preimplementation PASS. Correct eager evaluate-POST IncomingMessage consumption using passive observation in existing journey owner/tests; preserve prior main-entry/GET/malformed fixes; exact source_release AUTHORITY and effect-driver test assertion only. Worker Node budget exactly2 direct CJS RED/GREEN starts with real delayed IncomingMessage-to-Request regression, no legacy Windows test collection; root separate independent1 Node probe, budgets/physical pins/custody exactly W. Inclusive prep 2026-10-16T18:42:00Z, worker hard90min deadline 2026-10-16T20:12:00Z, Local180min 2026-10-16T21:42:00Z; no reset. BE-S10 unchecked IN_PROGRESS_SOURCE_ONLY; BE-R01 spent failed/open and BE-R02 open/unadmitted. Prior result material 187996f311383a63ce1fe13451f7f1bba9700177/continuity fcdc86057d5e9df72a1b17115193e7e7e691bd7b actual13/6 split PASS consumed, no rerun. Source18 before-image frozen; accepted main-entry source B/W/releases/qualification/failed worker2/CP/LP unchanged. Worker leaves F release constants; Local accepted new-source identity/release/F binding is a later distinct closure, not old release repin. No browser/runtime/cap1/provider/deletion/retry; changed source requires separate future qualification. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired and r1b/r1c spent blocked retained. Current continuity anchor 1437e2725d99ab66bd0984e0fa96b5e9075f18e9; ordinary technical details Local, no generic documentary operator checkpoint.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-PASSIVE-REQUEST-OBSERVER-SOURCE-20261017. BE-S10 source support accepted bounded from real-stream worker RED/GREEN proof/current SOURCE_IDENTITY_ONLY release and distinct Local one-Node probe; consume docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json. Next Local plans separately governed BE-Q03 current-source qualification/control and fresh cap2 runtime authority; prior controls9/26 are not current-source proof. BE-R01/BE-R02 open; no automatic actual effect. Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24 unchanged. BE-R01 failed/unchecked; BE-R02 cap1 open; no prior actor replay. Final material/actual-SHA continuity and clean split closure pending.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -72,10 +72,23 @@ Source dispatch material `1437e2725d99ab66bd0984e0fa96b5e9075f18e9`: normal auto
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: new source-only authority, BE-S10 support-in-progress and source-generated current raw B/W/mode/next align in dispatch9; following actual material SHA continuity exact6.
+Atomicity reason: bounded new source identity and current authority align in material; following actual-material-SHA continuity6.
 
 Exact changed manifest:
 
+- `scripts/cvf_ncr_html_owned_profile/journey.cjs`
+- `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`
+- `scripts/cvf_ncr_html_owned_profile/source_release.py`
+- `scripts/test_cvf_ncr_html_effect_driver.py`
+- `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-passive-request-observer-source-worker-20261017.json`
+- `scripts/cvf_ncr_html_effect_fence.py`
+- `docs/reviews/evidence/ncr-html-passive-request-observer-source-release-20261017.json`
+- `docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`
+- `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -83,47 +96,60 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: listed metadata only; no production-source, old evidence, runtime or resource effect.
+Rollback boundary: exact listed paths; no old evidence or effect mutation.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: new source-correction B/W, BE-S10 in-progress support and current6 raw authority/mode/next only at dispatch; no worker source change in this metadata commit.
+Authorized guard-maintenance scope: exact19 source/metadata paths; no checker/hook mutation.
 Protected paths:
+- `scripts/cvf_ncr_html_owned_profile/journey.cjs`
+- `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`
+- `scripts/cvf_ncr_html_owned_profile/source_release.py`
+- `scripts/test_cvf_ncr_html_effect_driver.py`
+- `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-passive-request-observer-source-worker-20261017.json`
+- `scripts/cvf_ncr_html_effect_fence.py`
+- `docs/reviews/evidence/ncr-html-passive-request-observer-source-release-20261017.json`
+- `docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`
+- `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current Local source-only continuation after closed spent BE-R01 first result; standing root author/reviewer/steward authority.
-Rollback boundary: exact listed metadata only; prior worker2/CP/LP/BW, source18/accepted main-entry source B/W/release and historical Windows authority/qualification/old grants and custody unchanged. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired and r1b/r1c spent blocked retained.
+Operator authorization: standing autonomous Local source review/closure.
+Rollback boundary: listed paths only; old accepted/failed evidence and parked effects retained.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher/reviewer/steward |
+| Actor | Local INTERNAL_AGENT reviewer/closer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-passive-observer-source-continuity-20261017 |
+| Session or invocation | ncr-passive-request-observer-source-material-20261017 |
 | Working directory | repository root |
-| Command or tool surface | root-reviewed source packet derivative, git status --short, actual prior-result/dependency/ADIF metadata joins and canonical current6 generation; gates/commits separately owned by root |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | Local next source-correction continuation; current new exact source-only order after spent-result split closure |
-| Before status evidence | HEAD 1437e2725d99ab66bd0984e0fa96b5e9075f18e9; clean worktree; git status --short empty at admission; prior blocked result13/6 split PASS consumed, source18 before-image unchanged |
-| After status evidence | conditional source-only worker release, no code/test/native start or source acceptance |
-| Diff evidence | exact6 continuity manifest |
-| Approval boundary | new source exact6 worker only after committed bound authority/preimplementation; fixture budgets in W, no runtime/cap1/provider/deletion/retry |
-| Claim boundary | source dispatch is not corrected source, support completion or BE-R01 outcome |
+| Command or tool surface | source-only Local identity/release/current-state generation; normal gates/commits separately owned by root |
+| Target paths | `scripts/cvf_ncr_html_owned_profile/journey.cjs`; `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`; `scripts/cvf_ncr_html_owned_profile/source_release.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-passive-request-observer-source-worker-20261017.json`; `scripts/cvf_ncr_html_effect_fence.py`; `docs/reviews/evidence/ncr-html-passive-request-observer-source-release-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`; `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | new source pair and standing Local closure/steward authority |
+| Before status evidence | HEAD 1faa6c5d8265b7843c5e67af9f1ff11b16ae1524; worker6 terminal/Local probe consumed |
+| After status evidence | bounded source accepted; BE-R01/02 open |
+| Diff evidence | exact19 material manifest |
+| Approval boundary | source-only; no new runtime actor/provider/deletion |
+| Claim boundary | identity and request stream seam only |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-passive-observer-source-continuity-20261017 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; prior stage/custody/failed proof preserved |
+| Invocation ID | ncr-passive-request-observer-source-material-20261017 |
+| Expected manifest | `scripts/cvf_ncr_html_owned_profile/journey.cjs`; `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`; `scripts/cvf_ncr_html_owned_profile/source_release.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-passive-request-observer-source-worker-20261017.json`; `scripts/cvf_ncr_html_effect_fence.py`; `docs/reviews/evidence/ncr-html-passive-request-observer-source-release-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`; `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `scripts/cvf_ncr_html_owned_profile/journey.cjs`; `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`; `scripts/cvf_ncr_html_owned_profile/source_release.py`; `scripts/test_cvf_ncr_html_effect_driver.py`; `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-passive-request-observer-source-worker-20261017.json`; `scripts/cvf_ncr_html_effect_fence.py`; `docs/reviews/evidence/ncr-html-passive-request-observer-source-release-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`; `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact19 |
+| Deletion or rename disposition | none; prior custody retained |
 
 ## Claim Boundary
 
-Conditional source correction only, no code/test/native start by this dispatch metadata. BE-S10 support not complete; prior r1c cap2 result remains spent failed, BE-R01/R02 open. Future corrected source gets new identity only after worker/Local proof, never repin old release; no automatic qualification/runtime/cap1/provider/deletion grant. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired and r1b/r1c spent blocked retained.
+Bounded passive request observer source proof/identity only. No automatic new cap2 actor, cap1, provider, real-data, public/deploy or old-grant replay. Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24 unchanged. BE-R01 failed/unchecked; BE-R02 cap1 open; no prior actor replay.
 
 ## Historical Terminal Timing Disclosure - Prior Source Recovery
 

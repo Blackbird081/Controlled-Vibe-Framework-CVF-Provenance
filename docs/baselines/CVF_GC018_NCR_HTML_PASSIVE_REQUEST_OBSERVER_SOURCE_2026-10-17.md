@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BOUNDED_SOURCE
 Date: 2026-10-17
 Batch ID: CVF-NCR-HTML-PASSIVE-REQUEST-OBSERVER-SOURCE-20261017
 Dispatch inspection base: fcdc86057d5e9df72a1b17115193e7e7e691bd7b
@@ -40,10 +40,20 @@ Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: new source-correction B/W, BE-S10 in-progress support and current6 raw authority/mode/next only at dispatch; no worker source change in this metadata commit.
+Authorized guard-maintenance scope: exact19 source/metadata material; no governance checker or hook mutation.
 Protected paths:
+- `scripts/cvf_ncr_html_owned_profile/journey.cjs`
+- `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`
+- `scripts/cvf_ncr_html_owned_profile/source_release.py`
+- `scripts/test_cvf_ncr_html_effect_driver.py`
+- `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-passive-request-observer-source-worker-20261017.json`
+- `scripts/cvf_ncr_html_effect_fence.py`
+- `docs/reviews/evidence/ncr-html-passive-request-observer-source-release-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`
+- `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -51,19 +61,29 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current Local source-only continuation after closed spent BE-R01 first result; standing root author/reviewer/steward authority.
-Rollback boundary: exact listed metadata only; prior worker2/CP/LP/BW, source18/accepted main-entry source B/W/release and historical Windows authority/qualification/old grants and custody unchanged. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired and r1b/r1c spent blocked retained.
+Operator authorization: standing autonomous Local source review and closure.
+Rollback boundary: exact19 only; prior accepted and failed records remain immutable.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: new source-only authority, BE-S10 support-in-progress and source-generated current raw B/W/mode/next align in dispatch9; following actual material SHA continuity exact6.
+Atomicity reason: worker source/return, frozen authority, Local source identity, bounded completion, BE-S10, and generated state align in one material tranche; actual-SHA continuity follows separately.
 
 Exact changed manifest:
 
+- `scripts/cvf_ncr_html_owned_profile/journey.cjs`
+- `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`
+- `scripts/cvf_ncr_html_owned_profile/source_release.py`
+- `scripts/test_cvf_ncr_html_effect_driver.py`
+- `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-passive-request-observer-source-worker-20261017.json`
+- `scripts/cvf_ncr_html_effect_fence.py`
+- `docs/reviews/evidence/ncr-html-passive-request-observer-source-release-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`
+- `docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -71,8 +91,7 @@ Exact changed manifest:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-
-Rollback boundary: listed metadata only; no production-source, old evidence, runtime or resource effect.
+Rollback boundary: listed19 only; no old record or runtime effect.
 
 ## ADIF Defect Registry Disclosure
 
@@ -112,24 +131,24 @@ Actual final corrective failed-result predecessor: material `187996f311383a63ce1
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher/reviewer/steward |
+| Actor | local-passive-observer-reviewer-20261017 Local reviewer/closer |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-passive-observer-source-material-20261017 |
+| Session or invocation | local-passive-observer-native-20261017 |
 | Working directory | repository root |
-| Command or tool surface | root-reviewed source packet derivative, git status --short, actual prior-result/dependency/ADIF metadata joins and canonical current6 generation; gates/commits separately owned by root |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | Local next source-correction continuation; current new exact source-only order after spent-result split closure |
-| Before status evidence | HEAD fcdc86057d5e9df72a1b17115193e7e7e691bd7b; clean worktree; git status --short empty at admission; prior blocked result13/6 split PASS consumed, source18 before-image unchanged |
-| After status evidence | conditional source-only worker release, no code/test/native start or source acceptance |
-| Diff evidence | exact9 material manifest |
-| Approval boundary | new source exact6 worker only after committed bound authority/preimplementation; fixture budgets in W, no runtime/cap1/provider/deletion/retry |
-| Claim boundary | source dispatch is not corrected source, support completion or BE-R01 outcome |
+| Command or tool surface | worker6 receipt, independent Local probe, source identity/release/F-only binding |
+| Target paths | exact19 manifest above |
+| Allowed scope source | committed source B/W and standing Local review/closure authority |
+| Before status evidence | frozen dispatch9 and worker6 raw bytes |
+| After status evidence | bounded source acceptance; material and continuity commits pending |
+| Diff evidence | exact19 material, source18 selected5/other13 |
+| Approval boundary | standing Local source-only review; no runtime/provider/deletion |
+| Claim boundary | source correction only, BE-R01/BE-R02 open |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-passive-observer-source-material-20261017 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
-| Deletion or rename disposition | none; prior stage/custody/failed proof preserved |
+| Invocation ID | local-passive-observer-native-20261017 |
+| Expected manifest | exact19: scripts/cvf_ncr_html_owned_profile/journey.cjs; scripts/cvf_ncr_html_owned_profile/journey.test.cjs; scripts/cvf_ncr_html_owned_profile/source_release.py; scripts/test_cvf_ncr_html_effect_driver.py; docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_WORKER_RETURN_2026-10-17.md; docs/reviews/evidence/ncr-html-passive-request-observer-source-worker-20261017.json; scripts/cvf_ncr_html_effect_fence.py; docs/reviews/evidence/ncr-html-passive-request-observer-source-release-20261017.json; docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md; docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json; docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Actual changed set | exact19: scripts/cvf_ncr_html_owned_profile/journey.cjs; scripts/cvf_ncr_html_owned_profile/journey.test.cjs; scripts/cvf_ncr_html_owned_profile/source_release.py; scripts/test_cvf_ncr_html_effect_driver.py; docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_WORKER_RETURN_2026-10-17.md; docs/reviews/evidence/ncr-html-passive-request-observer-source-worker-20261017.json; scripts/cvf_ncr_html_effect_fence.py; docs/reviews/evidence/ncr-html-passive-request-observer-source-release-20261017.json; docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md; docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json; docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Manifest delta | MATCH exact19 |
+| Deletion or rename disposition | none; prior and new custody retained |
 
 ## Preparation History Preservation
 
@@ -188,3 +207,8 @@ Actual first metadata repair confirmation: exit0/19.797s, raw `.cvf/runtime/ncr-
 ## First Normal Dispatch Hook Failure
 
 Actual first normal commit exit1/63.359s:90/91 checks passed, encoding guard rejected the non-ASCII arrow in adapted prose without a Text Encoding Exception. Root replaced the prose symbol with ASCII -to- under the existing encoding standard; no semantic/source/effect change. Raw `.cvf/runtime/ncr-be-fresh-runtime-20261016/passive-source-dispatch-material.log` SHA256 `67a9390b2b23422f5acedf927968dbb98458c0352580793880a2393a24685e09` retained; existing ORCHESTRATOR_PACKET_GAP / RULE_EXISTS, no new capability credit.
+
+## Local Source Disposition
+
+Accepted bounded source correction only after worker real-stream RED/GREEN proof and distinct Local Node probe. BE-S10 support checked; BE-R01/BE-R02 open. SOURCE_IDENTITY_ONLY release and F binding are root closure, with no runtime admission or digest backedge in this frozen authority.
+Procedure limitations: RED raw TAP records HTTP 500 and disturbed/locked native Request failure, but the in-memory RED observer array/hash was not serialized before the failing assertion; no RED observer record is claimed and no third worker Node start was used. GREEN observer body/hash and presence values are assertion-derived from frozen test source and successful raw TAP, not a serialized raw observer array. The distinct Local one-Node probe independently verifies current-source consumer body, observation timing and matching hashes. Worker packet preparation required literal/metadata corrections; first full-gate failure and one consolidated packet-only repair are retained. Root dispatch first preimplementation and encoding-hook failures remain disclosed. Existing rules apply; no capability credit. Finite source-only synthetic proof does not qualify browser/product/provider behavior. BE-R01 and BE-R02 remain open; BE-Q03 separately tracks changed-source qualification.

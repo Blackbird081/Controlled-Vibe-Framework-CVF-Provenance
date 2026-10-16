@@ -49,16 +49,27 @@ function installOwnedGuard() {
   const emit = http.Server.prototype.emit;
   http.Server.prototype.emit = function (event, ...args) {
     if (event === 'request' && args[0].method === 'POST' && args[0].url.split('?')[0] === '/api/governance/evaluate') {
-      const req = args[0], parts = [];
-      req.on('data', b => parts.push(b));
-      req.on('end', () => {
-        const raw = Buffer.concat(parts);
-        let body;
-        try { body = JSON.parse(raw.toString('utf8')); }
-        catch (_) { log({ event: 'evaluate-recipient-invalid', bodyBytes: raw.length, bodySha256: sha(raw) }); return; }
-        log({ event: 'evaluate-recipient', body,
-          bodySha256: sha(raw), serviceTokenPresent: Boolean(req.headers['x-cvf-service-token']), cookiePresent: Boolean(req.headers.cookie) });
-      });
+      const req = args[0], parts = [], requestEmit = req.emit;
+      let ended = false;
+      req.emit = function (name, ...events) {
+        let result;
+        try { result = requestEmit.call(this, name, ...events); }
+        catch (error) { if (name === 'end') this.emit = requestEmit; throw error; }
+        try {
+          if (name === 'data' && !ended) parts.push(Buffer.from(events[0]));
+          else if (name === 'end' && !ended) {
+            ended = true;
+            const raw = Buffer.concat(parts);
+            let body, invalid = false;
+            try { body = JSON.parse(raw.toString('utf8')); } catch (_) { invalid = true; }
+            if (invalid) log({ event: 'evaluate-recipient-invalid', bodyBytes: raw.length, bodySha256: sha(raw) });
+            else log({ event: 'evaluate-recipient', body,
+              bodySha256: sha(raw), serviceTokenPresent: Boolean(req.headers['x-cvf-service-token']), cookiePresent: Boolean(req.headers.cookie) });
+          }
+        } catch (_) { /* Observation cannot change native request delivery. */ }
+        if (name === 'end') this.emit = requestEmit;
+        return result;
+      };
     }
     return emit.call(this, event, ...args);
   };

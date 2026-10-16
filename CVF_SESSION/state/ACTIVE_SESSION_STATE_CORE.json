@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md",
-    "baselineSha256": "d0a1bff7123dd5ccb4a13b2b5800f677918b882dc8cdfc682917d3a87167c903",
+    "baselineSha256": "ccc9caa02ba00432908eeb5b2d1cbb9ee8f76b43dbbd3b36c034408f686644aa",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md",
-    "workOrderSha256": "91c68300c20a40bf380329f8c4247adb1a7f692851567846c607d53c17332b5f"
+    "workOrderSha256": "e155112afb42beca9dd34042bf8db6320a8a85030d829c04c0d4da4105790e99"
   },
-  "currentAuthoritySyncReason": "Passive request observer continuity; actual blocked result split PASS consumed, prior evidence/source identity immutable.",
+  "currentAuthoritySyncReason": "Passive observer source material: bounded source identity only; BE-R01/02 open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_passive_request_observer_source_dispatched",
-  "previousMode": "cvf_ncr_html_r1c_be_r01_blocked_spent",
+  "currentMode": "cvf_ncr_html_passive_request_observer_source_accepted_bounded",
+  "previousMode": "cvf_ncr_html_passive_request_observer_source_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

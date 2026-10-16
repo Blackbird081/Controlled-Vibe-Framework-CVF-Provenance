@@ -240,8 +240,9 @@ test('legacy browser branches survive exact routing-only patch against the pinne
 });
 
 // Activate the real observer in an isolated VM: no real guard mutation, child, socket or HTTP listener.
-function guarded(main) {
+function guarded(main, realHttp = false) {
   const { EventEmitter } = require('node:events'), vm = require('node:vm');
+  const http = realHttp ? require('node:http') : null, originalHttpEmit = http && http.Server.prototype.emit;
   const filename = path.join(__dirname, 'journey.cjs'), entry = path.join(__dirname, '..', 'probe_cvf_w05_browser_chain.cjs');
   const logs = [], loads = [], sentinel = {}, cached = {}, cache = { [entry]: cached, unrelated: sentinel };
   class Server extends EventEmitter {}
@@ -251,7 +252,7 @@ function guarded(main) {
     if (id === 'node:fs') return { appendFileSync: (file, line) => logs.push(JSON.parse(line)) };
     if (id === 'node:net') return { Socket };
     if (id === 'node:dns') return { promises: {} };
-    if (id === 'node:http') return { Server };
+    if (id === 'node:http') return http || { Server };
     return require(id);
   };
   fake.resolve = id => { assert.equal(id, entry); return entry; };
@@ -261,7 +262,7 @@ function guarded(main) {
     process: { env: { CVF_NCR_ALLOWED_PORTS: '[]', CVF_HCR_EGRESS_LOG: 'ignored-vm-log' },
       argv: ['node', main === 'entry' ? entry : main], pid: 7 },
   }, { filename });
-  return { logs, loads, cache, cached, sentinel, entry, Server, EventEmitter };
+  return { logs, loads, cache, cached, sentinel, entry, Server, EventEmitter, http, originalHttpEmit };
 }
 
 test('guard import evicts only its exact future main and leaves library or different main cached', () => {
@@ -312,4 +313,29 @@ test('valid evaluate POST preserves exact body hash and header presence while de
   assert.deepEqual(g.logs, [{ pid: 7, event: 'evaluate-recipient', body: JSON.parse(raw),
     bodySha256: createHash('sha256').update(raw).digest('hex'), serviceTokenPresent: true, cookiePresent: true }]);
   assert.equal(delegated, 1);
+});
+
+test('native delayed Request consumes the evaluate body while the observer records it', { timeout: 3000 }, async () => {
+  const g = guarded(undefined, true), { http } = g, raw = '{"request_id":"loopback-only","value":1}';
+  const server = http.createServer((req, res) => setTimeout(async () => {
+    try { res.end(JSON.stringify({ body: await new Request('http://127.0.0.1/api/governance/evaluate', { method: 'POST', body: req, duplex: 'half' }).text() })); }
+    catch (error) { res.statusCode = 500; res.end(JSON.stringify({ error: error.message })); }
+  }, 25));
+  try {
+    await new Promise((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });
+    const response = await new Promise((resolve, reject) => {
+      const request = http.request({ host: '127.0.0.1', port: server.address().port, path: '/api/governance/evaluate', method: 'POST',
+        headers: { 'content-length': Buffer.byteLength(raw), 'x-cvf-service-token': 'synthetic', cookie: 'synthetic', connection: 'close' } }, res => {
+        let text = ''; res.setEncoding('utf8'); res.on('data', part => { text += part; }); res.on('end', () => resolve({ status: res.statusCode, body: JSON.parse(text) }));
+      });
+      request.setTimeout(1200, () => request.destroy(new Error('loopback client timeout'))); request.on('error', reject); request.end(raw);
+    });
+    assert.equal(response.status, 200, response.body.error || JSON.stringify(response.body));
+    assert.equal(response.body.body, raw);
+    assert.deepEqual(g.logs, [{ pid: 7, event: 'evaluate-recipient', body: JSON.parse(raw),
+      bodySha256: createHash('sha256').update(raw).digest('hex'), serviceTokenPresent: true, cookiePresent: true }]);
+  } finally {
+    http.Server.prototype.emit = g.originalHttpEmit;
+    if (server.listening) await new Promise(resolve => server.close(resolve));
+  }
 });

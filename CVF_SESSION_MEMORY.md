@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | spent BE-R01 closed; BE-S10 source-only correction in progress, product outcomes open |
+| Parent maintenance | BE-S10 source support accepted bounded; BE-R01/R02 open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_passive_request_observer_source_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=conditional exact6 PASSIVE_REQUEST_OBSERVER_SOURCE worker after committed bound source release/preimplementation; role=INTERNAL_AGENT Local dispatcher/reviewer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=all browser runtime/cap1/provider/deletion/retry effects unadmitted; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_passive_request_observer_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN separately governed changed-source qualification and fresh cap2 admission; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=old grant retry/cap1/provider/deletion; no generic operator checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_passive_request_observer_source_dispatched`
-Current mode: `cvf_ncr_html_passive_request_observer_source_dispatched`; previous mode marker: `cvf_ncr_html_r1c_be_r01_blocked_spent`
+Current mode marker: `cvf_ncr_html_passive_request_observer_source_accepted_bounded`
+Current mode: `cvf_ncr_html_passive_request_observer_source_accepted_bounded`; previous mode marker: `cvf_ncr_html_passive_request_observer_source_dispatched`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_passive_request_observer_source_dispatched`
+Mode: `cvf_ncr_html_passive_request_observer_source_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-PASSIVE-REQUEST-OBSERVER-SOURCE-20261017. Under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md and docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md, conditionally release one INTERNAL_AGENT exact6 source worker after committed dispatch/current authority/actual-SHA continuity, bound pre-dispatch and worker preimplementation PASS. Correct eager evaluate-POST IncomingMessage consumption using passive observation in existing journey owner/tests; preserve prior main-entry/GET/malformed fixes; exact source_release AUTHORITY and effect-driver test assertion only. Worker Node budget exactly2 direct CJS RED/GREEN starts with real delayed IncomingMessage-to-Request regression, no legacy Windows test collection; root separate independent1 Node probe, budgets/physical pins/custody exactly W. Inclusive prep 2026-10-16T18:42:00Z, worker hard90min deadline 2026-10-16T20:12:00Z, Local180min 2026-10-16T21:42:00Z; no reset. BE-S10 unchecked IN_PROGRESS_SOURCE_ONLY; BE-R01 spent failed/open and BE-R02 open/unadmitted. Prior result material 187996f311383a63ce1fe13451f7f1bba9700177/continuity fcdc86057d5e9df72a1b17115193e7e7e691bd7b actual13/6 split PASS consumed, no rerun. Source18 before-image frozen; accepted main-entry source B/W/releases/qualification/failed worker2/CP/LP unchanged. Worker leaves F release constants; Local accepted new-source identity/release/F binding is a later distinct closure, not old release repin. No browser/runtime/cap1/provider/deletion/retry; changed source requires separate future qualification. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired and r1b/r1c spent blocked retained. Current continuity anchor 1437e2725d99ab66bd0984e0fa96b5e9075f18e9; ordinary technical details Local, no generic documentary operator checkpoint.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-PASSIVE-REQUEST-OBSERVER-SOURCE-20261017. BE-S10 source support accepted bounded from real-stream worker RED/GREEN proof/current SOURCE_IDENTITY_ONLY release and distinct Local one-Node probe; consume docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json. Next Local plans separately governed BE-Q03 current-source qualification/control and fresh cap2 runtime authority; prior controls9/26 are not current-source proof. BE-R01/BE-R02 open; no automatic actual effect. Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24 unchanged. BE-R01 failed/unchecked; BE-R02 cap1 open; no prior actor replay. Final material/actual-SHA continuity and clean split closure pending.
 
 ## Parked Checkpoints
 

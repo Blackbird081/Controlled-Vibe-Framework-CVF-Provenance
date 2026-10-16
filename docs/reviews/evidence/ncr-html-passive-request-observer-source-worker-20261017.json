@@ -1,0 +1,206 @@
+{
+  "schemaVersion": "cvf.ncrPassiveRequestObserverSourceWorkerEvidence@1.0.0",
+  "actor": "ncr-passive-observer-worker-20261017",
+  "role": "INTERNAL_AGENT",
+  "phase": "IMPLEMENTATION",
+  "decisionOwner": "LOCAL",
+  "executionBaseHead": "1faa6c5d8265b7843c5e67af9f1ff11b16ae1524",
+  "workOrder": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md",
+    "sha256": "91c68300c20a40bf380329f8c4247adb1a7f692851567846c607d53c17332b5f"
+  },
+  "baseline": {
+    "path": "docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md",
+    "sha256": "d0a1bff7123dd5ccb4a13b2b5800f677918b882dc8cdfc682917d3a87167c903"
+  },
+  "releaseBindings": {
+    "workerReleaseRawSha256": "af0f9f406a9e411c8e56dad2da7dd9b4a1002bfa21fe8a49f9933f0ee128c3d4",
+    "boundReceiptRawSha256": "8a6adb948f8e07d04d074c077130c76653e3ccc8615a54133bbbc5eff33909cb",
+    "acceptedSource13ReleasePath": "docs/reviews/evidence/ncr-html-main-entry-cache-source-release-20261017.json",
+    "acceptedSource13ReleaseSha256": "00994f91b379adee9396c212db05584df2eda22685443c5dbb2b0ca8d2c193b0"
+  },
+  "sourcePinsBefore": {
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "8ed63e7edd13e2dcd695489a0bf6b50c05b54c9f272860ab20a7ecd1a527d86d",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": "5bbf1c0bf18f1dfa571f2b0de0e18b12fefa7e950dff707abbadbdacfdcca650",
+    "scripts/test_cvf_ncr_html_effect_driver.py": "2eaa901e2d5a2ed96bd629b99635cbc5282987b0ce8cba44e5f155a36ec2a0b9"
+  },
+  "sourcePinsAfter": {
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "a247c7cabf963399c3e23be371e3fe99aeeb13351d30bba9865734002f59defe",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "624500e730c04a53be987ccb84a62a8466f5e499e07fbba62bf71fa0d568551b",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": "528dded3de8ad27a4eb74258bb917eccd970f43da76f80bd0654a895a6d805d1",
+    "scripts/test_cvf_ncr_html_effect_driver.py": "b2b86ea6f50a864df5b025ac0b7e5accc69bc53017e45a842c9c22ba4ec2f026"
+  },
+  "sourceDiff": {
+    "path": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/source-test.diff.patch",
+    "sha256": "0d430e26b7e744a20c1d11728716cf72019e4c8b58db240bfa68e0f919e8cbf8",
+    "bytes": 8822,
+    "scope": "the four existing source and test owners only"
+  },
+  "preImplementationGate": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 1faa6c5d8265b7843c5e67af9f1ff11b16ae1524 --head HEAD",
+    "exitCode": 0,
+    "durationSeconds": 18.613,
+    "rawLogPath": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/preimplementation.log",
+    "rawLogSha256": "6a462ef476183f460da78710979a5363b2327ab19d44fe1c61bcd39bb67698d3",
+    "returnScaffoldPath": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/pending-worker-return.md",
+    "returnScaffoldSha256": "71c2d1d662413aaa04eadfe5049bc62a71d226377fb6e4db39c832226de06bf3"
+  },
+  "nativeProgram": {
+    "ledgerPath": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/native-starts.json",
+    "ledgerSha256": "c548f76d81ba5439c9ce3c1d8f56c3b6cc634a087090bc0ce6915a7fc0b55078",
+    "physicalNodePath": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.EXE",
+    "physicalNodeSha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+    "directSuiteInvocation": "node scripts/cvf_ncr_html_owned_profile/journey.test.cjs (no --test child isolation)",
+    "startsUsed": 2,
+    "startsAllowed": 2,
+    "aggregateDurationMs": 1338.578,
+    "retry": 0,
+    "loopbackPairsTotal": 2,
+    "requestBody": {
+      "utf8": "{\"request_id\":\"loopback-only\",\"value\":1}",
+      "bytes": 40,
+      "sha256": "c1f789e77228300b7f939a58a783be6fdb2977fd9aa41c8cc6cffd53d5e4701b"
+    },
+    "red": {
+      "status": "EXPECTED_RED_CAPTURED",
+      "sourceSha256": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff",
+      "exitCode": 1,
+      "durationMs": 756.495,
+      "timeoutSeconds": 10,
+      "suiteResults": {"passed": 16, "failed": 1},
+      "consumerStatus": 500,
+      "cause": "Response body object should not be disturbed or locked",
+      "stdoutPath": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/node-red.stdout.log",
+      "stdoutBytes": 5208,
+      "stdoutSha256": "85e66020cd2a702524029138aaf41c7dbd772c3db6941dca1a826f9c0a37c7a0",
+      "stderrPath": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/node-red.stderr.log",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "observerSerialization": "The failing assertion captures the downstream error before comparing the in-memory VM observer array; the raw observer array was not serialized to this run's stdout. No red observer record is claimed from raw output."
+    },
+    "green": {
+      "status": "PASS",
+      "sourceSha256": "a247c7cabf963399c3e23be371e3fe99aeeb13351d30bba9865734002f59defe",
+      "exitCode": 0,
+      "durationMs": 582.083,
+      "timeoutSeconds": 10,
+      "suiteResults": {"passed": 17, "failed": 0},
+      "consumerStatus": 200,
+      "consumerBodyEqualsRequestBody": true,
+      "observerValidEvaluateCount": 1,
+      "observerInvalidEvaluateCount": 0,
+      "observerRecord": {
+        "pid": 7,
+        "event": "evaluate-recipient",
+        "body": {"request_id": "loopback-only", "value": 1},
+        "bodySha256": "c1f789e77228300b7f939a58a783be6fdb2977fd9aa41c8cc6cffd53d5e4701b",
+        "serviceTokenPresent": true,
+        "cookiePresent": true
+      },
+      "stdoutPath": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/node-green.stdout.log",
+      "stdoutBytes": 4451,
+      "stdoutSha256": "7f09395a2a9ce190d70073884f2345fa977178b1f188e7780b172690922fc447",
+      "stderrPath": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/node-green.stderr.log",
+      "stderrBytes": 0,
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "negativeAndPositiveBranches": {
+      "getEmpty": "PASS: GET adds no end observer and records no recipient",
+      "emptyPost": "PASS: empty POST is invalid and never a valid recipient",
+      "malformedPost": "PASS: malformed POST records only bytes and SHA-256 metadata",
+      "validPost": "PASS: exact body hash and service-token/cookie presence preserved"
+    }
+  },
+  "selectedPytest": {
+    "ledgerPath": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/pytest-starts.json",
+    "ledgerSha256": "ba2896abf58d82a0991bd22c91c58e0d63e1c158fd96f2190fd49c624400629f",
+    "physicalPythonPath": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "physicalPythonSha256": "5f7b89a612c9b8af1d6456cdfcd1dbe5ca630849e79aebced9bee9a6694952ec",
+    "runner": "IN_PROCESS_FAKE",
+    "subprocessOverrideActive": false,
+    "childGuardPreloadRunnerActivationSanitized": true,
+    "timeoutSecondsPerSuite": 120,
+    "suites": [
+      {
+        "command": "python -B -m pytest scripts/cvf_ncr_html_owned_profile/test_admission.py -q -p no:cacheprovider --basetemp <fresh worker-custody child>",
+        "status": "PASS",
+        "exitCode": 0,
+        "durationMs": 3800.13,
+        "testsPassed": 170,
+        "stdoutPath": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/pytest-admission.stdout.log",
+        "stdoutBytes": 264,
+        "stdoutSha256": "7dbf1846fc99f6087833f00d12c4b4ad7d9e595dfc790b71b9a16dec82182aeb",
+        "stderrPath": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/pytest-admission.stderr.log",
+        "stderrBytes": 661,
+        "stderrSha256": "2a914555f2278d48476e32682802ec1c26db797fe28edce2a47b2cfe998f2f93"
+      },
+      {
+        "command": "python -B -m pytest scripts/test_cvf_ncr_html_effect_driver.py -q -k test_preload_renderer_preserves_identity_and_order -p no:cacheprovider --basetemp <fresh worker-custody child>",
+        "status": "PASS",
+        "exitCode": 0,
+        "durationMs": 1428.365,
+        "testsPassed": 1,
+        "testsDeselected": 68,
+        "stdoutPath": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/pytest-effect.stdout.log",
+        "stdoutBytes": 115,
+        "stdoutSha256": "7ba00a6e2e2713a1ceaf3bc1783d92c9b38962176404cd62bcafc7a5ee17b4fe",
+        "stderrPath": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker/pytest-effect.stderr.log",
+        "stderrBytes": 661,
+        "stderrSha256": "2a914555f2278d48476e32682802ec1c26db797fe28edce2a47b2cfe998f2f93"
+      }
+    ],
+    "stderrNote": "The only stderr content is the existing pytest-asyncio fixture-loop-scope deprecation warning; no test failure is present."
+  },
+  "authorityAssertion": {
+    "status": "PASS",
+    "sourceReleaseAuthority": [
+      "docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md"
+    ],
+    "effectDriverAssertionMatches": true,
+    "effectFenceReleaseConstantsChanged": false
+  },
+  "proofs": [
+    {
+      "proofId": "PROOF-REQ-01",
+      "status": "PASS",
+      "evidenceRefs": ["scripts/cvf_ncr_html_owned_profile/journey.cjs", "source-test.diff.patch"],
+      "finding": "Only matching POST evaluate IncomingMessage objects receive a passive own-emit observer. The wrapper delegates the original request emit first, records data/end after delegation, restores the instance emit after end, and returns the original emit result. Original emit throws are rethrown unchanged. No data/readable listener or read/resume/pipe call is introduced. The original Server.emit return remains delegated and returned."
+    },
+    {
+      "proofId": "PROOF-REQ-02",
+      "status": "PASS",
+      "evidenceRefs": ["native-starts.json", "node-red.stdout.log", "node-green.stdout.log", "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"],
+      "finding": "The unchanged source produced the required disturbed/locked RED; the corrected source produced the delayed native Request GREEN. Both direct suite invocations used one loopback server/client pair and remained within the two-start budget."
+    },
+    {
+      "proofId": "PROOF-REQ-03",
+      "status": "PASS",
+      "evidenceRefs": ["scripts/cvf_ncr_html_owned_profile/source_release.py", "scripts/test_cvf_ncr_html_effect_driver.py"],
+      "finding": "The authority constant and its narrowed effect-driver assertion contain exactly the new passive source B/W pair. F release constants and source13/adjunct5 membership remain untouched."
+    },
+    {
+      "proofId": "PROOF-REQ-04",
+      "status": "PASS",
+      "evidenceRefs": ["docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_WORKER_RETURN_2026-10-17.md", "run_worker_return_fast_gate.py", "terminal-receipt.json"],
+      "finding": "The complete exact-six return passes the full bound fast gate; the detached receipt captures gate logs, exact-six before/after SHA-256 maps, unchanged HEAD, empty stage, and lane release."
+    },
+    {
+      "proofId": "PROOF-REQ-05",
+      "status": "PASS",
+      "evidenceRefs": ["scripts/cvf_ncr_html_owned_profile/journey.test.cjs", "node-green.stdout.log"],
+      "finding": "The direct CJS suite passes GET-empty, empty and malformed POST, valid POST body hash/header-presence behavior, and the native delayed Request body plus single valid observer record."
+    }
+  ],
+  "custody": {
+    "workerRoot": ".cvf/runtime/ncr-passive-request-observer-source-20261017/worker",
+    "allWorkerFilesAndSuiteBasetempsUnderWorkerRoot": true,
+    "oldCustodyReadOrCleanup": false,
+    "rootPrivateOracleOrFixtureAccess": false,
+    "stageOrCommit": false,
+    "providerOrProductRuntime": false,
+    "externalNetwork": false
+  },
+  "claimBoundary": "Source-only passive observer correction and finite synthetic request proof. No Local independent probe, new source release manifest, F digest update, runtime BE-R01 retry, cap1, B-E product acceptance, provider, release, production, or public export claim."
+}
