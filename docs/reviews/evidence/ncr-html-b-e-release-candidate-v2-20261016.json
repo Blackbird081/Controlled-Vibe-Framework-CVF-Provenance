@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "cvf.ncrHtmlDocumentaryReleaseCandidate.v2",
+  "status": "RUNTIME_SOURCE_ADMISSION_NOT_RELEASED",
+  "runtimeReleased": false,
+  "createdAtUtc": "2026-10-16T00:29:00.266548+00:00",
+  "sourceCommit": "9ed0168ec85d05d48005a09d61d7ba3a04716986",
+  "source12": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "283f238f1196e3dc401ec8538e894db063c0f42123c2a9d730e124c6cef3f541",
+    "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "c4fab8696982227bc202ae969d72f193448e504ca4a6d7d579e609dbd7764605",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "3ef92635b8fb81dbe0f953c38f7845a8d5b2d6a43a8015ccd089f464fcc0fb54",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py": "92d02082cd5d18ddac0c277bd9df65ba49f8b91d3277e8b301361de308c7c43d",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "0569c1740e182db136c2f8c107aed836bd0f8129ee8d6f0eeb5d1995fb6602f8",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+    "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228"
+  },
+  "sourceHashRecipe": "raw working-tree bytes SHA256; exact values match accepted source12; no normalization",
+  "productCommit": "9ed0168ec85d05d48005a09d61d7ba3a04716986",
+  "productScopeGitObjects": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web": "01ada06d232d140277a1c682a0fb675d7c0e435c",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE": "b559cbecd10ab83a5a36b282b1932fe794bbd18e",
+    "governance/toolkit/03_CONTROL/CVF_AGENT_REGISTRY.md": "89e7ad8a778b0ff70f13b07474f7a31def019158",
+    "governance/toolkit/04_TESTING/CVF_SELF_UAT_DECISION_LOG.md": "5f717b25b4de774683f4ef920c035052058816e5",
+    "docs/reference/CVF_GOVERNANCE_STATE_REGISTRY.json": "7d245836bc11cf727e7f2a4ff2aa1a77d927238c"
+  },
+  "productObjectRecipe": "git rev-parse <productCommit>:<exact repo-relative path>; Git object IDs, not raw byte SHA256",
+  "canonicalSpec": {
+    "path": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+    "sha256": "1d1a42f2c3f1e9d573b30cb46221e24ea1365d9f60aec95b6938e9fd10fb6a83"
+  },
+  "entrypointBindings": {
+    "scripts/probe_cvf_q001_synthetic_system_chain.py": {
+      "historicalCommit": "0850546dea01b0f15586132549e4330a1af25c72",
+      "historicalBlobSha256": "26b34890e3031f5b13ca4965585adbdf14a483aefe246834d3848cb165c3fe9d",
+      "currentWorkingTreeSha256": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+      "currentGitObjectId": "3981eefa0175d24fcfd5ee799b5a0bd09d8cad11"
+    },
+    "scripts/probe_cvf_w05_browser_chain.cjs": {
+      "historicalCommit": "0850546dea01b0f15586132549e4330a1af25c72",
+      "historicalBlobSha256": "2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec",
+      "currentWorkingTreeSha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+      "currentGitObjectId": "099d86b31f2f81cb37110cf42ca94fc07c897ce5"
+    }
+  },
+  "acceptedCap1": {
+    "evidencePath": "docs/reviews/evidence/ncr-html-cap1-completion-local-20261016.json",
+    "evidenceSha256": "53dbc375153db0a59a01f7e43f66be2f9be144c03262aa43f29a2363c96dfc62",
+    "sourceHead": "fc3f333625035ba191372faaef8a28a8131173d3",
+    "receiptSha256": "9fde97a251da6a94a8df86e337819b04a43e6e683e21bf8a3c44d55e77118e3c",
+    "scope": "accepted prior unchanged source12 control proof only; no execution or runtime release"
+  },
+  "authority": {
+    "path": "docs/baselines/CVF_GC018_NCR_HTML_B_E_QUALIFICATION_LOCAL_2026-10-16.md",
+    "sha256": "6473e805605b35f2e320028b1ce972a3df2ab096a7233935358180bf49c032ca",
+    "scope": "final closure metadata; prospective effect preimage retained separately"
+  },
+  "historicalPins": {
+    "path": "docs/reviews/evidence/ncr-html-direct-local-repair-pins-20261016.json",
+    "sha256": "01c1f294e016d1be16edd54cc97fc9cef6d89e8be85da7050cb905aae1955921",
+    "disposition": "IMMUTABLE_HISTORICAL_NOT_REPOINTED"
+  },
+  "remaining": [
+    "explicit current release selector and admission wiring with focused fence tests",
+    "new control bindings if production/oracle bytes change",
+    "owned synthetic stage",
+    "prospective B-E effect and cleanup envelope"
+  ],
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY",
+  "parentCandidate": {
+    "path": "docs/reviews/evidence/ncr-html-b-e-release-candidate-20261016.json",
+    "sha256": "e1baad5175cfb6b4ac227d6297468ba404abf0f0bc44a4fa3f7e75b285532632",
+    "disposition": "UNCHANGED_FROZEN_PRE_EFFECT_DOCUMENTARY_CANDIDATE"
+  },
+  "prospectiveEffectAuthority": {
+    "path": ".cvf/runtime/ncr-html-b-e-qualification-local-20261016/qualification-authority-preimage.md",
+    "sha256": "7ccb2b65682d34e6e10e019531c18d632c96e5c4adbf4c9cd57d128863c492e7"
+  },
+  "metadataAmendment": "add checker-required freshness/routing disclosures and versioned final candidate; no source/product/effect change"
+}

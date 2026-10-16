@@ -84,6 +84,13 @@ Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains
 ## Core Guard Self-Protection Authorization
 
 Authorized guard-maintenance scope: exact6 source/generated continuity for accepted independent cap1 proof and next B-E preparation tranche; no checker/hook/carrier semantics.
+Current prerequisite repair: restore only the missing front-door Next Allowed
+Move Mode literal, preserving current mode/authority/next action. This handoff
+and front door are the exact2 literal-repair subset because the normal
+pre-commit checker requires the inherited literal before accepting material.
+Current operator roadmap/full Local handling grant authorizes this bounded
+repair. Commit exception: assessment-authorized exact8 atomic qualification
+material6/literal-repair2, then exact6 result continuity; no hook bypass or history rewrite.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
