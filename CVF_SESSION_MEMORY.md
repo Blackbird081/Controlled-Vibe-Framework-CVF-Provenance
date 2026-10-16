@@ -31,11 +31,11 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | bounded Windows source acceptance; product B-E unaccepted |
+| Parent maintenance | Windows source correction acceptance; product B-E not accepted |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_windows_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=complete material/actual-SHA continuity then current-source qualification planning; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=LOCAL_CLOSURE; decision owner=LOCAL; parked checkpoint=old grants retired and product/effect admission separate, no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_windows_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=current-source qualification and fresh runtime-admission planning after bounded source acceptance; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=ACCEPTANCE; decision owner=LOCAL; parked checkpoint=old runtime grants retired, product/provider/deletion and unrelated effects parked, no generic operator checkpoint.
 
 ## Current Mode
 
@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_windows_source_accepted_bounded`; previous mode mark
 
 Mode: `cvf_ncr_html_windows_source_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-WINDOWS-SOURCE-QUALIFICATION-20261016. Consume docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-windows-source-local-20261016.json. Bounded Windows source correction and Local synthetic fixture repair accepted; original worker pure434PASS/1FAIL and REQ04BLOCKED retained, focused root admission group resolved its fixture cause. New SOURCE_IDENTITY_ONLY release is not product runtime admission. Final material/actual-SHA continuity and clean source-admission metadata proof pending. Next Local plans current-source qualification/control/readiness and fresh independent runtime admission against NEW identity. Old1spent/2retired never replayed. Gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged. No product/browser/Docker/provider/network/deletion effect or generic operator checkpoint.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-WINDOWS-SOURCE-QUALIFICATION-20261016. Consolidated Windows source correction accepted at material a7974566e306795ffc1e4f2e9f9fb96ae804553b; consume docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-windows-source-local-20261016.json. New source/adjunct hashes and source-identity-only release are distinct from old releases. Native fixtures prove preload/traversal seams at their bounded scope; they do not accept product B-E. Next Local plans current-source qualification/control/readiness and fresh independent runtime admission against NEW identity; old1spent/2retired never replayed. No provider/product/Docker/browser/deletion effect follows automatically. Gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred retained. Ordinary details Local; no generic documentary operator checkpoint. Clean post-material explicit source-admission metadata PASS; root focused23PASS resolves the named fixture cause, original worker REQ04BLOCKED retained.
 
 ## Parked Checkpoints
 

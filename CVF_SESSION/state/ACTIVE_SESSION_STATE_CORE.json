@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md",
     "workOrderSha256": "f9367246a646efb81ef42308007a016031ee690b4f57b7c050cbffd555a788c8"
   },
-  "currentAuthoritySyncReason": "Windows source accepted bounded; Local fixture repair and distinct native oracle; final material commit pending.",
+  "currentAuthoritySyncReason": "Windows source acceptance material a7974566e306795ffc1e4f2e9f9fb96ae804553b; raw paired authority synchronized. Bounded source acceptance only; new identity is not effect admission.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
