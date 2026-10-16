@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md",
     "workOrderSha256": "b7bbaf0700f8b3ae1ccf2dfdcb27169610233765f805e665a998a5a2651793ca"
   },
-  "currentAuthoritySyncReason": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=ASSESS; BATCH_ID=CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; completion=docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md; Local proof=docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json. Five adjunct files implemented; worker Python35/JS30 and full gate PASS, exact7 frozen. Independent Local JS18 PASS; Python fixture lacks Sink.mkdir before endpoint runner, so admission/marker group unexecuted and acceptance BLOCKED. Local2/2 fake programs spent; worker2/6, remaining4 not transferable; no retry/refill/reset or source release. Next Local static diagnostic/consolidated evidence-recovery disposition only, no new test/worker/Native/browser/container/provider/delete starts. Source13/production7/oracles6/gen9/original release/source authority/control receipts immutable; old5 programs/52 starts closed, no replay. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions, normal collector only; no transition/independentCriticalEvidence. R1/R2partial,R3/R4open,R5/R6deferred; foundationactive/extensionNOT_APPLIED/projectOPEN and parked effects/LHW24 retained.",
+  "currentAuthoritySyncReason": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=ASSESS; BATCH_ID=CVF-NCR-HTML-B-E-PYTHON-ORACLE-RECOVERY-20261016. Static disposition=docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md; evidence=docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-static-20261016.json. Prepared separate213-line Python oracle SHA25666dc947d1a01ddc1386cf83bea8b05c55754d32bdeab95b7a572387113235c40: fake mkdir,13 typed/message-bound refusals, positive endpoint witness and partial-result metadata. AST/source-call checks only, new probe/worker/runtime starts0. Operator additional-program decision required: exactly1 Python<=90s, cumulative cap3 preserving old2 spent; current cap2 still exhausted. Original10:54Z root deadline unchanged; worker remaining4 not transferable. Before any run: specific budget decision, governed authority amendment/committed continuity and current bound setup. No generic next implies budget refill or runtime/source acceptance. Source5/worker7/source13/original release/control proofs and old failure/JS18 PASS retained; worker35/30/full gate reused, no replay. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions; no transition/new independentCriticalEvidence. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_b_e_adjunct_source_implemented_review_blocked",
-  "previousMode": "cvf_ncr_html_b_e_adjunct_source_released",
+  "currentMode": "cvf_ncr_html_b_e_python_oracle_recovery_prepared_held",
+  "previousMode": "cvf_ncr_html_b_e_adjunct_source_implemented_review_blocked",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

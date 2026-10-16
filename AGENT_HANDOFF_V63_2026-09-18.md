@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `01dca0c070bd9a2787e9227b383135fa6ff16a0a`. Material SHA: `01dca0c070bd9a2787e9227b383135fa6ff16a0a`. Batch ID: CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016. Exact17 source implementation and BLOCKED independent review record; normal91/91 PASS, automatic P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. This handoff-only sync records actual material SHA before clean split-range closure; no promotion of failed Python probe or source release.
+Current HEAD recorded for this handoff: `add1d14a078cfb593480b7271feb4b7389b63bc8`. Material SHA: `add1d14a078cfb593480b7271feb4b7389b63bc8`. Batch ID: CVF-NCR-HTML-B-E-PYTHON-ORACLE-RECOVERY-20261016. Exact3 static recovery material; normal91/91 PASS, automatic collector inspected. This exact6 sync changes prepared decision pointers only; original cap2 remains exhausted and no additional program/effect is admitted.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,19 +13,15 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local review is BLOCKED_WITH_REASON at 2026-10-16T08:06:46.490328+00:00. Worker exact7 and full gate are consumed; Python35/JS30 PASS, actual2/6 worker programs. Independent Local JavaScript18 predicates PASS; Local Python program failed at the endpoint fixture because Sink lacks mkdir; admission/marker probes were not reached. Local2/2 slots are spent. No source defect is established by that fixture failure. Source5 stays unaccepted and no SOURCE_ADJUNCT_ONLY release is issued. Worker remaining4 are not Local slots. No retry, new namespace, runtime effect, budget refill or worker redispatch follows.
-
-Local proof: `docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json`, raw SHA256 `b78629db7f49efba10cbcd09a265aea10ba53e15c650bda8794aa1e7dc04328a`. Dispatch preimage raw SHA256 f9f1006c38c33c0426f2ca2cd76e0abd5063024609bbae7e09ed777b7087b131 is embedded there. Exact17 blocked material omits the conditional release from the planned acceptance18; all other output paths remain inside the original Local scope. Next is static consolidated evidence-recovery planning only.
+Static recovery is prepared under the permitted ASSESS move. Current operator decision target `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md` raw SHA256 `900135a9454a2aaeee6fae855343de8eb3f0f2f4626dae02f9c574524ed7f675`; static evidence `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-static-20261016.json` raw SHA256 `c2638b57d60395310896a675053d85b59cb70f8b9ef7d4c9b8452d2af04eda2d`. Candidate and watchdog are separately parsed, not imported/executed. Additional1 Python<=90s/cumulative3 is a proposal only; old2 spent and source acceptance BLOCKED remain. No new worker/test/runtime start or authority cap amendment occurred.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_b_e_adjunct_source_implemented_review_blocked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=static diagnostic and consolidated evidence-recovery disposition, no probe retry; role=INTERNAL_AGENT Local reviewer/steward; phase=source implementation retained, independent acceptance blocked; decision owner=LOCAL; parked checkpoint=Local probe allowance exhausted, actual B-E/Native/browser/container/provider/disposal/public/deploy still separately held.
+Startup acknowledged: current mode=`cvf_ncr_html_b_e_python_oracle_recovery_prepared_held`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=operator decision on one additional Python program from prepared static recovery, no current execution; role=INTERNAL_AGENT Local reviewer/steward; phase=static recovery prepared, budget/acceptance held; decision owner=LOCAL technical/operator additional allowance; parked checkpoint=Local cap2/2 exhausted, requested+1<=90s not approved; actual B-E/Native/browser/container/provider/delete/public/deploy held.
 
 ## Current Mode
 
-Material `01dca0c070bd9a2787e9227b383135fa6ff16a0a`: source5 and exact7 worker bytes retained; normal91 PASS. Initial material pre-closure was correctly blocked because the material HEAD needed its dedicated handoff SHA sync; raw log `.cvf/runtime/ncr-be-adjunct-source-20261016/blocked-material-closure.log`, SHA256 `db93ee09608099c3778ca643263f618ac030ce712ef7fbfad626710f93e7073c`. Clean split-range closure follows this actual-SHA handoff commit, with named information gain: validate the now-correct marker/finality, not replay source programs. Independent Python failure and Local2/2 allowance unchanged. Root first material commit failure (learning/routing/Delta literals) retained; corrected completion-only fields passed direct guards before normal91. Final range results are inspected after this sync, without source/probe replay.
-
-`cvf_ncr_html_b_e_adjunct_source_implemented_review_blocked`. Worker source5 retained at243/221/292/125/124 lines, source13 unchanged. Worker35/30 PASS and full gate6.83s; LocalJS18 PASS, LocalPython fixture failed before endpoint runner and never reached admission/marker. All2 Local slots spent. Procedure partial; no accepted adjunct release or runtime readiness. Task06:54Z/deadlines09:54Z/10:54Z retained without extension. Preparatory normal-commit failures and worker ledger race preserved. Same SCEC/freeze/prior7 exclusions and parked effects.
+`cvf_ncr_html_b_e_python_oracle_recovery_prepared_held`. Prepared oracle213 lines, SHA25666dc947d1a01ddc1386cf83bea8b05c55754d32bdeab95b7a572387113235c40; fake Sink.mkdir,13 typed/message checks, positive endpoint control and partial telemetry. Metadata/AST only, new target programs0. Source5/worker7/source13 unchanged; old Python failure, JS18 PASS, worker35/30/full gate and2/2 spent slots retained. Static source call reconciliation supports one bounded attempt after specific additional-budget decision and governed amendment; it is no executed proof or runtime readiness. Entry gate40.61s PASS. First static material commit failed missing evidence heading; corrected literal without oracle/source edit. Same source/actor/counters/freeze/exclusions and original10:54Z deadline; no reset/extension.
 
 ## Current Authority
 
@@ -41,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=ASSESS; BATCH_ID=CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; completion=docs/reviews/CVF_NCR_HTML_B_E_ADJUNCT_SOURCE_COMPLETION_2026-10-16.md; Local proof=docs/reviews/evidence/ncr-html-b-e-adjunct-source-local-20261016.json. Five adjunct files implemented; worker Python35/JS30 and full gate PASS, exact7 frozen. Independent Local JS18 PASS; Python fixture lacks Sink.mkdir before endpoint runner, so admission/marker group unexecuted and acceptance BLOCKED. Local2/2 fake programs spent; worker2/6, remaining4 not transferable; no retry/refill/reset or source release. Next Local static diagnostic/consolidated evidence-recovery disposition only, no new test/worker/Native/browser/container/provider/delete starts. Source13/production7/oracles6/gen9/original release/source authority/control receipts immutable; old5 programs/52 starts closed, no replay. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions, normal collector only; no transition/independentCriticalEvidence. R1/R2partial,R3/R4open,R5/R6deferred; foundationactive/extensionNOT_APPLIED/projectOPEN and parked effects/LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=ASSESS; BATCH_ID=CVF-NCR-HTML-B-E-PYTHON-ORACLE-RECOVERY-20261016. Static disposition=docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md; evidence=docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-static-20261016.json. Prepared separate213-line Python oracle SHA25666dc947d1a01ddc1386cf83bea8b05c55754d32bdeab95b7a572387113235c40: fake mkdir,13 typed/message-bound refusals, positive endpoint witness and partial-result metadata. AST/source-call checks only, new probe/worker/runtime starts0. Operator additional-program decision required: exactly1 Python<=90s, cumulative cap3 preserving old2 spent; current cap2 still exhausted. Original10:54Z root deadline unchanged; worker remaining4 not transferable. Before any run: specific budget decision, governed authority amendment/committed continuity and current bound setup. No generic next implies budget refill or runtime/source acceptance. Source5/worker7/source13/original release/control proofs and old failure/JS18 PASS retained; worker35/30/full gate reused, no replay. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions; no transition/new independentCriticalEvidence. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 unchanged.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -125,7 +121,7 @@ Exact changed manifest:
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact17 blocked review/state alignment; later handoff-only actual-material-SHA/result sync. Retain all six names through split-range closure.
+Authorized guard-maintenance scope: exact6 static recovery decision/mode/next alignment; later handoff-only actual-SHA/result sync. Retain all six names for committed-range checks. No currentAuthority artifact/hash or program cap change.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -133,8 +129,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current full Local roadmap handling and amended source-only authority; no runtime grant.
-Rollback boundary: current17 only, preserve all frozen worker bytes, failed probe scripts/logs, source13, release, controls, SCEC/freeze/prior7 exclusions; no guard/hook semantics.
+Operator authorization: standing full Local handling and current static-ASSESS continuation; this sync grants no extra program or runtime.
+Rollback boundary: exact6 only; preserve source5/worker7/source13, old/new oracle bytes/logs, spent2, SCEC/freeze and prior7 P4 exclusions. No guard/hook/carrier semantics or admission change.
 
 ## Agent Operation Trace Block
 
@@ -142,22 +138,22 @@ Rollback boundary: current17 only, preserve all frozen worker bytes, failed prob
 |---|---|
 | Actor | Local INTERNAL_AGENT reviewer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-adjunct-blocked-handoff-20261016 |
+| Session or invocation | ncr-be-oracle-recovery-state-sync-20261016 |
 | Working directory | repository root |
-| Command or tool surface | handoff-only actual material SHA, normal hook and initial range-failure disclosure |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
-| Allowed scope source | exact17 blocked completion authorization plus existing Local roadmap grant |
-| Before status evidence | clean at 01dca0c070bd9a2787e9227b383135fa6ff16a0a; material normal91 PASS, initial range blocked by missing dedicated actual-SHA sync |
-| After status evidence | handoff-only actual-SHA/P4/range metadata; source and proof untouched |
-| Diff evidence | one-path handoff-only manifest |
-| Approval boundary | continuity evidence only; source acceptance still blocked and Local probe allowance2/2 spent |
-| Claim boundary | no accepted source/runtime release, retry, budget reset or parent blocker removal |
+| Command or tool surface | source continuity edits and canonical aggregate generation; no target-program execution |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | committed static disposition exact3 and standing Local handling |
+| Before status evidence | clean at add1d14a078cfb593480b7271feb4b7389b63bc8; static material normal91 PASS, current cap2/2 retained |
+| After status evidence | exact6 decision pointer/mode/next alignment; currentAuthority hashes and old cap unchanged |
+| Diff evidence | exact6 source/generated continuity manifest |
+| Approval boundary | one extra Python<=90s remains an operator decision; governed amendment/bound setup before execution |
+| Claim boundary | static recovery prepared; no independent Python PASS, source release or runtime claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-adjunct-blocked-handoff-20261016 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
-| Manifest delta | MATCH handoff-only; material17 retained in completion |
-| Deletion or rename disposition | none; all frozen source/probe/failure custody retained |
+| Invocation ID | ncr-be-oracle-recovery-state-sync-20261016 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact6 |
+| Deletion or rename disposition | none; all old/new source and evidence custody retained |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
