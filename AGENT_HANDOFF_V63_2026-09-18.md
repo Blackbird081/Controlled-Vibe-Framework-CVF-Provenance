@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `18e3f635c29a1a542729c9f5437769c75a6a08db`. Material SHA: `18e3f635c29a1a542729c9f5437769c75a6a08db`. Batch ID: CVF-NCR-HTML-B-E-EFFECT-DESIGN-20261016. Exact3 design-only material accepted; normal91/91 PASS, P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. This exact6 continuity aligns the new PLAN; source/current authority preserved.
+Current HEAD recorded for this handoff: `91dd4b8612d708f7819d2b461d0fffb16aacfda6`. Material SHA: `18e3f635c29a1a542729c9f5437769c75a6a08db`. Batch ID: CVF-NCR-HTML-B-E-EFFECT-DESIGN-20261016. Design material3 and exact6 continuity `91dd4b8612d708f7819d2b461d0fffb16aacfda6` each normal91/91 PASS, P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. This final active-handoff-only sync records actual SHAs/results; implementation/runtime remains unreleased.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,7 +13,7 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Local accepted exact3 source-derived design material `18e3f635c29a1a542729c9f5437769c75a6a08db`; no implementation or runtime release. Four read-only internal advisory exchanges were reconciled; Local owns final decision. This exact6 continuity changes mode/next and generated projections together, retaining closed source13 verification authority and frozen source identity. Final active-handoff-only actual continuity SHA/result sync follows. No active implementation lane.
+Accepted design material3 `18e3f635c29a1a542729c9f5437769c75a6a08db`, then exact6 mode/next/source-generated continuity `91dd4b8612d708f7819d2b461d0fffb16aacfda6`; both normal91/91 PASS with normal P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. This final handoff-only actual-SHA/result sync follows canonical split choreography. Four internal read-only advisory exchanges; Local final decision. No implementation/runtime release or authority/source change.
 
 ## Startup Acknowledgment
 
@@ -70,6 +70,8 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
+Current exact6 continuity `91dd4b8612d708f7819d2b461d0fffb16aacfda6`: normal automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE. Final handoff result inspected after its normal commit; no manual collector rerun, observation promotion or prior7 exclusion change.
+
 Current design material `18e3f635c29a1a542729c9f5437769c75a6a08db`: normal automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE. No new observation promotion/manual rerun; prior7 blocked/excluded observations retained. Continuity/final-handoff results inspected after normal commits.
 
 Previous controls material `afe495d1133a5011663c57b58943b1ed7c9f5207`: normal automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE. No current observation promotion or manual collector rerun; prior7 blocked/excluded observations unchanged. Final handoff collector inspected separately.
@@ -97,39 +99,34 @@ Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 mode/next/source-generated continuity after committed design material3; no authority/checker/hook semantics.
+Authorized guard-maintenance scope: final active-handoff-only actual design/continuity SHA/result sync; no source, authority, generated-state, checker or hook semantics.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: existing full Local roadmap handling and lifecycle source-only disposition; committed design material requires continuation alignment.
-Rollback boundary: this exact6 continuity only; preserve design material3, source13/release/closed authority, all failures/proofs/counters/freeze/P4 exclusions and parked effects.
+Operator authorization: current full Local roadmap handling and committed design-only assessment split choreography.
+Rollback boundary: this single handoff result sync; preserve material3, continuity6, source13/release/closed authority, raw failures/proofs/counters/freeze/prior7 P4 exclusions and parked effects.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT orchestrator/reviewer/steward |
+| Actor | Local INTERNAL_AGENT reviewer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-effect-design-continuity-20261016 |
+| Session or invocation | ncr-be-effect-design-final-handoff-20261016 |
 | Working directory | repository root |
-| Command or tool surface | source state edit; canonical aggregate/bootstrap regeneration; exact6 gates/commit |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | current full Local handling; committed design-only assessment and lifecycle continuation |
-| Before status evidence | clean worktree at design material 18e3f635c29a1a542729c9f5437769c75a6a08db; git status --short empty |
-| After status evidence | exact6 continuity; unchanged authority/source; generated aggregate/bootstrap, not hand-edited |
-| Diff evidence | exact6 staged paths; material3 and continuity6 committed ranges checked separately |
-| Approval boundary | source-only next-packet preparation; no implementation/runtime dispatch released |
-| Claim boundary | source-derived design/continuation only; no actual B-E, parent or live AI proof |
+| Command or tool surface | read committed material3/continuity6 raw/blob hashes and normal collector outcomes; final handoff-only result sync; split closure |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Allowed scope source | current full Local roadmap handling; committed design-only assessment choreography |
+| Before status evidence | clean worktree at 91dd4b8612d708f7819d2b461d0fffb16aacfda6; git status --short empty |
+| After status evidence | exact1 active-handoff-only result sync; unchanged source/authority/state |
+| Diff evidence | exact1 staged handoff; material3/continuity6/handoff1 checked as separate committed ranges |
+| Approval boundary | Local next source-only packet preparation only; no implementation/runtime release |
+| Claim boundary | design and current continuation only; no executed refusal/B-E/live AI governance proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-effect-design-continuity-20261016 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; all old proof/failures/custody retained |
+| Invocation ID | ncr-be-effect-design-final-handoff-20261016 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Manifest delta | MATCH exact1 |
+| Deletion or rename disposition | none; all earlier proof/failures/custody retained |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
