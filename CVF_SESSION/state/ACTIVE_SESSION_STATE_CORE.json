@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_2026-10-17.md",
     "workOrderSha256": "48b28fdd22d9cbf10c4435ae6edfee13df76a50c5a8d6b7229a4393f7382d919"
   },
-  "currentAuthoritySyncReason": "Qualification material at b3c6cfb55e089dc3e93735a5394fba37328cf2bc; bounded control/Docker reads only, source authority frozen.",
+  "currentAuthoritySyncReason": "Qualification continuity at 35c8dd6003494ccca653fb20f5f06b71ba4e4f2b; bounded control/Docker reads only, source authority frozen.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
