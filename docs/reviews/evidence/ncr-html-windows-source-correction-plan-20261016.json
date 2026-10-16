@@ -1,0 +1,527 @@
+{
+  "schemaVersion": "cvf.ncrHtmlWindowsSourceCorrectionPlan@1",
+  "phase": "PLAN",
+  "role": "INTERNAL_AGENT",
+  "decisionOwner": "LOCAL",
+  "status": "ACCEPTED_SOURCE_PLAN_ONLY",
+  "planningBaseHead": "c0c39a04cf625c4eb029d3e0c4fba76ed6f67c1e",
+  "designEvidenceSha256": "cf7b2ed733430c77b571aadd565a601cb3004ae65f2642ceb1377e4eefb8bc22",
+  "advisoryDesign": {
+    "schemaVersion": "cvf.ncrWindowsCorrectionDesign@1",
+    "status": "PLAN_ONLY_NOT_IMPLEMENTED_NOT_PROVEN",
+    "head": "c0c39a04cf625c4eb029d3e0c4fba76ed6f67c1e",
+    "role": "INTERNAL_AGENT Local read-only design worker",
+    "phase": "PLAN",
+    "decisionOwner": "root Local orchestrator/reviewer",
+    "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
+    "nextAction": "One consolidated Windows preload/strict-adjunct and admitted-junction pruning/refusal source correction package; BUILD requires successor work order",
+    "parked": [
+      "old runtime1 spent/runtime2 retired",
+      "old release repin",
+      "retained stage/custody modification or deletion",
+      "runtime replay",
+      "provider/browser/Docker/product effects"
+    ],
+    "sourceInventory": [
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+        "sha256": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+        "beforeLines": 325,
+        "ceiling": 349,
+        "plannedMaximumLines": 335,
+        "reservedHeadroomAtPlannedMaximum": 14
+      },
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/profile.py",
+        "sha256": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96",
+        "beforeLines": 304,
+        "ceiling": 329,
+        "plannedMaximumLines": 329,
+        "reservedHeadroomAtPlannedMaximum": 0
+      },
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+        "sha256": "c4fab8696982227bc202ae969d72f193448e504ca4a6d7d579e609dbd7764605",
+        "beforeLines": 343,
+        "ceiling": 349,
+        "plannedMaximumLines": 320,
+        "reservedHeadroomAtPlannedMaximum": 29
+      },
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/source_release.py",
+        "sha256": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b",
+        "beforeLines": 124,
+        "ceiling": 349,
+        "plannedMaximumLines": 280,
+        "reservedHeadroomAtPlannedMaximum": 69
+      },
+      {
+        "path": "scripts/cvf_ncr_html_effect_fence.py",
+        "sha256": "086668fd5daae6f2f52feeb3e94a30262fb031c840b627a9a717e7b0f9ca6fde",
+        "beforeLines": 243,
+        "ceiling": 800,
+        "plannedMaximumLines": 260,
+        "reservedHeadroomAtPlannedMaximum": 540
+      },
+      {
+        "path": "scripts/test_cvf_ncr_html_effect_driver.py",
+        "sha256": "80236c0e191721eb6e5f74effb1e031a10d5226753dc8588cc6c3ce99fb9f4d2",
+        "beforeLines": 292,
+        "ceiling": 1200,
+        "plannedMaximumLines": 650,
+        "reservedHeadroomAtPlannedMaximum": 550
+      }
+    ],
+    "fixedCodeAndTestManifest": [
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "scripts/cvf_ncr_html_owned_profile/source_release.py",
+      "scripts/cvf_ncr_html_effect_fence.py",
+      "scripts/test_cvf_ncr_html_effect_driver.py"
+    ],
+    "unchangedButRelevant": [
+      {
+        "path": "scripts/run_cvf_ncr_html_effect_driver.py",
+        "sha256": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+        "lines": 221,
+        "symbols": "_pins:40, validate_admission:60, execute:173; strict release equality remains, no algorithm change"
+      },
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/protocol.py",
+        "sha256": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+        "lines": 276,
+        "symbols": "operation admission/deadline unchanged"
+      },
+      {
+        "path": "scripts/cvf_ncr_html_owned_profile/execution.py",
+        "sha256": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+        "lines": 348,
+        "symbols": "terminal acceptance and stageDeletion unchanged"
+      }
+    ],
+    "preloadContract": {
+      "sourceSeams": [
+        "__init__.py:188-193 env construction for Web and inherited helper",
+        "effect_fence.py:207-235 Native._spawn strict helper augmentation",
+        "profile.py new node_preload_options pure canonical renderer"
+      ],
+      "lockedDesign": [
+        "Render each absolute fixed preload path with forward slash separators and surround with literal double quotes: --require \"C:/path with spaces/preload.cjs\". Reject embedded quote, NUL, CR or LF and nonabsolute path. No shell invocation or user-supplied options. Preserve Unicode paths.",
+        "Producer uses P.node_preload_options(guard). Fence demands exact equality against same renderer(argv[7]); only then replaces options with renderer(argv[7], binding[preload][path]). No contains/equivalence shortcut, preexisting environment bypass or permissive parser.",
+        "Order remains journey preload first, browser-fence preload second for helper; Web has journey only. Browser binding continues recording actual filesystem path/hash; option spelling normalization does not alter pin path or digest.",
+        "Native Node fixture is required to validate actual Windows parsing; source inference alone does not prove the fix."
+      ]
+    },
+    "disposalContract": {
+      "sourceSeams": [
+        "lifecycle.py:34-56 no_reparse/check_disposable",
+        "lifecycle.py:332-333 Native.verify_disposal_target",
+        "__init__.py:133-138 admitted dependency construction"
+      ],
+      "lockedDesign": [
+        "Move no_reparse and check_disposable responsibility to existing source_release.py path-admission owner; lifecycle reexports imported functions to preserve P.no_reparse and L.check_disposable callers. source_release imports execution only; execution imports protocol, neither imports lifecycle, so no new cycle. No new file/framework or source-family cardinality.",
+        "Require namespace, stage, owner.json and their traversed ancestors be existing regular/non-reparse paths; stage lexical and resolved identity must equal namespace/source. Owner must be a real regular file rather than a symlink to one. Fail filesystem errors closed.",
+        "If dependency supplied, require exact lexical path stage/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules, within stage, with non-reparse ancestors below stage; require existing directory with Windows mount-point/junction reparse tag, not an ordinary directory or symlink. Require exact resolved target equality to admitted modules, existing directory target, and target outside stage/namespace. Missing/dangling/malformed/repointed entry refuses.",
+        "Validate admitted dependency before walk; use os.walk(topdown=True, followlinks=False, onerror=raise). At its parent, revalidate identity then remove exactly that name from dirs before recursion; never enumerate contents or target descendants. All remaining dirs/files get no_reparse checks. No dependency means every reparse refuses.",
+        "Refuse unexpected symlink/junction/reparse, intermediary ancestor reparse, wrong target, missing target, escaped link path, wrong stage/namespace, owner reparse, inaccessible walk and unrecognized reparse tag. No broad name-based node_modules exception.",
+        "This is eligibility evidence only. No removal function, link unlink, shared-target mutation or retained-stage deletion. Snapshot identity validation is not an OS lock against concurrent hostile replacement; no race-free deletion claim."
+      ]
+    },
+    "identityMigration": {
+      "sourceFamily": "Existing exact source13 retained; changed init/profile/lifecycle/source_release hashes and all13 pins/control-binding maps must be captured in NEW source identity. Legacy entrypoints and selected product objects remain unchanged.",
+      "adjunctFamily": "Existing adjunct5 retained; changed effect_fence and test_effect hashes enter NEW adjunct identity. RELEASE/RELEASE_SHA in fence will bind the NEW accepted SOURCE_IDENTITY_ONLY release; driver _pins retains exact equality.",
+      "ordering": [
+        "BUILD corrected source plus tests under successor order",
+        "accept bounded source proof",
+        "create new named SOURCE_IDENTITY_ONLY release, never overwrite or repin ncr-html-source-release-20261016.json",
+        "bind new adjunct acceptance and regenerate fresh controls against changed production/oracle digests",
+        "only a separately authorized new runtime grant could use new identities; old attempts remain spent/retired"
+      ],
+      "counterBoundary": "source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged by PLAN; no claimed promotion",
+      "authorityBinding": "source_release.py:AUTHORITY currently pins original source-admission pair. Successor order must update this set to its exact new source-admission baseline/work-order pair; old source release artifact remains byte-immutable and rejects new source hashes. Fence new release path/hash binding occurs in same consolidated source/identity acceptance package; no old runtime admission becomes valid."
+    },
+    "acceptanceTests": {
+      "location": "scripts/test_cvf_ncr_html_effect_driver.py; extend existing adjunct test owner, no new test file/family member",
+      "pureCases": [
+        "Canonical single/double preload equality, order, spaces/Unicode/drive separators; quote/NUL/newline/relative path reject",
+        "Strict fence accepts producer canonical options, rejects original backslash spelling, extra preload/options, reordered or missing guard; captured _spawn kwargs use exact canonical double preload",
+        "Modeled topdown walk generator asserts admitted dirname removed before yielding children; target/nested shared contents must never be requested",
+        "Identity, containment and refusal matrix listed in disposalContract, including onerror propagation; assert no delete/unlink/remove invocation"
+      ],
+      "windowsFixture": [
+        "Two real pinned Windows Node children run -e with tiny CJS preloads under fresh ignored directory with spaces and Unicode. First proves single preload; second proves ordered two preloads; stdout exact marker oracle and exit0. No journey/product preload executed. Use sanitized env and exact absolute node executable, timeout10 each, no retries.",
+        "Fresh retained fixtures only: one admitted node_modules junction to synthetic shared directory containing a nested foundation junction; assert check_disposable succeeds while guarded scandir/open seam proves neither target is traversed. Add independent fixtures for unexpected junction, wrong-target admitted entry, and symlink/wrong-tag modeled refusal. Node/junction fixtures never touch original retained stage or repo/shared real modules.",
+        "Retain synthetic fixtures; no teardown deletion or unlink. All native creation bound to fresh ignored task root and explicit future order."
+      ],
+      "regressionToObserve": [
+        "Before-fix characterization: actual Windows original raw backslash NODE_OPTIONS must exhibit failure or path corruption; if it does not, record contradiction and stop root-cause promotion. This bounded fixture is distinct from old runtime replay.",
+        "Before-fix walk characterization reaches synthetic shared nested junction; corrected version does not enumerate target and still refuses unexpected reparses.",
+        "No B-E acceptance from pure fixtures: original failed observation remains; corrected source proof limited to these seams."
+      ],
+      "plannedNativeTestNames": [
+        "test_windows_original_preload_regression",
+        "test_windows_canonical_single_preload",
+        "test_windows_canonical_ordered_preloads",
+        "test_windows_junction_prune_and_refusal"
+      ]
+    },
+    "futureCommandsNotRun": [
+      "python -m pytest scripts/test_cvf_ncr_html_effect_driver.py -q -k \"not windows_original_preload_regression and not windows_canonical_single_preload and not windows_canonical_ordered_preloads and not windows_junction_prune_and_refusal\"",
+      "python -m pytest scripts/test_cvf_ncr_html_effect_driver.py::test_windows_original_preload_regression scripts/test_cvf_ncr_html_effect_driver.py::test_windows_canonical_single_preload scripts/test_cvf_ncr_html_effect_driver.py::test_windows_canonical_ordered_preloads scripts/test_cvf_ncr_html_effect_driver.py::test_windows_junction_prune_and_refusal -q",
+      "python -m pytest scripts/cvf_ncr_html_owned_profile -q (existing pure/inert source13 regression family)",
+      "node --test scripts/cvf_ncr_html_owned_profile/journey.test.cjs scripts/cvf_ncr_html_browser_fence.test.cjs (only if successor order admits existing inert CJS regression effects)",
+      "python governance/compat/check_python_automation_size.py --enforce",
+      "python governance/compat/check_governed_file_size.py --enforce",
+      "python governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation (before BUILD; normal later review/closure gates)"
+    ],
+    "futureTestEffectBudget": {
+      "PLANEffectsObserved": {
+        "Node": 0,
+        "nativeJunction": 0,
+        "testRuns": 0,
+        "runtime": 0,
+        "provider": 0,
+        "deletion": 0
+      },
+      "fixtureOnlyProposal": {
+        "nodeChildStartsMaximum": 3,
+        "note": "one original-spelling negative characterization + single/double corrected tests",
+        "cmdMklinkStartsMaximum": 5,
+        "nativeTotalStartsMaximum": 8,
+        "perChildTimeoutSeconds": 10,
+        "wallSecondsMaximum": 120,
+        "retry": 0,
+        "fixtureRoot": "fresh .cvf/runtime/ncr-windows-correction-proof-<unique>; never existing retained namespaces",
+        "provider": 0,
+        "network": 0,
+        "Docker": 0,
+        "browser": 0,
+        "productStarts": 0,
+        "deletion": 0
+      }
+    },
+    "fileSizeDisposition": "No matching NCR/owned-profile exception in either size registry; family ceilings from test_control.py:265 are stricter than generic Python caps. Lifecycle343/349 and execution348/349 preclude appending robust disposal code; extract lifecycle path admission to existing source_release124/349. No ceiling inflation or line compaction. Test_effect allowed650 below Python-test soft900; changing its header must explicitly distinguish pure and native selected tests.",
+    "consolidatedRequirements": "No operator choice needed for ordinary design. Successor order must explicitly admit bounded synthetic Node/junction tests, set exact new identity paths/authority and preserve retained evidence. No implementation/test effect is authorized by this plan."
+  },
+  "localDisposition": {
+    "scope": "one source correction package, Windows preload plus strict adjunct plus identity-verified dependency pruning/refusal",
+    "sourceEdits": 0,
+    "testsExecuted": 0,
+    "nativePrograms": 0,
+    "providerCalls": 0,
+    "runtimePrograms": 0,
+    "oldRuntimeRetryAllowed": false,
+    "newBuildGrant": false,
+    "technicalDetailsOwner": "LOCAL",
+    "nextAction": "author and validate one source-only implementation baseline/work order from this plan"
+  },
+  "immutableSourceChecks": [
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "sha256": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+      "lines": 325
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+      "sha256": "c4fab8696982227bc202ae969d72f193448e504ca4a6d7d579e609dbd7764605",
+      "lines": 343
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "sha256": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96",
+      "lines": 304
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_control.py",
+      "sha256": "829f6f28863a945e6c8a889332d82ff01875bce769efe0696df70c1caa09243c",
+      "lines": 306
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "sha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "lines": 258
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "sha256": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+      "lines": 240
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/execution.py",
+      "sha256": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "lines": 348
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+      "sha256": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "lines": 333
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/protocol.py",
+      "sha256": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "lines": 276
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_protocol.py",
+      "sha256": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "lines": 343
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_win32.py",
+      "sha256": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "lines": 258
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/test_admission.py",
+      "sha256": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "lines": 311
+    },
+    {
+      "path": "scripts/cvf_ncr_html_owned_profile/source_release.py",
+      "sha256": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b",
+      "lines": 124
+    },
+    {
+      "path": "scripts/cvf_ncr_html_browser_fence.cjs",
+      "sha256": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+      "lines": 125
+    },
+    {
+      "path": "scripts/cvf_ncr_html_browser_fence.test.cjs",
+      "sha256": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+      "lines": 124
+    },
+    {
+      "path": "scripts/cvf_ncr_html_effect_fence.py",
+      "sha256": "086668fd5daae6f2f52feeb3e94a30262fb031c840b627a9a717e7b0f9ca6fde",
+      "lines": 243
+    },
+    {
+      "path": "scripts/run_cvf_ncr_html_effect_driver.py",
+      "sha256": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+      "lines": 221
+    },
+    {
+      "path": "scripts/test_cvf_ncr_html_effect_driver.py",
+      "sha256": "80236c0e191721eb6e5f74effb1e031a10d5226753dc8588cc6c3ce99fb9f4d2",
+      "lines": 292
+    }
+  ],
+  "retiredAuthority": [
+    {
+      "path": "docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md",
+      "sha256": "42b53a83ee274be0508828dd54e958e247f94428c3a59a00c92893ea8dda29f3"
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md",
+      "sha256": "bd31d45988c74b2e8e6b8e2f03547daaec2760ee65aa26e56707fafa9afcacdb"
+    }
+  ],
+  "negativeRuntimeProof": {
+    "path": "docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json",
+    "sha256": "42d8cf94a55ce14b888fa1ed0db957936333ebae6f8e6079fe542de6abe8a7d7",
+    "actor1": "SPENT_FAILED",
+    "actor2": "NOT_RELEASED_DEPENDENCY_FAILED_RETIRED"
+  },
+  "parentInvariants": {
+    "generation": 9,
+    "scecOrdinal": 2,
+    "counters": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "blockers": 2,
+    "freeze": "RETAINED",
+    "priorP4Exclusions": 7,
+    "R1_R2": "PARTIAL",
+    "R3_R4": "OPEN",
+    "R5_R6": "DEFERRED"
+  },
+  "learningDisposition": {
+    "O10": "existing early return-route guard required at later READY release",
+    "O11_O13": "derive path union/size/closure and command shape before dispatch; file-backed writes and checked sequential dependency commands",
+    "O12": "real Windows source-seam evidence explicitly required before product B-E",
+    "O14": "source-plan/source-proof/runtime-result are distinct; no B-E completion from documentary gates",
+    "applicationEffectiveness": "NOT_PROVEN_NO_RECEIPT_PROMOTION"
+  },
+  "materialManifest": [
+    "docs/assessments/CVF_NCR_HTML_WINDOWS_SOURCE_CORRECTION_PLAN_2026-10-16.md",
+    "docs/reviews/evidence/ncr-html-windows-source-correction-plan-20261016.json"
+  ],
+  "trace": "| Field | Evidence |\n|---|---|\n| Actor | Local INTERNAL_AGENT orchestrator/reviewer |\n| Provider or surface | private shared workspace |\n| Session or invocation | ncr-windows-source-correction-plan-20261016 |\n| Working directory | repository root |\n| Command or tool surface | bounded source reads; consume read-only design; raw identity joins; documentary gates and normal commits |\n| Target paths | `docs/assessments/CVF_NCR_HTML_WINDOWS_SOURCE_CORRECTION_PLAN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-source-correction-plan-20261016.json` |\n| Allowed scope source | operator next and standing Local orchestration authority; active nextAllowedMove PLAN |\n| Before status evidence | c0c39a04cf625c4eb029d3e0c4fba76ed6f67c1e; clean startup; old1 spent and old2 retired |\n| After status evidence | consolidated source-correction plan accepted for source-order authoring; implementation/proof not performed |\n| Diff evidence | two-path planning material; separate exact6 continuity |\n| Approval boundary | source-only planning; no BUILD/native fixture/runtime/provider/disposal grant |\n| Claim boundary | source-informed design and test obligations, no reproduced runtime cause or correction |\n| Agent type | INTERNAL_AGENT |\n| Invocation ID | ncr-windows-source-correction-plan-20261016 |\n| Expected manifest | `docs/assessments/CVF_NCR_HTML_WINDOWS_SOURCE_CORRECTION_PLAN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-source-correction-plan-20261016.json` |\n| Actual changed set | `docs/assessments/CVF_NCR_HTML_WINDOWS_SOURCE_CORRECTION_PLAN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-windows-source-correction-plan-20261016.json` |\n| Manifest delta | MATCH two planning paths |\n| Deletion or rename disposition | none; original failure/stage/custody/releases retained |\n",
+  "temporaryCustody": {
+    "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-windows-correction-plan-20261016",
+    "owner": "LOCAL",
+    "reason": "retained design/source-identity/gate/commit evidence and canonical JSON production; no runtime resources"
+  },
+  "localContractClarifications": {
+    "identityFreeze": "NEW source-admission pair frozen at final closed bytes before release digest; no final adjunct/release digest back-edge into authority; final fence binding included in source acceptance",
+    "workerNativeFixtureMaximum": {
+      "node": 3,
+      "cmdMklink": 5,
+      "perChildSeconds": 10,
+      "wallSeconds": 120,
+      "retries": 0
+    },
+    "distinctLocalNativeOracleMaximum": {
+      "node": 1,
+      "cmdMklink": 2,
+      "perChildSeconds": 10,
+      "wallSeconds": 60,
+      "retries": 0
+    },
+    "inertCjsRegression": "conditional separate counters; no borrowing/reset",
+    "retention": "owned synthetic fixture roots named Local custody, no deletion",
+    "status": "PLANNED_NOT_EFFECT_ADMITTED"
+  },
+  "adifDisclosure": {
+    "adif-query.json": {
+      "sha256": "ffa99c6e1bacb3065ac7f2b481c15f0e9fd04516fe5867cea28646cd16e13c34",
+      "result": {
+        "items": [],
+        "truncated": false,
+        "totalCandidates": 0,
+        "claimBoundary": "Returning this packet is not evidence that any caller read or understood it."
+      }
+    },
+    "adif-closure-query.json": {
+      "sha256": "cb4420e4d2e08ff31a9cdd3c18126293c47e2ecc14c280bcba4ae0681e849cbe",
+      "result": {
+        "items": [
+          {
+            "defectId": "ADIF-0003",
+            "title": "Closed GC-018 lacks Machine Closure Package",
+            "defectCategory": "CLOSURE_EVIDENCE",
+            "defectClass": "MACHINE_GATE_GAP",
+            "severity": "HIGH",
+            "enforcementLevel": "MACHINE_CHECKED",
+            "checkerBindings": "governance/compat/check_machine_closure_package.py",
+            "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0003.md"
+          },
+          {
+            "defectId": "ADIF-0008",
+            "title": "Reusable lesson remains only in provider memory",
+            "defectCategory": "AUTHORITY_BOUNDARY",
+            "defectClass": "RULE_GAP",
+            "severity": "HIGH",
+            "enforcementLevel": "MACHINE_CHECKED",
+            "checkerBindings": "governance/compat/check_finding_to_governance_learning.py",
+            "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0008.md"
+          },
+          {
+            "defectId": "ADIF-0013",
+            "title": "Upstream push debt range backlog",
+            "defectCategory": "STATE_CONTINUITY",
+            "defectClass": "RULE_GAP",
+            "severity": "HIGH",
+            "enforcementLevel": "MACHINE_CHECKED",
+            "checkerBindings": "governance/compat/run_agent_push_readiness_preview.py",
+            "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0013.md"
+          },
+          {
+            "defectId": "ADIF-0019",
+            "title": "Gate-passing absorption over-defers value-bearing source",
+            "defectCategory": "CLOSURE_EVIDENCE",
+            "defectClass": "ORCHESTRATOR_PACKET_GAP",
+            "severity": "HIGH",
+            "enforcementLevel": "PARTIAL_CHECK",
+            "checkerBindings": "governance/compat/check_external_absorption_value_conversion.py; governance/compat/check_corpus_completeness_report_integrity.py; governance/compat/run_worker_return_fast_gate.py",
+            "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0019.md"
+          },
+          {
+            "defectId": "ADIF-0020",
+            "title": "Checker source read-ahead skipped before artifact authoring",
+            "defectCategory": "GATE_TRIGGER_FRICTION",
+            "defectClass": "RULE_GAP",
+            "severity": "HIGH",
+            "enforcementLevel": "MACHINE_CHECKED",
+            "checkerBindings": "governance/compat/check_governed_artifact_checker_read_ahead.py",
+            "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0020.md"
+          },
+          {
+            "defectId": "ADIF-0021",
+            "title": "Applicability marker overmatch in reference or checker authoring",
+            "defectCategory": "GATE_TRIGGER_FRICTION",
+            "defectClass": "RULE_GAP",
+            "severity": "HIGH",
+            "enforcementLevel": "PARTIAL_CHECK",
+            "checkerBindings": "governance/compat/check_source_intake_decision_packet_preflight.py; governance/compat/check_external_absorption_core.py; governance/compat/check_external_absorption_value_conversion.py; governance/compat/check_external_absorption_overlap_discipline.py",
+            "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0021.md"
+          },
+          {
+            "defectId": "ADIF-0026",
+            "title": "Sequential reviewer finding cascade",
+            "defectCategory": "GATE_TRIGGER_FRICTION",
+            "defectClass": "RULE_GAP",
+            "severity": "HIGH",
+            "enforcementLevel": "PARTIAL_CHECK",
+            "checkerBindings": "governance/compat/check_review_cost_control.py",
+            "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0026.md"
+          },
+          {
+            "defectId": "ADIF-0027",
+            "title": "Absorption omits reverse architecture projection",
+            "defectCategory": "CLOSURE_EVIDENCE",
+            "defectClass": "RULE_GAP",
+            "severity": "HIGH",
+            "enforcementLevel": "GUIDANCE_ONLY",
+            "checkerBindings": "NOT_APPLICABLE_WITH_REASON: architecture impact and owner novelty require semantic review",
+            "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0027.md"
+          },
+          {
+            "defectId": "ADIF-0028",
+            "title": "Aggregated output exceeds per-item authority evidence",
+            "defectCategory": "AUTHORITY_BOUNDARY",
+            "defectClass": "RULE_GAP",
+            "severity": "HIGH",
+            "enforcementLevel": "GUIDANCE_ONLY",
+            "checkerBindings": "NOT_APPLICABLE_WITH_REASON: per-item authority completeness requires semantic source and test review",
+            "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0028.md"
+          },
+          {
+            "defectId": "ADIF-0029",
+            "title": "Durable evidence projection and admission drift",
+            "defectCategory": "AUTHORITY_BOUNDARY",
+            "defectClass": "WORKER_EXECUTION_ERROR",
+            "severity": "HIGH",
+            "enforcementLevel": "GUIDANCE_ONLY",
+            "checkerBindings": "NOT_APPLICABLE_WITH_REASON: projection completeness and admission symmetry require semantic source and negative-test review",
+            "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0029.md"
+          },
+          {
+            "defectId": "ADIF-0030",
+            "title": "Live test direct invocation bypasses evidence capture",
+            "defectCategory": "GATE_TRIGGER_FRICTION",
+            "defectClass": "WORKER_EXECUTION_ERROR",
+            "severity": "HIGH",
+            "enforcementLevel": "GUIDANCE_ONLY",
+            "checkerBindings": "NOT_APPLICABLE_WITH_REASON: the A3 permit guard is local executable proof, while no general governance checker yet covers every live-test runner design",
+            "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0030.md"
+          },
+          {
+            "defectId": "ADIF-0038",
+            "title": "Worker return fast gate accepts scaffold closure residue",
+            "defectCategory": "CLOSURE_EVIDENCE",
+            "defectClass": "MACHINE_GATE_GAP",
+            "severity": "HIGH",
+            "enforcementLevel": "PARTIAL_CHECK",
+            "checkerBindings": "governance/compat/check_worker_return_quality_gate.py; governance/compat/check_machine_closure_package.py",
+            "sourcePath": "docs/reference/agent_defect_intelligence/entries/CVF_ADIF-0038.md"
+          }
+        ],
+        "truncated": true,
+        "totalCandidates": 26,
+        "claimBoundary": "Returning this packet is not evidence that any caller read or understood it."
+      }
+    }
+  },
+  "localPreparationDisclosure": {
+    "firstMaterialPreflight": "FAILED_FINDING_TO_GOVERNANCE_LEARNING_QUALITY",
+    "finding": "Local authored Findings section with learning application prose but omitted exact required F2G heading",
+    "repair": "existing F2G heading and classification table; no source/design/native change",
+    "history": "original failed helper log retained; not retroactive read-ahead PASS"
+  }
+}
