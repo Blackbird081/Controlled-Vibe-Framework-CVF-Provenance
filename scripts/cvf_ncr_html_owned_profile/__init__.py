@@ -85,14 +85,14 @@ def child_probe(helper, custody, proto, claim):
     return probe
 
 
-def run(namespace, image, *, inputs=None, cap=2, controls_receipt=None, controls_digest=None, clock=None):
+def run(namespace, image, *, inputs=None, cap=2, controls_receipt=None, controls_digest=None, source_release=None, source_release_sha256=None, clock=None):
     started, failures = time.monotonic(), []
     # Pure admission precedes every effect: exact inputs, typed current controls, pinned sources, fresh namespace.
     if {"CVF_NCR_ALLOWED_PORTS", "CVF_HCR_EGRESS_LOG"} & set(os.environ):
         raise RuntimeError("inherited network-guard activation is refused")
     inputs = P.validate_inputs(P.fixtures() if inputs is None and cap == 2 else inputs, cap)
     actor = P.admit_controls(json.loads(Path(controls_receipt).read_text(encoding="utf-8")) if controls_receipt else None, cap, controls_digest)
-    sources = P.admit_sources()
+    sources = P.admit_sources(source_release, source_release_sha256)
     namespace = Path(namespace).absolute()
     no_reparse(namespace.parent)
     if namespace.exists() or namespace.resolve().is_relative_to(P.ROOT) or not namespace.parent.is_dir():
@@ -125,7 +125,7 @@ def run(namespace, image, *, inputs=None, cap=2, controls_receipt=None, controls
         prereq = P.prerequisites(c, image)
         ops.docker = prereq["dockerPrefix"]
         output["prerequisites"], output["controllerIdentity"] = prereq, ops.identity(os.getpid())
-        manifest = P.stage_source(stage)
+        manifest = P.stage_source(stage, sources)
         (custody / "staged-source-manifest.json").write_text(json.dumps(manifest, sort_keys=True, indent=2), encoding="utf-8")
         output["staging"] = {"fileCount": len(manifest), "manifestSha256": E.sha((custody / "staged-source-manifest.json").read_bytes()),
                              "envAndActiveLedgerExcluded": True, "sourceCwd": str(stage / P.WEB)}
@@ -314,9 +314,12 @@ def cli():
     parser.add_argument("--owned-profile-cap", type=int, choices=(1, 2), default=2)
     parser.add_argument("--owned-profile-controls", required=True)
     parser.add_argument("--owned-profile-controls-sha256", required=True, help="separately frozen digest of the receipt bytes' canonical form")
+    parser.add_argument("--owned-profile-source-release", help="Explicit repository-relative source identity manifest; no runtime consent")
+    parser.add_argument("--owned-profile-source-release-sha256", help="Root-supplied external raw-byte SHA256 integrity anchor")
     args = parser.parse_args()
     inputs = json.loads(Path(args.owned_profile_input).read_text(encoding="utf-8")) if args.owned_profile_input else None
     outcome = run(args.owned_profile_root, args.engine_docker_image, inputs=inputs, cap=args.owned_profile_cap,
-                  controls_receipt=args.owned_profile_controls, controls_digest=args.owned_profile_controls_sha256)
+                  controls_receipt=args.owned_profile_controls, controls_digest=args.owned_profile_controls_sha256,
+                   source_release=args.owned_profile_source_release, source_release_sha256=args.owned_profile_source_release_sha256)
     print(json.dumps(E.safe(outcome), indent=2))
     return 0 if outcome["ok"] else 1

@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Source-admission packet committed; exact worker7 is source-only; bound dispatch gate pending; effects remain parked |
+| Parent maintenance | Explicit source identity accepted bounded; fresh source13 controls, owned stage and B-E journey open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_source_admission_worker_released`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=execute `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md` only after its bound pre-dispatch gate passes; role=INTERNAL_AGENT Local dispatcher/reviewer/steward; phase=source-admission worker released, source-only and zero effects; decision owner=Local; parked checkpoint=owned B-E stage/journey, product/browser/container/provider/disposal/parent/public/deploy effects require their own current admission.
+Startup acknowledged: current mode=`cvf_ncr_html_source_admission_accepted_b_e_controls_open`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local current-source controls/owned-stage/B-E envelope preparation; role=INTERNAL_AGENT Local reviewer/steward; phase=source identity accepted bounded, procedure partial; decision owner=Local; parked checkpoint=actual native/product/browser/container/provider/disposal/parent/public/deploy effects need current admission.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_source_admission_worker_released`
-Current mode: `cvf_ncr_html_source_admission_worker_released`; previous mode marker: `cvf_ncr_html_b_e_prerequisites_qualified_source_admission_open`
+Current mode marker: `cvf_ncr_html_source_admission_accepted_b_e_controls_open`
+Current mode: `cvf_ncr_html_source_admission_accepted_b_e_controls_open`; previous mode marker: `cvf_ncr_html_source_admission_worker_released`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_source_admission_worker_released`
+Mode: `cvf_ncr_html_source_admission_accepted_b_e_controls_open`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-SOURCE-ADMISSION-20261016. Material=e6de9ae45d3da60315a71d6c5219cdcea62a1437; currentAuthority=baseline=docs/baselines/CVF_GC018_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md@1c33647040bc57cd32a6edb27533d7d728158b18660dbcf87a3ae0b89dfa1056; workOrder=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md@c7353cd7d14fd0c4675ec3edb35fb81803ee74a7ced85589347513e6d34f1b07. NEXT_TRANCHE=NCR_HTML_B_E_SOURCE_RELEASE_AND_PREREQUISITE_QUALIFICATION; entry=SOURCE_ADMISSION_WORKER_RELEASED. Bound pre-dispatch gate=PENDING_PASS for this exact work order; pre-implementation remains pending before worker edits. One internal worker owns the exact worker7 outputs (five source/test paths plus two worker evidence paths), source-only; worker test ceiling6, Local source-review ceiling3. Actual child/native/product/browser/container/network/provider/delete effects=0. Source family13 only when the new module is written; old source12/cap1/native evidence remains unchanged. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF, source generation8, SCEC2, counters2,0,2,0, blockers2, freeze and prior7 P4 exclusions; no SCEC transition or independent critical evidence. Owned B-E stage/journey, product, browser, container, provider, disposal, parent, public and deploy effects remain parked pending their own current admission. R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-SOURCE-ADMISSION-20261016. SOURCE_ADMISSION_ACCEPTED_BOUNDED; completedSourceOrder=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md; completion=docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_COMPLETION_2026-10-16.md; frozenSourceRelease=docs/reviews/evidence/ncr-html-source-release-20261016.json@d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5. Next Local prepares current source13 actual controls and owned synthetic staging/B-E before-effect envelope; no executable runtime successor yet. Explicit selector/admission and product-binding recheck implemented; worker227/227 before one Local oracle correction, affected1/1 and independent30/30 PASS; worker full gate/raw joins PASS. Local committed read is metadata only and recorded in final handoff. Family13=production7/oracles6; prior source12/control/native proofs immutable and old control bindings stale after changed bytes, not replayed/refilled. Existing tool qualification retained. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/generation9/SCEC2/counters2,0,2,0/blockers2/freeze; no transition/independentCriticalEvidence. Prior7 P4 blocks/exclusions retained, normal collector only. Full B-E/parent/disposal unproved; actual native/product/browser/container/provider/delete0. R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
 
 ## Parked Checkpoints
 

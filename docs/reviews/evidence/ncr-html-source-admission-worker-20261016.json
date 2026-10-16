@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "cvf.ncrHtmlSourceAdmissionWorker@1",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "executionBaseHead": "8b75bde5299335f94de254078b39bcffc31cdd40",
+  "workOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md",
+  "source13": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "c4fab8696982227bc202ae969d72f193448e504ca4a6d7d579e609dbd7764605",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "829f6f28863a945e6c8a889332d82ff01875bce769efe0696df70c1caa09243c",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+    "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+    "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py": "6dbdb12b856317f2f1811351f3be2c2b5aabb5530a4ffa34d1790a4a6a40f738",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b"
+  },
+  "sourceBefore": {
+    "scripts/cvf_ncr_html_owned_profile/profile.py": {
+      "sha256": "3ef92635b8fb81dbe0f953c38f7845a8d5b2d6a43a8015ccd089f464fcc0fb54",
+      "crlf": 0,
+      "lf": 299,
+      "bom": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": {
+      "sha256": "283f238f1196e3dc401ec8538e894db063c0f42123c2a9d730e124c6cef3f541",
+      "crlf": 0,
+      "lf": 322,
+      "bom": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py": {
+      "sha256": "92d02082cd5d18ddac0c277bd9df65ba49f8b91d3277e8b301361de308c7c43d",
+      "crlf": 0,
+      "lf": 135,
+      "bom": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": {
+      "sha256": "0569c1740e182db136c2f8c107aed836bd0f8129ee8d6f0eeb5d1995fb6602f8",
+      "crlf": 0,
+      "lf": 300,
+      "bom": false
+    }
+  },
+  "workerManifest": [
+    "scripts/cvf_ncr_html_owned_profile/__init__.py",
+    "scripts/cvf_ncr_html_owned_profile/profile.py",
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py",
+    "docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_WORKER_RETURN_2026-10-16.md",
+    "docs/reviews/evidence/ncr-html-source-admission-worker-20261016.json"
+  ],
+  "historicalArtifacts": {
+    "docs/reviews/evidence/ncr-html-direct-local-repair-pins-20261016.json": "01c1f294e016d1be16edd54cc97fc9cef6d89e8be85da7050cb905aae1955921",
+    "docs/reviews/evidence/ncr-html-cap1-completion-local-20261016.json": "53dbc375153db0a59a01f7e43f66be2f9be144c03262aa43f29a2363c96dfc62",
+    "docs/reviews/evidence/ncr-html-native-binding-local-20261016.json": "c5fb1711022df8e8f699faca9ca80e0e44d272fd98f09d95bfa137beb9f2befa",
+    "docs/reviews/evidence/ncr-html-b-e-release-candidate-v2-20261016.json": "b3778420222fcc7d08ad2efa52c6d47e6a30fed463e95b75a5093dd665659b65"
+  },
+  "testPrograms": [
+    {
+      "program": 1,
+      "result": "FAIL",
+      "counts": "226PASS/1FAIL",
+      "log": ".cvf/runtime/ncr-source-admission-20261016/worker/test-1.log",
+      "sha256": "cfe2ec82eb1274fe14a3ed5cd2ef08d56ac6c0f63c3c210e964d7bce0b5b12d0",
+      "admission": {
+        "program": 1,
+        "ceiling": 6,
+        "command": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          ".cvf\\runtime\\ncr-source-admission-20261016\\worker\\test_driver.py"
+        ],
+        "watchdogSeconds": 90,
+        "chargedAt": 1792117815.6474893
+      },
+      "terminal": {
+        "exit": 1,
+        "watchdogExpired": false
+      }
+    },
+    {
+      "program": 2,
+      "result": "PASS",
+      "counts": "227/227",
+      "log": ".cvf/runtime/ncr-source-admission-20261016/worker/test-2.log",
+      "sha256": "c980f11b9501ae07f9deeca3c0be1f719aa033959467d4218a97c9978b15b117",
+      "admission": {
+        "program": 2,
+        "ceiling": 6,
+        "command": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          ".cvf\\runtime\\ncr-source-admission-20261016\\worker\\test_driver.py"
+        ],
+        "watchdogSeconds": 90,
+        "chargedAt": 1792117868.408132
+      },
+      "terminal": {
+        "exit": 0,
+        "watchdogExpired": false
+      }
+    },
+    {
+      "program": 3,
+      "result": "PASS",
+      "counts": "227/227",
+      "log": ".cvf/runtime/ncr-source-admission-20261016/worker/test-3.log",
+      "sha256": "4e7156fb6f69bb4210358dd1daae3764dc79ab149e471ca9190ee0ba6e54649a",
+      "admission": {
+        "program": 3,
+        "ceiling": 6,
+        "command": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          ".cvf\\runtime\\ncr-source-admission-20261016\\worker\\test_driver.py"
+        ],
+        "watchdogSeconds": 90,
+        "chargedAt": 1792118002.3173018
+      },
+      "terminal": {
+        "exit": 0,
+        "watchdogExpired": false
+      }
+    },
+    {
+      "program": 4,
+      "result": "PASS",
+      "counts": "227/227",
+      "log": ".cvf/runtime/ncr-source-admission-20261016/worker/test-4.log",
+      "sha256": "f680ec6c52df5f9cf5ea30183473dcdc27a2810ac52b109c1da61c78121a72e1",
+      "admission": {
+        "program": 4,
+        "ceiling": 6,
+        "command": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          ".cvf\\runtime\\ncr-source-admission-20261016\\worker\\test_driver.py"
+        ],
+        "watchdogSeconds": 90,
+        "chargedAt": 1792118236.586947
+      },
+      "terminal": {
+        "exit": 0,
+        "watchdogExpired": false
+      }
+    }
+  ],
+  "effects": {
+    "actualSubstituteChildren": 0,
+    "unexpectedChildAttempts": [],
+    "mode": "IN_PROCESS_FAKE",
+    "pytestExit": 0,
+    "productStageCopies": 0,
+    "tinySyntheticStageCopiesPerProgram": 1
+  },
+  "providerExecutionAuthority": "FORBIDDEN",
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "sourceReleaseManifestOwner": "LOCAL_ROOT_NOT_WORKER",
+  "procedure": "PARTIAL_WITH_REASON: batched startup/contract output truncated and targeted completion reads followed source edits; source encoding metadata captured before modifying existing four files. One later default-decoding comment edit failed before write and was corrected using explicit UTF-8. No historical evidence or scope changed.",
+  "preservation": "Exact worker7 only in Git changed/untracked observation; historical paths unchanged, pinned raw hashes retained; prior source12 receipts remain their own historical revision.",
+  "claimBoundary": "In-process synthetic source identity fixtures only; no actual inert/native/product/browser/container/provider child or B-E/runtime/public readiness claim.",
+  "firstFastGate": {
+    "result": "FAIL",
+    "log": ".cvf/runtime/ncr-source-admission-20261016/worker/fast-1.log",
+    "sha256": "3d411a403975e3ab530f42abe9d52989a690f51e1bb052cc0641d67461c46e64",
+    "defects": [
+      "source inventory exact paths",
+      "convergence sweep enum",
+      "equal-HEAD lexical trigger",
+      "runtime learning N/A",
+      "rescan N/A bullet"
+    ],
+    "repair": "one consolidated return-only correction"
+  },
+  "secondFastGate": {
+    "result": "FAIL",
+    "log": ".cvf/runtime/ncr-source-admission-20261016/worker/fast-2.log",
+    "sha256": "2fec2985cb040a86b64e7dec172e6cbcc6bb9526bc1b5b43f0470582bc080096",
+    "defect": "Source Inventory lacked exact Action column; added PARTIAL_READ with honest depth scope"
+  },
+  "passedFastGate": {
+    "result": "PASS",
+    "log": ".cvf/runtime/ncr-source-admission-20261016/worker/fast-3.log",
+    "sha256": "bced1dab403c992e4ef899b807d032d44bab32b0d1c6d48fdaa36b3a5f247f10",
+    "seconds": 5.53,
+    "note": "before last two oracle-strengthening lines; final full fast gate and byte freeze receipt detached in ignored custody"
+  },
+  "testProgramAccounting": {
+    "used": 4,
+    "ceiling": 6,
+    "actualSubstituteChildren": 0,
+    "nativeChildren": 0,
+    "runtimePrograms": 0,
+    "watchdogsExpired": 0
+  }
+}

@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_SOURCE_IDENTITY_ONLY
 Date: 2026-10-16
 Batch ID: CVF-NCR-HTML-SOURCE-ADMISSION-20261016
 Dispatch base head: 581d20714ad074fcf7b39d419896633b4d63f36f
@@ -17,11 +17,31 @@ Worker return path: `docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_WORKER_RETURN_20
 Role: INTERNAL_AGENT implementation worker.
 Canonical packet: docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md; paired baseline docs/baselines/CVF_GC018_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md.
 Commit mode: WORKER_MUST_NOT_COMMIT.
-executionBaseHead: WORKER_MUST_CAPTURE_AT_START from actual released HEAD/status.
+executionBaseHead: 8b75bde5299335f94de254078b39bcffc31cdd40 (captured clean before worker edits).
 Current-time notes: current operator next admits this source-only internal worker after committed packet/continuity and bound pre-dispatch PASS.
 Do-not-misread notes: source identity only; old pins/control/native windows closed, actual B-E/provider/runtime effects forbidden.
 Required first actions: startup, mapped reads, actual base/status, bound pre-implementation and checker-safe pending return before code/tests.
 Return contract: COMPLETE_PENDING_REVIEW only for exact worker7 and all mandatory proof joins; otherwise consolidated BLOCKED_WITH_REASON; no staging/commit or successor.
+
+## Local Closure Disposition And Atomicity Amendment
+
+Local accepts source identity implementation and source-only evidence; procedure PARTIAL_WITH_REASON.
+Worker227/227 at its frozen source revision and full fast gate PASS. Local distinct30/30 source probes
+PASS; one bounded oracle-map correction then its affected test1/1 PASS. Worker return/proof/preimage
+remain immutable evidence of their own revision; final current source13 pins are Local-owned.
+Local corrected the production-map test, not production admission. Actual B-E/provider/runtime effects0.
+Completion `docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_COMPLETION_2026-10-16.md`; Local proof `docs/reviews/evidence/ncr-html-source-admission-local-20261016.json`; current source release `docs/reviews/evidence/ncr-html-source-release-20261016.json`.
+
+Closure topology amendment: exact18 combines material12 and six aligned continuity paths atomically,
+then one active-handoff-only actual-SHA/result sync. This supersedes the earlier material12/exact6
+split for closure, preserving the dispatch pair/exact6 already committed. Reason: closing this raw-hash
+bound work order without atomic currentAuthority and next-move updates violates active-state/freshness
+guards. Canonical choreography Step2/3/4 controls; current full Local authority covers these named paths.
+No new effect authority, checker semantics, source scope or SCEC transition is introduced.
+Root family generation9, existing ordinal2/counters2,0,2,0/two blockers/freeze and prior7 P4 exclusions
+remain; current source selector is only one link, fresh actual controls and B-E journey remain open.
+Post-material one clean read-only admit_sources result is retained in ignored custody and handoff;
+it is not a worker prerequisite, new native/control execution or full B-E proof.
 
 ## Purpose
 
@@ -402,7 +422,7 @@ foreseeableFileSplitDisposition: NOT_REQUIRED_UNDER_SIZE_BUDGET
 | reviewer_fast | REVIEW | reviewer | REVIEW | source7 and Local review/probe/release evidence | EXACT_PATHS | reviewer-closer | MATERIAL_COMMIT | worker_return_fast |
 | pre_commit | PRE_MATERIAL_COMMIT | reviewer-closer | PRE_MATERIAL_COMMIT | exact source/review material | EXACT_PATHS | reviewer-closer | MATERIAL_COMMIT | reviewer_fast |
 | terminal_completion_review | POST_MATERIAL | reviewer-closer | POST_MATERIAL | completion authorizes exact6 sync; actual SHA in handoff | EXACT_PATHS | reviewer-closer | CORRECTIVE_MATERIAL_COMMIT | pre_commit |
-| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | exact6 source/generated state | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |
+| continuity | CONTINUITY_COMMIT | session-sync-steward | CONTINUITY_COMMIT | AGENT_HANDOFF_V63_2026-09-18.md actual-material-SHA marker; exact6 state alignment is atomic with material18 | EXACT_PATHS | session-sync-steward | CONTINUITY_COMMIT | terminal_completion_review |
 | committed_range_closure | POST_MATERIAL_CLOSURE | reviewer-closer | POST_MATERIAL_CLOSURE | clean split ranges read-only | EXACT_PATHS | reviewer-closer | CORRECTIVE_MATERIAL_COMMIT | continuity |
 
 Bound pre-dispatch final release runs after dispatch material+continuity exist; its content gate is prepared
@@ -831,3 +851,25 @@ Private provenance source/evidence; public sync and deployment are outside this 
 
 rawMemoryReleased=false. Source identity admission and bounded source-model tests only. No cryptographic
 operator authentication, runtime consent, B-E/product/parent/disposal/provider/public/deploy proof.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md | CLOSED_PASS_SOURCE_IDENTITY_ONLY | PASS |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_COMPLETION_2026-10-16.md | Local source review and independent30/30; affected test1/1 | PASS |
+| Roadmap state | docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md | current checkpoint replaced; parent remains open | PASS |
+| Registry JSON | docs/reference/CVF_GOVERNANCE_STATE_REGISTRY.json | unchanged immutable product binding; raw SHA256 aff7f92cf899a8d24579e76341f333f356431637bfc5ee0023ee13296aabcd86; no registry content changed | PASS |
+| Registry Markdown | governance/toolkit/03_CONTROL/CVF_AGENT_REGISTRY.md | unchanged immutable product binding; raw SHA256 9c6b6d3e1ce054980027c75469b2a6d83eec3d922abe09ec630378be53cf86ea; no registry content changed | PASS |
+| External evidence digest | docs/reviews/evidence/ncr-html-source-admission-worker-20261016.json | raw SHA256 0636334e49581e5edb8361315ff13cbecb60c3c496a7164b09688baa1643c5c4; Local separate model binding in completion | PASS |
+| System loop interlock | N/A with reason: no runtime/system interlock change | B-E/parent unproved | N/A with reason: no activation |
+| Session continuity | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` | atomic exact6 source/generated alignment; handoff-only actual-SHA follows | PASS |
+
+## Acceptance Receipt Assertion Matrix
+
+| Assertion | Required value | Observed value | Status |
+|---|---|---|---|
+| Worker focused source models | pass at returned source bytes | 227/227 before Local oracle correction, raw immutable worker proof | PASS |
+| Independent source identity models | distinct accepted/rejected fences | Local30/30, no worker helper imports | PASS |
+| Corrected production/oracle mutation test | exact stale-hash rejection for13 paths | affected test1/1 after Local map correction | PASS |
+| Runtime receipts | N/A with reason: no runtime effect admitted | no B-E/provider/native receipt promoted | N/A with reason: source-only |

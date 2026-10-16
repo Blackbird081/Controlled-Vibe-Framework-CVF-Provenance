@@ -23,7 +23,7 @@ from cvf_ncr_html_owned_profile import profile as P
 if {"CVF_NCR_ALLOWED_PORTS", "CVF_HCR_EGRESS_LOG"} & set(os.environ):
     raise RuntimeError("inherited network-guard activation is refused in the pure test environment")
 INVOCATION = "worker-" + os.urandom(8).hex()
-SCRATCH = P.ROOT / ".cvf/runtime/ncr-html-root-local-repair-20261016" / INVOCATION  # fresh per invocation; no prior receipts
+SCRATCH = P.ROOT / ".cvf/runtime/ncr-source-admission-20261016/worker" / INVOCATION  # fresh per invocation; no prior receipts
 RUNNER = "SUBPROCESS" if os.environ.get("CVF_LOCAL_REPAIR_SUBSTITUTE") == "subprocess" else "IN_PROCESS_FAKE"  # only the worker's final launch sets it
 FIX, IMAGE = P.fixtures(), "sha256:" + "0" * 64
 CHILD = re.compile(r"time\.sleep\((.*?)\);sys\.stdout\.write\((.*)\);sys\.exit\((\d+)\)$")
@@ -158,7 +158,7 @@ def test_receipt_admission_is_case_specific_hash_joined_and_never_proof_of_execu
     base = good()
     assert P.control_issue(base, 2, digest(base)) is None and P.admit_controls(base, 2, digest(base)) == "IMPLEMENTATION_WORKER"
     assert [x["case"] for x in base["cases"]] == list(P.CASES) and base["substituteStarts"] == 26 and base["passed"] == 9
-    assert set(base["production"]) == set(P.PRODUCTION) and len(base["production"]) == 6 and set(base["oracles"]) == set(P.ORACLES) and len(base["oracles"]) == 6
+    assert set(base["production"]) == set(P.PRODUCTION) and len(base["production"]) == 7 and set(base["oracles"]) == set(P.ORACLES) and len(base["oracles"]) == 6
     assert "frozen digest" in P.control_issue(base, 2, "0" * 64) and "frozen digest" in P.control_issue(base, 2, None)
     assert "fail-closed" in P.control_issue(base, 1, digest(base)) and P.control_issue(None, 2, "x") == "receipt shape"
     with pytest.raises(RuntimeError, match="inert collector controls are required"):
@@ -191,7 +191,7 @@ def effects(monkeypatch, scratch):
     hits = []
     pins = json.loads((P.ROOT / P.PINS).read_bytes())
     pins["sourcePins"].update({p: E.sha((P.ROOT / p).read_bytes()) for p in P.HELPERS})
-    (scratch / "released-pins.json").write_bytes(E.dumps(pins))  # fixture only, never rewrite the historical manifest
+    (scratch / "released-pins.json").write_text(json.dumps(pins), encoding="utf-8")  # hash map, not redactable evidence; historical bytes untouched
     monkeypatch.setattr(P, "PINS", str(scratch / "released-pins.json"))
     sentinel = lambda name: lambda *_a, **_k: (hits.append(name), (_ for _ in ()).throw(AssertionError("effect: " + name)))  # an ordinary Exception, as the run reports it
     for owner, attr in ((subprocess, "Popen"), (subprocess, "run"), (H.socket, "socket"), (H.urllib.request, "urlopen"), (H, "Native"), (P, "prerequisites"), (P, "stage_source")):
@@ -246,8 +246,14 @@ class TestAdmissionBeforeEffects:
             H.run(scratch / "ns", IMAGE, **controls(scratch))
         assert not (scratch / "ns").exists() and not {"Native", "Popen", "run", "socket", "urlopen"} & set(effects)
 
-    def test_valid_admission_reaches_only_the_first_owned_effect_and_the_terminal_bytes_are_acknowledged(self, scratch, tmp_path, effects):
-        namespace = tmp_path / "ns1"  # admission requires a fresh namespace outside the provenance tree, so this one uses pytest's tmp_path
+    def test_valid_admission_reaches_only_the_first_owned_effect_and_the_terminal_bytes_are_acknowledged(self, scratch, effects, monkeypatch):
+        namespace = scratch / "ns1"
+        original = P.admit_sources
+        def admitted(*args):
+            result = original(*args)
+            monkeypatch.setattr(P, "ROOT", scratch / "modeled-provenance")
+            return result
+        monkeypatch.setattr(P, "admit_sources", admitted)
         out = H.run(namespace, IMAGE, **controls(scratch))
         terminal = out["terminal"]
         assert effects == ["git"] * 4 + ["Native"] and out["ok"] is False and "effect: Native" in out["failures"][0]
@@ -256,12 +262,12 @@ class TestAdmissionBeforeEffects:
         assert E.sha((namespace / "custody/terminal-evidence.json").read_bytes()) == terminal["evidenceSha256"]  # persisted bytes are the frozen bytes
 
 
-CEILINGS = {P.INIT: 329, P.LIFECYCLE: 349, P.PROFILE: 329, P.EXECUTION: 349, P.JOURNEY: 329, P.PROTOCOL: 299, P.TEST_PROTOCOL: 349, P.JOURNEY_TEST: 299, P.TEST_CONTROL: 329, P.TEST_EXECUTION: 349, P.TEST_WIN32: 299, P.TEST_ADMISSION: 299}
+CEILINGS = {P.INIT: 349, P.LIFECYCLE: 349, P.PROFILE: 329, P.EXECUTION: 349, P.JOURNEY: 329, P.PROTOCOL: 299, P.TEST_PROTOCOL: 349, P.JOURNEY_TEST: 299, P.TEST_CONTROL: 329, P.TEST_EXECUTION: 349, P.TEST_WIN32: 299, P.TEST_ADMISSION: 349, P.SOURCE_RELEASE: 349}
 
 
 def test_canonical_fixtures_exact14_family_readable_ceilings_and_pinned_immutable_legacy_blob():
     assert [len(x["sourceContent"].encode("utf-16-le")) // 2 for x in FIX] == [650, 726] and P.validate_inputs(FIX, 2) is FIX
-    assert "?mode=ro" in Path(P.__file__).read_text(encoding="utf-8") and len(P.OUTPUTS) == 14 and set(P.HELPERS) < set(P.OUTPUTS)
+    assert "?mode=ro" in Path(P.__file__).read_text(encoding="utf-8") and len(P.OUTPUTS) == 15 and set(P.HELPERS) < set(P.OUTPUTS)
     lines = {r: len((P.ROOT / r).read_bytes().splitlines()) for r in P.HELPERS}
     assert all(n < 350 for n in lines.values()) and all(lines[r] <= limit for r, limit in CEILINGS.items()) and not {P.ENTRY_PY, P.ENTRY_CJS} & set(P.OUTPUTS)
     pins = json.loads((P.ROOT / P.PINS).read_text(encoding="utf-8"))["sourcePins"]

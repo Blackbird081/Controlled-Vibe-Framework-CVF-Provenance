@@ -14,6 +14,7 @@ from pathlib import Path
 
 from .execution import UNKNOWN, dumps, sha
 from .lifecycle import no_reparse
+from . import source_release as S
 
 ROOT = Path(__file__).resolve().parents[2]
 WEB = Path("EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web")
@@ -32,9 +33,9 @@ REGISTRY = ("governance/toolkit/03_CONTROL/CVF_AGENT_REGISTRY.md",
             "docs/reference/CVF_GOVERNANCE_STATE_REGISTRY.json")
 HELPERS = tuple("scripts/cvf_ncr_html_owned_profile/" + n for n in (
     "__init__.py", "lifecycle.py", "profile.py", "test_control.py", "journey.cjs", "journey.test.cjs",
-    "execution.py", "test_execution.py", "protocol.py", "test_protocol.py", "test_win32.py", "test_admission.py"))
-INIT, LIFECYCLE, PROFILE, TEST_CONTROL, JOURNEY, JOURNEY_TEST, EXECUTION, TEST_EXECUTION, PROTOCOL, TEST_PROTOCOL, TEST_WIN32, TEST_ADMISSION = HELPERS
-PRODUCTION = (INIT, LIFECYCLE, PROFILE, EXECUTION, PROTOCOL, JOURNEY)  # control receipts bind all six production owners
+    "execution.py", "test_execution.py", "protocol.py", "test_protocol.py", "test_win32.py", "test_admission.py", "source_release.py"))
+INIT, LIFECYCLE, PROFILE, TEST_CONTROL, JOURNEY, JOURNEY_TEST, EXECUTION, TEST_EXECUTION, PROTOCOL, TEST_PROTOCOL, TEST_WIN32, TEST_ADMISSION, SOURCE_RELEASE = HELPERS
+PRODUCTION = (INIT, LIFECYCLE, PROFILE, EXECUTION, PROTOCOL, JOURNEY, SOURCE_RELEASE)  # control receipts bind all seven production owners
 ORACLES = (TEST_CONTROL, TEST_EXECUTION, TEST_PROTOCOL, JOURNEY_TEST, TEST_WIN32, TEST_ADMISSION)  # all current oracle sources
 OUTPUTS = (*HELPERS, "docs/assessments/CVF_NCR_HTML_DIRECT_LOCAL_REPAIR_DISPOSITION_2026-10-16.md",
            "docs/reviews/evidence/ncr-html-direct-local-repair-20261016.json")  # legacy writable lane, not permission to ignore source hashes
@@ -68,8 +69,10 @@ def git(*args):
     return subprocess.check_output(["git", *args], cwd=ROOT, timeout=30)
 
 
-def admit_sources():
+def admit_sources(release_path=None, release_sha256=None):
     """Four read-only Git commands; current Local authorization/contract/evidence pins must match. Runtime needs separate admission."""
+    if release_path is not None or release_sha256 is not None:
+        return S.admit(ROOT, release_path, release_sha256, HELPERS, git)
     document = json.loads((ROOT / PINS).read_text(encoding="utf-8"))
     pins = document.get("sourcePins") if type(document) is dict else None
     if type(pins) is not dict or any(p not in pins for p in (*PAIR, *HELPERS)):
@@ -210,7 +213,9 @@ def fixtures():
     return [v1, v2]
 
 
-def stage_source(stage):
+def stage_source(stage, sources=None):
+    if sources is not None and "productBinding" in sources:
+        S.recheck_stage(ROOT, sources["productBinding"], git)
     scopes = [WEB.as_posix(), ENGINE.parent.as_posix(), *REGISTRY]
     if git("diff", "HEAD", "--", *scopes).strip():
         raise RuntimeError("selected product source differs from Git pin")

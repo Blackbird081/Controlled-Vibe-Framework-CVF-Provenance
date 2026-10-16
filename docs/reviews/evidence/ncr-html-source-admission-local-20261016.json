@@ -1,0 +1,318 @@
+{
+  "schemaVersion": "cvf.ncrHtmlSourceAdmissionLocal@1",
+  "status": "ACCEPTED_SOURCE_ONLY_PROCEDURE_PARTIAL",
+  "reviewBaseHead": "8b75bde5299335f94de254078b39bcffc31cdd40",
+  "decisionOwner": "LOCAL",
+  "workerEvidence": {
+    "path": "docs/reviews/evidence/ncr-html-source-admission-worker-20261016.json",
+    "sha256": "0636334e49581e5edb8361315ff13cbecb60c3c496a7164b09688baa1643c5c4"
+  },
+  "workerReturn": {
+    "path": "docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_WORKER_RETURN_2026-10-16.md",
+    "sha256": "3961103177ad0712771ff90feda810d76f651c60e288f1660510659dc6d73456"
+  },
+  "workerFreeze": {
+    "schemaVersion": "cvf.ncrHtmlWorkerFinalFreeze@1",
+    "status": "PASS",
+    "executionBaseHead": "8b75bde5299335f94de254078b39bcffc31cdd40",
+    "finalFastGateLog": ".cvf/runtime/ncr-source-admission-20261016/worker/fast-final.log",
+    "gateLogSha256": "5ad52402a6cd454ce1e1c1346d70bfda2222995dbae1400efce8cb39c883d8f2",
+    "gateResult": "COMPLIANT5.63s",
+    "beforeGate": {
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96",
+      "scripts/cvf_ncr_html_owned_profile/test_admission.py": "6dbdb12b856317f2f1811351f3be2c2b5aabb5530a4ffa34d1790a4a6a40f738",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "829f6f28863a945e6c8a889332d82ff01875bce769efe0696df70c1caa09243c",
+      "scripts/cvf_ncr_html_owned_profile/source_release.py": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b",
+      "docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_WORKER_RETURN_2026-10-16.md": "3961103177ad0712771ff90feda810d76f651c60e288f1660510659dc6d73456",
+      "docs/reviews/evidence/ncr-html-source-admission-worker-20261016.json": "0636334e49581e5edb8361315ff13cbecb60c3c496a7164b09688baa1643c5c4"
+    },
+    "afterGate": {
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96",
+      "scripts/cvf_ncr_html_owned_profile/test_admission.py": "6dbdb12b856317f2f1811351f3be2c2b5aabb5530a4ffa34d1790a4a6a40f738",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "829f6f28863a945e6c8a889332d82ff01875bce769efe0696df70c1caa09243c",
+      "scripts/cvf_ncr_html_owned_profile/source_release.py": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b",
+      "docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_WORKER_RETURN_2026-10-16.md": "3961103177ad0712771ff90feda810d76f651c60e288f1660510659dc6d73456",
+      "docs/reviews/evidence/ncr-html-source-admission-worker-20261016.json": "0636334e49581e5edb8361315ff13cbecb60c3c496a7164b09688baa1643c5c4"
+    },
+    "equalityResult": "MATCH",
+    "postGateMutationResult": "NO_POST_GATE_MUTATION",
+    "source13Stable": true,
+    "historicalArtifactsStable": true,
+    "changedSet": [
+      "docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_WORKER_RETURN_2026-10-16.md",
+      "docs/reviews/evidence/ncr-html-source-admission-worker-20261016.json",
+      "scripts/cvf_ncr_html_owned_profile/__init__.py",
+      "scripts/cvf_ncr_html_owned_profile/profile.py",
+      "scripts/cvf_ncr_html_owned_profile/source_release.py",
+      "scripts/cvf_ncr_html_owned_profile/test_admission.py",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py"
+    ],
+    "changedSetVerdict": "MATCH_EXACT_WORKER7",
+    "stagedPaths": 0,
+    "headUnchanged": true,
+    "sourceLineCounts": {
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": 325,
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py": 343,
+      "scripts/cvf_ncr_html_owned_profile/profile.py": 304,
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": 306,
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs": 258,
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": 240,
+      "scripts/cvf_ncr_html_owned_profile/execution.py": 348,
+      "scripts/cvf_ncr_html_owned_profile/test_execution.py": 333,
+      "scripts/cvf_ncr_html_owned_profile/protocol.py": 276,
+      "scripts/cvf_ncr_html_owned_profile/test_protocol.py": 343,
+      "scripts/cvf_ncr_html_owned_profile/test_win32.py": 258,
+      "scripts/cvf_ncr_html_owned_profile/test_admission.py": 310,
+      "scripts/cvf_ncr_html_owned_profile/source_release.py": 124
+    },
+    "custodyOwner": "LOCAL_ROOT",
+    "retention": "all task evidence/logs/fixtures retained; no cleanup deletion admitted"
+  },
+  "workerEvidenceJoins": {
+    "status": "PASS",
+    "worker7": {
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96",
+      "scripts/cvf_ncr_html_owned_profile/test_admission.py": "6dbdb12b856317f2f1811351f3be2c2b5aabb5530a4ffa34d1790a4a6a40f738",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "829f6f28863a945e6c8a889332d82ff01875bce769efe0696df70c1caa09243c",
+      "scripts/cvf_ncr_html_owned_profile/source_release.py": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b",
+      "docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_WORKER_RETURN_2026-10-16.md": "3961103177ad0712771ff90feda810d76f651c60e288f1660510659dc6d73456",
+      "docs/reviews/evidence/ncr-html-source-admission-worker-20261016.json": "0636334e49581e5edb8361315ff13cbecb60c3c496a7164b09688baa1643c5c4"
+    },
+    "source13": {
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "c4fab8696982227bc202ae969d72f193448e504ca4a6d7d579e609dbd7764605",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "829f6f28863a945e6c8a889332d82ff01875bce769efe0696df70c1caa09243c",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+      "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "scripts/cvf_ncr_html_owned_profile/test_admission.py": "6dbdb12b856317f2f1811351f3be2c2b5aabb5530a4ffa34d1790a4a6a40f738",
+      "scripts/cvf_ncr_html_owned_profile/source_release.py": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b"
+    },
+    "historicalArtifacts": {
+      "docs/reviews/evidence/ncr-html-direct-local-repair-pins-20261016.json": "01c1f294e016d1be16edd54cc97fc9cef6d89e8be85da7050cb905aae1955921",
+      "docs/reviews/evidence/ncr-html-cap1-completion-local-20261016.json": "53dbc375153db0a59a01f7e43f66be2f9be144c03262aa43f29a2363c96dfc62",
+      "docs/reviews/evidence/ncr-html-native-binding-local-20261016.json": "c5fb1711022df8e8f699faca9ca80e0e44d272fd98f09d95bfa137beb9f2befa",
+      "docs/reviews/evidence/ncr-html-b-e-release-candidate-v2-20261016.json": "b3778420222fcc7d08ad2efa52c6d47e6a30fed463e95b75a5093dd665659b65"
+    },
+    "testProgramLogJoins": 4,
+    "fastGateLogJoin": "PASS",
+    "mismatches": [],
+    "reviewFinding": "Test loop puts production path mutations into oracles map; it tests unexpected key rejection rather than a stale production value. Production control_issue comparison itself is correct. One bounded oracle correction after independent probe."
+  },
+  "independentProbe": {
+    "schemaVersion": "cvf.ncrHtmlIndependentSourceProbe@1",
+    "actor": "ROOT_LOCAL_REVIEWER",
+    "scope": "SOURCE_IDENTITY_ONLY",
+    "oracle": "contract literals and isolated files/Git model; no worker helpers",
+    "programsCharged": 1,
+    "runtimeChildren": 0,
+    "providerCalls": 0,
+    "observations": [
+      {
+        "case": "exact-current-positive",
+        "status": "PASS"
+      },
+      {
+        "case": "partial-pair-no-fallback",
+        "status": "PASS"
+      },
+      {
+        "case": "digest-before-parse-git",
+        "status": "PASS"
+      },
+      {
+        "case": "duplicate-keys",
+        "status": "PASS"
+      },
+      {
+        "case": "foreign-profile",
+        "status": "PASS"
+      },
+      {
+        "case": "documentary-schema",
+        "status": "PASS"
+      },
+      {
+        "case": "wrong-scope",
+        "status": "PASS"
+      },
+      {
+        "case": "unknown-top-field",
+        "status": "PASS"
+      },
+      {
+        "case": "drift-sourcePins",
+        "status": "PASS"
+      },
+      {
+        "case": "drift-fixture",
+        "status": "PASS"
+      },
+      {
+        "case": "drift-entrypoints",
+        "status": "PASS"
+      },
+      {
+        "case": "drift-authority",
+        "status": "PASS"
+      },
+      {
+        "case": "missing-owner",
+        "status": "PASS"
+      },
+      {
+        "case": "extra-owner",
+        "status": "PASS"
+      },
+      {
+        "case": "foreign-product-scope",
+        "status": "PASS"
+      },
+      {
+        "case": "dirty-lane",
+        "status": "PASS"
+      },
+      {
+        "case": "staged-lane",
+        "status": "PASS"
+      },
+      {
+        "case": "untracked-lane",
+        "status": "PASS"
+      },
+      {
+        "case": "product-head-drift",
+        "status": "PASS"
+      },
+      {
+        "case": "stage-uses-admitted-product-and-rechecks",
+        "status": "PASS"
+      },
+      {
+        "case": "failed-source-before-namespace",
+        "status": "PASS"
+      },
+      {
+        "case": "actor-control-before-source",
+        "status": "PASS"
+      },
+      {
+        "case": "selector-0",
+        "status": "PASS"
+      },
+      {
+        "case": "selector-1",
+        "status": "PASS"
+      },
+      {
+        "case": "selector-2",
+        "status": "PASS"
+      },
+      {
+        "case": "selector-3",
+        "status": "PASS"
+      },
+      {
+        "case": "selector-4",
+        "status": "PASS"
+      },
+      {
+        "case": "selector-5",
+        "status": "PASS"
+      },
+      {
+        "case": "selector-6",
+        "status": "PASS"
+      },
+      {
+        "case": "selector-7",
+        "status": "PASS"
+      }
+    ],
+    "passed": 30,
+    "failed": 0
+  },
+  "independentWatchdog": {
+    "exit": 0,
+    "watchdogExpired": false,
+    "elapsedSeconds": 0.39,
+    "stdoutSha256": "21518d5d390fb1f114f4df06a2edc1b1d3ece587d2aa95647e791f480e10a2c6",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scriptSha256": "20f5225036bd10e1776b274bd593c114e05a74ab0ad9deb019a5c6d60db04573"
+  },
+  "localOracleCorrection": {
+    "findingId": "SOURCE-ORACLE-MAP-01",
+    "affectedPath": "scripts/cvf_ncr_html_owned_profile/test_admission.py",
+    "workerPreimagePath": ".cvf/runtime/ncr-source-admission-20261016/worker-test-admission-preimage.py",
+    "workerPreimageSha256": "6dbdb12b856317f2f1811351f3be2c2b5aabb5530a4ffa34d1790a4a6a40f738",
+    "priorHash": "6dbdb12b856317f2f1811351f3be2c2b5aabb5530a4ffa34d1790a4a6a40f738",
+    "currentHash": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+    "reason": "Mutate production values in production map and assert exact stale-hash rejection, rather than adding unexpected production keys to oracle map.",
+    "narrowTest": {
+      "exit": 0,
+      "watchdogExpired": false,
+      "elapsedSeconds": 0.485,
+      "stdoutSha256": "e595c9dd5a9edc1722d0f72303c939afef026f4ec243dac3267b63461a9fa194",
+      "scriptSha256": "779c9d590cee334deae212b943511acc5a862dd8cc94028992d8e4db26bb8983"
+    },
+    "effects": {
+      "exit": 0,
+      "unexpectedChildAttempts": [],
+      "sourceScope": "one affected oracle,13 production/oracle hash mutations",
+      "actualRuntimeChildren": 0
+    },
+    "productionBytesChangedByLocal": false
+  },
+  "currentSource13": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "de4221c23be9051a158cf85cbfd51e89a798b1726affa9ba27f0b207d34b70f6",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "c4fab8696982227bc202ae969d72f193448e504ca4a6d7d579e609dbd7764605",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "77a0d032b1d402c5be8890353718ee057fd72633027c4864a0030ecf93fafa96",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "829f6f28863a945e6c8a889332d82ff01875bce769efe0696df70c1caa09243c",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+    "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+    "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": "4d694c4066f93f317b5bbea76bb876bb1555482b471b38d36f87250ca142878b"
+  },
+  "sourceRelease": {
+    "path": "docs/reviews/evidence/ncr-html-source-release-20261016.json",
+    "sha256": "d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5"
+  },
+  "prospectiveCommittedRead": "ONE_READ_AFTER_MATERIAL; ignored receipt and final handoff own actual result",
+  "procedure": "PARTIAL_WITH_REASON: retained dispatcher gate/literal/range mistakes and worker late targeted reads; no retroactive perfect chronology claim.",
+  "sourceFamilyGeneration": 9,
+  "rootScec": {
+    "ordinal": 2,
+    "counters": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "blockers": 2,
+    "freezeRetained": true,
+    "transition": false
+  },
+  "effects": {
+    "native": 0,
+    "product": 0,
+    "browser": 0,
+    "container": 0,
+    "network": 0,
+    "provider": 0,
+    "delete": 0
+  },
+  "publicExportDisposition": "DEFERRED_PRIVATE_ONLY"
+}
