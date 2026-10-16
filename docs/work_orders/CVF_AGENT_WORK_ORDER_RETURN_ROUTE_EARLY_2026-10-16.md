@@ -252,6 +252,7 @@ Freeze original dispatch pair/raw pins and exact5 before Local status transition
       "expectedArtifacts": [
         "governance/compat/check_work_order_dispatch_quality.py",
         "governance/compat/check_work_order_dispatch_quality_range.py",
+        "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
         "docs/reviews/evidence/return-route-early-worker-20261016.json"
       ],
       "requiredProofIds": [
@@ -264,6 +265,7 @@ Freeze original dispatch pair/raw pins and exact5 before Local status transition
       "expectedArtifacts": [
         "governance/compat/check_work_order_dispatch_quality.py",
         "governance/compat/check_work_order_dispatch_quality_range.py",
+        "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
         "docs/reviews/evidence/return-route-early-worker-20261016.json"
       ],
       "requiredProofIds": [
@@ -276,6 +278,7 @@ Freeze original dispatch pair/raw pins and exact5 before Local status transition
       "expectedArtifacts": [
         "governance/compat/check_work_order_dispatch_quality.py",
         "governance/compat/check_work_order_dispatch_quality_range.py",
+        "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
         "docs/reviews/evidence/return-route-early-worker-20261016.json"
       ],
       "requiredProofIds": [
@@ -288,6 +291,7 @@ Freeze original dispatch pair/raw pins and exact5 before Local status transition
       "expectedArtifacts": [
         "governance/compat/check_work_order_dispatch_quality.py",
         "governance/compat/check_work_order_dispatch_quality_range.py",
+        "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
         "docs/reviews/evidence/return-route-early-worker-20261016.json"
       ],
       "requiredProofIds": [
@@ -300,6 +304,7 @@ Freeze original dispatch pair/raw pins and exact5 before Local status transition
       "expectedArtifacts": [
         "governance/compat/check_work_order_dispatch_quality.py",
         "governance/compat/check_work_order_dispatch_quality_range.py",
+        "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
         "docs/reviews/evidence/return-route-early-worker-20261016.json"
       ],
       "requiredProofIds": [
@@ -312,6 +317,7 @@ Freeze original dispatch pair/raw pins and exact5 before Local status transition
       "expectedArtifacts": [
         "governance/compat/check_work_order_dispatch_quality.py",
         "governance/compat/check_work_order_dispatch_quality_range.py",
+        "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
         "docs/reviews/evidence/return-route-early-worker-20261016.json"
       ],
       "requiredProofIds": [
@@ -324,6 +330,7 @@ Freeze original dispatch pair/raw pins and exact5 before Local status transition
       "expectedArtifacts": [
         "governance/compat/check_work_order_dispatch_quality.py",
         "governance/compat/check_work_order_dispatch_quality_range.py",
+        "governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py",
         "docs/reviews/evidence/return-route-early-worker-20261016.json"
       ],
       "requiredProofIds": [
@@ -524,24 +531,25 @@ Provider-specific memory is an execution aid, never canonical source or acceptan
 
 | Field | Value |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher/reviewer |
+| Actor | Local INTERNAL_AGENT dispatcher/reviewer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | return-route-early-dispatch-20261016 |
+| Session or invocation | return-route-early-dispatch-continuity-20261016 |
 | Working directory | repository root |
-| Command or tool surface | targeted source design, actual scaffold/ADIF, locked packet, normal gates/commits |
-| Target paths | `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md` |
-| Allowed scope source | operator explicitly authorizes bounded checker fix with latency constraint |
-| Before status evidence | a6057f3eff1d0e983fdd8b7c8a9dd8da69b3bbe2 clean worktree; stage empty |
-| After status evidence | paired exact2 dispatch, implementation pending |
-| Diff evidence | exact2 documentary preparation |
-| Approval boundary | guard maintenance only after committed pair/continuity/release gates |
-| Claim boundary | no implementation acceptance or product/runtime success |
+| Command or tool surface | source edits, canonical generation, staged exact6 normal commits/gates |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md` |
+| Allowed scope source | operator explicit bounded checker fix and standing Local continuity authority |
+| Before status evidence | material e9699f81c0bf0610a5bde0d981d7829637c61177 committed; clean worktree/stage empty |
+| After status evidence | current paired authority/mode/next and actual material SHA synchronized |
+| Diff evidence | exact6 manifest; no source or behavior claim |
+| Approval boundary | guard task only, old product/runtime grants retired |
+| Claim boundary | startup continuity not functional acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | return-route-early-dispatch-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md` |
-| Manifest delta | MATCH |
-| Deletion or rename disposition | none; historical bytes retained |
+| Invocation ID | return-route-early-dispatch-continuity-20261016 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md` |
+| Manifest delta | MATCH eight paired packet/current-hash paths |
+| Deletion or rename disposition | none; old stage/custody retained |
+
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -699,7 +707,7 @@ Read the control operative binding before authoring. Existing historical receipt
 
 ## Dispatch Preparation Disclosure
 
-Initial narrow dispatch check found missing risk label; first packet preflight found four families of documentary omissions (baseline structural/ADIF/scaffold and handoff fields). Local corrected the complete set before effects; preparation is partial, not retroactively fully compliant. Actual source read, Sol Medium read-only design consultation, scaffold exit0 and ADIF query precede this packet. No claim that unchanged historical whole-source bodies were reread in full. Required worker reads remain prospective. Final release follows committed pair/source6 and bound gate; not a current implementation or efficacy claim.
+Before any worker gate/edit/test, worker identified the required test path missing from ledger artifact coverage. Local corrected REQ-01..07 to claim the existing required test and re-released the same source/effect/role envelope; no implementation retry. Initial narrow dispatch check found missing risk label; first packet preflight found four families of documentary omissions (baseline structural/ADIF/scaffold and handoff fields). Local corrected the complete set before effects; preparation is partial, not retroactively fully compliant. Actual source read, Sol Medium read-only design consultation, scaffold exit0 and ADIF query precede this packet. No claim that unchanged historical whole-source bodies were reread in full. Required worker reads remain prospective. Final release follows committed pair/source6 and bound gate; not a current implementation or efficacy claim.
 
 ## Public Export Disposition
 

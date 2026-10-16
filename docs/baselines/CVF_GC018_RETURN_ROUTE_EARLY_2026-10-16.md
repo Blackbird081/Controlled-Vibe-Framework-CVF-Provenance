@@ -136,3 +136,7 @@ Actual query exit0 retained in task custody; relevant source/ownership/closeabil
 | docOnlyNewFields | earlyRouteSpecVersion |
 | claimBoundary | actual helper exit0/hash in ignored preparation; no semantic approval |
 
+
+## Pre-Implementation Ledger Correction
+
+The required test file is included in REQ-01..07 expectedArtifacts so the union of eight requirements covers every exact5 worker deliverable. Worker caught this Local packet omission during read-ahead before any gate/edit/test. This corrects ledger coverage only; source/effect/role/budget scope unchanged. Original release preimages retained in ignored custody.
