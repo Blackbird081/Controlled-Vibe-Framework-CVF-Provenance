@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `4f5d1e74a6fcc03f9fc5873347c1bc2959937979`. Material SHA: `4f5d1e74a6fcc03f9fc5873347c1bc2959937979`. Batch ID: CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Actual negative worker2 committed; exact12 blocked retirement/currentAuthority follows, no runtime retry.
+Current HEAD recorded for this handoff: `4aad1e3481a98a948235101d5f214767617fabbb`. Material SHA: `4aad1e3481a98a948235101d5f214767617fabbb`. Batch ID: CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Exact12 blocked disposition/currentAuthority committed, normal91/91 PASS; actual1 permanently failed,2 never released. Exact6 actual-SHA continuity; clean split closure follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-SOURCE-CORRECTION-PLAN-20261016. Local plans one consolidated existing-owner source amendment from docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json. Actual actor1 exit1/21.781s, work16/56 cleanup5/8, exports/evaluates0, browser/helper never launched. Docker context/pipe/cache/container health/network proof observed on current binary; Web preload locator lost Windows separators; retained-stage disposal walked shared dependency junction and refused nested reparse. Root source inferences are not reproduced correction proof. Preserve source13/adjunct5/original releases until separately admitted new source identity/contract; plan Windows preload encoding plus strict adjunct matching and exact admitted-link pruning with refusal/containment regressions. No old release repin or runtime retry. Actual terminal6884/hashf6f8c314 has ACKMATCH/fourABSENT but acceptedfalse/childNOT_LAUNCHED; actual1spent,2NOT_RELEASED_DEPENDENCY_FAILED, both grants retired. Original bound return gate FAILED; repaired negative retention/blocked reducer do not upgrade it. Gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained. No generic operator documentary checkpoint.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-SOURCE-CORRECTION-PLAN-20261016. Blocked material 4aad1e3481a98a948235101d5f214767617fabbb normal91/91 PASS. Local plans one consolidated existing-owner source amendment from docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json. Actual actor1 exit1/21.781s, work16/56 cleanup5/8, exports/evaluates0, browser/helper never launched. Docker context/pipe/cache/container health/network proof observed on current binary; Web preload locator lost Windows separators; retained-stage disposal walked shared dependency junction and refused nested reparse. Root source inferences are not reproduced correction proof. Preserve source13/adjunct5/original releases until separately admitted new source identity/contract; plan Windows preload encoding plus strict adjunct matching and exact admitted-link pruning with refusal/containment regressions. No old release repin or runtime retry. Actual terminal6884/hashf6f8c314 has ACKMATCH/fourABSENT but acceptedfalse/childNOT_LAUNCHED; actual1spent,2NOT_RELEASED_DEPENDENCY_FAILED, both grants retired. Original bound return gate FAILED; repaired negative retention/blocked reducer do not upgrade it. Gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained. No generic operator documentary checkpoint.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -109,12 +109,6 @@ Atomicity reason: retired currentAuthority hashes and negative result must align
 
 Exact changed manifest:
 
-- `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`
-- `docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md`
-- `docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json`
-- `docs/reviews/evidence/ncr-html-b-e-runtime-first-acceptance-20261016.json`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -143,21 +137,21 @@ Rollback boundary: exact12 negative-disposition material and source6 only; retai
 |---|---|
 | Actor | Local INTERNAL_AGENT reviewer/closer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-runtime-blocked-local-20261016 |
+| Session or invocation | ncr-be-runtime-blocked-continuity-20261016 |
 | Working directory | repository root |
 | Command or tool surface | consume actual negative raw evidence; source inference and packet grammar repair after admission retirement; repository gates/normal commits only |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-runtime-first-acceptance-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | standing Local authority; retired exact two-actor runtime pair and bounded negative-record closure |
 | Before status evidence | worker negative exact2 committed at 4f5d1e74a6fcc03f9fc5873347c1bc2959937979; normal91/91 PASS, automatic P4 skipped; actual1 failed and2 never released |
-| After status evidence | exact12 negative disposition/currentAuthority update; no source edit/runtime rerun/deletion |
-| Diff evidence | git diff --name-status and exact12 staged manifest; original worker/pre-effect bytes retained in Local proof |
+| After status evidence | exact6 negative disposition/currentAuthority update; no source edit/runtime rerun/deletion |
+| Diff evidence | git diff --name-status and exact6 staged manifest; original worker/pre-effect bytes retained in Local proof |
 | Approval boundary | future source amendment needs concrete separate design/admission; no generic operator documentary checkpoint |
 | Claim boundary | failed mechanical B-E attempt; actual2 not performed; no AI governance/live/release acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-runtime-blocked-local-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-runtime-first-acceptance-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-runtime-first-acceptance-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact12 |
+| Invocation ID | ncr-be-runtime-blocked-continuity-20261016 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact6 |
 | Deletion or rename disposition | none; namespace/stage/stores/junction/custody retained by LOCAL |
 
 ## Claim Boundary
