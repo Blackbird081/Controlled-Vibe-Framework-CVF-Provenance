@@ -27,6 +27,9 @@ Counter class from original dispatched op.cleanup, precharged56/8 before Popen; 
 
 Earlier controls procedure partial remains: original worker authoring/dispatcher failures, actor-wording clarification, generated checkout CRLF versus Git LF distinction and frozen return EOF whitespace observation are retained in prior completion/custody. Current design material3 raw files match committed blobs; no current implementation, refusal program, Native/product/browser/container/provider/delete or fresh live AI claim.
 
+
+Closure observation: initial material3 split closure PASS. Initial continuity6 closure failed core self-protection/packaging because the later handoff had reduced its authorization list to one path. Normal91/91 commits and session preflight had passed. Local preserves the failed log/receipt metadata and restores the original six-path list in this handoff-only correction; no source/state/authority or effect change. The failed metadata copy references the preceding material receipt cache, not a successful continuity receipt. Targeted continuity plus remaining handoff range closures follow, without material/proof replay.
+
 ## Current Authority
 
 Baseline `docs/baselines/CVF_GC018_NCR_HTML_SOURCE13_CONTROLS_LOCAL_2026-10-16.md` raw SHA256 `7396a646eb42004093634d6d7beef77111b6256fe03b7a8325b1589fdd6744b5`; closed verification order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE13_CONTROLS_2026-10-16.md` raw SHA256 `1ee37e0ea67f579eeda6a49a37cc8df268a2c0fee9a37dec0e9894202df269b3`. Completion `docs/reviews/CVF_NCR_HTML_SOURCE13_CONTROLS_COMPLETION_2026-10-16.md`; Local proof `docs/reviews/evidence/ncr-html-source13-controls-local-20261016.json` SHA256 `4dcb0608e9a57e1d49b892ddcfe46c0f2b6b7ffd4f7e2c8780e49e06095c80ed`. Source identity release `docs/reviews/evidence/ncr-html-source-release-20261016.json` SHA256 `d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5` retains original source authority pair. These are cooperative integrity/mechanical prerequisites, not operator authentication or runtime consent. Current actual cap2 receipt SHA256 `25d3aaaa2e409a577838ac705417411ef4e1392880c612332a5371ee8b26ddec`; distinct cap1 SHA256 `b04259a5aa0153cece1394fef803b6d3e44dcd5212956c3c0f1fbec1b896554a`, durable bytes in canonical proofs, source13 unchanged. No relabel/refill. Next Local driver must enforce64 attempt partition by admitted cleanup operation, exact identities before daemon/browser effects, preserve original run-owned staging/finalizer/ACK and demonstrate refusal paths before release.
@@ -99,11 +102,16 @@ Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: final active-handoff-only actual design/continuity SHA/result sync; no source, authority, generated-state, checker or hook semantics.
+Authorized guard-maintenance scope: retain the exact6 continuity authorization below for committed-range verification and correct this active handoff only. The earlier final handoff narrowed this list prematurely; historical-range checkers inspect current authorization text. No authority/state/checker/hook semantics change.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
-Operator authorization: current full Local roadmap handling and committed design-only assessment split choreography.
-Rollback boundary: this single handoff result sync; preserve material3, continuity6, source13/release/closed authority, raw failures/proofs/counters/freeze/prior7 P4 exclusions and parked effects.
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+Operator authorization: existing full Local roadmap handling; committed design-only assessment, original exact6 continuation and final handoff-only result choreography. Exact6 was prospectively authorized in its own commit; retaining that list does not create another state mutation grant.
+Rollback boundary: current handoff-only documentary correction. Preserve all committed material3/continuity6/handoff1, sources/authority, raw failures/proofs, counters/freeze/P4 exclusions and parked effects.
 
 ## Agent Operation Trace Block
 
@@ -111,22 +119,22 @@ Rollback boundary: this single handoff result sync; preserve material3, continui
 |---|---|
 | Actor | Local INTERNAL_AGENT reviewer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-effect-design-final-handoff-20261016 |
+| Session or invocation | ncr-be-effect-design-authorization-retention-20261016 |
 | Working directory | repository root |
-| Command or tool surface | read committed material3/continuity6 raw/blob hashes and normal collector outcomes; final handoff-only result sync; split closure |
+| Command or tool surface | restore prior6 authorization names in handoff only; preserve failed closure; focused required range checks |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
-| Allowed scope source | current full Local roadmap handling; committed design-only assessment choreography |
-| Before status evidence | clean worktree at 91dd4b8612d708f7819d2b461d0fffb16aacfda6; git status --short empty |
-| After status evidence | exact1 active-handoff-only result sync; unchanged source/authority/state |
-| Diff evidence | exact1 staged handoff; material3/continuity6/handoff1 checked as separate committed ranges |
-| Approval boundary | Local next source-only packet preparation only; no implementation/runtime release |
-| Claim boundary | design and current continuation only; no executed refusal/B-E/live AI governance proof |
+| Allowed scope source | existing full Local handling; original prospective6 continuity authorization and design split choreography |
+| Before status evidence | clean worktree at ef04b33fbdc35e5c81f96ac593ada9470942cf30; git status --short empty; material closure PASS, continuity closure blocked |
+| After status evidence | exact1 documentary authorization retention; all source/state/authority unchanged |
+| Diff evidence | exact1 handoff correction; original failed closure retained |
+| Approval boundary | no expanded state write or implementation/runtime grant |
+| Claim boundary | documentation/range validation correction only; no executed refusal or actual B-E proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-effect-design-final-handoff-20261016 |
+| Invocation ID | ncr-be-effect-design-authorization-retention-20261016 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Manifest delta | MATCH exact1 |
-| Deletion or rename disposition | none; all earlier proof/failures/custody retained |
+| Deletion or rename disposition | none; failed initial closure and every committed artifact retained |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.
