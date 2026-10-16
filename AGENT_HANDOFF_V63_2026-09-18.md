@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `a7902f64b792a3f34b4246fd65b26e166fb0217a`. Material SHA: `a7902f64b792a3f34b4246fd65b26e166fb0217a`. Batch ID: CVF-RETURN-ROUTE-EARLY-20261016. Exact6 actual-material continuity; clean split closure follows.
+Current HEAD recorded for this handoff: `e09a23ae298895123e994073fbc5ac78564fec5a`. Material SHA: `e09a23ae298895123e994073fbc5ac78564fec5a`. Batch ID: CVF-NCR-HTML-B-E-SOURCE-CORRECTION-PLAN-20261016. Exact6 actual-material continuity; clean split closure follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Accepted bounded static guard, completion `docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md`, proof `docs/reviews/evidence/return-route-early-local-20261016.json`. No current Windows/B-E functional acceptance; original failed runtime and retained stage/custody remain evidence. No retired grant is reopened.
+Accepted consolidated PLAN `docs/assessments/CVF_NCR_HTML_WINDOWS_SOURCE_CORRECTION_PLAN_2026-10-16.md`, proof `docs/reviews/evidence/ncr-html-windows-source-correction-plan-20261016.json` SHA256 `9b4f6035e6319a853199f50374ad8f7bf6dd1ccf03592141eac2a8292a1ff665`. Local consumed read-only design and verified current18 source raw identities. No source edit or native/runtime test occurred. Next source-only order must bind all six planned source/test paths, extraction/size limits and finite Windows proof. Original failed runtime/stage/custody/releases unchanged; no old grant reopened.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_return_route_early_guard_accepted_source_plan`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=consolidated Windows source-correction PLAN after bounded guard acceptance; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=CLOSURE; decision owner=LOCAL; parked checkpoint=old runtime grants retired and unrelated effects parked, no generic documentary checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_windows_source_correction_plan_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local author/review/release of one consolidated source-only correction order from accepted Windows PLAN; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=PLAN_ACCEPTED; decision owner=LOCAL; parked checkpoint=old runtime grants retired and effect-specific product/live/deletion lanes parked, no generic documentary checkpoint.
 
 ## Current Mode
 
-`cvf_return_route_early_guard_accepted_source_plan`. Bounded static guard accepted; Windows integration correction remains PLAN. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged. Historic runtime1spent/2retired; no old window refill.
+`cvf_ncr_html_windows_source_correction_plan_ready`. Consolidated source correction PLAN accepted; BUILD and real Windows seam proof require concrete source-only baseline/order. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged. Original runtime1spent/2retired, no retry or counter reset.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md` SHA256 `e85d2d4cae3ae20a1ad86af46a7b7871004a46a2b5ae16b5990e236e4974e1dc`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md` SHA256 `46a61fced477f2b42d94cc5b818ec3b56d23e0542c04abf7af1f8ab136ff7b00`. Closed bounded guard provenance only, no implementation/runtime successor grant.
+Accepted planning evidence: `docs/assessments/CVF_NCR_HTML_WINDOWS_SOURCE_CORRECTION_PLAN_2026-10-16.md`; proof `docs/reviews/evidence/ncr-html-windows-source-correction-plan-20261016.json`. Last paired guard provenance remains baseline `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md` SHA256 `e85d2d4cae3ae20a1ad86af46a7b7871004a46a2b5ae16b5990e236e4974e1dc`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md` SHA256 `46a61fced477f2b42d94cc5b818ec3b56d23e0542c04abf7af1f8ab136ff7b00`. Those closed bytes are not a new source/runtime successor grant.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-SOURCE-CORRECTION-PLAN-20261016. Early return-route guard accepted at material a7902f64b792a3f34b4246fd65b26e166fb0217a; consume docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md and docs/reviews/evidence/return-route-early-local-20261016.json. Static changed ready packet check reuses production builder, no opt-in escape, no downstream subprocess; actual latency and limits are in proof. Existing fail-fast material helper used; repository gate PASS does not accept B-E. Return to one consolidated Windows preload/strict-adjunct and admitted-junction pruning/refusal source-correction PLAN from original negative runtime. That functional correction/proof remains NOT_IMPLEMENTED/NOT_PROVEN; October16 whole-learning effectiveness not promoted. No old release repin/runtime replay/provider/deletion. Old1spent/2retired, source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/parked effects/LHW24 retained. Ordinary design details Local; no generic operator checkpoint.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-WINDOWS-SOURCE-CORRECTION-20261016. Consolidated Windows source correction PLAN accepted at material e09a23ae298895123e994073fbc5ac78564fec5a; consume docs/assessments/CVF_NCR_HTML_WINDOWS_SOURCE_CORRECTION_PLAN_2026-10-16.md and docs/reviews/evidence/ncr-html-windows-source-correction-plan-20261016.json. Next Local authors/reviews/releases ONE source-only baseline/work order covering canonical NODE_OPTIONS producer/strict adjunct, existing source_release path-admission extraction, exact verified junction topdown pruning/refusal, six-path source/test union and measured per-file budgets. Admit future Windows synthetic fixture programs only through that concrete order, with distinct worker/Local budgets and frozen new source-admission authority before new release digest. Current plan grants no BUILD/test/runtime; ordinary design/packet details Local, no generic operator checkpoint. Original source13/adjunct5 and releases unchanged now; later accepted changed source needs NEW identity, never old-release repin. No old B-E replay/provider/deletion. Old1spent/2retired, gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/parked LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred. Early return-route guard must construct exact later READY return command; repository gates are not Windows/B-E acceptance.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -66,13 +66,13 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
-Learning material `58d19d7873a11c8c55a8f0c214cb3833183f055e`: normal automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE. Final continuity collector inspected after its normal commit. No manual rerun, new observation promotion or change to prior7 exclusions. Older dispositions remain in Git history.
+Planning material `e09a23ae298895123e994073fbc5ac78564fec5a`: normal automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE. No manual rerun, new observation promotion or change to prior7 exclusions. Final continuity collector is inspected after its normal commit. M5/M10/safety/M20 review boundaries retained.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: current paired authority/raw hashes, mode/next and actual material marker must align across source/generated startup surfaces.
+Atomicity reason: current mode/next/plan and actual material SHA align across source/generated startup surfaces.
 
 Exact changed manifest:
 
@@ -87,7 +87,7 @@ Rollback boundary: exact listed continuity paths only.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 mode/next/currentAuthority raw-hash continuity and canonical generation only.
+Authorized guard-maintenance scope: exact6 mode/next/current-plan continuity and canonical generation only. Last paired authority hashes unchanged.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -95,31 +95,31 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: explicit checker repair with proportional latency and standing Local maintenance/commit authority.
-Rollback boundary: exact listed six continuity paths; no product source, old runtime/evidence, counters, freeze, exclusions or parked effect change.
+Operator authorization: current next and standing Local roadmap/orchestration/reviewer/continuity authority.
+Rollback boundary: exact six continuity paths; no source, prior evidence/runtime, counters/freeze/exclusions or parked effect change.
 
 ## Agent Operation Trace Block
 
 | Field | Value |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher/reviewer/steward |
+| Actor | Local INTERNAL_AGENT orchestrator/reviewer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | return-route-early-closure-continuity-20261016 |
+| Session or invocation | ncr-windows-source-correction-plan-continuity-20261016 |
 | Working directory | repository root |
-| Command or tool surface | source edits, canonical generation, staged exact6 normal commits/gates |
+| Command or tool surface | source6 edits; canonical generation; normal gated continuity commit |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator explicit bounded checker fix and standing Local continuity authority |
-| Before status evidence | material a7902f64b792a3f34b4246fd65b26e166fb0217a committed; clean worktree/stage empty |
-| After status evidence | current paired authority/mode/next and actual material SHA synchronized |
-| Diff evidence | exact6 manifest; no source or behavior claim |
-| Approval boundary | guard task only, old product/runtime grants retired |
-| Claim boundary | startup continuity not functional acceptance |
+| Allowed scope source | operator next and standing Local continuity authority |
+| Before status evidence | planning material e09a23ae298895123e994073fbc5ac78564fec5a committed; clean worktree/stage empty |
+| After status evidence | accepted consolidated PLAN and actual material SHA synchronized; source-only order authoring next |
+| Diff evidence | exact6 mode/next/plan source-generated continuity |
+| Approval boundary | planning continuation only, no BUILD/native/runtime effect |
+| Claim boundary | startup continuity not source/Windows/B-E acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | return-route-early-closure-continuity-20261016 |
+| Invocation ID | ncr-windows-source-correction-plan-continuity-20261016 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH six continuity paths |
-| Deletion or rename disposition | none; old stage/custody retained |
+| Deletion or rename disposition | none; original stage/custody and ignored plan evidence retained under Local |
 
 ## Claim Boundary
 
