@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md",
     "workOrderSha256": "91c68300c20a40bf380329f8c4247adb1a7f692851567846c607d53c17332b5f"
   },
-  "currentAuthoritySyncReason": "Passive request observer material; actual blocked result split PASS consumed, prior evidence/source identity immutable.",
+  "currentAuthoritySyncReason": "Passive request observer continuity; actual blocked result split PASS consumed, prior evidence/source identity immutable.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
