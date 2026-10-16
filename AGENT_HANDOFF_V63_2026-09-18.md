@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `4ee706cec84f60e53396d62e0d469b2a16da06c3`. Material SHA: `4ee706cec84f60e53396d62e0d469b2a16da06c3`. Batch ID: CVF-NCR-HTML-SOURCE13-CONTROLS-20261016. Actor controls verification packet only; bound gate pending, no actual matrix yet.
+Current HEAD recorded for this handoff: `a3c9dad29e8720a43331260a424d00371d4da506`. Material SHA: `a3c9dad29e8720a43331260a424d00371d4da506` (released execution/review anchor only). Batch ID: CVF-NCR-HTML-SOURCE13-CONTROLS-20261016. Current actual actor controls accepted bounded; atomic final12 commit pending; later handoff-only records its actual SHA/result.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Fixed existing-source verification only; no source13 or driver edits. Worker owns cap2 and tracked exact2 return after explicit root publication barrier; Local owns separate cap1 oracle, review and commits. All matrix custody ignored while both actual admissions need clean worktree. Full B-E and live-provider bundle remain outside this inert-child envelope.
+Unchanged source13 mechanical controls only: worker cap2 exact2/full gate frozen; Local distinct cap1 and shared raw joins PASS. Root owns canonical Local proof/completion/closed order/roadmap and atomic exact6 alignment. Actual final12 then one handoff-only actual-SHA/result sync; source/release/original authority and historical windows retained. No B-E effects or new driver released.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_source13_controls_released`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound controls verification, worker cap2 then distinct Local cap1 with clean-tree publication barrier; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=source13 mechanical inert prerequisites; decision owner=Local; parked checkpoint=actual B-E/job/product/browser/container/provider/disposal/parent/public/deploy effects require separate admission.
+Startup acknowledged: current mode=`cvf_ncr_html_source13_controls_accepted_b_e_plan_open`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local bounded B-E effect-driver/refusal/envelope preparation; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=current source13 mechanical controls accepted bounded/procedure partial; decision owner=Local; parked checkpoint=actual B-E/Native/product/browser/container/provider/disposal/parent/public/deploy effects require their current technical admission; no extra operator checkpoint for preparation.
 
 ## Current Mode
 
-`cvf_ncr_html_source13_controls_released`. Same source13/production7/oracles6/gen9 and frozen source release; no root SCEC transition or new critical evidence. Bound pre-dispatch required after exact pair plus this continuity commit; no execution proof yet.
+`cvf_ncr_html_source13_controls_accepted_b_e_plan_open`. Worker9/26 and independent Local9/26 actual, fake refused, shared joins PASS; total52 inert case starts, all5 programs closed/no retry. Worker final-byte full gate6.12s including reviewer70 PASS and detached hashes consumed, no duplicate matrix. Dispatch and worker packet/edit failures retained; Local wording clarification, procedure partial. Same source13/production7/oracles6/gen9/root SCEC2/counters2,0,2,0/blockers/freeze. No actual Native/Job/product/browser/container/provider/network/delete or fresh live AI-governance proof; B-E/parent/disposal open.
 
 ## Current Authority
 
-Current controls baseline `docs/baselines/CVF_GC018_NCR_HTML_SOURCE13_CONTROLS_LOCAL_2026-10-16.md` raw SHA256 `7396a646eb42004093634d6d7beef77111b6256fe03b7a8325b1589fdd6744b5` and work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE13_CONTROLS_2026-10-16.md` raw SHA256 `db93f9c8b361e97303c6c048a3b5c04a441ff2f1f91c1f604ec049ae635d93c5`, paired material `4ee706cec84f60e53396d62e0d469b2a16da06c3`. These grant bounded mechanical inert verification52, not B-E effects or AI-governance runtime acceptance. Existing source snapshot release `docs/reviews/evidence/ncr-html-source-release-20261016.json` SHA256 `d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5` keeps its original closed source authority pair unchanged. Root owns frozen pins/driver hashes and distinct Local cap1; worker must wait for root after ignored raw cap2 result before tracked publication. Existing old source12/control/native/tool proofs remain revision-specific, all old failures/windows retained.
+Baseline `docs/baselines/CVF_GC018_NCR_HTML_SOURCE13_CONTROLS_LOCAL_2026-10-16.md` raw SHA256 `7396a646eb42004093634d6d7beef77111b6256fe03b7a8325b1589fdd6744b5`; closed verification order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE13_CONTROLS_2026-10-16.md` raw SHA256 `1ee37e0ea67f579eeda6a49a37cc8df268a2c0fee9a37dec0e9894202df269b3`. Completion `docs/reviews/CVF_NCR_HTML_SOURCE13_CONTROLS_COMPLETION_2026-10-16.md`; Local proof `docs/reviews/evidence/ncr-html-source13-controls-local-20261016.json` SHA256 `4dcb0608e9a57e1d49b892ddcfe46c0f2b6b7ffd4f7e2c8780e49e06095c80ed`. Source identity release `docs/reviews/evidence/ncr-html-source-release-20261016.json` SHA256 `d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5` retains original source authority pair. These are cooperative integrity/mechanical prerequisites, not operator authentication or runtime consent. Current actual cap2 receipt SHA256 `25d3aaaa2e409a577838ac705417411ef4e1392880c612332a5371ee8b26ddec`; distinct cap1 SHA256 `b04259a5aa0153cece1394fef803b6d3e44dcd5212956c3c0f1fbec1b896554a`, durable bytes in canonical proofs, source13 unchanged. No relabel/refill. Next Local driver must enforce64 attempt partition by admitted cleanup operation, exact identities before daemon/browser effects, preserve original run-owned staging/finalizer/ACK and demonstrate refusal paths before release.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-SOURCE13-CONTROLS-20261016. Material=4ee706cec84f60e53396d62e0d469b2a16da06c3; workOrder=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE13_CONTROLS_2026-10-16.md. Next bound pre-dispatch then worker pre-implementation before fixed source13 verification. Worker fake then actual cap2/26 inert Python children; ignored raw return then WAIT_ROOT_PUBLISH. Local distinct fake then actual cap1/26; only after both actual matrices end may worker publish tracked exact2. Source-release d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5 and all13/prod7/oracle6 bytes immutable; actual admission needs clean worktree. Each actor2 programs/one actual matrix/26 inert children, no retries; total52; each program watchdog90s. Root120min/worker90min including preparation; historical slots retired, fresh current-source admission only. No standalone stage copy because full runner requires fresh namespace. Concrete B-E envelope planning only; actual Native/Job/product/browser/container/listener/network/provider/delete/public/deploy0. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/gen9/SCEC2/counters2,0,2,0/blockers2/freeze; no transition/independentCriticalEvidence. Prior7 P4 blocks/exclusions retained, normal collector only. Full B-E/parent/disposal open; R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-SOURCE13-CONTROLS-20261016. CURRENT_SOURCE13_MECHANICAL_CONTROLS_ACCEPTED_BOUNDED_PROCEDURE_PARTIAL; completedControlOrder=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE13_CONTROLS_2026-10-16.md; completion=docs/reviews/CVF_NCR_HTML_SOURCE13_CONTROLS_COMPLETION_2026-10-16.md; localProof=docs/reviews/evidence/ncr-html-source13-controls-local-20261016.json@4dcb0608e9a57e1d49b892ddcfe46c0f2b6b7ffd4f7e2c8780e49e06095c80ed. Worker cap2 actual9/26 and distinct Local cap1 actual9/26 PASS, fake26 adapters/0child refused each; shared raw joins PASS. All5 proof programs/52 inert case starts consumed once, no retries/new slots. Two actors/two modes each, not4actors; worker wording clarified by Local. Source13=production7/oracles6/gen9 and frozen source release d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5 unchanged, original source authority pair immutable. Next Local prepares pinned B-E effect driver/refusal checks and exact before-effect envelope: two sequential fresh namespaces/runs cap2v1v2 then distinct cap1v1, proposal64 controlled starts each (56work/8cleanup) distinct from Job32concurrent and900/120s; exact qualified Docker/image/Chromium before dependent effect. Current runner lacks cumulative cap/exact identity enforcement; no driver/runtime successor released, no standalone stage/resume. Actual Native/Job/product/browser/container/provider/network/delete0; no fresh live9/9/AI governance or parent/disposal proof. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/SCEC2/counters2,0,2,0/blockers2/freeze; no transition/independentCriticalEvidence. Prior7 P4 blocks/exclusions retained, normal collector only. R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -63,8 +63,10 @@ AKOE current roadmap `docs/roadmaps/CVF_ACEL_APPLIED_KNOWLEDGE_OWNER_ENRICHMENT_
 - promotion or restoration of the thirteen rejected archived paths without fresh Local review.
 The historic provider/live parked line applies to those stopped lanes; it does not revoke the separately authorized bounded Alibaba NCR tests. No pilot/runtime activation follows from a test.
 Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints are action-specific; do not require a user-supplied ledger copy for unrelated fresh isolated development.
-NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Canonical release bundle9/9 PASS on current sources with real Alibaba; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
+NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
+
+Dispatch material `4ee706cec84f60e53396d62e0d469b2a16da06c3` and continuity `a3c9dad29e8720a43331260a424d00371d4da506`: normal collector SKIPPED_NO_ELIGIBLE_CANDIDATE each. Final12/final handoff outcomes inspected after their commits; no manual rerun, no prior7 block/exclusion promotion.
 
 Current source material `1c8825f3fa96b08a4e80a73d6ec037caca6d9632` normal automatic collector: SKIPPED_NO_ELIGIBLE_CANDIDATE. No manual collector rerun or prior7 block/exclusion promotion. Final handoff collector result is inspected separately.
 
@@ -87,7 +89,7 @@ Historical conditional OBS-079b96e73400827c trusted BLOCKED/adjudication remains
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 dispatch-state source/generated alignment and actual material SHA; no checker/hook/carrier semantics.
+Authorized guard-maintenance scope: exact6 closed-order/currentAuthority/result alignment in atomic final12; one final active-handoff-only actual-SHA/result sync; no checker/hook/carrier semantics.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -95,31 +97,32 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current roadmap/full Local handling and committed bounded controls baseline/order.
-Rollback boundary: exact6 dispatch continuity only; preserve paired packet, source13 release/authority, counters/freeze/P4 exclusions and parked effects.
+Operator authorization: current full Local roadmap handling, committed controls packet and exact12 completion authorization.
+Rollback boundary: exact12 only, then exact active handoff; preserve source/release/proofs/failures, root counters/freeze/prior7 exclusions and parked effects.
 
 ## Agent Operation Trace Block
 
+
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher/reviewer/steward |
+| Actor | Local INTERNAL_AGENT reviewer/closer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | source13-controls-dispatch-20261016 |
+| Session or invocation | ncr-source13-controls-local-closure-20261016 |
 | Working directory | repository root |
-| Command or tool surface | four source continuity edits plus canonical generator; exact6 commit; bound release gate |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | current Local authority and paired controls packet |
-| Before status evidence | clean paired material `4ee706cec84f60e53396d62e0d469b2a16da06c3` |
-| After status evidence | exact6 aligned authority/EXECUTE; gates pending before effects |
-| Diff evidence | exact6 staged paths |
-| Approval boundary | mechanical inert controls only; no runtime/provider/public grant |
-| Claim boundary | dispatch facts, no matrix outcome |
+| Command or tool surface | consume frozen worker full gate; independent cap1/raw joins; bounded documentary B-E plan; atomic12 state alignment then handoff-only actual-SHA sync |
+| Target paths | `docs/reviews/CVF_NCR_HTML_SOURCE13_CONTROLS_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-source13-controls-worker-20261016.json`; `docs/reviews/CVF_NCR_HTML_SOURCE13_CONTROLS_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-source13-controls-local-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE13_CONTROLS_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator full Local roadmap authority, paired controls order and exact mixed closure authorization |
+| Before status evidence | clean actual execution a3c9dad29e8720a43331260a424d00371d4da506; frozen worker exact2 returned unstaged |
+| After status evidence | current-source mechanical controls accepted bounded/procedure partial; final exact12 aligned, no actual B-E effects |
+| Diff evidence | exact12 staged manifest; handoff-only later range separate |
+| Approval boundary | mechanical prerequisites; future effect driver/runtime must pass separate Local before-effect admission |
+| Claim boundary | no current Native/product/AI governance/parent/disposal/public readiness |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | source13-controls-dispatch-20261016 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; old custody retained |
+| Invocation ID | ncr-source13-controls-local-closure-20261016 |
+| Expected manifest | `docs/reviews/CVF_NCR_HTML_SOURCE13_CONTROLS_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-source13-controls-worker-20261016.json`; `docs/reviews/CVF_NCR_HTML_SOURCE13_CONTROLS_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-source13-controls-local-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE13_CONTROLS_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/reviews/CVF_NCR_HTML_SOURCE13_CONTROLS_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/ncr-html-source13-controls-worker-20261016.json`; `docs/reviews/CVF_NCR_HTML_SOURCE13_CONTROLS_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-source13-controls-local-20261016.json`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE13_CONTROLS_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact12; later active-handoff-only sync separate |
+| Deletion or rename disposition | none; all custody/failures retained |
 
 ## Claim Boundary
 Current facts, exact packet binding and permitted next action only. Historical Home/O6 evidence remains bounded; no whole-roadmap, live/provider, backend cancellation, release/public/deployment or model-winner claim.

@@ -5,13 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.45
+Version: 2.46
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
 
-**2026-10-16 explicit source admission accepted bounded:** `docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_COMPLETION_2026-10-16.md` / `docs/reviews/evidence/ncr-html-source-admission-local-20261016.json` accept the closed source identity schema, paired CLI/API selector and external digest, exact13 raw pins, immutable five product objects and immediate staging recheck. Root freezes `docs/reviews/evidence/ncr-html-source-release-20261016.json` (SOURCE_IDENTITY_ONLY); cooperative integrity, not operator authentication/runtime consent. Worker227/227 at frozen pre-correction revision; Local30/30 independent and affected1/1 after one oracle-map test correction; final current source13/production7/oracles6 pins owned by Local. Original worker failures/preparation partial retained, production code not locally changed, no broad/native/control replay. Actual effects0; prior source12/cap1/native/tool evidence historical at own bytes, fresh actual controls and owned stage/B-E envelope precede product. Same root/generation9/SCEC2/counters2,0,2,0/blockers/freeze/P4 exclusions; no transition or new independent critical evidence; B-E/parent/disposal unproved. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained. Public Export Disposition: DEFERRED_PRIVATE_ONLY.
+**2026-10-16 current source13 actor controls accepted bounded:** `docs/reviews/CVF_NCR_HTML_SOURCE13_CONTROLS_COMPLETION_2026-10-16.md` / `docs/reviews/evidence/ncr-html-source13-controls-local-20261016.json` record worker cap2 actual9/26 and distinct Local cap1 actual9/26 PASS, fake receipts refused, shared raw joins PASS,52 aggregate inert case starts/no retry. Exact source13/production7/oracles6 and frozen source release unchanged; source identity acceptance at `docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_COMPLETION_2026-10-16.md` remains bounded/procedure partial. No source edits or actual Native/Job/product stage/browser/container/provider/delete; historical proofs remain at their own revisions, prior failures retained. Worker authoring recovery/two failed gate candidates and dispatcher friction disclosed; final worker bytes full gate PASS. Concrete future two-run B-E proposal bounds64 controlled starts perrun (56work/8cleanup), separately Job32 concurrency and900/120s; exact qualified identities need a pinned before-effect driver and refusal checks before release. No standalone stage/resume interface or current live9/9 claim. Same root/gen9/SCEC2/counters2,0,2,0/blockers/freeze/prior7 P4 exclusions; no transition/new critical evidence. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained. Public Export Disposition: DEFERRED_PRIVATE_ONLY.
 
 **2026-10-16 native prerequisite PLAN complete; entry blocked:** `docs/assessments/CVF_NCR_HTML_NATIVE_PROOF_PREREQUISITES_2026-10-16.md` / `docs/reviews/evidence/ncr-html-native-prerequisites-local-20261016.json` consume prior160 Python/13 Node/14 independent and six read-only validated receipts without control rerun. Standalone Windows ABI/owned benign-child N1-N4 can precede B-E; documented snapshot INVALID_HANDLE_VALUE differs from zero-only Win32._ok used by resume, so one consolidated existing-owner source envelope comes first. Actual failure unobserved; current cap1 refuses before namespace, tools/image/host unknown. No native/product/browser/container/provider/delete or budget refill. Same root/generation6/SCEC2/counters2,0,2,0/blockers/freeze/P4 exclusions retained. Local prepares the source-correction envelope directly, no manual relay/new checker. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 unchanged.
 
@@ -148,9 +148,9 @@ are evidence quantities, not product-completion percentages.
 
 ## Current Runtime Freshness Verification
 
-Checkpoint base: f93e07bed73958a2e9aac928bf1c4f9ff5bfc43f. Consume the three named
-bounded completion records at their accepted revisions; no product or provider
-rerun for this document update. Complete journey/live freshness remains unproved.
+Current mechanical controls execution base: a3c9dad29e8720a43331260a424d00371d4da506. Fresh source13 actor receipts only;
+consume named product/native/live completions at their recorded revisions. No product/provider
+rerun in this package; complete B-E journey/current live freshness remains unproved.
 
 ### Current Bounded Browser Contribution - 2026-10-13
 
