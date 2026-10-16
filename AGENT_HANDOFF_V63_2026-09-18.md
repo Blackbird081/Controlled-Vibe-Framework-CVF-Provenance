@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `0a865bdfd3019351791d19fbaa2cae1ee3d3d913`. Material SHA: `0a865bdfd3019351791d19fbaa2cae1ee3d3d913`. Batch ID: CVF-NCR-HTML-WINDOWS-QUALIFICATION-20261016. Exact6 actual-material continuity; clean split closure follows.
+Current HEAD recorded for this handoff: `d99f0d89d03228c487feb8e8a3980bab444018f7`. Material SHA: `d99f0d89d03228c487feb8e8a3980bab444018f7`. Batch ID: CVF-NCR-HTML-B-E-FRESH-RUNTIME-20261016. Exact6 actual-material continuity; clean split closure follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -17,7 +17,7 @@ Dispatch exact9 new B/W+roadmap+source6, worker exact2 per current order, follow
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_fresh_be_r01_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one new conditional fresh cap2 BE-R01 after committed bound release/external freeze/worker preimplementation; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=old grants/cap1/provider/deletion and unrelated effects, no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_fresh_be_r01_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one new conditional fresh cap2 BE-R01 after committed bound release/external freeze/worker preimplementation; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=old grants/cap1/provider/deletion and unrelated effects, no generic operator checkpoint.
 
 ## Current Mode
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-FRESH-RUNTIME-20261016. Root selected new one-actor fresh BE-R01 under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md and docs/baselines/CVF_GC018_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md. Execute only after committed pair/currentAuthority, actual-material source6 continuity, bound pre-dispatch PASS, frozen external admission/pins/inputs/independent envelope digest and worker pre-implementation PASS. One default D.execute ordinal1/IMPLEMENTATION_WORKER/cap2/runId=ncr-be-fresh-worker-20261016-r1b, namespace D:/CVF_NCR_RUNTIME/ncr-be-fresh-worker-20261016-r1b, custody D:/CVF_NCR_RUNTIME/custody-be-fresh-20261016-b. Prep16:42Z; worker deadline18:12Z/latest launch17:54Z, Local19:42Z; work900s/cleanup120s,56work+8cleanup controlled roots,outer1080s,retry0/provider0/stageDeletion0. Refusal/ambiguous start spends new slot; no old replay/cap1/provider/deletion. Source18/accepted Windows source B/W/release immutable. Qualification cap2 actual9/26+Docker4+Local PURE10 accepted; qualification split13/6 PASS consumed from prior final-result, no rerun. BE-Q01 checked bounded; BE-R01 in-progress conditional grant remains unchecked, BE-R02 open; support8 retained. Metadata file-only preparation16:43:31Z starts0/source-tools/namespace absence/input spec join is preparation, recheck before consume. Root external freeze occurs after bound gate; pure closed-schema metadata validation adds no runtime slot. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Current material anchor b96096d4a3a9e0d2233688186760721248d4c141; no fresh runtime outcome claimed. Ordinary technical detail Local, no generic operator checkpoint.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-FRESH-RUNTIME-20261016. Root selected new one-actor fresh BE-R01 under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md and docs/baselines/CVF_GC018_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md. Execute only after committed pair/currentAuthority, actual-material source6 continuity, bound pre-dispatch PASS, frozen external admission/pins/inputs/independent envelope digest and worker pre-implementation PASS. One default D.execute ordinal1/IMPLEMENTATION_WORKER/cap2/runId=ncr-be-fresh-worker-20261016-r1b, namespace D:/CVF_NCR_RUNTIME/ncr-be-fresh-worker-20261016-r1b, custody D:/CVF_NCR_RUNTIME/custody-be-fresh-20261016-b. Prep16:42Z; worker deadline18:12Z/latest launch17:54Z, Local19:42Z; work900s/cleanup120s,56work+8cleanup controlled roots,outer1080s,retry0/provider0/stageDeletion0. Refusal/ambiguous start spends new slot; no old replay/cap1/provider/deletion. Source18/accepted Windows source B/W/release immutable. Qualification cap2 actual9/26+Docker4+Local PURE10 accepted; qualification split13/6 PASS consumed from prior final-result, no rerun. BE-Q01 checked bounded; BE-R01 in-progress conditional grant remains unchecked, BE-R02 open; support8 retained. Metadata file-only preparation16:43:31Z starts0/source-tools/namespace absence/input spec join is preparation, recheck before consume. Root external freeze occurs after bound gate; pure closed-schema metadata validation adds no runtime slot. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Current continuity anchor d99f0d89d03228c487feb8e8a3980bab444018f7; no fresh runtime outcome claimed. Ordinary technical detail Local, no generic operator checkpoint.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -66,7 +66,7 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
-Qualification material `0a865bdfd3019351791d19fbaa2cae1ee3d3d913`: normal automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE. No manual rerun/promotion or prior7 exclusion change; continuity outcome inspected after normal commit. M5/M10/safety/M20 retained.
+Fresh runtime dispatch material `d99f0d89d03228c487feb8e8a3980bab444018f7`: normal automatic collector SKIPPED_NO_ELIGIBLE_CANDIDATE. No manual rerun/promotion or prior7 exclusion change; continuity inspected after normal commit. M5/M10/safety/M20 retained.
 
 ## Mixed Protected-Path Atomicity Authorization
 
@@ -76,9 +76,6 @@ Atomicity reason: new runtime pair, BE-R01 in-progress grant and source-generate
 
 Exact changed manifest:
 
-- `docs/baselines/CVF_GC018_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -92,9 +89,6 @@ Rollback boundary: listed metadata only; no source/old evidence or external reso
 
 Authorized guard-maintenance scope: new one-actor fresh BE-R01 B/W, roadmap in-progress grant and source6 current mode/next/raw authority continuity only; no source/checker/hook/carrier semantics.
 Protected paths:
-- `docs/baselines/CVF_GC018_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -110,21 +104,21 @@ Rollback boundary: listed metadata only; immutable source18/accepted source B/W/
 |---|---|
 | Actor | Local INTERNAL_AGENT orchestrator/reviewer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-fresh-be-r01-material-20261016 |
+| Session or invocation | ncr-fresh-be-r01-continuity-20261016 |
 | Working directory | repository root |
 | Command or tool surface | root-reviewed candidate derivative adoption, metadata joins, roadmap/current authority generation; normal gates/commits separately owned by root |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | user next and root concrete fresh one-actor conditional admission |
-| Before status evidence | HEAD b96096d4a3a9e0d2233688186760721248d4c141; accepted qualification/source identity preserved; no fresh runtime executed |
+| Before status evidence | HEAD d99f0d89d03228c487feb8e8a3980bab444018f7; accepted qualification/source identity preserved; no fresh runtime executed |
 | After status evidence | conditional fresh BE-R01 grant; no acceptance; external freeze/bound release/worker preimplementation still required |
-| Diff evidence | exact9 material manifest |
+| Diff evidence | exact6 continuity manifest |
 | Approval boundary | one new ordinal1 IMPLEMENTATION_WORKER cap2 only under committed bound authority/frozen external envelope; no cap1/provider/deletion/retry |
 | Claim boundary | dispatch/current authority only, not fresh journey PASS |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-fresh-be-r01-material-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
+| Invocation ID | ncr-fresh-be-r01-continuity-20261016 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact6 |
 | Deletion or rename disposition | none; prior stage/custody and all negative evidence retained |
 
 ## Claim Boundary

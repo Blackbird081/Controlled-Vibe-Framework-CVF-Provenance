@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md",
     "workOrderSha256": "fdbe12d86125d14337eca608d6389f0562ec339b7166e12758098d989b398acd"
   },
-  "currentAuthoritySyncReason": "Fresh conditional BE-R01 material; accepted qualification split PASS consumed, source18 immutable.",
+  "currentAuthoritySyncReason": "Fresh conditional BE-R01 continuity; accepted qualification split PASS consumed, source18 immutable.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
