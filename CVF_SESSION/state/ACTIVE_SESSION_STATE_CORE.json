@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md",
     "workOrderSha256": "302ff112a4622b8a17377b0de68c604c195c331124d780d5cd59ed60e32db566"
   },
-  "currentAuthoritySyncReason": "Source cache/observer material; actual blocked result split PASS consumed, prior evidence/source identity immutable.",
+  "currentAuthoritySyncReason": "Source cache/observer continuity; actual blocked result split PASS consumed, prior evidence/source identity immutable.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
