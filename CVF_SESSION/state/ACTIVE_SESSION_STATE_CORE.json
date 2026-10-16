@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md",
     "workOrderSha256": "e155112afb42beca9dd34042bf8db6320a8a85030d829c04c0d4da4105790e99"
   },
-  "currentAuthoritySyncReason": "Passive observer source material: bounded source identity only; BE-R01/02 open.",
+  "currentAuthoritySyncReason": "Passive observer source continuity: bounded source identity only; BE-R01/02 open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",

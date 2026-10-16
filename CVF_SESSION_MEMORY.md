@@ -35,7 +35,7 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_passive_request_observer_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN separately governed changed-source qualification and fresh cap2 admission; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=old grant retry/cap1/provider/deletion; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_passive_request_observer_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN separately governed changed-source qualification and fresh cap2 admission; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=old grant retry/cap1/provider/deletion; no generic operator checkpoint.
 
 ## Current Mode
 
@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_passive_request_observer_source_accepted_bounded`; p
 
 Mode: `cvf_ncr_html_passive_request_observer_source_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-PASSIVE-REQUEST-OBSERVER-SOURCE-20261017. BE-S10 source support accepted bounded from real-stream worker RED/GREEN proof/current SOURCE_IDENTITY_ONLY release and distinct Local one-Node probe; consume docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json. Next Local plans separately governed BE-Q03 current-source qualification/control and fresh cap2 runtime authority; prior controls9/26 are not current-source proof. BE-R01/BE-R02 open; no automatic actual effect. Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24 unchanged. BE-R01 failed/unchecked; BE-R02 cap1 open; no prior actor replay. Final material/actual-SHA continuity and clean split closure pending.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-PASSIVE-REQUEST-OBSERVER-SOURCE-20261017. BE-S10 source support accepted bounded from real-stream worker RED/GREEN proof/current SOURCE_IDENTITY_ONLY release and distinct Local one-Node probe; consume docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json. Next Local plans separately governed BE-Q03 current-source qualification/control and fresh cap2 runtime authority; prior controls9/26 are not current-source proof. BE-R01/BE-R02 open; no automatic actual effect. Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24 unchanged. BE-R01 failed/unchecked; BE-R02 cap1 open; no prior actor replay. Actual result material 6e8d31a9f590df4906695e4e896f1945e72c26e6 committed; exact6 actual-SHA continuity prepared; clean split closure pending.
 
 ## Parked Checkpoints
 
