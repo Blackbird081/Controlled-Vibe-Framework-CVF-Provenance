@@ -1,0 +1,635 @@
+{
+  "schemaVersion": "cvf.ncrMainEntryCacheSourceWorker@1",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "executionBaseHead": "8ec066aed46ba6a9e525cead5d59673ab918c374",
+  "actor": "IMPLEMENTATION_WORKER",
+  "workerActorId": "INTERNAL_AGENT_WORKER:ncr-main-entry-cache-source-worker-20261017",
+  "invocationId": "ncr-main-entry-cache-source-worker-20261017",
+  "workOrder": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md",
+    "sha256": "302ff112a4622b8a17377b0de68c604c195c331124d780d5cd59ed60e32db566"
+  },
+  "baseline": {
+    "path": "docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md",
+    "sha256": "16196b0833d0c9bf7ff93275d9210e097bcc1c9907d41566ffccaf53d1a4e589"
+  },
+  "programs": {
+    "red": {
+      "action": "red",
+      "state": "TERMINATED",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.EXE",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\probe_cvf_w05_browser_chain.cjs",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-native\\red\\modules-unused",
+        "http://localhost:1",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-native\\red\\marker.json",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-native\\red\\custody-unused",
+        "owned-profile",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-native\\red\\fake-runner.cjs",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-native\\red\\config-unused.json"
+      ],
+      "cwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF",
+      "timeoutSeconds": 10,
+      "startedUtc": "2026-10-16T17:34:53.032492+00:00",
+      "nodeSha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+      "entrySha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+      "journeySha256": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "guardEnvironment": {
+        "NODE_OPTIONS": "--require \"D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/scripts/cvf_ncr_html_owned_profile/journey.cjs\"",
+        "CVF_NCR_ALLOWED_PORTS": "[]",
+        "CVF_HCR_EGRESS_LOG": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-native\\red\\egress.jsonl"
+      },
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedSeconds": 0.078,
+      "files": {
+        "egress.jsonl": {
+          "bytes": 692,
+          "sha256": "83df20d99a6f0045f50f4e2f527e445da1882999ba5239b6f3fe390e1aa36274"
+        },
+        "fake-runner.cjs": {
+          "bytes": 490,
+          "sha256": "3e7c5f688ee923b71b87867b7fcc9d6ea6ec84f3ebb6ac017f0fdf7d6a03db7a"
+        },
+        "stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "events": [
+        {
+          "pid": 10184,
+          "title": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+          "argv": [
+            "probe_cvf_w05_browser_chain.cjs",
+            "modules-unused",
+            "localhost:1"
+          ],
+          "event": "loaded",
+          "nodeOptionsActive": true
+        },
+        {
+          "pid": 10184,
+          "title": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+          "argv": [
+            "probe_cvf_w05_browser_chain.cjs",
+            "modules-unused",
+            "localhost:1"
+          ],
+          "event": "denied",
+          "via": "tcp",
+          "host": "egress-selftest.invalid",
+          "site": [
+            "node:net:245",
+            "loader:1730",
+            "loader:1895"
+          ]
+        },
+        {
+          "pid": 10184,
+          "title": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+          "argv": [
+            "probe_cvf_w05_browser_chain.cjs",
+            "modules-unused",
+            "localhost:1"
+          ],
+          "event": "denied",
+          "via": "udp",
+          "host": "egress-selftest.invalid",
+          "site": [
+            "loader:1730",
+            "loader:1895",
+            "loader:1465"
+          ]
+        }
+      ],
+      "markerPresent": false,
+      "expectedMatched": true
+    },
+    "green": {
+      "action": "green",
+      "state": "TERMINATED",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.EXE",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\probe_cvf_w05_browser_chain.cjs",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-native\\green\\modules-unused",
+        "http://localhost:1",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-native\\green\\marker.json",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-native\\green\\custody-unused",
+        "owned-profile",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-native\\green\\fake-runner.cjs",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-native\\green\\config-unused.json"
+      ],
+      "cwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF",
+      "timeoutSeconds": 10,
+      "startedUtc": "2026-10-16T17:35:31.369369+00:00",
+      "nodeSha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+      "entrySha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+      "journeySha256": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff",
+      "guardEnvironment": {
+        "NODE_OPTIONS": "--require \"D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/scripts/cvf_ncr_html_owned_profile/journey.cjs\"",
+        "CVF_NCR_ALLOWED_PORTS": "[]",
+        "CVF_HCR_EGRESS_LOG": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-native\\green\\egress.jsonl"
+      },
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedSeconds": 0.094,
+      "files": {
+        "egress.jsonl": {
+          "bytes": 692,
+          "sha256": "8c3752631e7cec08ea29dafc276964b5605973fa530f38b081d589c9a28dac45"
+        },
+        "fake-runner.cjs": {
+          "bytes": 490,
+          "sha256": "3e7c5f688ee923b71b87867b7fcc9d6ea6ec84f3ebb6ac017f0fdf7d6a03db7a"
+        },
+        "marker.json": {
+          "bytes": 1564,
+          "sha256": "7301aed588aad3a1afd1bae73bd9d3c9c3924342cb7b08f297d3e1a27ea1bfc0"
+        },
+        "stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 19,
+          "sha256": "27e1a4ef3e173b09fcce27ac0766f899e0095e7ae9f4afabae12ae342ad22e17"
+        }
+      },
+      "events": [
+        {
+          "pid": 24472,
+          "title": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+          "argv": [
+            "probe_cvf_w05_browser_chain.cjs",
+            "modules-unused",
+            "localhost:1"
+          ],
+          "event": "loaded",
+          "nodeOptionsActive": true
+        },
+        {
+          "pid": 24472,
+          "title": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+          "argv": [
+            "probe_cvf_w05_browser_chain.cjs",
+            "modules-unused",
+            "localhost:1"
+          ],
+          "event": "denied",
+          "via": "tcp",
+          "host": "egress-selftest.invalid",
+          "site": [
+            "node:net:245",
+            "loader:1730",
+            "loader:1895"
+          ]
+        },
+        {
+          "pid": 24472,
+          "title": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+          "argv": [
+            "probe_cvf_w05_browser_chain.cjs",
+            "modules-unused",
+            "localhost:1"
+          ],
+          "event": "denied",
+          "via": "udp",
+          "host": "egress-selftest.invalid",
+          "site": [
+            "loader:1730",
+            "loader:1895",
+            "loader:1465"
+          ]
+        }
+      ],
+      "markerPresent": true,
+      "expectedMatched": true
+    },
+    "suite": {
+      "action": "suite",
+      "state": "TERMINATED",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.EXE",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "cwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF",
+      "timeoutSeconds": 120,
+      "startedUtc": "2026-10-16T17:35:31.804625+00:00",
+      "nodeSha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+      "entrySha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+      "journeySha256": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff",
+      "guardEnvironment": {
+        "NODE_OPTIONS": null,
+        "CVF_NCR_ALLOWED_PORTS": null,
+        "CVF_HCR_EGRESS_LOG": null
+      },
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedSeconds": 0.64,
+      "files": {
+        "stderr.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stdout.log": {
+          "bytes": 4228,
+          "sha256": "4f789214756fab36ff9f54e085f8198de74624a8e14dd5872f9e6b21decd4ae2"
+        }
+      },
+      "expectedMatched": true
+    },
+    "admission": {
+      "action": "admission",
+      "state": "TERMINATED",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "scripts/cvf_ncr_html_owned_profile/test_admission.py",
+        "-q"
+      ],
+      "cwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF",
+      "timeoutSeconds": 120,
+      "startedUtc": "2026-10-16T17:35:40.073539+00:00",
+      "nodeSha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+      "entrySha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+      "journeySha256": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff",
+      "guardEnvironment": {
+        "NODE_OPTIONS": null,
+        "CVF_NCR_ALLOWED_PORTS": null,
+        "CVF_HCR_EGRESS_LOG": null
+      },
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedSeconds": 3.765,
+      "files": {
+        "stderr.log": {
+          "bytes": 661,
+          "sha256": "2a914555f2278d48476e32682802ec1c26db797fe28edce2a47b2cfe998f2f93"
+        },
+        "stdout.log": {
+          "bytes": 264,
+          "sha256": "9ab23fe3db01e09a3ca8aac071a51c267d5e2c1bded56f8082f9cab3e1b08bc5"
+        }
+      },
+      "expectedMatched": true
+    },
+    "renderer": {
+      "action": "renderer",
+      "state": "TERMINATED",
+      "argv": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "-B",
+        "-m",
+        "pytest",
+        "scripts/test_cvf_ncr_html_effect_driver.py",
+        "-q",
+        "-k",
+        "test_preload_renderer_preserves_identity_and_order"
+      ],
+      "cwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF",
+      "timeoutSeconds": 120,
+      "startedUtc": "2026-10-16T17:35:44.258073+00:00",
+      "nodeSha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+      "entrySha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+      "journeySha256": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff",
+      "guardEnvironment": {
+        "NODE_OPTIONS": null,
+        "CVF_NCR_ALLOWED_PORTS": null,
+        "CVF_HCR_EGRESS_LOG": null
+      },
+      "exitCode": 0,
+      "timedOut": false,
+      "elapsedSeconds": 1.375,
+      "files": {
+        "stderr.log": {
+          "bytes": 661,
+          "sha256": "2a914555f2278d48476e32682802ec1c26db797fe28edce2a47b2cfe998f2f93"
+        },
+        "stdout.log": {
+          "bytes": 115,
+          "sha256": "dc22be1686afc9ddc24d94380b51c6d8a33bca7330204cdaadc703321d979bf8"
+        }
+      },
+      "expectedMatched": true
+    }
+  },
+  "physicalNodeStarts": 3,
+  "fixtureNodeStarts": 2,
+  "directSuiteNodeStarts": 1,
+  "pytestStarts": 2,
+  "retries": 0,
+  "providerBrowserDockerServiceStarts": 0,
+  "nativeToolPins": {
+    "schemaVersion": "cvf.ncrMainEntryCacheNativePins@1",
+    "node": {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.EXE",
+      "sha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636"
+    },
+    "entry": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\probe_cvf_w05_browser_chain.cjs",
+      "sha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494"
+    },
+    "preparationStartUtc": "2026-10-16T17:10:00Z",
+    "workerDeadlineUtc": "2026-10-16T18:40:00Z",
+    "localDeadlineUtc": "2026-10-16T20:10:00Z",
+    "workerPhysicalNodeStarts": 3,
+    "workerFixtureStarts": 2,
+    "workerSuiteStarts": 1,
+    "localPhysicalNodeStarts": 1,
+    "fixtureTimeoutSeconds": 10,
+    "workerFixtureWallSeconds": 60,
+    "localFixtureWallSeconds": 30,
+    "suiteTimeoutSeconds": 120,
+    "providerBrowserDockerStarts": 0,
+    "retries": 0
+  },
+  "nativeToolPinsSha256": "4f13569e82677bb8bb92006158eb195d1a701db9638315e83d186d31f77b2fda",
+  "workerRunner": {
+    "path": ".cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker_programs.py",
+    "sha256": "4f007ffdc7f5ef421b87b16046458238544d7ddfa20ea447c398c5910c604632"
+  },
+  "source18": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": {
+      "before": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+      "after": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+      "changed": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": {
+      "before": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+      "after": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+      "changed": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/profile.py": {
+      "before": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+      "after": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+      "changed": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": {
+      "before": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+      "after": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+      "changed": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": {
+      "before": "f76b6d0fec14f2d208fee63004aec2b7211799e5d37160e414633e9dd15d69e0",
+      "after": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff",
+      "changed": true
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": {
+      "before": "a36539cd8021d8ccc2407e7d3c4edaead49fd01d8525dd460ec43752c0d8a66e",
+      "after": "8ed63e7edd13e2dcd695489a0bf6b50c05b54c9f272860ab20a7ecd1a527d86d",
+      "changed": true
+    },
+    "scripts/cvf_ncr_html_owned_profile/execution.py": {
+      "before": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "after": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "changed": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": {
+      "before": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "after": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "changed": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": {
+      "before": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "after": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "changed": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": {
+      "before": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "after": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "changed": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_win32.py": {
+      "before": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "after": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "changed": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py": {
+      "before": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "after": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "changed": false
+    },
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": {
+      "before": "62850d846fb02b171f7635cc4377930c517f3da4d53baf871f625f3216ae619a",
+      "after": "5bbf1c0bf18f1dfa571f2b0de0e18b12fefa7e950dff707abbadbdacfdcca650",
+      "changed": true
+    },
+    "scripts/cvf_ncr_html_effect_fence.py": {
+      "before": "8feaf4f516219119390c3cd8351da99ece0c4f8bc5049068b5d6ccac6940d4d3",
+      "after": "8feaf4f516219119390c3cd8351da99ece0c4f8bc5049068b5d6ccac6940d4d3",
+      "changed": false
+    },
+    "scripts/run_cvf_ncr_html_effect_driver.py": {
+      "before": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+      "after": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+      "changed": false
+    },
+    "scripts/test_cvf_ncr_html_effect_driver.py": {
+      "before": "578c8f10c2fea54c1dd71636109befeb680cfaa5eb608d440690635dc74725a0",
+      "after": "2eaa901e2d5a2ed96bd629b99635cbc5282987b0ce8cba44e5f155a36ec2a0b9",
+      "changed": true
+    },
+    "scripts/cvf_ncr_html_browser_fence.cjs": {
+      "before": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+      "after": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+      "changed": false
+    },
+    "scripts/cvf_ncr_html_browser_fence.test.cjs": {
+      "before": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+      "after": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+      "changed": false
+    }
+  },
+  "immutable": {
+    "docs/reviews/evidence/ncr-html-windows-source-release-20261016.json": {
+      "expected": "ab30a0de37c4f93832117833f1e7093d9a97c2f3e8d08ae7325f0047230cfc9c",
+      "actual": "ab30a0de37c4f93832117833f1e7093d9a97c2f3e8d08ae7325f0047230cfc9c"
+    },
+    "docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md": {
+      "expected": "ccd4e247ff6aac95b3b53040d449d67505394b7da504ddbd87b43ecdf0f3cf6b",
+      "actual": "ccd4e247ff6aac95b3b53040d449d67505394b7da504ddbd87b43ecdf0f3cf6b"
+    },
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md": {
+      "expected": "f9367246a646efb81ef42308007a016031ee690b4f57b7c050cbffd555a788c8",
+      "actual": "f9367246a646efb81ef42308007a016031ee690b4f57b7c050cbffd555a788c8"
+    },
+    "docs/reviews/CVF_NCR_HTML_WINDOWS_QUALIFICATION_COMPLETION_2026-10-16.md": {
+      "expected": "12c1be7d5a42cddab02e82ee999c03bb73992eb27ec7d689d3263edebd6e1c42",
+      "actual": "12c1be7d5a42cddab02e82ee999c03bb73992eb27ec7d689d3263edebd6e1c42"
+    },
+    "docs/reviews/evidence/ncr-html-windows-qualification-local-20261016.json": {
+      "expected": "fe88db43cd58590d34e989a696098e5b4b2517161f9b1ac545dfa51452b9fa2f",
+      "actual": "fe88db43cd58590d34e989a696098e5b4b2517161f9b1ac545dfa51452b9fa2f"
+    },
+    "docs/baselines/CVF_GC018_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md": {
+      "expected": "415adacb789673682c662c49ef1929e1903d96b074665c581ca21dde9d85e6fa",
+      "actual": "415adacb789673682c662c49ef1929e1903d96b074665c581ca21dde9d85e6fa"
+    },
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md": {
+      "expected": "e86184b1dee582acfd8e68774eaf7c788e6b8292e2a525ab374ec368289b7e65",
+      "actual": "e86184b1dee582acfd8e68774eaf7c788e6b8292e2a525ab374ec368289b7e65"
+    },
+    "docs/reviews/CVF_NCR_HTML_B_E_FRESH_RUNTIME_WORKER_RETURN_2026-10-16.md": {
+      "expected": "42166ea05e4dd39d6db2d52db638a1f1c7ecbfb12ee7a54d9f353f9876247052",
+      "actual": "42166ea05e4dd39d6db2d52db638a1f1c7ecbfb12ee7a54d9f353f9876247052"
+    },
+    "docs/reviews/evidence/ncr-html-b-e-fresh-runtime-worker-20261016.json": {
+      "expected": "58f06c929b7b3f4d0c1f629e5fc820310b5f865529545a3d9c9462acc89607ab",
+      "actual": "58f06c929b7b3f4d0c1f629e5fc820310b5f865529545a3d9c9462acc89607ab"
+    },
+    "docs/reviews/CVF_NCR_HTML_B_E_FRESH_RUNTIME_LOCAL_COMPLETION_2026-10-16.md": {
+      "expected": "c7b4abd413be11187e7c0739bfa46fb2a67a138c9201129bfc34e70c073bec8c",
+      "actual": "c7b4abd413be11187e7c0739bfa46fb2a67a138c9201129bfc34e70c073bec8c"
+    },
+    "docs/reviews/evidence/ncr-html-b-e-fresh-runtime-local-20261016.json": {
+      "expected": "a558e8e0a80417fa58ee60bdd8ee97ecd6047f49d6b682d61c576deacc68e43b",
+      "actual": "a558e8e0a80417fa58ee60bdd8ee97ecd6047f49d6b682d61c576deacc68e43b"
+    }
+  },
+  "sourceSizeBudgets": {
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": {
+      "before": 258,
+      "after": 264,
+      "ceiling": 349,
+      "remaining": 85
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": {
+      "before": 240,
+      "after": 315,
+      "ceiling": 349,
+      "remaining": 34
+    },
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": {
+      "before": 196,
+      "after": 196,
+      "ceiling": 349,
+      "remaining": 153
+    },
+    "scripts/test_cvf_ncr_html_effect_driver.py": {
+      "before": 545,
+      "after": 545,
+      "ceiling": 1200,
+      "remaining": 655
+    }
+  },
+  "sourceDiff": "diff --git a/scripts/cvf_ncr_html_owned_profile/journey.cjs b/scripts/cvf_ncr_html_owned_profile/journey.cjs\nindex b74e0cbe6..81ea4189e 100644\n--- a/scripts/cvf_ncr_html_owned_profile/journey.cjs\n+++ b/scripts/cvf_ncr_html_owned_profile/journey.cjs\n@@ -8,7 +8,10 @@ const { createHash } = require('node:crypto');\n const sha = b => createHash('sha256').update(b).digest('hex');\n \n function installOwnedGuard() {\n-  require(path.join(__dirname, '..', 'probe_cvf_w05_browser_chain.cjs'));\n+  const entry = require.resolve(path.join(__dirname, '..', 'probe_cvf_w05_browser_chain.cjs'));\n+  require(entry);\n+  // Its preload import installed the guard; only the future main must execute again as main.\n+  if (process.argv[1] === entry) delete require.cache[entry];\n   const net = require('node:net'), dns = require('node:dns'), http = require('node:http');\n   const ports = new Set(JSON.parse(process.env.CVF_NCR_ALLOWED_PORTS));\n   const local = h => ['127.0.0.1', 'localhost', '::1'].includes(String(h).replace(/^\\[|\\]$/g, ''));\n@@ -45,12 +48,15 @@ function installOwnedGuard() {\n   }\n   const emit = http.Server.prototype.emit;\n   http.Server.prototype.emit = function (event, ...args) {\n-    if (event === 'request' && args[0].url.split('?')[0] === '/api/governance/evaluate') {\n+    if (event === 'request' && args[0].method === 'POST' && args[0].url.split('?')[0] === '/api/governance/evaluate') {\n       const req = args[0], parts = [];\n       req.on('data', b => parts.push(b));\n       req.on('end', () => {\n         const raw = Buffer.concat(parts);\n-        log({ event: 'evaluate-recipient', body: JSON.parse(raw.toString('utf8')),\n+        let body;\n+        try { body = JSON.parse(raw.toString('utf8')); }\n+        catch (_) { log({ event: 'evaluate-recipient-invalid', bodyBytes: raw.length, bodySha256: sha(raw) }); return; }\n+        log({ event: 'evaluate-recipient', body,\n           bodySha256: sha(raw), serviceTokenPresent: Boolean(req.headers['x-cvf-service-token']), cookiePresent: Boolean(req.headers.cookie) });\n       });\n     }\ndiff --git a/scripts/cvf_ncr_html_owned_profile/journey.test.cjs b/scripts/cvf_ncr_html_owned_profile/journey.test.cjs\nindex e09b02324..357556e1c 100644\n--- a/scripts/cvf_ncr_html_owned_profile/journey.test.cjs\n+++ b/scripts/cvf_ncr_html_owned_profile/journey.test.cjs\n@@ -238,3 +238,78 @@ test('legacy browser branches survive exact routing-only patch against the pinne\n   assert.equal(createHash('sha256').update(restored, 'utf8').digest('hex'), BLOB_SHA256);\n   assert.ok(current.includes(\"mode === 'configured-receipt-composition'\"));\n });\n+\n+// Activate the real observer in an isolated VM: no real guard mutation, child, socket or HTTP listener.\n+function guarded(main) {\n+  const { EventEmitter } = require('node:events'), vm = require('node:vm');\n+  const filename = path.join(__dirname, 'journey.cjs'), entry = path.join(__dirname, '..', 'probe_cvf_w05_browser_chain.cjs');\n+  const logs = [], loads = [], sentinel = {}, cached = {}, cache = { [entry]: cached, unrelated: sentinel };\n+  class Server extends EventEmitter {}\n+  class Socket { connect() {} }\n+  const fake = id => {\n+    if (id === entry) { loads.push(id); return {}; }\n+    if (id === 'node:fs') return { appendFileSync: (file, line) => logs.push(JSON.parse(line)) };\n+    if (id === 'node:net') return { Socket };\n+    if (id === 'node:dns') return { promises: {} };\n+    if (id === 'node:http') return { Server };\n+    return require(id);\n+  };\n+  fake.resolve = id => { assert.equal(id, entry); return entry; };\n+  fake.cache = cache;\n+  vm.runInNewContext(fs.readFileSync(filename, 'utf8'), {\n+    require: fake, __dirname, module: { exports: {} }, Buffer,\n+    process: { env: { CVF_NCR_ALLOWED_PORTS: '[]', CVF_HCR_EGRESS_LOG: 'ignored-vm-log' },\n+      argv: ['node', main === 'entry' ? entry : main], pid: 7 },\n+  }, { filename });\n+  return { logs, loads, cache, cached, sentinel, entry, Server, EventEmitter };\n+}\n+\n+test('guard import evicts only its exact future main and leaves library or different main cached', () => {\n+  for (const main of ['entry', undefined, path.join(__dirname, 'different-main.cjs')]) {\n+    const g = guarded(main);\n+    assert.deepEqual(g.loads, [g.entry]);\n+    assert.equal(g.cache.unrelated, g.sentinel);\n+    assert.equal(g.cache[g.entry], main === 'entry' ? undefined : g.cached);\n+    assert.deepEqual(Object.keys(g.cache).sort(), main === 'entry' ? ['unrelated'] : [g.entry, 'unrelated'].sort());\n+    assert.deepEqual(g.logs, []);\n+  }\n+});\n+\n+test('evaluate observer ignores empty GET and records no valid recipient for empty or malformed POST', () => {\n+  const g = guarded(undefined), server = new g.Server();\n+  let delegated = 0;\n+  server.on('request', () => { delegated += 1; });\n+  const send = (method, raw) => {\n+    const req = new g.EventEmitter();\n+    Object.assign(req, { method, url: '/api/governance/evaluate?readiness=1', headers: {} });\n+    server.emit('request', req, {});\n+    if (method === 'GET') assert.equal(req.listenerCount('end'), 0);\n+    req.emit('data', Buffer.from(raw));\n+    assert.doesNotThrow(() => req.emit('end'));\n+  };\n+  send('GET', '');\n+  assert.deepEqual(g.logs, []);\n+  for (const raw of ['', '{broken']) {\n+    send('POST', raw);\n+    const record = g.logs.at(-1);\n+    assert.deepEqual(record, { pid: 7, event: 'evaluate-recipient-invalid', bodyBytes: Buffer.byteLength(raw),\n+      bodySha256: createHash('sha256').update(raw).digest('hex') });\n+  }\n+  assert.equal(delegated, 3);\n+  assert.equal(g.logs.filter(e => e.event === 'evaluate-recipient').length, 0);\n+});\n+\n+test('valid evaluate POST preserves exact body hash and header presence while delegating once', () => {\n+  const g = guarded(undefined), server = new g.Server(), req = new g.EventEmitter();\n+  const raw = '{\"request_id\":\"synthetic-only\",\"value\":1}';\n+  let delegated = 0;\n+  server.on('request', () => { delegated += 1; });\n+  Object.assign(req, { method: 'POST', url: '/api/governance/evaluate', headers: { 'x-cvf-service-token': 'synthetic', cookie: 'synthetic' } });\n+  server.emit('request', req, {});\n+  req.emit('data', Buffer.from(raw.slice(0, 5)));\n+  req.emit('data', Buffer.from(raw.slice(5)));\n+  assert.doesNotThrow(() => req.emit('end'));\n+  assert.deepEqual(g.logs, [{ pid: 7, event: 'evaluate-recipient', body: JSON.parse(raw),\n+    bodySha256: createHash('sha256').update(raw).digest('hex'), serviceTokenPresent: true, cookiePresent: true }]);\n+  assert.equal(delegated, 1);\n+});\ndiff --git a/scripts/cvf_ncr_html_owned_profile/source_release.py b/scripts/cvf_ncr_html_owned_profile/source_release.py\nindex ad05907e4..f9cad480f 100644\n--- a/scripts/cvf_ncr_html_owned_profile/source_release.py\n+++ b/scripts/cvf_ncr_html_owned_profile/source_release.py\n@@ -14,8 +14,8 @@ PROFILE = \"NCR_HTML_OWNED_SYNTHETIC_FRESH_SOURCE_V1\"\n KEYS = {\"schemaVersion\", \"profile\", \"scope\", \"sourcePins\", \"productCommit\", \"productScopeGitObjects\", \"fixture\", \"entrypoints\", \"authority\"}\n SPEC = \"docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md\"\n ENTRYPOINTS = {\"scripts/probe_cvf_q001_synthetic_system_chain.py\", \"scripts/probe_cvf_w05_browser_chain.cjs\"}\n-AUTHORITY = {\"docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md\",\n-             \"docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md\"}\n+AUTHORITY = {\"docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md\",\n+             \"docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md\"}\n SCOPES = (\"EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web\", \"EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE\",\n           \"governance/toolkit/03_CONTROL/CVF_AGENT_REGISTRY.md\", \"governance/toolkit/04_TESTING/CVF_SELF_UAT_DECISION_LOG.md\",\n           \"docs/reference/CVF_GOVERNANCE_STATE_REGISTRY.json\")\ndiff --git a/scripts/test_cvf_ncr_html_effect_driver.py b/scripts/test_cvf_ncr_html_effect_driver.py\nindex d02d122a3..0fc1aef04 100644\n--- a/scripts/test_cvf_ncr_html_effect_driver.py\n+++ b/scripts/test_cvf_ncr_html_effect_driver.py\n@@ -308,8 +308,8 @@ def test_preload_renderer_preserves_identity_and_order():\n     assert F.owned.P.node_preload_options(first, second) == f'--require \"{first.as_posix()}\" --require \"{second.as_posix()}\"'\n     with pytest.raises(ValueError): F.owned.P.node_preload_options()\n     assert F.owned.P.S.AUTHORITY == {\n-        \"docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md\",\n-        \"docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_SOURCE_2026-10-16.md\"}\n+        \"docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md\",\n+        \"docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md\"}\n     assert len(F.owned.P.HELPERS) == 13 and len(F.SOURCES) == 5\n \n \n",
+  "expectedManifest": [
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py",
+    "scripts/test_cvf_ncr_html_effect_driver.py",
+    "docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_WORKER_RETURN_2026-10-17.md",
+    "docs/reviews/evidence/ncr-html-main-entry-cache-source-worker-20261017.json"
+  ],
+  "source13": [
+    "scripts/cvf_ncr_html_owned_profile/__init__.py",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py",
+    "scripts/cvf_ncr_html_owned_profile/profile.py",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+    "scripts/cvf_ncr_html_owned_profile/execution.py",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py",
+    "scripts/cvf_ncr_html_owned_profile/test_win32.py",
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py"
+  ],
+  "adjunct5": [
+    "scripts/cvf_ncr_html_effect_fence.py",
+    "scripts/run_cvf_ncr_html_effect_driver.py",
+    "scripts/test_cvf_ncr_html_effect_driver.py",
+    "scripts/cvf_ncr_html_browser_fence.cjs",
+    "scripts/cvf_ncr_html_browser_fence.test.cjs"
+  ],
+  "preparation": {
+    "boundPreimplementationExit": 0,
+    "boundPreimplementationSeconds": 9.75,
+    "log": {
+      "path": ".cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-preimplementation.log",
+      "sha256": "c52f88b6926650ca2476be0164097816b50461ad98f01ff1d60c80f42c0b5e90"
+    },
+    "scaffoldExit": 0,
+    "inclusiveStart": "2026-10-16T17:10:00Z",
+    "workerDeadline": "2026-10-16T18:40:00Z",
+    "limitations": "Progressive named reads; unchanged prior source/authority owners reused. Some combined tool reads were truncated; no all-body/all-files claim. Explicit raw encoding/line-ending inspection was not recorded before source patch; PARTIAL_WITH_REASON preparation remains disclosed. Initial metadata read used nonexistent root-native-tool-pins.json; corrected to frozen native-tool-pins.json before native start. Root documentary preparation failures remain in W. No effect failure/retry occurred."
+  },
+  "firstGate": {
+    "exitCode": 1,
+    "gateElapsedSeconds": 7.38,
+    "logSha256": "99e134f2e02b608950653afc831f504872bd500f29d094e8cd7335d44c8c33e8",
+    "failures": [
+      "trace lacked exact git diff --name-status token",
+      "gate command line lacked required PASS/COMPLIANT token"
+    ],
+    "repair": "return-only trace and conditional final-gate wording; no source/test/native rerun"
+  },
+  "finalGate": {
+    "actualOutcomeCustody": ".cvf\\runtime\\ncr-main-entry-cache-source-20261017\\worker-fullgate-result.json",
+    "noTrackedAppendAfterFinalGate": true
+  },
+  "parent": {
+    "generation": 9,
+    "scecOrdinal": 2,
+    "counters": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "blockers": 2,
+    "unchanged": true
+  },
+  "localBoundary": "Local independent probe, accepted B/W freeze, new release, F constants, CP/LP/roadmap/continuity/commits pending Local. Old release immutable; changed source needs fresh separate qualification/runtime grant.",
+  "REQ-01": {
+    "status": "PASS",
+    "proofId": "PROOF-REQ-01",
+    "actualArtifacts": [
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "docs/reviews/evidence/ncr-html-main-entry-cache-source-worker-20261017.json"
+    ]
+  },
+  "REQ-02": {
+    "status": "PASS",
+    "proofId": "PROOF-REQ-02",
+    "actualArtifacts": [
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "docs/reviews/evidence/ncr-html-main-entry-cache-source-worker-20261017.json"
+    ]
+  },
+  "REQ-03": {
+    "status": "PASS",
+    "proofId": "PROOF-REQ-03",
+    "actualArtifacts": [
+      "scripts/cvf_ncr_html_owned_profile/source_release.py",
+      "scripts/test_cvf_ncr_html_effect_driver.py",
+      "docs/reviews/evidence/ncr-html-main-entry-cache-source-worker-20261017.json"
+    ]
+  },
+  "REQ-04": {
+    "status": "PASS",
+    "proofId": "PROOF-REQ-04",
+    "actualArtifacts": [
+      "docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_WORKER_RETURN_2026-10-17.md",
+      "docs/reviews/evidence/ncr-html-main-entry-cache-source-worker-20261017.json"
+    ]
+  },
+  "REQ-05": {
+    "status": "PASS",
+    "proofId": "PROOF-REQ-05",
+    "actualArtifacts": [
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "docs/reviews/evidence/ncr-html-main-entry-cache-source-worker-20261017.json"
+    ]
+  }
+}

@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md",
-    "baselineSha256": "16196b0833d0c9bf7ff93275d9210e097bcc1c9907d41566ffccaf53d1a4e589",
+    "baselineSha256": "38898bdeeb7e1797cea882ca26104abf9e17bdc883b9dd073a73c2b27fa6e0b0",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md",
-    "workOrderSha256": "302ff112a4622b8a17377b0de68c604c195c331124d780d5cd59ed60e32db566"
+    "workOrderSha256": "e28ee680db2513e271064602ee5f26655484d89e7e46bdb1246e3aeed47b4b9b"
   },
-  "currentAuthoritySyncReason": "Source cache/observer continuity; actual blocked result split PASS consumed, prior evidence/source identity immutable.",
+  "currentAuthoritySyncReason": "Main-entry/observer source material: bounded source identity only; BE-R01/02 open.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_main_entry_cache_source_dispatched",
-  "previousMode": "cvf_ncr_html_fresh_be_r01_blocked_spent",
+  "currentMode": "cvf_ncr_html_main_entry_cache_source_accepted_bounded",
+  "previousMode": "cvf_ncr_html_main_entry_cache_source_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

@@ -238,3 +238,78 @@ test('legacy browser branches survive exact routing-only patch against the pinne
   assert.equal(createHash('sha256').update(restored, 'utf8').digest('hex'), BLOB_SHA256);
   assert.ok(current.includes("mode === 'configured-receipt-composition'"));
 });
+
+// Activate the real observer in an isolated VM: no real guard mutation, child, socket or HTTP listener.
+function guarded(main) {
+  const { EventEmitter } = require('node:events'), vm = require('node:vm');
+  const filename = path.join(__dirname, 'journey.cjs'), entry = path.join(__dirname, '..', 'probe_cvf_w05_browser_chain.cjs');
+  const logs = [], loads = [], sentinel = {}, cached = {}, cache = { [entry]: cached, unrelated: sentinel };
+  class Server extends EventEmitter {}
+  class Socket { connect() {} }
+  const fake = id => {
+    if (id === entry) { loads.push(id); return {}; }
+    if (id === 'node:fs') return { appendFileSync: (file, line) => logs.push(JSON.parse(line)) };
+    if (id === 'node:net') return { Socket };
+    if (id === 'node:dns') return { promises: {} };
+    if (id === 'node:http') return { Server };
+    return require(id);
+  };
+  fake.resolve = id => { assert.equal(id, entry); return entry; };
+  fake.cache = cache;
+  vm.runInNewContext(fs.readFileSync(filename, 'utf8'), {
+    require: fake, __dirname, module: { exports: {} }, Buffer,
+    process: { env: { CVF_NCR_ALLOWED_PORTS: '[]', CVF_HCR_EGRESS_LOG: 'ignored-vm-log' },
+      argv: ['node', main === 'entry' ? entry : main], pid: 7 },
+  }, { filename });
+  return { logs, loads, cache, cached, sentinel, entry, Server, EventEmitter };
+}
+
+test('guard import evicts only its exact future main and leaves library or different main cached', () => {
+  for (const main of ['entry', undefined, path.join(__dirname, 'different-main.cjs')]) {
+    const g = guarded(main);
+    assert.deepEqual(g.loads, [g.entry]);
+    assert.equal(g.cache.unrelated, g.sentinel);
+    assert.equal(g.cache[g.entry], main === 'entry' ? undefined : g.cached);
+    assert.deepEqual(Object.keys(g.cache).sort(), main === 'entry' ? ['unrelated'] : [g.entry, 'unrelated'].sort());
+    assert.deepEqual(g.logs, []);
+  }
+});
+
+test('evaluate observer ignores empty GET and records no valid recipient for empty or malformed POST', () => {
+  const g = guarded(undefined), server = new g.Server();
+  let delegated = 0;
+  server.on('request', () => { delegated += 1; });
+  const send = (method, raw) => {
+    const req = new g.EventEmitter();
+    Object.assign(req, { method, url: '/api/governance/evaluate?readiness=1', headers: {} });
+    server.emit('request', req, {});
+    if (method === 'GET') assert.equal(req.listenerCount('end'), 0);
+    req.emit('data', Buffer.from(raw));
+    assert.doesNotThrow(() => req.emit('end'));
+  };
+  send('GET', '');
+  assert.deepEqual(g.logs, []);
+  for (const raw of ['', '{broken']) {
+    send('POST', raw);
+    const record = g.logs.at(-1);
+    assert.deepEqual(record, { pid: 7, event: 'evaluate-recipient-invalid', bodyBytes: Buffer.byteLength(raw),
+      bodySha256: createHash('sha256').update(raw).digest('hex') });
+  }
+  assert.equal(delegated, 3);
+  assert.equal(g.logs.filter(e => e.event === 'evaluate-recipient').length, 0);
+});
+
+test('valid evaluate POST preserves exact body hash and header presence while delegating once', () => {
+  const g = guarded(undefined), server = new g.Server(), req = new g.EventEmitter();
+  const raw = '{"request_id":"synthetic-only","value":1}';
+  let delegated = 0;
+  server.on('request', () => { delegated += 1; });
+  Object.assign(req, { method: 'POST', url: '/api/governance/evaluate', headers: { 'x-cvf-service-token': 'synthetic', cookie: 'synthetic' } });
+  server.emit('request', req, {});
+  req.emit('data', Buffer.from(raw.slice(0, 5)));
+  req.emit('data', Buffer.from(raw.slice(5)));
+  assert.doesNotThrow(() => req.emit('end'));
+  assert.deepEqual(g.logs, [{ pid: 7, event: 'evaluate-recipient', body: JSON.parse(raw),
+    bodySha256: createHash('sha256').update(raw).digest('hex'), serviceTokenPresent: true, cookiePresent: true }]);
+  assert.equal(delegated, 1);
+});

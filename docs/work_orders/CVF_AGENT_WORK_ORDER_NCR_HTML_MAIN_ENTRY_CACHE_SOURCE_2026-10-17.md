@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BOUNDED_SOURCE
 Date: 2026-10-17
 Batch ID: CVF-NCR-HTML-MAIN-ENTRY-CACHE-SOURCE-20261017
 Dispatch inspection base: 1cc2700d2d6944f2499366126855f7034434c3a9
@@ -280,10 +280,20 @@ Worker must not mutate beyond exact6, stage/commit, update F constants, touch pr
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: new source-correction B/W, BE-S09 in-progress support and current6 raw authority/mode/next only at dispatch; no worker source change in this metadata commit.
+Authorized guard-maintenance scope: exact19 source/metadata material; no governance checker or hook mutation.
 Protected paths:
+- `scripts/cvf_ncr_html_owned_profile/journey.cjs`
+- `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`
+- `scripts/cvf_ncr_html_owned_profile/source_release.py`
+- `scripts/test_cvf_ncr_html_effect_driver.py`
+- `docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-main-entry-cache-source-worker-20261017.json`
+- `scripts/cvf_ncr_html_effect_fence.py`
+- `docs/reviews/evidence/ncr-html-main-entry-cache-source-release-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`
+- `docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-main-entry-cache-source-local-20261017.json`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -291,19 +301,29 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current Local source-only continuation after closed spent BE-R01 first result; standing root author/reviewer/steward authority.
-Rollback boundary: exact listed metadata only; prior worker2/CP/LP/BW, source18/accepted Windows source B/W/releases/qualification/old grants and custody unchanged. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired and fresh r1b spent blocked retained.
+Operator authorization: standing autonomous Local source review and closure.
+Rollback boundary: exact19 only; prior accepted and failed records remain immutable.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: new source-only authority, BE-S09 support-in-progress and source-generated current raw B/W/mode/next align in dispatch9; following actual material SHA continuity exact6.
+Atomicity reason: worker source/return, frozen authority, Local source identity, bounded completion, BE-S09, and generated state align in one material tranche; actual-SHA continuity follows separately.
 
 Exact changed manifest:
 
+- `scripts/cvf_ncr_html_owned_profile/journey.cjs`
+- `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`
+- `scripts/cvf_ncr_html_owned_profile/source_release.py`
+- `scripts/test_cvf_ncr_html_effect_driver.py`
+- `docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-main-entry-cache-source-worker-20261017.json`
+- `scripts/cvf_ncr_html_effect_fence.py`
+- `docs/reviews/evidence/ncr-html-main-entry-cache-source-release-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`
+- `docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-main-entry-cache-source-local-20261017.json`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -311,8 +331,7 @@ Exact changed manifest:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-
-Rollback boundary: listed metadata only; no production-source, old evidence, runtime or resource effect.
+Rollback boundary: listed19 only; no old record or runtime effect.
 
 ## ADIF Defect Registry Disclosure
 
@@ -397,24 +416,24 @@ Provider memory is an execution aid, never canonical source/acceptance evidence.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher/reviewer/steward |
+| Actor | local-main-entry-cache-reviewer-20261017 Local reviewer/closer |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-main-entry-source-material-20261017 |
+| Session or invocation | local-main-entry-cache-native-20261017 |
 | Working directory | repository root |
-| Command or tool surface | root-reviewed source packet derivative, git status --short, actual prior-result/dependency/ADIF metadata joins and canonical current6 generation; gates/commits separately owned by root |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | Local next source-correction continuation; current new exact source-only order after spent-result split closure |
-| Before status evidence | HEAD 1cc2700d2d6944f2499366126855f7034434c3a9; clean worktree; git status --short empty at admission; prior blocked result13/6 split PASS consumed, source18 before-image unchanged |
-| After status evidence | conditional source-only worker release, no code/test/native start or source acceptance |
-| Diff evidence | exact9 material manifest |
-| Approval boundary | new source exact6 worker only after committed bound authority/preimplementation; fixture budgets in W, no runtime/cap1/provider/deletion/retry |
-| Claim boundary | source dispatch is not corrected source, support completion or BE-R01 outcome |
+| Command or tool surface | worker6 receipt, independent Local probe, source identity/release/F-only binding |
+| Target paths | exact19 manifest above |
+| Allowed scope source | committed source B/W and standing Local review/closure authority |
+| Before status evidence | frozen dispatch9 and worker6 raw bytes |
+| After status evidence | bounded source acceptance; material and continuity commits pending |
+| Diff evidence | exact19 material, source18 selected5/other13 |
+| Approval boundary | standing Local source-only review; no runtime/provider/deletion |
+| Claim boundary | source correction only, BE-R01/BE-R02 open |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-main-entry-source-material-20261017 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
-| Deletion or rename disposition | none; prior stage/custody/failed proof preserved |
+| Invocation ID | local-main-entry-cache-native-20261017 |
+| Expected manifest | exact19: scripts/cvf_ncr_html_owned_profile/journey.cjs; scripts/cvf_ncr_html_owned_profile/journey.test.cjs; scripts/cvf_ncr_html_owned_profile/source_release.py; scripts/test_cvf_ncr_html_effect_driver.py; docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_WORKER_RETURN_2026-10-17.md; docs/reviews/evidence/ncr-html-main-entry-cache-source-worker-20261017.json; scripts/cvf_ncr_html_effect_fence.py; docs/reviews/evidence/ncr-html-main-entry-cache-source-release-20261017.json; docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md; docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-main-entry-cache-source-local-20261017.json; docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Actual changed set | exact19: scripts/cvf_ncr_html_owned_profile/journey.cjs; scripts/cvf_ncr_html_owned_profile/journey.test.cjs; scripts/cvf_ncr_html_owned_profile/source_release.py; scripts/test_cvf_ncr_html_effect_driver.py; docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_WORKER_RETURN_2026-10-17.md; docs/reviews/evidence/ncr-html-main-entry-cache-source-worker-20261017.json; scripts/cvf_ncr_html_effect_fence.py; docs/reviews/evidence/ncr-html-main-entry-cache-source-release-20261017.json; docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md; docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-main-entry-cache-source-local-20261017.json; docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Manifest delta | MATCH exact19 |
+| Deletion or rename disposition | none; prior and new custody retained |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -594,3 +613,7 @@ NOT_APPLICABLE_WITH_REASON: correction to existing source owner from internal fa
 ## Root Full Preflight First Failure
 
 First adopted packet full root preimplementation failed eight documentary gate families plus premature bound release-readiness: baseline checker/scaffold, execution/verification heading, role dependency/material marker, intake/risk/legacy/source-symbol, handoff clean phrase, canonical internal input and knowledge enumeration literals. Root reused actual passing controls and consolidated repairs. The root precommit phase must be unbound; committed pair and actual-SHA continuity precede bound pre-dispatch. First log raw SHA256239ad35cacf3e35512b50543be19b9cb37c19cc70a911edc255360b4bd87a362 and initial baseline-trace adoption refusal are retained, no source/test/native starts. ORCHESTRATOR_PACKET_GAP / RULE_EXISTS, preparation remains partial and no new capability credit.
+
+## Local Source Disposition
+
+Accepted bounded source correction only after worker two-seam proof and distinct Local Node probe. BE-S09 support checked; BE-R01/BE-R02 open. SOURCE_IDENTITY_ONLY release and F binding are root closure, with no runtime admission or digest backedge in this frozen authority.

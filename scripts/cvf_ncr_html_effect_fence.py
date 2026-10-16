@@ -20,8 +20,8 @@ ROOT = owned.P.ROOT
 SOURCES = ("scripts/cvf_ncr_html_effect_fence.py", "scripts/run_cvf_ncr_html_effect_driver.py",
            "scripts/test_cvf_ncr_html_effect_driver.py", "scripts/cvf_ncr_html_browser_fence.cjs",
            "scripts/cvf_ncr_html_browser_fence.test.cjs")
-RELEASE = 'docs/reviews/evidence/ncr-html-windows-source-release-20261016.json'
-RELEASE_SHA = 'ab30a0de37c4f93832117833f1e7093d9a97c2f3e8d08ae7325f0047230cfc9c'
+RELEASE = 'docs/reviews/evidence/ncr-html-main-entry-cache-source-release-20261017.json'
+RELEASE_SHA = '00994f91b379adee9396c212db05584df2eda22685443c5dbb2b0ca8d2c193b0'
 CHROME = {"path": r"C:\Users\DELL\AppData\Local\ms-playwright\chromium-1208\chrome-win64\chrome.exe",
           "sha256": "ff0c99fc5bb2301cad77930aa76e5354cf2a5fefb7efdcf3b3bc10ba0550c015"}
 DOCKER = {"context": "desktop-linux", "endpoint": "npipe:////./pipe/dockerDesktopLinuxEngine",

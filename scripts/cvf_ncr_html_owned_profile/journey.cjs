@@ -8,7 +8,10 @@ const { createHash } = require('node:crypto');
 const sha = b => createHash('sha256').update(b).digest('hex');
 
 function installOwnedGuard() {
-  require(path.join(__dirname, '..', 'probe_cvf_w05_browser_chain.cjs'));
+  const entry = require.resolve(path.join(__dirname, '..', 'probe_cvf_w05_browser_chain.cjs'));
+  require(entry);
+  // Its preload import installed the guard; only the future main must execute again as main.
+  if (process.argv[1] === entry) delete require.cache[entry];
   const net = require('node:net'), dns = require('node:dns'), http = require('node:http');
   const ports = new Set(JSON.parse(process.env.CVF_NCR_ALLOWED_PORTS));
   const local = h => ['127.0.0.1', 'localhost', '::1'].includes(String(h).replace(/^\[|\]$/g, ''));
@@ -45,12 +48,15 @@ function installOwnedGuard() {
   }
   const emit = http.Server.prototype.emit;
   http.Server.prototype.emit = function (event, ...args) {
-    if (event === 'request' && args[0].url.split('?')[0] === '/api/governance/evaluate') {
+    if (event === 'request' && args[0].method === 'POST' && args[0].url.split('?')[0] === '/api/governance/evaluate') {
       const req = args[0], parts = [];
       req.on('data', b => parts.push(b));
       req.on('end', () => {
         const raw = Buffer.concat(parts);
-        log({ event: 'evaluate-recipient', body: JSON.parse(raw.toString('utf8')),
+        let body;
+        try { body = JSON.parse(raw.toString('utf8')); }
+        catch (_) { log({ event: 'evaluate-recipient-invalid', bodyBytes: raw.length, bodySha256: sha(raw) }); return; }
+        log({ event: 'evaluate-recipient', body,
           bodySha256: sha(raw), serviceTokenPresent: Boolean(req.headers['x-cvf-service-token']), cookiePresent: Boolean(req.headers.cookie) });
       });
     }
