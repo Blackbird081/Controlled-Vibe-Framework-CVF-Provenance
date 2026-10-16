@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Paired runtime packet preparation at parent `c112f571942d46975b9998f8c6f62f152dfdfdf6`; Batch ID: CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Before-effect gates are pending; no runtime result asserted.
+Current HEAD recorded for this handoff: `27dff0217500bd81dd5b8ff0baa82a616e5b6ab4`. Material SHA: `27dff0217500bd81dd5b8ff0baa82a616e5b6ab4`. Batch ID: CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Paired runtime authority committed; exact6 binds actual pair SHA. Bound release gates precede actual invocation. Normal collector consumed without manual replay.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -109,9 +109,6 @@ Atomicity reason: currentAuthority raw hashes and paired packet must align atomi
 
 Exact changed manifest:
 
-- `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -140,10 +137,10 @@ Rollback boundary: selected packet and exact6 only; all source13/adjunct5, old e
 |---|---|
 | Actor | Local INTERNAL_AGENT orchestrator/reviewer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-runtime-admission-material-20261016 |
+| Session or invocation | ncr-be-runtime-admission-continuity-20261016 |
 | Working directory | repository root |
 | Command or tool surface | source continuity edits, canonical generation, exact-path gates and normal commits |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | standing Local roadmap authority and concrete B-E paired envelope |
 | Before status evidence | entry clean c112f571942d46975b9998f8c6f62f152dfdfdf6; prior readiness closed |
 | After status evidence | paired authority pointers synchronized; runtime result pending |
@@ -151,9 +148,9 @@ Rollback boundary: selected packet and exact6 only; all source13/adjunct5, old e
 | Approval boundary | specific effects require bound gates and immutable admission; run2 requires real accepted run1 |
 | Claim boundary | packet preparation and continuity; no current runtime/live proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-runtime-admission-material-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-be-runtime-admission-continuity-20261016 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH |
 | Deletion or rename disposition | none; selected custody retained by Local |
 
