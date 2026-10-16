@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Windows source correction acceptance; product B-E not accepted |
+| Parent maintenance | lasting support ledger checked; bounded qualification; product B-E open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_windows_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=current-source qualification and fresh runtime-admission planning after bounded source acceptance; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=ACCEPTANCE; decision owner=LOCAL; parked checkpoint=old runtime grants retired, product/provider/deletion and unrelated effects parked, no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_windows_qualification_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=finite current-source qualification after committed bound release; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=old runtime grants retired, product/cap1/provider/deletion separate; no generic operator checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_windows_source_accepted_bounded`
-Current mode: `cvf_ncr_html_windows_source_accepted_bounded`; previous mode marker: `cvf_ncr_html_windows_source_dispatched`
+Current mode marker: `cvf_ncr_html_windows_qualification_dispatched`
+Current mode: `cvf_ncr_html_windows_qualification_dispatched`; previous mode marker: `cvf_ncr_html_windows_source_accepted_bounded`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_windows_source_accepted_bounded`
+Mode: `cvf_ncr_html_windows_qualification_dispatched`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-WINDOWS-SOURCE-QUALIFICATION-20261016. Consolidated Windows source correction accepted at material a7974566e306795ffc1e4f2e9f9fb96ae804553b; consume docs/reviews/CVF_NCR_HTML_WINDOWS_SOURCE_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-windows-source-local-20261016.json. New source/adjunct hashes and source-identity-only release are distinct from old releases. Native fixtures prove preload/traversal seams at their bounded scope; they do not accept product B-E. Next Local plans current-source qualification/control/readiness and fresh independent runtime admission against NEW identity; old1spent/2retired never replayed. No provider/product/Docker/browser/deletion effect follows automatically. Gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred retained. Ordinary details Local; no generic documentary operator checkpoint. Clean post-material explicit source-admission metadata PASS; root focused23PASS resolves the named fixture cause, original worker REQ04BLOCKED retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-WINDOWS-QUALIFICATION-20261016. Under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md and docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md, release INTERNAL_AGENT qualification worker only after bound pre-dispatch PASS and frozen invocation-envelope/pins external hashes. One actual cap2 control matrix9cases/26inert Python children, one Docker4 read-only group;2one-shot programs,90s/60s outer,12s Docker child,retry0; worker deadline17:18Z, Local18:48Z. Source13/adjunct5/frozen source authority unchanged; no fake/broad/native-seam rerun. Worker exact2 publishes after both programs; Local PURE independent receipt oracle then closure. Roadmap BE-S01..08 checked bounded support; BE-Q01 open until actual qualification, BE-R01/R02 open. No product/cap1/provider/deletion or old grant replay; gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and parked states retained. Ordinary details Local; no generic operator checkpoint.
 
 ## Parked Checkpoints
 
