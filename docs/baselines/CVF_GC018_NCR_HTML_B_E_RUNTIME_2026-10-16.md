@@ -2,13 +2,17 @@
 
 Memory class: governed-dispatch-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: BLOCKED_WITH_REASON
 Date: 2026-10-16
 Batch ID: CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016
 Dispatch base head: c112f571942d46975b9998f8c6f62f152dfdfdf6
 Commit mode: WORKER_MUST_NOT_COMMIT
 Decision owner: LOCAL
 providerExecutionAuthority: FORBIDDEN
+
+## Terminal Runtime Disposition
+
+Both runtime admissions are retired before this source-document amendment. Actual1 is permanently SPENT_FAILED_NO_RETRY;2 is NOT_RELEASED_DEPENDENCY_FAILED with no admission/program/namespace. Pre-effect pair raw preimages are preserved in docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json. No source13/adjunct5 or original release repin. This current blocked packet grants no effect. Historical prospective scope remains evidence of the executed grant only. Correcting workerReturnPath literal below repairs retired documentary grammar; it does not change the original failed mandatory gate or authorize another invocation.
 
 ## Purpose
 
@@ -89,7 +93,7 @@ Current binary delta observed by filesystem metadata before dispatch: prior Dock
 ## Current Runtime Freshness Verification
 
 runtimeClaimPresent: NO
-runtimeMutationAuthorized: CONDITIONAL_EXACT_TWO_ACTOR_ENVELOPE
+runtimeMutationAuthorized: RETIRED_NO_EFFECTS
 freshnessVerificationMode: REUSE_SCOPED_PREREQUISITES_WITH_BEFORE_EFFECT_IDENTITY_CHECKS
 Current Docker qualification is reused only at its recorded binary revision/scope. Actual host/readiness/product/cleanup outcomes remain pending. No native/control replay.
 
@@ -159,24 +163,24 @@ Packet author actual max-results100 query returned27/truncated=false during this
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher/reviewer/steward adopting internal author result |
+| Actor | Local INTERNAL_AGENT reviewer/closer/session-sync steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-runtime-admission-dispatch-20261016 |
+| Session or invocation | ncr-be-runtime-blocked-local-20261016 |
 | Working directory | repository root |
-| Command or tool surface | named source/authority/checker reads, metadata pins, exact packet/continuity edits, canonical generation and normal gates/commits |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | standing operator full Local roadmap handling; specific finite two-actor baseline/order |
-| Before status evidence | clean c112f571942d46975b9998f8c6f62f152dfdfdf6; author exact2 returned without target effects/tests/commit |
-| After status evidence | exact9 dispatch adoption; actual runtime outcome pending bound release and immutable serialization |
-| Diff evidence | exact9 staged manifest before normal commit |
-| Approval boundary | specific before-effect bound gates; run2 requires real accepted run1; no generic operator checkpoint |
-| Claim boundary | prospective mechanical B-E envelope; no actual AI-governance/live/release claim |
+| Command or tool surface | consume actual negative raw evidence; source inference and packet grammar repair after admission retirement; repository gates/normal commits only |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-runtime-first-acceptance-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | standing Local authority; retired exact two-actor runtime pair and bounded negative-record closure |
+| Before status evidence | worker negative exact2 committed at 4f5d1e74a6fcc03f9fc5873347c1bc2959937979; normal91/91 PASS, automatic P4 skipped; actual1 failed and2 never released |
+| After status evidence | exact12 negative disposition/currentAuthority update; no source edit/runtime rerun/deletion |
+| Diff evidence | git diff --name-status and exact12 staged manifest; original worker/pre-effect bytes retained in Local proof |
+| Approval boundary | future source amendment needs concrete separate design/admission; no generic operator documentary checkpoint |
+| Claim boundary | failed mechanical B-E attempt; actual2 not performed; no AI governance/live/release acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-runtime-admission-dispatch-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 adopted dispatch |
-| Deletion or rename disposition | none; old and current evidence/custody retained |
+| Invocation ID | ncr-be-runtime-blocked-local-20261016 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-runtime-first-acceptance-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-runtime-first-acceptance-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact12 |
+| Deletion or rename disposition | none; namespace/stage/stores/junction/custody retained by LOCAL |
 
 ## Epistemic Process Block
 

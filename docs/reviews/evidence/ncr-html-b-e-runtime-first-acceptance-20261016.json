@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "cvf.localBEFirstRunDisposition@1",
+  "runId": "ncr-be-worker-20261016-r1a",
+  "decisionOwner": "LOCAL",
+  "accepted": false,
+  "terminalSha256": "f6f8c314d6dfa3db08594a839ba615266907e8f2590677cb03783a2c7a5addb2",
+  "terminalBytes": 6884,
+  "acknowledgment": {
+    "error": null,
+    "readBack": "MATCH",
+    "write": "ACKNOWLEDGED"
+  },
+  "positiveAbsence": {
+    "processQuery": "ABSENT",
+    "containerQuery": "ABSENT",
+    "descendantQuery": "ABSENT",
+    "listenerQuery": "ABSENT"
+  },
+  "child": {
+    "confirmed": false,
+    "reason": "NOT_LAUNCHED"
+  },
+  "reason": "WEB_PRELOAD_FAILED_CHILD_NOT_LAUNCHED_DISPOSAL_REPARSE_REFUSED",
+  "actor2": "NOT_RELEASED_DEPENDENCY_FAILED",
+  "runtimeRetry": "FORBIDDEN_CURRENT_ENVELOPE",
+  "stageDeletion": 0
+}

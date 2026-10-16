@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md",
-    "baselineSha256": "a5996906a1788a95e428cfa643eb933633c7ae89b8b44bf09fc87138a653b273",
+    "baselineSha256": "42b53a83ee274be0508828dd54e958e247f94428c3a59a00c92893ea8dda29f3",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md",
-    "workOrderSha256": "e77d463a22ff1672111eb779ac6eae570f807b79a1a206ac0d0e48519d754a68"
+    "workOrderSha256": "bd31d45988c74b2e8e6b8e2f03547daaec2760ee65aa26e56707fafa9afcacdb"
   },
-  "currentAuthoritySyncReason": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Paired material 27dff0217500bd81dd5b8ff0baa82a616e5b6ab4 normal91/91 PASS. Local executes docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md concrete paired runtime envelope under existing locked B-E design. Require committed paired authority/exact6 actual-SHA continuity and bound pre-dispatch/pre-implementation PASS before effects; then independently freeze pins/admission raw hashes. Worker ncr-be-worker-20261016-r1a cap2 once; actual accepted terminal/ACK/positive absence plus committed Local acceptance gates distinct Local ncr-be-local-20261016-r2a cap1 once. Exact external namespaces/custody and process-local physical Node discovery are in paired order. Task12:01Z-13:31Z; worker inclusive13:00Z, Local13:20Z; latest launches12:42Z/13:02Z with1080sec watchdog. No reset/retry/fallback; failures consume identity and block dependent2. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; no real-data/provider/delete/public/deploy or LHW24 effects. Runtime result remains unobserved until actual returned proof; no generic operator checkpoint.",
+  "currentAuthoritySyncReason": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-SOURCE-CORRECTION-PLAN-20261016. Local plans one consolidated existing-owner source amendment from docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json. Actual actor1 exit1/21.781s, work16/56 cleanup5/8, exports/evaluates0, browser/helper never launched. Docker context/pipe/cache/container health/network proof observed on current binary; Web preload locator lost Windows separators; retained-stage disposal walked shared dependency junction and refused nested reparse. Root source inferences are not reproduced correction proof. Preserve source13/adjunct5/original releases until separately admitted new source identity/contract; plan Windows preload encoding plus strict adjunct matching and exact admitted-link pruning with refusal/containment regressions. No old release repin or runtime retry. Actual terminal6884/hashf6f8c314 has ACKMATCH/fourABSENT but acceptedfalse/childNOT_LAUNCHED; actual1spent,2NOT_RELEASED_DEPENDENCY_FAILED, both grants retired. Original bound return gate FAILED; repaired negative retention/blocked reducer do not upgrade it. Gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained. No generic operator documentary checkpoint.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_b_e_runtime_admitted_pending_bound_gates",
-  "previousMode": "cvf_ncr_html_b_e_runtime_packet_prepared",
+  "currentMode": "cvf_ncr_html_b_e_runtime_blocked_source_correction_plan",
+  "previousMode": "cvf_ncr_html_b_e_runtime_admitted_pending_bound_gates",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
