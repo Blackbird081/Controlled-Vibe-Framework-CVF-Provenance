@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | October16 recurrence learning recorded; verify application before source-correction dispatch |
+| Parent maintenance | bounded static early return-route guard implementation |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_b_e_runtime_blocked_source_correction_plan`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=consume October16 recurrence learning and bind/verify concrete application before source-correction dispatch; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=LEARNING_RECORDED_BEFORE_ROADMAP; decision owner=LOCAL; parked checkpoint=both runtime grants retired; specific future source/runtime admission only, no generic documentary checkpoint.
+Startup acknowledged: current mode=`cvf_return_route_early_guard_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bounded guard implementation after release; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=old runtime grants retired and unrelated effects parked, no generic documentary checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_b_e_runtime_blocked_source_correction_plan`
-Current mode: `cvf_ncr_html_b_e_runtime_blocked_source_correction_plan`; previous mode marker: `cvf_ncr_html_b_e_runtime_admitted_pending_bound_gates`
+Current mode marker: `cvf_return_route_early_guard_dispatched`
+Current mode: `cvf_return_route_early_guard_dispatched`; previous mode marker: `cvf_ncr_html_b_e_runtime_blocked_source_correction_plan`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_b_e_runtime_blocked_source_correction_plan`
+Mode: `cvf_return_route_early_guard_dispatched`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-SOURCE-CORRECTION-PLAN-20261016. Learning-first operator request completed at material 58d19d7873a11c8c55a8f0c214cb3833183f055e (normal91/91 PASS). Before any source-correction dispatch, consume docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md section Runtime Recurrence And Application Gap - 2026-10-16 and docs/reviews/evidence/cvf-orchestrator-runtime-recurrence-learning-20261016.json. Apply O10-O14 in one consolidated source/invocation/Windows topology/packet/return/terminal/outcome review; next work order binds concrete actions and verification via existing NCR-LEARNING-APPLICATION-OBSERVABILITY control. Construct prescribed bound return commands on exact candidate before release; verify subprocess exit before dependent mutation/commit; use owner serialization and file-based Markdown helpers. Platform seam proof requires its prospective specific grant, not spent B-E replay. Recording/plan is not application: October16 extension NOT_APPLIED, effectiveness NOT_PROVEN; prior October9 receipt remains scoped. Then PLAN one consolidated existing-owner source correction from docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md and its canonical proof: Windows preload encoding/strict adjunct and exact admitted-link pruning/refusal. Root diagnosis remains inference. Actual1 spent/failed,2 NOT_RELEASED_DEPENDENCY_FAILED; both grants retired. No roadmap/source/runtime advancement in learning task, no old release repin/retry/deletion. Docker prerequisites observed; no browser/exports/evaluations; terminal ACK/fourABSENT does not override acceptedfalse. Retired authority/source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions and parked effects/LHW24 unchanged. No generic operator documentary checkpoint.
+PROGRAM_ID=CVF-RETURN-ROUTE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-RETURN-ROUTE-EARLY-20261016. Local dispatches INTERNAL_AGENT Luna max under docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md and baseline docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md after exact paired material 9823790f027cdf9d302f7acc05600b72a5141c06, source6 and bound pre-dispatch PASS. Worker exact3 existing dispatch checker/test plus return/evidence2, WORKER_MUST_NOT_COMMIT; no other tracked edit during active lane. Reuse production command builder on required fast-gate READY packets without opt-in; no subprocess/whole-repo scan/new hook. One focused subset and finite incremental latency measurement; one distinct Local oracle consumes worker evidence without duplicate full suite. Existing fail-fast material helper reused; source6 continuity checked explicitly, no invented helper manifest. Learning O10/O11/O13/O14 actions/verification bound; O12 Windows source/junction repair remains later PLAN. No old B-E invocation, API/browser/Docker/install/public/deploy. Old runtime1 spent,2 retired; source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/parked LHW24 retained. Ordinary details Local; no generic operator checkpoint.
 
 ## Parked Checkpoints
 

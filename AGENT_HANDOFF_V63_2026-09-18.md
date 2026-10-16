@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `58d19d7873a11c8c55a8f0c214cb3833183f055e`. Material SHA: `58d19d7873a11c8c55a8f0c214cb3833183f055e`. Batch ID: CVF-NCR-ORCHESTRATOR-LEARNING-20261016. Exact4 recurrence/discovery/raw pins committed, normal91/91 PASS. Exact6 learning-first continuity; roadmap unchanged; clean split closure follows.
+Current HEAD recorded for this handoff: `9823790f027cdf9d302f7acc05600b72a5141c06`. Material SHA: `9823790f027cdf9d302f7acc05600b72a5141c06`. Batch ID: CVF-RETURN-ROUTE-EARLY-20261016. Exact6 actual-material continuity; clean split closure follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Actual negative Local disposition `docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md`; proof `docs/reviews/evidence/ncr-html-b-e-runtime-local-20261016.json` raw SHA256 `42d8cf94a55ce14b888fa1ed0db957936333ebae6f8e6079fe542de6abe8a7d7`. Actor1 attempted B-E once: Docker prerequisites/container engine health/network isolation observed, Web preload failed before browser; work16/56 cleanup5/8/readiness4,2,0/exports0. Terminal6884/hashf6f8c314 ACK/fourABSENT but acceptedfalse/childNOT_LAUNCHED/disposal refusal. Source inference: Windows preload encoding and exact admitted dependency-junction traversal. No reproduced correction or new source/runtime proof. Actor1 spent,2 never released and retired; stage/custody retained by LOCAL.
+New exact3 checker/test guard packet, locked by operator latency instruction. Worker exact5 no commit; Local final review and source6 steward. No current Windows/B-E functional acceptance; original failed runtime and retained stage/custody remain evidence. No retired grant is reopened.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_b_e_runtime_blocked_source_correction_plan`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=consume October16 recurrence learning and bind/verify concrete application before source-correction dispatch; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=LEARNING_RECORDED_BEFORE_ROADMAP; decision owner=LOCAL; parked checkpoint=both runtime grants retired; specific future source/runtime admission only, no generic documentary checkpoint.
+Startup acknowledged: current mode=`cvf_return_route_early_guard_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bounded guard implementation after release; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=old runtime grants retired and unrelated effects parked, no generic documentary checkpoint.
 
 ## Current Mode
 
-`cvf_ncr_html_b_e_runtime_blocked_source_correction_plan`. Operator required learning first; material `58d19d7873a11c8c55a8f0c214cb3833183f055e` updates the existing shared record and discovery, not implementation/roadmap. October16 extension application NOT_APPLIED/effectiveness NOT_PROVEN; prior typed receipts remain historical scoped evidence. Both old runtime grants retired; prior task windows remain closed. Source13/adjunct5/original releases/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged. Local owns preparation and command-sequencing failures; next dispatch must demonstrate concrete application.
+`cvf_return_route_early_guard_dispatched`. Bounded implementation pending; no product effect. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged. Historic runtime1spent/2retired; no old window refill.
 
 ## Current Authority
 
-Retired baseline `docs/baselines/CVF_GC018_NCR_HTML_B_E_RUNTIME_2026-10-16.md` raw SHA256 `42b53a83ee274be0508828dd54e958e247f94428c3a59a00c92893ea8dda29f3`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md` raw SHA256 `bd31d45988c74b2e8e6b8e2f03547daaec2760ee65aa26e56707fafa9afcacdb`; Status BLOCKED_WITH_REASON, runtimeMutationAuthorized RETIRED_NO_EFFECTS. Executed preimages/admission pins preserved in Local proof. Current pair is negative provenance, no new invocation grant. Next is source-correction PLAN; new source identity/effect envelope require their own concrete admission, ordinary details remain Local.
+Baseline `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md` SHA256 `96f2521f154bbf5518a1d5969722c34618a753231031aec7d7c70dc17801cb90`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md` SHA256 `714e5469674c5a1526176dfb2fe96b548575e99f6c819c243fd7b02f4bda4261`. Guard-only source/test grant, no runtime.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-SOURCE-CORRECTION-PLAN-20261016. Learning-first operator request completed at material 58d19d7873a11c8c55a8f0c214cb3833183f055e (normal91/91 PASS). Before any source-correction dispatch, consume docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md section Runtime Recurrence And Application Gap - 2026-10-16 and docs/reviews/evidence/cvf-orchestrator-runtime-recurrence-learning-20261016.json. Apply O10-O14 in one consolidated source/invocation/Windows topology/packet/return/terminal/outcome review; next work order binds concrete actions and verification via existing NCR-LEARNING-APPLICATION-OBSERVABILITY control. Construct prescribed bound return commands on exact candidate before release; verify subprocess exit before dependent mutation/commit; use owner serialization and file-based Markdown helpers. Platform seam proof requires its prospective specific grant, not spent B-E replay. Recording/plan is not application: October16 extension NOT_APPLIED, effectiveness NOT_PROVEN; prior October9 receipt remains scoped. Then PLAN one consolidated existing-owner source correction from docs/reviews/CVF_NCR_HTML_B_E_RUNTIME_LOCAL_COMPLETION_2026-10-16.md and its canonical proof: Windows preload encoding/strict adjunct and exact admitted-link pruning/refusal. Root diagnosis remains inference. Actual1 spent/failed,2 NOT_RELEASED_DEPENDENCY_FAILED; both grants retired. No roadmap/source/runtime advancement in learning task, no old release repin/retry/deletion. Docker prerequisites observed; no browser/exports/evaluations; terminal ACK/fourABSENT does not override acceptedfalse. Retired authority/source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions and parked effects/LHW24 unchanged. No generic operator documentary checkpoint.
+PROGRAM_ID=CVF-RETURN-ROUTE; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-RETURN-ROUTE-EARLY-20261016. Local dispatches INTERNAL_AGENT Luna max under docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md and baseline docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md after exact paired material 9823790f027cdf9d302f7acc05600b72a5141c06, source6 and bound pre-dispatch PASS. Worker exact3 existing dispatch checker/test plus return/evidence2, WORKER_MUST_NOT_COMMIT; no other tracked edit during active lane. Reuse production command builder on required fast-gate READY packets without opt-in; no subprocess/whole-repo scan/new hook. One focused subset and finite incremental latency measurement; one distinct Local oracle consumes worker evidence without duplicate full suite. Existing fail-fast material helper reused; source6 continuity checked explicitly, no invented helper manifest. Learning O10/O11/O13/O14 actions/verification bound; O12 Windows source/junction repair remains later PLAN. No old B-E invocation, API/browser/Docker/install/public/deploy. Old runtime1 spent,2 retired; source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/parked LHW24 retained. Ordinary details Local; no generic operator checkpoint.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -72,7 +72,7 @@ Learning material `58d19d7873a11c8c55a8f0c214cb3833183f055e`: normal automatic c
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: active front door, source mode/next and generated bootstrap/state must expose the same learning-first application requirement and actual material SHA.
+Atomicity reason: current paired authority/raw hashes, mode/next and actual material marker must align across source/generated startup surfaces.
 
 Exact changed manifest:
 
@@ -83,11 +83,11 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: exact listed continuity paths only; no currentAuthority or product claim change.
+Rollback boundary: exact listed continuity paths only.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 learning-first continuity and canonical generation only; currentAuthority unchanged, no guard semantics change.
+Authorized guard-maintenance scope: exact6 mode/next/currentAuthority raw-hash continuity and canonical generation only.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -95,31 +95,31 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: explicit learning before roadmap plus standing Local orchestrator/reviewer maintenance and commit authority.
-Rollback boundary: exact six continuity paths only; material learning/source pins, actual failed runtime originals, retired pair, source13/adjunct5, counters and parked effects retained. No runtime, source amendment or deletion.
+Operator authorization: explicit checker repair with proportional latency and standing Local maintenance/commit authority.
+Rollback boundary: exact listed six continuity paths; no product source, old runtime/evidence, counters, freeze, exclusions or parked effect change.
 
 ## Agent Operation Trace Block
 
-| Field | Evidence |
+| Field | Value |
 |---|---|
-| Actor | Local INTERNAL_AGENT orchestrator/reviewer/session-sync steward |
+| Actor | Local INTERNAL_AGENT dispatcher/reviewer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-orchestrator-learning-continuity-20261016 |
+| Session or invocation | return-route-early-dispatch-continuity-20261016 |
 | Working directory | repository root |
-| Command or tool surface | source continuity edits, canonical generator, normal gates/commits and clean split closure |
+| Command or tool surface | source edits, canonical generation, staged exact6 normal commits/gates |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | explicit operator learning-before-roadmap and standing Local maintenance authority |
-| Before status evidence | exact4 learning material 58d19d7873a11c8c55a8f0c214cb3833183f055e committed; tree clean |
-| After status evidence | learning-first next action synchronized; October16 application NOT_APPLIED/effectiveness NOT_PROVEN |
-| Diff evidence | exact6 continuity; currentAuthority byte pins unchanged |
-| Approval boundary | continuity only; both old runtime grants retired |
-| Claim boundary | no roadmap advancement, new source/runtime proof or product acceptance |
+| Allowed scope source | operator explicit bounded checker fix and standing Local continuity authority |
+| Before status evidence | material 9823790f027cdf9d302f7acc05600b72a5141c06 committed; clean worktree/stage empty |
+| After status evidence | current paired authority/mode/next and actual material SHA synchronized |
+| Diff evidence | exact6 manifest; no source or behavior claim |
+| Approval boundary | guard task only, old product/runtime grants retired |
+| Claim boundary | startup continuity not functional acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-orchestrator-learning-continuity-20261016 |
+| Invocation ID | return-route-early-dispatch-continuity-20261016 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH six continuity paths |
-| Deletion or rename disposition | none; stage/custody retained by LOCAL |
+| Deletion or rename disposition | none; old stage/custody retained |
 
 ## Claim Boundary
 
