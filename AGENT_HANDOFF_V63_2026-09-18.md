@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8a36fbe59285eea4bd496b2d93cab9b4df000882`. Material SHA: `8a36fbe59285eea4bd496b2d93cab9b4df000882`. Batch ID: CVF-RETURN-ROUTE-EARLY-20261016. Exact6 actual-material continuity; clean split closure follows.
+Current HEAD recorded for this handoff: `a7902f64b792a3f34b4246fd65b26e166fb0217a`. Material SHA: `a7902f64b792a3f34b4246fd65b26e166fb0217a`. Batch ID: CVF-RETURN-ROUTE-EARLY-20261016. Exact6 actual-material continuity; clean split closure follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-SOURCE-CORRECTION-PLAN-20261016. Early return-route guard accepted at material 8a36fbe59285eea4bd496b2d93cab9b4df000882; consume docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md and docs/reviews/evidence/return-route-early-local-20261016.json. Static changed ready packet check reuses production builder, no opt-in escape, no downstream subprocess; actual latency and limits are in proof. Existing fail-fast material helper used; repository gate PASS does not accept B-E. Return to one consolidated Windows preload/strict-adjunct and admitted-junction pruning/refusal source-correction PLAN from original negative runtime. That functional correction/proof remains NOT_IMPLEMENTED/NOT_PROVEN; October16 whole-learning effectiveness not promoted. No old release repin/runtime replay/provider/deletion. Old1spent/2retired, source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/parked effects/LHW24 retained. Ordinary design details Local; no generic operator checkpoint.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-SOURCE-CORRECTION-PLAN-20261016. Early return-route guard accepted at material a7902f64b792a3f34b4246fd65b26e166fb0217a; consume docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md and docs/reviews/evidence/return-route-early-local-20261016.json. Static changed ready packet check reuses production builder, no opt-in escape, no downstream subprocess; actual latency and limits are in proof. Existing fail-fast material helper used; repository gate PASS does not accept B-E. Return to one consolidated Windows preload/strict-adjunct and admitted-junction pruning/refusal source-correction PLAN from original negative runtime. That functional correction/proof remains NOT_IMPLEMENTED/NOT_PROVEN; October16 whole-learning effectiveness not promoted. No old release repin/runtime replay/provider/deletion. Old1spent/2retired, source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/parked effects/LHW24 retained. Ordinary design details Local; no generic operator checkpoint.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -82,20 +82,8 @@ Exact changed manifest:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `governance/compat/check_work_order_dispatch_quality_artifacts.py`
-- `governance/compat/check_work_order_dispatch_quality_range.py`
-- `governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py`
-- `docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md`
-- `docs/reviews/evidence/return-route-early-worker-20261016.json`
-- `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md`
-- `docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md`
-- `docs/reviews/evidence/return-route-early-local-20261016.json`
-- `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`
-- `docs/reviews/learnings/README.md`
-- `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json`
 
-Rollback boundary: exact listed source/closure/current-hash paths only.
+Rollback boundary: exact listed continuity paths only.
 
 ## Core Guard Self-Protection Authorization
 
@@ -119,17 +107,17 @@ Rollback boundary: exact listed six continuity paths; no product source, old run
 | Session or invocation | return-route-early-closure-continuity-20261016 |
 | Working directory | repository root |
 | Command or tool surface | source edits, canonical generation, staged exact6 normal commits/gates |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `governance/compat/check_work_order_dispatch_quality_artifacts.py`; `governance/compat/check_work_order_dispatch_quality_range.py`; `governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/return-route-early-worker-20261016.json`; `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/return-route-early-local-20261016.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator explicit bounded checker fix and standing Local continuity authority |
-| Before status evidence | material 8a36fbe59285eea4bd496b2d93cab9b4df000882 committed; clean worktree/stage empty |
+| Before status evidence | material a7902f64b792a3f34b4246fd65b26e166fb0217a committed; clean worktree/stage empty |
 | After status evidence | current paired authority/mode/next and actual material SHA synchronized |
 | Diff evidence | exact6 manifest; no source or behavior claim |
 | Approval boundary | guard task only, old product/runtime grants retired |
 | Claim boundary | startup continuity not functional acceptance |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | return-route-early-closure-continuity-20261016 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `governance/compat/check_work_order_dispatch_quality_artifacts.py`; `governance/compat/check_work_order_dispatch_quality_range.py`; `governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/return-route-early-worker-20261016.json`; `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/return-route-early-local-20261016.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `governance/compat/check_work_order_dispatch_quality_artifacts.py`; `governance/compat/check_work_order_dispatch_quality_range.py`; `governance/compat/test_check_work_order_dispatch_quality_worker_return_contract.py`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_WORKER_RETURN_2026-10-16.md`; `docs/reviews/evidence/return-route-early-worker-20261016.json`; `docs/baselines/CVF_GC018_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_RETURN_ROUTE_EARLY_2026-10-16.md`; `docs/reviews/CVF_RETURN_ROUTE_EARLY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/return-route-early-local-20261016.json`; `docs/reviews/learnings/CVF_ORCHESTRATOR_PREAPPROVAL_FEASIBILITY_LEARNING_2026-10-08.md`; `docs/reviews/learnings/README.md`; `docs/reference/downstream_gate_profile/downstream_finding_intake_registry.json` |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH six continuity paths |
 | Deletion or rename disposition | none; old stage/custody retained |
 
