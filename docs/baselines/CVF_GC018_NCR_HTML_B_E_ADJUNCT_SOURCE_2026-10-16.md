@@ -281,12 +281,12 @@ Source-only implementation/test grant after committed bound release; no current 
 
 | Field | Evidence |
 |---|---|
-| Actor | INTERNAL_AGENT Local dispatch-author/session-sync steward; root final technical owner |
+| Actor | ROOT_LOCAL_REVIEWER acting as terminal evidence/session-sync steward |
 | Provider or surface | shared private workspace |
-| Session or invocation | ncr-be-local-allowance-amendment-20261016 |
+| Session or invocation | ncr-be-terminal-root-finality-20261016 |
 | Working directory | repository root |
 | Command or tool surface | authority/continuity edits, canonical generation, governance gates and normal commits only; no oracle execution |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | latest explicit user delegation -> specific Local one-program decision |
 | Before status evidence | clean entry409cfd85ddbfc8f43b0e427ab4f7ce030f0d87b4; frozen worker7 and old two spent entries |
 | After status evidence | Local exactly1 Python<=90s added, total3; execution still unobserved; same deadline/counters |
@@ -294,9 +294,9 @@ Source-only implementation/test grant after committed bound release; no current 
 | Approval boundary | root-only exact candidate after committed setup, not worker redispatch or runtime |
 | Claim boundary | formal allowance only; no fresh Python PASS/source acceptance/AI/runtime result |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-local-allowance-amendment-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-be-terminal-root-finality-20261016 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH exact9 |
 | Deletion or rename disposition | none; old evidence and prepared scripts retained |
 
@@ -326,15 +326,22 @@ Rollback boundary: exact9 then exact6 only; preserve worker7/source13, static ev
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: normal currentAuthority guards require amended baseline/order hashes and the source/generated exact6 in the same material commit. Exact9 is current amendment3 plus exact6, not original worker acceptance18. Separate exact6 actual-pair-SHA sync follows.
+Atomicity reason: closed WO/raw currentAuthority plus new proof/release/CP/roadmap and source/generated exact6 align in one transaction. Final acceptance12 differs from original implementation18 because immutable worker7 already committed. Baseline gains only this terminal-doc decision; A/E/oldCP/oldLP stay unchanged. Separate exact6 sync binds actual final material SHA.
 Exact changed manifest:
 - `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`
-- `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`
+- `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`
+- `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`
+- `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Rollback boundary: exact9 plus later exact6 only; original worker/probe evidence and all failures remain immutable. No source/runtime authority or history rewrite.
+Rollback boundary: exact12 then exact6 only; preserve all historical failures/source/ledgers/counters/freeze. No guard/hook/carrier semantics, runtime effect or history rewrite.
+
+## Terminal Evidence Preservation Decision - 2026-10-16
+
+Original root execution/preparation deadline2026-10-16T10:54:00Z elapsed before repository closure completed. The actual one-shot Python proof finished09:33:49Z inside that deadline; no later proof or implementation is admitted. Under the latest explicit operator delegation, Local root separately admits terminal evidence preservation and repository finality only, conservative anchor11:13Z/deadline11:43Z (30 minutes), with exact12 documentation/evidence/continuity paths and normal governance gates/commits. Original elapsed budget is not reset or reported compliant; procedure remains PARTIAL. Local3/3 slots, worker7/source13 and all old failures remain unchanged; no worker, test, JS, API, Native, browser, container, deletion or runtime effect. No automatic continuation after this terminal grant.

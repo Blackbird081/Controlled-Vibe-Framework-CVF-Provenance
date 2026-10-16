@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md",
-    "baselineSha256": "84abe4bb2bb02d13271039bc3c10c041758f5620dbf8b92eb296225cea77b482",
+    "baselineSha256": "83b976dd141d5594c28a7fd40b2f585e8bcac8fc188c16059966e85243ef8581",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md",
-    "workOrderSha256": "bdfc7dfbacca66baa28273830872b1bb4427c47e82f990c23b2f9c997152b2f2"
+    "workOrderSha256": "3c15c3c94d97b7c04ed47184253ee7b6f8458c715b1615c3b81ee97ffb11e4ed"
   },
-  "currentAuthoritySyncReason": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; baseline=docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; Local root-only one-shot Python recovery ordinal3<=90s, cumulativecap3 preserving old2 spent. Candidate .cvf/runtime/ncr-be-adjunct-recovery-20261016/local_probe_r1.py SHA25666dc947d1a01ddc1386cf83bea8b05c55754d32bdeab95b7a572387113235c40 through prepared run_one_recovery.py only. Latest user explicit technical delegation -> current Local additional-program decision in docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md. Separate committed exact6 actual-pair-SHA sync and current bound pre-implementation PASS precede sole root launch. Worker invocation closed, no worker/test/JS rerun, source7/source13/proof/ledger edit or runtime effect. Source acceptance remains BLOCKED pending actual independent Python result and separate disposition. Original rootdeadline10:54Z/entry06:54Z unchanged; no reset/refund/slot transfer. Source13/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions retained; no transition/new independentCriticalEvidence; parked effects/LHW24 unchanged.",
+  "currentAuthoritySyncReason": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=ASSESS; BATCH_ID=CVF-NCR-HTML-B-E-PYTHON-ORACLE-RECOVERY-20261016. ACCEPTED_SOURCE_ONLY_PROCEDURE_PARTIAL: frozen adjunct5/worker7 accepted with actual root Python45 predicates including20 typed/message refusals, prior valid LocalJS18 and worker35/30/full gate reused. Source-only release issued; no runtime release or AI-governance proof. Next Local assesses actual B-E technical readiness/prerequisites under existing docs/assessments/CVF_NCR_HTML_B_E_EFFECT_DRIVER_LOCAL_DESIGN_2026-10-16.md, preparing concrete before-effect authority/identity/custody/budgets as needed. Routine technical choices proceed under existing Local delegation; no generic operator documentary checkpoint. Actual Native/Job/product/browser/container/provider/disposal/public/deploy effects held until concrete readiness/effect admission. Local3/3 spent, original failed Python/JS18/old ledger retained, no retry/refill/worker or JS rerun. Original root deadline10:54Z elapsed after valid09:33Z proof; terminal docs only11:13Z-11:43Z under Local decision, procedure PARTIAL and no proof or timer reset. Source13/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions unchanged; no transition/new independentCriticalEvidence. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_b_e_python_oracle_recovery_local_allowance_admitted",
-  "previousMode": "cvf_ncr_html_b_e_python_oracle_recovery_prepared_held",
+  "currentMode": "cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open",
+  "previousMode": "cvf_ncr_html_b_e_python_oracle_recovery_local_allowance_admitted",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

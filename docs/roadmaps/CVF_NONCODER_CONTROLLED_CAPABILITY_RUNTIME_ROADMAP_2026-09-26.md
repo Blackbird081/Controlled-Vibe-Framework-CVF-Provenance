@@ -5,13 +5,13 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.49
+Version: 2.50
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-14
 
-**2026-10-16 B-E oracle recovery prepared; execution held:** `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md` / `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-static-20261016.json` prepare a separate213-line Local Python candidate: missing fake Sink.mkdir added,13 refusal sites bind error type/message, qualified endpoint control and partial-result telemetry. AST/source-call checks only; new probe/worker/runtime starts0. Source5/worker7/source13 and original Python failure/JS18 PASS/Local2 spent slots retained; worker35/30/full gate evidence reused. Proposal is exactly1 additional Python<=90s, cumulative Local cap3 only after explicit budget decision and governed amendment/bound setup; old cap2 remains active, original10:54Z deadline unchanged. No retry/refund, worker-slot transfer, JS rerun or source release. No source defect established by old fixture failure. Same root/generation9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions, no transition/critical-evidence increase. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained. Public Export Disposition: DEFERRED_PRIVATE_ONLY.
+**2026-10-16 B-E adjunct source accepted bounded after Local oracle recovery:** `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md` / `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json` accept frozen source5 as SOURCE_ADJUNCT_ONLY/procedure PARTIAL; release `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`. Root authorized ordinal3 once and observed45 predicates including20 typed/message refusals (not additive), both completed groups, exit0 and0.225431s charged interval. Original Python fixture failure and old Local proof/ledger preserved; valid LocalJS18 and worker35/30/full gate reused without replay. Local3/3 spent, no refill/retry/worker/JS rerun. Worker7/source13/original release/control proofs unchanged. Actual Native/Job/browser/container/network/provider/credentials/delete0; no runtime/AI-governance proof. Next Local assesses actual B-E prerequisites/readiness and concrete effect envelope under existing design; routine technical choices need no new generic operator checkpoint. Same root gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions; no transition/critical-evidence increase. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained.  Terminal repository finality occurs after original10:54Z; separately bounded Local documentation-only preservation, procedure PARTIAL; no proof-budget reset. Public Export Disposition: DEFERRED_PRIVATE_ONLY.
 
 **2026-10-16 native prerequisite PLAN complete; entry blocked:** `docs/assessments/CVF_NCR_HTML_NATIVE_PROOF_PREREQUISITES_2026-10-16.md` / `docs/reviews/evidence/ncr-html-native-prerequisites-local-20261016.json` consume prior160 Python/13 Node/14 independent and six read-only validated receipts without control rerun. Standalone Windows ABI/owned benign-child N1-N4 can precede B-E; documented snapshot INVALID_HANDLE_VALUE differs from zero-only Win32._ok used by resume, so one consolidated existing-owner source envelope comes first. Actual failure unobserved; current cap1 refuses before namespace, tools/image/host unknown. No native/product/browser/container/provider/delete or budget refill. Same root/generation6/SCEC2/counters2,0,2,0/blockers/freeze/P4 exclusions retained. Local prepares the source-correction envelope directly, no manual relay/new checker. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 unchanged.
 
@@ -1049,22 +1049,22 @@ Repair read-ahead: `governance/compat/check_delta_execution_claim_boundary.py`, 
 
 | Field | Evidence |
 |---|---|
-| Actor | Local reviewer / roadmap author |
+| Actor | ROOT_LOCAL_REVIEWER acting as terminal evidence/session-sync steward |
 | Provider or surface | Local coding-agent workspace |
-| Session or invocation | ncr-result-isolation-dispatch-20261012 |
+| Session or invocation | ncr-be-terminal-root-finality-20261016 |
 | Working directory | Private CVF provenance repository root |
 | Command or tool surface | Read-only CVF/relay/Git inspection, apply_patch, document/governance checks |
-| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | Operator transferred converged research to Local; incorporate D013 and prepare bounded internal packet, stop for operator relay |
 | Before status evidence | cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29;clean before source witness |
-| After status evidence | exact11 dispatch then exact6 continuity;worker pending,22 observations unchanged |
+| After status evidence | exact12 dispatch then exact6 continuity;worker pending,22 observations unchanged |
 | Diff evidence | `git diff -- docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `git status --short` |
 | Approval boundary | D013 roadmap incorporation; internal packet requires scoped authority and pre-dispatch; effects remain separately gated |
 | Claim boundary | Accepted design with W00/W01 closed bounded and actual pilot scope pending; no completed capability or audit finding closure |
 | Agent type | INTERNAL_AGENT, orchestrator authoring role |
-| Invocation ID | ncr-result-isolation-dispatch-20261012 |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-be-terminal-root-finality-20261016 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | Expected author delta MATCH: roadmap only; confirm from final git status before material commit |
 | Deletion or rename disposition | None; no stash, deletion, rename or unrelated cleanup authorized |
 
@@ -1082,22 +1082,22 @@ current continuity, parked lanes, existing runtime and all prior evidence.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local documentation maintainer / reviewer |
+| Actor | ROOT_LOCAL_REVIEWER acting as terminal evidence/session-sync steward |
 | Provider or surface | Local private provenance workspace |
-| Session or invocation | ncr-result-isolation-dispatch-20261012 |
+| Session or invocation | ncr-be-terminal-root-finality-20261016 |
 | Working directory | Repository root |
 | Command or tool surface | Read, Git inspection, exact UTF-8 edits, existing local governance gates |
-| Target paths | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | Operator 2026-10-06 adopt A-C and make instructions discoverable without reminders |
 | Before status evidence | cd7314b0cbdab2e0a0b1f842ce6d1a6d4540ca29;clean before source witness |
-| After status evidence | exact11 dispatch then exact6 continuity;worker pending,22 observations unchanged |
+| After status evidence | exact12 dispatch then exact6 continuity;worker pending,22 observations unchanged |
 | Diff evidence | git diff --stat; git diff --check; git status --short |
 | Approval boundary | Existing owner and instruction-route edits only |
 | Claim boundary | Instruction discoverability and static document checks; no agent behavior/enforcement proof |
 | Agent type | INTERNAL_AGENT, documentation maintenance role |
-| Invocation ID | ncr-result-isolation-dispatch-20261012 |
-| Expected manifest | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/baselines/CVF_GC018_NCR_RESULT_ISOLATION_2026-10-12.md`; `docs/reviews/evidence/ncr-result-isolation-dispatch-20261012.json`; `docs/roadmaps/README.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.md`; `docs/roadmaps/CVF_ROADMAP_INVENTORY.csv`; `.gitattributes`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Invocation ID | ncr-be-terminal-root-finality-20261016 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH: six paths, no additions/deletions/renames outside the declared manifest |
 | Deletion or rename disposition | None |
 
@@ -1139,24 +1139,24 @@ orientation packets are not refreshed by this private local edit.
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT reviewer/steward |
-| Provider or surface | private shared workspace; no worker start |
-| Session or invocation | ncr-be-adjunct-python-static-recovery-20261016 |
+| Actor | ROOT_LOCAL_REVIEWER acting as terminal evidence/session-sync steward |
+| Provider or surface | shared private workspace |
+| Session or invocation | ncr-be-terminal-root-finality-20261016 |
 | Working directory | repository root |
-| Command or tool surface | selected source reads, textual patch, ast.parse/hash metadata only, author/normal gates |
-| Target paths | `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-static-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Allowed scope source | operator next/full Local handling; current continuity permits static diagnostic/consolidated recovery only |
-| Before status evidence | clean at 31b6f2c15b66a6a0d19346b523f2f6b81306a913; worker7/source13 and old oracle/probe receipts frozen |
-| After status evidence | exact3 static disposition/evidence/roadmap; no source or program-budget change |
-| Diff evidence | exact3 material paths, no deletes/renames |
-| Approval boundary | one additional Python program remains unapproved; operator budget decision and governed amendment precede execution |
-| Claim boundary | source-text preparation and bounded plan; no additional probe PASS, source release or runtime effect |
+| Command or tool surface | consume actual root receipts; metadata proof/release/closure and canonical gates/normal commits; no probe rerun |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | Local root accepted source-only decision and delegated exact12 closure; prior allowance consumed once |
+| Before status evidence | clean fc6eb6e004356f85d3b01630ee3d6d088b4878b3; root ordinal3 PASS; frozen old proof/worker7 |
+| After status evidence | exact12 source-only acceptance; currentAuthority closed WO hash/generated alignment; no runtime grant |
+| Diff evidence | git diff --name-status plus exact staged11; no deletes or renames |
+| Approval boundary | root technical acceptance only; future B-E needs concrete effect/readiness admission |
+| Claim boundary | source-only fake models/procedure partial, not AI-governance or actual B-E |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-adjunct-python-static-recovery-20261016 |
-| Expected manifest | `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-static-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-static-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Manifest delta | MATCH exact3 static material |
-| Deletion or rename disposition | none; old/new oracle and logs retained in Local custody |
+| Invocation ID | ncr-be-terminal-root-finality-20261016 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/reviews/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_COMPLETION_2026-10-16.md`; `docs/reviews/evidence/ncr-html-b-e-python-oracle-recovery-local-20261016.json`; `docs/reviews/evidence/ncr-html-b-e-adjunct-source-release-20261016.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact12 |
+| Deletion or rename disposition | none; all old/new bytes, failure and spent entries retained |
 
 ## Public Export Disposition
 

@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Local one extra Python ordinal3 admitted; bound setup before launch; source acceptance held |
+| Parent maintenance | Adjunct source accepted bounded; Local actual B-E readiness/prerequisite assessment next |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_b_e_python_oracle_recovery_local_allowance_admitted`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local root exactly1 Python recovery<=90s after committed pair/continuity and bound setup; role=INTERNAL_AGENT Local dispatch-author/session-sync steward; phase=explicit allowance admitted, execution pending; decision owner=Local root under latest user delegation; parked checkpoint=worker/source/runtime/B-E/provider/disposal/public/deploy held; old2 remain spent and rootdeadline10:54Z unchanged.
+Startup acknowledged: current mode=`cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local actual B-E technical readiness/prerequisite assessment under existing design; role=INTERNAL_AGENT Local closure/session-sync steward; phase=source-only adjunct accepted/procedure partial, effects held; decision owner=Local root; parked checkpoint=concrete runtime readiness/effect admission required, no extra generic operator checkpoint for routine technical choices; Local3 spent and original10:54Z deadline retained.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_b_e_python_oracle_recovery_local_allowance_admitted`
-Current mode: `cvf_ncr_html_b_e_python_oracle_recovery_local_allowance_admitted`; previous mode marker: `cvf_ncr_html_b_e_python_oracle_recovery_prepared_held`
+Current mode marker: `cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open`
+Current mode: `cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open`; previous mode marker: `cvf_ncr_html_b_e_python_oracle_recovery_local_allowance_admitted`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_b_e_python_oracle_recovery_local_allowance_admitted`
+Mode: `cvf_ncr_html_b_e_adjunct_source_accepted_readiness_open`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; baseline=docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; Local root-only one-shot Python recovery ordinal3<=90s, cumulativecap3 preserving old2 spent. Candidate .cvf/runtime/ncr-be-adjunct-recovery-20261016/local_probe_r1.py SHA25666dc947d1a01ddc1386cf83bea8b05c55754d32bdeab95b7a572387113235c40 through prepared run_one_recovery.py only. Latest user explicit technical delegation -> current Local additional-program decision in docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md. Separate committed exact6 actual-pair-SHA sync and current bound pre-implementation PASS precede sole root launch. Worker invocation closed, no worker/test/JS rerun, source7/source13/proof/ledger edit or runtime effect. Source acceptance remains BLOCKED pending actual independent Python result and separate disposition. Original rootdeadline10:54Z/entry06:54Z unchanged; no reset/refund/slot transfer. Source13/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions retained; no transition/new independentCriticalEvidence; parked effects/LHW24 unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=ASSESS; BATCH_ID=CVF-NCR-HTML-B-E-PYTHON-ORACLE-RECOVERY-20261016. ACCEPTED_SOURCE_ONLY_PROCEDURE_PARTIAL: frozen adjunct5/worker7 accepted with actual root Python45 predicates including20 typed/message refusals, prior valid LocalJS18 and worker35/30/full gate reused. Source-only release issued; no runtime release or AI-governance proof. Next Local assesses actual B-E technical readiness/prerequisites under existing docs/assessments/CVF_NCR_HTML_B_E_EFFECT_DRIVER_LOCAL_DESIGN_2026-10-16.md, preparing concrete before-effect authority/identity/custody/budgets as needed. Routine technical choices proceed under existing Local delegation; no generic operator documentary checkpoint. Actual Native/Job/product/browser/container/provider/disposal/public/deploy effects held until concrete readiness/effect admission. Local3/3 spent, original failed Python/JS18/old ledger retained, no retry/refill/worker or JS rerun. Original root deadline10:54Z elapsed after valid09:33Z proof; terminal docs only11:13Z-11:43Z under Local decision, procedure PARTIAL and no proof or timer reset. Source13/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions unchanged; no transition/new independentCriticalEvidence. R1/R2partial,R3/R4open,R5/R6deferred; parked effects/LHW24 retained.
 
 ## Parked Checkpoints
 
