@@ -150,9 +150,9 @@ Worker source/manual Git activity limit is 64 operations. Root limit is 128 from
 
 ## Local Probe and Closure Plan
 
-Root expectation metadata is fixed at .cvf/runtime/ncr-be-adjunct-source-20261016/local-expectations.json SHA-256 9264d071f5b488d626b34a18af7da91bcb8a5fc72a7376bd3317d55a32259c15. It defines at most two independent focused fake programs, each <=90 seconds: a Python fake program and a JavaScript fake program. Expected predicates are the recorded positive and negative boundary groups: charged work/cleanup boundaries and preserved grant/order; refusal before dependent Docker work on endpoint mismatch; marker spent before runner and retained after failure/second-use refusal; exception restoration; qualified cached Chromium object/original receiver/explicit executable path and shortened timeout; no delegation after deadline-consuming verification; binding identity/canonical-byte refusal; no installation on plain import or partial binding environment. This file is Local-owned test guidance only; no worker test helper/assertion import and no live effects.
+Root expectation metadata is fixed at .cvf/runtime/ncr-be-adjunct-source-20261016/local-expectations.json SHA-256 9264d071f5b488d626b34a18af7da91bcb8a5fc72a7376bd3317d55a32259c15. Its original two-program ceiling is historical: failed Python and passed JavaScript are both spent. Current cumulative Local ceiling is3 only through the exact additional Python allowance below; original expectation predicates remain unchanged. Expected predicates are the recorded positive and negative boundary groups: charged work/cleanup boundaries and preserved grant/order; refusal before dependent Docker work on endpoint mismatch; marker spent before runner and retained after failure/second-use refusal; exception restoration; qualified cached Chromium object/original receiver/explicit executable path and shortened timeout; no delegation after deadline-consuming verification; binding identity/canonical-byte refusal; no installation on plain import or partial binding environment. This file is Local-owned test guidance only; no worker test helper/assertion import and no live effects.
 
-Worker completes the five new source/test files, both required fake commands, exact return/evidence and mandatory full worker fast gate, then freezes all7 bytes and returns the lane. Local first consumes that returned evidence and then runs its two distinct focused probes; no pre-return probe barrier applies. Root writes its distinct Local proof after execution. Each failed or ambiguous program consumes its slot; any repair stays within the original remaining allowance.
+Worker completes the five new source/test files, both required fake commands, exact return/evidence and mandatory full worker fast gate, then freezes all7 bytes and returns the lane. Local first consumes that returned evidence and then consumes the two original probe outcomes and the one specifically admitted Python recovery; no pre-return probe barrier applies. Root writes its distinct Local proof after execution. Each failed or ambiguous program consumes its slot; no unused original allowance remains; only the specifically amended ordinal3 may run.
 
 Pre-execution amendment: the first worker identified contradictory lock and probe-order prose before edits, completed its original bound setup gate and yielded a clean lane at97150799b. Local aligned this overview to Source Interface Bindings and the work-order Execution Plan. No source/scaffold/test was written and no fake-program slot was spent. The same scope, actor and inclusive06:54Z deadlines remain; renewed pair/continuity/bound release precede resumption.
 
@@ -281,21 +281,60 @@ Source-only implementation/test grant after committed bound release; no current 
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher/reviewer |
-| Provider or surface | private shared workspace; completed internal advisory drafter |
-| Session or invocation | ncr-be-adjunct-source-dispatch-20261016 |
+| Actor | INTERNAL_AGENT Local dispatch-author/session-sync steward; root final technical owner |
+| Provider or surface | shared private workspace |
+| Session or invocation | ncr-be-local-allowance-amendment-20261016 |
 | Working directory | repository root |
-| Command or tool surface | mapped reads; actual root resolver/entry gate; advisory scaffold/drafts; Local consolidated adoption/corrections and canonical author gates |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator full Local roadmap handling and committed five-file design |
-| Before status evidence | original clean entry f9ca6a26e/PASS12.54s; pre-edit amendment lane yielded clean at97150799b with bound setup PASS91.55s and zero source/scaffold/test writes |
-| After status evidence | canonical pair only; no implementation/source or runtime effect |
-| Diff evidence | exact paired staged manifest before material commit |
-| Approval boundary | bound pair/continuity/pre-dispatch precede implementation release; runtime excluded |
-| Claim boundary | source-only prospective contract, not executed source or runtime proof |
+| Command or tool surface | authority/continuity edits, canonical generation, governance gates and normal commits only; no oracle execution |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | latest explicit user delegation -> specific Local one-program decision |
+| Before status evidence | clean entry409cfd85ddbfc8f43b0e427ab4f7ce030f0d87b4; frozen worker7 and old two spent entries |
+| After status evidence | Local exactly1 Python<=90s added, total3; execution still unobserved; same deadline/counters |
+| Diff evidence | git diff --name-status and staged exact manifest; no deletion/rename |
+| Approval boundary | root-only exact candidate after committed setup, not worker redispatch or runtime |
+| Claim boundary | formal allowance only; no fresh Python PASS/source acceptance/AI/runtime result |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-adjunct-source-dispatch-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact8 atomic pre-edit authority repair; no worker source changes |
-| Deletion or rename disposition | none; all prior source/proof/custody retained |
+| Invocation ID | ncr-be-local-allowance-amendment-20261016 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact9 |
+| Deletion or rename disposition | none; old evidence and prepared scripts retained |
+
+## Local Root-Only Recovery Allowance Amendment - 2026-10-16
+
+LOCAL_ONE_PROGRAM_ALLOWANCE_ADMITTED_EXECUTION_PENDING. The latest user explicitly delegates this technical continuation decision to the Local orchestrator/reviewer and instructs that minor execution choices not return to the operator. This specific Local decision is current authority, not an inference from prior generic continuation and not prior operator approval. It supersedes the earlier proposal-only/operator-decision hold for this one program only. Historical static preparation, original failed Python, JS18 PASS and spent2 remain unchanged.
+
+Local root alone is authorized exactly one additional Python fake-only oracle program, outer<=90s, cumulative ordinal3/ceiling3 preserving original failed Python and passed JS as two spent slots. Only candidate .cvf/runtime/ncr-be-adjunct-recovery-20261016/local_probe_r1.py SHA25666dc947d1a01ddc1386cf83bea8b05c55754d32bdeab95b7a572387113235c40 via the already prepared run_one_recovery.py watchdog is eligible. No worker start/test repeat, JS rerun, source5/worker7/source13 edit, original Local proof/ledger edit, runtime effect or slot transfer. Failure/timeout/ambiguity spends ordinal3; no repair/retry successor is admitted. Root deadline remains2026-10-16T10:54:00Z from06:54Z including all preparation; no reset/extension.
+
+Expected information gain: first complete distinct Python observation across the original counter/identity/endpoint and admission/marker/restore groups on frozen source5, using the statically prepared fixture/typed-refusal correction. Worker35/JS30/full gate and valid LocalJS18 are reused; no broad suite or live proof is needed or admitted. Source acceptance remains BLOCKED pending the new result and separate Local disposition; this allowance is neither source release nor runtime consent.
+
+Before execution: commit the paired amendment and currentAuthority/generated exact6 atomically, then commit exact6 continuity binding actual pair SHA and pass current bound pre-implementation. The author/steward of this amendment does not launch the oracle. Local root consumes the returned committed identities/setup receipt, then owns the sole launch. Gates/Git/hash/commit metadata are separate from the one target program.
+
+## Core Guard Self-Protection Authorization
+
+Authorized guard-maintenance scope: atomic exact9 Local allowance amendment and authority/source/generated alignment, followed by a separate exact6 actual-pair-SHA continuity commit. No worker or implementation invocation is released.
+Protected paths:
+- `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+Operator authorization: latest user explicit Local orchestrator/reviewer decision delegation and current specific one-program decision; no prior approval is invented.
+Rollback boundary: exact9 then exact6 only; preserve worker7/source13, static evidence, original Local proof/ledger, candidate/watchdog, spent2, counters/freeze/P4 exclusions. No checker/hook/carrier semantics, probe execution or runtime change.
+
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+Atomicity reason: normal currentAuthority guards require amended baseline/order hashes and the source/generated exact6 in the same material commit. Exact9 is current amendment3 plus exact6, not original worker acceptance18. Separate exact6 actual-pair-SHA sync follows.
+Exact changed manifest:
+- `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`
+- `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`
+- `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+Rollback boundary: exact9 plus later exact6 only; original worker/probe evidence and all failures remain immutable. No source/runtime authority or history rewrite.
