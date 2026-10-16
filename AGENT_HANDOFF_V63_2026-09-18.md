@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `add1d14a078cfb593480b7271feb4b7389b63bc8`. Material SHA: `add1d14a078cfb593480b7271feb4b7389b63bc8`. Batch ID: CVF-NCR-HTML-B-E-PYTHON-ORACLE-RECOVERY-20261016. Exact3 static recovery material; normal91/91 PASS, automatic collector inspected. This exact6 sync changes prepared decision pointers only; original cap2 remains exhausted and no additional program/effect is admitted.
+Current HEAD recorded for this handoff: `024c11ed000d038e1671cb2efb84df6dc7c74186`. Material SHA: `024c11ed000d038e1671cb2efb84df6dc7c74186`. Batch ID: CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016. Atomic exact9 amended pair/currentAuthority+continuity; normal91/91 PASS. This exact6 commit binds actual paired SHA. Local root may consume current bound setup then exactly1 Python ordinal3<=90s; no probe has run in this amendment invocation.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; baseline=docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; Local root-only one-shot Python recovery ordinal3<=90s, cumulativecap3 preserving old2 spent. Candidate .cvf/runtime/ncr-be-adjunct-recovery-20261016/local_probe_r1.py SHA25666dc947d1a01ddc1386cf83bea8b05c55754d32bdeab95b7a572387113235c40 through prepared run_one_recovery.py only. Latest user explicit technical delegation -> current Local additional-program decision in amended paired authority. Separate committed exact6 actual-pair-SHA sync and current bound pre-implementation PASS precede sole root launch. Worker invocation closed, no worker/test/JS rerun, source7/source13/proof/ledger edit or runtime effect. Source acceptance remains BLOCKED pending actual independent Python result and separate disposition. Original rootdeadline10:54Z/entry06:54Z unchanged; no reset/refund/slot transfer. Source13/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions retained; no transition/new independentCriticalEvidence; parked effects/LHW24 unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-ADJUNCT-SOURCE-20261016. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; baseline=docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md; Local root-only one-shot Python recovery ordinal3<=90s, cumulativecap3 preserving old2 spent. Candidate .cvf/runtime/ncr-be-adjunct-recovery-20261016/local_probe_r1.py SHA25666dc947d1a01ddc1386cf83bea8b05c55754d32bdeab95b7a572387113235c40 through prepared run_one_recovery.py only. Latest user explicit technical delegation -> current Local additional-program decision in docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md. Separate committed exact6 actual-pair-SHA sync and current bound pre-implementation PASS precede sole root launch. Worker invocation closed, no worker/test/JS rerun, source7/source13/proof/ledger edit or runtime effect. Source acceptance remains BLOCKED pending actual independent Python result and separate disposition. Original rootdeadline10:54Z/entry06:54Z unchanged; no reset/refund/slot transfer. Source13/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions retained; no transition/new independentCriticalEvidence; parked effects/LHW24 unchanged.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -141,7 +141,7 @@ Rollback boundary: exact9 then exact6; preserve worker7/source13/static E/origin
 | Session or invocation | ncr-be-local-allowance-amendment-20261016 |
 | Working directory | repository root |
 | Command or tool surface | authority/continuity edits, canonical generation, governance gates and normal commits only; no oracle execution |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | latest explicit user delegation -> specific Local one-program decision |
 | Before status evidence | clean entry409cfd85ddbfc8f43b0e427ab4f7ce030f0d87b4; frozen worker7 and old two spent entries |
 | After status evidence | Local exactly1 Python<=90s added, total3; execution still unobserved; same deadline/counters |
@@ -150,9 +150,9 @@ Rollback boundary: exact9 then exact6; preserve worker7/source13/static E/origin
 | Claim boundary | formal allowance only; no fresh Python PASS/source acceptance/AI/runtime result |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-be-local-allowance-amendment-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_ADJUNCT_SOURCE_2026-10-16.md`; `docs/assessments/CVF_NCR_HTML_B_E_PYTHON_ORACLE_RECOVERY_DISPOSITION_2026-10-16.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact6 |
 | Deletion or rename disposition | none; old evidence and prepared scripts retained |
 
 ## Claim Boundary
