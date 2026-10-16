@@ -35,18 +35,18 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_b_e_runtime_packet_prepared`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound gates then concrete first runtime invocation; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=runtime packet preparation; decision owner=LOCAL; parked checkpoint=actual effects conditional on before-effect gates, run2 on accepted run1; other parked lanes retained.
+Startup acknowledged: current mode=`cvf_ncr_html_b_e_runtime_admitted_pending_bound_gates`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound gates then concrete first runtime invocation; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=runtime packet preparation; decision owner=LOCAL; parked checkpoint=actual effects conditional on before-effect gates, run2 on accepted run1; other parked lanes retained.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_b_e_runtime_packet_prepared`
-Current mode: `cvf_ncr_html_b_e_runtime_packet_prepared`; previous mode marker: `cvf_ncr_html_b_e_readiness_assessed_runtime_packet_pending`
+Current mode marker: `cvf_ncr_html_b_e_runtime_admitted_pending_bound_gates`
+Current mode: `cvf_ncr_html_b_e_runtime_admitted_pending_bound_gates`; previous mode marker: `cvf_ncr_html_b_e_runtime_packet_prepared`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_b_e_runtime_packet_prepared`
+Mode: `cvf_ncr_html_b_e_runtime_admitted_pending_bound_gates`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Local executes docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md concrete paired runtime envelope under existing locked B-E design. Require committed paired authority/exact6 actual-SHA continuity and bound pre-dispatch/pre-implementation PASS before effects; then independently freeze pins/admission raw hashes. Worker ncr-be-worker-20261016-r1a cap2 once; actual accepted terminal/ACK/positive absence plus committed Local acceptance gates distinct Local ncr-be-local-20261016-r2a cap1 once. Exact external namespaces/custody and process-local physical Node discovery are in paired order. Task12:01Z-13:31Z; worker inclusive13:00Z, Local13:20Z; latest launches12:42Z/13:02Z with1080sec watchdog. No reset/retry/fallback; failures consume identity and block dependent2. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; no real-data/provider/delete/public/deploy or LHW24 effects. Runtime result remains unobserved until actual returned proof; no generic operator checkpoint.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-RUNTIME-ADMISSION-20261016. Paired material 27dff0217500bd81dd5b8ff0baa82a616e5b6ab4 normal91/91 PASS. Local executes docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_RUNTIME_2026-10-16.md concrete paired runtime envelope under existing locked B-E design. Require committed paired authority/exact6 actual-SHA continuity and bound pre-dispatch/pre-implementation PASS before effects; then independently freeze pins/admission raw hashes. Worker ncr-be-worker-20261016-r1a cap2 once; actual accepted terminal/ACK/positive absence plus committed Local acceptance gates distinct Local ncr-be-local-20261016-r2a cap1 once. Exact external namespaces/custody and process-local physical Node discovery are in paired order. Task12:01Z-13:31Z; worker inclusive13:00Z, Local13:20Z; latest launches12:42Z/13:02Z with1080sec watchdog. No reset/retry/fallback; failures consume identity and block dependent2. Source13/adjunct5/gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7 exclusions unchanged; no real-data/provider/delete/public/deploy or LHW24 effects. Runtime result remains unobserved until actual returned proof; no generic operator checkpoint.
 
 ## Parked Checkpoints
 
