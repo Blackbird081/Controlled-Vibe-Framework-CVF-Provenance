@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | BE-S10 source support accepted bounded; BE-R01/R02 open |
+| Parent maintenance | lasting support ledger checked; bounded qualification; product B-E open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_passive_request_observer_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN separately governed changed-source qualification and fresh cap2 admission; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=old grant retry/cap1/provider/deletion; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_passive_source_qualification_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=finite current-source qualification after committed bound release; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=old runtime grants retired, product/cap1/provider/deletion separate; no generic operator checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_passive_request_observer_source_accepted_bounded`
-Current mode: `cvf_ncr_html_passive_request_observer_source_accepted_bounded`; previous mode marker: `cvf_ncr_html_passive_request_observer_source_dispatched`
+Current mode marker: `cvf_ncr_html_passive_source_qualification_dispatched`
+Current mode: `cvf_ncr_html_passive_source_qualification_dispatched`; previous mode marker: `cvf_ncr_html_passive_request_observer_source_accepted_bounded`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_passive_request_observer_source_accepted_bounded`
+Mode: `cvf_ncr_html_passive_source_qualification_dispatched`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-PASSIVE-REQUEST-OBSERVER-SOURCE-20261017. BE-S10 source support accepted bounded from real-stream worker RED/GREEN proof/current SOURCE_IDENTITY_ONLY release and distinct Local one-Node probe; consume docs/reviews/CVF_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-passive-request-observer-source-local-20261017.json. Next Local plans separately governed BE-Q03 current-source qualification/control and fresh cap2 runtime authority; prior controls9/26 are not current-source proof. BE-R01/BE-R02 open; no automatic actual effect. Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24 unchanged. BE-R01 failed/unchecked; BE-R02 cap1 open; no prior actor replay. Actual result material 6e8d31a9f590df4906695e4e896f1945e72c26e6 committed; exact6 actual-SHA continuity prepared; clean split closure pending.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-PASSIVE-SOURCE-QUALIFICATION-20261017. Under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_SOURCE_QUALIFICATION_2026-10-17.md and docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_SOURCE_QUALIFICATION_2026-10-17.md, release INTERNAL_AGENT qualification worker only after bound pre-dispatch PASS and frozen invocation-envelope/pins external hashes. One actual cap2 control matrix9cases/26inert Python children, one Docker4 read-only group;2one-shot programs,90s/60s outer,12s Docker child,retry0; worker deadline21:29Z, Local22:59Z. Source13/adjunct5/frozen source authority unchanged; no fake/broad/native-seam rerun. Worker exact2 publishes after both programs; Local PURE independent receipt oracle then closure. Roadmap BE-S01..10 plus BE-S10-G checked bounded support; BE-Q03 open until actual qualification, BE-R01/R02 open. Preparation inclusive start19:59Z; hard worker21:29Z/Local22:59Z. BE-S10 checked source support and historical BE-Q01/BE-Q02 accepted remain retained. No product/cap1/provider/deletion or old grant replay; gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and parked states retained. Ordinary details Local; no generic operator checkpoint. Qualification material 1e0f835b36d9007d04cc0b3d6dad406d2637340a; source6 records the actual material anchor before worker release.
 
 ## Parked Checkpoints
 
