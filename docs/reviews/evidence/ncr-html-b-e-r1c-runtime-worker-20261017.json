@@ -1,0 +1,2292 @@
+{
+  "schemaVersion": "cvf.ncrHtmlR1cRuntimeWorker@1",
+  "status": "BLOCKED_WITH_REASON",
+  "executionBaseHead": "9a490e5d55adb81dfc60b3c3b709ec1a8cad66b3",
+  "workerActorId": "INTERNAL_AGENT_WORKER:ncr-be-worker-20261017-r1c",
+  "invocationId": "ncr-be-worker-20261017-r1c",
+  "decisionOwner": "LOCAL",
+  "envelope": {
+    "admissionSha256": "2fb38006258dfd142678df61e577d5f7deb4bcf57bf30fc0fb3725ce76b78cde",
+    "authority": {
+      "adjunctAcceptancePath": "docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_COMPLETION_2026-10-17.md",
+      "adjunctAcceptanceSha256": "af01828eb90b89443d68945cabf5122fdd5b0ace5740ec9126a7d00ed2dbf255",
+      "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md",
+      "baselineSha256": "d83a0429883dc71e23b547d348505308ecc42eb3ff4675a9949a51af13aa139d",
+      "dispatchWorkOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md",
+      "dispatchWorkOrderSha256": "89534c7eaf4cda557a04cc52dbdc10974675073fd75c9b5bf64004735131dbf0"
+    },
+    "cap1": "NOT_ADMITTED",
+    "claimBoundary": "one new cap2 original mechanical journey, no provider/deletion",
+    "command": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1c-runtime-20261017\\launch_once.py",
+      "worker",
+      "e6c6cbc6b72b8ce70052009defc77183a63d17112802c7032199efbbd164675c"
+    ],
+    "deadlineUtc": "2026-10-16T19:32:00+00:00",
+    "effectPrograms": 1,
+    "grantPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1c-runtime-20261017\\worker-launch-authority.json",
+    "grantSha256": "e6c6cbc6b72b8ce70052009defc77183a63d17112802c7032199efbbd164675c",
+    "inputsSha256": "554035ab5c669a298006e2fc8df9adf81d81f23f3f9df8c0ce6339375605bff8",
+    "localOracleSha256": "fec71c1a3889df08e593eb70776ff6235f3126a0be9e1e6d63b599351979a9f8",
+    "pinsSha256": "0a583386e2cbc5ae2c5c8c9a319d526454076b0fe4361ba8b25a52d1d8dc117e",
+    "programHashes": {
+      "invoke_once.py": "b858b4b16e1e3d215bc39ec623a44bb44a715c7dff11d1c48023c23d0702d5b6",
+      "launch_once.py": "43a65b0aa825c681317d460a71aadb6da124774baafe958246b1c25ce209716f"
+    },
+    "releasedHead": "9a490e5d55adb81dfc60b3c3b709ec1a8cad66b3",
+    "retry": 0,
+    "schemaVersion": "cvf.ncrHtmlFreshBERuntimeInvocation@1"
+  },
+  "admission": {
+    "authority": {
+      "adjunctAcceptancePath": "docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_COMPLETION_2026-10-17.md",
+      "adjunctAcceptanceSha256": "af01828eb90b89443d68945cabf5122fdd5b0ace5740ec9126a7d00ed2dbf255",
+      "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md",
+      "baselineSha256": "d83a0429883dc71e23b547d348505308ecc42eb3ff4675a9949a51af13aa139d",
+      "dispatchWorkOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1C_RUNTIME_2026-10-17.md",
+      "dispatchWorkOrderSha256": "89534c7eaf4cda557a04cc52dbdc10974675073fd75c9b5bf64004735131dbf0"
+    },
+    "controls": {
+      "canonicalDigest": "5dd992d807fca08fca2f489f2fd140471caecc667b6a595a916f99bcac4244b8",
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-current-source-qualification-20261017\\worker\\cap2-actual-107a51e1e1ba4cc6\\receipt.json"
+    },
+    "decisionOwner": "LOCAL",
+    "disposition": "RUNTIME_EFFECT_ADMITTED",
+    "effects": {
+      "browserSession": 1,
+      "container": 1,
+      "evaluates": 2,
+      "exports": 2,
+      "job": 1,
+      "providerStarts": 0,
+      "stageDeletion": 0,
+      "web": 1
+    },
+    "invocation": {
+      "actor": "IMPLEMENTATION_WORKER",
+      "cap": 2,
+      "inputsSha256": "554035ab5c669a298006e2fc8df9adf81d81f23f3f9df8c0ce6339375605bff8",
+      "namespace": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c",
+      "ordinal": 1,
+      "runId": "ncr-be-worker-20261017-r1c"
+    },
+    "limits": {
+      "cleanupSeconds": 120,
+      "cleanupStarts": 8,
+      "readiness": {
+        "engine": 4,
+        "route": 2,
+        "total": 12,
+        "web": 6
+      },
+      "workSeconds": 900,
+      "workStarts": 56
+    },
+    "pins": {
+      "manifestPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1c-runtime-20261017\\pins.json",
+      "sha256": "0a583386e2cbc5ae2c5c8c9a319d526454076b0fe4361ba8b25a52d1d8dc117e"
+    },
+    "predecessor": null,
+    "readiness": {
+      "disposition": "READY",
+      "evidence": [
+        {
+          "path": "docs/reviews/CVF_NCR_HTML_CURRENT_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md",
+          "sha256": "59348fa3304d9fc9dba5a861d59cd0a316a2f582caa28901132d96f19d9b9bb0"
+        },
+        {
+          "path": "docs/reviews/evidence/ncr-html-current-source-qualification-local-20261017.json",
+          "sha256": "186d7a4280fd16a5b4fade50ba35927d49cd535f557bfa11313d7c55b5dd3350"
+        },
+        {
+          "path": "docs/reviews/CVF_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_COMPLETION_2026-10-17.md",
+          "sha256": "af01828eb90b89443d68945cabf5122fdd5b0ace5740ec9126a7d00ed2dbf255"
+        },
+        {
+          "path": "docs/reviews/evidence/ncr-html-main-entry-cache-source-local-20261017.json",
+          "sha256": "08646777a6a7c17edbb78ba58cffb8474fd670839ad41816646833fbd93bc79b"
+        },
+        {
+          "path": "docs/reviews/evidence/ncr-html-native-binding-local-20261016.json",
+          "sha256": "c5fb1711022df8e8f699faca9ca80e0e44d272fd98f09d95bfa137beb9f2befa"
+        }
+      ]
+    },
+    "schemaVersion": "cvf.ncrHtmlBEEffectAdmission@1",
+    "scope": "OWNED_SYNTHETIC_B_E",
+    "sourceRelease": {
+      "path": "docs/reviews/evidence/ncr-html-main-entry-cache-source-release-20261017.json",
+      "sha256": "00994f91b379adee9396c212db05584df2eda22685443c5dbb2b0ca8d2c193b0"
+    }
+  },
+  "pins": {
+    "adjunctSources": {
+      "scripts/cvf_ncr_html_browser_fence.cjs": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+      "scripts/cvf_ncr_html_browser_fence.test.cjs": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+      "scripts/cvf_ncr_html_effect_fence.py": "2f2c45570c088f5c6b44f376d496ee227803114bebfc400ba21775a98b360e1d",
+      "scripts/run_cvf_ncr_html_effect_driver.py": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+      "scripts/test_cvf_ncr_html_effect_driver.py": "2eaa901e2d5a2ed96bd629b99635cbc5282987b0ce8cba44e5f155a36ec2a0b9"
+    },
+    "chrome": {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium-1208\\chrome-win64\\chrome.exe",
+      "sha256": "ff0c99fc5bb2301cad77930aa76e5354cf2a5fefb7efdcf3b3bc10ba0550c015"
+    },
+    "custodyRoot": "D:\\CVF_NCR_RUNTIME\\custody-be-r1c-20261017",
+    "docker": {
+      "architecture": "amd64",
+      "context": "desktop-linux",
+      "endpoint": "npipe:////./pipe/dockerDesktopLinuxEngine",
+      "image": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+      "os": "linux"
+    },
+    "helpers": {
+      "entry": {
+        "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\probe_cvf_w05_browser_chain.cjs",
+        "sha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494"
+      },
+      "journey": {
+        "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_ncr_html_owned_profile\\journey.cjs",
+        "sha256": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff"
+      }
+    },
+    "modules": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules"
+    },
+    "schemaVersion": "cvf.ncrHtmlBEEffectPins@1",
+    "scope": "RUNTIME_INVOCATION_PINS",
+    "sourceRelease": {
+      "path": "docs/reviews/evidence/ncr-html-main-entry-cache-source-release-20261017.json",
+      "sha256": "00994f91b379adee9396c212db05584df2eda22685443c5dbb2b0ca8d2c193b0"
+    },
+    "tools": {
+      "cmd": {
+        "path": "C:\\WINDOWS\\system32\\cmd.EXE",
+        "sha256": "15cd209c995b7d3009c91ca40892d5b8f1fb162f3e5f10716642ea278e8e0d7b"
+      },
+      "docker": {
+        "path": "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.EXE",
+        "sha256": "6c699720bb9523dedb9eb5d22a49951ea9210dbdb1314a3554029eee9be76896"
+      },
+      "git": {
+        "path": "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "sha256": "7b7971dd13f0c3a284e538601f2f9770b3a87dfaccb5fb52d68141c67ed22364"
+      },
+      "netstat": {
+        "path": "C:\\WINDOWS\\system32\\netstat.EXE",
+        "sha256": "23ca543c858f0e725fd2c7f142bfc9ddbf3b7e4320737c6e904cb9cae6fc7c6d"
+      },
+      "node": {
+        "path": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.EXE",
+        "sha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636"
+      },
+      "python": {
+        "path": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "sha256": "5f7b89a612c9b8af1d6456cdfcd1dbe5ca630849e79aebced9bee9a6694952ec"
+      },
+      "taskkill": {
+        "path": "C:\\WINDOWS\\system32\\taskkill.EXE",
+        "sha256": "1249717315fc8f4d2df17d5db9da0444795fdb9fb83dfb1f763c3f39282244f7"
+      },
+      "tasklist": {
+        "path": "C:\\WINDOWS\\system32\\tasklist.EXE",
+        "sha256": "62800679c55682f2f5f38b3df9080d12480bea78b5b8476eace9df014f353b14"
+      }
+    }
+  },
+  "grant": {
+    "actor": "worker",
+    "admissionPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1c-runtime-20261017\\worker-admission.json",
+    "admissionSha256": "2fb38006258dfd142678df61e577d5f7deb4bcf57bf30fc0fb3725ce76b78cde",
+    "discoveryPrefix": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0",
+    "executionBaseHead": "9a490e5d55adb81dfc60b3c3b709ec1a8cad66b3",
+    "inclusiveDeadlineUtc": "2026-10-16T19:32:00+00:00",
+    "inputsPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1c-runtime-20261017\\inputs-worker.json",
+    "inputsRawSha256": "554035ab5c669a298006e2fc8df9adf81d81f23f3f9df8c0ce6339375605bff8",
+    "invokerSha256": "b858b4b16e1e3d215bc39ec623a44bb44a715c7dff11d1c48023c23d0702d5b6",
+    "launcherSha256": "43a65b0aa825c681317d460a71aadb6da124774baafe958246b1c25ce209716f",
+    "localDeadlineUtc": "2026-10-16T21:02:00+00:00",
+    "outputPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1c-runtime-20261017\\worker-driver-result.json",
+    "preparationStartUtc": "2026-10-16T18:02:00+00:00",
+    "pythonPath": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "pythonSha256": "5f7b89a612c9b8af1d6456cdfcd1dbe5ca630849e79aebced9bee9a6694952ec"
+  },
+  "actualProgram": {
+    "actor": "worker",
+    "launchAuthoritySha256": "e6c6cbc6b72b8ce70052009defc77183a63d17112802c7032199efbbd164675c",
+    "enteredUtc": "2026-10-16T18:38:43.306271+00:00",
+    "watchdogSeconds": 1080,
+    "deadlineUtc": "2026-10-16T19:32:00+00:00",
+    "attempt": 1,
+    "controllerPid": 10456,
+    "exitCode": 1,
+    "timedOut": false,
+    "elapsedSeconds": 103.219,
+    "finishedUtc": "2026-10-16T18:40:26.519313+00:00",
+    "stdoutSha256": "93e992d4d241c979c1b95fa0db15f64100651b35a04988b280b54723b2516f62",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "terminalDisposition": "UNKNOWN_REQUIRES_LOCAL_REVIEW"
+  },
+  "workerInvocation": {
+    "state": "TERMINATED",
+    "releasedHead": "9a490e5d55adb81dfc60b3c3b709ec1a8cad66b3",
+    "argv": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1c-runtime-20261017\\launch_once.py",
+      "worker",
+      "e6c6cbc6b72b8ce70052009defc77183a63d17112802c7032199efbbd164675c"
+    ],
+    "cwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF",
+    "observedUtc": "2026-10-16T18:38:43.254111+00:00",
+    "reserveSeconds": 3196.745889,
+    "externalBindings": {
+      "invocation-envelope.json": "22987a6c66d66a0ba926a059aac331ee8df60ee7802b8b3f00f8c9c35f08bc45",
+      "worker-launch-authority.json": "e6c6cbc6b72b8ce70052009defc77183a63d17112802c7032199efbbd164675c",
+      "worker-admission.json": "2fb38006258dfd142678df61e577d5f7deb4bcf57bf30fc0fb3725ce76b78cde",
+      "pins.json": "0a583386e2cbc5ae2c5c8c9a319d526454076b0fe4361ba8b25a52d1d8dc117e",
+      "inputs-worker.json": "554035ab5c669a298006e2fc8df9adf81d81f23f3f9df8c0ce6339375605bff8"
+    },
+    "source18": {
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "8ed63e7edd13e2dcd695489a0bf6b50c05b54c9f272860ab20a7ecd1a527d86d",
+      "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "scripts/cvf_ncr_html_owned_profile/source_release.py": "5bbf1c0bf18f1dfa571f2b0de0e18b12fefa7e950dff707abbadbdacfdcca650",
+      "scripts/cvf_ncr_html_browser_fence.cjs": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+      "scripts/cvf_ncr_html_browser_fence.test.cjs": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+      "scripts/cvf_ncr_html_effect_fence.py": "2f2c45570c088f5c6b44f376d496ee227803114bebfc400ba21775a98b360e1d",
+      "scripts/run_cvf_ncr_html_effect_driver.py": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+      "scripts/test_cvf_ncr_html_effect_driver.py": "2eaa901e2d5a2ed96bd629b99635cbc5282987b0ce8cba44e5f155a36ec2a0b9"
+    },
+    "observedFiles": {
+      "cmd": {
+        "path": "C:\\WINDOWS\\system32\\cmd.EXE",
+        "sha256": "15cd209c995b7d3009c91ca40892d5b8f1fb162f3e5f10716642ea278e8e0d7b",
+        "bytes": 339968
+      },
+      "docker": {
+        "path": "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.EXE",
+        "sha256": "6c699720bb9523dedb9eb5d22a49951ea9210dbdb1314a3554029eee9be76896",
+        "bytes": 44829104
+      },
+      "git": {
+        "path": "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "sha256": "7b7971dd13f0c3a284e538601f2f9770b3a87dfaccb5fb52d68141c67ed22364",
+        "bytes": 46920
+      },
+      "netstat": {
+        "path": "C:\\WINDOWS\\system32\\netstat.EXE",
+        "sha256": "23ca543c858f0e725fd2c7f142bfc9ddbf3b7e4320737c6e904cb9cae6fc7c6d",
+        "bytes": 69632
+      },
+      "node": {
+        "path": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.EXE",
+        "sha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+        "bytes": 85219968
+      },
+      "python": {
+        "path": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "sha256": "5f7b89a612c9b8af1d6456cdfcd1dbe5ca630849e79aebced9bee9a6694952ec",
+        "bytes": 103192
+      },
+      "taskkill": {
+        "path": "C:\\WINDOWS\\system32\\taskkill.EXE",
+        "sha256": "1249717315fc8f4d2df17d5db9da0444795fdb9fb83dfb1f763c3f39282244f7",
+        "bytes": 118784
+      },
+      "tasklist": {
+        "path": "C:\\WINDOWS\\system32\\tasklist.EXE",
+        "sha256": "62800679c55682f2f5f38b3df9080d12480bea78b5b8476eace9df014f353b14",
+        "bytes": 122880
+      },
+      "entry": {
+        "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\probe_cvf_w05_browser_chain.cjs",
+        "sha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494",
+        "bytes": 23358
+      },
+      "journey": {
+        "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_ncr_html_owned_profile\\journey.cjs",
+        "sha256": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff",
+        "bytes": 17142
+      },
+      "chrome": {
+        "path": "C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium-1208\\chrome-win64\\chrome.exe",
+        "sha256": "ff0c99fc5bb2301cad77930aa76e5354cf2a5fefb7efdcf3b3bc10ba0550c015",
+        "bytes": 3006464
+      }
+    },
+    "namespaceAbsent": true,
+    "custodyEmpty": true,
+    "ambientOverridesAbsent": true,
+    "stageEmpty": true,
+    "worktreeClean": true,
+    "privateOracleRead": false,
+    "moduleDirectoryOnly": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules",
+    "launcherPid": 9116,
+    "exitCode": 1,
+    "elapsedSeconds": 103.296,
+    "endedUtc": "2026-10-16T18:40:26.539936+00:00",
+    "rawLogs": {
+      "launch-stdout.log": {
+        "bytes": 82,
+        "sha256": "d1225c7d240aa35d84754578f564f42fdb747426b53a954fd354f0afd20f3355"
+      },
+      "launch-stderr.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "actualDriverResult": {
+    "actualDataConfigStoreReads": 0,
+    "browser": {
+      "aiPosts": [],
+      "builds": [],
+      "checkpoints": [],
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'UNAVAILABLE'\n- 'PRESENT'\n",
+      "exportPosts": [
+        {
+          "claimBoundary": "Ch\u1ec9 l\u00e0 g\u00f3i HTML \u0111\u1ec3 r\u00e0 so\u00e1t. D\u1eef li\u1ec7u gi\u1ea3 l\u1eadp, kh\u00f4ng ph\u1ea3i quy \u0111\u1ecbnh th\u1eadt, ch\u01b0a \u0111\u01b0\u1ee3c duy\u1ec7t v\u00e0 kh\u00f4ng thay th\u1ebf quy\u1ebft \u0111\u1ecbnh c\u1ee7a ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch.",
+          "memoryClass": "FULL_RECORD",
+          "receiptAnchor": "onboarding-synth-v1",
+          "sourceContent": "# H\u01b0\u1edbng d\u1eabn nh\u00e2n vi\u00ean m\u1edbi - ng\u00e0y \u0111\u1ea7u ti\u00ean\n\nRecord type: Complete review record\n\nReview status: Draft for review\n\n## T\u00f3m t\u1eaft\n\n\u0110\u00e2y l\u00e0 v\u00ed d\u1ee5 t\u1ed5ng h\u1ee3p cho c\u1eeda h\u00e0ng gi\u1ea3 \u0111\u1ecbnh **Hoa Sen**. B\u1ea3n n\u00e0y li\u1ec7t k\u00ea ba vi\u1ec7c c\u1ea7n l\u00e0m trong ng\u00e0y \u0111\u1ea7u c\u1ee7a nh\u00e2n vi\u00ean m\u1edbi \u0111\u1ec3 ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch \u0111\u1ecdc l\u1ea1i tr\u01b0\u1edbc khi d\u00f9ng.\n\n## Vi\u1ec7c c\u1ea7n l\u00e0m ng\u00e0y \u0111\u1ea7u\n\n- Nh\u1eadn th\u1ebb ra v\u00e0o v\u00e0 \u0111\u1ecdc n\u1ed9i quy an to\u00e0n.\n- G\u1eb7p ng\u01b0\u1eddi h\u01b0\u1edbng d\u1eabn v\u00e0 xem b\u1ea3ng ph\u00e2n c\u00f4ng ca l\u00e0m vi\u1ec7c.\n- Cu\u1ed1i ng\u00e0y ghi l\u1ea1i m\u1ed9t c\u00e2u h\u1ecfi ch\u01b0a r\u00f5 \u0111\u1ec3 h\u1ecfi l\u1ea1i v\u00e0o s\u00e1ng h\u00f4m sau.\n\n## Review Boundary\n\n\u0110\u00e2y l\u00e0 b\u1ea3n nh\u00e1p \u0111\u1ec3 r\u00e0 so\u00e1t, kh\u00f4ng ph\u1ea3i quy \u0111\u1ecbnh ch\u00ednh th\u1ee9c v\u00e0 ch\u01b0a \u0111\u01b0\u1ee3c ai ph\u00ea duy\u1ec7t. M\u1ecdi t\u00ean v\u00e0 quy tr\u00ecnh trong b\u1ea3n n\u00e0y \u0111\u1ec1u l\u00e0 d\u1eef li\u1ec7u gi\u1ea3 l\u1eadp.",
+          "sourcePath": "synthetic/onboarding/huong-dan-nhan-vien-moi-v1.md",
+          "status": "Draft for review",
+          "title": "Huong dan nhan vien moi - ban ra soat v1"
+        }
+      ],
+      "external": [
+        {
+          "host": "fonts.googleapis.com",
+          "method": "GET"
+        }
+      ],
+      "mode": "owned-profile",
+      "partial": true,
+      "session": "[REDACTED]",
+      "teardown": {
+        "contextClose": "OK",
+        "stdinDestroy": "OK"
+      }
+    },
+    "caps": {
+      "cleanupSeconds": 120,
+      "evaluates": 2,
+      "exports": 2,
+      "readinessBuckets": {
+        "engine": 4,
+        "route": 2,
+        "web": 6
+      },
+      "readinessGets": 12,
+      "runtimeSeconds": 900
+    },
+    "checkpoints": [],
+    "controllerIdentity": {
+      "creation100ns": 134366495233092041,
+      "image": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "pid": 10456
+    },
+    "counters": {
+      "completed": 0,
+      "evaluateArrivals": 0,
+      "evaluateAttempts": 0,
+      "exports": 1
+    },
+    "effectFence": {
+      "browserVerification": null,
+      "joinsAccepted": false,
+      "ledger": {
+        "attempts": [
+          {
+            "cleanup": false,
+            "kind": "docker-context",
+            "opId": 1,
+            "ordinal": 1,
+            "partition": "work",
+            "seq": 1
+          },
+          {
+            "cleanup": false,
+            "kind": "docker-context-inspect",
+            "opId": 2,
+            "ordinal": 2,
+            "partition": "work",
+            "seq": 2
+          },
+          {
+            "cleanup": false,
+            "kind": "docker-local-server",
+            "opId": 3,
+            "ordinal": 3,
+            "partition": "work",
+            "seq": 3
+          },
+          {
+            "cleanup": false,
+            "kind": "cached-image",
+            "opId": 4,
+            "ordinal": 4,
+            "partition": "work",
+            "seq": 4
+          },
+          {
+            "cleanup": false,
+            "kind": "installed-browser-path",
+            "opId": 5,
+            "ordinal": 5,
+            "partition": "work",
+            "seq": 5
+          },
+          {
+            "cleanup": false,
+            "kind": "dependency-junction",
+            "opId": 6,
+            "ordinal": 6,
+            "partition": "work",
+            "seq": 6
+          },
+          {
+            "cleanup": false,
+            "kind": "netstat",
+            "opId": 7,
+            "ordinal": 7,
+            "partition": "work",
+            "seq": 7
+          },
+          {
+            "cleanup": false,
+            "kind": "engine-create",
+            "opId": 8,
+            "ordinal": 8,
+            "partition": "work",
+            "seq": 8
+          },
+          {
+            "cleanup": false,
+            "kind": "engine-identity",
+            "opId": 9,
+            "ordinal": 9,
+            "partition": "work",
+            "seq": 9
+          },
+          {
+            "cleanup": false,
+            "kind": "launch",
+            "opId": 10,
+            "ordinal": 10,
+            "partition": "work",
+            "seq": 10
+          },
+          {
+            "cleanup": false,
+            "kind": "engine-GET",
+            "opId": 11,
+            "ordinal": 11,
+            "partition": "work",
+            "seq": 11
+          },
+          {
+            "cleanup": false,
+            "kind": "engine-GET",
+            "opId": 12,
+            "ordinal": 12,
+            "partition": "work",
+            "seq": 12
+          },
+          {
+            "cleanup": false,
+            "kind": "engine-GET",
+            "opId": 13,
+            "ordinal": 13,
+            "partition": "work",
+            "seq": 13
+          },
+          {
+            "cleanup": false,
+            "kind": "engine-network-proof",
+            "opId": 14,
+            "ordinal": 14,
+            "partition": "work",
+            "seq": 14
+          },
+          {
+            "cleanup": false,
+            "kind": "launch",
+            "opId": 15,
+            "ordinal": 15,
+            "partition": "work",
+            "seq": 15
+          },
+          {
+            "cleanup": false,
+            "kind": "netstat",
+            "opId": 19,
+            "ordinal": 16,
+            "partition": "work",
+            "seq": 16
+          },
+          {
+            "cleanup": false,
+            "kind": "launch",
+            "opId": 20,
+            "ordinal": 17,
+            "partition": "work",
+            "seq": 17
+          },
+          {
+            "cleanup": true,
+            "kind": "container-identity",
+            "opId": 26,
+            "ordinal": 1,
+            "partition": "cleanup",
+            "seq": 18
+          },
+          {
+            "cleanup": true,
+            "kind": "container-remove",
+            "opId": 27,
+            "ordinal": 2,
+            "partition": "cleanup",
+            "seq": 19
+          },
+          {
+            "cleanup": true,
+            "kind": "tasklist",
+            "opId": 28,
+            "ordinal": 3,
+            "partition": "cleanup",
+            "seq": 20
+          },
+          {
+            "cleanup": true,
+            "kind": "docker-ps",
+            "opId": 29,
+            "ordinal": 4,
+            "partition": "cleanup",
+            "seq": 21
+          },
+          {
+            "cleanup": true,
+            "kind": "netstat",
+            "opId": 30,
+            "ordinal": 5,
+            "partition": "cleanup",
+            "seq": 22
+          }
+        ],
+        "cleanupUsed": 5,
+        "workUsed": 17
+      }
+    },
+    "elapsedSeconds": 102.297,
+    "engineCandidate": {
+      "context": "desktop-linux",
+      "image": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+      "name": "cvf-ncr-html-9740ab973a2a9055"
+    },
+    "engineIdentity": {
+      "id": "8821c80c5d887d6d7409073e85151afbb313fd6bbe8f70a0be513fc68f4ea7a6",
+      "image": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+      "mounts": [
+        {
+          "destination": "/data",
+          "rw": true,
+          "source": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\stores\\engine"
+        },
+        {
+          "destination": "/engine",
+          "rw": false,
+          "source": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\source\\EXTENSIONS\\CVF_v1.6.1_GOVERNANCE_ENGINE\\ai_governance_core"
+        }
+      ],
+      "name": "cvf-ncr-html-9740ab973a2a9055",
+      "networkMode": "none",
+      "portBindings": null
+    },
+    "engineNetworkProbe": [
+      "lo",
+      "BLOCKED"
+    ],
+    "engineObservations": {},
+    "failures": [
+      "RuntimeError: browser/engine flow incomplete or ambiguous"
+    ],
+    "finalEgress": [
+      {
+        "argv": [
+          "next",
+          "dev",
+          "--webpack"
+        ],
+        "event": "loaded",
+        "nodeOptionsActive": true,
+        "pid": 28652,
+        "title": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+      },
+      {
+        "argv": [
+          "next",
+          "dev",
+          "--webpack"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 28652,
+        "site": [
+          "node:net:245",
+          "loader:1730",
+          "loader:1895"
+        ],
+        "title": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+        "via": "tcp"
+      },
+      {
+        "argv": [
+          "next",
+          "dev",
+          "--webpack"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 28652,
+        "site": [
+          "loader:1730",
+          "loader:1895",
+          "loader:1465"
+        ],
+        "title": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+        "via": "udp"
+      },
+      {
+        "argv": [
+          "start-server.js"
+        ],
+        "event": "loaded",
+        "nodeOptionsActive": true,
+        "pid": 24824,
+        "title": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+      },
+      {
+        "argv": [
+          "start-server.js"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 24824,
+        "site": [
+          "node:net:245",
+          "loader:1730",
+          "loader:1895"
+        ],
+        "title": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+        "via": "tcp"
+      },
+      {
+        "argv": [
+          "start-server.js"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 24824,
+        "site": [
+          "loader:1730",
+          "loader:1895",
+          "loader:1465"
+        ],
+        "title": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+        "via": "udp"
+      },
+      {
+        "argv": [
+          "start-server.js"
+        ],
+        "event": "denied",
+        "host": "registry.npmjs.org",
+        "pid": 24824,
+        "site": [
+          "journey.cjs:29",
+          "node:_tls_wrap:1802",
+          "undici:2507"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "tcp"
+      },
+      {
+        "argv": [],
+        "event": "loaded",
+        "nodeOptionsActive": true,
+        "pid": 24824,
+        "title": "next-server (v16.2.7)"
+      },
+      {
+        "argv": [],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 24824,
+        "site": [
+          "node:net:245",
+          "loader:1730",
+          "loader:1895"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "tcp"
+      },
+      {
+        "argv": [],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 24824,
+        "site": [
+          "loader:1730",
+          "loader:1895",
+          "loader:1465"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "udp"
+      },
+      {
+        "argv": [
+          "probe_cvf_w05_browser_chain.cjs",
+          "node_modules",
+          "localhost:53566"
+        ],
+        "event": "loaded",
+        "nodeOptionsActive": true,
+        "pid": 22764,
+        "title": "next-server (v16.2.7)"
+      },
+      {
+        "argv": [
+          "probe_cvf_w05_browser_chain.cjs",
+          "node_modules",
+          "localhost:53566"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 22764,
+        "site": [
+          "node:net:245",
+          "loader:1730",
+          "loader:1895"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "tcp"
+      },
+      {
+        "argv": [
+          "probe_cvf_w05_browser_chain.cjs",
+          "node_modules",
+          "localhost:53566"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 22764,
+        "site": [
+          "loader:1730",
+          "loader:1895",
+          "loader:1465"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "udp"
+      },
+      {
+        "argv": [
+          "processChild.js"
+        ],
+        "event": "loaded",
+        "nodeOptionsActive": true,
+        "pid": 19392,
+        "title": "next-server (v16.2.7)"
+      },
+      {
+        "argv": [
+          "processChild.js"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 19392,
+        "site": [
+          "node:net:245",
+          "loader:1730",
+          "loader:1895"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "tcp"
+      },
+      {
+        "argv": [
+          "processChild.js"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 19392,
+        "site": [
+          "loader:1730",
+          "loader:1895",
+          "loader:1465"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "udp"
+      },
+      {
+        "argv": [
+          "processChild.js"
+        ],
+        "event": "loaded",
+        "nodeOptionsActive": true,
+        "pid": 21312,
+        "title": "next-server (v16.2.7)"
+      },
+      {
+        "argv": [
+          "processChild.js"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 21312,
+        "site": [
+          "node:net:245",
+          "loader:1730",
+          "loader:1895"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "tcp"
+      },
+      {
+        "argv": [
+          "processChild.js"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 21312,
+        "site": [
+          "loader:1730",
+          "loader:1895",
+          "loader:1465"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "udp"
+      },
+      {
+        "argv": [
+          "processChild.js"
+        ],
+        "event": "loaded",
+        "nodeOptionsActive": true,
+        "pid": 13336,
+        "title": "next-server (v16.2.7)"
+      },
+      {
+        "argv": [
+          "processChild.js"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 13336,
+        "site": [
+          "node:net:245",
+          "loader:1730",
+          "loader:1895"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "tcp"
+      },
+      {
+        "argv": [
+          "processChild.js"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 13336,
+        "site": [
+          "loader:1730",
+          "loader:1895",
+          "loader:1465"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "udp"
+      },
+      {
+        "argv": [
+          "probe_cvf_w05_browser_chain.cjs",
+          "node_modules",
+          "localhost:53566"
+        ],
+        "event": "loopback-connect",
+        "pid": 22764,
+        "port": 53566,
+        "title": "next-server (v16.2.7)"
+      },
+      {
+        "argv": [
+          "processChild.js"
+        ],
+        "event": "loaded",
+        "nodeOptionsActive": true,
+        "pid": 3476,
+        "title": "next-server (v16.2.7)"
+      },
+      {
+        "argv": [
+          "processChild.js"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 3476,
+        "site": [
+          "node:net:245",
+          "loader:1730",
+          "loader:1895"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "tcp"
+      },
+      {
+        "argv": [
+          "processChild.js"
+        ],
+        "event": "denied",
+        "host": "egress-selftest.invalid",
+        "pid": 3476,
+        "site": [
+          "loader:1730",
+          "loader:1895",
+          "loader:1465"
+        ],
+        "title": "next-server (v16.2.7)",
+        "via": "udp"
+      },
+      {
+        "argv": [
+          "start-server.js"
+        ],
+        "event": "loopback-connect",
+        "pid": 24824,
+        "port": 53566,
+        "title": "next-server (v16.2.7)"
+      },
+      {
+        "body": {
+          "artifact_id": "onboarding-synth-v1",
+          "cvf_phase": "REVIEW",
+          "cvf_risk_level": "R0",
+          "payload": {
+            "content": "# H\u01b0\u1edbng d\u1eabn nh\u00e2n vi\u00ean m\u1edbi - ng\u00e0y \u0111\u1ea7u ti\u00ean\n\nRecord type: Complete review record\n\nReview status: Draft for review\n\n## T\u00f3m t\u1eaft\n\n\u0110\u00e2y l\u00e0 v\u00ed d\u1ee5 t\u1ed5ng h\u1ee3p cho c\u1eeda h\u00e0ng gi\u1ea3 \u0111\u1ecbnh **Hoa Sen**. B\u1ea3n n\u00e0y li\u1ec7t k\u00ea ba vi\u1ec7c c\u1ea7n l\u00e0m trong ng\u00e0y \u0111\u1ea7u c\u1ee7a nh\u00e2n vi\u00ean m\u1edbi \u0111\u1ec3 ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch \u0111\u1ecdc l\u1ea1i tr\u01b0\u1edbc khi d\u00f9ng.\n\n## Vi\u1ec7c c\u1ea7n l\u00e0m ng\u00e0y \u0111\u1ea7u\n\n- Nh\u1eadn th\u1ebb ra v\u00e0o v\u00e0 \u0111\u1ecdc n\u1ed9i quy an to\u00e0n.\n- G\u1eb7p ng\u01b0\u1eddi h\u01b0\u1edbng d\u1eabn v\u00e0 xem b\u1ea3ng ph\u00e2n c\u00f4ng ca l\u00e0m vi\u1ec7c.\n- Cu\u1ed1i ng\u00e0y ghi l\u1ea1i m\u1ed9t c\u00e2u h\u1ecfi ch\u01b0a r\u00f5 \u0111\u1ec3 h\u1ecfi l\u1ea1i v\u00e0o s\u00e1ng h\u00f4m sau.\n\n## Review Boun"
+          },
+          "request_id": "artifact-proof-onboarding-synth-v1-1792176015270"
+        },
+        "bodySha256": "9e63452f81d75bfa13e773db0b3474a113fe5cd60880ccfb29ce48e1c8350d52",
+        "cookiePresent": "[REDACTED]",
+        "event": "evaluate-recipient",
+        "pid": 24824,
+        "serviceTokenPresent": "[REDACTED]"
+      }
+    ],
+    "finalRows": [],
+    "listenerIdentity": [
+      {
+        "address": "127.0.0.1:53566",
+        "pid": 24824
+      },
+      {
+        "address": "127.0.0.1:53567",
+        "pid": 10456
+      }
+    ],
+    "namespace": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c",
+    "ok": false,
+    "origin": "http://localhost:53566",
+    "ports": [
+      53566,
+      53567
+    ],
+    "prerequisites": {
+      "browserExecutable": "C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium-1208\\chrome-win64\\chrome.exe",
+      "dependencyAccess": "PRE_EXISTING_READ_ONLY_NOT_DISPOSABLE",
+      "dockerContext": "desktop-linux",
+      "dockerEndpoint": "npipe:////./pipe/dockerDesktopLinuxEngine",
+      "dockerPrefix": [
+        "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.EXE",
+        "--context",
+        "desktop-linux"
+      ],
+      "image": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+      "modules": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules",
+      "tools": {
+        "docker": "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.EXE",
+        "git": "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "netstat": "C:\\WINDOWS\\system32\\netstat.EXE",
+        "node": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.EXE",
+        "taskkill": "C:\\WINDOWS\\system32\\taskkill.EXE",
+        "tasklist": "C:\\WINDOWS\\system32\\tasklist.EXE"
+      }
+    },
+    "providerStarts": 0,
+    "retentionSeconds": null,
+    "schemaVersion": "cvf.ncrHtmlOwnedProfile.v1",
+    "sources": {
+      "executionBaseHead": "9a490e5d55adb81dfc60b3c3b709ec1a8cad66b3",
+      "immutablePins": {
+        "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md": "1d1a42f2c3f1e9d573b30cb46221e24ea1365d9f60aec95b6938e9fd10fb6a83",
+        "docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md": "38898bdeeb7e1797cea882ca26104abf9e17bdc883b9dd073a73c2b27fa6e0b0",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md": "e28ee680db2513e271064602ee5f26655484d89e7e46bdb1246e3aeed47b4b9b",
+        "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+        "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+        "scripts/cvf_ncr_html_owned_profile/journey.cjs": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "8ed63e7edd13e2dcd695489a0bf6b50c05b54c9f272860ab20a7ecd1a527d86d",
+        "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+        "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+        "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+        "scripts/cvf_ncr_html_owned_profile/source_release.py": "5bbf1c0bf18f1dfa571f2b0de0e18b12fefa7e950dff707abbadbdacfdcca650",
+        "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+        "scripts/cvf_ncr_html_owned_profile/test_control.py": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+        "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+        "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+        "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+        "scripts/probe_cvf_q001_synthetic_system_chain.py": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+        "scripts/probe_cvf_w05_browser_chain.cjs": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494"
+      },
+      "implementedHelpers": {
+        "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+        "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+        "scripts/cvf_ncr_html_owned_profile/journey.cjs": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "8ed63e7edd13e2dcd695489a0bf6b50c05b54c9f272860ab20a7ecd1a527d86d",
+        "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+        "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+        "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+        "scripts/cvf_ncr_html_owned_profile/source_release.py": "5bbf1c0bf18f1dfa571f2b0de0e18b12fefa7e950dff707abbadbdacfdcca650",
+        "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+        "scripts/cvf_ncr_html_owned_profile/test_control.py": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+        "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+        "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+        "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228"
+      },
+      "productBinding": {
+        "productCommit": "8b75bde5299335f94de254078b39bcffc31cdd40",
+        "productScopeGitObjects": {
+          "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE": "b559cbecd10ab83a5a36b282b1932fe794bbd18e",
+          "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web": "01ada06d232d140277a1c682a0fb675d7c0e435c",
+          "docs/reference/CVF_GOVERNANCE_STATE_REGISTRY.json": "7d245836bc11cf727e7f2a4ff2aa1a77d927238c",
+          "governance/toolkit/03_CONTROL/CVF_AGENT_REGISTRY.md": "89e7ad8a778b0ff70f13b07474f7a31def019158",
+          "governance/toolkit/04_TESTING/CVF_SELF_UAT_DECISION_LOG.md": "5f717b25b4de774683f4ef920c035052058816e5"
+        }
+      },
+      "sourceRelease": {
+        "path": "docs/reviews/evidence/ncr-html-main-entry-cache-source-release-20261017.json",
+        "scope": "SOURCE_IDENTITY_ONLY",
+        "sha256": "00994f91b379adee9396c212db05584df2eda22685443c5dbb2b0ca8d2c193b0"
+      }
+    },
+    "staging": {
+      "envAndActiveLedgerExcluded": true,
+      "fileCount": 1238,
+      "manifestSha256": "7e9b3cf85aab3acaa06ae6974c6fb0f013c39a545a6ba71f143c280e2a9b7ce1",
+      "sourceCwd": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\source\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web"
+    },
+    "state": {
+      "exports": 1,
+      "readinessGets": {
+        "engine": 3,
+        "route": 2,
+        "web": 1
+      }
+    },
+    "terminal": {
+      "accepted": false,
+      "acknowledgment": {
+        "error": null,
+        "readBack": "MATCH",
+        "write": "ACKNOWLEDGED"
+      },
+      "actualDisposal": "NOT_ATTEMPTED",
+      "disposalEligible": false,
+      "evidence": {
+        "actions": [
+          {
+            "action": "proxy-shutdown",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "proxy-close",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "proxy-join",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "reservation-0",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "reservation-1",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "child-evidence",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "identity",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "taskkill",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "taskkill",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "taskkill",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "container-remove",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "tasklist",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "docker-ps",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "descendants",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "listeners",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "reader-join",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "log-0",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "log-1",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "log-2",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "disposal-target",
+            "outcome": "CONFIRMED"
+          },
+          {
+            "action": "handle-close",
+            "outcome": "CONFIRMED"
+          }
+        ],
+        "child": {
+          "bytes": 1850,
+          "claimMatch": true,
+          "confirmed": false,
+          "exit": "NONZERO_EXIT",
+          "sha256": "717c97351ff18ad4423b6d961f8bddf2d5fb64a0cbf3f25cdcd262737a53608c",
+          "snapshot": "READ",
+          "teardown": {
+            "contextClose": "OK",
+            "stdinDestroy": "OK"
+          }
+        },
+        "containerQuery": "ABSENT",
+        "descendantQuery": "ABSENT",
+        "disposalTarget": "SAFE",
+        "errors": [],
+        "listenerQuery": "ABSENT",
+        "ownedIdentities": [
+          {
+            "creation100ns": 134366495382193520,
+            "image": "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+            "pid": 23332
+          },
+          {
+            "creation100ns": 134366495434936468,
+            "image": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe",
+            "pid": 24824
+          },
+          {
+            "creation100ns": 134366495430081820,
+            "image": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe",
+            "pid": 28652
+          }
+        ],
+        "preAckDisposition": "NOT_ACCEPTED_UNKNOWN",
+        "primaryFailures": [
+          "RuntimeError: browser/engine flow incomplete or ambiguous"
+        ],
+        "processQuery": "ABSENT",
+        "protocol": {
+          "cleanupSeconds": 120,
+          "closedBy": "RUN_END",
+          "generation": "g9f6de3f5",
+          "operations": [
+            {
+              "cleanup": false,
+              "id": 1,
+              "inflightAtClose": false,
+              "kind": "docker-context",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 2,
+              "inflightAtClose": false,
+              "kind": "docker-context-inspect",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 3,
+              "inflightAtClose": false,
+              "kind": "docker-local-server",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 4,
+              "inflightAtClose": false,
+              "kind": "cached-image",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 5,
+              "inflightAtClose": false,
+              "kind": "installed-browser-path",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 6,
+              "inflightAtClose": false,
+              "kind": "dependency-junction",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 7,
+              "inflightAtClose": false,
+              "kind": "netstat",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 8,
+              "inflightAtClose": false,
+              "kind": "engine-create",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 9,
+              "inflightAtClose": false,
+              "kind": "engine-identity",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 10,
+              "inflightAtClose": false,
+              "kind": "launch",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 11,
+              "inflightAtClose": false,
+              "kind": "engine-GET",
+              "outcome": "NONZERO_EXIT",
+              "state": "FAILED",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 12,
+              "inflightAtClose": false,
+              "kind": "engine-GET",
+              "outcome": "NONZERO_EXIT",
+              "state": "FAILED",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 13,
+              "inflightAtClose": false,
+              "kind": "engine-GET",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 14,
+              "inflightAtClose": false,
+              "kind": "engine-network-proof",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 15,
+              "inflightAtClose": false,
+              "kind": "launch",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 16,
+              "inflightAtClose": false,
+              "kind": "web-ready",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 17,
+              "inflightAtClose": false,
+              "kind": "route-compile",
+              "outcome": "HTTPError",
+              "state": "FAILED",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 18,
+              "inflightAtClose": false,
+              "kind": "route-compile",
+              "outcome": "HTTPError",
+              "state": "FAILED",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 19,
+              "inflightAtClose": false,
+              "kind": "netstat",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 20,
+              "inflightAtClose": false,
+              "kind": "launch",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 21,
+              "inflightAtClose": false,
+              "kind": "controller-reply",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": false,
+              "id": 22,
+              "inflightAtClose": false,
+              "kind": "helper-exit",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": true,
+              "id": 23,
+              "inflightAtClose": false,
+              "kind": "owned-handle-stop",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": true,
+              "id": 24,
+              "inflightAtClose": false,
+              "kind": "owned-handle-stop",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": true,
+              "id": 25,
+              "inflightAtClose": false,
+              "kind": "owned-handle-stop",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": true,
+              "id": 26,
+              "inflightAtClose": false,
+              "kind": "container-identity",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": true,
+              "id": 27,
+              "inflightAtClose": false,
+              "kind": "container-remove",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": true,
+              "id": 28,
+              "inflightAtClose": false,
+              "kind": "tasklist",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": true,
+              "id": 29,
+              "inflightAtClose": false,
+              "kind": "docker-ps",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            },
+            {
+              "cleanup": true,
+              "id": 30,
+              "inflightAtClose": false,
+              "kind": "netstat",
+              "outcome": null,
+              "state": "DONE",
+              "uncertain": false
+            }
+          ],
+          "phase": "CLEANUP",
+          "workSeconds": 900
+        },
+        "stageRetained": true,
+        "uncertainOperations": []
+      },
+      "evidenceBytes": 9047,
+      "evidenceSha256": "2c5d8ea813ee0ee34311d98d81cf938ffcbb25a4da74406b464317482b93c8ac",
+      "stageRetained": true
+    }
+  },
+  "rawTerminalEvidence": {
+    "actions": [
+      {
+        "action": "proxy-shutdown",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "proxy-close",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "proxy-join",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "reservation-0",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "reservation-1",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "child-evidence",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "identity",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "taskkill",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "taskkill",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "taskkill",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "container-remove",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "tasklist",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "docker-ps",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "descendants",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "listeners",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "reader-join",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "log-0",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "log-1",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "log-2",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "disposal-target",
+        "outcome": "CONFIRMED"
+      },
+      {
+        "action": "handle-close",
+        "outcome": "CONFIRMED"
+      }
+    ],
+    "child": {
+      "bytes": 1850,
+      "claimMatch": true,
+      "confirmed": false,
+      "exit": "NONZERO_EXIT",
+      "sha256": "717c97351ff18ad4423b6d961f8bddf2d5fb64a0cbf3f25cdcd262737a53608c",
+      "snapshot": "READ",
+      "teardown": {
+        "contextClose": "OK",
+        "stdinDestroy": "OK"
+      }
+    },
+    "containerQuery": "ABSENT",
+    "descendantQuery": "ABSENT",
+    "disposalTarget": "SAFE",
+    "errors": [],
+    "listenerQuery": "ABSENT",
+    "ownedIdentities": [
+      {
+        "creation100ns": 134366495382193520,
+        "image": "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+        "pid": 23332
+      },
+      {
+        "creation100ns": 134366495434936468,
+        "image": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe",
+        "pid": 24824
+      },
+      {
+        "creation100ns": 134366495430081820,
+        "image": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe",
+        "pid": 28652
+      }
+    ],
+    "preAckDisposition": "NOT_ACCEPTED_UNKNOWN",
+    "primaryFailures": [
+      "RuntimeError: browser/engine flow incomplete or ambiguous"
+    ],
+    "processQuery": "ABSENT",
+    "protocol": {
+      "cleanupSeconds": 120,
+      "closedBy": "RUN_END",
+      "generation": "g9f6de3f5",
+      "operations": [
+        {
+          "cleanup": false,
+          "id": 1,
+          "inflightAtClose": false,
+          "kind": "docker-context",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 2,
+          "inflightAtClose": false,
+          "kind": "docker-context-inspect",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 3,
+          "inflightAtClose": false,
+          "kind": "docker-local-server",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 4,
+          "inflightAtClose": false,
+          "kind": "cached-image",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 5,
+          "inflightAtClose": false,
+          "kind": "installed-browser-path",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 6,
+          "inflightAtClose": false,
+          "kind": "dependency-junction",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 7,
+          "inflightAtClose": false,
+          "kind": "netstat",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 8,
+          "inflightAtClose": false,
+          "kind": "engine-create",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 9,
+          "inflightAtClose": false,
+          "kind": "engine-identity",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 10,
+          "inflightAtClose": false,
+          "kind": "launch",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 11,
+          "inflightAtClose": false,
+          "kind": "engine-GET",
+          "outcome": "NONZERO_EXIT",
+          "state": "FAILED",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 12,
+          "inflightAtClose": false,
+          "kind": "engine-GET",
+          "outcome": "NONZERO_EXIT",
+          "state": "FAILED",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 13,
+          "inflightAtClose": false,
+          "kind": "engine-GET",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 14,
+          "inflightAtClose": false,
+          "kind": "engine-network-proof",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 15,
+          "inflightAtClose": false,
+          "kind": "launch",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 16,
+          "inflightAtClose": false,
+          "kind": "web-ready",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 17,
+          "inflightAtClose": false,
+          "kind": "route-compile",
+          "outcome": "HTTPError",
+          "state": "FAILED",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 18,
+          "inflightAtClose": false,
+          "kind": "route-compile",
+          "outcome": "HTTPError",
+          "state": "FAILED",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 19,
+          "inflightAtClose": false,
+          "kind": "netstat",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 20,
+          "inflightAtClose": false,
+          "kind": "launch",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 21,
+          "inflightAtClose": false,
+          "kind": "controller-reply",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": false,
+          "id": 22,
+          "inflightAtClose": false,
+          "kind": "helper-exit",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": true,
+          "id": 23,
+          "inflightAtClose": false,
+          "kind": "owned-handle-stop",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": true,
+          "id": 24,
+          "inflightAtClose": false,
+          "kind": "owned-handle-stop",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": true,
+          "id": 25,
+          "inflightAtClose": false,
+          "kind": "owned-handle-stop",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": true,
+          "id": 26,
+          "inflightAtClose": false,
+          "kind": "container-identity",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": true,
+          "id": 27,
+          "inflightAtClose": false,
+          "kind": "container-remove",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": true,
+          "id": 28,
+          "inflightAtClose": false,
+          "kind": "tasklist",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": true,
+          "id": 29,
+          "inflightAtClose": false,
+          "kind": "docker-ps",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        },
+        {
+          "cleanup": true,
+          "id": 30,
+          "inflightAtClose": false,
+          "kind": "netstat",
+          "outcome": null,
+          "state": "DONE",
+          "uncertain": false
+        }
+      ],
+      "phase": "CLEANUP",
+      "workSeconds": 900
+    },
+    "stageRetained": true,
+    "uncertainOperations": []
+  },
+  "browserBinding": {
+    "actor": "IMPLEMENTATION_WORKER",
+    "cap": 2,
+    "chrome": {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium-1208\\chrome-win64\\chrome.exe",
+      "sha256": "ff0c99fc5bb2301cad77930aa76e5354cf2a5fefb7efdcf3b3bc10ba0550c015"
+    },
+    "config": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\journey-input.json",
+      "sha256": "f791bd40ddbe22bf3606778ccaf15208118b3a603fdf22c044d0e8e868e7aab7"
+    },
+    "entry": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\probe_cvf_w05_browser_chain.cjs",
+      "sha256": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494"
+    },
+    "journey": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_ncr_html_owned_profile\\journey.cjs",
+      "sha256": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff"
+    },
+    "modulesPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules",
+    "observationPath": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\browser-fence.json",
+    "preload": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\scripts\\cvf_ncr_html_browser_fence.cjs",
+      "sha256": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6"
+    },
+    "profilePath": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\source\\browser-profile",
+    "runId": "ncr-be-worker-20261017-r1c",
+    "schemaVersion": "cvf.ncrHtmlBrowserBinding@1"
+  },
+  "browserConfig": {
+    "inputs": [
+      {
+        "claimBoundary": "Ch\u1ec9 l\u00e0 g\u00f3i HTML \u0111\u1ec3 r\u00e0 so\u00e1t. D\u1eef li\u1ec7u gi\u1ea3 l\u1eadp, kh\u00f4ng ph\u1ea3i quy \u0111\u1ecbnh th\u1eadt, ch\u01b0a \u0111\u01b0\u1ee3c duy\u1ec7t v\u00e0 kh\u00f4ng thay th\u1ebf quy\u1ebft \u0111\u1ecbnh c\u1ee7a ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch.",
+        "memoryClass": "FULL_RECORD",
+        "receiptAnchor": "onboarding-synth-v1",
+        "sourceContent": "# H\u01b0\u1edbng d\u1eabn nh\u00e2n vi\u00ean m\u1edbi - ng\u00e0y \u0111\u1ea7u ti\u00ean\n\nRecord type: Complete review record\n\nReview status: Draft for review\n\n## T\u00f3m t\u1eaft\n\n\u0110\u00e2y l\u00e0 v\u00ed d\u1ee5 t\u1ed5ng h\u1ee3p cho c\u1eeda h\u00e0ng gi\u1ea3 \u0111\u1ecbnh **Hoa Sen**. B\u1ea3n n\u00e0y li\u1ec7t k\u00ea ba vi\u1ec7c c\u1ea7n l\u00e0m trong ng\u00e0y \u0111\u1ea7u c\u1ee7a nh\u00e2n vi\u00ean m\u1edbi \u0111\u1ec3 ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch \u0111\u1ecdc l\u1ea1i tr\u01b0\u1edbc khi d\u00f9ng.\n\n## Vi\u1ec7c c\u1ea7n l\u00e0m ng\u00e0y \u0111\u1ea7u\n\n- Nh\u1eadn th\u1ebb ra v\u00e0o v\u00e0 \u0111\u1ecdc n\u1ed9i quy an to\u00e0n.\n- G\u1eb7p ng\u01b0\u1eddi h\u01b0\u1edbng d\u1eabn v\u00e0 xem b\u1ea3ng ph\u00e2n c\u00f4ng ca l\u00e0m vi\u1ec7c.\n- Cu\u1ed1i ng\u00e0y ghi l\u1ea1i m\u1ed9t c\u00e2u h\u1ecfi ch\u01b0a r\u00f5 \u0111\u1ec3 h\u1ecfi l\u1ea1i v\u00e0o s\u00e1ng h\u00f4m sau.\n\n## Review Boundary\n\n\u0110\u00e2y l\u00e0 b\u1ea3n nh\u00e1p \u0111\u1ec3 r\u00e0 so\u00e1t, kh\u00f4ng ph\u1ea3i quy \u0111\u1ecbnh ch\u00ednh th\u1ee9c v\u00e0 ch\u01b0a \u0111\u01b0\u1ee3c ai ph\u00ea duy\u1ec7t. M\u1ecdi t\u00ean v\u00e0 quy tr\u00ecnh trong b\u1ea3n n\u00e0y \u0111\u1ec1u l\u00e0 d\u1eef li\u1ec7u gi\u1ea3 l\u1eadp.",
+        "sourcePath": "synthetic/onboarding/huong-dan-nhan-vien-moi-v1.md",
+        "status": "Draft for review",
+        "title": "Huong dan nhan vien moi - ban ra soat v1"
+      },
+      {
+        "claimBoundary": "Ch\u1ec9 l\u00e0 g\u00f3i HTML \u0111\u1ec3 r\u00e0 so\u00e1t. D\u1eef li\u1ec7u gi\u1ea3 l\u1eadp, kh\u00f4ng ph\u1ea3i quy \u0111\u1ecbnh th\u1eadt, ch\u01b0a \u0111\u01b0\u1ee3c duy\u1ec7t v\u00e0 kh\u00f4ng thay th\u1ebf quy\u1ebft \u0111\u1ecbnh c\u1ee7a ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch.",
+        "memoryClass": "FULL_RECORD",
+        "receiptAnchor": "onboarding-synth-v2",
+        "sourceContent": "# H\u01b0\u1edbng d\u1eabn nh\u00e2n vi\u00ean m\u1edbi - ng\u00e0y \u0111\u1ea7u ti\u00ean\n\nRecord type: Complete review record\n\nReview status: Revised draft for review\n\n## T\u00f3m t\u1eaft\n\n\u0110\u00e2y l\u00e0 v\u00ed d\u1ee5 t\u1ed5ng h\u1ee3p cho c\u1eeda h\u00e0ng gi\u1ea3 \u0111\u1ecbnh **Hoa Sen**. B\u1ea3n n\u00e0y li\u1ec7t k\u00ea b\u1ed1n vi\u1ec7c c\u1ea7n l\u00e0m trong ng\u00e0y \u0111\u1ea7u c\u1ee7a nh\u00e2n vi\u00ean m\u1edbi \u0111\u1ec3 ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch \u0111\u1ecdc l\u1ea1i tr\u01b0\u1edbc khi d\u00f9ng.\n\n## Vi\u1ec7c c\u1ea7n l\u00e0m ng\u00e0y \u0111\u1ea7u\n\n- Nh\u1eadn th\u1ebb ra v\u00e0o v\u00e0 \u0111\u1ecdc n\u1ed9i quy an to\u00e0n.\n- G\u1eb7p ng\u01b0\u1eddi h\u01b0\u1edbng d\u1eabn v\u00e0 xem b\u1ea3ng ph\u00e2n c\u00f4ng ca l\u00e0m vi\u1ec7c.\n- Cu\u1ed1i ng\u00e0y ghi l\u1ea1i m\u1ed9t c\u00e2u h\u1ecfi ch\u01b0a r\u00f5 \u0111\u1ec3 h\u1ecfi l\u1ea1i v\u00e0o s\u00e1ng h\u00f4m sau.\n- B\u00e1o cho ng\u01b0\u1eddi ph\u1ee5 tr\u00e1ch bi\u1ebft m\u00ecnh \u0111\u00e3 \u0111\u1ecdc xong b\u1ea3n h\u01b0\u1edbng d\u1eabn n\u00e0y.\n\n## Review Boundary\n\n\u0110\u00e2y l\u00e0 b\u1ea3n nh\u00e1p \u0111\u1ec3 r\u00e0 so\u00e1t, kh\u00f4ng ph\u1ea3i quy \u0111\u1ecbnh ch\u00ednh th\u1ee9c v\u00e0 ch\u01b0a \u0111\u01b0\u1ee3c ai ph\u00ea duy\u1ec7t. M\u1ecdi t\u00ean v\u00e0 quy tr\u00ecnh trong b\u1ea3n n\u00e0y \u0111\u1ec1u l\u00e0 d\u1eef li\u1ec7u gi\u1ea3 l\u1eadp.",
+        "sourcePath": "synthetic/onboarding/huong-dan-nhan-vien-moi-v2.md",
+        "status": "Revised draft for review",
+        "title": "Huong dan nhan vien moi - ban ra soat v2"
+      }
+    ],
+    "cap": 2,
+    "browserProfile": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\source\\browser-profile",
+    "generation": "g9f6de3f5",
+    "deadlineAtMs": 1792176824691,
+    "workMs": 849859,
+    "cleanupAtMs": 1792176944691,
+    "cleanupMs": 120000
+  },
+  "browserFenceObservation": {
+    "actor": "IMPLEMENTATION_WORKER",
+    "bindingSha256": "512562eba121aff32782f83c3e4eb0a106ea3cab2f88dbc16fa46225564fb23f",
+    "cap": 2,
+    "chrome": {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium-1208\\chrome-win64\\chrome.exe",
+      "sha256": "ff0c99fc5bb2301cad77930aa76e5354cf2a5fefb7efdcf3b3bc10ba0550c015"
+    },
+    "configSha256": "f791bd40ddbe22bf3606778ccaf15208118b3a603fdf22c044d0e8e868e7aab7",
+    "invocations": 1,
+    "preloadSha256": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+    "runId": "ncr-be-worker-20261017-r1c",
+    "schemaVersion": "cvf.ncrHtmlBrowserFenceObservation@1",
+    "verified": true
+  },
+  "browserLaunchEvidence": "actual helper snapshot/session flow, browser fence invocations1 and contextCloseOK; no completed cap2/browser success",
+  "rawFileInventory": {
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\browser-binding.json": {
+      "bytes": 1409,
+      "sha256": "512562eba121aff32782f83c3e4eb0a106ea3cab2f88dbc16fa46225564fb23f"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\browser-fence.json": {
+      "bytes": 597,
+      "sha256": "c2d6ab5d2d40db5ea618f3e9c2e976eadea5ce84d084a1ecbb09cefcd52020a3"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\browser.json": {
+      "bytes": 1850,
+      "sha256": "717c97351ff18ad4423b6d961f8bddf2d5fb64a0cbf3f25cdcd262737a53608c"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\commands.json": {
+      "bytes": 29253,
+      "sha256": "0b1efa3d0afc007dbff37a076857a52af44ebd1a2c3ed0c20681f4b9ab059b82"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\descendants-before-cleanup.json": {
+      "bytes": 450,
+      "sha256": "e83aa2e869b9de02816f829fa398b56bcf8de1cada3be79f0a48f7c3f9695013"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\egress.jsonl": {
+      "bytes": 5611,
+      "sha256": "6d3aa57423187ba69b6934fa81202c76dde1c6e56a6fa9c33987c469017f82d3"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\engine.log": {
+      "bytes": 259,
+      "sha256": "ea58da94d934a41dfdda2830498dabff61fe446bc46c307ccbc4cbe52110dbea"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\helper.log": {
+      "bytes": 215,
+      "sha256": "46c7d88c6bb17a42cc5a1b93b64f55878fc170030c53b97c2163869ae8ace309"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\journey-input.json": {
+      "bytes": 4285,
+      "sha256": "f791bd40ddbe22bf3606778ccaf15208118b3a603fdf22c044d0e8e868e7aab7"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\process-roots.json": {
+      "bytes": 9877,
+      "sha256": "804aea08a6ff9c04465f0c8a30539fb2e26338f02df5224d54cf92069dd35dfa"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\runner-result.json": {
+      "bytes": 30943,
+      "sha256": "7b656ec4b207d2cb81b518762f065d26d4e850e74911729337ac7cc9cb96b111"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\staged-source-manifest.json": {
+      "bytes": 194103,
+      "sha256": "7e9b3cf85aab3acaa06ae6974c6fb0f013c39a545a6ba71f143c280e2a9b7ce1"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\terminal-evidence.json": {
+      "bytes": 9047,
+      "sha256": "2c5d8ea813ee0ee34311d98d81cf938ffcbb25a4da74406b464317482b93c8ac"
+    },
+    "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1c\\custody\\web.log": {
+      "bytes": 2078,
+      "sha256": "12a0e1561baf55c6dada90f40049461d0c32bb011cbd0d68d62a2b78b5842664"
+    },
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1c-runtime-20261017\\worker-program-entry.json": {
+      "bytes": 245,
+      "sha256": "59becb034ffe88d6727521c2a8cbb9365b658dc5729eba23054aa174fe583599"
+    },
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1c-runtime-20261017\\worker-program-result.json": {
+      "bytes": 652,
+      "sha256": "fc6faa9261ff21c40abfd2ff277c7e0ce9cd33a0423b398ca3f3a96a6b551db2"
+    },
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1c-runtime-20261017\\worker-driver-result.json": {
+      "bytes": 35095,
+      "sha256": "2d80992c9d23a9d30400e00f01faeafc7babb4f9a099a3e49787c8f27c73c44c"
+    },
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1c-runtime-20261017\\worker-stdout.log": {
+      "bytes": 183,
+      "sha256": "93e992d4d241c979c1b95fa0db15f64100651b35a04988b280b54723b2516f62"
+    },
+    "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1c-runtime-20261017\\worker-stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "D:\\CVF_NCR_RUNTIME\\custody-be-r1c-20261017\\ncr-be-worker-20261017-r1c.spent.json": {
+      "bytes": 229,
+      "sha256": "6261766297e53ee64601994dfcf21f124d46cdaa0ea46b2b8177cf8fecb7ce24"
+    },
+    "D:\\CVF_NCR_RUNTIME\\custody-be-r1c-20261017\\ncr-be-worker-20261017-r1c.starts.json": {
+      "bytes": 2036,
+      "sha256": "ff40be9b4b34788cec06e80724f91bbb0f735f7e08c65a83aaf8578407d0968c"
+    }
+  },
+  "source18Preserved": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": {
+      "expected": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+      "actual": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8"
+    },
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": {
+      "expected": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+      "actual": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491"
+    },
+    "scripts/cvf_ncr_html_owned_profile/profile.py": {
+      "expected": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+      "actual": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": {
+      "expected": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+      "actual": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1"
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": {
+      "expected": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff",
+      "actual": "2bec6ff0f421ab254ce54f95b3d729efa498a628050ee7384c81f8d136366fff"
+    },
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": {
+      "expected": "8ed63e7edd13e2dcd695489a0bf6b50c05b54c9f272860ab20a7ecd1a527d86d",
+      "actual": "8ed63e7edd13e2dcd695489a0bf6b50c05b54c9f272860ab20a7ecd1a527d86d"
+    },
+    "scripts/cvf_ncr_html_owned_profile/execution.py": {
+      "expected": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "actual": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": {
+      "expected": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "actual": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357"
+    },
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": {
+      "expected": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "actual": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": {
+      "expected": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "actual": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_win32.py": {
+      "expected": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "actual": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228"
+    },
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py": {
+      "expected": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "actual": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702"
+    },
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": {
+      "expected": "5bbf1c0bf18f1dfa571f2b0de0e18b12fefa7e950dff707abbadbdacfdcca650",
+      "actual": "5bbf1c0bf18f1dfa571f2b0de0e18b12fefa7e950dff707abbadbdacfdcca650"
+    },
+    "scripts/cvf_ncr_html_browser_fence.cjs": {
+      "expected": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+      "actual": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6"
+    },
+    "scripts/cvf_ncr_html_browser_fence.test.cjs": {
+      "expected": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+      "actual": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf"
+    },
+    "scripts/cvf_ncr_html_effect_fence.py": {
+      "expected": "2f2c45570c088f5c6b44f376d496ee227803114bebfc400ba21775a98b360e1d",
+      "actual": "2f2c45570c088f5c6b44f376d496ee227803114bebfc400ba21775a98b360e1d"
+    },
+    "scripts/run_cvf_ncr_html_effect_driver.py": {
+      "expected": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+      "actual": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf"
+    },
+    "scripts/test_cvf_ncr_html_effect_driver.py": {
+      "expected": "2eaa901e2d5a2ed96bd629b99635cbc5282987b0ce8cba44e5f155a36ec2a0b9",
+      "actual": "2eaa901e2d5a2ed96bd629b99635cbc5282987b0ce8cba44e5f155a36ec2a0b9"
+    }
+  },
+  "safeWebLogLines": [
+    "\u25b2 Next.js 16.2.7 (webpack)",
+    "- Local:         http://127.0.0.1:53566",
+    "- Network:       http://127.0.0.1:53566",
+    "\u2713 Ready in 828ms",
+    "",
+    "\u25cb Compiling /login ...",
+    " GET /login 200 in 17.8s (next.js: 17.4s, application-code: 430ms)",
+    " GET /api/artifacts/export 405 in 2.4s (next.js: 2.3s, application-code: 51ms)",
+    " GET /api/governance/evaluate 405 in 778ms (next.js: 751ms, application-code: 26ms)",
+    " GET /login?from=%2Fartifacts 200 in 317ms (next.js: 106ms, application-code: 212ms)",
+    " GET /api/auth/session 200 in 1374ms (next.js: 1337ms, application-code: 37ms)",
+    " GET /api/auth/session 200 in 39ms (next.js: 20ms, application-code: 20ms)",
+    " GET /api/auth/providers 200 in 39ms (next.js: 19ms, application-code: 20ms)",
+    " GET /api/auth/csrf 200 in 22ms (next.js: 5ms, application-code: 17ms)",
+    " POST /api/auth/callback/credentials? 200 in 71ms (next.js: 7ms, application-code: 64ms)",
+    " GET /api/auth/session 200 in 46ms (next.js: 7ms, application-code: 39ms)",
+    "\u25cb Compiling /artifacts ...",
+    " GET /artifacts 200 in 23.8s (next.js: 23.5s, application-code: 206ms)",
+    " GET /artifacts 200 in 23.8s (next.js: 23.6s, application-code: 211ms)",
+    "[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior",
+    "\u25cb Compiling /api/auth/me ...",
+    " GET /api/auth/me 200 in 5.1s (next.js: 5.0s, application-code: 130ms)",
+    " GET /api/auth/me 200 in 5.1s (next.js: 5.0s, application-code: 136ms)",
+    " GET /api/auth/session 200 in 4.9s (next.js: 4.8s, application-code: 131ms)",
+    "\u2a2f TypeError: Response body object should not be disturbed or locked",
+    "    at ignore-listed frames {",
+    "  page: '/api/governance/evaluate'",
+    "}",
+    "\u25cb Compiling /_error ...",
+    " POST /api/governance/evaluate 500 in 7.1s (next.js: 6.0s, application-code: 1110ms)",
+    " POST /api/artifacts/export 200 in 7.3s (next.js: 35ms, application-code: 7.2s)",
+    " GET /artifacts 200 in 4.6s (next.js: 4.3s, application-code: 244ms)",
+    " GET /artifacts 200 in 4.6s (next.js: 4.3s, application-code: 245ms)"
+  ],
+  "diagnosis": {
+    "directlyObserved": "first export HTTP200 with UNAVAILABLE receipt; saved evaluate POST500, TypeError Response body object should not be disturbed or locked; evaluate collector counters0",
+    "classification": "SAVED_LOG_POST_EVALUATE_BODY_DISTURBED_UNAVAILABLE_RECEIPT",
+    "sourceHypothesis": "journey installOwnedGuard attaches IncomingMessage data/end observers before original http.Server.emit delegate; possible Next body disturbance. No independent reproducer/causal proof or fix in this worker task.",
+    "priorFixObserved": "actual browser main dispatch/snapshot and safe empty GET; not old cached-main skip/JSON-parse failure",
+    "secretSafe": true,
+    "newQueryOrReproducer": false
+  },
+  "preparation": {
+    "preimplementationExit": 0,
+    "preimplementationSeconds": 10.75,
+    "scaffoldExit": 0,
+    "inclusiveStart": "2026-10-16T18:02:00Z",
+    "workerDeadline": "2026-10-16T19:32:00Z",
+    "readLimitations": "Progressive current startup/pair/released payloads and saved own evidence; unchanged source/qualification/driver owner sections and output predicates reused from immediately prior tasks with current hashes. Some combined read output truncated; no all-body/all-files/full-history claim. Metadata lookup first tried pins-worker.json, corrected to frozen pins.json before invocation; no target import or effect retry. Emitted scaffold title R1C Runtime differs from W suggested Fresh Runtime label; same actual full emit/check-shape profile and bounds passed.",
+    "logSha256": "40a67374cb693cae849400b24e6f0448c5607957583a4fd25d0a03b00d12bc51",
+    "sourceQualificationEvidenceConsumedWithoutRerun": true
+  },
+  "effectCounts": {
+    "work": 17,
+    "cleanup": 5,
+    "exports": 1,
+    "evaluateArrivals": 0,
+    "evaluateAttempts": 0,
+    "completed": 0,
+    "builds": 0,
+    "finalRows": 0,
+    "programs": 1,
+    "retries": 0,
+    "provider": 0,
+    "filesystemDeletion": 0
+  },
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "privateOracleReadOrInvoked": false,
+  "parent": {
+    "generation": 9,
+    "scecOrdinal": 2,
+    "counters": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "blockers": 2,
+    "unchanged": true
+  },
+  "finalGateDetachedCustody": ".cvf\\runtime\\ncr-be-r1c-runtime-20261017\\worker\\worker-fullgate-result.json",
+  "custodyDisposition": "new namespace/stage/shared dependency junction/external custody retained under LOCAL; original finalizer only, no filesystem disposal",
+  "observedAfterProgramUtc": "2026-10-16T18:43:30.440555+00:00",
+  "REQ-RUNTIME": {
+    "status": "BLOCKED",
+    "actualArtifacts": [
+      "docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_WORKER_RETURN_2026-10-17.md",
+      "docs/reviews/evidence/ncr-html-b-e-r1c-runtime-worker-20261017.json"
+    ],
+    "proofRefs": [
+      "PROOF-ADMISSION",
+      "PROOF-JOURNEY"
+    ]
+  },
+  "REQ-TERMINAL": {
+    "status": "BLOCKED",
+    "actualArtifacts": [
+      "docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_WORKER_RETURN_2026-10-17.md",
+      "docs/reviews/evidence/ncr-html-b-e-r1c-runtime-worker-20261017.json"
+    ],
+    "proofRefs": [
+      "PROOF-TERMINAL"
+    ]
+  },
+  "REQ-RETURN": {
+    "status": "PASS",
+    "actualArtifacts": [
+      "docs/reviews/CVF_NCR_HTML_B_E_R1C_RUNTIME_WORKER_RETURN_2026-10-17.md",
+      "docs/reviews/evidence/ncr-html-b-e-r1c-runtime-worker-20261017.json"
+    ],
+    "proofRefs": [
+      "PROOF-RETURN"
+    ]
+  },
+  "firstGate": {
+    "exitCode": 1,
+    "gateElapsedSeconds": 9.55,
+    "logSha256": "9c312c743fbd4eeee4e60f7ee8c0d5200aaad5d3698153d092d927dddf70a026",
+    "originalReceiptSha256": "e0f23b9acd3fa89b1bf1e5265f72fff126ed87f231933ee4da28c313e172b4ba",
+    "failure": "adapted authoritative dispatchWorkOrder header retained old FRESH_RUNTIME while trace/ledger/commands named current r1c",
+    "repair": "one consolidated exact2 documentary binding/first-failure repair only; no source/program/effect retry"
+  }
+}
