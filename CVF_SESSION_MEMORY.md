@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | Explicit source identity accepted bounded; fresh source13 controls, owned stage and B-E journey open |
+| Parent maintenance | Source13 actor controls52 inert children released after bound gate; owned stage/B-E plan only |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_source_admission_accepted_b_e_controls_open`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=Local current-source controls/owned-stage/B-E envelope preparation; role=INTERNAL_AGENT Local reviewer/steward; phase=source identity accepted bounded, procedure partial; decision owner=Local; parked checkpoint=actual native/product/browser/container/provider/disposal/parent/public/deploy effects need current admission.
+Startup acknowledged: current mode=`cvf_ncr_html_source13_controls_released`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next=bound controls verification, worker cap2 then distinct Local cap1 with clean-tree publication barrier; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=source13 mechanical inert prerequisites; decision owner=Local; parked checkpoint=actual B-E/job/product/browser/container/provider/disposal/parent/public/deploy effects require separate admission.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_source_admission_accepted_b_e_controls_open`
-Current mode: `cvf_ncr_html_source_admission_accepted_b_e_controls_open`; previous mode marker: `cvf_ncr_html_source_admission_worker_released`
+Current mode marker: `cvf_ncr_html_source13_controls_released`
+Current mode: `cvf_ncr_html_source13_controls_released`; previous mode marker: `cvf_ncr_html_source_admission_accepted_b_e_controls_open`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_source_admission_accepted_b_e_controls_open`
+Mode: `cvf_ncr_html_source13_controls_released`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-SOURCE-ADMISSION-20261016. SOURCE_ADMISSION_ACCEPTED_BOUNDED; completedSourceOrder=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md; completion=docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_COMPLETION_2026-10-16.md; frozenSourceRelease=docs/reviews/evidence/ncr-html-source-release-20261016.json@d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5. Next Local prepares current source13 actual controls and owned synthetic staging/B-E before-effect envelope; no executable runtime successor yet. Explicit selector/admission and product-binding recheck implemented; worker227/227 before one Local oracle correction, affected1/1 and independent30/30 PASS; worker full gate/raw joins PASS. Local committed read is metadata only and recorded in final handoff. Family13=production7/oracles6; prior source12/control/native proofs immutable and old control bindings stale after changed bytes, not replayed/refilled. Existing tool qualification retained. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/generation9/SCEC2/counters2,0,2,0/blockers2/freeze; no transition/independentCriticalEvidence. Prior7 P4 blocks/exclusions retained, normal collector only. Full B-E/parent/disposal unproved; actual native/product/browser/container/provider/delete0. R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-SOURCE13-CONTROLS-20261016. Material=4ee706cec84f60e53396d62e0d469b2a16da06c3; workOrder=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE13_CONTROLS_2026-10-16.md. Next bound pre-dispatch then worker pre-implementation before fixed source13 verification. Worker fake then actual cap2/26 inert Python children; ignored raw return then WAIT_ROOT_PUBLISH. Local distinct fake then actual cap1/26; only after both actual matrices end may worker publish tracked exact2. Source-release d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5 and all13/prod7/oracle6 bytes immutable; actual admission needs clean worktree. Each actor2 programs/one actual matrix/26 inert children, no retries; total52; each program watchdog90s. Root120min/worker90min including preparation; historical slots retired, fresh current-source admission only. No standalone stage copy because full runner requires fresh namespace. Concrete B-E envelope planning only; actual Native/Job/product/browser/container/listener/network/provider/delete/public/deploy0. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/gen9/SCEC2/counters2,0,2,0/blockers2/freeze; no transition/independentCriticalEvidence. Prior7 P4 blocks/exclusions retained, normal collector only. Full B-E/parent/disposal open; R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.
 
 ## Parked Checkpoints
 

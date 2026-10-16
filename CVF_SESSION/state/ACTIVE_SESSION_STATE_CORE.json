@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md",
-    "baselineSha256": "1c33647040bc57cd32a6edb27533d7d728158b18660dbcf87a3ae0b89dfa1056",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md",
-    "workOrderSha256": "028da14681111f8dd7effd3ee9901142949a0328434f5de35e3ca9b4a850afd9"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_SOURCE13_CONTROLS_LOCAL_2026-10-16.md",
+    "baselineSha256": "7396a646eb42004093634d6d7beef77111b6256fe03b7a8325b1589fdd6744b5",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE13_CONTROLS_2026-10-16.md",
+    "workOrderSha256": "db93f9c8b361e97303c6c048a3b5c04a441ff2f1f91c1f604ec049ae635d93c5"
   },
-  "currentAuthoritySyncReason": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-SOURCE-ADMISSION-20261016. SOURCE_ADMISSION_ACCEPTED_BOUNDED; completedSourceOrder=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE_ADMISSION_2026-10-16.md; completion=docs/reviews/CVF_NCR_HTML_SOURCE_ADMISSION_COMPLETION_2026-10-16.md; frozenSourceRelease=docs/reviews/evidence/ncr-html-source-release-20261016.json@d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5. Next Local prepares current source13 actual controls and owned synthetic staging/B-E before-effect envelope; no executable runtime successor yet. Explicit selector/admission and product-binding recheck implemented; worker227/227 before one Local oracle correction, affected1/1 and independent30/30 PASS; worker full gate/raw joins PASS. Local committed read is metadata only and recorded in final handoff. Family13=production7/oracles6; prior source12/control/native proofs immutable and old control bindings stale after changed bytes, not replayed/refilled. Existing tool qualification retained. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/generation9/SCEC2/counters2,0,2,0/blockers2/freeze; no transition/independentCriticalEvidence. Prior7 P4 blocks/exclusions retained, normal collector only. Full B-E/parent/disposal unproved; actual native/product/browser/container/provider/delete0. R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.",
+  "currentAuthoritySyncReason": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-SOURCE13-CONTROLS-20261016. Material=4ee706cec84f60e53396d62e0d469b2a16da06c3; workOrder=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_SOURCE13_CONTROLS_2026-10-16.md. Next bound pre-dispatch then worker pre-implementation before fixed source13 verification. Worker fake then actual cap2/26 inert Python children; ignored raw return then WAIT_ROOT_PUBLISH. Local distinct fake then actual cap1/26; only after both actual matrices end may worker publish tracked exact2. Source-release d1a591633d144bacf0c5ffa8afc019b981b2b587e8512dd3ac549a1681397fc5 and all13/prod7/oracle6 bytes immutable; actual admission needs clean worktree. Each actor2 programs/one actual matrix/26 inert children, no retries; total52; each program watchdog90s. Root120min/worker90min including preparation; historical slots retired, fresh current-source admission only. No standalone stage copy because full runner requires fresh namespace. Concrete B-E envelope planning only; actual Native/Job/product/browser/container/listener/network/provider/delete/public/deploy0. Same root NCR_HTML_CONFIGURED_RECEIPT_CONTROL_PROOF/gen9/SCEC2/counters2,0,2,0/blockers2/freeze; no transition/independentCriticalEvidence. Prior7 P4 blocks/exclusions retained, normal collector only. Full B-E/parent/disposal open; R1/R2partial,R3/R4open,R5/R6deferred; foundation active/extension NOT_APPLIED/projectOPEN; data/custody/business/send/B2/P11/public/deploy parked; LHW24 retained.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_source_admission_accepted_b_e_controls_open",
-  "previousMode": "cvf_ncr_html_source_admission_worker_released",
+  "currentMode": "cvf_ncr_html_source13_controls_released",
+  "previousMode": "cvf_ncr_html_source_admission_accepted_b_e_controls_open",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
