@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False. Frozen worker2, Local independent pure observation and actual raw terminal/journey/custody proof consumed once. docs/reviews/CVF_NCR_HTML_B_E_FRESH_RUNTIME_LOCAL_COMPLETION_2026-10-16.md; docs/reviews/evidence/ncr-html-b-e-fresh-runtime-local-20261016.json. Exact13 result material then exact6 actual-SHA continuity; no further effect authority.
+Dispatch9 B/W2+roadmap1+source6, worker6 per new order, root final source identity/release closure separate. Prior result worker2/CP/LP/BW frozen, old source18 before-image captured. Prior actual result13/6 split PASS consumed, not rerun. BE-S09 source-only unchecked/in progress; BE-R01 failed/open, BE-R02 unadmitted. No runtime retry/provider/deletion or secret-bearing proof publication.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_fresh_be_r01_blocked_spent`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local PLAN minimal MAIN_ENTRY_CACHE_SOURCE correction under unchecked BE-S09 only; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=cap1/any runtime retry/provider/deletion separately unadmitted; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_main_entry_cache_source_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=conditional exact6 MAIN_ENTRY_CACHE_SOURCE worker after committed bound source release/preimplementation; role=INTERNAL_AGENT Local dispatcher/reviewer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=all browser runtime/cap1/provider/deletion/retry effects unadmitted; no generic operator checkpoint.
 
 ## Current Mode
 
-`cvf_ncr_html_fresh_be_r01_blocked_spent`. BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False. Fresh r1b exhausted; no automatic successor/retry/cap1. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed.
+`cvf_ncr_html_main_entry_cache_source_dispatched`. Source-only MAIN_ENTRY_CACHE_SOURCE cache/bootstrap and HTTP observer correction conditionally dispatched; source/native proof pending. Prior failed cap2 result closed with actual split13/6 PASS. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired and fresh r1b spent blocked retained.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md` SHA256 `415adacb789673682c662c49ef1929e1903d96b074665c581ca21dde9d85e6fa`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_FRESH_RUNTIME_2026-10-16.md` SHA256 `e86184b1dee582acfd8e68774eaf7c788e6b8292e2a525ab374ec368289b7e65`. Closed exhausted first-result authority; execution preimages/admission/pins/envelope preserved; source release/accepted source and qualification unchanged.
+Baseline `docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md` SHA256 `16196b0833d0c9bf7ff93275d9210e097bcc1c9907d41566ffccaf53d1a4e589`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md` SHA256 `302ff112a4622b8a17377b0de68c604c195c331124d780d5cd59ed60e32db566`. New source-only authority; old accepted Windows source B/W/releases/qualification/closed runtime first-result evidence remain immutable.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-FRESH-RUNTIME-20261016. BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; consume docs/reviews/CVF_NCR_HTML_B_E_FRESH_RUNTIME_LOCAL_COMPLETION_2026-10-16.md and docs/reviews/evidence/ncr-html-b-e-fresh-runtime-local-20261016.json. r1b exhausted. Next Local may PLAN minimal MAIN_ENTRY_CACHE_SOURCE correction under unchecked BE-S09, using the evidenced cached CommonJS main-entry/helper exit0 empty-log defect plus root-observed empty readiness GET405/malformed-JSON observer exception in the same existing journey owner/tests; source implementation/proof needs its concrete new order. This is not effects/retry: no new slot, cap1, provider or cleanup/deletion grant. Source18/accepted source B/W/release/qualification immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Actual result material 6d5ffd0a9a7fb04b99f9f594ca35f1fabbfc4504 committed; exact6 actual-SHA continuity prepared; clean split closure pending.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-MAIN-ENTRY-CACHE-SOURCE-20261017. Under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md and docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md, conditionally release one INTERNAL_AGENT exact6 source worker after committed dispatch/current authority/actual-SHA continuity, bound pre-dispatch and worker preimplementation PASS. Correct cached future-main entry eviction plus POST-only/malformed-safe evaluate observer in existing journey owner/tests; exact source_release AUTHORITY and effect-driver test assertion only. Worker Node budget one CJS test runner plus2 RED/GREEN fixture starts, no legacy Windows test collection; root separate independent1 Node probe, budgets/physical pins/custody exactly W. Inclusive prep 2026-10-16T17:10:00Z, worker hard90min deadline 2026-10-16T18:40:00Z, Local180min 2026-10-16T20:10:00Z; no reset. BE-S09 unchecked IN_PROGRESS_SOURCE_ONLY; BE-R01 spent failed/open and BE-R02 open/unadmitted. Prior result material 6d5ffd0a9a7fb04b99f9f594ca35f1fabbfc4504/continuity 1cc2700d2d6944f2499366126855f7034434c3a9 actual13/6 split PASS consumed, no rerun. Source18 before-image frozen; old Windows source B/W/releases/qualification/failed worker2/CP/LP unchanged. Worker leaves F release constants; Local accepted new-source identity/release/F binding is a later distinct closure, not old release repin. No browser/runtime/cap1/provider/deletion/retry; changed source requires separate future qualification. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired and fresh r1b spent blocked retained. Current material anchor 1cc2700d2d6944f2499366126855f7034434c3a9; ordinary technical details Local, no generic documentary operator checkpoint.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -72,10 +72,13 @@ Fresh result material `6d5ffd0a9a7fb04b99f9f594ca35f1fabbfc4504`: normal collect
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: exhausted current grant, actual first-result disposition, raw closed authority hashes/roadmap and source-generated projection align atomically. Following actual-material-SHA continuity exact6 separate.
+Atomicity reason: new source-only authority, BE-S09 support-in-progress and source-generated current raw B/W/mode/next align in dispatch9; following actual material SHA continuity exact6.
 
 Exact changed manifest:
 
+- `docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -83,47 +86,50 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: listed metadata only; no new effects/retry/cleanup/deletion.
+Rollback boundary: listed metadata only; no production-source, old evidence, runtime or resource effect.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: close fresh one-actor grant/result/roadmap and current6 only; no source/checker/hook semantics.
+Authorized guard-maintenance scope: new source-correction B/W, BE-S09 in-progress support and current6 raw authority/mode/next only at dispatch; no worker source change in this metadata commit.
 Protected paths:
+- `docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current one-actor order and standing Local first-result review/closure/steward authority.
-Rollback boundary: listed metadata only; worker2/actual execution authority and all immutable source/qualification/old custody preserved. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed.
+Operator authorization: current Local source-only continuation after closed spent BE-R01 first result; standing root author/reviewer/steward authority.
+Rollback boundary: exact listed metadata only; prior worker2/CP/LP/BW, source18/accepted Windows source B/W/releases/qualification/old grants and custody unchanged. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired and fresh r1b spent blocked retained.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT reviewer/closer/steward |
+| Actor | Local INTERNAL_AGENT dispatcher/reviewer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-fresh-be-r01-continuity-20261016 |
+| Session or invocation | ncr-main-entry-source-material-20261017 |
 | Working directory | repository root |
-| Command or tool surface | consume frozen first-result/terminal worker gate and independent Local pure output; documentary closure/current6 generation; normal gates/commits separately owned by root |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | one-actor first-result review and standing Local closure/steward authority |
-| Before status evidence | HEAD 6d5ffd0a9a7fb04b99f9f594ca35f1fabbfc4504; worker terminal lane released/frozen |
-| After status evidence | BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; grant exhausted, cap1/provider/deletion/retry not granted |
-| Diff evidence | exact6 continuity manifest |
-| Approval boundary | metadata first-result closure only; no further runtime/native/provider/deletion |
-| Claim boundary | actual cap2 first result only, not cap1/final B-E/live governance |
+| Command or tool surface | root-reviewed source packet derivative, git status --short, actual prior-result/dependency/ADIF metadata joins and canonical current6 generation; gates/commits separately owned by root |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | Local next source-correction continuation; current new exact source-only order after spent-result split closure |
+| Before status evidence | HEAD 1cc2700d2d6944f2499366126855f7034434c3a9; clean worktree; git status --short empty at admission; prior blocked result13/6 split PASS consumed, source18 before-image unchanged |
+| After status evidence | conditional source-only worker release, no code/test/native start or source acceptance |
+| Diff evidence | exact9 material manifest |
+| Approval boundary | new source exact6 worker only after committed bound authority/preimplementation; fixture budgets in W, no runtime/cap1/provider/deletion/retry |
+| Claim boundary | source dispatch is not corrected source, support completion or BE-R01 outcome |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-fresh-be-r01-continuity-20261016 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; actual resources/custody retained as observed |
+| Invocation ID | ncr-main-entry-source-material-20261017 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_MAIN_ENTRY_CACHE_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact9 |
+| Deletion or rename disposition | none; prior stage/custody/failed proof preserved |
 
 ## Claim Boundary
 
-Actual one-actor cap2 first-result disposition only. BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False. No final two-actor B-E, provider/live/R3/R4/public/deploy claim; no cap1/retry/deletion grant. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed.
+Conditional source correction only, no code/test/native start by this dispatch metadata. BE-S09 support not complete; prior cap2 result remains spent failed, BE-R01/R02 open. Future corrected source gets new identity only after worker/Local proof, never repin old release; no automatic qualification/runtime/cap1/provider/deletion grant. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired and fresh r1b spent blocked retained.
 
 ## Historical Terminal Timing Disclosure - Prior Source Recovery
 
