@@ -1,0 +1,512 @@
+{
+  "schemaVersion": "cvf.ncrHtmlR1eRuntimeWorkerEvidence@1",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "executionBaseHead": "6dd6e4972b1a7469b96a48c57425eb5b4605370b",
+  "dispatchWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1E_RUNTIME_2026-10-17.md",
+  "workerActorId": "INTERNAL_AGENT_WORKER:ncr-be-r1e-runtime-worker-20261017",
+  "workerInvocationId": "ncr-be-r1e-runtime-worker-20261017",
+  "proofs": [
+    {
+      "proofId": "PROOF-ADMISSION",
+      "status": "PASS",
+      "evidence": [
+        "frozen raw SHA256 envelope/pins/admission/grant/inputs and clean executionBaseHead",
+        "bound preimplementation PASS before one original launch"
+      ]
+    },
+    {
+      "proofId": "PROOF-JOURNEY",
+      "status": "PASS",
+      "evidence": [
+        "two original browser builds and downloads, v1/v2 route/HTML exact byte joins",
+        "exports/evaluateArrivals/evaluateAttempts/completed 2/2, two matching request IDs and SQLite rows"
+      ]
+    },
+    {
+      "proofId": "PROOF-TERMINAL",
+      "status": "PASS",
+      "evidence": [
+        "original terminal child snapshot hash and confirmed SUCCESS",
+        "separate ACK/MATCH and process/container/descendant/listener ABSENT, browser teardown OK"
+      ]
+    },
+    {
+      "proofId": "PROOF-RETURN",
+      "status": "PASS",
+      "evidence": [
+        "exact2 no-commit return",
+        "actual final-byte full gate and scoped corpus result sealed in detached receipt after immutable tracked files"
+      ]
+    }
+  ],
+  "startup": {
+    "head": "6dd6e4972b1a7469b96a48c57425eb5b4605370b",
+    "gitStatusShort": "",
+    "mode": "cvf_ncr_html_r1e_be_r01_dispatched",
+    "role": "INTERNAL_AGENT",
+    "phase": "EXECUTE",
+    "decisionOwner": "LOCAL",
+    "privateOracleRead": false
+  },
+  "frozenEnvelope": {
+    "admissionSha256": "b599cec6989e049b5bbcb1a304126f8cd6f533c3e999558b260a1894f063e498",
+    "authority": {
+      "adjunctAcceptancePath": "docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_COMPLETION_2026-10-17.md",
+      "adjunctAcceptanceSha256": "5715cd012cf1b4e7a79ffd8f39918cedd541b62d1165830102a47336289fb1d7",
+      "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R1E_RUNTIME_2026-10-17.md",
+      "baselineSha256": "4be4d992d17b25e81b5569153740dfda0b8cb95b9e046a3e7323ff3f6803f4b6",
+      "dispatchWorkOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1E_RUNTIME_2026-10-17.md",
+      "dispatchWorkOrderSha256": "3d7820b7c4a22a1752ee3b1e77dd37ebfb01d402e071a4d6ed971c2182cde8c5"
+    },
+    "cap1": "NOT_ADMITTED",
+    "claimBoundary": "one new cap2 original mechanical journey, no provider/deletion",
+    "command": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\launch_once.py",
+      "worker",
+      "4cff55517f5bfa1cd492013468df4f3fedb9d7d25044f090784ea7aa00c6c6a0"
+    ],
+    "deadlineUtc": "2026-10-17T04:15:00+00:00",
+    "effectPrograms": 1,
+    "grantPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\worker-launch-authority.json",
+    "grantSha256": "4cff55517f5bfa1cd492013468df4f3fedb9d7d25044f090784ea7aa00c6c6a0",
+    "inputsSha256": "554035ab5c669a298006e2fc8df9adf81d81f23f3f9df8c0ce6339375605bff8",
+    "localOracleSha256": "a756aafd1c26a0ce382eab8d63863c8c1bc9b3cdc1c20c6310c3f78ccff17ae4",
+    "pinsSha256": "ba7789616fc33ae3fbc61e8edb26740bae4cd4bd9a8a22730a7bee612d753db4",
+    "programHashes": {
+      "invoke_once.py": "b6b991004f5abbc13a3dcae61c52beeea4ee64483904fe7b1125d9de310ba2db",
+      "launch_once.py": "ea42dafa42f4a1c09b9f65290fa0ab4e737713e449ea3aa4d0dd19145cde81d2"
+    },
+    "releasedHead": "6dd6e4972b1a7469b96a48c57425eb5b4605370b",
+    "retry": 0,
+    "schemaVersion": "cvf.ncrHtmlFreshBERuntimeInvocation@1"
+  },
+  "frozenFiles": {
+    "invocation-envelope.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\invocation-envelope.json",
+      "sha256": "78c4228678c9078e14a27f15306c46ca1a30177be040822f58425b1d0c94979d",
+      "bytes": 1895
+    },
+    "pins.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\pins.json",
+      "sha256": "ba7789616fc33ae3fbc61e8edb26740bae4cd4bd9a8a22730a7bee612d753db4",
+      "bytes": 3004
+    },
+    "worker-admission.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\worker-admission.json",
+      "sha256": "b599cec6989e049b5bbcb1a304126f8cd6f533c3e999558b260a1894f063e498",
+      "bytes": 2777
+    },
+    "worker-launch-authority.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\worker-launch-authority.json",
+      "sha256": "4cff55517f5bfa1cd492013468df4f3fedb9d7d25044f090784ea7aa00c6c6a0",
+      "bytes": 1236
+    },
+    "inputs-worker.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\inputs-worker.json",
+      "sha256": "554035ab5c669a298006e2fc8df9adf81d81f23f3f9df8c0ce6339375605bff8",
+      "bytes": 2687
+    },
+    "launch_once.py": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\launch_once.py",
+      "sha256": "ea42dafa42f4a1c09b9f65290fa0ab4e737713e449ea3aa4d0dd19145cde81d2",
+      "bytes": 2534
+    },
+    "invoke_once.py": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\invoke_once.py",
+      "sha256": "b6b991004f5abbc13a3dcae61c52beeea4ee64483904fe7b1125d9de310ba2db",
+      "bytes": 1207
+    },
+    "worker-program-entry.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\worker-program-entry.json",
+      "sha256": "9d8ffc9374f28b59074f43d734730b13316fbee8943f0f703dacbb3777f55e26",
+      "bytes": 245
+    },
+    "worker-program-result.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\worker-program-result.json",
+      "sha256": "0f056221e04c665eec538657a12f7a6b96f3ff15deeed9d279dc0463e085ff2e",
+      "bytes": 650
+    },
+    "worker-driver-result.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\worker-driver-result.json",
+      "sha256": "30da85952e19b2bb2a1c96ac3ca02bb6af3c18cb90a7b5062c0fe4c040dc633d",
+      "bytes": 62109
+    },
+    "worker-stdout.log": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\worker-stdout.log",
+      "sha256": "ea8f6b71898484915ad58299a4619e0c85481346f8aa8e3f469d2534d5af3248",
+      "bytes": 182
+    },
+    "worker-stderr.log": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1e-runtime-20261017\\worker-stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "originalRunRecord": {
+    "actor": "worker",
+    "launchAuthoritySha256": "4cff55517f5bfa1cd492013468df4f3fedb9d7d25044f090784ea7aa00c6c6a0",
+    "enteredUtc": "2026-10-17T03:17:33.175395+00:00",
+    "watchdogSeconds": 1080,
+    "deadlineUtc": "2026-10-17T04:15:00+00:00",
+    "attempt": 1,
+    "controllerPid": 5092,
+    "exitCode": 0,
+    "timedOut": false,
+    "elapsedSeconds": 60.297,
+    "finishedUtc": "2026-10-17T03:18:33.470012+00:00",
+    "stdoutSha256": "ea8f6b71898484915ad58299a4619e0c85481346f8aa8e3f469d2534d5af3248",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "terminalDisposition": "UNKNOWN_REQUIRES_LOCAL_REVIEW"
+  },
+  "originalDriverProjection": {
+    "ok": true,
+    "elapsedSeconds": 59.312,
+    "counters": {
+      "completed": 2,
+      "evaluateArrivals": 2,
+      "evaluateAttempts": 2,
+      "exports": 2
+    },
+    "providerStarts": 0,
+    "namespace": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e",
+    "engineIdentity": {
+      "id": "3fe52c759d5415dcd4fcd86187e6a56871139605ce7a6b777c7c753fa8635c47",
+      "image": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+      "mounts": [
+        {
+          "destination": "/data",
+          "rw": true,
+          "source": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\stores\\engine"
+        },
+        {
+          "destination": "/engine",
+          "rw": false,
+          "source": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\source\\EXTENSIONS\\CVF_v1.6.1_GOVERNANCE_ENGINE\\ai_governance_core"
+        }
+      ],
+      "name": "cvf-ncr-html-1324e0898e1bca8c",
+      "networkMode": "none",
+      "portBindings": null
+    },
+    "listenerIdentity": [
+      {
+        "address": "127.0.0.1:50503",
+        "pid": 11868
+      },
+      {
+        "address": "127.0.0.1:50504",
+        "pid": 5092
+      }
+    ],
+    "finalRows": [
+      {
+        "blockHash": "e781d0417c394d59267f84af45fc24417a146f967233a0bafed18d164588e812",
+        "blockJsonSha256": "66523032075e6c994b689d875d1a25b20fd430b85441235e8c1a77a3d88e3fd6",
+        "ordinal": 1,
+        "requestId": "artifact-proof-onboarding-synth-v1-1792207107747"
+      },
+      {
+        "blockHash": "711883cfaa5a613aee27b93f9613100c43a5ec2602b578308f03e59f5371e5a0",
+        "blockJsonSha256": "ce5494269679c1efc47db14f3f67dd8f424169f872e6bd8c8a579f8fe0825517",
+        "ordinal": 2,
+        "requestId": "artifact-proof-onboarding-synth-v2-1792207110104"
+      }
+    ],
+    "effectFenceLedgerCounts": {
+      "workUsed": 20,
+      "cleanupUsed": 5
+    }
+  },
+  "driverProjectionBoundary": "sanitized projection only; original browser/route/egress/download/SQL/terminal bytes govern file-only joins",
+  "actualOutcome": {
+    "cap2Journey": "PASS_PENDING_LOCAL_REVIEW",
+    "browserBuilds": 2,
+    "exports": 2,
+    "evaluates": 2,
+    "sqliteRows": 2,
+    "terminalAccepted": true,
+    "actorSlot": "SPENT_ONE_ORIGINAL",
+    "retry": 0
+  },
+  "browserOriginal": {
+    "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\browser.json",
+    "sha256": "97ee59ceb37e203e8b050f07226bd236e5c4ef762f11c14e747c6920c879b883",
+    "bytes": 15891
+  },
+  "browserFileOnlyView": {
+    "mode": "owned-profile",
+    "partial": false,
+    "builds": 2,
+    "exportPosts": 2,
+    "aiPosts": 0,
+    "sessionUserId": "usr_3",
+    "sessionRole": "developer",
+    "sessionAuthSource": "local_mock",
+    "teardown": {
+      "contextClose": "OK",
+      "stdinDestroy": "OK"
+    },
+    "stalePriorAttemptId": "artifact-proof-onboarding-synth-v1-1792207107747",
+    "staleExportPosts": 1
+  },
+  "routeAndDownloadJoins": [
+    {
+      "ordinal": 1,
+      "tag": "v1",
+      "requestId": "artifact-proof-onboarding-synth-v1-1792207107747",
+      "receiptAnchor": "onboarding-synth-v1",
+      "routeDecision": "ALLOW",
+      "receiptDecision": "ALLOW",
+      "sourceHash": "a078550b8cf59759d4eb78413e019ab4f412c5f8fd885bbce5fdb7a721e7a7bd",
+      "htmlSha256": "49e918b2df0b8a0dc1e300e22bd7a9344c6b9108187b11bd6dbab6159e16f896",
+      "downloadBytes": 3734,
+      "sqliteRowHash": "e781d0417c394d59267f84af45fc24417a146f967233a0bafed18d164588e812",
+      "files": {
+        "v1-route.json": {
+          "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v1-route.json",
+          "sha256": "2fd2002a950a355755b3ab9cb66c21c5f893f8aec979a68c5251e9f5ba9fdb9a",
+          "bytes": 5942
+        },
+        "v1-decoded.html": {
+          "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v1-decoded.html",
+          "sha256": "49e918b2df0b8a0dc1e300e22bd7a9344c6b9108187b11bd6dbab6159e16f896",
+          "bytes": 3734
+        },
+        "v1-download.html": {
+          "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v1-download.html",
+          "sha256": "49e918b2df0b8a0dc1e300e22bd7a9344c6b9108187b11bd6dbab6159e16f896",
+          "bytes": 3734
+        },
+        "v1.png": {
+          "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v1.png",
+          "sha256": "cbfcb85608a32f66448510c6162bc96b98713692e21c66839434ec452cb0ff61",
+          "bytes": 282316
+        }
+      }
+    },
+    {
+      "ordinal": 2,
+      "tag": "v2",
+      "requestId": "artifact-proof-onboarding-synth-v2-1792207110104",
+      "receiptAnchor": "onboarding-synth-v2",
+      "routeDecision": "ALLOW",
+      "receiptDecision": "ALLOW",
+      "sourceHash": "cf39b5355aab4603131a4468845881b5d5d9c2ca01ac96a967ff42b5124a1edd",
+      "htmlSha256": "fce6c133db1304911a12dbf68e28ab69da7c225622ba022b8ae6e885f8e7e311",
+      "downloadBytes": 3850,
+      "sqliteRowHash": "711883cfaa5a613aee27b93f9613100c43a5ec2602b578308f03e59f5371e5a0",
+      "files": {
+        "v2-route.json": {
+          "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v2-route.json",
+          "sha256": "3cbdff15b8ebaac4b9ddca3d52a804c75f58db4d7eecfe6bc5cf5ec4076cd1d1",
+          "bytes": 6067
+        },
+        "v2-decoded.html": {
+          "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v2-decoded.html",
+          "sha256": "fce6c133db1304911a12dbf68e28ab69da7c225622ba022b8ae6e885f8e7e311",
+          "bytes": 3850
+        },
+        "v2-download.html": {
+          "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v2-download.html",
+          "sha256": "fce6c133db1304911a12dbf68e28ab69da7c225622ba022b8ae6e885f8e7e311",
+          "bytes": 3850
+        },
+        "v2.png": {
+          "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v2.png",
+          "sha256": "4c7b957387c1e39d05ab6125b113286078feb323c4e29fa4666478ab0065c923",
+          "bytes": 283110
+        }
+      }
+    }
+  ],
+  "terminalOriginal": {
+    "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\terminal-evidence.json",
+    "sha256": "5d2474bca06b7bf697f6ac0dd36bbe64076351b0803e159701f68afdf0dbedc7",
+    "bytes": 10839
+  },
+  "terminalFileOnlyView": {
+    "preAckDisposition": "ACCEPTED_RETAINED_STAGE_EVIDENCE",
+    "child": {
+      "bytes": 15891,
+      "claimMatch": true,
+      "confirmed": true,
+      "exit": "SUCCESS",
+      "sha256": "97ee59ceb37e203e8b050f07226bd236e5c4ef762f11c14e747c6920c879b883",
+      "snapshot": "READ",
+      "teardown": {
+        "contextClose": "OK",
+        "stdinDestroy": "OK"
+      }
+    },
+    "processQuery": "ABSENT",
+    "containerQuery": "ABSENT",
+    "descendantQuery": "ABSENT",
+    "listenerQuery": "ABSENT",
+    "errors": [],
+    "stageRetained": true,
+    "disposalTarget": "SAFE",
+    "acknowledgment": {
+      "error": null,
+      "readBack": "MATCH",
+      "write": "ACKNOWLEDGED"
+    }
+  },
+  "currentCustodyFiles": {
+    "browser-binding.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\browser-binding.json",
+      "sha256": "81d14cfc517f530ddd71f38c5ed425c0305e63a67652e2cc222cfa4f3ed906bc",
+      "bytes": 1409
+    },
+    "browser-fence.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\browser-fence.json",
+      "sha256": "915133f822bc76f313519b1ec6fc675e3c6dfc191dcc2d1dbf1e61ba07ac9353",
+      "bytes": 597
+    },
+    "browser.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\browser.json",
+      "sha256": "97ee59ceb37e203e8b050f07226bd236e5c4ef762f11c14e747c6920c879b883",
+      "bytes": 15891
+    },
+    "descendants-before-cleanup.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\descendants-before-cleanup.json",
+      "sha256": "8ed89ee3f8f25c5e1da780a1c88ab838e5166ae7da3569a205aded0b461d54e1",
+      "bytes": 448
+    },
+    "egress.jsonl": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\egress.jsonl",
+      "sha256": "b591f3a78c9498a041bf85d2911314ca5b656fe6ec46a2cd70badd7e2c37abaf",
+      "bytes": 6720
+    },
+    "engine.log": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\engine.log",
+      "sha256": "31de5b4396002ea676d6bd248029e462d001794f8e1d36fca0423dfa4da4d369",
+      "bytes": 395
+    },
+    "helper.log": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\helper.log",
+      "sha256": "f923b1d7c25abc4c0ad7b21230be8e35644bf95d0bd5659fa846b34e1f289826",
+      "bytes": 444
+    },
+    "journey-input.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\journey-input.json",
+      "sha256": "7c7e85a2bdaa73b030efd73859bc3426000dd7e8c3948fdc4ab0b3cb0524d36c",
+      "bytes": 4285
+    },
+    "process-roots.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\process-roots.json",
+      "sha256": "1955b4569c1796ba38b66a8a74cd5c78489905331533f244c86f77def5ea3fb7",
+      "bytes": 11748
+    },
+    "sql-rows.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\sql-rows.json",
+      "sha256": "a5192198089c3eb93458ccc4b138d38900c5e567518b99a5e25472e52b6cdeba",
+      "bytes": 1348
+    },
+    "stale-download.html": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\stale-download.html",
+      "sha256": "49e918b2df0b8a0dc1e300e22bd7a9344c6b9108187b11bd6dbab6159e16f896",
+      "bytes": 3734
+    },
+    "terminal-evidence.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\terminal-evidence.json",
+      "sha256": "5d2474bca06b7bf697f6ac0dd36bbe64076351b0803e159701f68afdf0dbedc7",
+      "bytes": 10839
+    },
+    "v1-decoded.html": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v1-decoded.html",
+      "sha256": "49e918b2df0b8a0dc1e300e22bd7a9344c6b9108187b11bd6dbab6159e16f896",
+      "bytes": 3734
+    },
+    "v1-download.html": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v1-download.html",
+      "sha256": "49e918b2df0b8a0dc1e300e22bd7a9344c6b9108187b11bd6dbab6159e16f896",
+      "bytes": 3734
+    },
+    "v1-route.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v1-route.json",
+      "sha256": "2fd2002a950a355755b3ab9cb66c21c5f893f8aec979a68c5251e9f5ba9fdb9a",
+      "bytes": 5942
+    },
+    "v1.png": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v1.png",
+      "sha256": "cbfcb85608a32f66448510c6162bc96b98713692e21c66839434ec452cb0ff61",
+      "bytes": 282316
+    },
+    "v2-decoded.html": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v2-decoded.html",
+      "sha256": "fce6c133db1304911a12dbf68e28ab69da7c225622ba022b8ae6e885f8e7e311",
+      "bytes": 3850
+    },
+    "v2-download.html": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v2-download.html",
+      "sha256": "fce6c133db1304911a12dbf68e28ab69da7c225622ba022b8ae6e885f8e7e311",
+      "bytes": 3850
+    },
+    "v2-route.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v2-route.json",
+      "sha256": "3cbdff15b8ebaac4b9ddca3d52a804c75f58db4d7eecfe6bc5cf5ec4076cd1d1",
+      "bytes": 6067
+    },
+    "v2.png": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\v2.png",
+      "sha256": "4c7b957387c1e39d05ab6125b113286078feb323c4e29fa4666478ab0065c923",
+      "bytes": 283110
+    },
+    "web.log": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\web.log",
+      "sha256": "41c7aaee524559a0a4ee502ae361155f0d64b420c8364da14e2eec915091fcc4",
+      "bytes": 1932
+    }
+  },
+  "sqlStore": {
+    "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\stores\\engine\\proof.sqlite",
+    "sha256": "143110f4b78ee8bacca3d1e0f18b72dfeec68aa19139cf366136e8580c3ac057",
+    "bytes": 12288
+  },
+  "sqlRowsFileOnlyView": {
+    "rowCount": 2,
+    "requestIds": [
+      "artifact-proof-onboarding-synth-v1-1792207107747",
+      "artifact-proof-onboarding-synth-v2-1792207110104"
+    ],
+    "chainHashes": [
+      "e781d0417c394d59267f84af45fc24417a146f967233a0bafed18d164588e812",
+      "711883cfaa5a613aee27b93f9613100c43a5ec2602b578308f03e59f5371e5a0"
+    ]
+  },
+  "externalCustodyFiles": {
+    "ncr-be-worker-20261017-r1e.spent.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\custody-be-r1e-20261017\\ncr-be-worker-20261017-r1e.spent.json",
+      "sha256": "699a4a5ebe41919a7688df0d252152ac66fe865bd806d2b76dceec8c9295e5ce",
+      "bytes": 229
+    },
+    "ncr-be-worker-20261017-r1e.starts.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\custody-be-r1e-20261017\\ncr-be-worker-20261017-r1e.starts.json",
+      "sha256": "4bf09e4517adae22e57a86bb9b5564809c9400cd89cfc0a2af1f7166c9e797e2",
+      "bytes": 2305
+    }
+  },
+  "sourceRelease": {
+    "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\docs\\reviews\\evidence\\ncr-html-body-heading-source-release-20261017.json",
+    "sha256": "c68427b2466c56b1a36a18017fccec352704d0c484b532c030bd29917ec3652a",
+    "bytes": 3157
+  },
+  "terminalGateEvidenceDisposition": "DETACHED_FINAL_RECEIPT_AFTER_UNCHANGED_EXACT2",
+  "claimBoundary": "one original synthetic cap2 mechanical result pending independent Local review; no cap1/provider/business/public/deploy claim",
+  "gateHistoryBeforeFinal": [
+    {
+      "ordinal": 1,
+      "exitCode": 1,
+      "result": "FAIL",
+      "reason": "return metadata gate evidence, readiness and learning literal predicates; raw output retained in worker tool transcript"
+    },
+    {
+      "ordinal": 2,
+      "exitCode": 0,
+      "result": "PASS",
+      "log": ".cvf/runtime/ncr-be-r1e-runtime-20261017/worker-return-gate-attempt2.log"
+    }
+  ]
+}

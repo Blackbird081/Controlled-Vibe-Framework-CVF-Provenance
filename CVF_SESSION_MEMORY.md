@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | BE-S11 and Q04 accepted bounded; r1e one-actor grant pending actual result; BE-R02 open |
+| Parent maintenance | BE-R01 cap2 first journey accepted bounded; fresh grant exhausted, BE-R02 remains open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_r1e_be_r01_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=new one-actor cap2 r1e execution only after committed bound external release; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=old grants spent/retired, cap1/provider/deletion separate; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_r1e_be_r01_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local BE-R02 authority planning only; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=cap1/any runtime retry/provider/deletion separately unadmitted; no generic operator checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_r1e_be_r01_dispatched`
-Current mode: `cvf_ncr_html_r1e_be_r01_dispatched`; previous mode marker: `cvf_ncr_html_body_heading_source_qualification_accepted_bounded`
+Current mode marker: `cvf_ncr_html_r1e_be_r01_accepted_bounded`
+Current mode: `cvf_ncr_html_r1e_be_r01_accepted_bounded`; previous mode marker: `cvf_ncr_html_r1e_be_r01_dispatched`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_r1e_be_r01_dispatched`
+Mode: `cvf_ncr_html_r1e_be_r01_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-R1E-RUNTIME-20261017. Under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1E_RUNTIME_2026-10-17.md and docs/baselines/CVF_GC018_NCR_HTML_B_E_R1E_RUNTIME_2026-10-17.md, release INTERNAL_AGENT worker only after committed exact9 authority/actual-SHA continuity, bound pre-dispatch PASS, frozen external pins/inputs/admission/grant/envelope hashes and worker preimplementation PASS. New IMPLEMENTATION_WORKER cap2 ordinal1 runId ncr-be-worker-20261017-r1e only; namespace D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1e; custody D:/CVF_NCR_RUNTIME/custody-be-r1e-20261017. One original D.execute program; work900/cleanup120sec, starts56/8, readiness4/6/2, outer1080/wait1070/termination5; retry0. Inclusive preparation2026-10-17T02:45:00+00:00, workerhard2026-10-17T04:15:00+00:00/latestlaunch2026-10-17T03:57:00+00:00, Localhard2026-10-17T05:45:00+00:00. Worker exact2 publishes only after program/cleanup terminal; Local distinct PURE review then actual first-result closure. Accepted Q04/current source18/body-heading authority/release/CP/LP and historical grants/custody immutable; no duplicate qualification/native campaign, cap1/provider/deletion or old actor replay. BE-R01 remains open until actual accepted product result; BE-R02 unadmitted. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. No generic operator checkpoint. Runtime dispatch material 308056956fe59320890f7643cad27be23f6d0491; source6 records the actual material anchor before worker release.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R1E-RUNTIME-20261017. BE-R01 cap2 first journey accepted bounded; consume docs/reviews/CVF_NCR_HTML_B_E_R1E_RUNTIME_LOCAL_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-b-e-r1e-runtime-local-20261017.json. r1e exhausted. Next Local plans separately admitted BE-R02 cap1 controls/journey against this accepted cap2 predecessor; no automatic cap1 effect. Source18/accepted source B/W/release/qualification immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Consume .cvf/runtime/ncr-be-r1e-runtime-20261017/final-result.json when present for actual committed exact13/6 finality; until it exists, material/actual-SHA continuity and clean split closure are pending.
 
 ## Parked Checkpoints
 
