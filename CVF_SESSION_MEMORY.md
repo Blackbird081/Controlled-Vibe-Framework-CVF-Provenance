@@ -31,11 +31,11 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | BE-S14 source accepted bounded; R1E cap2 accepted under old source; R02 blocked/spent; fresh qualification pending |
+| Parent maintenance | S14 source accepted bounded; BE-Q05 preparation reviewed; qualification/runtime pending; parent unchanged |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_source_phase_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN separately governed changed-source qualification; role=INTERNAL_AGENT Local reviewer/closer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=R02 spent, runtime/provider/deletion/public.
+Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_source_phase_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN separate BE-Q05 qualification from sealed preparation; role=INTERNAL_AGENT Local reviewer/session-sync steward; phase=PREPARATION_SYNC; decision owner=LOCAL; parked checkpoint=product/runtime/provider/native/HTTP/Docker/real-data/deletion/public/deploy.
 
 ## Current Mode
 
@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_login_readiness_source_phase_accepted_bounded`; prev
 
 Mode: `cvf_ncr_html_login_readiness_source_phase_accepted_bounded`
 
-Actual source material SHA 41fb9b8e3112abd2def5c86c7a9c1c22819c6949. PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-PHASE-20261017. After actual clean19/6 source-only closure, proactively prepare/bind changed-source qualification to the new SOURCE_IDENTITY_ONLY release and actual finality. Final source mechanism/fake blockers resolved only by S14 Local proof; no retroactive S12/R02 acceptance. Preserve all three test versions, inconclusive first pair, valid intermediate/final pairs, two reviewer admissions, first gate raw-capture limit and dispatch9/6/6 exception. WorkerNode8/Python2 and RootNode1 spent. Within already granted scope reviewer may record bounded necessary repair/recheck with named contradiction/information gain/cost and preserved outcomes; no per-tranche operator confirmation. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Product/runtime/provider/native/HTTP/Docker/real-data/deletion/public/deploy remain parked.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-QUALIFICATION-PREPARATION-20261017. BE-Q05 preparation is Root-reviewed at `.cvf/runtime/ncr-login-readiness-source-phase-20261017/changed-source-qualification-plan.json` SHA256 0f138426a7692ec344a34d528526027c3a73bffa9bbdfa3e0a165426d0235b27. Use S14 material 41fb9b8e3112abd2def5c86c7a9c1c22819c6949 / continuity a4e430c0786481268d579c8d18e1de86728f954e / finality SHA256 6ab7251cc3671d4b376311d6fe2298ce4cfaaaff7159a2ea28aa399737565968 and release f25a36fadfa1467a805decd0e25671166676b35c5ad4e278ab5046a279e74810. Canonical source identity admission already PASS13 helpers/18 immutable pins; do not rerun absent named contradiction/gain/cost. Next author a separate qualification B/W with fresh bounded cap2 control and optional separately admitted Docker4 scope, fresh pins/envelope/custody and distinct Local oracle; keep S14 source-release authority unchanged. Qualification/runtime not admitted; R02/S12 spent. Reviewer proactively grants bounded necessary repairs/rechecks within already granted scope, preserving original outcomes; no per-tranche operator confirmation or silent new effects. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Product/runtime/provider/native/HTTP/Docker/real-data/deletion/public/deploy parked; fixed Local07:00Z ceiling not reset.
 
 ## Parked Checkpoints
 
