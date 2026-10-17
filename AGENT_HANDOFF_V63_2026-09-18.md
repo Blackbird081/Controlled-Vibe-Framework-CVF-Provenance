@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Original worker WR/WE plus Root CP/LP, B/W, roadmap/current6: exact13 material then actual-SHA continuity6. No source18/F/release edit; parent gen9/LHW24 unchanged.
+Exact9 source-only metadata dispatch then actual-SHA6. Worker exact6, candidate source4 and WR/WE; Root accepted result prospective19/6 only on actual proof. Historical source/evidence unchanged; no product effects.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_login_fixture_control_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local governed decision; role=INTERNAL_AGENT Local reviewer/closer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=source mechanism/fake compatibility, runtime/provider/deletion/public.
+Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_source_phase_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bound source-only worker6 after actual release; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=all product/runtime/provider/native/HTTP/Docker/real-data/deletion/public/deploy effects.
 
 ## Current Mode
 
-`cvf_ncr_html_login_fixture_control_accepted_bounded`. Actual fixture positive control accepted bounded only. Existing S11 release/current source18 unchanged.
+`cvf_ncr_html_login_readiness_source_phase_dispatched`. Same-problem integrated source phase successor3; source mechanism/fake compatibility open. S13 fixture-only accepted; S11 source release remains until actual new source disposition.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_FIXTURE_CONTROL_2026-10-17.md` SHA256 `727666116329484fa903e8744d10236c4774bd60c7722f6587241988cc3cd8c7`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_FIXTURE_CONTROL_2026-10-17.md` SHA256 `21a3d47d0a349e55cb8fb0203360a8da7c4f54c04d203e8dd85a80f60879a937`. Fixture-only documentary authority, no new source identity.
+Baseline `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md` SHA256 `c4677d77121c6d0114cc6828230933a9361eb98537cb0aa6c1fd0544ce3641fc`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md` SHA256 `6935a6ad485471cf118370ec5c8914f1bc390ea9d9626931525ab89d417aaee2`. Root first author metadata refusals retained; source18 unchanged; actual bound release gate remains mandatory.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-Actual fixture material SHA 3b8e9487a4ef3bfcc6e3880d198d4c8d617fa878. PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-LOGIN-FIXTURE-CONTROL-20261017. After actual clean exact13/6 fixture-only acceptance, proactively bind the integrated source phase to actual S13 CP successor2, finality and new independent Root fixture evidence. Source18 stays frozen until separately gated source B/W; prepare all legacy fake APIs before causal RED/full-test freeze, one bounded pre-fill wait, identical-test GREEN, selected regressions, narrow authority and distinct Root source-control probe. No per-tranche confirmation needed within granted scope; reviewer may record bounded necessary repair/recheck with named contradiction/information gain/cost and preserved failures. S13 worker budget remains spent and no further S13 semantic run is planned. S11/Q04/R1E old-source acceptance; R02/S12 spent. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Product/runtime/provider/native/HTTP/Docker/real-data/deletion/public/deploy parked.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-PHASE-20261017. Release one INTERNAL_AGENT source worker only after exact9/6 dispatch and actual bound pre-dispatch/pre-implementation PASS on current B/W hashes. Worker exact6 code4+WRWE: all legacy fake APIs before actual held-hydration RED/full-test freeze, one bounded prefill wait after valid RED, identical-test GREEN, selected nonnative regression, Python admission/focused. Source13+adjunct5 roster fixed; Root owns release/F only after distinct private source3case corroboration and valid return. WorkerNode<=4 each60s/Python2 each120; RootNode1<=60; reviewer may record necessary bounded intervention under latest operator authority, preserving first outcomes, no silent worker self-refill. Anchor04:00Z, workerhard06:35Z, Localhard07:00Z. Same-problem successor3/nondec1/ROOT_CONTRACT_REQUIRED/INTEGRATED_ROOT_CONTRACT. S13 fixture-only accepted; S11/Q04/R1E old-source; R02/S12 spent. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. No product/browser/native/HTTP/Docker/provider/real-data/deletion/public/deploy.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -74,57 +74,63 @@ Root issued continuity preparation/commit metadata attempts before the pending m
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: B/W, original WR/WE, Local CP/LP, roadmap and current6 agree in a fixture-only result.
+Atomicity reason: source B/W, roadmap and current6 align after actual S13 fixture acceptance.
 
 Exact changed manifest:
 
+- `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Rollback boundary: exact listed paths; no source18/F/release path.
+Rollback boundary: listed metadata only.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 documentary evidence/current-state paths; no checker/hook/source18/F/release mutation.
+Authorized guard-maintenance scope: exact9 source phase dispatch metadata paths; no source/checker/hook mutation.
 Protected paths:
+- `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: standing Local fixture-only disposition after actual evidence.
-Rollback boundary: exact listed paths; S11/S12/R02 originals immutable.
+Operator authorization: autonomous roadmap continuation with Local bounded reviewer intervention.
+Rollback boundary: listed metadata only; original S13 proof and source18 immutable.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | LOCAL Root reviewer/closer and commit steward |
+| Actor | LOCAL Root dispatcher and commit steward |
 | Provider or surface | private shared workspace; INTERNAL_AGENT |
-| Session or invocation | CVF-NCR-HTML-LOGIN-FIXTURE-CONTROL-20261017:continuity |
+| Session or invocation | CVF-NCR-HTML-LOGIN-READINESS-SOURCE-PHASE-20261017:material |
 | Working directory | D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF |
-| Command or tool surface | original worker evidence consumption; distinct private v1/v2 probe; documentary exact13/6; canonical state generator; normal gates/commits |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | S13 fixture-only B/W plus latest explicit operator reviewer-extension authority; no new effects |
-| Before status evidence | 3b8e9487a4ef3bfcc6e3880d198d4c8d617fa878; git status --short empty; clean worktree; stage empty after normal material |
-| After status evidence | exact6 named paths only; source18 unchanged; no additional semantic start in closure |
-| Diff evidence | git diff --name-only plus visible untracked union equals expected manifest |
-| Approval boundary | Local fixture-only disposition; source/runtime/provider/public excluded |
-| Claim boundary | bounded fixture control only; sourceAccepted=false |
+| Command or tool surface | reviewed source-phase packet adoption, source6 generator, normal gate/commit; no semantic source execution |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator autonomous roadmap continuation; same-problem integrated root contract after actual S13 fixture acceptance |
+| Before status evidence | HEAD 6418ec3305bca045e0a9d4df68dad6d4456e9d11; git status --short empty; clean worktree; stage empty; source18 fixed |
+| After status evidence | exact9 dispatch metadata only; source18 unchanged |
+| Diff evidence | git diff --name-only plus visible untracked union equals declared manifest |
+| Approval boundary | source-only technical dispatch, worker release after actual bound gates; effects parked |
+| Claim boundary | no source proof or acceptance at dispatch |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | CVF-NCR-HTML-LOGIN-FIXTURE-CONTROL-20261017:continuity |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | N/A with reason: none; original failures and source bytes retained |
+| Invocation ID | CVF-NCR-HTML-LOGIN-READINESS-SOURCE-PHASE-20261017:material |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact9 |
+| Deletion or rename disposition | N/A with reason: none |
 
 ## Claim Boundary
 
-Fixture-only bounded control PASS; no source mechanism, R02 cause, source identity/qualification, runtime, provider or public effect.
+Source-only phase dispatch; no actual RED/GREEN, source acceptance/release/qualification, historical R02 causality, runtime/provider/public/deploy claim.
 
 ## Historical Terminal Timing Disclosure - Prior Source Recovery
 

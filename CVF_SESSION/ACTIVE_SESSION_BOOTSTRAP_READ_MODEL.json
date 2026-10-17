@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_html_login_fixture_control_accepted_bounded",
+  "currentMode": "cvf_ncr_html_login_readiness_source_phase_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "Actual fixture material SHA 3b8e9487a4ef3bfcc6e3880d198d4c8d617fa878. PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-LOGIN-FIXTURE-CONTROL-20261017. After actual clean exact13/6 fixture-only acceptance, proactively bind the integrated source phase to actual S13 CP successor2, finality and new independent Root fixture evidence. Source18 stays frozen until separately gated source B/W; prepare all legacy fake APIs before causal RED/full-test freeze, one bounded pre-fill wait, identical-test GREEN, selected regressions, narrow authority and distinct Root source-control probe. No per-tranche confirmation needed within granted scope; reviewer may record bounded necessary repair/recheck with named contradiction/information gain/cost and preserved failures. S13 worker budget remains spent and no further S13 semantic run is planned. S11/Q04/R1E old-source acceptance; R02/S12 spent. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Product/runtime/provider/native/HTTP/Docker/real-data/deletion/public/deploy parked.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-PHASE-20261017. Release one INTERNAL_AGENT source worker only after exact9/6 dispatch and actual bound pre-dispatch/pre-implementation PASS on current B/W hashes. Worker exact6 code4+WRWE: all legacy fake APIs before actual held-hydration RED/full-test freeze, one bounded prefill wait after valid RED, identical-test GREEN, selected nonnative regression, Python admission/focused. Source13+adjunct5 roster fixed; Root owns release/F only after distinct private source3case corroboration and valid return. WorkerNode<=4 each60s/Python2 each120; RootNode1<=60; reviewer may record necessary bounded intervention under latest operator authority, preserving first outcomes, no silent worker self-refill. Anchor04:00Z, workerhard06:35Z, Localhard07:00Z. Same-problem successor3/nondec1/ROOT_CONTRACT_REQUIRED/INTEGRATED_ROOT_CONTRACT. S13 fixture-only accepted; S11/Q04/R1E old-source; R02/S12 spent. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. No product/browser/native/HTTP/Docker/provider/real-data/deletion/public/deploy.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_LOGIN_FIXTURE_CONTROL_2026-10-17.md",
-    "baselineSha256": "727666116329484fa903e8744d10236c4774bd60c7722f6587241988cc3cd8c7",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_FIXTURE_CONTROL_2026-10-17.md",
-    "workOrderSha256": "21a3d47d0a349e55cb8fb0203360a8da7c4f54c04d203e8dd85a80f60879a937"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md",
+    "baselineSha256": "c4677d77121c6d0114cc6828230933a9361eb98537cb0aa6c1fd0544ce3641fc",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md",
+    "workOrderSha256": "6935a6ad485471cf118370ec5c8914f1bc390ea9d9626931525ab89d417aaee2"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
