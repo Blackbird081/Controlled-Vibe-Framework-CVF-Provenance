@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | BE-R01 cap2 first journey accepted bounded; fresh grant exhausted, BE-R02 remains open |
+| Parent maintenance | BE-R01 accepted bounded on R1E; BE-R02 conditional cap1 controls/barrier/journey pending |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_r1e_be_r01_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local BE-R02 authority planning only; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=cap1/any runtime retry/provider/deletion separately unadmitted; no generic operator checkpoint.
+Startup acknowledged: current mode=cvf_ncr_html_r2b_be_r02_dispatched; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=conditional R02 cap1 program1 after exact9/6 dispatch and external freeze; program2 remains behind Root PURE10 barrier; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=provider/deletion and retry remain unadmitted; no generic operator checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_r1e_be_r01_accepted_bounded`
-Current mode: `cvf_ncr_html_r1e_be_r01_accepted_bounded`; previous mode marker: `cvf_ncr_html_r1e_be_r01_dispatched`
+Current mode marker: `cvf_ncr_html_r2b_be_r02_dispatched`
+Current mode: `cvf_ncr_html_r2b_be_r02_dispatched`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_r1e_be_r01_accepted_bounded`
+Mode: cvf_ncr_html_r2b_be_r02_dispatched
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R1E-RUNTIME-20261017. BE-R01 cap2 first journey accepted bounded; consume docs/reviews/CVF_NCR_HTML_B_E_R1E_RUNTIME_LOCAL_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-b-e-r1e-runtime-local-20261017.json. r1e exhausted. Next Local plans separately admitted BE-R02 cap1 controls/journey against this accepted cap2 predecessor; no automatic cap1 effect. Source18/accepted source B/W/release/qualification immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Consume .cvf/runtime/ncr-be-r1e-runtime-20261017/final-result.json when present for actual committed exact13/6 finality; until it exists, material/actual-SHA continuity and clean split closure are pending. Actual result material SHA 2de96dbbf9212e505cae5436f92349661ff6fa2c. Consume the fixed finality receipt before interpreting pending-at-review wording; do not repeat closure.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-R2B-RUNTIME-20261017. One fresh Local INTERNAL_AGENT LOCAL_REVIEWER ordinal2 cap1 actor ncr-be-local-20261017-r2b under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md and docs/baselines/CVF_GC018_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md may start only after exact9 authority commit, actual-SHA exact6 continuity, bound pre-dispatch PASS on continuity HEAD and Root paired-envelope/external-pin freeze. Program1 is one actual cvf.ncrHtmlInertControls@3 SUBPROCESS matrix (9 ordered cases, 26 charged inert children, zero product effects). Root alone checks pre-frozen private PURE10 and accepted R1E; only PASS permits one original D.execute v1 cap1 journey. Program2 is not authorized by program1 success alone. Fixed runId ncr-be-local-20261017-r2b; namespace D:\CVF_NCR_RUNTIME\ncr-be-local-20261017-r2b; custody D:\CVF_NCR_RUNTIME\custody-be-r2b-20261017. Preparation 03:15Z; worker hard 04:45Z; latest launch 04:27Z; Local hard 06:15Z. Limits work900/cleanup120s, Native work/cleanup56/8, Job32, readiness engine4/web6/route2/total12, Job1/container1/web1/browserSession1, export1/evaluate1, providerStarts0/stageDeletion0, outer1080/wait1070/termination5; retry0; no separate Docker group. Worker returns exact2 after terminal and does not commit. Root closes actual result exact13 then actual-SHA6. R1E accepted bounded, S11/Q04/source18 immutable; old actors never replayed; parent gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred do not reset. Material anchor 1cb8f480ba626bdfe8c334cbbd07d7ad765d4e36; phase=material.
 
 ## Parked Checkpoints
 
