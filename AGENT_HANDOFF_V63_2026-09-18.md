@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Frozen worker2/three-row evidence consumed; independent Local PURE10 accepted; source18 unchanged. docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-login-readiness-qualification-local-20261017.json. BE-Q05 bounded qualification checked; runtime separately governed. Exact13 material then exact6 actual-SHA continuity; no effect grant.
+Fresh R1F worker exact2; one cap2 default driver after bound release; Root independent pure file/terminal review, result exact13/6. No old actor replay, cap1, provider or deletion grant.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_qualification_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=complete held R1F admission only after eligible worker capacity; role=INTERNAL_AGENT Local reviewer/session-sync steward; phase=PREPARATION_SYNC; decision owner=LOCAL; parked checkpoint=runtime capacity and separate fresh finite grant; provider/real-data/deletion/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_be_r1f_runtime_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one R1F worker after committed bound release; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=cap1 separate; provider/real-data/deletion/public/deploy.
 
 ## Current Mode
 
-`cvf_ncr_html_login_readiness_qualification_accepted_bounded`. Current cap2 inert and Docker4 qualification plus pure10 receipt review accepted bounded; no product B-E. Parent NCR history and accepted S14 source remain governed by their frozen receipts; Q05 alone grants no runtime, cap1, provider, or public outcome..
+`cvf_ncr_html_be_r1f_runtime_dispatched`. Accepted S14/Q05 reused; one fresh current-source cap2 R1F conditional dispatch, actual runtime pending. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md` SHA256 `0ae7fb745f0d583d38ca83e7d5cad032394b81235c57fb2010184f694d78f2bb`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md` SHA256 `d9a7427a356bcf48ef6577bdf0e0eb70a4bf93608ea32bc907adea65426790d7`. Closed qualification authority is current metadata; released execution bytes/pins preserved in Local proof. Accepted login-readiness source authority/release unchanged.
+R1F conditional baseline `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md` SHA256 `644d9978d567d78a0c210ff89b0743b39d5fb901719547132e9ded87af13fa80`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md` SHA256 `6e80ad5dc1e698731f6723f6c4e9b8379c070a2288e16b9815dc895d0c24c6f2`. Accepted S14 source-release authority and Q05 qualification proof unchanged.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R1F-PREPARATION-20261017. Q05 accepted bounded: material 1569ec16e846f3e482cd97243f591ba83af523c3 / continuity 6f649e17b2ecc3bc629b69b24d20ac064440a731, finality `.cvf/runtime/ncr-login-readiness-qualification-20261017/final-result.json` SHA256 0f2e546649abc9d1bbd66d4535eb5b7894a860322f652b1e8f34608550885f87. R1F file-only preparation `.cvf/runtime/ncr-be-r1f-runtime-20261017/readiness-preparation.root.json` SHA256 ce911ea3e516f0029a20899ae38e49f7a6a13ac7cd12fe2fa431cf3b59c93479 resolves current source18/tools/input hashes and fresh absent namespace/custody; no runtime program, external grant or R1F clock admitted. All3 delegated agents returned usage-limit errors; resume with an eligible implementation worker who has not read private oracle. Finalize held R1F B/W from reviewed v2 candidates using actual Q05 bindings, fresh scaffold/ADIF and prospective finite clock; then normal9/6/bound gates/external freeze/preimplementation before one cap2 D.execute. Current Q05/source proof must be reused, not rerun. Historical R1E/BE-R01 accepted and R2B/BE-R02 blocked-spent retained; cap1 waits for accepted fresh cap2 and separate controls/authority. Root reviewer proactively grants bounded necessary repair within authorized scope with original outcomes/contradiction/gain/cost; no per-tranche confirmation. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged; provider/real-data/deletion/public/deploy parked.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017. Under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md` and `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`, release eligible INTERNAL_AGENT worker only after normal exact9/6, bound pre-dispatch, reviewed external pins/admission/grant/envelope, clean source and worker preimplementation/scaffold. One fresh ordinal1 IMPLEMENTATION_WORKER cap2 runId ncr-be-worker-20261017-r1f via frozen launch_once/default D.execute; work900s/cleanup120s, external1080s, starts56/8, readiness4/6/2 total12, Job1/container1/web1/browser1/exports2/evaluates2/provider0/stageDeletion0. New phase prep2026-10-17T23:48Z, latestlaunch2026-10-18T00:42Z, workerhard01:00Z, Localhard01:20Z (Asia/Saigon18/10/2026); preserve old S14/Q05 clocks and original preparation/history. Q05 9/26/Docker4/PURE10/source18 accepted proof reused, not rerun; original runtime retains fresh prerequisites. Worker exact2/no commit, original terminal/full gate frozen; Root independent pre-frozen pure oracle only after actual worker terminal, exact13/6 first-result closure. Worker declared initial overbroad full-state read; procedure limit retained, no private oracle read. Old quota errors historical, fresh worker available. Historical R1E/R01 accepted and R2B/R02 blocked-spent retained; fresh cap1 separately conditional after accepted new cap2. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged. Reviewer may record bounded necessary repair/recheck with original outcomes/contradiction/gain/cost; no per-tranche confirmation. Provider/real-data/deletion/public/deploy parked. Dispatch base 34318509b8937aaa39b7a0171ddd1366e9c276ff.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -72,57 +72,63 @@ Qualification material `1569ec16e846f3e482cd97243f591ba83af523c3`: normal automa
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: current next-move/readiness/capacity and generated projections align atomically.
+Atomicity reason: R1F pair, roadmap/current mode/raw authority hashes align before release; actual-material-SHA source6 follows separately.
 
 Exact changed manifest:
 
+- `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Rollback boundary: exact6 metadata only.
+Rollback boundary: listed metadata only; one new actor after committed bound release, no old replay.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 readiness/worker-capacity/current-next metadata only; no source/checker/hook/closed qualification change.
+Authorized guard-maintenance scope: exact9 conditional R1F authority/roadmap/source-generated continuity only; source18/accepted source and Q05/checker/hook bytes unchanged.
 Protected paths:
+- `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: standing autonomous continuation and necessary Local reviewer intervention.
-Rollback boundary: listed source/generated metadata only; Q05 accepted13/6/source18/S14authority/raw proof and old actor custody unchanged.
+Operator authorization: explicit CVF-NCR R1F continuation, standing Local finite admission/reviewer stewardship.
+Rollback boundary: listed metadata only; S14/Q05 receipts and old actors/custody/parent remain immutable.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | LOCAL_ROOT INTERNAL_AGENT reviewer/session-sync steward |
+| Actor | LOCAL INTERNAL_AGENT dispatcher/reviewer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | R1F-file-preparation-capacity-sync-20261017 |
+| Session or invocation | CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017:material |
 | Working directory | D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF |
-| Command or tool surface | file-only payload preparation, actual proof review and canonical source4/state2 generation |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator autonomous continuation and bounded Local review |
-| Before status evidence | HEAD 6f649e17b2ecc3bc629b69b24d20ac064440a731; clean worktree/stage after Q05 clean closure |
-| After status evidence | exact6 metadata; no effect admission; capacity hold explicit |
-| Diff evidence | git diff --name-only exact6; git diff --name-status metadata only |
-| Approval boundary | PLAN/file identities only; no runtime/native/Docker/provider/deletion |
-| Claim boundary | Q05 finality reused; R1F runtime not admitted |
+| Command or tool surface | consume accepted Q05; fresh file identities/ADIF/scaffold; conditional authority and canonical generation; normal commits separately |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator explicit continue CVF-NCR R1F; existing finite Local technical disposition |
+| Before status evidence | HEAD 34318509b8937aaa39b7a0171ddd1366e9c276ff; clean worktree/stage; source18 and accepted Q05 immutable; R1F no effect program started |
+| After status evidence | exact9 conditional metadata; actual runtime outcome pending |
+| Diff evidence | git diff --name-status and untracked union equal exact manifest |
+| Approval boundary | one fresh cap2 original driver only after all committed bound gates/freeze/preimplementation; cap1/provider/deletion/public/deploy excluded |
+| Claim boundary | conditional R1F admission only, no current-source whole-journey outcome or AI governance efficacy |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | R1F-file-preparation-capacity-sync-20261017 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; old actor/proof/custody retained |
+| Invocation ID | CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017:material |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact9 |
+| Deletion or rename disposition | none; source/old actors/raw proof/custody retained |
 
 ## Claim Boundary
 
-Conditional Q05 source qualification only; actual current9/26/Docker4/RootPURE outcome pending. S14 source accepted bounded and immutable; no runtime/provider/public/deploy claim.
+Conditional finite synthetic mechanical runtime only; no current R1F accepted outcome/AI-governance efficacy/provider/public/deploy claim. Source18 and accepted source/Q05 immutable.
 
 ## Historical Terminal Timing Disclosure - Prior Source Recovery
 
@@ -150,6 +156,4 @@ commitPlanDisposition: EXCEPTION_WITH_REASON - one separate exact6 metadata-only
 
 ## R1F File-Only Preparation And Capacity Hold
 
-Q05 actual receipt9/26/Docker4/PURE10 accepted bounded, normal91/91 each, clean exact13/6 and immutable24 pins: `.cvf/runtime/ncr-login-readiness-qualification-20261017/final-result.json` SHA256 0f2e546649abc9d1bbd66d4535eb5b7894a860322f652b1e8f34608550885f87. Source/qualification proof reused. R1F reviewed program candidates/private oracle and fresh file-only input/tool/namespace-absence preparation are sealed in `.cvf/runtime/ncr-be-r1f-runtime-20261017/readiness-preparation.root.json` SHA256 ce911ea3e516f0029a20899ae38e49f7a6a13ac7cd12fe2fa431cf3b59c93479. Metadata helper actual exit0/0.297s; target program/native/Docker/browser/provider starts0. Three agent quota errors prevent eligible separate effect worker; Root did not claim same-actor independent review, start runtime, freeze grant or transfer any old clock. R1F/R2C unfinished aide outputs stay unreviewed candidates.
-
-commitPlanDisposition: EXCEPTION_WITH_REASON - one separate exact6 metadata-only preparation/session-sync commit after completed Q05 material13/continuity6 pair, to preserve actual successor readiness and worker-capacity hold. Q05 pair/finality/counts remain immutable; no new qualification or runtime acceptance.
+Historical 17/10 preparation and quota hold: `.cvf/runtime/ncr-be-r1f-runtime-20261017/readiness-preparation.root.json` retained unchanged. On18/10 fresh eligible worker confirmed available; resume identity/absence preparation at `.cvf/runtime/ncr-be-r1f-runtime-20261017/resume-20261018/preparation.root.json`. Original quota failures and initial worker overbroad state read retained as procedure limits. New conditional authority above supersedes the capacity hold; no old deadline or actor budget transfer.

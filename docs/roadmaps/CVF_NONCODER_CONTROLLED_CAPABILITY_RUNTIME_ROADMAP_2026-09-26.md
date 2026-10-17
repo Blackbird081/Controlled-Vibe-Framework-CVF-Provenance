@@ -5,29 +5,29 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.55
-Updated: 2026-10-17
+Version: 2.56
+Updated: 2026-10-18
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
-## Current Delivery Checkpoint - 2026-10-17
+## Current Delivery Checkpoint - 2026-10-18
 
-**Đang ở đâu:** đã nghiệm thu bản sửa nguồn S14 và kiểm định nguồn Q05. Bước tiếp theo là chạy trọn luồng HTML trên nguồn mới bằng R1F; phần này mới chuẩn bị tệp, chưa chạy runtime.
+**Đang ở đâu:** S14/Q05 đã nghiệm thu bounded; R1F đã chốt gói chạy cap2 có điều kiện, kết quả runtime chưa có. Worker mới đã xác nhận khả năng nhận việc ngày18/10; chỉ chạy sau committed gate và admission/envelope mới.
 
 | Hạng mục | Trạng thái hiện tại | Kết quả / phần còn lại |
 |---|---|---|
 | BE-S14 - Sửa cơ chế chờ đăng nhập | Đã nghiệm thu trong phạm vi nguồn | RED3/GREEN3, hồi quy chọn lọc18/18 và probe Local3/3; không tự chứng minh trọn luồng sản phẩm |
 | BE-Q05 - Kiểm định nguồn S14 | Đã hoàn tất bounded | Control9/9 với26 tiến trình thử nghiệm; Docker4/4 chỉ đọc; kiểm tra receipt độc lập10/10; material và continuity đều91/91 |
-| R1F - Luồng HTML cap2 trên nguồn mới | Đã chuẩn bị tệp; chưa chạy | Đã khóa đầu vào, nguồn và công cụ; đã kiểm tra namespace/custody mới chưa tồn tại tại mốc chuẩn bị; còn worker đủ điều kiện, work order cuối, ngân sách thời gian mới và lần chạy thực |
+| R1F - Luồng HTML cap2 trên nguồn mới | Gói chạy có điều kiện; kết quả chưa có | Worker mới sẵn sàng; nguồn/công cụ/đầu vào đã kiểm lại; còn committed gate, freeze và lần chạy thực |
 | BE-R01 - Luồng cap2 R1E trước đây | Giữ nghiệm thu bounded trên phiên bản cũ | Không dùng kết quả cũ thay cho R1F trên nguồn S14 |
 | BE-R02 - Quan sát Local cap1 | Chưa hoàn tất | Lần R2B bị chặn và đã hết lượt; lần mới chỉ xét sau R1F được nghiệm thu và có admission/receipt riêng |
 | R1 / R2 - Hợp đồng job, trải nghiệm và execution boundary | Hoàn thành một phần | Các phần hỗ trợ đã nghiệm thu; tiêu chí toàn giai đoạn chưa đóng |
 | R3 / R4 - Pilot trọn luồng và vận hành local bền vững | Đang mở | Còn kết quả pilot, phục hồi, backup/restore và các tiêu chí nghiệm thu tương ứng |
 | R5 / R6 - Cloud/hybrid và mở rộng capability | Tạm hoãn | Chưa mở phạm vi thực thi |
 
-**Điểm chặn đã ghi nhận:** cả ba worker được giao việc đều trả lỗi hết quota. Root đã tiếp nhận custody, hoàn tất hồ sơ và review Q05 từ receipt gốc; không chạy lại control hoặc Docker. R1F chờ một worker thực thi đủ điều kiện, tách biệt với reviewer; chưa cấp runtime grant hoặc đồng hồ chạy R1F.
+**Điểm chặn đã ghi nhận:** lỗi quota ngày17/10 được giữ trong lịch sử. Ngày18/10 worker mới xác nhận khả năng nhận việc, chưa đọc oracle riêng của reviewer. R1F có giới hạn thời gian mới: worker đến08:00 và Local review đến08:20 ngày18/10 (Asia/Saigon), chỉ chạy sau gate/freeze; không chuyển lượt hoặc deadline của các lần cũ.
 
-**Bước kế tiếp:** khi có worker đủ điều kiện, hoàn thiện work order R1F, chốt giới hạn thời gian mới, qua gate và khóa admission/pins/envelope; chạy một luồng cap2 trên nguồn S14, review kết quả rồi mới xét cap1. Tiếp tục dùng bằng chứng Q05 đã PASS.
+**Bước kế tiếp:** hoàn tất committed gate/freeze của work order R1F rồi worker chạy một luồng cap2 trên nguồn S14; Local review kết quả thực, sau đó mới xét cap1 riêng. Dùng lại bằng chứng Q05 đã PASS.
 
 Bằng chứng mới nhất: [nghiệm thu Q05](../reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_COMPLETION_2026-10-17.md), [receipt Local Q05](../reviews/evidence/ncr-html-login-readiness-qualification-local-20261017.json) và [handoff hiện hành](../../AGENT_HANDOFF_V63_2026-09-18.md). Q05: material `1569ec16e846f3e482cd97243f591ba83af523c3`, continuity `6f649e17b2ecc3bc629b69b24d20ac064440a731`; chuẩn bị R1F/chờ quota: `fc39489b3cbe56c725bd1459b893faa8a3778f2a`.
 
@@ -64,8 +64,9 @@ Checked items mean only the bounded deliverable named below. Every runtime/contr
 - [x] BE-S14 - ACCEPTED_BOUNDED_SOURCE_WITH_PROCEDURE_LIMITS: final identical-test RED3/GREEN3, selected18/18, Python170/1 reused and Root3/3; source identity only. `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-source-phase-local-20261017.json`; new release `docs/reviews/evidence/ncr-html-login-readiness-source-phase-release-20261017.json`.
 - [x] BE-R01 - BE-R01 cap2 first journey accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R1E_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1e-runtime-local-20261017.json`. r1e exhausted; old grants unreplayed. BE-R02 remains separately admitted conditional cap1 controls/journey, no automatic invocation.
 - [ ] BE-R02 - BE-R02 paired invocation spent blocked; retain actual first outcome. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2B_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r2b-runtime-local-20261017.json`. Both actions spent; no retry or provider claim.
+- [ ] BE-R1F - IN_PROGRESS fresh S14-source cap2 runtime: `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`. One separately frozen actor/default D.execute after bound gates; actual outcome pending. Historical R1E/R01 acceptance and R2B/R02 spent result retained.
 
-Current remaining blocker: R1F file-only preparation is complete; all three delegated workers reported usage-limit errors. An eligible separate implementation worker, final governed R1F packet, fresh finite runtime admission and actual whole-journey result are still required. Q05 qualified bounded; no R1F runtime grant or clock admitted. Historical R1E/BE-R01 accepted and R2B/BE-R02 blocked/spent retained; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged.
+Current remaining blocker: R1F fresh eligible worker available; conditional one-shot cap2 authority requires committed exact9/6, bound gates/frozen external admission and actual result. Q05/S14 proof reused; prior quota errors historical, no old actor replay. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged; R1/R2partial,R3/R4open,R5/R6deferred.
 
 Parent continuity: generation9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions/LHW24 retained; no reset or parked-effect expansion. Prior26 task/repair observations retain their original scope; no new model-effectiveness or monetary result is asserted.
 
