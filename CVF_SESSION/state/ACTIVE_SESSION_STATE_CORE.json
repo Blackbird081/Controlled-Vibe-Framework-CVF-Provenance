@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md",
     "workOrderSha256": "3e32d0522800e444cbce9698e27cff28ed29d22bbd5a76ea6c6f198e137a12a4"
   },
-  "currentAuthoritySyncReason": "S14 bounded source identity material; R02 blocked/spent and R1E accepted under old source",
+  "currentAuthoritySyncReason": "S14 bounded source identity continuity; R02 blocked/spent and R1E accepted under old source",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
