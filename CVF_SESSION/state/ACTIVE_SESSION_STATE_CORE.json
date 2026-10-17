@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md",
     "workOrderSha256": "457a1d65f7954046ea9d1031e9feb3854a60e3a9e3d3dcbbad827992775afd0b"
   },
-  "currentAuthoritySyncReason": "BE-S12 bounded login-readiness source-only dispatch material after actual R02 clean split finality; accepted=false retained; no runtime effect grant.",
+  "currentAuthoritySyncReason": "BE-S12 bounded login-readiness source-only dispatch continuity after actual R02 clean split finality; accepted=false retained; no runtime effect grant.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
