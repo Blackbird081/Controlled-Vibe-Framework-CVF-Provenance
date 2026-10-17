@@ -35,7 +35,7 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_source_blocked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=separately governed source repair plan; role=INTERNAL_AGENT Local reviewer/closer; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=R02 spent, S12 blocked, provider/runtime/deletion/public.
+Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_source_blocked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=separately governed source repair plan; role=INTERNAL_AGENT Local reviewer/closer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=R02 spent, S12 blocked, provider/runtime/deletion/public.
 
 ## Current Mode
 
@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_login_readiness_source_blocked`; previous mode marke
 
 Mode: `cvf_ncr_html_login_readiness_source_blocked`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-20261017. After actual clean exact13/6 blocked closure, prepare a separately governed fixture-only positive-control design before any renewed source hypothesis. Preserve S12 first failures, candidate4 custody and source18 restored to accepted S11 identity. Current Node4/Python2 spent; no same-packet retry, no new release or source qualification. R1E cap2 accepted old source; R02 cap1 blocked/spent; no runtime replay. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Provider/runtime/native/HTTP/Docker/real-data/deletion/public/deploy parked.
+Actual blocked material SHA 1143d2f84b07dc5ec6b661d7282c78655bc5f16a. PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-20261017. After actual clean exact13/6 blocked closure, prepare a separately governed fixture-only positive-control design before any renewed source hypothesis. Preserve S12 first failures, candidate4 custody and source18 restored to accepted S11 identity. Current Node4/Python2 spent; no same-packet retry, no new release or source qualification. R1E cap2 accepted old source; R02 cap1 blocked/spent; no runtime replay. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Provider/runtime/native/HTTP/Docker/real-data/deletion/public/deploy parked.
 
 ## Parked Checkpoints
 

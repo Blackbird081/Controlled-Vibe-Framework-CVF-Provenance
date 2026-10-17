@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md",
     "workOrderSha256": "751a64cd45103c6fa4a121ffbed17912e5f6dfcb3fd68c8463057b10cf3c0546"
   },
-  "currentAuthoritySyncReason": "BE-S12 blocked source-only; failed required same-test GREEN and selected regression; S11 source identity remains current; material",
+  "currentAuthoritySyncReason": "BE-S12 blocked source-only; failed required same-test GREEN and selected regression; S11 source identity remains current; continuity",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
