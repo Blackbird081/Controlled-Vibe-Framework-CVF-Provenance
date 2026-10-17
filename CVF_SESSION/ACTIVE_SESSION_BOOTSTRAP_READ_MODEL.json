@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_html_body_heading_source_qualification_accepted_bounded",
+  "currentMode": "cvf_ncr_html_r1e_be_r01_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-BODY-HEADING-SOURCE-QUALIFICATION-20261017. Current-source cap2 actual9/26 and Docker4 qualification accepted bounded with distinct Local PURE10; consume docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-body-heading-source-qualification-local-20261017.json. BE-Q04 checked bounded, BE-R01/BE-R02 remain open. Next Local plans fresh separately admitted cap2 product invocation against immutable new source identity, no automatic EXECUTE. Cap1 actual waits for accepted future cap2 product predecessor. Source18/accepted source authority/release unchanged; no old-grant replay/provider/deletion or generic documentary operator checkpoint. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; prior runtime grants spent or retired, never replayed. Final committed-range proof is consumed from .cvf/runtime/ncr-body-heading-source-qualification-20261017/final-result.json when present; before it exists, material/actual-SHA continuity and clean split gates are pending. Actual qualification material SHA e3ee268f661d4d9e7d6b77c7a934bd4cbffd8beb. Consume the fixed final-result receipt for clean exact13/6 finality; do not recreate closure from pending-at-review wording.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-R1E-RUNTIME-20261017. Under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1E_RUNTIME_2026-10-17.md and docs/baselines/CVF_GC018_NCR_HTML_B_E_R1E_RUNTIME_2026-10-17.md, release INTERNAL_AGENT worker only after committed exact9 authority/actual-SHA continuity, bound pre-dispatch PASS, frozen external pins/inputs/admission/grant/envelope hashes and worker preimplementation PASS. New IMPLEMENTATION_WORKER cap2 ordinal1 runId ncr-be-worker-20261017-r1e only; namespace D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1e; custody D:/CVF_NCR_RUNTIME/custody-be-r1e-20261017. One original D.execute program; work900/cleanup120sec, starts56/8, readiness4/6/2, outer1080/wait1070/termination5; retry0. Inclusive preparation2026-10-17T02:45:00+00:00, workerhard2026-10-17T04:15:00+00:00/latestlaunch2026-10-17T03:57:00+00:00, Localhard2026-10-17T05:45:00+00:00. Worker exact2 publishes only after program/cleanup terminal; Local distinct PURE review then actual first-result closure. Accepted Q04/current source18/body-heading authority/release/CP/LP and historical grants/custody immutable; no duplicate qualification/native campaign, cap1/provider/deletion or old actor replay. BE-R01 remains open until actual accepted product result; BE-R02 unadmitted. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. No generic operator checkpoint. Runtime dispatch material 05062a94288e03197945520dabea674a5f8afcff; source6 records the actual material anchor before worker release.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md",
-    "baselineSha256": "99bbb087989ccffe9a0971c22e40806b46e59193f6a7bc4f738c0216e2a6d397",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md",
-    "workOrderSha256": "75dec61823ae03106faade97958860e1006ffd4bbaf46587ca7ed9c658ad95de"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R1E_RUNTIME_2026-10-17.md",
+    "baselineSha256": "4be4d992d17b25e81b5569153740dfda0b8cb95b9e046a3e7323ff3f6803f4b6",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1E_RUNTIME_2026-10-17.md",
+    "workOrderSha256": "3d7820b7c4a22a1752ee3b1e77dd37ebfb01d402e071a4d6ed971c2182cde8c5"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
