@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md",
     "workOrderSha256": "0e71e1d34d7ea3890d40bc8d9c4de8563a0ec828447e52216a82e6fb1f165f41"
   },
-  "currentAuthoritySyncReason": "Q05 separate conditional qualification material; source release and old phase budgets immutable",
+  "currentAuthoritySyncReason": "Q05 separate conditional qualification continuity; source release and old phase budgets immutable",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
