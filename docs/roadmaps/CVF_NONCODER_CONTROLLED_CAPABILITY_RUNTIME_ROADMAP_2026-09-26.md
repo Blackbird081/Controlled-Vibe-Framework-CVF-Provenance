@@ -5,11 +5,33 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.54
+Version: 2.55
+Updated: 2026-10-17
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
-## Current Delivery Checkpoint - 2026-10-16
+## Current Delivery Checkpoint - 2026-10-17
+
+**Đang ở đâu:** đã nghiệm thu bản sửa nguồn S14 và kiểm định nguồn Q05. Bước tiếp theo là chạy trọn luồng HTML trên nguồn mới bằng R1F; phần này mới chuẩn bị tệp, chưa chạy runtime.
+
+| Hạng mục | Trạng thái hiện tại | Kết quả / phần còn lại |
+|---|---|---|
+| BE-S14 - Sửa cơ chế chờ đăng nhập | Đã nghiệm thu trong phạm vi nguồn | RED3/GREEN3, hồi quy chọn lọc18/18 và probe Local3/3; không tự chứng minh trọn luồng sản phẩm |
+| BE-Q05 - Kiểm định nguồn S14 | Đã hoàn tất bounded | Control9/9 với26 tiến trình thử nghiệm; Docker4/4 chỉ đọc; kiểm tra receipt độc lập10/10; material và continuity đều91/91 |
+| R1F - Luồng HTML cap2 trên nguồn mới | Đã chuẩn bị tệp; chưa chạy | Đã khóa đầu vào, nguồn và công cụ; đã kiểm tra namespace/custody mới chưa tồn tại tại mốc chuẩn bị; còn worker đủ điều kiện, work order cuối, ngân sách thời gian mới và lần chạy thực |
+| BE-R01 - Luồng cap2 R1E trước đây | Giữ nghiệm thu bounded trên phiên bản cũ | Không dùng kết quả cũ thay cho R1F trên nguồn S14 |
+| BE-R02 - Quan sát Local cap1 | Chưa hoàn tất | Lần R2B bị chặn và đã hết lượt; lần mới chỉ xét sau R1F được nghiệm thu và có admission/receipt riêng |
+| R1 / R2 - Hợp đồng job, trải nghiệm và execution boundary | Hoàn thành một phần | Các phần hỗ trợ đã nghiệm thu; tiêu chí toàn giai đoạn chưa đóng |
+| R3 / R4 - Pilot trọn luồng và vận hành local bền vững | Đang mở | Còn kết quả pilot, phục hồi, backup/restore và các tiêu chí nghiệm thu tương ứng |
+| R5 / R6 - Cloud/hybrid và mở rộng capability | Tạm hoãn | Chưa mở phạm vi thực thi |
+
+**Điểm chặn đã ghi nhận:** cả ba worker được giao việc đều trả lỗi hết quota. Root đã tiếp nhận custody, hoàn tất hồ sơ và review Q05 từ receipt gốc; không chạy lại control hoặc Docker. R1F chờ một worker thực thi đủ điều kiện, tách biệt với reviewer; chưa cấp runtime grant hoặc đồng hồ chạy R1F.
+
+**Bước kế tiếp:** khi có worker đủ điều kiện, hoàn thiện work order R1F, chốt giới hạn thời gian mới, qua gate và khóa admission/pins/envelope; chạy một luồng cap2 trên nguồn S14, review kết quả rồi mới xét cap1. Tiếp tục dùng bằng chứng Q05 đã PASS.
+
+Bằng chứng mới nhất: [nghiệm thu Q05](../reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_COMPLETION_2026-10-17.md), [receipt Local Q05](../reviews/evidence/ncr-html-login-readiness-qualification-local-20261017.json) và [handoff hiện hành](../../AGENT_HANDOFF_V63_2026-09-18.md). Q05: material `1569ec16e846f3e482cd97243f591ba83af523c3`, continuity `6f649e17b2ecc3bc629b69b24d20ac064440a731`; chuẩn bị R1F/chờ quota: `fc39489b3cbe56c725bd1459b893faa8a3778f2a`.
+
+Bảng này là ảnh chụp tiến độ hiện tại. Các dòng lịch sử phía dưới giữ giới hạn phiên bản và kết quả tại thời điểm ghi nhận; số test, commit hoặc tranche không phải phần trăm hoàn thành sản phẩm.
 
 Operator clarification D115: necessary supporting work with lasting value is legitimate roadmap progress. Record its reusable result, milestone contribution, evidence/revision limit and remaining integration obligation. Preparation/rework defects are accounted separately; a support check does not close the product milestone. Local reassesses this ledger before dispatch and after each return using existing Change Control; no new checker or reporting subsystem.
 
@@ -43,7 +65,7 @@ Checked items mean only the bounded deliverable named below. Every runtime/contr
 - [x] BE-R01 - BE-R01 cap2 first journey accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R1E_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1e-runtime-local-20261017.json`. r1e exhausted; old grants unreplayed. BE-R02 remains separately admitted conditional cap1 controls/journey, no automatic invocation.
 - [ ] BE-R02 - BE-R02 paired invocation spent blocked; retain actual first outcome. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2B_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r2b-runtime-local-20261017.json`. Both actions spent; no retry or provider claim.
 
-Current remaining blocker: current S14-source cap2 R1F whole journey requires fresh finite runtime admission and actual result; Q05 qualified bounded. Historical R1E/BE-R01 accepted and R2B/BE-R02 blocked/spent retained; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged.
+Current remaining blocker: R1F file-only preparation is complete; all three delegated workers reported usage-limit errors. An eligible separate implementation worker, final governed R1F packet, fresh finite runtime admission and actual whole-journey result are still required. Q05 qualified bounded; no R1F runtime grant or clock admitted. Historical R1E/BE-R01 accepted and R2B/BE-R02 blocked/spent retained; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged.
 
 Parent continuity: generation9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 P4 exclusions/LHW24 retained; no reset or parked-effect expansion. Prior26 task/repair observations retain their original scope; no new model-effectiveness or monetary result is asserted.
 
@@ -69,9 +91,7 @@ are evidence quantities, not product-completion percentages.
 
 ## Current Runtime Freshness Verification
 
-Current mechanical controls execution base: a3c9dad29e8720a43331260a424d00371d4da506. Fresh source13 actor receipts only;
-consume named product/native/live completions at their recorded revisions. No product/provider
-rerun in this package; complete B-E journey/current live freshness remains unproved.
+Current mechanical qualification: BE-Q05 execution base `686e858929b7146c2575aa2135a5bbea6b2fdda0`, current S14 source13/adjunct5, actual cap2 controls9/26, Docker4 and separate Local PURE10. Consume the linked Q05 completion at its recorded scope. R1F has file-only preparation, with no current-source whole-journey runtime result. Historical R1E product acceptance remains tied to its older source revision; earlier control base `a3c9dad29e8720a43331260a424d00371d4da506` is historical. No new provider/live freshness is asserted.
 
 ### Current Bounded Browser Contribution - 2026-10-13
 
@@ -1052,32 +1072,32 @@ orientation packets are not refreshed by this private local edit.
 
 | Field | Evidence |
 |---|---|
-| applicableCheckersRead | governance/compat/check_markdown_structural_completeness.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_epistemic_process_packet.py |
-| literalTokensReviewed | source/decision/evidence/risk headings; Source fact type/symbol cells; exact trace labels; four read-ahead fields; corpus N/A bullet |
-| gateRunPurpose | confirmation of source/control disposition and separate continuity, not runtime proof |
-| claimBoundary | selected constants/predicates read or reused; no all-checker-body/corpus claim |
+| applicableCheckersRead | governance/compat/check_roadmap_closure_freshness.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_governed_file_size.py; governance/compat/check_public_export_disposition.py |
+| literalTokensReviewed | unchanged top Status; current checkpoint and revision; exact trace fields and one-file manifest; DEFERRED_PRIVATE_ONLY; bounded qualification versus runtime; active Markdown size budget |
+| gateRunPurpose | confirm this documentary progress update against existing accepted proof; no behavioral rerun |
+| claimBoundary | selected current predicates and previously read trace/export owners reused; no full-corpus or new runtime proof claim |
 
 ## Agent Operation Trace Block
 
 | Field | Value |
 |---|---|
-| Actor | Local INTERNAL_AGENT orchestrator/reviewer/steward |
+| Actor | Local INTERNAL_AGENT reviewer/documentation steward; phase=ROADMAP_SYNC; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-windows-qualification-material-20261016 |
+| Session or invocation | ncr-roadmap-progress-sync-20261017 |
 | Working directory | repository root |
-| Command or tool surface | root-reviewed fixed payload/metadata preparation, roadmap support ledger, current authority generation and checked normal commits |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator continuation and lasting-support roadmap clarification; new bounded qualification pair |
-| Before status evidence | HEAD 7d832febc0496d071308aeae3bf10d00d138af81; original source18/source authority remain frozen; no effect program started |
-| After status evidence | conditional qualification release; current cap2 and Docker proof pending; source/product/provider unchanged |
-| Diff evidence | exact9 material manifest |
-| Approval boundary | 26 inert Python cases and4 local Docker reads only after committed bound admission; no product/cap1/deletion |
-| Claim boundary | support deliverables tracked; current qualification not yet executed |
+| Command or tool surface | read current bootstrap/front/handoff, accepted Q05 and R1F preparation receipts; update progress table and documentary gate/normal commit |
+| Target paths | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Allowed scope source | operator request to update roadmap for visible progress; standing Local documentation stewardship |
+| Before status evidence | HEAD fc39489b3cbe56c725bd1459b893faa8a3778f2a; clean worktree and stage; Q05 accepted bounded, R1F capacity hold |
+| After status evidence | exact1 roadmap update; Q05 completion and R1F preparation/blocker/next step visible |
+| Diff evidence | git diff --name-status: one modified roadmap; git diff --check required before commit |
+| Approval boundary | documentation only; no new execution, budget, source, provider or public authority |
+| Claim boundary | existing proof summarized; R1F runtime still unexecuted, R1/R2 partial, R3/R4 open, R5/R6 deferred |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-windows-qualification-material-20261016 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_WINDOWS_QUALIFICATION_2026-10-16.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
+| Invocation ID | ncr-roadmap-progress-sync-20261017 |
+| Expected manifest | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Manifest delta | MATCH exact1; commitPlanDisposition=MATERIAL_ONLY for documentary progress sync |
 | Deletion or rename disposition | none; source/old grants/proofs/stages retained |
 
 ## Public Export Disposition
