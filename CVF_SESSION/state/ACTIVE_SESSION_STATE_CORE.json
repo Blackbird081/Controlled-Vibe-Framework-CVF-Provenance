@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md",
     "workOrderSha256": "cb9ec7436b63ca04af33036b47e7323f7a7e7c0331e23bf129c37bbc9f426ecd"
   },
-  "currentAuthoritySyncReason": "Body heading/custody material; actual blocked result split PASS consumed, prior evidence/source identity immutable.",
+  "currentAuthoritySyncReason": "Body heading/custody continuity; actual blocked result split PASS consumed, prior evidence/source identity immutable.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
