@@ -308,8 +308,8 @@ def test_preload_renderer_preserves_identity_and_order():
     assert F.owned.P.node_preload_options(first, second) == f'--require "{first.as_posix()}" --require "{second.as_posix()}"'
     with pytest.raises(ValueError): F.owned.P.node_preload_options()
     assert F.owned.P.S.AUTHORITY == {
-        "docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md",
-        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md"}
+        "docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md",
+        "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md"}
     assert len(F.owned.P.HELPERS) == 13 and len(F.SOURCES) == 5
 
 

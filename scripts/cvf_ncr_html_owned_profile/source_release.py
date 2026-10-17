@@ -14,8 +14,8 @@ PROFILE = "NCR_HTML_OWNED_SYNTHETIC_FRESH_SOURCE_V1"
 KEYS = {"schemaVersion", "profile", "scope", "sourcePins", "productCommit", "productScopeGitObjects", "fixture", "entrypoints", "authority"}
 SPEC = "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md"
 ENTRYPOINTS = {"scripts/probe_cvf_q001_synthetic_system_chain.py", "scripts/probe_cvf_w05_browser_chain.cjs"}
-AUTHORITY = {"docs/baselines/CVF_GC018_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md",
-             "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_PASSIVE_REQUEST_OBSERVER_SOURCE_2026-10-17.md"}
+AUTHORITY = {"docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md",
+             "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md"}
 SCOPES = ("EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web", "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE",
           "governance/toolkit/03_CONTROL/CVF_AGENT_REGISTRY.md", "governance/toolkit/04_TESTING/CVF_SELF_UAT_DECISION_LOG.md",
           "docs/reference/CVF_GOVERNANCE_STATE_REGISTRY.json")

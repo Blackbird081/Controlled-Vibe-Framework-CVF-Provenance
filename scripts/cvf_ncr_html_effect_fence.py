@@ -20,8 +20,8 @@ ROOT = owned.P.ROOT
 SOURCES = ("scripts/cvf_ncr_html_effect_fence.py", "scripts/run_cvf_ncr_html_effect_driver.py",
            "scripts/test_cvf_ncr_html_effect_driver.py", "scripts/cvf_ncr_html_browser_fence.cjs",
            "scripts/cvf_ncr_html_browser_fence.test.cjs")
-RELEASE = 'docs/reviews/evidence/ncr-html-passive-request-observer-source-release-20261017.json'
-RELEASE_SHA = 'bf419cb82e208c7a5aadc091dfdde756016b1f245f3c70b24460f83bf4f1225a'
+RELEASE = 'docs/reviews/evidence/ncr-html-body-heading-source-release-20261017.json'
+RELEASE_SHA = 'c68427b2466c56b1a36a18017fccec352704d0c484b532c030bd29917ec3652a'
 CHROME = {"path": r"C:\Users\DELL\AppData\Local\ms-playwright\chromium-1208\chrome-win64\chrome.exe",
           "sha256": "ff0c99fc5bb2301cad77930aa76e5354cf2a5fefb7efdcf3b3bc10ba0550c015"}
 DOCKER = {"context": "desktop-linux", "endpoint": "npipe:////./pipe/dockerDesktopLinuxEngine",

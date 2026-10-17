@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BOUNDED_SOURCE
 Date: 2026-10-17
 Batch ID: CVF-NCR-HTML-BODY-HEADING-SOURCE-20261017
 Dispatch inspection base: e248cc228e5e41fd05a19ec98ae78aaec0039cc1
@@ -63,10 +63,20 @@ Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: new source-correction B/W, BE-S11 in-progress support and current6 raw authority/mode/next only at dispatch; no worker source change in this metadata commit.
+Authorized guard-maintenance scope: exact19 source/metadata material; no governance checker or hook mutation.
 Protected paths:
+- `scripts/cvf_ncr_html_owned_profile/journey.cjs`
+- `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`
+- `scripts/cvf_ncr_html_owned_profile/source_release.py`
+- `scripts/test_cvf_ncr_html_effect_driver.py`
+- `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-body-heading-source-worker-20261017.json`
+- `scripts/cvf_ncr_html_effect_fence.py`
+- `docs/reviews/evidence/ncr-html-body-heading-source-release-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md`
+- `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-body-heading-source-local-20261017.json`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -74,19 +84,29 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current Local source-only continuation after closed spent BE-R01 first result; standing root author/reviewer/steward authority.
-Rollback boundary: exact listed metadata only; prior worker2/CP/LP/BW, source18/accepted passive observer source B/W/release and historical Windows authority/qualification/old grants and custody unchanged. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; prior grants spent or retired; r1b/r1c/r1d failures retained; no replay.
+Operator authorization: standing autonomous Local source review and closure.
+Rollback boundary: exact19 only; prior accepted and failed records remain immutable.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: new source-only authority, BE-S11 support-in-progress and source-generated current raw B/W/mode/next align in dispatch9; following actual material SHA continuity exact6.
+Atomicity reason: worker source/return, frozen authority, Local source identity, bounded completion, BE-S11, and generated state align in one material tranche; actual-SHA continuity follows separately.
 
 Exact changed manifest:
 
+- `scripts/cvf_ncr_html_owned_profile/journey.cjs`
+- `scripts/cvf_ncr_html_owned_profile/journey.test.cjs`
+- `scripts/cvf_ncr_html_owned_profile/source_release.py`
+- `scripts/test_cvf_ncr_html_effect_driver.py`
+- `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-body-heading-source-worker-20261017.json`
+- `scripts/cvf_ncr_html_effect_fence.py`
+- `docs/reviews/evidence/ncr-html-body-heading-source-release-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md`
+- `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-body-heading-source-local-20261017.json`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -94,8 +114,7 @@ Exact changed manifest:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-
-Rollback boundary: listed metadata only; no production-source, old evidence, runtime or resource effect.
+Rollback boundary: listed19 only; no old record or runtime effect.
 
 ## ADIF Defect Registry Disclosure
 
@@ -153,24 +172,24 @@ Actual final corrective failed-result predecessor: material `b3569879a777568a451
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher/reviewer/steward |
+| Actor | local-body-heading-reviewer-20261017 Local reviewer/closer |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-body-heading-source-material-20261017 |
+| Session or invocation | local-body-heading-dom-ast-20261017 |
 | Working directory | repository root |
-| Command or tool surface | root-reviewed source packet derivative, git status --short, actual prior-result/dependency/ADIF metadata joins and canonical current6 generation; gates/commits separately owned by root |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | Local next source-correction continuation; current new exact source-only order after spent-result split closure |
-| Before status evidence | HEAD e248cc228e5e41fd05a19ec98ae78aaec0039cc1; clean worktree; git status --short empty at admission; prior blocked result13/6 split PASS consumed, source18 before-image unchanged |
-| After status evidence | conditional source-only worker release, no code/test/native start or source acceptance |
-| Diff evidence | exact9 material manifest |
-| Approval boundary | new source exact6 worker only after committed bound authority/preimplementation; fixture budgets in W, no runtime/cap1/provider/deletion/retry |
-| Claim boundary | source dispatch is not corrected source, support completion or BE-R01 outcome |
+| Command or tool surface | worker6 receipt, independent Local probe, source identity/release/F-only binding |
+| Target paths | exact19 manifest above |
+| Allowed scope source | committed source B/W and standing Local review/closure authority |
+| Before status evidence | frozen dispatch9 and worker6 raw bytes |
+| After status evidence | bounded source acceptance; material and continuity commits pending |
+| Diff evidence | exact19 material, source18 selected5/other13 |
+| Approval boundary | standing Local source-only review; no runtime/provider/deletion |
+| Claim boundary | source correction only, BE-R01/BE-R02 open |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-body-heading-source-material-20261017 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
-| Deletion or rename disposition | none; prior stage/custody/failed proof preserved |
+| Invocation ID | local-body-heading-dom-ast-20261017 |
+| Expected manifest | exact19: scripts/cvf_ncr_html_owned_profile/journey.cjs; scripts/cvf_ncr_html_owned_profile/journey.test.cjs; scripts/cvf_ncr_html_owned_profile/source_release.py; scripts/test_cvf_ncr_html_effect_driver.py; docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_WORKER_RETURN_2026-10-17.md; docs/reviews/evidence/ncr-html-body-heading-source-worker-20261017.json; scripts/cvf_ncr_html_effect_fence.py; docs/reviews/evidence/ncr-html-body-heading-source-release-20261017.json; docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md; docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-body-heading-source-local-20261017.json; docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Actual changed set | exact19: scripts/cvf_ncr_html_owned_profile/journey.cjs; scripts/cvf_ncr_html_owned_profile/journey.test.cjs; scripts/cvf_ncr_html_owned_profile/source_release.py; scripts/test_cvf_ncr_html_effect_driver.py; docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_WORKER_RETURN_2026-10-17.md; docs/reviews/evidence/ncr-html-body-heading-source-worker-20261017.json; scripts/cvf_ncr_html_effect_fence.py; docs/reviews/evidence/ncr-html-body-heading-source-release-20261017.json; docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md; docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-body-heading-source-local-20261017.json; docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
+| Manifest delta | MATCH exact19 |
+| Deletion or rename disposition | none; prior and new custody retained |
 
 ## Preparation History Preservation
 
@@ -244,3 +263,8 @@ META_DISCUSSION_ONLY: original S10 DISPATCH_READY preimage hashes and original p
 ## S11 Preparation Boundary
 
 S11 scope is fully stated once in Locked Action Contract. Other action/evidence sections reference it and preserve exact ownership/proof commands. Root reviews candidate facts and chooses DISPATCH_READY; preparation is not authority.
+
+## Local Source Disposition
+
+Accepted bounded source correction only after worker actual-renderer DOM RED/GREEN source proof and distinct Local Node probe. BE-S11 support checked; BE-R01/BE-R02 open. SOURCE_IDENTITY_ONLY release and F binding are root closure, with no runtime admission or digest backedge in this frozen authority.
+Procedure limitations: Root initial normal dispatch commit gate refused missing intake escalation wording and the required learning application JSON plan; both existing obligations were corrected before worker release. Original bytes/refusal/repair retained; one documentary repair round, no source/native retry. Source-aid candidates required two ignored preparation revisions before adoption; no tests, gates or effects were run by their authors. Inherited S10 and R1D preparation limitations remain historical evidence. Only source-scope synthetic fixtures; version/protocol adapters remain scoped mocks. Actual renderer and DOM heading lookup are used. RED first run outer43.360s and TAP927.5958ms are distinct measurements; no repeated compatibility start. On legacy RED, custody-before-dom route and decoded files were absent; raw browser snapshots preserve the rejection. No absent bytes reconstructed. Direct predecessor CP/LP projection occurred after source proof; current failed predecessor identity and scope were consumed via released work order/front before edits. Some combined reads truncated; no aggregate read claim. Admission/focused pytest stderr retains actual pytest-asyncio configuration deprecation warning; both exit0. No warning is erased or treated as failure. Root closure aid was bound to the actual terminal lane-release string rather than a predicted Boolean before post-worker capture; original worker6 remained sealed. One independently authored Local DOM/AST Node invocation passed6/6 in1.562s; no worker suite repeated. Review consumes structured evidence and publication-audited original raw bytes; bounded semantic/source reads are not an all-files or all-Base64-human-read claim. Whole-learning effectiveness and current browser qualification remain unproved. First Local closure-aid attempt refused the CRLF worker metadata preamble before any tracked closure write. Root normalized CRLF only for predicate text consumption; original raw bytes and all sealed worker hashes were retained. Actual refusal preserved; no source, test, native or worker-return rerun.

@@ -1,4 +1,3 @@
-/* Pure input, timing, lazy-call, reply and teardown regressions; no browser, engine, provider, substitute start or Git. Fake modules live in ignored worker custody. */
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
@@ -6,19 +5,27 @@ const fs = require('node:fs');
 const net = require('node:net');
 const path = require('node:path');
 const { createHash, randomBytes } = require('node:crypto');
-
 if (process.env.CVF_NCR_ALLOWED_PORTS || process.env.CVF_HCR_EGRESS_LOG) throw new Error('inherited network-guard activation is refused in the pure test environment');
 const connect = net.Socket.prototype.connect;
 const { validateInputs, authority, withBudget, teardown, validateReply, actor, controller, run } = require('./journey.cjs');
 const input = { title: 'Synthetic Local Draft', sourcePath: 'synthetic/local.md', memoryClass: 'FULL_RECORD',
-  status: 'Draft', receiptAnchor: 'local-one', claimBoundary: 'Synthetic only.', sourceContent: 'Owned source.' };
+  status: 'Draft', receiptAnchor: 'local-one', claimBoundary: 'Synthetic only.', sourceContent: '# Owned heading\nOwned source.' };
 const COMBINING = String.fromCharCode(0x301); // decomposed (non-NFC) accent
 const BLOB_SHA256 = '2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec'; // sha256 of the immutable 0850546 entrypoint blob
-const SCRATCH = path.join(__dirname, '..', '..', '.cvf', 'runtime', 'ncr-html-root-local-repair-20261016', 'node-' + randomBytes(6).toString('hex'));
+const SCRATCH = path.join(__dirname, '..', '..', '.cvf', 'runtime', 'ncr-body-heading-source-20261017', 'worker', 'node-' + randomBytes(6).toString('hex'));
+const MODULES = path.join(__dirname, '..', '..', 'EXTENSIONS', 'CVF_v1.6_AGENT_PLATFORM', 'cvf-web', 'node_modules');
+const ts = require(path.join(MODULES, 'typescript'));
+const { JSDOM } = require(path.join(MODULES, 'jsdom'));
+const renderer = path.join(MODULES, '..', 'src', 'app', 'api', 'artifacts', 'export', 'route.ts');
+const parsed = ts.createSourceFile(renderer, fs.readFileSync(renderer, 'utf8'), ts.ScriptTarget.Latest, true);
+const boundary = parsed.statements.findIndex(n => ts.isFunctionDeclaration(n) && n.name?.text === 'POST' && n.modifiers?.some(m => m.kind === ts.SyntaxKind.ExportKeyword));
+assert.ok(boundary >= 0, 'exported POST boundary must exist');
+const prefix = ts.factory.updateSourceFile(parsed, parsed.statements.slice(0, boundary).filter(n => !ts.isImportDeclaration(n)));
+const code = ts.transpileModule(ts.createPrinter().printFile(prefix), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText;
+const buildHtml = require('node:vm').runInNewContext(code + '\nbuildHtml;', {});
 const T = 1_000_000; // injected wall clock at the moment the parent wrote the limits
 const limits = (over = {}) => ({ generation: 'g1', deadlineAtMs: T + 60000, workMs: 60000, cleanupAtMs: T + 70000, cleanupMs: 10000, ...over });
 const clocks = (wall = T, up = 0) => [() => wall, () => up];
-
 test('Local distinct one-build and worker two-build budgets are explicit', () => {
   validateInputs([input], 1);
   validateInputs([input, { ...input, receiptAnchor: 'second' }], 2);
@@ -26,7 +33,6 @@ test('Local distinct one-build and worker two-build budgets are explicit', () =>
   assert.throws(() => validateInputs([input], 2));
   assert.throws(() => validateInputs([input, input], 2));
 });
-
 test('missing, extra, mistyped and non-synthetic inputs fail before login', () => {
   const bad = [{ ...input, title: '' }, { ...input, memoryClass: 'ADMIN' }, { ...input, sourcePath: 'operator/data' }, { ...input, added: true },
     { ...input, status: 7 }, { ...input, title: 'Bad/Title' }, { ...input, sourcePath: 'synthetic/../secret' }, { ...input, sourcePath: 'synthetic/./x' },
@@ -37,7 +43,6 @@ test('missing, extra, mistyped and non-synthetic inputs fail before login', () =
   for (const value of [null, {}, 'x', [[input]]]) assert.throws(() => validateInputs(value, 1));
   assert.throws(() => validateInputs([input, { ...input, receiptAnchor: input.receiptAnchor }], 2));
 });
-
 test('every allowance is one clock sample, a positive integer, never zero, and refuses a sub-unit or exhausted remainder', () => {
   let samples = 0;
   const { work, cleanup } = authority(limits(), () => { samples += 1; return T; }, () => 0);
@@ -53,7 +58,6 @@ test('every allowance is one clock sample, a positive integer, never zero, and r
   for (const bad of [{ workMs: 900001 }, { workMs: 0 }, { cleanupMs: 120001 }, { generation: 'x' }, { deadlineAtMs: NaN }, { cleanupAtMs: '5' }]) assert.throws(() => authority(limits(bad), ...clocks()));
   assert.throws(() => authority(null, ...clocks()));
 });
-
 test('child startup delay and a wall-clock rollback can only shorten the parent authority', () => {
   assert.equal(authority(limits(), ...clocks()).work(900000), 60000);
   assert.equal(authority(limits(), ...clocks(T, 59000)).work(900000), 1000);          // started 59s late: that time is already spent
@@ -61,7 +65,6 @@ test('child startup delay and a wall-clock rollback can only shorten the parent 
   assert.equal(authority(limits(), ...clocks(T + 30000, 0)).work(900000), 30000);     // a late wall clock shortens through the absolute cutoff
   assert.equal(authority(limits(), ...clocks(T, 50000)).cleanup(900000), 20000);
 });
-
 test('an exhausted deadline invokes neither the control callback nor any lazily admitted operation', async () => {
   const calls = [], spent = authority(limits({ deadlineAtMs: T }), ...clocks());
   const act = actor(spent.work), ctl = controller(async () => { calls.push('control'); return ''; }, spent.work, 'g1');
@@ -72,7 +75,6 @@ test('an exhausted deadline invokes neither the control callback nor any lazily 
   assert.equal(await actor(authority(limits(), ...clocks()).work)('ok', 5000, o => { seen.push(o.timeout); return 1; }), 1);
   assert.deepEqual(seen, [5000]);
 });
-
 test('the whole reply must match kind, argument, generation and operation; tails and partial prefixes are refused', async () => {
   const good = 'EXPORT_GATE_OK 1 g1 c1';
   assert.equal(validateReply(good, 'EXPORT_GATE_OK 1', 'g1', 'c1'), good);
@@ -89,7 +91,6 @@ test('the whole reply must match kind, argument, generation and operation; tails
   assert.equal(await exact(build, 'CHECKPOINT_OK stale'), 'CHECKPOINT_OK stale g1 c1');
   assert.equal(await exact(build, 'CHECKPOINT_OK stale'), 'CHECKPOINT_OK stale g1 c2'); // each call is a fresh operation
 });
-
 test('withBudget is a lazy wait bound that reports UNKNOWN; teardown steps stay independent and an exhausted remainder is NOT_ATTEMPTED', async () => {
   assert.equal(await withBudget(() => 7, 1000, 'quick'), 7);
   let started = false;
@@ -108,9 +109,7 @@ test('withBudget is a lazy wait bound that reports UNKNOWN; teardown steps stay 
   assert.match(spent.late, /^NOT_ATTEMPTED/);
   assert.ok(!ran.includes('late'));
 });
-
 async function drive(name, { close, destroy = () => {}, over = {} } = {}) {
-  // Fake @playwright/test lives in a real directory, so the module path is resolved by the OS, never by a platform-sensitive selector.
   const dir = path.join(SCRATCH, name), modules = path.join(dir, 'modules'), calls = [], emitted = [];
   fs.mkdirSync(path.join(modules, '@playwright', 'test'), { recursive: true });
   fs.writeFileSync(path.join(modules, '@playwright', 'test', 'package.json'), JSON.stringify({ name: 'fake', main: 'index.js' }));
@@ -132,7 +131,6 @@ async function drive(name, { close, destroy = () => {}, over = {} } = {}) {
     delete global.__calls;
   }
 }
-
 test('close rejection, hang or stdin failure never skips the save and every outcome is inside the one frozen snapshot', async () => {
   const claimOf = r => `SNAPSHOT ${createHash('sha256').update(r.saved).digest('hex')} ${r.saved.length}\n`;
   const rejected = await drive('close-rejected', { close: async () => { throw new Error('close rejected'); } });
@@ -150,7 +148,6 @@ test('close rejection, hang or stdin failure never skips the save and every outc
   assert.match(stdin.json.teardown.stdinDestroy, /^FAILED: stdin boom/); // the failed teardown is in the SAVED bytes, not only in memory
   assert.equal(stdin.emitted[0], claimOf(stdin));
 });
-
 test('an exhausted cleanup window starts no teardown or write, and an exhausted work window starts no browser', async () => {
   const noCleanup = await drive('cleanup-spent', { over: { cleanupAtMs: T } });
   assert.deepEqual([noCleanup.calls, noCleanup.saved, noCleanup.emitted, noCleanup.exit], [['launch', 'route'], null, [], 1]);
@@ -159,30 +156,30 @@ test('an exhausted cleanup window starts no teardown or write, and an exhausted 
   assert.match(noWork.json.error, /allowance exhausted/);
   assert.equal(noWork.json.teardown.contextClose, 'NOT_LAUNCHED');
 });
-
-// Full-journey control: a recording fake browser drives every branch of run(); nothing real starts. The fake obeys only what it was asked.
-async function journey(name, answer) {
+async function journey(name, answer, failHeading = false) {
   const dir = path.join(SCRATCH, name), modules = path.join(dir, 'modules'), log = [], requests = [], built = [], pending = {}, served = {};
   const defer = () => { const d = {}; d.promise = new Promise(resolve => { d.resolve = resolve; }); return d; };
-  const second = { ...input, title: 'Synthetic Second Draft', sourcePath: 'synthetic/second.md', receiptAnchor: 'second', sourceContent: 'Second source.' };
+  const second = { ...input, title: 'Synthetic Second Draft', sourcePath: 'synthetic/second.md', receiptAnchor: 'second', sourceContent: '# Second heading\nSecond source.' };
   fs.mkdirSync(path.join(modules, '@playwright', 'test'), { recursive: true });
   fs.writeFileSync(path.join(modules, '@playwright', 'test', 'package.json'), JSON.stringify({ name: 'fake', main: 'index.js' }));
   fs.writeFileSync(path.join(modules, '@playwright', 'test', 'index.js'), 'module.exports = global.__fakePlaywright;');
   const exportClick = () => {
-    const submitted = [input, second][built.length], html = `<html>${createHash('sha256').update(submitted.sourceContent.trim(), 'utf8').digest('hex')}</html>`;
+    const submitted = [input, second][built.length], sourceHash = createHash('sha256').update(submitted.sourceContent.trim(), 'utf8').digest('hex');
+    const html = buildHtml(submitted, '2026-10-17T00:00:00Z', sourceHash);
     const post = { method: () => 'POST', url: () => 'http://localhost:1/api/artifacts/export', postDataJSON: () => submitted };
     page.seen(post);
     const data = { html, governanceReceiptStatus: 'PRESENT', governanceReceipt: { receiptId: 'a' + built.length }, governanceReceiptAttemptId: 'a' + built.length,
       receiptAnchor: submitted.receiptAnchor, governanceState: 'DRAFT_UNACCEPTED' };
     built.push(html);
     served.html = html;
+    served.wire = Buffer.from(JSON.stringify({ success: true, data, routeGovernanceProof: { authMode: 'session' } }));
     pending.response.resolve({ url: () => post.url(), request: () => post, status: () => 200,
-      body: async () => Buffer.from(JSON.stringify({ success: true, data, routeGovernanceProof: { authMode: 'session' } })) });
+      body: async () => served.wire });
   };
   const page = {
     on: (event, cb) => { page.seen = cb; }, goto: async () => {}, waitForURL: async () => {}, addInitScript: async () => {}, screenshot: async o => fs.writeFileSync(o.path, 'png'),
     locator: () => ({ fill: async () => {} }), getByLabel: () => ({ fill: async () => {}, selectOption: async () => {} }), getByTestId: () => ({ count: async () => 0 }),
-    frameLocator: () => ({ locator: () => ({}) }), waitForEvent: () => (pending.download = defer()).promise,
+    frameLocator: () => ({ locator: selector => ({ selector }) }), waitForEvent: () => (pending.download = defer()).promise,
     waitForResponse: () => (pending.response = defer()).promise,
     getByRole: (role, { name }) => ({ click: async () => {
       const label = name.normalize('NFC');
@@ -192,7 +189,15 @@ async function journey(name, answer) {
   };
   const context = { route: async () => {}, pages: () => [], newPage: async () => page, close: async () => { log.push('close'); },
     request: { get: async () => ({ json: async () => ({ user: { userId: 'usr_3', role: 'developer', authSource: 'local_mock' } }) }) } };
-  global.__fakePlaywright = { chromium: { launchPersistentContext: async () => context }, expect: () => ({ toHaveAttribute: async () => {}, toHaveText: async () => {} }) };
+  global.__fakePlaywright = { chromium: { launchPersistentContext: async () => context }, expect: locator => ({
+    toHaveAttribute: async () => {},
+    toHaveText: async text => {
+      const element = new JSDOM(served.html).window.document.querySelector(locator.selector);
+      assert.ok(element, 'missing renderer DOM selector: ' + locator.selector);
+      assert.equal(element.textContent.trim(), text);
+      if (failHeading) throw new Error('known DOM assertion rejection');
+    },
+  }) };
   const control = async (request, expected) => {
     requests.push(request.split(' ').slice(0, request.startsWith('CHECKPOINT') ? 2 : 1).join(' '));
     return answer(expected, request.startsWith('EXPORT_GATE_REQUEST ') ? JSON.parse(request.slice(20)).op : request.split(' ').pop());
@@ -203,14 +208,13 @@ async function journey(name, answer) {
   process.stdin.destroy = () => {};
   try {
     await run({ modules, baseURL: 'http://localhost:1', output, custody: dir, control, config, now: () => T, uptime: () => 0, emit: s => emitted.push(s) });
-    return { requests, built, log, emitted, exit: process.exitCode, json: JSON.parse(fs.readFileSync(output, 'utf8')) };
+    return { requests, built, log, emitted, dir, wire: served.wire, exit: process.exitCode, json: JSON.parse(fs.readFileSync(output, 'utf8')) };
   } finally {
     process.stdin.destroy = original;
     process.exitCode = undefined;
     delete global.__fakePlaywright;
   }
 }
-
 test('a complete two-build journey completes only through whole-line replies and freezes one clean snapshot', async () => {
   const ok = await journey('journey-ok', (expected, op) => `${expected} g1 ${op}`);
   assert.deepEqual(ok.requests, ['EXPORT_GATE_REQUEST', 'CHECKPOINT built1', 'CHECKPOINT stale', 'EXPORT_GATE_REQUEST', 'CHECKPOINT built2']);
@@ -218,7 +222,13 @@ test('a complete two-build journey completes only through whole-line replies and
   assert.equal(ok.json.stale.priorAttemptId, 'a0');
   assert.equal(ok.emitted.length, 1);
 });
-
+test('original wire and decoded HTML survive a later known DOM assertion failure', async () => {
+  const bad = await journey('custody-before-dom', (expected, op) => `${expected} g1 ${op}`, true);
+  assert.match(bad.json.error, /known DOM assertion rejection/);
+  assert.deepEqual([bad.json.partial, bad.json.builds.length, bad.exit], [true, 0, 1]);
+  assert.ok(fs.readFileSync(path.join(bad.dir, 'v1-route.json')).equals(bad.wire));
+  assert.ok(fs.readFileSync(path.join(bad.dir, 'v1-decoded.html')).equals(Buffer.from(JSON.parse(bad.wire).data.html, 'utf8')));
+});
 test('a reply with a tail, a wrong generation or a wrong operation stops the journey before the next effect', async () => {
   for (const [name, answer] of [['tail', (e, op) => `${e} g1 ${op} tail`], ['generation', (e, op) => `${e} g2 ${op}`], ['operation', (e) => `${e} g1 c9`]]) {
     const bad = await journey('journey-' + name, answer);
@@ -230,7 +240,6 @@ test('import installs no network guard and starts no runtime', () => {
   assert.equal(net.Socket.prototype.connect, connect);
   assert.equal(process.env.CVF_NCR_ALLOWED_PORTS, undefined);
 });
-
 test('legacy browser branches survive exact routing-only patch against the pinned immutable blob digest', () => {
   const current = fs.readFileSync(path.join(__dirname, '..', 'probe_cvf_w05_browser_chain.cjs'), 'utf8');
   const route = "  if (mode === 'owned-profile') return require(process.argv[7]).run({ modules, baseURL, output, custody: downloadDir, control: controlChannel(), config: process.argv[8] });\n";
@@ -238,8 +247,6 @@ test('legacy browser branches survive exact routing-only patch against the pinne
   assert.equal(createHash('sha256').update(restored, 'utf8').digest('hex'), BLOB_SHA256);
   assert.ok(current.includes("mode === 'configured-receipt-composition'"));
 });
-
-// Activate the real observer in an isolated VM: no real guard mutation, child, socket or HTTP listener.
 function guarded(main, realHttp = false) {
   const { EventEmitter } = require('node:events'), vm = require('node:vm');
   const http = realHttp ? require('node:http') : null, originalHttpEmit = http && http.Server.prototype.emit;
@@ -264,7 +271,6 @@ function guarded(main, realHttp = false) {
   }, { filename });
   return { logs, loads, cache, cached, sentinel, entry, Server, EventEmitter, http, originalHttpEmit };
 }
-
 test('guard import evicts only its exact future main and leaves library or different main cached', () => {
   for (const main of ['entry', undefined, path.join(__dirname, 'different-main.cjs')]) {
     const g = guarded(main);
@@ -275,7 +281,6 @@ test('guard import evicts only its exact future main and leaves library or diffe
     assert.deepEqual(g.logs, []);
   }
 });
-
 test('evaluate observer ignores empty GET and records no valid recipient for empty or malformed POST', () => {
   const g = guarded(undefined), server = new g.Server();
   let delegated = 0;
@@ -299,7 +304,6 @@ test('evaluate observer ignores empty GET and records no valid recipient for emp
   assert.equal(delegated, 3);
   assert.equal(g.logs.filter(e => e.event === 'evaluate-recipient').length, 0);
 });
-
 test('valid evaluate POST preserves exact body hash and header presence while delegating once', () => {
   const g = guarded(undefined), server = new g.Server(), req = new g.EventEmitter();
   const raw = '{"request_id":"synthetic-only","value":1}';
@@ -314,7 +318,6 @@ test('valid evaluate POST preserves exact body hash and header presence while de
     bodySha256: createHash('sha256').update(raw).digest('hex'), serviceTokenPresent: true, cookiePresent: true }]);
   assert.equal(delegated, 1);
 });
-
 test('native delayed Request consumes the evaluate body while the observer records it', { timeout: 3000 }, async () => {
   const g = guarded(undefined, true), { http } = g, raw = '{"request_id":"loopback-only","value":1}';
   const server = http.createServer((req, res) => setTimeout(async () => {

@@ -227,12 +227,16 @@ async function run({ modules, baseURL, output, custody, control, config, now, up
       waiting.catch(() => {});
       const started = Date.now();
       await act('export-click', 30000, o => page.getByRole('button', { name: 'Tạo HTML', exact: true }).click(o));
-      const response = await waiting, wire = await act('response-body', 30000, () => response.body()), packet = JSON.parse(wire.toString('utf8'));
+      const response = await waiting, wire = await act('response-body', 30000, () => response.body());
+      fs.writeFileSync(path.join(custody, `v${index + 1}-route.json`), wire);
+      const packet = JSON.parse(wire.toString('utf8')), d = packet.data;
+      const html = typeof d?.html === 'string' ? Buffer.from(d.html, 'utf8') : null;
+      if (html) fs.writeFileSync(path.join(custody, `v${index + 1}-decoded.html`), html);
       assert.equal(response.status(), 200);
       assert.equal(packet.success, true);
       assert.deepEqual(response.request().postDataJSON(), input);
       assert.deepEqual(result.exportPosts[index], input);
-      const d = packet.data, html = Buffer.from(d.html, 'utf8'), sourceHash = sha(Buffer.from(input.sourceContent.trim(), 'utf8'));
+      const sourceHash = sha(Buffer.from(input.sourceContent.trim(), 'utf8'));
       assert.equal(d.governanceReceiptStatus, 'PRESENT');
       assert.equal(d.governanceReceipt.receiptId, d.governanceReceiptAttemptId);
       assert.equal(d.receiptAnchor, input.receiptAnchor);
@@ -242,9 +246,7 @@ async function run({ modules, baseURL, output, custody, control, config, now, up
       await attr('current', 'current-state');
       await heading('header > h1', input.title, 'current-heading');
       const bodyHeading = /^# (.+)$/m.exec(input.sourceContent);
-      if (bodyHeading) await heading('main > h1', bodyHeading[1], 'body-heading');
-      fs.writeFileSync(path.join(custody, `v${index + 1}-route.json`), wire);
-      fs.writeFileSync(path.join(custody, `v${index + 1}-decoded.html`), html);
+      if (bodyHeading) await heading('main > section > h1', bodyHeading[1], 'body-heading');
       result.builds.push({ attemptId: d.governanceReceiptAttemptId, receiptAnchor: d.receiptAnchor, receipt: d.governanceReceipt,
         sourceHash, wireSha256: sha(wire), htmlSha256: sha(html), html, elapsedMs: Date.now() - started,
         download: await download(`v${index + 1}`, html), submitted: input });
