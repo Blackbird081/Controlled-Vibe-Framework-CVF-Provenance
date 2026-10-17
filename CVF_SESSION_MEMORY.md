@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | BE-S12 in progress source-only; BE-R01 cap2 accepted old source; BE-R02 spent blocked |
+| Parent maintenance | BE-S12 blocked source-only; S11/Q04/R1E accepted on old source; R02 blocked/spent; no S12 release |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_source_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bounded exact6 S12 source-only worker under fresh bound packet; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=no provider/runtime/native/HTTP/Docker/browser/product-effect authorization.
+Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_source_blocked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=separately governed source repair plan; role=INTERNAL_AGENT Local reviewer/closer; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=R02 spent, S12 blocked, provider/runtime/deletion/public.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_login_readiness_source_dispatched`
-Current mode: `cvf_ncr_html_login_readiness_source_dispatched`; previous mode marker: `cvf_ncr_html_r2b_be_r02_blocked_spent`
+Current mode marker: `cvf_ncr_html_login_readiness_source_blocked`
+Current mode: `cvf_ncr_html_login_readiness_source_blocked`; previous mode marker: `cvf_ncr_html_login_readiness_source_dispatched`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_login_readiness_source_dispatched`
+Mode: `cvf_ncr_html_login_readiness_source_blocked`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-20261017. Under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md` and `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`, after committed exact9 dispatch metadata, fresh current B/W hashes, and bound pre-dispatch/pre-implementation PASS, release one INTERNAL_AGENT exact6 source-only worker. Prove a real actual-component held-hydration RED on unchanged journey; permit one named harness-only repair plus one repeated RED only for a concrete harness defect; then freeze the complete test-file hash, add only one bounded pre-fill readiness wait, and run same-case GREEN plus the native-skipped selected regression. Preserve the first failure. Worker Node maximum4 starts <=60s each; Python admission and focused authority tests once each <=120s; Root distinct six-case probe is separately Local-owned <=60s. No isolation child. Inclusive preparation start 2026-10-17T04:00:00Z; worker hard 2026-10-17T05:30:00Z; Local hard 2026-10-17T07:00:00Z; no reset. R02 is closed clean split but `accepted=false`; no cap1 retry. BE-S12 remains source support only; BE-R01 cap2 accepted under old source, BE-R02 open/spent. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. No browser/product runtime, provider, native, HTTP, Docker, real data, deletion, public or deploy. Current phase anchor 6ab5c29df90affb1041908ae0592622549b19f98; worker captures the actual released HEAD.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-20261017. After actual clean exact13/6 blocked closure, prepare a separately governed fixture-only positive-control design before any renewed source hypothesis. Preserve S12 first failures, candidate4 custody and source18 restored to accepted S11 identity. Current Node4/Python2 spent; no same-packet retry, no new release or source qualification. R1E cap2 accepted old source; R02 cap1 blocked/spent; no runtime replay. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Provider/runtime/native/HTTP/Docker/real-data/deletion/public/deploy parked.
 
 ## Parked Checkpoints
 

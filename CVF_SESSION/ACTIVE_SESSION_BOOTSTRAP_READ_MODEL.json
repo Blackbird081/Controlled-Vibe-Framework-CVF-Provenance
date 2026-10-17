@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_html_login_readiness_source_dispatched",
+  "currentMode": "cvf_ncr_html_login_readiness_source_blocked",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-20261017. Under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md` and `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`, after committed exact9 dispatch metadata, fresh current B/W hashes, and bound pre-dispatch/pre-implementation PASS, release one INTERNAL_AGENT exact6 source-only worker. Prove a real actual-component held-hydration RED on unchanged journey; permit one named harness-only repair plus one repeated RED only for a concrete harness defect; then freeze the complete test-file hash, add only one bounded pre-fill readiness wait, and run same-case GREEN plus the native-skipped selected regression. Preserve the first failure. Worker Node maximum4 starts <=60s each; Python admission and focused authority tests once each <=120s; Root distinct six-case probe is separately Local-owned <=60s. No isolation child. Inclusive preparation start 2026-10-17T04:00:00Z; worker hard 2026-10-17T05:30:00Z; Local hard 2026-10-17T07:00:00Z; no reset. R02 is closed clean split but `accepted=false`; no cap1 retry. BE-S12 remains source support only; BE-R01 cap2 accepted under old source, BE-R02 open/spent. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. No browser/product runtime, provider, native, HTTP, Docker, real data, deletion, public or deploy. Current phase anchor 6ab5c29df90affb1041908ae0592622549b19f98; worker captures the actual released HEAD.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-20261017. After actual clean exact13/6 blocked closure, prepare a separately governed fixture-only positive-control design before any renewed source hypothesis. Preserve S12 first failures, candidate4 custody and source18 restored to accepted S11 identity. Current Node4/Python2 spent; no same-packet retry, no new release or source qualification. R1E cap2 accepted old source; R02 cap1 blocked/spent; no runtime replay. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Provider/runtime/native/HTTP/Docker/real-data/deletion/public/deploy parked.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md",
-    "baselineSha256": "c8460ed425900dac979311c5ace8bf8c104b71c798580a2f3b4689ba710c1cd3",
+    "baselineSha256": "9ba607adb369ed80e1e2bdb5c0c49ec63bd808e49da1196cf675d4ce5ad102ef",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md",
-    "workOrderSha256": "457a1d65f7954046ea9d1031e9feb3854a60e3a9e3d3dcbbad827992775afd0b"
+    "workOrderSha256": "751a64cd45103c6fa4a121ffbed17912e5f6dfcb3fd68c8463057b10cf3c0546"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

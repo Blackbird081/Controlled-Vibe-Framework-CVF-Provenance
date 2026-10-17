@@ -1,0 +1,197 @@
+{
+  "schemaVersion": "cvf.ncrHtmlLoginReadinessSourceWorkerEvidence@1",
+  "status": "BLOCKED_WITH_REASON",
+  "executionBaseHead": "6131137da8732974273177e079df9aac704fedad",
+  "dispatchFinalPath": ".cvf/runtime/ncr-login-readiness-source-20261017/dispatch-final.json",
+  "dispatchFinalSha256": "04ed89253d46b467335d9f8ee9d0cca6a64078d3f53feef2831c5f9f046e7db0",
+  "workOrderSha256": "457a1d65f7954046ea9d1031e9feb3854a60e3a9e3d3dcbbad827992775afd0b",
+  "baselineSha256": "c8460ed425900dac979311c5ace8bf8c104b71c798580a2f3b4689ba710c1cd3",
+  "programs": [
+    {
+      "stdoutSha256": "68e5e21e3f79b1f567aba929a9bc63baa1beef31041813ea5735f516c4a499c7",
+      "startUtc": "2026-10-17T05:06:10.619481Z",
+      "name": "red1",
+      "endUtc": "2026-10-17T05:06:30.3733993Z",
+      "argv": [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        "--test-name-pattern=^S12 login readiness waits for hydrated ready form before filling$",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "testSha256": "03E5A53654DDA95372DC920AC6D9368234C85246C5B00474FE39CB8269911090",
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-20261017/worker/red1.stderr.log",
+      "journeySha256": "719B3E151ACE0A2752786710D29D6EB9FA272285BE22C11B05F39498A36C65B0",
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-20261017/worker/red1.stdout.log",
+      "exitCode": 1,
+      "durationSeconds": 19.7539183
+    },
+    {
+      "stdoutSha256": "accb6118e3a3fa50ce9b105e843b0affb6f7fb0499da8f6c703f97ea1d6e492d",
+      "startUtc": "2026-10-17T05:06:48.5994985Z",
+      "name": "red2",
+      "endUtc": "2026-10-17T05:06:50.2764145Z",
+      "argv": [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        "--test-name-pattern=^S12 login readiness waits for hydrated ready form before filling$",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "testSha256": "1698518734DDB35D7B72DC73B8BA4F414A3FD86CE5910792351B4A0C2C03FBA6",
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-20261017/worker/red2.stderr.log",
+      "journeySha256": "719B3E151ACE0A2752786710D29D6EB9FA272285BE22C11B05F39498A36C65B0",
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-20261017/worker/red2.stdout.log",
+      "exitCode": 1,
+      "durationSeconds": 1.676916
+    },
+    {
+      "stdoutSha256": "b7aedb1fb578273a142e09854074fbceb6ff1f62611b11bca5067f38b5be9e45",
+      "startUtc": "2026-10-17T05:07:11.9381844Z",
+      "name": "green",
+      "endUtc": "2026-10-17T05:07:13.622631Z",
+      "argv": [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        "--test-name-pattern=^S12 login readiness waits for hydrated ready form before filling$",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "testSha256": "1698518734DDB35D7B72DC73B8BA4F414A3FD86CE5910792351B4A0C2C03FBA6",
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-20261017/worker/green.stderr.log",
+      "journeySha256": "5B15706A693AA856CBB2E9B015D5D5AA21F12FB4339BF6011CEB021B6780D691",
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-20261017/worker/green.stdout.log",
+      "exitCode": 1,
+      "durationSeconds": 1.6844466
+    },
+    {
+      "stdoutSha256": "b2819fc4f5414147112d3b686fb5f4bcb19a127b7bbc989b63d4d1fc3ea9cab5",
+      "startUtc": "2026-10-17T05:07:34.5649891Z",
+      "name": "selected",
+      "endUtc": "2026-10-17T05:07:36.6808973Z",
+      "argv": [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        "--test-skip-pattern",
+        "^native delayed Request ",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "testSha256": "1698518734DDB35D7B72DC73B8BA4F414A3FD86CE5910792351B4A0C2C03FBA6",
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-20261017/worker/selected.stderr.log",
+      "journeySha256": "5B15706A693AA856CBB2E9B015D5D5AA21F12FB4339BF6011CEB021B6780D691",
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-20261017/worker/selected.stdout.log",
+      "exitCode": 1,
+      "durationSeconds": 2.1159082
+    },
+    {
+      "stdoutSha256": "08c5b356143f833ed22d7415b3815b6ec8921bd6297af42ee8a8926ff16cee93",
+      "startUtc": "2026-10-17T05:07:40.7396293Z",
+      "name": "admission",
+      "endUtc": "2026-10-17T05:07:49.4973037Z",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "scripts/cvf_ncr_html_owned_profile/test_admission.py",
+        "-q"
+      ],
+      "stderrSha256": "2a914555f2278d48476e32682802ec1c26db797fe28edce2a47b2cfe998f2f93",
+      "testSha256": null,
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-20261017/worker/admission.stderr.log",
+      "journeySha256": null,
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-20261017/worker/admission.stdout.log",
+      "exitCode": 0,
+      "durationSeconds": 8.7576744
+    },
+    {
+      "stdoutSha256": "2c675e292278c409f0d48540f69c855d42a3bf82136a5ae5b3de1146f0b6b9f9",
+      "startUtc": "2026-10-17T05:07:54.2336038Z",
+      "name": "focused",
+      "endUtc": "2026-10-17T05:07:55.4897369Z",
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "scripts/test_cvf_ncr_html_effect_driver.py",
+        "-q",
+        "-k",
+        "test_preload_renderer_preserves_identity_and_order"
+      ],
+      "stderrSha256": "2a914555f2278d48476e32682802ec1c26db797fe28edce2a47b2cfe998f2f93",
+      "testSha256": null,
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-20261017/worker/focused.stderr.log",
+      "journeySha256": null,
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-20261017/worker/focused.stdout.log",
+      "exitCode": 0,
+      "durationSeconds": 1.2561331
+    }
+  ],
+  "firstRed": {
+    "reason": "Node global.navigator is getter-only; fixture global assignment failed before journey.run",
+    "classification": "INVALID_HARNESS",
+    "originalRetained": true
+  },
+  "secondRed": {
+    "accepted": false,
+    "testSha256": "1698518734ddb35d7b72dc73b8ba4f414a3fd86ce5910792351b4a0c2c03fba6",
+    "classification": "FIELD_STATE_FAILURE_WITH_REAL_COMPONENT",
+    "sessionProbeReached": false,
+    "redirected": false,
+    "exportCalls": 0,
+    "submittedFieldsPresent": false,
+    "journeySha256": "719b3e151ace0a2752786710d29d6eb9fa272285be22c11b05f39498a36c65b0",
+    "evaluateCalls": 0
+  },
+  "green": {
+    "evaluateCalls": 0,
+    "exportCalls": 0,
+    "redirected": false,
+    "submittedFieldsPresent": false,
+    "classification": "FAILED_SAME_TEST",
+    "sameCompleteTestHash": true,
+    "accepted": false,
+    "sessionProbeReached": false
+  },
+  "selected": {
+    "tests": 18,
+    "failed": 4,
+    "nativeSkipped": true,
+    "result": "FAIL",
+    "reason": "new fixture fails GREEN and three original journey fakes lack added readiness methods; test hash freeze prevents post-RED repair",
+    "passed": 14
+  },
+  "admission": {
+    "exit": 0,
+    "passed": 170
+  },
+  "focused": {
+    "deselected": 68,
+    "exit": 0,
+    "passed": 1
+  },
+  "sourceHashes": {
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": "aba25d15c1eeda7e6df94372cbd37dac213ecb5d30683c7030e5867853550914",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "1698518734ddb35d7b72dc73b8ba4f414a3fd86ce5910792351b4a0c2c03fba6",
+    "scripts/test_cvf_ncr_html_effect_driver.py": "56808a49f7677c8cc4bf35be7ae35c3187f585d259d35496800650267e67da12",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "5b15706a693aa856cbb2e9b015d5d5aa21f12fb4339bf6011ceb021b6780d691"
+  },
+  "testLines": 437,
+  "source13Unchanged": true,
+  "providerCalls": 0,
+  "browserStarts": 0,
+  "httpStarts": 0,
+  "nativeSocketStarts": 0,
+  "dockerStarts": 0,
+  "claimBoundary": "Synthetic source proof blocked; no R02 causal attribution or source release/qualification/runtime acceptance"
+}

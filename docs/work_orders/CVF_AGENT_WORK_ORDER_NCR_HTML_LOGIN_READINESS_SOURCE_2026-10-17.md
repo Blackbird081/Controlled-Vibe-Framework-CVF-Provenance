@@ -5,7 +5,7 @@ Memory class: governed-worker-dispatch
 docType: work_order
 Date: 2026-10-17
 Commit mode: WORKER_MUST_NOT_COMMIT
-Status: DISPATCH_READY
+Status: BLOCKED_WITH_REASON
 Worker return path: `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_SOURCE_WORKER_RETURN_2026-10-17.md`
 Role: INTERNAL_AGENT source worker under Local dispatch
 Phase: DISPATCH_SOURCE_ONLY
@@ -124,7 +124,7 @@ Add one exact case to existing `journey.test.cjs`, title `S12 login readiness wa
 4. Fake redirect/session observation is bounded and ends before build/export/evaluate. Assert only `submittedFieldsPresent`, `accepted`, `redirected`, `sessionProbeReached`, and zero export/evaluate calls. Test reports/snapshots omit values.
 5. On unchanged `journey.cjs`, the same named case must RED specifically because early controlled-input state is absent. A compile/import/fake setup failure, timeout or unrelated assertion is a harness/inconclusive result, not source RED. If the actual field-state failure cannot be reproduced, stop; no source-text mirror, changed scenario or R02 cause attribution.
 6. After valid RED, freeze and record the full `journey.test.cjs` byte hash. Change only the production journey with one bounded wait after `login-page` and before `fill-user`: wait for the existing localized sign-in button to be visible and enabled within `work(30000)` and the current `act` budget; then make no other login behavior change. The same test must GREEN without any test-file change after the frozen hash.
-7. Allow at most one harness-only repair and one additional RED invocation, only if the first RED invocation exposes a named concrete fixture/CLI/test-double defect and the unchanged journey source remains byte-identical. Record the first outcome, information-gain/cost reason and harness diff. Do not alter the scenario or production source. If the repaired fixture still has no valid source RED, stop inconclusive. No further test repair or retry under this packet.
+7. Allow at most one harness-only repair and one additional RED invocation, only if the first RED invocation exposes a named concrete fixture/CLI/test-double defect and the unchanged journey source remains byte-identical (MATCH: RED2 journey hash719b3e151ace0a2752786710d29d6eb9fa272285be22c11b05f39498a36c65b0 equals dispatch preimage, verified in original worker records). Record the first outcome, information-gain/cost reason and harness diff. Do not alter the scenario or production source. If the repaired fixture still has no valid source RED, stop inconclusive. No further test repair or retry under this packet.
 
 The test double may gain only minimal readiness methods needed to observe the actual component button. Preserve the old S11 scratch and all existing semantic coverage; no helper file. A harness failure never counts as RED.
 
@@ -237,10 +237,14 @@ Reason: no knowledge-map assets are selected by this source-only task.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact S12 source-only dispatch metadata and current-session authority/next move.
+Authorized exact13 documentary/evidence closure; no source/fence/release/checker mutation.
 Protected paths:
 - `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`
+- `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_SOURCE_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-login-readiness-source-worker-20261017.json`
+- `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_SOURCE_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-login-readiness-source-local-20261017.json`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -248,19 +252,22 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: Local root continuation for bounded source support after R02 clean-split closure; no effect consent.
-Rollback boundary: exact listed metadata only; preserve R02/S11/R1E evidence, source18 and all old release/custody. No deletion.
+Rollback boundary: exact13; original worker failures retained.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: B/W, pending BE-S12 roadmap status and current session mode/authority/next move must agree in dispatch9; following continuity pins actual material SHA.
+Atomicity reason: blocked B/W, original worker WR/WE, CP/LP, roadmap/current6 align.
 
 Exact changed manifest:
 
 - `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`
+- `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_SOURCE_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-login-readiness-source-worker-20261017.json`
+- `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_SOURCE_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-login-readiness-source-local-20261017.json`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -268,31 +275,30 @@ Exact changed manifest:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-
-Rollback boundary: listed metadata only; no source, result, custody, runtime or resource effect.
+Rollback boundary: exact13.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | LOCAL root dispatcher/steward |
-| Provider or surface | private shared workspace; source-only metadata |
+| Actor | LOCAL root reviewer/closer and commit steward |
+| Provider or surface | shared private workspace; INTERNAL_AGENT |
 | Session or invocation | CVF-NCR-HTML-LOGIN-READINESS-SOURCE-20261017:material |
 | Working directory | D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF |
-| Command or tool surface | reviewed source-support packet adoption and canonical session-state generation; no source/test/native/runtime execution by adoption |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | Local root source-only continuation after closed R02 first-result finality |
-| Before status evidence | HEAD 740abe508754ecada86be379b39fb7ed51abe341; git status --short empty; clean worktree; stage empty; source18 unchanged |
-| After status evidence | exact9 metadata paths for material; no source/effect start |
-| Diff evidence | actual named-file manifest checked against the bound 9 paths |
-| Approval boundary | Local technical dispatch only; worker must not commit; no provider/runtime/native/deletion |
-| Claim boundary | S12 source dispatch only; not source acceptance, R2 outcome, or runtime authority |
+| Command or tool surface | file-only evidence review/custody and exact CODE4 rollback; generated source6; normal gates/commits |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_SOURCE_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-source-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_SOURCE_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-source-local-20261017.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | current S12 B/W; operator autonomous roadmap continuation; blocked documentary disposition |
+| Before status evidence | HEAD 6131137da8732974273177e079df9aac704fedad; exact2 WR/WE after source18 rollback; stage empty; exact6 terminal captured |
+| After status evidence | exact13 named paths only; semantic programs0 in Local review |
+| Diff evidence | git diff --name-only and visible untracked union equals expected manifest |
+| Approval boundary | Local documentary closure only; runtime/provider/deletion/public remain parked |
+| Claim boundary | failed source proof; accepted=false; no new source release |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | CVF-NCR-HTML-LOGIN-READINESS-SOURCE-20261017:material |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 only |
-| Deletion or rename disposition | N/A with reason: none |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_SOURCE_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-source-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_SOURCE_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-source-local-20261017.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_SOURCE_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-source-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_SOURCE_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-source-local-20261017.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact13 |
+| Deletion or rename disposition | N/A with reason: no deletion or rename; candidate bytes preserved |
 
 ## Operator Checkpoint
 
@@ -362,7 +368,7 @@ independentProbeRiskClass: SOURCE_REAL_REACT_HYDRATION_BOUNDARY
 independentProbeDispositionAtDispatch: PENDING_REVIEWER_EXECUTION
 probeExecutorRole: LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER
 implementationOracleSeparation: distinct Root private source/cases unread by worker; real LoginPageClient actual DOM/control-flow, not mirror form or worker assertions
-positiveControl: held hydration transitions loading to ready on real component
+positiveControl: planned Root SSR loading/ready DOM states with separate journey failure-flow controls; NOT_EXECUTED after required GREEN failed
 negativeMutationClasses: failure-side control flow and refused early fill; six Root-frozen cases
 expectedInformationGain: independent distinction between intended readiness correction and test-harness artifact
 rerunCostReason: one separately admitted Node<=60s after worker return; no browser/runtime/provider
@@ -700,3 +706,7 @@ Second author pre-implementation gate passed every predicate except the internal
 ## Root First Normal Encoding Disposition
 
 First normal commit was refused solely because source-faithful Vietnamese UI labels lacked the required Text Encoding Exception. Root added the explicit source-label reason and replaced decorative Unicode separators with ASCII; original exact9 preimages and actual failed91 hook receipt/logs retained. No worker source/test/probe started.
+
+## Local Source Disposition
+
+BLOCKED_WITH_REASON. Required same-test GREEN failed; selected regression failed. Root's separate probe skipped after prerequisite failure (zero Node starts). Source-release identity remains S11; no S12 release, fence, qualification, runtime, or product acceptance. The original worker return and first failures are preserved.
