@@ -1,0 +1,564 @@
+{
+  "schemaVersion": "cvf.ncrHtmlR2bRuntimeWorkerEvidence@1",
+  "status": "BLOCKED_WITH_REASON",
+  "executionBaseHead": "f9223b1b644aefa5e21d250165d22ec491b76fcc",
+  "runtimeExecutionBaseHead": "f9223b1b644aefa5e21d250165d22ec491b76fcc",
+  "documentaryExecutionBaseHead": "cbaad35e932c0aae5f4e7c2bf2a9885981fc5339",
+  "returnObservationBaseHead": "cbaad35e932c0aae5f4e7c2bf2a9885981fc5339",
+  "finalGateHead": "cbaad35e932c0aae5f4e7c2bf2a9885981fc5339",
+  "dispatchWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md",
+  "workerActorId": "INTERNAL_AGENT_LOCAL_REVIEWER:ncr-be-local-20261017-r2b",
+  "workerInvocationId": "ncr-be-local-20261017-r2b",
+  "proofs": [
+    {
+      "proofId": "PROOF-ADMISSION",
+      "status": "PASS",
+      "evidence": [
+        "released paired envelope, current 9/26 actual cap1 receipt, independent Root PURE10 barrier and stronger accepted R1E predecessor",
+        "stage2 frozen pins/admission/grant/envelope matched raw SHA before original launch"
+      ]
+    },
+    {
+      "proofId": "PROOF-JOURNEY",
+      "status": "BLOCKED",
+      "evidence": [
+        "one original cap1 program exit1; browser login-url did not complete within 120000ms and outcome is UNKNOWN",
+        "zero builds/exports/evaluates/completed and zero SQLite rows; no v1 export/evaluation/recipient/download association"
+      ]
+    },
+    {
+      "proofId": "PROOF-TERMINAL",
+      "status": "BLOCKED",
+      "evidence": [
+        "original raw terminal is NOT_ACCEPTED_UNKNOWN; child NONZERO_EXIT and confirmed=false",
+        "separate ACK/MATCH and four ABSENT observations prove bounded cleanup only, not journey success"
+      ]
+    },
+    {
+      "proofId": "PROOF-RETURN",
+      "status": "PASS",
+      "evidence": [
+        "exact2 no-commit BLOCKED_WITH_REASON documentary handoff",
+        "actual final-byte full gate and scoped corpus observations are detached after immutable tracked files"
+      ]
+    }
+  ],
+  "startup": {
+    "head": "f9223b1b644aefa5e21d250165d22ec491b76fcc",
+    "gitStatusShort": "",
+    "role": "INTERNAL_AGENT",
+    "phase": "EXECUTE",
+    "decisionOwner": "LOCAL",
+    "privateOracleRead": false
+  },
+  "procedure": {
+    "preEffectSource18AndProgramHashes": "MATCH",
+    "boundPreimplementation": "PASS",
+    "sourceSectionReadTiming": "PARTIAL_LATE_READ",
+    "disclosure": "Some runner/profile/protocol/lifecycle/execution/journey source sections were personally read after original execution. The launcher performed pinned checks before effects. Later reading and documentary gates do not repair that timing."
+  },
+  "rootContinuityCorrection": {
+    "commit": "cbaad35e932c0aae5f4e7c2bf2a9885981fc5339",
+    "receipt": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\source6-repair-final.json",
+      "sha256": "a516d751fcab23ca91f82435655c57c79fd583083a1461e18c131937c7b499ef",
+      "bytes": 1297
+    },
+    "scope": "Root-only exact6 metadata mode consistency correction between original execution and final documentary gate; source18, paired authority and runtime custody unchanged"
+  },
+  "preimplementation": {
+    "argv": [
+      "python",
+      "-B",
+      "governance/compat/run_agent_autorun_workflow_gate.py",
+      "--phase",
+      "pre-implementation",
+      "--base",
+      "HEAD",
+      "--head",
+      "HEAD",
+      "--active-work-order",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md"
+    ],
+    "startUtc": "2026-10-17T03:56:40.8752936+00:00",
+    "endUtc": "2026-10-17T03:56:55.1968747+00:00",
+    "wallSeconds": 14.3119177,
+    "exitCode": 0,
+    "stdout": {
+      "path": ".cvf/runtime/ncr-be-r2b-runtime-20261017/verifier-preparation/preimplementation.stdout.log",
+      "sha256": "5e6cdda43270e11cc597d61feb77ac00fa8cce7a7a04e8c88e649f049f377514",
+      "bytes": 4762
+    },
+    "stderr": {
+      "path": ".cvf/runtime/ncr-be-r2b-runtime-20261017/verifier-preparation/preimplementation.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "scaffoldPreparation": {
+    "argv": [
+      "python",
+      "-B",
+      "governance/compat/run_worker_return_scaffold.py",
+      "--emit",
+      "--title",
+      "NCR HTML B-E Fresh Runtime Worker Return",
+      "--check-shape",
+      "--max-lines",
+      "450",
+      "--max-bytes",
+      "64000"
+    ],
+    "startUtc": "2026-10-17T03:57:02.0577349+00:00",
+    "endUtc": "2026-10-17T03:57:02.2438095+00:00",
+    "wallSeconds": 0.1812191,
+    "exitCode": 0,
+    "stdout": {
+      "path": ".cvf/runtime/ncr-be-r2b-runtime-20261017/verifier-preparation/scaffold.stdout.log",
+      "sha256": "9c0293e05bdf7037a95c9bb1617c299ca9440e4161a16a9e02f5f19956370a8d",
+      "bytes": 13701
+    },
+    "stderr": {
+      "path": ".cvf/runtime/ncr-be-r2b-runtime-20261017/verifier-preparation/scaffold.stderr.log",
+      "sha256": "344bd00b2ff10aa5ca977feadb98c061566d847bd3c31896d0159d37acc96f51",
+      "bytes": 86
+    }
+  },
+  "program1Command": {
+    "argv": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\launch_controls.py",
+      "local",
+      "actual",
+      "--pins-sha",
+      "927b7b520f2dc3064037437aa69f384d0e0d56186f8a6f61a6696f49b21e31e1",
+      "--paired-envelope-sha",
+      "d1a2636d11967dc4ebc0f4b8ef50b0b061426976e877f0f55cf7d04d51a9a0ae"
+    ],
+    "startUtc": "2026-10-17T03:57:25.8980192+00:00",
+    "endUtc": "2026-10-17T03:57:29.3241396+00:00",
+    "wallSeconds": 3.4167578,
+    "exitCode": 0,
+    "stdout": {
+      "path": ".cvf/runtime/ncr-be-r2b-runtime-20261017/verifier-preparation/program1.stdout.log",
+      "sha256": "d1669e03015a505c48f5b905d31ce4d10f2aa35aa9eed82ccd2c586ea9deaa55",
+      "bytes": 2474
+    },
+    "stderr": {
+      "path": ".cvf/runtime/ncr-be-r2b-runtime-20261017/verifier-preparation/program1.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "program2Command": {
+    "argv": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\launch_once.py",
+      "local",
+      "95827e1e1c187763aef91411c2e6c462935a10012ba20f71932061558ae37aad"
+    ],
+    "startUtc": "2026-10-17T03:58:54.0706313+00:00",
+    "endUtc": "2026-10-17T04:01:29.2541933+00:00",
+    "wallSeconds": 155.166122,
+    "exitCode": 1,
+    "stdout": {
+      "path": ".cvf/runtime/ncr-be-r2b-runtime-20261017/verifier-preparation/program2.stdout.log",
+      "sha256": "38b0e32344c613de7efd7b974bcac7a7fe3e7b2aa91398f04f4d719d641c82cd",
+      "bytes": 119
+    },
+    "stderr": {
+      "path": ".cvf/runtime/ncr-be-r2b-runtime-20261017/verifier-preparation/program2.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "frozenFiles": {
+    "paired-invocation-envelope.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\paired-invocation-envelope.json",
+      "sha256": "d1a2636d11967dc4ebc0f4b8ef50b0b061426976e877f0f55cf7d04d51a9a0ae",
+      "bytes": 3836
+    },
+    "control-pins.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\control-pins.json",
+      "sha256": "927b7b520f2dc3064037437aa69f384d0e0d56186f8a6f61a6696f49b21e31e1",
+      "bytes": 2500
+    },
+    "invocation-envelope.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\invocation-envelope.json",
+      "sha256": "13c97a5428d73f336025553c08343288e2654475ad6075a8a34c9e65237c327e",
+      "bytes": 364
+    },
+    "local-cap1-controls-program-result.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\local-cap1-controls-program-result.json",
+      "sha256": "8ed48679b72bbd161751a2b266e77394643fb6b091ab84ccce2070dfa944cdd6",
+      "bytes": 492
+    },
+    "program-ledger.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\program-ledger.json",
+      "sha256": "d534fd07df293ae0b2ab43e0d53893ce52e85f74b6e6fbee53a11b6de43514d2",
+      "bytes": 5602
+    },
+    "stage2-barrier-receipt.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\stage2-barrier-receipt.json",
+      "sha256": "c9916e4fee1ba17c782ed16d5e4194b1f3a2645be792f2d9b8c476075fe5d168",
+      "bytes": 1862
+    },
+    "stage2-invocation-envelope.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\stage2-invocation-envelope.json",
+      "sha256": "95827e1e1c187763aef91411c2e6c462935a10012ba20f71932061558ae37aad",
+      "bytes": 1246
+    },
+    "stage2-freeze-result.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\stage2-freeze-result.json",
+      "sha256": "135a74d74428f3dd66d42cc447764cff3cc37a9442871d77c9ae226c202b092c",
+      "bytes": 984
+    },
+    "worker-admission.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\worker-admission.json",
+      "sha256": "3ee29f098a98cf66dec9a5be96e9c4625a9b0bab81fabcf4305bba7a577bbb70",
+      "bytes": 3147
+    },
+    "pins.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\pins.json",
+      "sha256": "f9fe844db3b5e6741271ec38d02f4c77d8f8ecee1c1871b73e2c0bdeabc089f9",
+      "bytes": 3004
+    },
+    "inputs-local.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\inputs-local.json",
+      "sha256": "fbed322ea248c6ec2701bca5ad96004010abd6b1a695403695bb76c7713c3f97",
+      "bytes": 1289
+    },
+    "local-launch-authority.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\local-launch-authority.json",
+      "sha256": "02c2276186a5e2a51155bfd37b28a8c02960bfcabe6a2352d475d366566f21a3",
+      "bytes": 1572
+    },
+    "worker-program-entry.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\worker-program-entry.json",
+      "sha256": "e040e708937d2404e14c60cbad9d1c9ce9ab13cc1d320d3b30c4c31e89e8948d",
+      "bytes": 544
+    },
+    "worker-program-result.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\worker-program-result.json",
+      "sha256": "5a95b0b57e339b14602265dc1ffe962ca1cd8f9e1edb9fbf318b739c76ec45d0",
+      "bytes": 979
+    },
+    "worker-driver-result.json": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\worker-driver-result.json",
+      "sha256": "0a8b4e98dec6ce6a05aa88211a1e8bdc6526f5d9e23818fdfbb83d7110c471bf",
+      "bytes": 29801
+    }
+  },
+  "stage1": {
+    "status": "PASS",
+    "attempt": 1,
+    "exitCode": 0,
+    "passed": 9,
+    "actualChildren": 26,
+    "receipt": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\worker\\ncr-be-r2b-local-cap1-927b7b520f2dc306\\receipt.json",
+      "sha256": "513bfa51c0f21592e5739d3149d71740847ff46240a24a7c4091adcbae8a59c0",
+      "bytes": 50068
+    },
+    "childLedger": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\worker\\ncr-be-r2b-local-cap1-927b7b520f2dc306\\child-ledger.json",
+      "sha256": "2bd0da946e1e6cc97cd3942e5e9ff60e6c821c16b7238150da57ad3b4f4d7f77",
+      "bytes": 10482
+    },
+    "rootPrivatePURE10": {
+      "sourceSha256": "365d7e0b9ec5929a7dc8d142481291ec631c46d37084019181ed226e64684754",
+      "resultSha256": "37954891f7a80895fb7617922c6fef48691304368d4a373fa33bb8a3900f330c",
+      "rootReported": "PASS_10_OF_10_ZERO_NATIVE"
+    }
+  },
+  "stage2": {
+    "barrier": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\stage2-barrier-receipt.json",
+      "sha256": "c9916e4fee1ba17c782ed16d5e4194b1f3a2645be792f2d9b8c476075fe5d168",
+      "bytes": 1862
+    },
+    "admission": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\worker-admission.json",
+      "sha256": "3ee29f098a98cf66dec9a5be96e9c4625a9b0bab81fabcf4305bba7a577bbb70",
+      "bytes": 3147
+    },
+    "grant": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\local-launch-authority.json",
+      "sha256": "02c2276186a5e2a51155bfd37b28a8c02960bfcabe6a2352d475d366566f21a3",
+      "bytes": 1572
+    },
+    "envelope": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\stage2-invocation-envelope.json",
+      "sha256": "95827e1e1c187763aef91411c2e6c462935a10012ba20f71932061558ae37aad",
+      "bytes": 1246
+    },
+    "predecessor": {
+      "acceptancePath": "docs/reviews/evidence/ncr-html-b-e-r1e-runtime-local-20261017.json",
+      "acceptanceSha256": "07d83ad06cc6ec527ff39e1937f0f96210cf33003bd57f9c363a0f41b0d77c4b",
+      "runId": "ncr-be-worker-20261017-r1e",
+      "terminalPath": "D:\\CVF_NCR_RUNTIME\\ncr-be-worker-20261017-r1e\\custody\\terminal-evidence.json",
+      "terminalSha256": "5d2474bca06b7bf697f6ac0dd36bbe64076351b0803e159701f68afdf0dbedc7"
+    },
+    "runId": "ncr-be-local-20261017-r2b",
+    "actor": "LOCAL_REVIEWER",
+    "ordinal": 2,
+    "cap": 1
+  },
+  "originalRunRecord": {
+    "actor": "local",
+    "attempt": 1,
+    "controllerPid": 24620,
+    "deadlineUtc": "2026-10-17T04:45:00+00:00",
+    "elapsedSeconds": 154.984,
+    "enteredUtc": "2026-10-17T03:58:54.136366+00:00",
+    "exitCode": 1,
+    "finishedUtc": "2026-10-17T04:01:29.237836+00:00",
+    "launchAuthoritySha256": "02c2276186a5e2a51155bfd37b28a8c02960bfcabe6a2352d475d366566f21a3",
+    "launchErrorClass": null,
+    "pairedLedgerPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r2b-runtime-20261017\\program-ledger.json",
+    "runId": "ncr-be-local-20261017-r2b",
+    "stage2EnvelopeSha256": "95827e1e1c187763aef91411c2e6c462935a10012ba20f71932061558ae37aad",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdoutSha256": "4744dc77f24ff38257d2d986bf16c7ce000ab1b3b5df0bb24bc7c401c842f3b4",
+    "terminalDisposition": "UNKNOWN_REQUIRES_LOCAL_REVIEW",
+    "termination": "NOT_NEEDED",
+    "timedOut": false,
+    "watchdogSeconds": 1080
+  },
+  "originalDriverProjection": {
+    "ok": false,
+    "elapsedSeconds": 154.016,
+    "failures": [
+      "RuntimeError: browser/engine flow incomplete or ambiguous"
+    ],
+    "counters": {
+      "completed": 0,
+      "evaluateArrivals": 0,
+      "evaluateAttempts": 0,
+      "exports": 0
+    },
+    "providerStarts": 0,
+    "finalRows": [],
+    "effectFenceLedgerCounts": {
+      "workUsed": 18,
+      "cleanupUsed": 5
+    }
+  },
+  "driverProjectionBoundary": "sanitized projection only; original browser/terminal and retained custody bytes govern the result",
+  "actualOutcome": {
+    "cap1Journey": "BLOCKED_ORIGINAL_UNKNOWN",
+    "browserBuilds": 0,
+    "exports": 0,
+    "evaluates": 0,
+    "sqliteRows": 0,
+    "terminalAccepted": false,
+    "actorSlot": "SPENT_ONE_ORIGINAL",
+    "retry": 0
+  },
+  "browserOriginal": {
+    "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\browser.json",
+    "sha256": "c88fe84ba9d2ce31566c989721c86121b589d665001ce63bf5d5305be03bad9a",
+    "bytes": 360
+  },
+  "browserFileOnlyView": {
+    "mode": "owned-profile",
+    "partial": true,
+    "builds": [],
+    "checkpoints": [],
+    "exportPosts": [],
+    "aiPosts": [],
+    "external": [
+      {
+        "host": "fonts.googleapis.com",
+        "method": "GET"
+      }
+    ],
+    "error": "login-url: no completion within 120000ms; outcome UNKNOWN",
+    "teardown": {
+      "contextClose": "OK",
+      "stdinDestroy": "OK"
+    }
+  },
+  "finiteLogDiagnosis": {
+    "webLog": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\web.log",
+      "sha256": "78d979e018967836882cd393646eb033375524aafcc130776dc007b1a0864d37",
+      "bytes": 8477
+    },
+    "commandsLog": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\commands.json",
+      "sha256": "e1367c5e660fe75a2f5fefa94849155e332f347624a2fc911de2ded39beedf1a",
+      "bytes": 31088
+    },
+    "egressLog": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\egress.jsonl",
+      "sha256": "a5629335002080f96b63d9d4e00ac1b832ed8c5af15bb3ec460f1c98a3d61341",
+      "bytes": 3363
+    },
+    "engineLog": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\engine.log",
+      "sha256": "c1116cef0b8164d9c3db3b24d85db546cf57cbe1d500bf21c8e378f9f08d9b65",
+      "bytes": 259
+    },
+    "helperLog": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\helper.log",
+      "sha256": "b2bf23536bafae012c9f2ad0146fa05cd5fa7c70b608312dc3798aefa1b7ca48",
+      "bytes": 78
+    },
+    "observations": [
+      "web.log: GET /login 200 and GET /login?from=%2Fartifacts 200; auth session/providers/csrf GET 200",
+      "web.log: GET /api/artifacts/export 405 and GET /api/governance/evaluate 405 during readiness; terminal protocol records two route-compile HTTPError operations",
+      "web.log: Auth.js CredentialsSignin error; POST /api/auth/callback/credentials? 200 and subsequent GET /api/auth/session 200",
+      "browser.json: login-url no completion within 120000ms, outcome UNKNOWN; underlying credential rejection reason not established by the retained logs"
+    ]
+  },
+  "terminalOriginal": {
+    "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\terminal-evidence.json",
+    "sha256": "b3391ecdcf5a01a540c6adf392523eb683e67102b12cf27c03d388974dd41771",
+    "bytes": 9052
+  },
+  "terminalFileOnlyView": {
+    "preAckDisposition": "NOT_ACCEPTED_UNKNOWN",
+    "child": {
+      "bytes": 360,
+      "claimMatch": true,
+      "confirmed": false,
+      "exit": "NONZERO_EXIT",
+      "sha256": "c88fe84ba9d2ce31566c989721c86121b589d665001ce63bf5d5305be03bad9a",
+      "snapshot": "READ",
+      "teardown": {
+        "contextClose": "OK",
+        "stdinDestroy": "OK"
+      }
+    },
+    "processQuery": "ABSENT",
+    "containerQuery": "ABSENT",
+    "descendantQuery": "ABSENT",
+    "listenerQuery": "ABSENT",
+    "acknowledgment": {
+      "error": null,
+      "readBack": "MATCH",
+      "write": "ACKNOWLEDGED"
+    },
+    "primaryFailures": [
+      "RuntimeError: browser/engine flow incomplete or ambiguous"
+    ],
+    "errors": [],
+    "stageRetained": true,
+    "disposalTarget": "SAFE",
+    "actualDisposal": "NOT_ATTEMPTED"
+  },
+  "currentCustodyFiles": {
+    "browser-binding.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\browser-binding.json",
+      "sha256": "90825592d90a2642e247d0e265902477b61eb31372e3ed6a7c11ccbd6776335a",
+      "bytes": 1398
+    },
+    "browser-fence.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\browser-fence.json",
+      "sha256": "8caec62e8447f195d8d69b89ed653f4f98b77c53decb2269e11fdeafad339cf1",
+      "bytes": 589
+    },
+    "browser.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\browser.json",
+      "sha256": "c88fe84ba9d2ce31566c989721c86121b589d665001ce63bf5d5305be03bad9a",
+      "bytes": 360
+    },
+    "commands.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\commands.json",
+      "sha256": "e1367c5e660fe75a2f5fefa94849155e332f347624a2fc911de2ded39beedf1a",
+      "bytes": 31088
+    },
+    "descendants-before-cleanup.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\descendants-before-cleanup.json",
+      "sha256": "1f6c816eb305f24e94b2deea4385017b08e1aa6d8b4a1edc4ea9d27609d5d3bc",
+      "bytes": 450
+    },
+    "egress.jsonl": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\egress.jsonl",
+      "sha256": "a5629335002080f96b63d9d4e00ac1b832ed8c5af15bb3ec460f1c98a3d61341",
+      "bytes": 3363
+    },
+    "engine.log": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\engine.log",
+      "sha256": "c1116cef0b8164d9c3db3b24d85db546cf57cbe1d500bf21c8e378f9f08d9b65",
+      "bytes": 259
+    },
+    "helper.log": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\helper.log",
+      "sha256": "b2bf23536bafae012c9f2ad0146fa05cd5fa7c70b608312dc3798aefa1b7ca48",
+      "bytes": 78
+    },
+    "journey-input.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\journey-input.json",
+      "sha256": "7fbdce483828dfffb07d66cc729bd1fa2825199fc6df6f31e11e303ea7f6f4a3",
+      "bytes": 2194
+    },
+    "process-roots.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\process-roots.json",
+      "sha256": "e8dbf9b016a9ba5f06b7b735e921c130935376675838429ea110ec349ab8b751",
+      "bytes": 10498
+    },
+    "runner-result.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\runner-result.json",
+      "sha256": "dd10d8fc45969fd5d3cda845801a1da2f8be181dfc096dc88be21dd6af547d6f",
+      "bytes": 25470
+    },
+    "staged-source-manifest.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\staged-source-manifest.json",
+      "sha256": "7e9b3cf85aab3acaa06ae6974c6fb0f013c39a545a6ba71f143c280e2a9b7ce1",
+      "bytes": 194103
+    },
+    "terminal-evidence.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\terminal-evidence.json",
+      "sha256": "b3391ecdcf5a01a540c6adf392523eb683e67102b12cf27c03d388974dd41771",
+      "bytes": 9052
+    },
+    "web.log": {
+      "path": "D:\\CVF_NCR_RUNTIME\\ncr-be-local-20261017-r2b\\custody\\web.log",
+      "sha256": "78d979e018967836882cd393646eb033375524aafcc130776dc007b1a0864d37",
+      "bytes": 8477
+    }
+  },
+  "externalCustodyFiles": {
+    "ncr-be-local-20261017-r2b.spent.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\custody-be-r2b-20261017\\ncr-be-local-20261017-r2b.spent.json",
+      "sha256": "f8cacb7da62d82105d2a065273acaa8f3c9d35580e72f6ea9ec29d6ca3a124f2",
+      "bytes": 220
+    },
+    "ncr-be-local-20261017-r2b.starts.json": {
+      "path": "D:\\CVF_NCR_RUNTIME\\custody-be-r2b-20261017\\ncr-be-local-20261017-r2b.starts.json",
+      "sha256": "224e789989d4991338a8b1be8e09da3e95c642cacff30b537ec46dde054b17d4",
+      "bytes": 2125
+    }
+  },
+  "sourceRelease": {
+    "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\docs\\reviews\\evidence\\ncr-html-body-heading-source-release-20261017.json",
+    "sha256": "c68427b2466c56b1a36a18017fccec352704d0c484b532c030bd29917ec3652a",
+    "bytes": 3157
+  },
+  "terminalGateEvidenceDisposition": "DETACHED_FINAL_RECEIPT_AFTER_UNCHANGED_EXACT2",
+  "claimBoundary": "one spent original synthetic cap1 actor with actual controls PASS and incomplete browser journey; no accepted B-E, provider, business, public or deployment claim",
+  "gateHistoryBeforeFinal": [
+    {
+      "ordinal": 1,
+      "exitCode": 1,
+      "result": "FAIL",
+      "returnSha256": "d205287944e5b77a1900de811792fa15bc74f31944eca975383b0b348a3426ec",
+      "evidenceSha256": "88082cf380ddfc34895bd091cab699240f5310c66481ad4bc50297af1515b082",
+      "rawStdout": {
+        "path": ".cvf/runtime/ncr-be-r2b-runtime-20261017/verifier-preparation/full-gate-attempt1.stdout.log",
+        "sha256": "cc46dd8731b29c6c28b99ae8f52a502f4854eff738bfd01a9350918d4b80e335",
+        "bytes": 14368
+      },
+      "rawStderr": {
+        "path": ".cvf/runtime/ncr-be-r2b-runtime-20261017/verifier-preparation/full-gate-attempt1.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "reason": "four worker documentary predicates and Root-owned source6 mode consistency; original exact2 bytes unchanged during failed gate"
+    }
+  ]
+}

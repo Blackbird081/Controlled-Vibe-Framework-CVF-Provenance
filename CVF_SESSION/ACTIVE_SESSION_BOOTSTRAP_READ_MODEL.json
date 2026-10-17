@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_html_r2b_be_r02_spent_return_pending",
+  "currentMode": "cvf_ncr_html_r2b_be_r02_blocked_spent",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-HTML-B-E-R2B-RUNTIME-20261017. R02 one actual cap1 controls9/26 and Root PURE10 passed; one original runtime spent exit1, login-url120s UNKNOWN, counters0 and childconfirmedfalse, original terminal fourABSENT/ACK retained. No further runtime/native/provider/deletion. Worker exact2 blocked return and unchanged-byte final gate pending under current W; Root repairs only exact6 mode markers after explicit lane yield, then resumes documentary return. Original execution HEAD f9223b1b644aefa5e21d250165d22ec491b76fcc remains frozen in initial/stage2 envelopes, B/W/source18 unchanged. Consume .cvf/runtime/ncr-be-r2b-runtime-20261017/source6-repair-final.json when present for actual metadata-only correction SHA, normal hooks and clean split; that later HEAD is the finalGate/review anchor, never relabelled execution HEAD. Root then independently runs pre-frozen PURE11 once and closes actual blocked first result exact13 plus actual-SHA6. BE-R01/S11/Q04 immutable; BE-R02/mechanical B-E open; gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R2B-RUNTIME-20261017. BE-R02 paired invocation spent blocked; retain actual first outcome; consume docs/reviews/CVF_NCR_HTML_B_E_R2B_RUNTIME_LOCAL_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-b-e-r2b-runtime-local-20261017.json. Next Local planning only from verified first evidence. No automatic source patch, cap refill, runtime/native/provider, cleanup, stage deletion, public or deploy grant. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Consume .cvf/runtime/ncr-be-r2b-runtime-20261017/final-result.json when present for actual committed exact13/6 finality; until it exists material/actual-SHA continuity and clean split finality are pending. Consume fixed finality before interpreting pending-at-review wording; do not repeat closure.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md",
-    "baselineSha256": "f45eb5576d443fc4564c0c2fe82fce0b0288b6023eca701d5ed42aa10d0f9a26",
+    "baselineSha256": "826798f30c0e9a550c77af583f1c938e3104ff706b31f4d41e4c157144f3b8eb",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md",
-    "workOrderSha256": "91ff84d4ad8e64c6e860c27312120e63d17a6cb57158fdaca9d92b342dda8ebf"
+    "workOrderSha256": "5233d85f42cfd50c7da0869736b15fa78110b3a2d3903a30eebfdfe8a633dbce"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

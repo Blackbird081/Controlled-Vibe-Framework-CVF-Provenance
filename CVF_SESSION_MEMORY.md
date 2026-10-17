@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | R02 cap1 runtime spent blocked; original final return and Local review pending |
+| Parent maintenance | BE-R02 paired invocation spent blocked; retain actual first outcome; both R02 programs spent |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_r2b_be_r02_spent_return_pending`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=original blocked return finalization and Local independent review; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=RETURN_REPAIR; decision owner=LOCAL; parked checkpoint=all effect grants spent; provider/deletion remain unadmitted.
+Startup acknowledged: current mode=`cvf_ncr_html_r2b_be_r02_blocked_spent`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local PLAN only; role=INTERNAL_AGENT Local reviewer/closer; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=no effect grant.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_r2b_be_r02_spent_return_pending`
-Current mode: `cvf_ncr_html_r2b_be_r02_spent_return_pending`; previous mode marker: `cvf_ncr_html_r2b_be_r02_dispatched`
+Current mode marker: `cvf_ncr_html_r2b_be_r02_blocked_spent`
+Current mode: `cvf_ncr_html_r2b_be_r02_blocked_spent`; previous mode marker: `cvf_ncr_html_r2b_be_r02_spent_return_pending`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_r2b_be_r02_spent_return_pending`
+Mode: `cvf_ncr_html_r2b_be_r02_blocked_spent`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=REVIEW; BATCH_ID=CVF-NCR-HTML-B-E-R2B-RUNTIME-20261017. R02 one actual cap1 controls9/26 and Root PURE10 passed; one original runtime spent exit1, login-url120s UNKNOWN, counters0 and childconfirmedfalse, original terminal fourABSENT/ACK retained. No further runtime/native/provider/deletion. Worker exact2 blocked return and unchanged-byte final gate pending under current W; Root repairs only exact6 mode markers after explicit lane yield, then resumes documentary return. Original execution HEAD f9223b1b644aefa5e21d250165d22ec491b76fcc remains frozen in initial/stage2 envelopes, B/W/source18 unchanged. Consume .cvf/runtime/ncr-be-r2b-runtime-20261017/source6-repair-final.json when present for actual metadata-only correction SHA, normal hooks and clean split; that later HEAD is the finalGate/review anchor, never relabelled execution HEAD. Root then independently runs pre-frozen PURE11 once and closes actual blocked first result exact13 plus actual-SHA6. BE-R01/S11/Q04 immutable; BE-R02/mechanical B-E open; gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R2B-RUNTIME-20261017. BE-R02 paired invocation spent blocked; retain actual first outcome; consume docs/reviews/CVF_NCR_HTML_B_E_R2B_RUNTIME_LOCAL_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-b-e-r2b-runtime-local-20261017.json. Next Local planning only from verified first evidence. No automatic source patch, cap refill, runtime/native/provider, cleanup, stage deletion, public or deploy grant. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Consume .cvf/runtime/ncr-be-r2b-runtime-20261017/final-result.json when present for actual committed exact13/6 finality; until it exists material/actual-SHA continuity and clean split finality are pending. Consume fixed finality before interpreting pending-at-review wording; do not repeat closure.
 
 ## Parked Checkpoints
 
