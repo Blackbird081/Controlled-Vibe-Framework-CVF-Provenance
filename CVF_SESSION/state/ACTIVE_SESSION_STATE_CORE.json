@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_FIXTURE_CONTROL_2026-10-17.md",
     "workOrderSha256": "6165b48c4371380270bf0eb563803bbc19961f523db953854c29eb90490dd69f"
   },
-  "currentAuthoritySyncReason": "Integrated root contract phase1 fixture-only dispatch material; all source18 frozen; no S12 retry",
+  "currentAuthoritySyncReason": "Integrated root contract phase1 fixture-only dispatch continuity; all source18 frozen; no S12 retry",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
