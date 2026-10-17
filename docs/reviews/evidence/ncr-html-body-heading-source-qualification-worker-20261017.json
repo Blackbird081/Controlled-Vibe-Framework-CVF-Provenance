@@ -1,0 +1,712 @@
+{
+  "schemaVersion": "cvf.ncrHtmlBodyHeadingSourceQualificationWorkerEvidence@1",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "role": {
+    "decisionOwner": "LOCAL",
+    "phase": "EXECUTE",
+    "agentType": "INTERNAL_AGENT",
+    "invocationId": "ncr-body-heading-source-qualification-20261017"
+  },
+  "executionBaseHead": "0ddd3ce34c005239167ba19b781ad73fe44a718a",
+  "outputs": [
+    "docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md",
+    "docs/reviews/evidence/ncr-html-body-heading-source-qualification-worker-20261017.json"
+  ],
+  "releasedAuthority": {
+    "releasePins": {
+      "sha256": "5ca9ae4d6527ccd87904369c16a624951a8b373aff0db91596e3653c816c7b50",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/release-pins.json"
+    },
+    "workOrder": {
+      "sha256": "479778b5a93165906edfec4b161e50d6137f295b7b94efdcfb309528dc3db258",
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md"
+    },
+    "source13": {
+      "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+      "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+      "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+      "scripts/cvf_ncr_html_owned_profile/test_control.py": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+      "scripts/cvf_ncr_html_owned_profile/journey.cjs": "719b3e151ace0a2752786710d29d6eb9fa272285be22c11b05f39498a36c65b0",
+      "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "8c452bd30e51fb0459064a221e93463a4fa3f7355679915d069ac7ef6327592f",
+      "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+      "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+      "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+      "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+      "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+      "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+      "scripts/cvf_ncr_html_owned_profile/source_release.py": "72a8cbb2a28dd015a52f554df772a173d6b1952bce8f6e1448d41e27f4d7efd8"
+    },
+    "acceptedS11": {
+      "localProofReadScope": "SHA256 and selected identity projection only",
+      "localProofSha256": "9d219386fa16cdf9e68d8c1d5d381e74036bdc4bcd66673dece65a2852a6a9",
+      "localProofPath": "docs/reviews/evidence/ncr-html-body-heading-source-local-20261017.json",
+      "completionPath": "docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_COMPLETION_2026-10-17.md",
+      "completionSha256": "5715cd012cf1b4e7a79ffd8f39918cedd541b62d1165830102a47336289fb1d7"
+    },
+    "baseline": {
+      "sha256": "d78e6878937f03e3531866e350de8b59d14e38d8bf1cb6fa796b6ee600a96b3a",
+      "path": "docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md"
+    },
+    "invocationEnvelope": {
+      "sha256": "8b9bcabd1e65005c4d1e214c46deac992550a448502c4a0e5fa44472d8d8571a",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/invocation-envelope.json"
+    },
+    "adjunct5": {
+      "scripts/cvf_ncr_html_effect_fence.py": "f8fb7516417cf194236e4729a8741aaff8356c7996954decf7aba72192c92709",
+      "scripts/run_cvf_ncr_html_effect_driver.py": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+      "scripts/test_cvf_ncr_html_effect_driver.py": "58bc9121890fafa9f172dd740b26544281b8e0caf09faa4881b5ced445e7d5ad",
+      "scripts/cvf_ncr_html_browser_fence.cjs": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+      "scripts/cvf_ncr_html_browser_fence.test.cjs": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf"
+    },
+    "sourceRelease": {
+      "counts": {
+        "union18": 18,
+        "adjunct5": 5,
+        "source13": 13
+      },
+      "scope": "SOURCE_IDENTITY_ONLY",
+      "sha256": "c68427b2466c56b1a36a18017fccec352704d0c484b532c030bd29917ec3652a",
+      "sourceIdentityResult": "PASS",
+      "path": "docs/reviews/evidence/ncr-html-body-heading-source-release-20261017.json"
+    }
+  },
+  "preparation": {
+    "filePreparation": {
+      "sha256": "b3c098c8d0bff011f70c2c9ff3731ab17d7ef6b0f8d92fe55671f694c25756ca",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/file-preparation.json",
+      "productOrProviderStarts": 0,
+      "nativeOrUtilityStarts": 0,
+      "scope": "FILE_HASH_AND_DIRECTORY_METADATA_ONLY",
+      "observedAt": "2026-10-17T02:16:35.899163Z"
+    },
+    "scaffold": {
+      "sha256": "1b45aa008016dd22abf155f44c1d7430e5f3764867be43a098f8c93fe9cacae6",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/pending-return.md",
+      "bytes": 13394,
+      "lines": 323,
+      "generatedAndShapeCheckedBeforeEffects": true,
+      "fullContentsInspectedAfterEffects": true
+    },
+    "programPreparation": {
+      "adaptation": "ADAPTED_WITH_REASON; worker did not edit released programs",
+      "sha256": "ca130f73d48c18904b9f22c35ff24c8c748b980a72d0868ba1a76199b9b9163f",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/program-preparation.json"
+    }
+  },
+  "sourcePrograms": {
+    "driver": {
+      "sha256": "02408bd1b44fdbac153c9bbde2d79b1bff4082badfe916c0cf05e921dd15361d",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/driver.py"
+    },
+    "dockerQualifier": {
+      "sha256": "417464d329bfd82adeae7941a9c891c4799002d99e05b729daa0a5cfbe55957b",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/qualify_docker.py"
+    },
+    "launcher": {
+      "sha256": "16ca0c585063907e383c80b1c15ab94555c86e6211834d55b8fcd8b51a7b2bee",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/launch_controls.py"
+    },
+    "workerDidNotEdit": true
+  },
+  "actualControls": {
+    "invocation": "cap2-actual-71fe14416b3478ae",
+    "actor": "IMPLEMENTATION_WORKER",
+    "watchdogExpired": false,
+    "rawStderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker-actual.stderr.txt"
+    },
+    "actualChildren": 26,
+    "watchdogSeconds": 90,
+    "runtimeEffects": 0,
+    "childLedger": {
+      "sha256": "9c91542568e5d9422b9997e57cd4e72488c13af0f71a6f2777619f8fb80626bc",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/cap2-actual-71fe14416b3478ae/child-ledger.json"
+    },
+    "runner": "SUBPROCESS",
+    "status": "PASS",
+    "schema": "cvf.ncrHtmlInertControls@3",
+    "elapsedSeconds": 1.797,
+    "substituteStarts": 26,
+    "rawStdout": {
+      "sha256": "2d3256f05a691543ec0f36c73962d2a08b37d28017baab3e7f8dcd5a570bdab3",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker-actual.stdout.txt"
+    },
+    "chargedSlot": "worker-actual",
+    "summary": {
+      "sha256": "3b29ef4b72ec3143aabf746bb267dbf3cd0cf5fc8f9f1a66d23af8e707df7b62",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/cap2-actual-71fe14416b3478ae/summary.json"
+    },
+    "fakeCalls": 0,
+    "receipt": {
+      "rawSha256": "653ccf43f1ee117fc43be9ba1e5aa1e787c5010fc71170e2dbf99a9543e52850",
+      "canonicalSha256": "653ccf43f1ee117fc43be9ba1e5aa1e787c5010fc71170e2dbf99a9543e52850",
+      "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/cap2-actual-71fe14416b3478ae/receipt.json"
+    },
+    "exitCode": 0,
+    "cap": 2,
+    "passedCases": 9,
+    "chargeCount": 1
+  },
+  "dockerReadiness": {
+    "sha256": "fbfa3ff9b0524a08e65408845640ca6b3c168d2ca77136f9c4d0ec4e9657ed17",
+    "providerCalls": 0,
+    "imageMutation": 0,
+    "rawStdoutSha256": "6e12806b6d99f20c5a9445651ed5d6a277d94405e89c72d97bdaeff986670de7",
+    "elapsedSeconds": 0.4529999999795109,
+    "timestampUtc": "2026-10-17T02:31:31.72Z",
+    "result": "PASS_CURRENT_READINESS_ONLY",
+    "rawStderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "containerStarts": 0,
+    "timestampUnix": 1792204291.7201746,
+    "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/docker-readiness.json",
+    "tool": {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+      "sha256": "6c699720bb9523dedb9eb5d22a49951ea9210dbdb1314a3554029eee9be76896"
+    },
+    "queryCount": 4,
+    "queries": [
+      {
+        "ordinal": 1,
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+          "context",
+          "show"
+        ],
+        "state": "FINISHED",
+        "timeoutSeconds": 12,
+        "exit": 0,
+        "stdout": "desktop-linux",
+        "stderr": ""
+      },
+      {
+        "ordinal": 2,
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+          "--context",
+          "desktop-linux",
+          "context",
+          "inspect",
+          "desktop-linux",
+          "--format",
+          "{{(index .Endpoints \"docker\").Host}}"
+        ],
+        "state": "FINISHED",
+        "timeoutSeconds": 12,
+        "exit": 0,
+        "stdout": "npipe:////./pipe/dockerDesktopLinuxEngine",
+        "stderr": ""
+      },
+      {
+        "ordinal": 3,
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+          "--context",
+          "desktop-linux",
+          "version",
+          "--format",
+          "{{.Server.Os}}|{{.Server.Arch}}|{{.Server.Version}}"
+        ],
+        "state": "FINISHED",
+        "timeoutSeconds": 12,
+        "exit": 0,
+        "stdout": "linux|amd64|29.8.2",
+        "stderr": ""
+      },
+      {
+        "ordinal": 4,
+        "argv": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+          "--context",
+          "desktop-linux",
+          "image",
+          "inspect",
+          "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+          "--format",
+          "{{.Id}}|{{.Os}}|{{.Architecture}}"
+        ],
+        "state": "FINISHED",
+        "timeoutSeconds": 12,
+        "exit": 0,
+        "stdout": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294|linux|amd64",
+        "stderr": ""
+      }
+    ]
+  },
+  "programLedger": {
+    "path": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/program-ledger.json",
+    "actions": {
+      "worker-actual": {
+        "status": "PASS",
+        "actor": "INTERNAL_AGENT_WORKER",
+        "mode": "actual",
+        "chargedAt": 1792204278.4906774,
+        "watchdogSeconds": 90,
+        "expectedActualChildren": 26,
+        "pinsSha256": "5ca9ae4d6527ccd87904369c16a624951a8b373aff0db91596e3653c816c7b50",
+        "driverSha256": "02408bd1b44fdbac153c9bbde2d79b1bff4082badfe916c0cf05e921dd15361d",
+        "command": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-body-heading-source-qualification-20261017\\worker\\driver.py",
+          "--mode",
+          "actual",
+          "--pins",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-body-heading-source-qualification-20261017\\release-pins.json",
+          "--driver-sha",
+          "02408bd1b44fdbac153c9bbde2d79b1bff4082badfe916c0cf05e921dd15361d"
+        ],
+        "exit": 0,
+        "watchdogExpired": false,
+        "elapsedSeconds": 1.797000000020489,
+        "stdoutSha256": "2d3256f05a691543ec0f36c73962d2a08b37d28017baab3e7f8dcd5a570bdab3",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "summaryPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-body-heading-source-qualification-20261017\\worker\\cap2-actual-71fe14416b3478ae\\summary.json",
+        "summarySha256": "3b29ef4b72ec3143aabf746bb267dbf3cd0cf5fc8f9f1a66d23af8e707df7b62",
+        "receiptPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-body-heading-source-qualification-20261017\\worker\\cap2-actual-71fe14416b3478ae\\receipt.json",
+        "receiptSha256": "653ccf43f1ee117fc43be9ba1e5aa1e787c5010fc71170e2dbf99a9543e52850"
+      },
+      "docker-readiness": {
+        "status": "PASS_CURRENT_READINESS_ONLY",
+        "chargedAt": 1792204291.7201746,
+        "pinsSha256": "5ca9ae4d6527ccd87904369c16a624951a8b373aff0db91596e3653c816c7b50",
+        "queryCeiling": 4,
+        "queries": [
+          {
+            "ordinal": 1,
+            "argv": [
+              "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+              "context",
+              "show"
+            ],
+            "state": "FINISHED",
+            "timeoutSeconds": 12,
+            "exit": 0,
+            "stdout": "desktop-linux",
+            "stderr": ""
+          },
+          {
+            "ordinal": 2,
+            "argv": [
+              "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+              "--context",
+              "desktop-linux",
+              "context",
+              "inspect",
+              "desktop-linux",
+              "--format",
+              "{{(index .Endpoints \"docker\").Host}}"
+            ],
+            "state": "FINISHED",
+            "timeoutSeconds": 12,
+            "exit": 0,
+            "stdout": "npipe:////./pipe/dockerDesktopLinuxEngine",
+            "stderr": ""
+          },
+          {
+            "ordinal": 3,
+            "argv": [
+              "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+              "--context",
+              "desktop-linux",
+              "version",
+              "--format",
+              "{{.Server.Os}}|{{.Server.Arch}}|{{.Server.Version}}"
+            ],
+            "state": "FINISHED",
+            "timeoutSeconds": 12,
+            "exit": 0,
+            "stdout": "linux|amd64|29.8.2",
+            "stderr": ""
+          },
+          {
+            "ordinal": 4,
+            "argv": [
+              "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+              "--context",
+              "desktop-linux",
+              "image",
+              "inspect",
+              "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+              "--format",
+              "{{.Id}}|{{.Os}}|{{.Architecture}}"
+            ],
+            "state": "FINISHED",
+            "timeoutSeconds": 12,
+            "exit": 0,
+            "stdout": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294|linux|amd64",
+            "stderr": ""
+          }
+        ],
+        "elapsedSeconds": 0.4529999999795109
+      }
+    },
+    "actionKeys": [
+      "worker-actual",
+      "docker-readiness"
+    ],
+    "dockerQueryCeiling": 4,
+    "ceiling": 2,
+    "retryCount": 0,
+    "sha256": "6ff096f49974aff0f4a4ab5e17962a51dd45df5a6f6300ec6cf7c6470e823161",
+    "actualChildCeiling": 26,
+    "actualMatrixCeiling": 1
+  },
+  "tools": {
+    "nodeDiscovery": {
+      "explicitPhysicalDirectory": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0",
+      "exactSpelling": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.EXE",
+      "nativeStarts": 0
+    },
+    "modules": {
+      "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web\\node_modules",
+      "isDirectory": true,
+      "enumerated": false
+    },
+    "forbiddenEnvironmentNamePresence": {
+      "CVF_NCR_ALLOWED_PORTS": false,
+      "CVF_HCR_EGRESS_LOG": false,
+      "CVF_LOCAL_REPAIR_SUBSTITUTE": false,
+      "NODE_OPTIONS": false,
+      "NODE_PATH": false,
+      "PWDEBUG": false,
+      "DOCKER_HOST": false,
+      "DOCKER_CONTEXT": false
+    },
+    "chrome": {
+      "path": "C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium-1208\\chrome-win64\\chrome.exe",
+      "sha256": "ff0c99fc5bb2301cad77930aa76e5354cf2a5fefb7efdcf3b3bc10ba0550c015",
+      "bytes": 3006464,
+      "reparseAncestors": [],
+      "scope": "FILE_IDENTITY_ONLY_NOT_OPERATIONAL_READINESS"
+    },
+    "physical": {
+      "node": {
+        "path": "C:\\Users\\DELL\\AppData\\Local\\nvm\\v22.17.0\\node.exe",
+        "sha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+        "bytes": 85219968,
+        "reparseAncestors": [],
+        "scope": "FILE_IDENTITY_ONLY_NOT_OPERATIONAL_READINESS"
+      },
+      "docker": {
+        "path": "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+        "sha256": "6c699720bb9523dedb9eb5d22a49951ea9210dbdb1314a3554029eee9be76896",
+        "bytes": 44829104,
+        "reparseAncestors": [],
+        "scope": "FILE_IDENTITY_ONLY_NOT_OPERATIONAL_READINESS"
+      },
+      "git": {
+        "path": "C:\\Program Files\\Git\\cmd\\git.exe",
+        "sha256": "7b7971dd13f0c3a284e538601f2f9770b3a87dfaccb5fb52d68141c67ed22364",
+        "bytes": 46920,
+        "reparseAncestors": [],
+        "scope": "FILE_IDENTITY_ONLY_NOT_OPERATIONAL_READINESS"
+      },
+      "taskkill": {
+        "path": "C:\\Windows\\System32\\taskkill.exe",
+        "sha256": "1249717315fc8f4d2df17d5db9da0444795fdb9fb83dfb1f763c3f39282244f7",
+        "bytes": 118784,
+        "reparseAncestors": [],
+        "scope": "FILE_IDENTITY_ONLY_NOT_OPERATIONAL_READINESS"
+      },
+      "tasklist": {
+        "path": "C:\\Windows\\System32\\tasklist.exe",
+        "sha256": "62800679c55682f2f5f38b3df9080d12480bea78b5b8476eace9df014f353b14",
+        "bytes": 122880,
+        "reparseAncestors": [],
+        "scope": "FILE_IDENTITY_ONLY_NOT_OPERATIONAL_READINESS"
+      },
+      "netstat": {
+        "path": "C:\\Windows\\System32\\NETSTAT.EXE",
+        "sha256": "23ca543c858f0e725fd2c7f142bfc9ddbf3b7e4320737c6e904cb9cae6fc7c6d",
+        "bytes": 69632,
+        "reparseAncestors": [],
+        "scope": "FILE_IDENTITY_ONLY_NOT_OPERATIONAL_READINESS"
+      },
+      "python": {
+        "path": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "sha256": "5f7b89a612c9b8af1d6456cdfcd1dbe5ca630849e79aebced9bee9a6694952ec",
+        "bytes": 103192,
+        "reparseAncestors": [],
+        "scope": "FILE_IDENTITY_ONLY_NOT_OPERATIONAL_READINESS"
+      },
+      "cmd": {
+        "path": "C:\\Windows\\System32\\cmd.exe",
+        "sha256": "15cd209c995b7d3009c91ca40892d5b8f1fb162f3e5f10716642ea278e8e0d7b",
+        "bytes": 339968,
+        "reparseAncestors": [],
+        "scope": "FILE_IDENTITY_ONLY_NOT_OPERATIONAL_READINESS"
+      }
+    },
+    "nodeInvoked": false
+  },
+  "preImplementationGate": {
+    "checks": 88,
+    "status": "PASS",
+    "sha256": "6c54666399e689cdbedfd74fe61f14ed4239a2355fb12634f48277d314eb60ba",
+    "durationSeconds": 9.524,
+    "path": ".cvf/runtime/autorun-receipts/pre-implementation.json"
+  },
+  "readMap": {
+    "startup": [
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+      "AGENT_HANDOFF_V63_2026-09-18.md",
+      "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md",
+      "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md"
+    ],
+    "limits": [
+      "Selected sections only; no full session aggregate",
+      "No secrets or environment values",
+      "No Local private oracle content read or execution",
+      "No external research/provider call"
+    ],
+    "sourceCodeRead": [
+      "profile.py: control_issue/admit_controls/admit_sources",
+      "execution.py: Collector/finalize",
+      "source_release.py: source admission",
+      "test_control.py: run_case/receipt_of"
+    ],
+    "currentAuthority": [
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md",
+      "docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md",
+      "docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_COMPLETION_2026-10-17.md",
+      "docs/reviews/evidence/ncr-html-body-heading-source-local-20261017.json (hash and selected identity projection only)",
+      "docs/reviews/evidence/ncr-html-body-heading-source-release-20261017.json (selected sourceIdentity projection only)"
+    ],
+    "checkerSectionsRead": [
+      "check_work_order_acceptance_ledger.py",
+      "check_work_order_dispatch_quality.py",
+      "check_work_order_dispatch_quality_core.py",
+      "check_work_order_dispatch_quality_artifacts.py",
+      "check_gate_to_role_closeability.py",
+      "check_worker_return_quality_gate.py",
+      "check_independent_review_probe_admission.py",
+      "check_delta_execution_claim_boundary.py",
+      "check_review_cost_control.py"
+    ]
+  },
+  "shellDiagnostics": [
+    {
+      "type": "READ_ONLY_LOCAL_SHELL_EXPRESSION",
+      "count": 1,
+      "description": "PSCustomObject.Contains emitted a non-terminating InvalidOperation; first expression also used absent pins.programs and false hash flags; corrected top-level property projection verified program hashes before effect."
+    },
+    {
+      "type": "READ_ONLY_LOCAL_SHELL_EXPRESSION",
+      "count": 1,
+      "description": "Second PSCustomObject.Contains preflight emitted a non-terminating InvalidOperation; released Docker qualifier independently validated its preconditions and passed once."
+    }
+  ],
+  "toolClassifierBlock": {
+    "recoveryAttempts": 0,
+    "workerQuestions": 0,
+    "eventCount": 0,
+    "disposition": "NO_EVENT",
+    "platformForcedPrompts": 0,
+    "reason": "No tool/classifier/platform denial; diagnostics were local shell expressions."
+  },
+  "independentReview": {
+    "workerExecuted": false,
+    "workerRead": false,
+    "owner": "LOCAL root",
+    "oracleSha256": "d99685ca053e7c3c2fd4ffbef9bbcc1022905083cdf5dc97e14c8d53a997c82a",
+    "disposition": "PENDING_REVIEWER_EXECUTION",
+    "oraclePath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/local_receipt_oracle.py",
+    "postReturnChronology": "Local root reports independent PURE10 PASS on the unchanged cap2 control receipt after the original worker return and before DOCUMENTARY_REPAIR_2; worker did not read or execute the private oracle, and this documentary repair did not rerun it."
+  },
+  "continuity": {
+    "R5R6": "DEFERRED",
+    "R3R4": "OPEN",
+    "LHW24": "UNCHANGED",
+    "parentScecOrdinal": 2,
+    "parentCounters": [
+      2,
+      0,
+      2,
+      0
+    ],
+    "parentGeneration": 9,
+    "freeze": "UNCHANGED",
+    "parentBlockers": 2,
+    "priorP4Exclusions": 7,
+    "R1R2": "PARTIAL"
+  },
+  "acceptanceEvidence": {
+    "schemaVersion": "cvf.workOrderAcceptanceEvidence@1.0.0",
+    "executionBaseHead": "0ddd3ce34c005239167ba19b781ad73fe44a718a",
+    "results": [
+      {
+        "requirementId": "REQ-CONTROL",
+        "actualArtifacts": [
+          "docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md",
+          "docs/reviews/evidence/ncr-html-body-heading-source-qualification-worker-20261017.json"
+        ],
+        "proofRefs": [
+          "PROOF-CONTROL"
+        ],
+        "status": "PASS"
+      },
+      {
+        "requirementId": "REQ-DOCKER",
+        "actualArtifacts": [
+          "docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md",
+          "docs/reviews/evidence/ncr-html-body-heading-source-qualification-worker-20261017.json"
+        ],
+        "proofRefs": [
+          "PROOF-DOCKER"
+        ],
+        "status": "PASS"
+      },
+      {
+        "requirementId": "REQ-RETURN",
+        "actualArtifacts": [
+          "docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md",
+          "docs/reviews/evidence/ncr-html-body-heading-source-qualification-worker-20261017.json"
+        ],
+        "proofRefs": [
+          "PROOF-RETURN"
+        ],
+        "status": "PASS"
+      }
+    ]
+  },
+  "workerReturnFastGate": {
+    "firstDraft": {
+      "stdoutPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/first-fast-gate.stdout.txt",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/first-fast-gate.stderr.txt",
+      "exitCode": 1,
+      "stdoutSha256": "d9541fbdbb7aa105f2a656a2c6c215ffe92eccf76a8438e6a56ce51892bc6aa3",
+      "durationSeconds": 7.42,
+      "diagnostics": [
+        "Epistemic block needed Evidence Comparison heading",
+        "Delta action evidence needed ACTION_EVIDENCE_PRESENT token",
+        "SCEC initial resolutionEvidence must be empty",
+        "retrospective candidate must be canonical token",
+        "Internal source must be one existing governed path",
+        "learning disposition needed canonical defect/lane/disposition/N/A tokens",
+        "required worker-return gate result line was pending"
+      ],
+      "disposition": "one documentary correction before final gate",
+      "result": "FAIL"
+    },
+    "final": "Original terminal fast-gate PASS is preserved as historical evidence; later LOCAL root full-closure hook found corpus_na_reason_missing. Post-repair v2 command outcome and exact logs are recorded in detached final-return-hash-v2.json."
+  },
+  "claimBoundary": {
+    "nextOwner": "LOCAL independent PURE receipt/source/actor/digest disposition",
+    "productRuntimeReadiness": "NOT_ESTABLISHED",
+    "scope": "current fixed-source cap2 inert controls and timestamped Docker4 read-only readiness"
+  },
+  "documentaryRepair": {
+    "round": "DOCUMENTARY_REPAIR_2",
+    "owner": "LOCAL root reopened; worker role INTERNAL_AGENT; decision owner LOCAL",
+    "trigger": {
+      "type": "LOCAL_CLOSURE_FULL_HOOK_FAILURE",
+      "checker": "governance/compat/check_corpus_completeness_report_integrity.py",
+      "violation": "corpus_na_reason_missing",
+      "message": "NOT_APPLICABLE_WITH_REASON requires a visible reason on the Corpus verdict line",
+      "logPath": ".cvf/runtime/ncr-q04-root-20261017/material-commit.stderr.log",
+      "logLine": 137
+    },
+    "custody": {
+      "firstLocalClosurePreserved": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/first-local-closure-preserved",
+      "originalWorkerReturnSha256": "6b6bdadf7a06fa234451348abf2453b0aaf2a0a6defbc3aec77f36b8e3379290",
+      "originalEvidenceSha256": "75e7050abde484160e60b744b47727a482e8dd26b73524836acc93d1dbb10614",
+      "originalDetachedReceiptPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/final-return-hash.json",
+      "originalDetachedReceiptSha256": "224f34d096d4e052ed9068b85db175df4905de1609ff598db7d40a5d8d92bd29",
+      "v2DetachedReceiptPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/final-return-hash-v2.json"
+    },
+    "repair": {
+      "path": "docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md",
+      "change": "Placed the already documented truthful named-file/no-repository-corpus reason on the Corpus verdict line.",
+      "exactOutputPaths": [
+        "docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md",
+        "docs/reviews/evidence/ncr-html-body-heading-source-qualification-worker-20261017.json"
+      ],
+      "effectsRepeated": false,
+      "sourceOrProgramChanged": false,
+      "controlsOrDockerRepeated": false
+    },
+    "targetedCorpusCheck": {
+      "checker": "governance/compat/check_corpus_completeness_report_integrity.py",
+      "defaultRangeDiagnostic": {
+        "command": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -B governance/compat/check_corpus_completeness_report_integrity.py --enforce --json",
+        "startedUtc": "2026-10-17T03:01:19.281Z",
+        "endedUtc": "2026-10-17T03:01:21.316Z",
+        "elapsedSeconds": 2.028,
+        "exitCode": 0,
+        "compliant": true,
+        "rangeSource": "merge-base(origin/main,HEAD)",
+        "scopeDisposition": "Unintended default branch range; broader path enumeration is retained as a cost/scope diagnostic and not counted as exact2 evidence. No further broad corpus run.",
+        "stdoutPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/documentary-repair-v2-corpus.stdout.txt",
+        "stdoutSha256": "72fe3a52dff14bcdad5acbd3b383965e8a3fa3608bd711f69b092cb277baaa26",
+        "stderrPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/documentary-repair-v2-corpus.stderr.txt",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "exact2": {
+        "command": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -B governance/compat/check_corpus_completeness_report_integrity.py --base HEAD --head HEAD --enforce --json",
+        "startedUtc": "2026-10-17T03:01:39.909Z",
+        "endedUtc": "2026-10-17T03:01:40.939Z",
+        "elapsedSeconds": 1.026,
+        "exitCode": 0,
+        "compliant": true,
+        "base": "HEAD",
+        "head": "HEAD",
+        "changedPaths": [
+          "docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md",
+          "docs/reviews/evidence/ncr-html-body-heading-source-qualification-worker-20261017.json"
+        ],
+        "checkedPathCount": 10,
+        "missingFiles": 0,
+        "violationCount": 0,
+        "stdoutPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/documentary-repair-v2-corpus-exact2.stdout.txt",
+        "stdoutSha256": "9c23211902e018041ba4e476e1c92a27092d7320ddc63ca32e039ceea265b48f",
+        "stderrPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/documentary-repair-v2-corpus-exact2.stderr.txt",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "rangeSource": "explicit:--base"
+      }
+    },
+    "postRepairWorkerReturnFastGate": {
+      "command": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md --max-return-lines 450 --max-return-bytes 64000",
+      "stdoutPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/final-fast-gate-v2.stdout.txt",
+      "stderrPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/final-fast-gate-v2.stderr.txt",
+      "result": "Outcome and measured WR/WE hashes are recorded in detached v2 receipt after terminal invocation.",
+      "priorFullGateAttempt": {
+        "ordinal": 1,
+        "command": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md --max-return-lines 450 --max-return-bytes 64000",
+        "startedUtc": "2026-10-17T03:02:34.104Z",
+        "endedUtc": "2026-10-17T03:02:42.145Z",
+        "elapsedSeconds": 8.038,
+        "gateReportedElapsedSeconds": 7.42,
+        "exitCode": 1,
+        "result": "FAIL",
+        "stdoutPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/final-fast-gate-v2.stdout.txt",
+        "stdoutSha256": "ad8b6830b99eee089bd5d31d74a273e5d1cc83719892ae5a57cfecd6fb3cfd35",
+        "stderrPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/final-fast-gate-v2.stderr.txt",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "measuredArtifactHashesBefore": {
+          "workerReturn": "c50adb2f21f7b7d43849e2d85b211e5f8a33107d4cb49884e8bff66fc4b99ee6",
+          "evidence": "3211bf7931d023aa543a169c78ae8aa1119d2ff4ea4d5eb4df91ae8549847dfc"
+        },
+        "measuredArtifactHashesAfter": {
+          "workerReturn": "c50adb2f21f7b7d43849e2d85b211e5f8a33107d4cb49884e8bff66fc4b99ee6",
+          "evidence": "3211bf7931d023aa543a169c78ae8aa1119d2ff4ea4d5eb4df91ae8549847dfc"
+        },
+        "failure": {
+          "hook": "work-order dispatch quality [12/70]",
+          "diagnostic": "artifact records an empty `--base HEAD --head HEAD` verification range; use actual base/head range or autorun wrapper default for closure",
+          "disposition": "Exact exact2 corpus argv retained in companion evidence; WR command evidence changed to describe current working-tree scope without presenting it as a commit verification range."
+        }
+      },
+      "terminalAttempt2": {
+        "ordinal": 2,
+        "command": "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md --max-return-lines 450 --max-return-bytes 64000",
+        "stdoutPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/final-fast-gate-v2-attempt2.stdout.txt",
+        "stderrPath": ".cvf/runtime/ncr-body-heading-source-qualification-20261017/worker/final-fast-gate-v2-attempt2.stderr.txt",
+        "result": "Outcome and pre/post WR/WE hashes will be sealed in detached v2 receipt after terminal invocation."
+      }
+    },
+    "chronology": "Original return recorded PURE pending. Local root reports PURE10 passed on the unchanged control receipt before this documentary reopen. Local full closure then found corpus_na_reason_missing; the corpus repair and bound v2 gate are separate."
+  }
+}

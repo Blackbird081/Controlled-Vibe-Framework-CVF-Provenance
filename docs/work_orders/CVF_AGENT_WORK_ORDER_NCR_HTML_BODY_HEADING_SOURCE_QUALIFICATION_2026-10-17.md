@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BOUNDED_QUALIFICATION_WITH_PROCEDURE_LIMITS
 Date: 2026-10-17
 Batch ID: CVF-NCR-HTML-BODY-HEADING-SOURCE-QUALIFICATION-20261017
 Dispatch inspection base: 2cde0f2937763b3ee722273b68a9a189b6664504
@@ -409,8 +409,12 @@ If a tool/classifier rejects an action, retain the exact secret-safe event, reco
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: bounded qualification authority, roadmap support/progress ledger and exact6 source/generated current mode/next/raw authority continuity only; no source/checker/hook/carrier semantics.
+Authorized guard-maintenance scope: qualification evidence/authority/roadmap and source6 current raw-hash/mode/next continuity only; no source/checker/hook semantics.
 Protected paths:
+- `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-body-heading-source-qualification-worker-20261017.json`
+- `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-body-heading-source-qualification-local-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
@@ -420,8 +424,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: current autonomous continuation and explicit lasting-support roadmap tracking; Local selected finite control/Docker4 qualification.
-Rollback boundary: listed paths only; frozen source18/source-release/accepted source B/W and old evidence/grants/stages/parent/freeze/exclusions/parked effects unchanged.
+Operator authorization: current autonomous qualification review/closure and standing Local stewardship.
+Rollback boundary: listed metadata paths only; frozen worker2/execution authority preimages/source18/accepted source B/W/release/old grants/negative custody and gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; prior runtime grants spent or retired, never replayed.
 
 ## Scaffold Provenance Block
 
@@ -485,7 +489,7 @@ Escalation condition: missing authority/tool/fixed-payload/source/slot/clean-sta
 
 | Consumer class | Interface or owner surface | Authority and risk boundary | Evidence | Adapter boundary | Disposition |
 |---|---|---|---|---|---|
-| INTERNAL_AGENT | fixed driver/launcher/Docker qualifier and exact2 | unchanged source13/adjunct5 current qualification | fixed pins/raw actor proof | no source interface change | EXISTING_INTERNAL_OWNER |
+| INTERNAL_AGENT | fixed driver/launcher/Docker qualifier and exact2 | unchanged source13/adjunct5 current qualification | fixed pins/raw actor proof | no source interface change | IMPLEMENTED |
 | EXTERNAL_AGENT_CLI_MCP | no selected surface | no remote/provider/adapter grant | internal packet only | external lane deferred | DEFERRED_WITH_REASON |
 
 ## External Knowledge Intake Routing
@@ -513,26 +517,26 @@ Provider-specific memory is an execution aid, never canonical source or acceptan
 
 ## Agent Operation Trace Block
 
-| Field | Value |
+| Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT orchestrator/reviewer/steward |
+| Actor | Local INTERNAL_AGENT reviewer/closer/steward |
 | Provider or surface | private shared workspace |
 | Session or invocation | ncr-body-heading-source-qualification-material-20261017 |
 | Working directory | repository root |
-| Command or tool surface | root-reviewed fixed payload/metadata preparation, roadmap support ledger, current authority generation and checked normal commits |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator continuation and lasting-support roadmap clarification; new bounded qualification pair |
-| Before status evidence | HEAD 2cde0f2937763b3ee722273b68a9a189b6664504; clean worktree; git status --short empty; original source18/source authority remain frozen; no effect program started |
-| After status evidence | conditional qualification release; current cap2 and Docker proof pending; source/product/provider unchanged |
-| Diff evidence | exact9 material manifest |
-| Approval boundary | 26 inert Python cases and4 local Docker reads only after committed bound admission; no product/cap1/deletion |
-| Claim boundary | support deliverables tracked; current qualification not yet executed |
+| Command or tool surface | consume frozen worker proof and Local pure10; metadata closure/canonical generation; normal gates/commits separately owned by root |
+| Target paths | `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-body-heading-source-qualification-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-body-heading-source-qualification-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | qualification order and standing Local closure/steward authority |
+| Before status evidence | HEAD 0ddd3ce34c005239167ba19b781ad73fe44a718a; terminal worker captured, lane released |
+| After status evidence | bounded qualification accepted; BE-R01/R02 product exits open; final committed-range proof pending |
+| Diff evidence | exact13 material manifest |
+| Approval boundary | metadata/evidence only; no source/cap1/product/provider/deletion |
+| Claim boundary | qualification is not product B-E or AI governance efficacy |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-body-heading-source-qualification-material-20261017 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
-| Deletion or rename disposition | none; source/old grants/proofs/stages retained |
+| Expected manifest | `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-body-heading-source-qualification-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-body-heading-source-qualification-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-body-heading-source-qualification-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-body-heading-source-qualification-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact13 |
+| Deletion or rename disposition | none; old grants/source/proof/custody retained |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -699,10 +703,14 @@ prospective qualification fixed-source qualification only; no effect yet. Once s
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: conditional qualification authority, milestone ledger, current mode/next and generated raw authority hashes align in the same commit.
+Atomicity reason: qualification closure/raw authority/current mode/roadmap and source-generated projection align atomically; following actual-material-SHA source6 separate.
 
 Exact changed manifest:
 
+- `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-body-heading-source-qualification-worker-20261017.json`
+- `docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-body-heading-source-qualification-local-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_2026-10-17.md`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
@@ -713,7 +721,7 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: listed paths only; following actual-material-SHA exact6 continuity remains separate.
+Rollback boundary: listed paths only; no source/effect mutation.
 
 ## Root Adoption Preparation Disclosure
 
@@ -727,3 +735,7 @@ Local consumed valid S11 final receipt and exact hash joins without suite replay
 ## First Packet Gate Repair Disclosure
 
 First changed-packet pre-implementation gate refused two documentary groups: case-sensitive ADIF query label and noncanonical Source Verification columns. Local restored the existing query spelling/full source table and controlled dual-surface dispositions, preserving the original gate and both packet preimages; no source/effect proof was run or retried. Root missed these candidate regressions in its first source review. Existing rules apply; no new checker, waiver or capability credit.
+
+## Local Qualification Disposition
+
+Local accepts bounded current-source qualification using fixed worker actual cap2/Docker4 and independently authored PURE10 proof. All 3 original worker rows PASS; original COMPLETE_PENDING_REVIEW and exact2 bytes frozen. Worker full-gate exit0/8.047s, logSHA256 edfdb6fdd59967eeddecb92abe88a7075a140b7af6919b8938c73f4d7bbe8782. Actual9cases/26inert Python starts, IMPLEMENTATION_WORKER/cap2/SUBPROCESS; receiptSHA256 653ccf43f1ee117fc43be9ba1e5aa1e787c5010fc71170e2dbf99a9543e52850; driver 1.797s, no retry/watchdog expiry. Nine raw command/result/terminal joins retained. Four pinned read-only Docker queries PASS, 0.453s; desktop-linux/local npipe/linux-amd64; server linux|amd64|29.8.2; exact cached image. Timestamp/custody in durable Docker/program ledger; no container/image effect or new capability. Independent PURE10/10 PASS, zero native/utility/casechild starts; raw oracleSHA256 6c71553eefbbe4ec8809f69da7deb12294b66c90e231da8110c3b311fd6e804d; sourceSHA256 d99685ca053e7c3c2fd4ffbef9bbcc1022905083cdf5dc97e14c8d53a997c82a; run exit0/0.266s/logSHA256 5664b618616928bb99a3b29bae0ce088cb4a1dfb82414088d9f802fa9f8dc536. Root preparation F2G: existing source/guard rules were present; two documentary gate groups failed (case-sensitive Resolver query label and noncanonical Source Verification columns), repaired once with preserved failed logs and preimages. Initial repair helper refused absent baseline matrix before writes; two direct component confirmations failed before final correction. Root restored the six-column dual-surface shape and passing source tables; its inherited internal disposition enum was subsequently found noncanonical, then full preimplementation passed. These are ORCHESTRATOR_PACKET_GAP/RULE_EXISTS, with no new capability/checker credit. Ignored aide candidates were reviewed and corrected before adoption; early combined startup output was truncated and followed by targeted predicate reads, not a full-corpus claim. Original S11 source closure remains immutable. Local closure source review found EXISTING_INTERNAL_OWNER outside the four allowed dispositions in CVF_DUAL_AGENT_SURFACE_ACCOUNTING_STANDARD_2026-06-23.md and a missing roadmap matrix. Closed qualification B/W/CP now use IMPLEMENTED for actual internal qualification and retain external DEFERRED_WITH_REASON; roadmap gains the same bounded accounting. Released authority raw bytes are preserved, with the original enum as a documentary procedure limit. No external implementation or runtime scope is expanded. Actual worker gate history exit1/8.038s/logSHA256 ad8b6830b99eee089bd5d31d74a273e5d1cc83719892ae5a57cfecd6fb3cfd35; exit0/8.047s/logSHA256 edfdb6fdd59967eeddecb92abe88a7075a140b7af6919b8938c73f4d7bbe8782. Worker had two read-only PowerShell projection errors before the separate fixed effects; strict programs performed their own preconditions. One documentary return repair followed seven reported packet-shape groups; final reviewer-fast70/70 passed. Actual controls and Docker group each executed once, no retry. Final digest equality is inferred from finalized unchanged bytes/read-only gate, not separately measured before the gate. Original first failed logs are preserved; original complete first candidate bytes were not captured. Source inventory uses noncanonical action/depth labels, source-release field projection was inaccurately named sourceIdentity, and full fixed-program body reads were not demonstrated. Local records these partial-read/documentary limits without manufacturing a history of perfect compliance or rerunning effects. No checker PASS proves understanding. Docker query custody retains the actual program ledger and aggregate outputs, not invented per-query raw streams. Post-return Local full normal hook blocked the first material attempt on corpus_na_reason_missing. Root preserved first Local closure/original exact2/terminal/gates and reopened documentary exact2 only; no effect repeated. Worker moved the existing reason onto the Corpus verdict line. Its first corpus call unintentionally used broader branch scope (retained as cost diagnostic); explicit current-HEAD working-tree corpus check then PASS with exact2 changes. First v2 full bound gate failed on literal range text classification in Markdown; worker retained actual argv in JSON and corrected prose, then final full gate70/70 PASS with BOTH exact2 hashes measured equal before/after. Original v1 digest pre-gate equality was inferred, while v2 is actually measured; do not transfer v2 precision backward. One initial documentary repair plus reopened repair and its literal correction make three worker documentary repair passes total. Root independent PURE10 was executed once after original terminal and before this metadata reopen on identical actual receipt/source; its valid result is reused, not rerun. Root first closure bound-confirmation scope error and index-only autocrlf restoration correction are preserved; no worker ledger expanded to claim Local files. Current-round dependent finding count6 groups corpus-line placement, dual-surface accounting, root bound-gate scope, unintended corpus range, literal-command classifier collision and index/autocrlf restoration; original seven initial worker groups belong to round1. Pre-repair audit was performed but missed released documentary defects; its completion token is not a claim of defect-free audit. No retroactive perfect procedure or capability credit for metadata repairs. BE-Q04 checked bounded; BE-R01/R02 open. No cap1 actual until accepted future cap2 product predecessor. Fixed source18/accepted body-heading source B/W/source release remain immutable. Released execution authority preimages and pins are retained; current closed qualification hashes are metadata only. Fixed Local closure paths: docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_QUALIFICATION_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-body-heading-source-qualification-local-20261017.json. No final Local proof digest is embedded here; no hash back-edge.
