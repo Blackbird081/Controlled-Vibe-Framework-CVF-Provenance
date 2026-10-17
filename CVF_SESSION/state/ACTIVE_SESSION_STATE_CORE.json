@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md",
     "workOrderSha256": "6e80ad5dc1e698731f6723f6c4e9b8379c070a2288e16b9815dc895d0c24c6f2"
   },
-  "currentAuthoritySyncReason": "R1F fresh current-source cap2 conditional runtime material; accepted source/Q05 immutable",
+  "currentAuthoritySyncReason": "R1F fresh current-source cap2 conditional runtime continuity; accepted source/Q05 immutable",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
