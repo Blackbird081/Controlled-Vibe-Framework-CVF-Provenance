@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md",
     "workOrderSha256": "6935a6ad485471cf118370ec5c8914f1bc390ea9d9626931525ab89d417aaee2"
   },
-  "currentAuthoritySyncReason": "S14 integrated source phase dispatch material after actual S13 fixture closure; no product effect",
+  "currentAuthoritySyncReason": "S14 integrated source phase dispatch continuity after actual S13 fixture closure; no product effect",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
