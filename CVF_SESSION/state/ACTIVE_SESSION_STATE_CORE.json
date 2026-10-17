@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md",
-    "baselineSha256": "784154e1022bc84637a3e2a0a53e8f64654f331026b993068c3a42563184771c",
+    "baselineSha256": "0ae7fb745f0d583d38ca83e7d5cad032394b81235c57fb2010184f694d78f2bb",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md",
-    "workOrderSha256": "0e71e1d34d7ea3890d40bc8d9c4de8563a0ec828447e52216a82e6fb1f165f41"
+    "workOrderSha256": "d9a7427a356bcf48ef6577bdf0e0eb70a4bf93608ea32bc907adea65426790d7"
   },
-  "currentAuthoritySyncReason": "Q05 separate conditional qualification continuity; source release and old phase budgets immutable",
+  "currentAuthoritySyncReason": "Bounded Q05 qualification material; S14 source18/source authority/release immutable; runtime separately governed.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_login_readiness_qualification_dispatched",
-  "previousMode": "cvf_ncr_html_login_readiness_source_phase_accepted_bounded",
+  "currentMode": "cvf_ncr_html_login_readiness_qualification_accepted_bounded",
+  "previousMode": "cvf_ncr_html_login_readiness_qualification_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

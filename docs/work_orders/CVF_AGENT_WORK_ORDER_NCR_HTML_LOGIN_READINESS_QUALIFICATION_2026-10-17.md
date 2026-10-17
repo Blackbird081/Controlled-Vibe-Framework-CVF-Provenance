@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BOUNDED_QUALIFICATION_WITH_PROCEDURE_LIMITS
 Date: 2026-10-17
 Batch ID: CVF-NCR-HTML-LOGIN-READINESS-QUALIFICATION-20261017
 Dispatch inspection base: fc9b7545806c3b979251a1c238339cc3bac2c353
@@ -408,8 +408,12 @@ If a tool/classifier rejects an action, retain the exact secret-safe event, reco
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact9 qualification metadata/roadmap/source/generated continuity paths; no accepted source/checker/hook mutation.
+Authorized guard-maintenance scope: qualification evidence/authority/roadmap and source6 current raw-hash/mode/next continuity only; no source/checker/hook semantics.
 Protected paths:
+- `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-login-readiness-qualification-worker-20261017.json`
+- `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-login-readiness-qualification-local-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
@@ -419,8 +423,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: user autonomous continuation; Local selects fresh bounded cap2 inert9/26 and exactly4 read-only Docker queries in separate Q05 admission, after normal committed gates.
-Rollback boundary: listed metadata only; S14 accepted source18/authority/release/proof, old grants/stages and parent unchanged.
+Operator authorization: current autonomous qualification review/closure and standing Local stewardship.
+Rollback boundary: listed metadata paths only; frozen worker2/execution authority preimages/source18/accepted source B/W/release/old grants/negative custody and Parent NCR history and accepted S14 source remain governed by their frozen receipts; Q05 alone grants no runtime, cap1, provider, or public outcome..
 
 ## Scaffold Provenance Block
 
@@ -514,24 +518,24 @@ Provider-specific memory is an execution aid, never canonical source or acceptan
 
 | Field | Evidence |
 |---|---|
-| Actor | LOCAL INTERNAL_AGENT dispatcher/reviewer/steward |
+| Actor | Local INTERNAL_AGENT reviewer/closer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | CVF-NCR-HTML-LOGIN-READINESS-QUALIFICATION-20261017:material |
-| Working directory | D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF |
-| Command or tool surface | Root reviewed new fixed payload, metadata/pin preparation, canonical generator and normal committed gates |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator continue and reviewed BE-Q05 plan; separate Local bounded qualification admission |
-| Before status evidence | HEAD fc9b7545806c3b979251a1c238339cc3bac2c353; clean worktree and stage; frozen source18/accepted evidence unchanged |
-| After status evidence | exact9 metadata; effects pending, no qualification outcome |
-| Diff evidence | git diff --name-only and visible untracked union equal exact manifest |
-| Approval boundary | cap2 inert26 plus Docker4 read-only only after bound committed release; product/cap1/provider/native utility/deletion/public excluded |
-| Claim boundary | conditional qualification dispatch only; current-source qualification not yet executed |
+| Session or invocation | ncr-login-readiness-qualification-material-20261017 |
+| Working directory | repository root |
+| Command or tool surface | consume frozen worker proof and Local pure10; metadata closure/canonical generation; normal gates/commits separately owned by root |
+| Target paths | `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-qualification-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-qualification-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | qualification order and standing Local closure/steward authority |
+| Before status evidence | HEAD 686e858929b7146c2575aa2135a5bbea6b2fdda0; released clean worktree before worker; terminal worker captured, lane released |
+| After status evidence | bounded qualification accepted; runtime separately governed; final committed-range proof pending |
+| Diff evidence | exact13 material manifest |
+| Approval boundary | metadata/evidence only; no source/cap1/product/provider/deletion |
+| Claim boundary | qualification is not product B-E or AI governance efficacy |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | CVF-NCR-HTML-LOGIN-READINESS-QUALIFICATION-20261017:material |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
-| Deletion or rename disposition | N/A with reason: none |
+| Invocation ID | ncr-login-readiness-qualification-material-20261017 |
+| Expected manifest | `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-qualification-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-qualification-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-qualification-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-login-readiness-qualification-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact13 |
+| Deletion or rename disposition | none; old grants/source/proof/custody retained |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -698,10 +702,14 @@ prospective qualification fixed-source qualification only; no effect yet. Once s
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: qualification B/W, roadmap and generated current authority agree before conditional worker release; actual-SHA exact6 continuity follows.
+Atomicity reason: qualification closure/raw authority/current mode/roadmap and source-generated projection align atomically; following actual-material-SHA source6 separate.
 
 Exact changed manifest:
 
+- `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-login-readiness-qualification-worker-20261017.json`
+- `docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-login-readiness-qualification-local-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
@@ -711,7 +719,8 @@ Exact changed manifest:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Rollback boundary: listed metadata only.
+
+Rollback boundary: listed paths only; no source/effect mutation.
 
 ## Root Adoption Preparation Disclosure
 
@@ -758,3 +767,7 @@ Initial worker limits remain one inert9/26 matrix and one read-only Docker4 grou
 ## First Q05 Author Gate Correction
 
 First Root pre-implementation gate refused two documentary groups: exact clean-worktree wording in handoff Before status evidence, and missing baseline internal external-intake routing after added reconciliation controls. Root preserved all original9/preparation-state/helper bytes and the full failed gate; corrected both groups together before any semantic program/Docker query. Existing owner rules apply; no new checker/waiver or source change.
+
+## Local Qualification Disposition
+
+Local accepts bounded current-source qualification using fixed worker actual cap2/Docker4 and independently authored PURE10 proof. All 3 Root custody-published rows from original worker program receipts PASS; post-takeover COMPLETE_PENDING_REVIEW exact2 bytes frozen. Root custody full-gate exit0/10.203s, logSHA256 b0b862099ad0202a917cf14e02073068ff4e4996ad7e232df10f8a1a93c5139b. Actual9cases/26inert Python starts, IMPLEMENTATION_WORKER/cap2/SUBPROCESS; receiptSHA256 4e9a9ba7c66bb6af38323f6973083295782ca238ea4b36ebfe82cd3f506040e0; driver 2.953s, no retry/watchdog expiry. Nine raw command/result/terminal joins retained. Four pinned read-only Docker queries PASS, 0.671s; desktop-linux/local npipe/linux-amd64; server linux/amd64/29.8.2; exact cached image. Each query has exclusive raw stdout/stderr bytes with SHA256, including zero-byte streams, in durable custody; no container/image effect or new capability. Independent PURE10/10 PASS, zero native/utility/casechild starts; raw oracleSHA256 3383555b98ef117973280082058df905649c74931e583608d74321d33c894a3d; sourceSHA256 ca7fb06ed1274189e4cf982b262c1b5c6d284f43676eb5e7d3f6e82104a5ab20; run exit0/0.312s/logSHA256 20d1d40085f549687c533f4ac1f2d7c10d9dabc8764bbefe7c833d6d11eb57da. Q05 preparation reused immutable accepted S14 source identity and canonical post-material source admission, not old Q04 qualification as current proof. Luna generic B/W draft was rejected before adoption for incomplete governed shape; one oversized shell construction and two JS quoting failures were reported as nonmutating, without invented raw receipts. Sol prepared full original-Q04 execution-shape candidates; Root reviewed/adapted and recorded a fresh Q05 scaffold and fresh 27-ID ADIF result. Source/payload review fixed pre-effect launcher message and added exclusive per-Docker-query raw/partial-byte custody; original v1 sources preserved. First Root preimplementation gate failed clean-worktree literal and missing baseline internal-routing block; exact9 preimages/full raw gate logs preserved and both findings corrected together. Second preimplementation PASS, dispatch normal91/91 each, exact9/6 clean splits and bound dispatch PASS. Source18/S14authority remained immutable throughout. Root prospective closure-aide review corrected trace literal and stale inherited R01-open predicate before any closure run; historical BE-R01 R1E acceptance is retained. No retrospective perfect-procedure claim or governance capability credit. First Local closure publication audit refused a historical generated-state preimage because it contains an authorization-named field. No tracked closure write occurred. Root kept that original byte preimage/hash manifest unchanged in ignored custody, excluded only its broad-history raw transport with explicit hash/size/disposition, and retained all current worker proof/raw streams. Publication predicate was not weakened and no proof reran. One attempted read-only Python diagnostic had a shell quoting syntax error before execution; a file-based diagnostic then identified this sole artifact. Actual worker gate history exit1/8.828s/logSHA256 01613d9b236d6b3e80392779b1b523d47db71d9ea1706581920eeeca6d3a8036; exit0/10.203s/logSHA256 b0b862099ad0202a917cf14e02073068ff4e4996ad7e232df10f8a1a93c5139b. Actual worker ran both frozen programs once after its bound pre-implementation PASS and return-scaffold receipt. It reported an H/Get-History alias collision, invalidated apparent preflight PASS and completed explicit corrected checks before effects; complete original shell diagnostic stdout was not captured to file. Worker then hit usage limit before tracked return and full gate; Root observed errored terminal lane and clean worktree, published exact2 explicitly as documentary custodian, not as a fabricated worker-authored report. Root first full gate failed three documentary fields (diff trace, usage delimiter, gate-outcome wording); preserved original exact2/raw full logs/receipt and consolidated one bounded documentary repair. Final full gate exit0 with exact2 hashes equal before/after; no effect repeated. Mandatory PASS wording is a prerequisite, not a predeclared success; actual terminal exit0 independently checked. Root retained its pre-frozen separate oracle; the actual implementation worker neither read nor ran it. Review telemetry counts two root-cause groups (quota interruption and Root documentary shape) and three dependent literal findings; worker repair turns0, one Root documentary repair. No retroactive perfect procedure or capability credit for metadata repairs. BE-Q05 checked bounded; runtime separately governed. No cap1 actual or product successor granted here. Fixed source18/accepted S14 source B/W/source release remain immutable. Released execution authority preimages and pins are retained; current closed qualification hashes are metadata only. Fixed Local closure paths: docs/reviews/CVF_NCR_HTML_LOGIN_READINESS_QUALIFICATION_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-login-readiness-qualification-local-20261017.json. No final Local proof digest is embedded here; no hash back-edge.

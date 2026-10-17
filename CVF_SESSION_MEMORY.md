@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | S14 source accepted; BE-Q05 conditional qualification dispatched; product/runtime pending; parent unchanged |
+| Parent maintenance | current qualification accepted bounded; BE-Q05 checked, runtime separately governed |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_qualification_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bounded Q05 worker after actual hash-bound release; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=product/runtime/provider/native utilities/real-data/deletion/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_qualification_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-QUALIFICATION-20261017. Q05 bounded current-source qualification accepted after actual cap2/Docker4 and independent PURE10; inspect fixed final-result clean exact13/6 receipt. Prepare/admit fresh S14-source cap2 R1F under a new finite clock and committed B/W, bound gates, independent pins/admission/envelope and fresh namespace/custody before its one original D.execute. Historical R1E/BE-R01 accepted, R2B/BE-R02 blocked/spent remain immutable; cap1 waits for accepted new cap2 plus separate actor controls/authority. No old actor replay. User authorizes proactive bounded reviewer continuation with original failures, named contradiction/gain/cost; no per-tranche confirmation. Source18/S14authority/release and unchanged parent/freeze/prior7/LHW24 retained; provider/real-data/deletion/public/deploy parked.; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=cap1 actual/product/provider/deletion separately admitted, old grants retired; no generic operator checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_login_readiness_qualification_dispatched`
-Current mode: `cvf_ncr_html_login_readiness_qualification_dispatched`; previous mode marker: `cvf_ncr_html_login_readiness_source_phase_accepted_bounded`
+Current mode marker: `cvf_ncr_html_login_readiness_qualification_accepted_bounded`
+Current mode: `cvf_ncr_html_login_readiness_qualification_accepted_bounded`; previous mode marker: `cvf_ncr_html_login_readiness_qualification_dispatched`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_login_readiness_qualification_dispatched`
+Mode: `cvf_ncr_html_login_readiness_qualification_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-QUALIFICATION-20261017. Under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md` and `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md`, release INTERNAL_AGENT exact2 qualification worker only after committed normal9/6, bound pre-dispatch/pre-implementation PASS, fresh frozen pins/envelope and separate cap2/Docker admission. One cap2 inert9case/26 Python-child matrix<=90s; exactly4 local read-only Docker queries<=12s each/60s group; no automatic retry, original outcomes retained. Program root `.cvf/runtime/ncr-login-readiness-qualification-20261017/preparation`; Root private PURE10 after frozen exact2, no case-child/native/Docker rerun. Separate qualification phase06:59Z, workerhard08:00Z, Localhard08:15Z; cumulative04:00Z history/S14 old07:00Z retained, no old budget reset. S14source release/authority/source18 unchanged; canonical standalone identity proof reused, driver retains immediate admission precondition. BE-Q05 pending; R02/S12 spent; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged. Reviewer proactively records necessary bounded repair/recheck with contradiction/gain/cost and first outcomes; no per-tranche confirmation or silent effect expansion. Product/browser/native utilities/HTTP/provider/real-data/deletion/public/deploy remain parked. Actual qualification material anchor 45c828acdaa5ce5ebd234111b1e82aa78fc5cf46.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-QUALIFICATION-20261017. Q05 bounded current-source qualification accepted after actual cap2/Docker4 and independent PURE10; inspect fixed final-result clean exact13/6 receipt. Prepare/admit fresh S14-source cap2 R1F under a new finite clock and committed B/W, bound gates, independent pins/admission/envelope and fresh namespace/custody before its one original D.execute. Historical R1E/BE-R01 accepted, R2B/BE-R02 blocked/spent remain immutable; cap1 waits for accepted new cap2 plus separate actor controls/authority. No old actor replay. User authorizes proactive bounded reviewer continuation with original failures, named contradiction/gain/cost; no per-tranche confirmation. Source18/S14authority/release and unchanged parent/freeze/prior7/LHW24 retained; provider/real-data/deletion/public/deploy parked.
 
 ## Parked Checkpoints
 

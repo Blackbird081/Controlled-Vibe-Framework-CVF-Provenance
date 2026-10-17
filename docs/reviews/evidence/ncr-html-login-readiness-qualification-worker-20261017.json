@@ -1,0 +1,370 @@
+{
+  "REQ-CONTROL": {
+    "status": "PASS",
+    "proofRefs": [
+      "PROOF-CONTROL"
+    ],
+    "evidence": {
+      "programLedgerSha256": "fdc09365510b46363aa64a07bbbb1969c7a4b5a224c3c537f766b606b5d029c3",
+      "invocation": {
+        "schemaVersion": "cvf.workerActualInvocation@1",
+        "command": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\launch_controls.py",
+          "worker",
+          "actual",
+          "--pins-sha",
+          "f3cae8658bd3e6bd90229e9a43f42d7996cf57cb6b7c8ee2b6ddb2ab4c54b0ff"
+        ],
+        "startUtc": "2026-10-17T07:29:33.7839319Z",
+        "endUtc": "2026-10-17T07:29:37.0004375Z",
+        "durationSeconds": 3.213,
+        "exitCode": 0,
+        "stdoutPath": ".cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\worker\\worker-actual-launch.stdout.log",
+        "stdoutSha256": "4e05c0c48657ca2d7dbea8f1d2d8b6f3f8a3d6a6596e3b02ba5f9a98053194ec",
+        "stderrPath": ".cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\worker\\worker-actual-launch.stderr.log",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "programLedgerPath": ".cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\program-ledger.json",
+        "programLedgerSha256": "265f4a01967bd5b2dff78815c11e00e49b4806f3ecfa718ed365449678b5d4a1",
+        "terminal": true
+      },
+      "receiptPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\worker\\cap2-actual-ef83a5fc4d9cf3b1\\receipt.json",
+      "receiptSha256": "4e9a9ba7c66bb6af38323f6973083295782ca238ea4b36ebfe82cd3f506040e0",
+      "summaryPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\worker\\cap2-actual-ef83a5fc4d9cf3b1\\summary.json",
+      "summarySha256": "1b3fd3195155e51718c3b05525c860b89938bc4916c9c2f32eac037e88d0fb8b",
+      "actualCases": 9,
+      "inertChildStarts": 26,
+      "effects": 0,
+      "retry": 0
+    }
+  },
+  "REQ-DOCKER": {
+    "status": "PASS",
+    "proofRefs": [
+      "PROOF-DOCKER"
+    ],
+    "evidence": {
+      "invocation": {
+        "schemaVersion": "cvf.workerDockerInvocation@1",
+        "command": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\qualify_docker.py",
+          "--pins-sha",
+          "f3cae8658bd3e6bd90229e9a43f42d7996cf57cb6b7c8ee2b6ddb2ab4c54b0ff"
+        ],
+        "startUtc": "2026-10-17T07:30:12.2123845Z",
+        "endUtc": "2026-10-17T07:30:13.1478261Z",
+        "durationSeconds": 0.932,
+        "exitCode": 0,
+        "stdoutPath": ".cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\worker\\docker-qualifier-launch.stdout.log",
+        "stdoutSha256": "f610e4c091e1ce71422b2b7e8280de3b8870e3dd19139b221b063f0d123c44a2",
+        "stderrPath": ".cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\worker\\docker-qualifier-launch.stderr.log",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "programLedgerPath": ".cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\program-ledger.json",
+        "programLedgerSha256": "fdc09365510b46363aa64a07bbbb1969c7a4b5a224c3c537f766b606b5d029c3",
+        "dockerReadinessPath": ".cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-readiness.json",
+        "dockerReadinessSha256": "5f5033a97f22760fd6ef013c4614c0cfa924fcd3828627974f205cb2c5450271",
+        "terminal": true
+      },
+      "dockerReadinessPath": ".cvf/runtime/ncr-login-readiness-qualification-20261017/preparation/docker-readiness.json",
+      "dockerReadinessSha256": "5f5033a97f22760fd6ef013c4614c0cfa924fcd3828627974f205cb2c5450271",
+      "rawQueryCustody": [
+        {
+          "ordinal": 1,
+          "stdoutRaw": {
+            "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-01.stdout.bin",
+            "sha256": "75270b95abcf0516180e80ce1a2b6f98e42b13765c38de5239be80925439ba63",
+            "bytes": 14
+          },
+          "stderrRaw": {
+            "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-01.stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        {
+          "ordinal": 2,
+          "stdoutRaw": {
+            "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-02.stdout.bin",
+            "sha256": "2e1a13b5c38007e19366225454c425eb89626875521ad4eddc04f1b533aa4908",
+            "bytes": 42
+          },
+          "stderrRaw": {
+            "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-02.stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        {
+          "ordinal": 3,
+          "stdoutRaw": {
+            "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-03.stdout.bin",
+            "sha256": "cb37f575ec707785b5ee5ac0143645ab6fe35138872708f192196d2860d4b174",
+            "bytes": 19
+          },
+          "stderrRaw": {
+            "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-03.stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        },
+        {
+          "ordinal": 4,
+          "stdoutRaw": {
+            "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-04.stdout.bin",
+            "sha256": "17649903f35cbb549506cdb211b5f499950e0db9d39e27204469749fa384efed",
+            "bytes": 84
+          },
+          "stderrRaw": {
+            "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-04.stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes": 0
+          }
+        }
+      ],
+      "readOnlyQueries": 4,
+      "containerStarts": 0,
+      "imageMutation": 0,
+      "providerStarts": 0,
+      "retry": 0
+    }
+  },
+  "REQ-RETURN": {
+    "status": "PASS",
+    "proofRefs": [
+      "PROOF-RETURN"
+    ],
+    "evidence": {
+      "publicationCustodian": "LOCAL_ROOT_AFTER_WORKER_QUOTA_TERMINATION",
+      "takeoverPath": ".cvf/runtime/ncr-login-readiness-qualification-20261017/root-documentary-takeover.json",
+      "takeoverSha256": "53cc159cf71be215f7a53e77ee5189ceadc931250def31b5ae9da64ee7ed31bf",
+      "terminalGateReceipt": ".cvf/runtime/ncr-login-readiness-qualification-20261017/root-custody-return-terminal-v2.json",
+      "terminalGateDisposition": "Actual gate outcome and exact2 hashes recorded after byte freeze in detached custody, mandatory before acceptance; no post-gate tracked append.",
+      "noCommit": true,
+      "firstGateTerminalSha256": "6b25e1f6bec9b0d2a8233e41795b3000708819c540aea75418b757ec171089f8",
+      "documentaryRepairAdmissionSha256": "3b5ad0ba5586500ea4269224d2f1d30ec1b9058fd7792343338fcbdfc6a585b3"
+    }
+  },
+  "schemaVersion": "cvf.ncrQ05WorkerCustodyEvidence@1",
+  "executionBaseHead": "686e858929b7146c2575aa2135a5bbea6b2fdda0",
+  "effectExecutingActor": "INTERNAL_AGENT /root/qualification_map",
+  "documentaryAuthor": "LOCAL_ROOT_AFTER_QUOTA_TERMINATION",
+  "originalWorkerAuthoredReturnAvailable": false,
+  "qualificationScope": "mechanical current-source qualification only",
+  "invocationEnvelopeSha256": "4668cc11a105c20ce377b1e7f72e88bf8777da63b5cdd14d0722495a4c0708b6",
+  "releasePinsSha256": "f3cae8658bd3e6bd90229e9a43f42d7996cf57cb6b7c8ee2b6ddb2ab4c54b0ff",
+  "source13": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a04f88daea52a45f96cd9329d0ce0cef688249bdd0b142648edd0905fbcc1814",
+    "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+    "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": "e73315a1478a15a70787933623478d16a8bf7a87d073532eb85b4e1989870c41"
+  },
+  "adjunct5": {
+    "scripts/cvf_ncr_html_effect_fence.py": "0fb938a3b6e0a473acd91093f8e607e84f9d460a251cf03cc4fe1e9d8114d6f6",
+    "scripts/run_cvf_ncr_html_effect_driver.py": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+    "scripts/test_cvf_ncr_html_effect_driver.py": "2bd46f562cd0896c6280c899efaaafd30d46c682208573987e2aa6027786d4fd",
+    "scripts/cvf_ncr_html_browser_fence.cjs": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+    "scripts/cvf_ncr_html_browser_fence.test.cjs": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf"
+  },
+  "programLedger": {
+    "schemaVersion": "cvf.ncrWindowsQualificationPrograms@1",
+    "ceiling": 2,
+    "actualMatrixCeiling": 1,
+    "actualChildCeiling": 26,
+    "dockerQueryCeiling": 4,
+    "actions": {
+      "worker-actual": {
+        "status": "PASS",
+        "actor": "INTERNAL_AGENT_WORKER",
+        "mode": "actual",
+        "chargedAt": 1792222174.0139503,
+        "watchdogSeconds": 90,
+        "expectedActualChildren": 26,
+        "pinsSha256": "f3cae8658bd3e6bd90229e9a43f42d7996cf57cb6b7c8ee2b6ddb2ab4c54b0ff",
+        "driverSha256": "6b0d0fd7556fbf6c977b9fe7a157054c06ffd89ae8d4f6543d2072001ed48776",
+        "command": [
+          "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+          "-B",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\worker\\driver.py",
+          "--mode",
+          "actual",
+          "--pins",
+          "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\release-pins.json",
+          "--driver-sha",
+          "6b0d0fd7556fbf6c977b9fe7a157054c06ffd89ae8d4f6543d2072001ed48776"
+        ],
+        "exit": 0,
+        "watchdogExpired": false,
+        "elapsedSeconds": 2.9530000000086147,
+        "stdoutSha256": "0c40a007fdf68c34792c5c21627b7d18424f549147404296d1e0180f1f08bd7b",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "summaryPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\worker\\cap2-actual-ef83a5fc4d9cf3b1\\summary.json",
+        "summarySha256": "1b3fd3195155e51718c3b05525c860b89938bc4916c9c2f32eac037e88d0fb8b",
+        "receiptPath": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\worker\\cap2-actual-ef83a5fc4d9cf3b1\\receipt.json",
+        "receiptSha256": "4e9a9ba7c66bb6af38323f6973083295782ca238ea4b36ebfe82cd3f506040e0"
+      },
+      "docker-readiness": {
+        "status": "PASS_CURRENT_READINESS_ONLY",
+        "chargedAt": 1792222212.4506235,
+        "pinsSha256": "f3cae8658bd3e6bd90229e9a43f42d7996cf57cb6b7c8ee2b6ddb2ab4c54b0ff",
+        "queryCeiling": 4,
+        "queries": [
+          {
+            "ordinal": 1,
+            "argv": [
+              "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+              "context",
+              "show"
+            ],
+            "state": "FINISHED",
+            "timeoutSeconds": 12,
+            "exit": 0,
+            "timedOut": false,
+            "errorType": null,
+            "stdout": "desktop-linux",
+            "stderr": "",
+            "stdoutRaw": {
+              "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-01.stdout.bin",
+              "sha256": "75270b95abcf0516180e80ce1a2b6f98e42b13765c38de5239be80925439ba63",
+              "bytes": 14
+            },
+            "stderrRaw": {
+              "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-01.stderr.bin",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          },
+          {
+            "ordinal": 2,
+            "argv": [
+              "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+              "--context",
+              "desktop-linux",
+              "context",
+              "inspect",
+              "desktop-linux",
+              "--format",
+              "{{(index .Endpoints \"docker\").Host}}"
+            ],
+            "state": "FINISHED",
+            "timeoutSeconds": 12,
+            "exit": 0,
+            "timedOut": false,
+            "errorType": null,
+            "stdout": "npipe:////./pipe/dockerDesktopLinuxEngine",
+            "stderr": "",
+            "stdoutRaw": {
+              "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-02.stdout.bin",
+              "sha256": "2e1a13b5c38007e19366225454c425eb89626875521ad4eddc04f1b533aa4908",
+              "bytes": 42
+            },
+            "stderrRaw": {
+              "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-02.stderr.bin",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          },
+          {
+            "ordinal": 3,
+            "argv": [
+              "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+              "--context",
+              "desktop-linux",
+              "version",
+              "--format",
+              "{{.Server.Os}}|{{.Server.Arch}}|{{.Server.Version}}"
+            ],
+            "state": "FINISHED",
+            "timeoutSeconds": 12,
+            "exit": 0,
+            "timedOut": false,
+            "errorType": null,
+            "stdout": "linux|amd64|29.8.2",
+            "stderr": "",
+            "stdoutRaw": {
+              "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-03.stdout.bin",
+              "sha256": "cb37f575ec707785b5ee5ac0143645ab6fe35138872708f192196d2860d4b174",
+              "bytes": 19
+            },
+            "stderrRaw": {
+              "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-03.stderr.bin",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          },
+          {
+            "ordinal": 4,
+            "argv": [
+              "C:\\Users\\DELL\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe",
+              "--context",
+              "desktop-linux",
+              "image",
+              "inspect",
+              "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294",
+              "--format",
+              "{{.Id}}|{{.Os}}|{{.Architecture}}"
+            ],
+            "state": "FINISHED",
+            "timeoutSeconds": 12,
+            "exit": 0,
+            "timedOut": false,
+            "errorType": null,
+            "stdout": "sha256:a0725d62d5cfa8fc47b5e30be04bc08ea714a9cdd72c259595526f691db95294|linux|amd64",
+            "stderr": "",
+            "stdoutRaw": {
+              "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-04.stdout.bin",
+              "sha256": "17649903f35cbb549506cdb211b5f499950e0db9d39e27204469749fa384efed",
+              "bytes": 84
+            },
+            "stderrRaw": {
+              "path": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-login-readiness-qualification-20261017\\preparation\\docker-query-04.stderr.bin",
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "bytes": 0
+            }
+          }
+        ],
+        "elapsedSeconds": 0.6710000000020955
+      }
+    }
+  },
+  "preparationLimitations": {
+    "schemaVersion": "cvf.localDocumentaryCustodyTakeover@1",
+    "observedUtc": "2026-10-17T07:37:50.637275+00:00",
+    "reason": "All three delegated agents reported usage-limit errors. Actual qualification worker terminated after both admitted programs returned PASS and before tracked exact2 publication/full return gate. Live agent inventory showed qualification_map errored; no active writer remains.",
+    "executingActor": "INTERNAL_AGENT /root/qualification_map",
+    "documentaryCustodian": "LOCAL_ROOT",
+    "reviewerDecisionOwner": "LOCAL",
+    "authority": "Operator explicitly requests autonomous continuation and reviewer intervention for necessary bounded continuation; released W owns exact2 and Local review.",
+    "laneReleasedBy": "errored terminal agent status, clean stage/worktree, absent exact2",
+    "head": "686e858929b7146c2575aa2135a5bbea6b2fdda0",
+    "programLedgerSha256": "fdc09365510b46363aa64a07bbbb1969c7a4b5a224c3c537f766b606b5d029c3",
+    "workerProgramInvocationSha256": "e7208976d157269513024820e63fd50c0dd25b589a43351f6a2c3139fee175eb",
+    "dockerInvocationSha256": "6b339cc7ce0df1239234bf033c9ae4b785100866a238ad9b93398eaf152ac489",
+    "newScope": "Root publishes exact2 documentary return from actual original receipts, then one bound full return gate and explicit current-HEAD corpus check; independent pre-frozen Local PURE10 follows terminal capture.",
+    "contradiction": "Mandatory original worker-authored return/full gate missing despite completed admissible raw proof.",
+    "expectedInformationGain": "Makes actual proof reviewable with explicit authorship and confirms required documentary joins.",
+    "costReason": "Metadata-only recovery; no control/Docker/native/product/provider replay, existing source and all raw first outcomes reused.",
+    "repairCeilings": {
+      "initialFullGate": 1,
+      "corpusCheck": 1,
+      "fullGateTimeoutSeconds": 60,
+      "corpusTimeoutSeconds": 30,
+      "controlStarts": 0,
+      "dockerQueries": 0
+    },
+    "procedureDisposition": "PARTIAL_WITH_REASON - effect executor differs from documentary author; no completed worker-authored full return claimed.",
+    "firstShellDiagnostic": "Worker reported PowerShell H helper collided with Get-History; apparent initial PASS invalidated, explicit hash preflight then corrected before effects. Complete original shell diagnostic stdout not captured to file; no reconstruction is represented as raw output."
+  },
+  "fullGatePublicationContract": "REQ-RETURN PASS is conditional until detached actual full gate exit0; no Local acceptance before that receipt."
+}
