@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; fresh grant exhausted, BE-R02 remains open |
+| Parent maintenance | spent BE-R01 closed; BE-S11 source-only correction in progress, product outcomes open |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_r1d_be_r01_blocked_spent`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local PLAN BE-S11 existing-source locator/regression repair; no effect grant only; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=cap1/any runtime retry/provider/deletion separately unadmitted; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_body_heading_source_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=conditional exact6 BODY_HEADING_SOURCE worker after committed bound source release/preimplementation; role=INTERNAL_AGENT Local dispatcher/reviewer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=all browser runtime/cap1/provider/deletion/retry effects unadmitted; no generic operator checkpoint.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_r1d_be_r01_blocked_spent`
-Current mode: `cvf_ncr_html_r1d_be_r01_blocked_spent`; previous mode marker: `cvf_ncr_html_r1d_be_r01_dispatched`
+Current mode marker: `cvf_ncr_html_body_heading_source_dispatched`
+Current mode: `cvf_ncr_html_body_heading_source_dispatched`; previous mode marker: `cvf_ncr_html_r1d_be_r01_blocked_spent`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_r1d_be_r01_blocked_spent`
+Mode: `cvf_ncr_html_body_heading_source_dispatched`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R1D-RUNTIME-20261017. BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; consume docs/reviews/CVF_NCR_HTML_B_E_R1D_RUNTIME_LOCAL_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-b-e-r1d-runtime-local-20261017.json. r1d exhausted. Source-backed diagnostic supports BE-S11: next Local plans separately admitted source-only correction of existing body-heading selector/regression and pre-assertion response custody, then current-source qualification and fresh cap2 admission. No automatic source mutation/effects/retry/new slot/cap1/provider/cleanup/deletion grant. Source18/accepted source B/W/release/qualification immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Actual result material b3569879a777568a451805b348cb95047e9101b0 committed; exact6 actual-SHA continuity prepared; clean split closure pending.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-BODY-HEADING-SOURCE-20261017. Under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md and docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md, conditionally release one INTERNAL_AGENT exact6 source worker after committed dispatch/current authority/actual-SHA continuity, bound pre-dispatch and worker preimplementation PASS. Correct main>h1 source heading selector to canonical main>section heading and persist route/decoded bytes before DOM assertions; preserve passive observer/GET/main-entry behavior; exact source_release AUTHORITY and effect-driver assertion only. Worker Node exactly2 direct CJS actual-renderer/jsdom RED/GREEN <=60s each, no isolation child; existing admission pytest and focused authority assertion test_preload_renderer_preserves_identity_and_order once<=120s each; root separate independent1 DOM/custody Node probe<=60s; latest worker Node02:46Z. Inclusive prep 2026-10-17T01:18:00Z, worker hard90min deadline 2026-10-17T02:48:00Z, Local180min 2026-10-17T04:18:00Z; no reset. BE-S11 unchecked IN_PROGRESS_SOURCE_ONLY; BE-R01 spent failed/open and BE-R02 open/unadmitted. Prior result material b3569879a777568a451805b348cb95047e9101b0/continuity e248cc228e5e41fd05a19ec98ae78aaec0039cc1 actual13/6 split PASS consumed, no rerun. Source18 before-image frozen; accepted passive observer source B/W/releases/qualification/failed worker2/CP/LP unchanged. Worker leaves F release constants; Local accepted new-source identity/release/F binding is a later distinct closure, not old release repin. No browser/runtime/cap1/provider/deletion/retry; changed source requires separate future qualification. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; prior grants spent or retired; r1b/r1c/r1d failures retained; no replay. Current material anchor e248cc228e5e41fd05a19ec98ae78aaec0039cc1; ordinary technical details Local, no generic documentary operator checkpoint.
 
 ## Parked Checkpoints
 

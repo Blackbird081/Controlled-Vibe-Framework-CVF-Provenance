@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md",
-    "baselineSha256": "b20bacaff217e3a0b3718187885eb98f5bf741f4b028a6d1cc81401aac1e6877",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1D_RUNTIME_2026-10-17.md",
-    "workOrderSha256": "4091a828d721a920e65e8d962ba5abadf4f27127c540f4c1342ce2f7ae479317"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md",
+    "baselineSha256": "21da78bf7766f493e72329bcaa54277d05c7730ae4aa9f9b43538adf6160dd36",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_BODY_HEADING_SOURCE_2026-10-17.md",
+    "workOrderSha256": "cb9ec7436b63ca04af33036b47e7323f7a7e7c0331e23bf129c37bbc9f426ecd"
   },
-  "currentAuthoritySyncReason": "Fresh first-result continuity: BE-R01 spent blocked first result: worker=BLOCKED_WITH_REASON; independent oracle=REJECTED_NOT_ACCEPTED; program/result acceptance=False; exhausted grant, source identity unchanged.",
+  "currentAuthoritySyncReason": "Body heading/custody material; actual blocked result split PASS consumed, prior evidence/source identity immutable.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_r1d_be_r01_blocked_spent",
-  "previousMode": "cvf_ncr_html_r1d_be_r01_dispatched",
+  "currentMode": "cvf_ncr_html_body_heading_source_dispatched",
+  "previousMode": "cvf_ncr_html_r1d_be_r01_blocked_spent",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
