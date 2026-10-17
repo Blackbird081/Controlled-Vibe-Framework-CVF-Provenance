@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_FIXTURE_CONTROL_2026-10-17.md",
     "workOrderSha256": "21a3d47d0a349e55cb8fb0203360a8da7c4f54c04d203e8dd85a80f60879a937"
   },
-  "currentAuthoritySyncReason": "BE-S13 fixture-only PASS; source S11 unchanged; material",
+  "currentAuthoritySyncReason": "BE-S13 fixture-only PASS; source S11 unchanged; continuity",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
