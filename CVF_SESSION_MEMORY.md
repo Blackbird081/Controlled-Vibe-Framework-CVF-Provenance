@@ -35,7 +35,7 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_r2b_be_r02_blocked_spent`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local PLAN only; role=INTERNAL_AGENT Local reviewer/closer; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=no effect grant.
+Startup acknowledged: current mode=`cvf_ncr_html_r2b_be_r02_blocked_spent`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local PLAN only; role=INTERNAL_AGENT Local reviewer/closer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=no effect grant.
 
 ## Current Mode
 
@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_r2b_be_r02_blocked_spent`; previous mode marker: `cv
 
 Mode: `cvf_ncr_html_r2b_be_r02_blocked_spent`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R2B-RUNTIME-20261017. BE-R02 paired invocation spent blocked; retain actual first outcome; consume docs/reviews/CVF_NCR_HTML_B_E_R2B_RUNTIME_LOCAL_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-b-e-r2b-runtime-local-20261017.json. Next Local planning only from verified first evidence. No automatic source patch, cap refill, runtime/native/provider, cleanup, stage deletion, public or deploy grant. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Consume .cvf/runtime/ncr-be-r2b-runtime-20261017/final-result.json when present for actual committed exact13/6 finality; until it exists material/actual-SHA continuity and clean split finality are pending. Consume fixed finality before interpreting pending-at-review wording; do not repeat closure.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R2B-RUNTIME-20261017. BE-R02 paired invocation spent blocked; retain actual first outcome; consume docs/reviews/CVF_NCR_HTML_B_E_R2B_RUNTIME_LOCAL_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-b-e-r2b-runtime-local-20261017.json. Next Local planning only from verified first evidence. No automatic source patch, cap refill, runtime/native/provider, cleanup, stage deletion, public or deploy grant. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Consume .cvf/runtime/ncr-be-r2b-runtime-20261017/final-result.json when present for actual committed exact13/6 finality; until it exists material/actual-SHA continuity and clean split finality are pending. Consume fixed finality before interpreting pending-at-review wording; do not repeat closure. Actual result material SHA 7e04f4e9079d0c7d08a4e151959e090cbd772f55. No repeat closure.
 
 ## Parked Checkpoints
 

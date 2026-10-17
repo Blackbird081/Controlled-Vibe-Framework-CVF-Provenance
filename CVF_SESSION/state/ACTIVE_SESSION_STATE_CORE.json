@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md",
     "workOrderSha256": "5233d85f42cfd50c7da0869736b15fa78110b3a2d3903a30eebfdfe8a633dbce"
   },
-  "currentAuthoritySyncReason": "R02 material: BE-R02 paired invocation spent blocked; retain actual first outcome; no source repin.",
+  "currentAuthoritySyncReason": "R02 continuity: BE-R02 paired invocation spent blocked; retain actual first outcome; no source repin.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
