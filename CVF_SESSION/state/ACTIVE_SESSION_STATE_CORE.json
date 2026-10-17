@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_QUALIFICATION_2026-10-17.md",
     "workOrderSha256": "d9a7427a356bcf48ef6577bdf0e0eb70a4bf93608ea32bc907adea65426790d7"
   },
-  "currentAuthoritySyncReason": "Bounded Q05 qualification continuity; S14 source18/source authority/release immutable; runtime separately governed.",
+  "currentAuthoritySyncReason": "Q05 clean accepted13/6 fixed; R1F file-only readiness and actual worker-capacity hold recorded, no runtime grant or source authority change",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
