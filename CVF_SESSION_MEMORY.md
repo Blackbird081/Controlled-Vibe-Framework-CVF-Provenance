@@ -35,7 +35,7 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_body_heading_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN separately governed changed-source qualification and fresh cap2 admission; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=old grant retry/cap1/provider/deletion; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_body_heading_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN separately governed changed-source qualification and fresh cap2 admission; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=old grant retry/cap1/provider/deletion; no generic operator checkpoint.
 
 ## Current Mode
 
@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_body_heading_source_accepted_bounded`; previous mode
 
 Mode: `cvf_ncr_html_body_heading_source_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-BODY-HEADING-SOURCE-20261017. BE-S11 source support accepted bounded from actual-renderer DOM regression and pre-assertion custody source proof/current SOURCE_IDENTITY_ONLY release and distinct Local one-Node probe; consume docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-body-heading-source-local-20261017.json. Next Local plans separately governed separately admitted changed-source qualification/control and fresh cap2 runtime authority; prior controls9/26 are not current-source proof. BE-R01/BE-R02 open; no automatic actual effect. Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24 unchanged. BE-R01 failed/unchecked; BE-R02 cap1 open; no prior actor replay. Final material/actual-SHA continuity and clean split closure pending.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-BODY-HEADING-SOURCE-20261017. BE-S11 source support accepted bounded from actual-renderer DOM regression and pre-assertion custody source proof/current SOURCE_IDENTITY_ONLY release and distinct Local one-Node probe; consume docs/reviews/CVF_NCR_HTML_BODY_HEADING_SOURCE_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-body-heading-source-local-20261017.json. Next Local plans separately governed separately admitted changed-source qualification/control and fresh cap2 runtime authority; prior controls9/26 are not current-source proof. BE-R01/BE-R02 open; no automatic actual effect. Parent generation9/SCECordinal2/counters2,0,2,0/two blockers/freeze/prior7/LHW24 unchanged. BE-R01 failed/unchecked; BE-R02 cap1 open; no prior actor replay. Actual result material 7efeb836d9bbe319fceb11d7c6a6c3bbc73feb4d committed; exact6 actual-SHA continuity prepared; clean split closure pending. Finality evidence front door: .cvf/runtime/ncr-body-heading-source-20261017/final-result.json; on resume consume its actual clean19/6 split PASS if present, rather than repeat committed closure. The pending phrase is the pre-commit continuity projection.
 
 ## Parked Checkpoints
 
