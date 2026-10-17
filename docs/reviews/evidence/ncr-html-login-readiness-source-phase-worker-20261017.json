@@ -1,0 +1,448 @@
+{
+  "actor": "S14_INTERNAL_IMPLEMENTER",
+  "admissionExit": 0,
+  "allLegacyFakesPreparedBeforeRepairedRed": true,
+  "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md",
+  "baselineSha256": "c4677d77121c6d0114cc6828230933a9361eb98537cb0aa6c1fd0544ce3641fc",
+  "claimBoundary": "Source-only candidate; LOCAL Root owns independent proof, identity release and acceptance. Historical R02 cause unproved.",
+  "componentSha256": "190e13518094c49259b87dddc903c8713c3810f2460644b6a2d8e9d57690586d",
+  "dispatchFinalPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/dispatch-final.json",
+  "dispatchFinalSha256": "adf9cffbab83d1cef6d73e85f7b25c7ddd2e4e471eda2a754877d4aea41ecbfb",
+  "effectCounts": {
+    "browserStarts": 0,
+    "httpStarts": 0,
+    "nativeSocketStarts": 0,
+    "productEffects": 0,
+    "providerCalls": 0,
+    "realAuthCalls": 0
+  },
+  "executionBaseHead": "887f55798c4cdd61e3c26b784403b0dd90249f8e",
+  "externalPendingActionabilityBarrier": true,
+  "focusedExit": 0,
+  "greenPass": true,
+  "invocationId": "CVF-NCR-HTML-LOGIN-READINESS-SOURCE-PHASE-20261017:worker",
+  "journeyOldSourceAtRepairedRed": true,
+  "legacyReadinessExactControlPredicates": true,
+  "modulePins": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@testing-library/dom/dist/events.js": "9d4f5569915fdb515bcde9dfb799eacd025136fb0d7cb7e342941e087c009a75",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@testing-library/dom/package.json": "4e62e2aa8b974b6a5d2d532396f7610d1b4e806d9d2aaef3c84221f0d2fab06d",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/jsdom/lib/api.js": "dd0759b1b8ba0afded547dc504e69f73c241909bfa640ae5723ebe6e3bea771e",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/jsdom/package.json": "949020d8e99f3390903619ee5296d71d988f496a3f222a02878674fef6afc351",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react-dom/cjs/react-dom-client.development.js": "c5da0593f349c7f4de33318879716d1e35ff007bb1de47f731684e75a469e5e1",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react-dom/cjs/react-dom-server.node.development.js": "c37a7a934c4cc2cde3cf70bda9c3398ae94baa0639c73f31859a60d7fbd07600",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react-dom/client.js": "00e348ab3d6bc2eef908345d0bc4e008c95bcfecec060dfda5c4967953761396",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react-dom/package.json": "d926f158e1be15885aaeac259c39567a46f6525fbdd14c380528486c31459996",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react-dom/server.node.js": "f2dd93f6f91f983cd91232098d4ac55578596d33d680d7cb9438ea3b0a611b4b",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react/cjs/react.development.js": "1919eb95d51bdaed6c771bcd506d65a11639142032e44d0e9212e5c745be1b65",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react/index.js": "60caffdecbdc5db3bc4ec4e83df9488345ccb271d07533b9210bf5750918d97e",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/react/package.json": "c383aced6a67c8d06f02996015c0a163e78532a330a96dff1ccfd107b00ab326",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/typescript/lib/typescript.js": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/typescript/package.json": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+  },
+  "originalCandidateCustody": [
+    {
+      "bytes": 18108,
+      "originalPath": "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+      "path": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/reviewer-repair-v1-custody/0-journey.cjs.bytes",
+      "sha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759"
+    },
+    {
+      "bytes": 35026,
+      "originalPath": "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+      "path": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/reviewer-repair-v1-custody/1-journey.test.cjs.bytes",
+      "sha256": "c7547effef9e72b70f324260799b04e78b4c177a99dade3d65d581ad089d430b"
+    }
+  ],
+  "originalPairDisposition": "INCONCLUSIVE_FIXTURE_CONTRADICTION_NOT_ACCEPTED_CAUSAL_RED",
+  "originalPairRecords": {
+    "green": "b064d2e126976583fd9bfd6aa174d0caea0a6c2271474315d57b10ec22e62385",
+    "red1": "0dedd9f7b36c4332c9f3b65407cdc43958ee817baeb3652c521290cee7840faa"
+  },
+  "physicalNodeStarts": 8,
+  "priorRepairedTestSha256": "9ba3007882cc83802e76b6a44b736e566a504918b22388d68984d58eb3ac65b2",
+  "programs": [
+    {
+      "after": {
+        "journeySha256": "719b3e151ace0a2752786710d29d6eb9fa272285be22c11b05f39498a36c65b0",
+        "testSha256": "c7547effef9e72b70f324260799b04e78b4c177a99dade3d65d581ad089d430b"
+      },
+      "argv": [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        "--test-name-pattern=^S14 login readiness waits for hydrated ready form before filling$",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "before": {
+        "journeySha256": "719b3e151ace0a2752786710d29d6eb9fa272285be22c11b05f39498a36c65b0",
+        "testSha256": "c7547effef9e72b70f324260799b04e78b4c177a99dade3d65d581ad089d430b"
+      },
+      "endUtc": "2026-10-17T06:18:38.890187Z",
+      "exit": 1,
+      "launchMethod": "subprocess.run argv list, shell=false, synchronous",
+      "name": "red1",
+      "seconds": 54.546999999991385,
+      "startUtc": "2026-10-17T06:17:44.339900Z",
+      "stderrBytes": 0,
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/red1.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 966,
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/red1.stdout.log",
+      "stdoutSha256": "2b88132efad5234bf222697424da39b606c6e5b79c20c5dd70a3f9458b395e7b",
+      "timeout": false
+    },
+    {
+      "after": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "c7547effef9e72b70f324260799b04e78b4c177a99dade3d65d581ad089d430b"
+      },
+      "argv": [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        "--test-name-pattern=^S14 login readiness waits for hydrated ready form before filling$",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "before": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "c7547effef9e72b70f324260799b04e78b4c177a99dade3d65d581ad089d430b"
+      },
+      "endUtc": "2026-10-17T06:18:59.282859Z",
+      "exit": 1,
+      "launchMethod": "subprocess.run argv list, shell=false, synchronous",
+      "name": "green",
+      "seconds": 1.3589999999967404,
+      "startUtc": "2026-10-17T06:18:57.922277Z",
+      "stderrBytes": 0,
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/green.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 965,
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/green.stdout.log",
+      "stdoutSha256": "6d494a21ff009ef76d7e8b854bbd775d16a61cf7cd7b0943a77ee21abf9913b7",
+      "timeout": false
+    },
+    {
+      "after": {
+        "journeySha256": "719b3e151ace0a2752786710d29d6eb9fa272285be22c11b05f39498a36c65b0",
+        "testSha256": "9ba3007882cc83802e76b6a44b736e566a504918b22388d68984d58eb3ac65b2"
+      },
+      "argv": [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        "--test-name-pattern=^S14 login readiness waits for hydrated ready form before filling$",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "before": {
+        "journeySha256": "719b3e151ace0a2752786710d29d6eb9fa272285be22c11b05f39498a36c65b0",
+        "testSha256": "9ba3007882cc83802e76b6a44b736e566a504918b22388d68984d58eb3ac65b2"
+      },
+      "endUtc": "2026-10-17T06:21:53.141300Z",
+      "exit": 1,
+      "launchMethod": "subprocess.run argv list, shell=false, synchronous",
+      "name": "red2",
+      "seconds": 1.3589999999967404,
+      "startUtc": "2026-10-17T06:21:51.777943Z",
+      "stderrBytes": 0,
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/red2.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 965,
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/red2.stdout.log",
+      "stdoutSha256": "a002ddf2a0387cffe06d20f9478de3b203a0d8424fabddfa30efebda2a8c54f2",
+      "timeout": false
+    },
+    {
+      "after": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "9ba3007882cc83802e76b6a44b736e566a504918b22388d68984d58eb3ac65b2"
+      },
+      "argv": [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        "--test-name-pattern=^S14 login readiness waits for hydrated ready form before filling$",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "before": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "9ba3007882cc83802e76b6a44b736e566a504918b22388d68984d58eb3ac65b2"
+      },
+      "endUtc": "2026-10-17T06:22:10.773054Z",
+      "exit": 0,
+      "launchMethod": "subprocess.run argv list, shell=false, synchronous",
+      "name": "green2",
+      "seconds": 1.5780000000086147,
+      "startUtc": "2026-10-17T06:22:09.208663Z",
+      "stderrBytes": 0,
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/green2.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 317,
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/green2.stdout.log",
+      "stdoutSha256": "9c80b337282d8626b29ad4037a200216230757ead0b1537c2297d589a5cda6ef",
+      "timeout": false
+    },
+    {
+      "after": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "9ba3007882cc83802e76b6a44b736e566a504918b22388d68984d58eb3ac65b2"
+      },
+      "argv": [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        "--test-skip-pattern",
+        "^native delayed Request ",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "before": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "9ba3007882cc83802e76b6a44b736e566a504918b22388d68984d58eb3ac65b2"
+      },
+      "endUtc": "2026-10-17T06:22:15.448300Z",
+      "exit": 0,
+      "launchMethod": "subprocess.run argv list, shell=false, synchronous",
+      "name": "selected",
+      "seconds": 2.265999999974156,
+      "startUtc": "2026-10-17T06:22:13.180265Z",
+      "stderrBytes": 0,
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/selected.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 4651,
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/selected.stdout.log",
+      "stdoutSha256": "49afa24ec58fe060b1c0340174e33d4263b2cd7e99dad1725620368272eba5f6",
+      "timeout": false
+    },
+    {
+      "after": {
+        "journeySha256": "719b3e151ace0a2752786710d29d6eb9fa272285be22c11b05f39498a36c65b0",
+        "testSha256": "a04f88daea52a45f96cd9329d0ce0cef688249bdd0b142648edd0905fbcc1814"
+      },
+      "argv": [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        "--test-name-pattern=^S14 login readiness waits for hydrated ready form before filling$",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "before": {
+        "journeySha256": "719b3e151ace0a2752786710d29d6eb9fa272285be22c11b05f39498a36c65b0",
+        "testSha256": "a04f88daea52a45f96cd9329d0ce0cef688249bdd0b142648edd0905fbcc1814"
+      },
+      "endUtc": "2026-10-17T06:28:35.600470Z",
+      "exit": 1,
+      "launchMethod": "subprocess.run argv list, shell=false, synchronous",
+      "name": "red3",
+      "seconds": 1.4210000000020955,
+      "startUtc": "2026-10-17T06:28:34.177969Z",
+      "stderrBytes": 0,
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/red3.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 965,
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/red3.stdout.log",
+      "stdoutSha256": "5d6a3d5542bf6e6b8d87a4e823e827b664198758fb6b363cdb2b31b4e549ff59",
+      "timeout": false
+    },
+    {
+      "after": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "a04f88daea52a45f96cd9329d0ce0cef688249bdd0b142648edd0905fbcc1814"
+      },
+      "argv": [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        "--test-name-pattern=^S14 login readiness waits for hydrated ready form before filling$",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "before": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "a04f88daea52a45f96cd9329d0ce0cef688249bdd0b142648edd0905fbcc1814"
+      },
+      "endUtc": "2026-10-17T06:28:45.381517Z",
+      "exit": 0,
+      "launchMethod": "subprocess.run argv list, shell=false, synchronous",
+      "name": "green3",
+      "seconds": 1.2190000000118744,
+      "startUtc": "2026-10-17T06:28:44.158634Z",
+      "stderrBytes": 0,
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/green3.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 317,
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/green3.stdout.log",
+      "stdoutSha256": "b8ef3caf2ad67452681e5da41c4d587eb2c272a91e7b3ad084f5e9511d2a2633",
+      "timeout": false
+    },
+    {
+      "after": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "a04f88daea52a45f96cd9329d0ce0cef688249bdd0b142648edd0905fbcc1814"
+      },
+      "argv": [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        "--test-concurrency=1",
+        "--test-skip-pattern",
+        "^native delayed Request ",
+        "scripts/cvf_ncr_html_owned_profile/journey.test.cjs"
+      ],
+      "before": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "a04f88daea52a45f96cd9329d0ce0cef688249bdd0b142648edd0905fbcc1814"
+      },
+      "endUtc": "2026-10-17T06:28:47.343164Z",
+      "exit": 0,
+      "launchMethod": "subprocess.run argv list, shell=false, synchronous",
+      "name": "selected2",
+      "seconds": 1.875,
+      "startUtc": "2026-10-17T06:28:45.472284Z",
+      "stderrBytes": 0,
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/selected2.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 4649,
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/selected2.stdout.log",
+      "stdoutSha256": "b03c2ff8092784b52377e707ab91c0e22092b716a82f2cd3f2def8d5206a7c0b",
+      "timeout": false
+    },
+    {
+      "after": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "9ba3007882cc83802e76b6a44b736e566a504918b22388d68984d58eb3ac65b2"
+      },
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "scripts/cvf_ncr_html_owned_profile/test_admission.py",
+        "-q"
+      ],
+      "before": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "9ba3007882cc83802e76b6a44b736e566a504918b22388d68984d58eb3ac65b2"
+      },
+      "endUtc": "2026-10-17T06:22:29.734594Z",
+      "exit": 0,
+      "launchMethod": "subprocess.run argv list, shell=false, synchronous",
+      "name": "admission",
+      "seconds": 4.171999999991385,
+      "startUtc": "2026-10-17T06:22:25.561846Z",
+      "stderrBytes": 661,
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/admission.stderr.log",
+      "stderrSha256": "2a914555f2278d48476e32682802ec1c26db797fe28edce2a47b2cfe998f2f93",
+      "stdoutBytes": 264,
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/admission.stdout.log",
+      "stdoutSha256": "1b7bd5ec549640cdf0a1e77ed464803849211ebdcbae1207f97e86807c2310a9",
+      "timeout": false
+    },
+    {
+      "after": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "9ba3007882cc83802e76b6a44b736e566a504918b22388d68984d58eb3ac65b2"
+      },
+      "argv": [
+        "python",
+        "-B",
+        "-m",
+        "pytest",
+        "scripts/test_cvf_ncr_html_effect_driver.py",
+        "-q",
+        "-k",
+        "test_preload_renderer_preserves_identity_and_order"
+      ],
+      "before": {
+        "journeySha256": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+        "testSha256": "9ba3007882cc83802e76b6a44b736e566a504918b22388d68984d58eb3ac65b2"
+      },
+      "endUtc": "2026-10-17T06:22:33.436719Z",
+      "exit": 0,
+      "launchMethod": "subprocess.run argv list, shell=false, synchronous",
+      "name": "focused",
+      "seconds": 1.2030000000086147,
+      "startUtc": "2026-10-17T06:22:32.237126Z",
+      "stderrBytes": 661,
+      "stderrPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/focused.stderr.log",
+      "stderrSha256": "2a914555f2278d48476e32682802ec1c26db797fe28edce2a47b2cfe998f2f93",
+      "stdoutBytes": 115,
+      "stdoutPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/worker/focused.stdout.log",
+      "stdoutSha256": "06f747d2cfcb249a6d5c8d0693e65320821ae3847172597276fd1bdc2bc4c34b",
+      "timeout": false
+    }
+  ],
+  "pythonEvidenceReusedAfterLegacyFakeRepair": true,
+  "redLegitimateCandidate": true,
+  "repairedTestSameRedGreenSelected": true,
+  "repairedTestSha256": "a04f88daea52a45f96cd9329d0ce0cef688249bdd0b142648edd0905fbcc1814",
+  "reviewerLegacyFakeRepairAdmissionPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/reviewer-legacy-fake-repair-admission.json",
+  "reviewerLegacyFakeRepairAdmissionSha256": "892efd6f3c06cd30c3d925748dffb74e109c77081ea850789d4bacb90719c629",
+  "reviewerRepairAdmissionPath": ".cvf/runtime/ncr-login-readiness-source-phase-20261017/reviewer-fixture-repair-admission.json",
+  "reviewerRepairAdmissionSha256": "2840f46d8317ee6cc5ee317f8704cf321620caeac9507437ac828af20492da8f",
+  "schemaVersion": "cvf.ncrHtmlLoginReadinessSourcePhaseWorkerEvidence@1",
+  "selectedNativeCaseExcluded": true,
+  "selectedPassCount": 18,
+  "semanticPythonStarts": 2,
+  "source18After": {
+    "scripts/cvf_ncr_html_browser_fence.cjs": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+    "scripts/cvf_ncr_html_browser_fence.test.cjs": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+    "scripts/cvf_ncr_html_effect_fence.py": "f8fb7516417cf194236e4729a8741aaff8356c7996954decf7aba72192c92709",
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+    "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a04f88daea52a45f96cd9329d0ce0cef688249bdd0b142648edd0905fbcc1814",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": "e73315a1478a15a70787933623478d16a8bf7a87d073532eb85b4e1989870c41",
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+    "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+    "scripts/run_cvf_ncr_html_effect_driver.py": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+    "scripts/test_cvf_ncr_html_effect_driver.py": "2bd46f562cd0896c6280c899efaaafd30d46c682208573987e2aa6027786d4fd"
+  },
+  "source18Before": {
+    "scripts/cvf_ncr_html_browser_fence.cjs": "5558933ac9c1702555af598b6275d00428300b960b29adc15a0bec1adec4d9a6",
+    "scripts/cvf_ncr_html_browser_fence.test.cjs": "24adfa5f9d46a290a7a4820db84e5fbbfaec05daf7c2046fe043b1e450ea23bf",
+    "scripts/cvf_ncr_html_effect_fence.py": "f8fb7516417cf194236e4729a8741aaff8356c7996954decf7aba72192c92709",
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+    "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "719b3e151ace0a2752786710d29d6eb9fa272285be22c11b05f39498a36c65b0",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "8c452bd30e51fb0459064a221e93463a4fa3f7355679915d069ac7ef6327592f",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": "72a8cbb2a28dd015a52f554df772a173d6b1952bce8f6e1448d41e27f4d7efd8",
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+    "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+    "scripts/run_cvf_ncr_html_effect_driver.py": "b67d1b27983d5bf21c64f11bac45a066bd8c9427bc3f539bc7b3bfdb3294c3bf",
+    "scripts/test_cvf_ncr_html_effect_driver.py": "58bc9121890fafa9f172dd740b26544281b8e0caf09faa4881b5ced445e7d5ad"
+  },
+  "sourceAccepted": false,
+  "sourceRosterCount": 13,
+  "status": "PASS_SOURCE_ONLY_CANDIDATE",
+  "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md",
+  "workOrderSha256": "6935a6ad485471cf118370ec5c8914f1bc390ea9d9626931525ab89d417aaee2",
+  "workerCodePaths": [
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py",
+    "scripts/test_cvf_ncr_html_effect_driver.py"
+  ],
+  "workerCodeSha256": {
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a04f88daea52a45f96cd9329d0ce0cef688249bdd0b142648edd0905fbcc1814",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": "e73315a1478a15a70787933623478d16a8bf7a87d073532eb85b4e1989870c41",
+    "scripts/test_cvf_ncr_html_effect_driver.py": "2bd46f562cd0896c6280c899efaaafd30d46c682208573987e2aa6027786d4fd"
+  }
+}

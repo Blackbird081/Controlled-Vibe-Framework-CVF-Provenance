@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | S13 fixture-only accepted; S14 source phase pending; S11 identity retained; R02/S12 spent; parent gen9/LHW24 unchanged |
+| Parent maintenance | BE-S14 source accepted bounded; R1E cap2 accepted under old source; R02 blocked/spent; fresh qualification pending |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_source_phase_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bound source-only worker6 after actual release; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=all product/runtime/provider/native/HTTP/Docker/real-data/deletion/public/deploy effects.
+Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_source_phase_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN separately governed changed-source qualification; role=INTERNAL_AGENT Local reviewer/closer; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=R02 spent, runtime/provider/deletion/public.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_login_readiness_source_phase_dispatched`
-Current mode: `cvf_ncr_html_login_readiness_source_phase_dispatched`; previous mode marker: `cvf_ncr_html_login_fixture_control_accepted_bounded`
+Current mode marker: `cvf_ncr_html_login_readiness_source_phase_accepted_bounded`
+Current mode: `cvf_ncr_html_login_readiness_source_phase_accepted_bounded`; previous mode marker: `cvf_ncr_html_login_readiness_source_phase_dispatched`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_login_readiness_source_phase_dispatched`
+Mode: `cvf_ncr_html_login_readiness_source_phase_accepted_bounded`
 
-Actual source phase dispatch material SHA cfe1c4a416b5a1bf1251b9caf5f821338a786da8. PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-PHASE-20261017. Under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md` and `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md`, release one INTERNAL_AGENT source worker only after exact9/6 dispatch and actual bound pre-dispatch/pre-implementation PASS on current B/W hashes. Worker exact6 code4+WRWE: all legacy fake APIs before actual held-hydration RED/full-test freeze, one bounded prefill wait after valid RED, identical-test GREEN, selected nonnative regression, Python admission/focused. Source13+adjunct5 roster fixed; Root owns release/F only after distinct private source3case corroboration and valid return. WorkerNode<=4 each60s/Python2 each120; RootNode1<=60; reviewer may record necessary bounded intervention under latest operator authority, preserving first outcomes, no silent worker self-refill. Anchor04:00Z, workerhard06:35Z, Localhard07:00Z. Same-problem successor3/nondec1/ROOT_CONTRACT_REQUIRED/INTEGRATED_ROOT_CONTRACT. S13 fixture-only accepted; S11/Q04/R1E old-source; R02/S12 spent. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. No product/browser/native/HTTP/Docker/provider/real-data/deletion/public/deploy.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-PHASE-20261017. After actual clean19/6 source-only closure, proactively prepare/bind changed-source qualification to the new SOURCE_IDENTITY_ONLY release and actual finality. Final source mechanism/fake blockers resolved only by S14 Local proof; no retroactive S12/R02 acceptance. Preserve all three test versions, inconclusive first pair, valid intermediate/final pairs, two reviewer admissions, first gate raw-capture limit and dispatch9/6/6 exception. WorkerNode8/Python2 and RootNode1 spent. Within already granted scope reviewer may record bounded necessary repair/recheck with named contradiction/information gain/cost and preserved outcomes; no per-tranche operator confirmation. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Product/runtime/provider/native/HTTP/Docker/real-data/deletion/public/deploy remain parked.
 
 ## Parked Checkpoints
 

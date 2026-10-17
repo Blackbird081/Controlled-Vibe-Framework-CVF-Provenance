@@ -182,6 +182,11 @@ async function run({ modules, baseURL, output, custody, control, config, now, up
       if (r.method() === 'POST' && /^\/api\/(ai|execute|generate)(\/|$)/.test(url.pathname)) result.aiPosts.push(url.pathname);
     });
     await act('login-page', 120000, o => page.goto('/login?from=%2Fartifacts', { waitUntil: 'networkidle', ...o }));
+    await act('login-ready', 30000, async o => {
+      const button = page.getByRole('button', { name: 'Đăng nhập', exact: true });
+      await button.waitFor({ state: 'visible', ...o });
+      assert.equal(await button.isEnabled(o), true, 'login-ready: submit still disabled');
+    });
     await act('fill-user', 30000, o => page.locator('input[placeholder="admin"]').fill('dev', o));
     await act('fill-password', 30000, o => page.locator('input[placeholder="admin123"]').fill('dev123', o));
     await act('login', 30000, o => page.getByRole('button', { name: 'Đăng nhập', exact: true }).click(o));

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "cvf.ncrHtmlSourceRelease@1",
+  "profile": "NCR_HTML_OWNED_SYNTHETIC_FRESH_SOURCE_V1",
+  "scope": "SOURCE_IDENTITY_ONLY",
+  "sourcePins": {
+    "scripts/cvf_ncr_html_owned_profile/__init__.py": "1a6128ca4a5ac84f82747ede35940aca8db33d0dddf2506c5c8627c552a463c8",
+    "scripts/cvf_ncr_html_owned_profile/lifecycle.py": "465e28670944b4060b01ec31400b5ef0258b0fff9634ec097c53371c39c28491",
+    "scripts/cvf_ncr_html_owned_profile/profile.py": "0165afcbf3bc4c56c221c2335d9c6bac9cce058d5b5c05778970620153136825",
+    "scripts/cvf_ncr_html_owned_profile/test_control.py": "f934b735bae97326d947b5d22bee158f282138eea57f3d9e295b40bf67e5b3f1",
+    "scripts/cvf_ncr_html_owned_profile/journey.cjs": "77532ae9dc28f75a8aec0a18c203eff98c2c4a61b63e8f7f2a9330062081f759",
+    "scripts/cvf_ncr_html_owned_profile/journey.test.cjs": "a04f88daea52a45f96cd9329d0ce0cef688249bdd0b142648edd0905fbcc1814",
+    "scripts/cvf_ncr_html_owned_profile/execution.py": "937d7d726f33b1d801936370d3771ca86feaacdc243364bd10331e17d810fc4d",
+    "scripts/cvf_ncr_html_owned_profile/test_execution.py": "7a352621b1a9db2a0a9978edd23c9ca4acb82386a3d5eacc583479fcfdc70357",
+    "scripts/cvf_ncr_html_owned_profile/protocol.py": "7f14b3e57efe30912418be1add87d43069b914906476d5820b255120924e4277",
+    "scripts/cvf_ncr_html_owned_profile/test_protocol.py": "4efa78090505b69e1fbc4e95359cc086764b228726554a0fc31a94324d97e7ba",
+    "scripts/cvf_ncr_html_owned_profile/test_win32.py": "ad249cfada2737ed038e2468854996417a0c8d4e8fbf16562695532dfc9f9228",
+    "scripts/cvf_ncr_html_owned_profile/test_admission.py": "e9d7c6efa93ef0e326312426fd2b85eef94b0a43c838336d775288d275959702",
+    "scripts/cvf_ncr_html_owned_profile/source_release.py": "e73315a1478a15a70787933623478d16a8bf7a87d073532eb85b4e1989870c41"
+  },
+  "productCommit": "8b75bde5299335f94de254078b39bcffc31cdd40",
+  "productScopeGitObjects": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web": "01ada06d232d140277a1c682a0fb675d7c0e435c",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE": "b559cbecd10ab83a5a36b282b1932fe794bbd18e",
+    "governance/toolkit/03_CONTROL/CVF_AGENT_REGISTRY.md": "89e7ad8a778b0ff70f13b07474f7a31def019158",
+    "governance/toolkit/04_TESTING/CVF_SELF_UAT_DECISION_LOG.md": "5f717b25b4de774683f4ef920c035052058816e5",
+    "docs/reference/CVF_GOVERNANCE_STATE_REGISTRY.json": "7d245836bc11cf727e7f2a4ff2aa1a77d927238c"
+  },
+  "fixture": {
+    "path": "docs/assessments/CVF_NCR_HTML_FRESH_PROFILE_USER_JOURNEY_SPEC_2026-10-14.md",
+    "sha256": "1d1a42f2c3f1e9d573b30cb46221e24ea1365d9f60aec95b6938e9fd10fb6a83"
+  },
+  "entrypoints": {
+    "scripts/probe_cvf_q001_synthetic_system_chain.py": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+    "scripts/probe_cvf_w05_browser_chain.cjs": "0d9a261cddc5e21c00938570f5f692163d91cade21d2cc02c54c20bbbe91c494"
+  },
+  "authority": {
+    "docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md": "9278d3b2dd09776e12d8d107f06dfb4b91dc0bf4b163200c3236fa0ea3afeacc",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_PHASE_2026-10-17.md": "3e32d0522800e444cbce9698e27cff28ed29d22bbd5a76ea6c6f198e137a12a4"
+  }
+}

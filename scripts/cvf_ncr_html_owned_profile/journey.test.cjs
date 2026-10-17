@@ -12,7 +12,7 @@ const input = { title: 'Synthetic Local Draft', sourcePath: 'synthetic/local.md'
   status: 'Draft', receiptAnchor: 'local-one', claimBoundary: 'Synthetic only.', sourceContent: '# Owned heading\nOwned source.' };
 const COMBINING = String.fromCharCode(0x301); // decomposed (non-NFC) accent
 const BLOB_SHA256 = '2f0981b2356a51a85f34d3d6ed94a0d0a0606c48d306888711876a5c2b225dec'; // sha256 of the immutable 0850546 entrypoint blob
-const SCRATCH = path.join(__dirname, '..', '..', '.cvf', 'runtime', 'ncr-body-heading-source-20261017', 'worker', 'node-' + randomBytes(6).toString('hex'));
+const SCRATCH = path.join(__dirname, '..', '..', '.cvf', 'runtime', 'ncr-login-readiness-source-phase-20261017', 'worker', 'node-' + randomBytes(6).toString('hex'));
 const MODULES = path.join(__dirname, '..', '..', 'EXTENSIONS', 'CVF_v1.6_AGENT_PLATFORM', 'cvf-web', 'node_modules');
 const ts = require(path.join(MODULES, 'typescript'));
 const { JSDOM } = require(path.join(MODULES, 'jsdom'));
@@ -176,16 +176,39 @@ async function journey(name, answer, failHeading = false) {
     pending.response.resolve({ url: () => post.url(), request: () => post, status: () => 200,
       body: async () => served.wire });
   };
+  let loginVisible = false, loginEnabled = false;
+  const getByRole = (role, { name, exact }) => {
+    assert.equal(role, 'button', 'legacy fake: wrong role');
+    assert.equal(exact, true, 'legacy fake: non-exact control');
+    const label = name.normalize('NFC');
+    assert.ok(['Đăng nhập', 'Tạo HTML', 'Tải HTML'].includes(label), 'legacy fake: unknown button');
+    return {
+      waitFor: async ({ state }) => {
+        assert.equal(label, 'Đăng nhập', 'legacy fake: wrong readiness control');
+        assert.equal(state, 'visible', 'legacy fake: wrong readiness state');
+        assert.equal(loginVisible, true, 'legacy fake: sign-in not visible');
+      },
+      isEnabled: async () => {
+        assert.equal(label, 'Đăng nhập', 'legacy fake: wrong enabled control');
+        return loginEnabled;
+      },
+      click: async () => {
+        if (label === 'Đăng nhập') { assert.equal(loginEnabled, true, 'legacy fake: disabled sign-in'); return; }
+        if (label === 'Tạo HTML') exportClick();
+        if (label === 'Tải HTML') pending.download.resolve({ saveAs: async target => fs.writeFileSync(target, served.html), suggestedFilename: () => 'x.html' });
+      },
+    };
+  };
+  assert.throws(() => getByRole('link', { name: 'Đăng nhập', exact: true }), /wrong role/);
+  assert.throws(() => getByRole('button', { name: 'Wrong sign-in', exact: true }), /unknown button/);
+  await assert.rejects(getByRole('button', { name: 'Đăng nhập', exact: true }).waitFor({ state: 'hidden' }), /wrong readiness state/);
+  await assert.rejects(getByRole('button', { name: 'Đăng nhập', exact: true }).waitFor({ state: 'visible' }), /not visible/);
   const page = {
-    on: (event, cb) => { page.seen = cb; }, goto: async () => {}, waitForURL: async () => {}, addInitScript: async () => {}, screenshot: async o => fs.writeFileSync(o.path, 'png'),
+    on: (event, cb) => { page.seen = cb; }, goto: async () => { loginVisible = true; loginEnabled = true; }, waitForURL: async () => {}, addInitScript: async () => {}, screenshot: async o => fs.writeFileSync(o.path, 'png'),
     locator: () => ({ fill: async () => {} }), getByLabel: () => ({ fill: async () => {}, selectOption: async () => {} }), getByTestId: () => ({ count: async () => 0 }),
     frameLocator: () => ({ locator: selector => ({ selector }) }), waitForEvent: () => (pending.download = defer()).promise,
     waitForResponse: () => (pending.response = defer()).promise,
-    getByRole: (role, { name }) => ({ click: async () => {
-      const label = name.normalize('NFC');
-      if (label === 'T\u1EA1o HTML') exportClick();
-      if (label === 'T\u1EA3i HTML') pending.download.resolve({ saveAs: async target => fs.writeFileSync(target, served.html), suggestedFilename: () => 'x.html' });
-    } }),
+    getByRole,
   };
   const context = { route: async () => {}, pages: () => [], newPage: async () => page, close: async () => { log.push('close'); },
     request: { get: async () => ({ json: async () => ({ user: { userId: 'usr_3', role: 'developer', authSource: 'local_mock' } }) }) } };
@@ -234,6 +257,145 @@ test('a reply with a tail, a wrong generation or a wrong operation stops the jou
     const bad = await journey('journey-' + name, answer);
     assert.deepEqual([bad.requests, bad.built, bad.json.exportPosts, bad.json.partial, bad.exit, bad.log], [['EXPORT_GATE_REQUEST'], [], [], true, 1, ['close']]); // no export click
     assert.match(bad.json.error, /Expected values to be strictly equal|expected/i);
+  }
+});
+test('S14 login readiness waits for hydrated ready form before filling', async () => {
+  const vm = require('node:vm');
+  const web = path.join(__dirname, '..', '..', 'EXTENSIONS', 'CVF_v1.6_AGENT_PLATFORM', 'cvf-web');
+  const modules = path.join(web, 'node_modules');
+  const fromWeb = name => require(path.join(modules, name));
+  const componentFile = path.join(web, 'src', 'app', 'login', 'LoginPageClient.tsx');
+  const componentRaw = fs.readFileSync(componentFile);
+  assert.equal(createHash('sha256').update(componentRaw).digest('hex'), '190e13518094c49259b87dddc903c8713c3810f2460644b6a2d8e9d57690586d');
+  const dom = new JSDOM('<div id="app"></div>', { url: 'http://localhost.invalid/login?from=%2Fartifacts' });
+  const globals = { window: dom.window, document: dom.window.document, navigator: dom.window.navigator,
+    HTMLElement: dom.window.HTMLElement, HTMLInputElement: dom.window.HTMLInputElement, Node: dom.window.Node,
+    Event: dom.window.Event, MouseEvent: dom.window.MouseEvent, localStorage: dom.window.localStorage,
+    IS_REACT_ACT_ENVIRONMENT: true };
+  const originalGlobals = Object.fromEntries(Object.keys(globals).map(key => [key, Object.getOwnPropertyDescriptor(global, key)]));
+  for (const [key, value] of Object.entries(globals)) Object.defineProperty(global, key, { configurable: true, writable: true, value });
+  let mounted;
+  try {
+    const React = fromWeb('react');
+    const server = fromWeb('react-dom/server');
+    const client = fromWeb('react-dom/client'); // first client import follows DOM globals
+    const { fireEvent } = fromWeb('@testing-library/dom');
+    const typescript = fromWeb('typescript');
+    let sessionStatus = 'loading', redirect = false, signInCalls = 0, controlledMatch = false;
+    const syntheticUser = 'dev', syntheticPass = 'dev123';
+    const mocks = { react: React, 'react/jsx-runtime': fromWeb('react/jsx-runtime'),
+      'next/navigation': { useRouter: () => ({ replace: () => { redirect = true; } }), useSearchParams: () => ({ get: () => '/artifacts' }) },
+      '@/lib/i18n': { useLanguage: () => ({ language: 'vi' }), LanguageToggle: () => null },
+      'next-auth/react': { useSession: () => ({ status: sessionStatus }), signIn: async (provider, fields) => {
+        signInCalls += 1;
+        controlledMatch = provider === 'credentials' && fields.username === syntheticUser && fields.password === syntheticPass;
+        return controlledMatch ? { ok: true } : { error: 'synthetic-refusal' };
+      } } };
+    const compiled = typescript.transpileModule(componentRaw.toString('utf8'), { compilerOptions: {
+      module: typescript.ModuleKind.CommonJS, jsx: typescript.JsxEmit.ReactJSX, target: typescript.ScriptTarget.ES2022 } }).outputText;
+    const exports = {};
+    vm.runInThisContext('(function(require,module,exports){' + compiled + '\n})', { filename: 'LoginPageClient.s14.cjs' })(id => {
+      assert.ok(Object.prototype.hasOwnProperty.call(mocks, id), 'UNEXPECTED_COMPONENT_IMPORT'); return mocks[id];
+    }, { exports }, exports);
+    const Component = exports.default;
+    assert.equal(typeof Component, 'function', 'ACTUAL_COMPONENT_EXPORT_ABSENT');
+    const host = dom.window.document.querySelector('#app');
+    const element = () => React.createElement(Component, { localMockAllowed: true, selectedOAuthProvider: null });
+    host.innerHTML = server.renderToString(element());
+    const buttonFor = (role, name) => {
+      if (role !== 'button') return null;
+      const hits = [...host.querySelectorAll('button')].filter(button => button.type === 'submit'
+        && button.textContent.trim().normalize('NFC') === name.normalize('NFC'));
+      return hits.length === 1 ? hits[0] : null;
+    };
+    const signInName = 'Đăng nhập';
+    const loading = [...host.querySelectorAll('button')].filter(button => button.type === 'submit');
+    assert.equal(loading.length, 1, 'SSR_SUBMIT_NOT_UNIQUE');
+    assert.equal(loading[0].disabled, true, 'SSR_LOADING_NOT_DISABLED');
+    assert.equal(buttonFor('link', signInName), null, 'WRONG_ROLE_ACCEPTED');
+    assert.equal(buttonFor('button', 'Wrong sign-in'), null, 'WRONG_NAME_ACCEPTED');
+    await React.act(async () => { fireEvent.click(loading[0]); });
+    assert.equal(signInCalls, 0, 'DISABLED_SUBMITTED');
+    let readyStarted = false, hydrated = false, sessionProbeReached = false, exportCalls = 0, evaluateCalls = 0;
+    let notifyPending, releasePending;
+    const firstPending = new Promise(resolve => { notifyPending = resolve; });
+    const hydrationBarrier = new Promise(resolve => { releasePending = resolve; });
+    const actionability = async (role, name) => {
+      assert.equal(role, 'button', 'WRONG_ROLE_ACTIONABILITY');
+      assert.equal(name, signInName, 'WRONG_NAME_ACTIONABILITY');
+      if (!hydrated) {
+        if (!readyStarted) { readyStarted = true; notifyPending(); }
+        await hydrationBarrier; // only the external test driver releases this actual pending UI wait
+      }
+      const button = buttonFor(role, name);
+      assert.ok(button && !button.disabled, 'READY_SIGNIN_CONTROL_ABSENT');
+      return button;
+    };
+    const fillDom = async (selector, value) => {
+      const hits = host.querySelectorAll(selector);
+      assert.equal(hits.length, 1, 'INPUT_NOT_UNIQUE');
+      const setter = Object.getOwnPropertyDescriptor(dom.window.HTMLInputElement.prototype, 'value').set;
+      await React.act(async () => { setter.call(hits[0], value); fireEvent.input(hits[0], { bubbles: true }); });
+    };
+    const page = { on: () => {}, goto: async () => {}, addInitScript: async () => {},
+      screenshot: async o => fs.writeFileSync(o.path, 'png'),
+      locator: selector => ({ fill: async value => {
+        assert.ok(selector === 'input[placeholder="admin"]' || selector === 'input[placeholder="admin123"]', 'UNEXPECTED_INPUT');
+        await fillDom(selector, value);
+      } }),
+      getByRole: (role, options) => ({
+        waitFor: async ({ state }) => { assert.equal(state, 'visible', 'UNEXPECTED_WAIT');
+          assert.equal(role, 'button', 'WRONG_ROLE_WAIT'); assert.equal(options.name, signInName, 'WRONG_NAME_WAIT');
+          await actionability(role, options.name); },
+        isEnabled: async () => { const button = buttonFor(role, options.name); return !!button && !button.disabled; },
+        click: async () => { assert.equal(role, 'button', 'WRONG_ROLE_CLICK');
+          assert.equal(options.name, signInName, 'WRONG_NAME_CLICK');
+          const button = await actionability(role, options.name); await React.act(async () => { fireEvent.click(button); }); },
+      }),
+      waitForURL: async () => { if (!redirect) throw new Error('CONTROLLED_FIELDS_ABSENT'); },
+    };
+    const context = { route: async () => {}, pages: () => [], newPage: async () => page, close: async () => {},
+      request: { get: async () => { sessionProbeReached = true; throw new Error('SOURCE_CASE_STOP_AFTER_SESSION'); } } };
+    const dir = path.join(SCRATCH, 's14-real-component'), modulesFake = path.join(SCRATCH, 's14-modules');
+    fs.mkdirSync(path.join(modulesFake, '@playwright', 'test'), { recursive: true });
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(modulesFake, '@playwright', 'test', 'package.json'), JSON.stringify({ name: 'fake', main: 'index.js' }));
+    fs.writeFileSync(path.join(modulesFake, '@playwright', 'test', 'index.js'), 'module.exports = global.__s14FakePlaywright;');
+    global.__s14FakePlaywright = { chromium: { launchPersistentContext: async () => context }, expect: () => ({}) };
+    const config = path.join(dir, 'config.json'), output = path.join(dir, 'browser.json');
+    fs.writeFileSync(config, JSON.stringify({ inputs: [input], cap: 1, browserProfile: path.join(dir, 'profile'), ...limits() }));
+    const originalDestroy = process.stdin.destroy;
+    process.stdin.destroy = () => {};
+    try {
+      const running = run({ modules: modulesFake, baseURL: 'http://localhost.invalid', output, custody: dir,
+        control: async () => {}, config, now: () => T, uptime: () => 0, emit: () => {} });
+      const pending = await Promise.race([firstPending.then(() => true), running.then(() => false)]);
+      assert.equal(pending, true, 'NO_PENDING_ACTIONABILITY_BEFORE_RUN_END');
+      // The driver observes a real pending named-control wait, then releases hydration/status.
+      await React.act(async () => { mounted = client.hydrateRoot(host, element()); });
+      const stillLoading = [...host.querySelectorAll('button')].filter(button => button.type === 'submit');
+      assert.equal(stillLoading.length, 1, 'HYDRATED_SUBMIT_NOT_UNIQUE');
+      assert.equal(stillLoading[0].disabled, true, 'HYDRATED_LOADING_NOT_DISABLED');
+      sessionStatus = 'unauthenticated';
+      await React.act(async () => { mounted.render(element()); });
+      hydrated = true;
+      releasePending();
+      await running;
+    }
+    finally { process.stdin.destroy = originalDestroy; process.exitCode = undefined; delete global.__s14FakePlaywright; }
+    assert.equal(readyStarted, true, 'NO_ACTUAL_ACTIONABILITY_WAIT');
+    assert.equal(hydrated, true, 'NO_ACTUAL_HYDRATION');
+    assert.equal(signInCalls, 1, 'SUBMIT_COUNT_NOT_ONE');
+    assert.equal(controlledMatch, true, 'CONTROLLED_FIELDS_ABSENT');
+    assert.equal(redirect, true, 'NO_SYNTHETIC_REDIRECT');
+    assert.equal(sessionProbeReached, true, 'NO_SESSION_PROBE');
+    assert.equal(exportCalls + evaluateCalls, 0, 'EFFECT_AFTER_SESSION');
+  } finally {
+    if (mounted) { const React = fromWeb('react'); await React.act(async () => { mounted.unmount(); }); }
+    for (const [key, descriptor] of Object.entries(originalGlobals)) {
+      if (descriptor) Object.defineProperty(global, key, descriptor); else delete global[key];
+    }
+    dom.window.close();
   }
 });
 test('import installs no network guard and starts no runtime', () => {
