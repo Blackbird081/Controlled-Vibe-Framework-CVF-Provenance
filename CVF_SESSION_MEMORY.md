@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | BE-R02 paired invocation spent blocked; retain actual first outcome; both R02 programs spent |
+| Parent maintenance | BE-S12 in progress source-only; BE-R01 cap2 accepted old source; BE-R02 spent blocked |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_r2b_be_r02_blocked_spent`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local PLAN only; role=INTERNAL_AGENT Local reviewer/closer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=no effect grant.
+Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_source_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bounded exact6 S12 source-only worker under fresh bound packet; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=no provider/runtime/native/HTTP/Docker/browser/product-effect authorization.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_r2b_be_r02_blocked_spent`
-Current mode: `cvf_ncr_html_r2b_be_r02_blocked_spent`; previous mode marker: `cvf_ncr_html_r2b_be_r02_spent_return_pending`
+Current mode marker: `cvf_ncr_html_login_readiness_source_dispatched`
+Current mode: `cvf_ncr_html_login_readiness_source_dispatched`; previous mode marker: `cvf_ncr_html_r2b_be_r02_blocked_spent`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_r2b_be_r02_blocked_spent`
+Mode: `cvf_ncr_html_login_readiness_source_dispatched`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R2B-RUNTIME-20261017. BE-R02 paired invocation spent blocked; retain actual first outcome; consume docs/reviews/CVF_NCR_HTML_B_E_R2B_RUNTIME_LOCAL_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-b-e-r2b-runtime-local-20261017.json. Next Local planning only from verified first evidence. No automatic source patch, cap refill, runtime/native/provider, cleanup, stage deletion, public or deploy grant. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Consume .cvf/runtime/ncr-be-r2b-runtime-20261017/final-result.json when present for actual committed exact13/6 finality; until it exists material/actual-SHA continuity and clean split finality are pending. Consume fixed finality before interpreting pending-at-review wording; do not repeat closure. Actual result material SHA 7e04f4e9079d0c7d08a4e151959e090cbd772f55. No repeat closure.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-20261017. Under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md` and `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`, after committed exact9 dispatch metadata, fresh current B/W hashes, and bound pre-dispatch/pre-implementation PASS, release one INTERNAL_AGENT exact6 source-only worker. Prove a real actual-component held-hydration RED on unchanged journey; permit one named harness-only repair plus one repeated RED only for a concrete harness defect; then freeze the complete test-file hash, add only one bounded pre-fill readiness wait, and run same-case GREEN plus the native-skipped selected regression. Preserve the first failure. Worker Node maximum4 starts <=60s each; Python admission and focused authority tests once each <=120s; Root distinct six-case probe is separately Local-owned <=60s. No isolation child. Inclusive preparation start 2026-10-17T04:00:00Z; worker hard 2026-10-17T05:30:00Z; Local hard 2026-10-17T07:00:00Z; no reset. R02 is closed clean split but `accepted=false`; no cap1 retry. BE-S12 remains source support only; BE-R01 cap2 accepted under old source, BE-R02 open/spent. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. No browser/product runtime, provider, native, HTTP, Docker, real data, deletion, public or deploy. Current phase anchor 740abe508754ecada86be379b39fb7ed51abe341; worker captures the actual released HEAD.
 
 ## Parked Checkpoints
 

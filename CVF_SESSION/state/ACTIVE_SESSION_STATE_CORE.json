@@ -36,12 +36,12 @@
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md",
-    "baselineSha256": "826798f30c0e9a550c77af583f1c938e3104ff706b31f4d41e4c157144f3b8eb",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md",
-    "workOrderSha256": "5233d85f42cfd50c7da0869736b15fa78110b3a2d3903a30eebfdfe8a633dbce"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md",
+    "baselineSha256": "c8460ed425900dac979311c5ace8bf8c104b71c798580a2f3b4689ba710c1cd3",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md",
+    "workOrderSha256": "457a1d65f7954046ea9d1031e9feb3854a60e3a9e3d3dcbbad827992775afd0b"
   },
-  "currentAuthoritySyncReason": "R02 continuity: BE-R02 paired invocation spent blocked; retain actual first outcome; no source repin.",
+  "currentAuthoritySyncReason": "BE-S12 bounded login-readiness source-only dispatch material after actual R02 clean split finality; accepted=false retained; no runtime effect grant.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_r2b_be_r02_blocked_spent",
-  "previousMode": "cvf_ncr_html_r2b_be_r02_spent_return_pending",
+  "currentMode": "cvf_ncr_html_login_readiness_source_dispatched",
+  "previousMode": "cvf_ncr_html_r2b_be_r02_blocked_spent",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

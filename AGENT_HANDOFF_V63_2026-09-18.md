@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-BE-R02 paired invocation spent blocked; retain actual first outcome. Original paired control/runtime and independent PURE10/PURE11 records retained; exact13 material followed by exact6 actual SHA. docs/reviews/CVF_NCR_HTML_B_E_R2B_RUNTIME_LOCAL_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-b-e-r2b-runtime-local-20261017.json.
+Exact9 source-only dispatch metadata and exact6 future worker return. BE-S12 source support only; R02 closed clean split with accepted=false; product outcome remains open. No runtime retry, provider, native, Docker, deletion, public or deployment scope.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_r2b_be_r02_blocked_spent`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local PLAN only; role=INTERNAL_AGENT Local reviewer/closer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=no effect grant.
+Startup acknowledged: current mode=`cvf_ncr_html_login_readiness_source_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bounded exact6 S12 source-only worker under fresh bound packet; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=no provider/runtime/native/HTTP/Docker/browser/product-effect authorization.
 
 ## Current Mode
 
-`cvf_ncr_html_r2b_be_r02_blocked_spent`. BE-R02 paired invocation spent blocked; retain actual first outcome. R02 paired invocation spent. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged.
+`cvf_ncr_html_login_readiness_source_dispatched`. Conditional BE-S12 source-only dispatch; the R02 actor is spent and finality `accepted=false`. No product/runtime effects are authorized.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md` SHA256 `826798f30c0e9a550c77af583f1c938e3104ff706b31f4d41e4c157144f3b8eb`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md` SHA256 `5233d85f42cfd50c7da0869736b15fa78110b3a2d3903a30eebfdfe8a633dbce`. Execution preimages and source18 unchanged.
+Baseline `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md` SHA256 `c8460ed425900dac979311c5ace8bf8c104b71c798580a2f3b4689ba710c1cd3`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md` SHA256 `457a1d65f7954046ea9d1031e9feb3854a60e3a9e3d3dcbbad827992775afd0b`. New S12 source-only packet. S11 source release and R02 first-result/custody are immutable.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R2B-RUNTIME-20261017. BE-R02 paired invocation spent blocked; retain actual first outcome; consume docs/reviews/CVF_NCR_HTML_B_E_R2B_RUNTIME_LOCAL_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-b-e-r2b-runtime-local-20261017.json. Next Local planning only from verified first evidence. No automatic source patch, cap refill, runtime/native/provider, cleanup, stage deletion, public or deploy grant. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Consume .cvf/runtime/ncr-be-r2b-runtime-20261017/final-result.json when present for actual committed exact13/6 finality; until it exists material/actual-SHA continuity and clean split finality are pending. Consume fixed finality before interpreting pending-at-review wording; do not repeat closure. Actual result material SHA 7e04f4e9079d0c7d08a4e151959e090cbd772f55. No repeat closure.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-LOGIN-READINESS-SOURCE-20261017. Under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md` and `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`, after committed exact9 dispatch metadata, fresh current B/W hashes, and bound pre-dispatch/pre-implementation PASS, release one INTERNAL_AGENT exact6 source-only worker. Prove a real actual-component held-hydration RED on unchanged journey; permit one named harness-only repair plus one repeated RED only for a concrete harness defect; then freeze the complete test-file hash, add only one bounded pre-fill readiness wait, and run same-case GREEN plus the native-skipped selected regression. Preserve the first failure. Worker Node maximum4 starts <=60s each; Python admission and focused authority tests once each <=120s; Root distinct six-case probe is separately Local-owned <=60s. No isolation child. Inclusive preparation start 2026-10-17T04:00:00Z; worker hard 2026-10-17T05:30:00Z; Local hard 2026-10-17T07:00:00Z; no reset. R02 is closed clean split but `accepted=false`; no cap1 retry. BE-S12 remains source support only; BE-R01 cap2 accepted under old source, BE-R02 open/spent. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. No browser/product runtime, provider, native, HTTP, Docker, real data, deletion, public or deploy. Current phase anchor 740abe508754ecada86be379b39fb7ed51abe341; worker captures the actual released HEAD.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -72,10 +72,13 @@ Current R02 result material `7e04f4e9079d0c7d08a4e151959e090cbd772f55`: normal a
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: paired spent program, actual review disposition and source-generated current projection align. Following exact6 actual-material-SHA continuity is separate.
+Atomicity reason: B/W, pending BE-S12 roadmap status and current session mode/authority/next move must agree in dispatch9; following continuity pins actual material SHA.
 
 Exact changed manifest:
 
+- `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -83,47 +86,50 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: listed metadata paths only; no new effects/retry/cleanup/deletion.
+Rollback boundary: listed metadata only; no source, result, custody, runtime or resource effect.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: R02 result B/W, review evidence, BE-R02 roadmap and current6. No source/checker semantics; original execution authority preimages remain immutable.
+Authorized guard-maintenance scope: exact S12 source-only dispatch metadata and current-session authority/next move.
 Protected paths:
+- `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: operator continuation and standing Local exact-result review/closure/steward authority.
-Rollback boundary: these metadata paths only. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged.
+Operator authorization: Local root continuation for bounded source support after R02 clean-split closure; no effect consent.
+Rollback boundary: exact listed metadata only; preserve R02/S11/R1E evidence, source18 and all old release/custody. No deletion.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT reviewer/closer/steward |
-| Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-r2b-r02-continuity-20261017 |
-| Working directory | repository root |
-| Command or tool surface | consume original terminal/full gate and independent PURE10/PURE11; documentary closure and current6 generation |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | one-actor R02 order and standing Local closure/steward authority |
-| Before status evidence | HEAD 7e04f4e9079d0c7d08a4e151959e090cbd772f55; worker lane released |
-| After status evidence | BE-R02 paired invocation spent blocked; retain actual first outcome; two programs spent, no replay |
-| Diff evidence | exact6 continuity manifest |
-| Approval boundary | metadata only; no runtime/native/provider/deletion |
-| Claim boundary | bounded mechanical B-E only if two actual actors accepted; no AI efficacy |
+| Actor | LOCAL root dispatcher/steward |
+| Provider or surface | private shared workspace; source-only metadata |
+| Session or invocation | CVF-NCR-HTML-LOGIN-READINESS-SOURCE-20261017:material |
+| Working directory | D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF |
+| Command or tool surface | reviewed source-support packet adoption and canonical session-state generation; no source/test/native/runtime execution by adoption |
+| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | Local root source-only continuation after closed R02 first-result finality |
+| Before status evidence | HEAD 740abe508754ecada86be379b39fb7ed51abe341; git status --short empty; clean worktree; stage empty; accepted=false R02 result and source18 unchanged |
+| After status evidence | exact9 metadata paths for material; no source/effect start |
+| Diff evidence | actual named-file manifest checked against the bound 9 paths |
+| Approval boundary | Local technical dispatch only; worker must not commit; no provider/runtime/native/deletion |
+| Claim boundary | S12 source dispatch only; not source acceptance, R2 outcome, or runtime authority |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-r2b-r02-continuity-20261017 |
-| Expected manifest | AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
-| Actual changed set | AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
-| Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; original custody retained |
+| Invocation ID | CVF-NCR-HTML-LOGIN-READINESS-SOURCE-20261017:material |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_READINESS_SOURCE_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact9 only |
+| Deletion or rename disposition | N/A with reason: none |
 
 ## Claim Boundary
 
-BE-R02 paired invocation spent blocked; retain actual first outcome. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. No AI governance efficacy, provider, full R3/R4, public or deploy claim.
+S12 dispatch authorizes only the new bounded source-only packet. It does not prove R02 cause or product acceptance, qualify changed source, or grant runtime/cap1/provider/public/deployment authority.
 
 ## Historical Terminal Timing Disclosure - Prior Source Recovery
 
