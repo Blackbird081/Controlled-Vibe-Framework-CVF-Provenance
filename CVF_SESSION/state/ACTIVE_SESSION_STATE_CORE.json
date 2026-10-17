@@ -37,11 +37,11 @@
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_LOGIN_FIXTURE_CONTROL_2026-10-17.md",
-    "baselineSha256": "a4d84b2e0e2557dbb26729775503ced643fe0163710980c9c5ca9ab1c1ad6e62",
+    "baselineSha256": "727666116329484fa903e8744d10236c4774bd60c7722f6587241988cc3cd8c7",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_FIXTURE_CONTROL_2026-10-17.md",
-    "workOrderSha256": "6165b48c4371380270bf0eb563803bbc19961f523db953854c29eb90490dd69f"
+    "workOrderSha256": "21a3d47d0a349e55cb8fb0203360a8da7c4f54c04d203e8dd85a80f60879a937"
   },
-  "currentAuthoritySyncReason": "Integrated root contract phase1 fixture-only dispatch continuity; all source18 frozen; no S12 retry",
+  "currentAuthoritySyncReason": "BE-S13 fixture-only PASS; source S11 unchanged; material",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_login_fixture_control_dispatched",
-  "previousMode": "cvf_ncr_html_login_readiness_source_blocked",
+  "currentMode": "cvf_ncr_html_login_fixture_control_accepted_bounded",
+  "previousMode": "cvf_ncr_html_login_fixture_control_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",

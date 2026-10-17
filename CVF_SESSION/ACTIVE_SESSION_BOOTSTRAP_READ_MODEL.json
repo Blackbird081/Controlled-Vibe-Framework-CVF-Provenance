@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_html_login_fixture_control_dispatched",
+  "currentMode": "cvf_ncr_html_login_fixture_control_accepted_bounded",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "Actual fixture dispatch material SHA 53054f56470adfa415c83d521733f55856830495. PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-LOGIN-FIXTURE-CONTROL-20261017. Under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_FIXTURE_CONTROL_2026-10-17.md` and `docs/baselines/CVF_GC018_NCR_HTML_LOGIN_FIXTURE_CONTROL_2026-10-17.md`, release one INTERNAL_AGENT fixture worker only after actual exact10/6 dispatch and bound pre-dispatch/pre-implementation PASS on current B/W hashes. Worker exact2 WR/WE plus one fresh ignored actual LoginPageClient SSR/hydrate/controlled-submit harness; all18 sources frozen. Node worker max2 <=60s each, optional one named fixture-only repair/repeat preserving first failure; Python semantic0; Root distinct private six-case Node1 once<=60 after valid return. Preparation anchor04:00Z includes prior diagnosis, workerhard06:15Z, Localhard07:00Z, no reset. Same-problem SCEC ordinal1 with three unresolved blockers, ROOT_CONTRACT_REQUIRED/INTEGRATED_ROOT_CONTRACT. S12 failed accepted=false, no retry; S11/Q04/R1E old-source acceptance; R02 spent. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. No journey.run, browser/product runtime, real auth/backend, network/provider, native utility/socket, HTTP, Docker, real data, deletion, public/deploy.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-LOGIN-FIXTURE-CONTROL-20261017. After actual clean exact13/6 fixture-only acceptance, proactively bind the integrated source phase to actual S13 CP successor2, finality and new independent Root fixture evidence. Source18 stays frozen until separately gated source B/W; prepare all legacy fake APIs before causal RED/full-test freeze, one bounded pre-fill wait, identical-test GREEN, selected regressions, narrow authority and distinct Root source-control probe. No per-tranche confirmation needed within granted scope; reviewer may record bounded necessary repair/recheck with named contradiction/information gain/cost and preserved failures. S13 worker budget remains spent and no further S13 semantic run is planned. S11/Q04/R1E old-source acceptance; R02/S12 spent. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred unchanged. Product/runtime/provider/native/HTTP/Docker/real-data/deletion/public/deploy parked.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_LOGIN_FIXTURE_CONTROL_2026-10-17.md",
-    "baselineSha256": "a4d84b2e0e2557dbb26729775503ced643fe0163710980c9c5ca9ab1c1ad6e62",
+    "baselineSha256": "727666116329484fa903e8744d10236c4774bd60c7722f6587241988cc3cd8c7",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_LOGIN_FIXTURE_CONTROL_2026-10-17.md",
-    "workOrderSha256": "6165b48c4371380270bf0eb563803bbc19961f523db953854c29eb90490dd69f"
+    "workOrderSha256": "21a3d47d0a349e55cb8fb0203360a8da7c4f54c04d203e8dd85a80f60879a937"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
