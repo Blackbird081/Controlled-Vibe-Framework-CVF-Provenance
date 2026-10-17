@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `2de96dbbf9212e505cae5436f92349661ff6fa2c`. Material SHA: `2de96dbbf9212e505cae5436f92349661ff6fa2c`. Batch ID: CVF-NCR-HTML-B-E-R1E-RUNTIME-20261017. Exact6 actual-material continuity; clean split closure follows.
+Current HEAD recorded for this handoff: `8cd9d4fcbb580b5b1dfd607d132e7c0b7ecfb794`. Material SHA: `8cd9d4fcbb580b5b1dfd607d132e7c0b7ecfb794`. Batch ID: CVF-NCR-HTML-B-E-R2B-RUNTIME-20261017. Exact6 actual-material continuity; bound gate closure remains Root-owned.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -17,7 +17,7 @@ One R02 ordinal2 LOCAL_REVIEWER cap1 actor using actual 9/26 inert controls, Roo
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=cvf_ncr_html_r2b_be_r02_dispatched; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=conditional R02 cap1 program1 after exact9/6 dispatch and external freeze; program2 remains behind Root PURE10 barrier; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=provider/deletion and retry remain unadmitted; no generic operator checkpoint.
+Startup acknowledged: current mode=cvf_ncr_html_r2b_be_r02_dispatched; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=conditional R02 cap1 program1 after exact9/6 dispatch and external freeze; program2 remains behind Root PURE10 barrier; role=INTERNAL_AGENT Local orchestrator/reviewer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=provider/deletion and retry remain unadmitted; no generic operator checkpoint.
 
 ## Current Mode
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-R2B-RUNTIME-20261017. One fresh Local INTERNAL_AGENT LOCAL_REVIEWER ordinal2 cap1 actor ncr-be-local-20261017-r2b under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md and docs/baselines/CVF_GC018_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md may start only after exact9 authority commit, actual-SHA exact6 continuity, bound pre-dispatch PASS on continuity HEAD and Root paired-envelope/external-pin freeze. Program1 is one actual cvf.ncrHtmlInertControls@3 SUBPROCESS matrix (9 ordered cases, 26 charged inert children, zero product effects). Root alone checks pre-frozen private PURE10 and accepted R1E; only PASS permits one original D.execute v1 cap1 journey. Program2 is not authorized by program1 success alone. Fixed runId ncr-be-local-20261017-r2b; namespace D:\CVF_NCR_RUNTIME\ncr-be-local-20261017-r2b; custody D:\CVF_NCR_RUNTIME\custody-be-r2b-20261017. Preparation 03:15Z; worker hard 04:45Z; latest launch 04:27Z; Local hard 06:15Z. Limits work900/cleanup120s, Native work/cleanup56/8, Job32, readiness engine4/web6/route2/total12, Job1/container1/web1/browserSession1, export1/evaluate1, providerStarts0/stageDeletion0, outer1080/wait1070/termination5; retry0; no separate Docker group. Worker returns exact2 after terminal and does not commit. Root closes actual result exact13 then actual-SHA6. R1E accepted bounded, S11/Q04/source18 immutable; old actors never replayed; parent gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred do not reset. Material anchor 1cb8f480ba626bdfe8c334cbbd07d7ad765d4e36; phase=material.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-R2B-RUNTIME-20261017. One fresh Local INTERNAL_AGENT LOCAL_REVIEWER ordinal2 cap1 actor ncr-be-local-20261017-r2b under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md and docs/baselines/CVF_GC018_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md may start only after exact9 authority commit, actual-SHA exact6 continuity, bound pre-dispatch PASS on continuity HEAD and Root paired-envelope/external-pin freeze. Program1 is one actual cvf.ncrHtmlInertControls@3 SUBPROCESS matrix (9 ordered cases, 26 charged inert children, zero product effects). Root alone checks pre-frozen private PURE10 and accepted R1E; only PASS permits one original D.execute v1 cap1 journey. Program2 is not authorized by program1 success alone. Fixed runId ncr-be-local-20261017-r2b; namespace D:\CVF_NCR_RUNTIME\ncr-be-local-20261017-r2b; custody D:\CVF_NCR_RUNTIME\custody-be-r2b-20261017. Preparation 03:15Z; worker hard 04:45Z; latest launch 04:27Z; Local hard 06:15Z. Limits work900/cleanup120s, Native work/cleanup56/8, Job32, readiness engine4/web6/route2/total12, Job1/container1/web1/browserSession1, export1/evaluate1, providerStarts0/stageDeletion0, outer1080/wait1070/termination5; retry0; no separate Docker group. Worker returns exact2 after terminal and does not commit. Root closes actual result exact13 then actual-SHA6. R1E accepted bounded, S11/Q04/source18 immutable; old actors never replayed; parent gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred do not reset. Material anchor 8cd9d4fcbb580b5b1dfd607d132e7c0b7ecfb794; phase=continuity.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -72,13 +72,10 @@ Fresh result material `2de96dbbf9212e505cae5436f92349661ff6fa2c`: normal collect
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: conditional R02 paired cap1 authority, roadmap state and current mode/next/generated raw authority hashes align in material.
+Atomicity reason: conditional R02 paired cap1 authority, roadmap state and current mode/next/generated raw authority hashes align in continuity.
 
 Exact changed manifest:
 
-- `docs/baselines/CVF_GC018_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -91,9 +88,6 @@ Rollback boundary: listed paths only; actual-material-SHA exact6 continuity is s
 
 Authorized guard-maintenance scope: one paired R02 cap1 authority, roadmap progress and exact6 source/generated current mode/next/raw authority continuity only; no source, checker, hook or carrier semantics.
 Protected paths:
-- `docs/baselines/CVF_GC018_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -109,21 +103,21 @@ Rollback boundary: listed paths only; source18, S11 release, Q04/R1E evidence, o
 |---|---|
 | Actor | Local INTERNAL_AGENT orchestrator/reviewer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-r2b-dispatch-material-20261017 |
+| Session or invocation | ncr-be-r2b-dispatch-continuity-20261017 |
 | Working directory | repository root |
 | Command or tool surface | root-reviewed R02 authority adoption, roadmap progress and current-mode generation; commits/gates owned by Local root |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | operator continuation; new ordinal2 LOCAL_REVIEWER cap1 pair after accepted R1E |
-| Before status evidence | HEAD 1cb8f480ba626bdfe8c334cbbd07d7ad765d4e36; clean tree; accepted R1E/S11/Q04 immutable; no R02 program started |
+| Before status evidence | HEAD 8cd9d4fcbb580b5b1dfd607d132e7c0b7ecfb794; clean tree; accepted R1E/S11/Q04 immutable; no R02 program started |
 | After status evidence | conditional R02 program1, Root barrier, program2; no control or product outcome claimed |
-| Diff evidence | exact9 material manifest |
+| Diff evidence | exact6 continuity manifest |
 | Approval boundary | program1 9/26 inert controls after bound dispatch; program2 only after Root PURE10 PASS; no retry/provider/deletion |
 | Claim boundary | conditional paired cap1 authority only; no R02 outcome or public/deploy/business claim |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-r2b-dispatch-material-20261017 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
+| Invocation ID | ncr-be-r2b-dispatch-continuity-20261017 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact6 |
 | Deletion or rename disposition | none; predecessors and old evidence retained |
 
 ## Claim Boundary

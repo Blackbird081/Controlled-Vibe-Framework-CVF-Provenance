@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md",
     "workOrderSha256": "91ff84d4ad8e64c6e860c27312120e63d17a6cb57158fdaca9d92b342dda8ebf"
   },
-  "currentAuthoritySyncReason": "R02 conditional cap1 paired dispatch material; accepted R1E/S11/Q04 immutable; no R02 result.",
+  "currentAuthoritySyncReason": "R02 conditional cap1 paired dispatch continuity; accepted R1E/S11/Q04 immutable; no R02 result.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
