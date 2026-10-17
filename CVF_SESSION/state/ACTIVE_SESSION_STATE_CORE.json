@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2B_RUNTIME_2026-10-17.md",
     "workOrderSha256": "91ff84d4ad8e64c6e860c27312120e63d17a6cb57158fdaca9d92b342dda8ebf"
   },
-  "currentAuthoritySyncReason": "R02 conditional cap1 paired dispatch continuity; accepted R1E/S11/Q04 immutable; no R02 result.",
+  "currentAuthoritySyncReason": "Root-owned exact6 mode marker correction after first blocked return gate; original execution anchor preserved at f9223b1b644aefa5e21d250165d22ec491b76fcc",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
@@ -110,8 +110,8 @@
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_LIVE_TEST_VARIANCE_2026-05-17.md",
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF_POST_RC2_GA_READINESS_2026-05-08.md"
   ],
-  "currentMode": "cvf_ncr_html_r2b_be_r02_dispatched",
-  "previousMode": "cvf_ncr_html_r1e_be_r01_accepted_bounded",
+  "currentMode": "cvf_ncr_html_r2b_be_r02_spent_return_pending",
+  "previousMode": "cvf_ncr_html_r2b_be_r02_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "operatorLaneSelectionDate": "2026-05-19",
   "operatorLaneSelectionAuthority": "CVF_MULTI_AGENT_DECISION_PACK_REVIEW_CVF_NEXT_PHASE_2026-05-18.md",
