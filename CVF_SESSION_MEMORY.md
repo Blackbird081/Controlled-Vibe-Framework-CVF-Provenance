@@ -35,7 +35,7 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_r1e_be_r01_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local BE-R02 authority planning only; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=cap1/any runtime retry/provider/deletion separately unadmitted; no generic operator checkpoint.
+Startup acknowledged: current mode=`cvf_ncr_html_r1e_be_r01_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local BE-R02 authority planning only; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=cap1/any runtime retry/provider/deletion separately unadmitted; no generic operator checkpoint.
 
 ## Current Mode
 
@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_r1e_be_r01_accepted_bounded`; previous mode marker: 
 
 Mode: `cvf_ncr_html_r1e_be_r01_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R1E-RUNTIME-20261017. BE-R01 cap2 first journey accepted bounded; consume docs/reviews/CVF_NCR_HTML_B_E_R1E_RUNTIME_LOCAL_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-b-e-r1e-runtime-local-20261017.json. r1e exhausted. Next Local plans separately admitted BE-R02 cap1 controls/journey against this accepted cap2 predecessor; no automatic cap1 effect. Source18/accepted source B/W/release/qualification immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Consume .cvf/runtime/ncr-be-r1e-runtime-20261017/final-result.json when present for actual committed exact13/6 finality; until it exists, material/actual-SHA continuity and clean split closure are pending.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R1E-RUNTIME-20261017. BE-R01 cap2 first journey accepted bounded; consume docs/reviews/CVF_NCR_HTML_B_E_R1E_RUNTIME_LOCAL_COMPLETION_2026-10-17.md and docs/reviews/evidence/ncr-html-b-e-r1e-runtime-local-20261017.json. r1e exhausted. Next Local plans separately admitted BE-R02 cap1 controls/journey against this accepted cap2 predecessor; no automatic cap1 effect. Source18/accepted source B/W/release/qualification immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7 exclusions/LHW24 and R1/R2partial,R3/R4open,R5/R6deferred unchanged; old1spent/2retired never replayed. Consume .cvf/runtime/ncr-be-r1e-runtime-20261017/final-result.json when present for actual committed exact13/6 finality; until it exists, material/actual-SHA continuity and clean split closure are pending. Actual result material SHA 2de96dbbf9212e505cae5436f92349661ff6fa2c. Consume the fixed finality receipt before interpreting pending-at-review wording; do not repeat closure.
 
 ## Parked Checkpoints
 

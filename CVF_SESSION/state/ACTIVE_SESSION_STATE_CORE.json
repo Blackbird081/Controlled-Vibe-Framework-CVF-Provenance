@@ -41,7 +41,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1E_RUNTIME_2026-10-17.md",
     "workOrderSha256": "2e2e39ab21b9d700f304e21eef5bc339a44f962706a9fa2a7ebb9748151669e4"
   },
-  "currentAuthoritySyncReason": "Fresh first-result material: BE-R01 cap2 first journey accepted bounded; exhausted grant, source identity unchanged.",
+  "currentAuthoritySyncReason": "Fresh first-result continuity: BE-R01 cap2 first journey accepted bounded; exhausted grant, source identity unchanged.",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "supersededHandoffs": [
     "CVF_SESSION/handoffs/archive/AGENT_HANDOFF.md",
