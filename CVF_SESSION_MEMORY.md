@@ -47,7 +47,7 @@ Current mode: `cvf_ncr_r1_html_job_contract_planned`
 
 Mode: `cvf_ncr_r1_html_job_contract_planned`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-HTML-JOB-ROOT-CONTRACT-20261018. Root contract: R1 Integrated HTML Job Contract in the current NCR roadmap; exact committed locator follows material commit. Prepare one integrated R1 design/source packet for job/version join, HTML Stop, unknown Save and explicit acceptance; settle canonical progression, synthetic writer schema/API and exact manifest before release. Recovery child ROOT_CONTRACT_REQUIRED/NO_SUCCESSOR retained; no narrow recovery successor or execution grant. Production/provider/real-data/public OFF; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-HTML-JOB-ROOT-CONTRACT-20261018. Root contract: docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md, R1 Integrated HTML Job Contract; material c49e0682c. Prepare one integrated R1 design/source packet for job/version join, HTML Stop, unknown Save and explicit acceptance; settle canonical progression, synthetic writer schema/API and exact manifest before release. Recovery child ROOT_CONTRACT_REQUIRED/NO_SUCCESSOR retained; no narrow recovery successor or execution grant. Production/provider/real-data/public OFF; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
 
 ## Parked Checkpoints
 
