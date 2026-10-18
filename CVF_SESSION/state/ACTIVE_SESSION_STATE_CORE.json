@@ -18,13 +18,13 @@
   "corpusToKnowledgeMapReconciliationGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md",
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md",
-    "baselineSha256": "2db0556ad9b02e3ab2d5d8ab04ef225d13c15a3e5be170c917aa4807c5b6100b",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md",
-    "workOrderSha256": "d9ed24e83fef354e6de172907abe073515d3022de5e1ae00259089af2412a912"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_GOAL_FOCUS_REPAIR_2026-10-19.md",
+    "baselineSha256": "822fb60d8286428ec221c4a174ce7c61a45228168c5d53369d6b2eec6b1c3dda",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_GOAL_FOCUS_REPAIR_2026-10-19.md",
+    "workOrderSha256": "15845329b2fa2ab36531a681634e98529b0e18ed8fdce6e650e4cc4d2374a3f6"
   },
-  "currentAuthoritySyncReason": "Dispatchmaterial3 e08059b9698e5ec4e1b0f84e3ffca0ff9deff4be; bounded UI source4/tests3/return2 manual handoff, roadmap2.77. Assessment baselineS2/current0/NO_SUCCESSOR bound to acceptedreview; originalworkerBLOCKED/S1 preserved. Distinct UIINITIAL0/current3, exact9/no backend or authority change.2SCECobjects/0violations. Normal91PASS; actualP4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Actualboundrelease before transfer; Root app/browser/worker0.",
-  "currentMode": "cvf_ncr_r1_ui_clarity_repair_handoff_ready",
+  "currentAuthoritySyncReason": "Material13 6fb714f4efa02f3946de85aab5432206603a0eb1 preserves blocked clarity candidate and admits exact4 Goal focus repair/manualtransfer. Copyreview 5b093f51041c232b9048902a66684a7b79f15d979366a0576a4d956a64592c18; S2/current1 after3to1, originalS1/countersfixed. Finalstaticexit0 under exact3baselinewarnings before one readonly7pass browser. Normal91PASS, actualP4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Root source/runtime0; parked effectsOFF.",
+  "currentMode": "cvf_ncr_r1_goal_focus_repair_handoff_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_pre_effect_assessment_locally_reviewed",
+  "previousMode": "cvf_ncr_r1_ui_clarity_repair_handoff_ready",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [
