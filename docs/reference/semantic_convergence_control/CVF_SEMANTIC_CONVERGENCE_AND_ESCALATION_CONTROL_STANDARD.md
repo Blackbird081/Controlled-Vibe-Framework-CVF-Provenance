@@ -228,6 +228,62 @@ The checker enforces exactly these thirteen invariants for every active block:
     hashes and locators against the current referenced files; evidence or
     locator drift cannot inherit trust silently.
 
+## Forward-Only Integrated Root Admission
+
+An optional `rootContractAdmission` field on an active
+`cvf.semanticConvergenceControl.v1` block admits exactly one direct integrated
+root work order and its immediate executable-proof return. Its pointer has
+exactly `schemaVersion` (`cvf.scecRootContractAdmissionPointer@1.0.0`),
+`path`, `sha256`, and `stage` (`DISPATCH` or `RETURN`). An absent pointer keeps
+all thirteen invariants and historical verdicts. A present incomplete,
+duplicate, malformed, or unverifiable pointer fails closed as an evaluated
+active block. It cannot turn a malformed opt-in into a zero-object pass.
+
+The pointer identifies one non-archive UTF-8 Markdown baseline or review of
+at most 65,536 bytes with exactly one `root-contract-admission-json` fenced
+object. The checker compares raw SHA-256 and parses from one byte snapshot,
+rejecting duplicate JSON keys before decoding can overwrite them. The object
+has exact fields `schemaVersion` (`cvf.scecRootContractAdmission@1.0.0`),
+`status` (`ACCEPTED_FOR_BOUNDED_SOURCE_IMPLEMENTATION`), `decisionOwner`
+(`LOCAL`), `operatorInstructionEvidence`, `problemKey`, `predecessor` and
+`sourceContract` (each `path`/`sha256`), `workOrderPath`, `workerReturnPath`,
+`allowedArtifacts`, `effectCeilings`, and `expiresAtUtc`. Paths are normalized
+repository-relative paths; repository resolution blocks traversal and
+symlink escape. The source contract is a separate hash-bound baseline
+declaring consolidated integrated root reassessment.
+
+The checker reads the bound work order, requires its valid dispatcher-owned
+acceptance ledger, and compares `allowedArtifacts` with the exact union of
+its `expectedArtifacts`. The grant, source contract, and work order remain
+outside worker artifacts; the bound return is included. `effectCeilings`
+has exactly `providerCalls`, `networkCalls`, `publicWrites`, `deployments`,
+`realDataMutations`, `destructiveActions`, and `productRuntimeStarts`, each
+strict integer zero. Expiry compares against actual UTC. These structural
+checks do not prove operator authority or source semantics; Local decides.
+
+`DISPATCH` applies only to the real bound `workOrderPath` as a `SUCCESSOR`
+directly after the hash-bound actual `ROOT_CONTRACT_REQUIRED` /
+`NO_SUCCESSOR` predecessor with empty blockers. It requires the same problem
+key, ordinary ordinal and blocker continuity, non-decreasing streak 2,
+`ROOT_CONTRACT_REQUIRED` / `INTEGRATED_ROOT_CONTRACT`, and no runtime-readiness
+claim. Only here does the accepted integrated root contract supersede that
+predecessor's documentary `NO_SUCCESSOR` and invariant 6's mandatory STOP.
+An actual `STOP_REASSESS_ARCHITECTURE` predecessor remains terminal.
+
+`RETURN` applies only to the bound `workerReturnPath` immediately after the
+admitted work order. The work order must carry the same grant hash and a
+`DISPATCH` pointer; its direct admission is revalidated using its actual
+artifact path and repository predecessor. The return preserves identity,
+ordinal, blocker and counter continuity, empty blockers, streak 3, and
+requires `READY_WITH_EXECUTABLE_PROOF` / `EXECUTABLE_IMPLEMENTATION` with
+nonempty executable claim-to-proof mapping and repository-resolvable evidence
+references. Readiness covers source and isolated fixture assertions only.
+The admission is exhausted by this pair. A later successor, altered path or
+manifest, renamed key, counter reset, active blocker, changed grant, or
+actual STOP predecessor cannot reuse it. An unsuccessful worker can return
+ordinary `STOP_REASSESS_ARCHITECTURE` / `NO_SUCCESSOR` without the opt-in and
+obtains no retry budget.
+
 ## Claim-To-Proof Mapping
 
 | Claim class | Required minimum proof class |

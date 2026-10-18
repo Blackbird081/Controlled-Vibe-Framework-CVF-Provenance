@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "cvf.scecRootContractAdmissionWorkerEvidence@1.0.0",
+  "executionBaseHead": "47d0329ff9940807300502697092b3ce155cbf33",
+  "dispatchBaselineSha256": "207069b3b00b98b8c700d2ae31bc133a34a93d5b2a33b32d14de74db886a11de",
+  "dispatchWorkOrderSha256": "168d859af761a054d5b4729eb1c28cbd07e2502834c9da38d37c599b57dc95de",
+  "actualProductRootPredecessor": {
+    "path": "docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md",
+    "sha256": "756c64da7af786cf8c220f6d60474d7334710707c051da2f96d0375bb01eac7b"
+  },
+  "sourceSha256": {
+    "docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md": "22962e3618b42ab476fddccaeeef77edb9222f41cfc3b3cb85642b244c48ac84",
+    "governance/compat/check_semantic_convergence_control.py": "caa736801f10a95b71ebbb1559b85d75be5cc1d8924f08def75dd098aa669c92",
+    "governance/compat/semantic_convergence_root_admission.py": "5c2091d752f42c2284edc7496446618d18d637e3d1e7997fbf3b61a61b212cb1",
+    "governance/compat/test_semantic_convergence_root_admission.py": "364c8c3f4dc1951180377989fdafd4338c2a1bcb76859461075ea2ee4266749b"
+  },
+  "commands": [
+    {"command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_ROOT_CONTRACT_ADMISSION_2026-10-18.md", "exitCode": 0, "result": "PASS 88/88", "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json"},
+    {"command": "python -B governance/compat/run_adif_defect_resolver.py --task-class governance-machine-hardening --role worker --lifecycle-phase pre-implementation --max-results 100 --json", "exitCode": 0, "result": "0 returned; truncated=false"},
+    {"command": "python -B -m unittest discover -s governance/compat -p test_check_semantic_convergence_control.py", "exitCode": 0, "result": "119 tests passed", "rawLog": ".cvf/runtime/scec-root-contract-admission-20261018/legacy-final.log", "rawLogSha256": "0c91fb3d37828c58a3070bc98625dffe96350c7a474957647eebb545086617c1"},
+    {"command": "python -B -m unittest discover -s governance/compat -p test_semantic_convergence_root_admission.py", "exitCode": 0, "result": "18 tests passed", "rawLog": ".cvf/runtime/scec-root-contract-admission-20261018/focused-final.log", "rawLogSha256": "5a8ac37bdc7b1bdf989d34dfbe2e14f1e07888f4244c535c9015b29b0af20563"},
+    {"command": "python -B -m py_compile governance/compat/check_semantic_convergence_control.py governance/compat/semantic_convergence_root_admission.py governance/compat/test_semantic_convergence_root_admission.py", "exitCode": 0, "result": "PASS", "rawLog": ".cvf/runtime/scec-root-contract-admission-20261018/compile-final.log", "rawLogSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    {"command": "python -B governance/compat/check_python_automation_size.py --enforce", "exitCode": 0, "result": "PASS; checker 924 lines", "rawLog": ".cvf/runtime/scec-root-contract-admission-20261018/size-final.log", "rawLogSha256": "f01a7792d2c877b16dbb89f4fbb738b023bc300a040b023e9ac087793ca96a15"},
+    {"command": "git diff --check", "exitCode": 0, "result": "PASS; CRLF conversion advisories only"}
+  ],
+  "resolverProof": {
+    "actualRootBytesCopiedFromRepository": true,
+    "actualRootSha256Matched": true,
+    "repositoryResolverFunctions": ["_repo_predecessor_hash_resolver", "_repo_predecessor_block_resolver", "_repo_evidence_bytes_resolver"],
+    "prospectiveDispatchActiveObjectsEvaluated": 1,
+    "prospectiveDispatchViolations": 0,
+    "prospectiveReturnActiveObjectsEvaluated": 1,
+    "prospectiveReturnViolations": 0,
+    "claimBoundary": "Isolated fixture declared-state admission only; no actual R1 product dispatch, source implementation, runtime, provider, network, real data, public write, or deployment."
+  },
+  "checkerLineCount": {"before": 974, "after": 924, "reduction": 50},
+  "expectedChangedPaths": [
+    "docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md",
+    "governance/compat/check_semantic_convergence_control.py",
+    "governance/compat/semantic_convergence_root_admission.py",
+    "governance/compat/test_semantic_convergence_root_admission.py",
+    "docs/reviews/CVF_SCEC_ROOT_CONTRACT_ADMISSION_WORKER_RETURN_2026-10-18.md",
+    "docs/reviews/evidence/scec-root-contract-admission-worker-20261018.json"
+  ],
+  "workerCommit": false,
+  "limitations": "Machine checks bind declared shape and repository evidence. Local reviewer owns semantic authority, independent probe, closure, and any later actual product-chain admission."
+}
