@@ -5,14 +5,14 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.80
+Version: 2.81
 Updated: 2026-10-19
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-19
 
-**Đang ở đâu:** Local đã đối chiếu R1 exit và current R2/W05 tại `docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md`. UX/contract đủ dùng bounded cho slice LOCAL_SYNTHETIC: source/job/version/recovery, copy và Goal focus đã có evidence; fullR1prelive/R2 vẫn PARTIAL. Current route branch được tách khỏi historical W05 engine/SQLite proof;10Gitpins so với execution07/10 có6giữ nguyên/4đổi. Giữ mọi FAIL/procedure/counters.
+**Đang ở đâu:** Operation protocol R2/W05 đã có Root design D01-D12 tại `docs/baselines/CVF_GC018_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md`: bind server context/config, logical effect/envelope/attempt/receipt identities, exclusive pre-effect start và unknown-outcome hold trong artifacts domain. Existing pending/SQLite safe-resume, quota/execute và downstreamledger không là drop-in receipt permit. General export chưa có authenticated job/operation ref; giữ BUILD held để source audit chốt producer/lookup/transport/manifest trước mã.
 
 | Item | Current disposition | Evidence / remaining step |
 |---|---|---|
@@ -24,7 +24,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** R2_W05_OFFLINE_ADMISSION_DESIGN: một operation contract theo existing artifacts/governance owners, bind profile/config/destination/auth/data/cost/retention và durable intent/exclusive claim trước effect; xác định reconcile unknown outcome/no blind retry cùng proof plan. Thiết kế read-only được phép; không mở lại focus/browser, không chọn runtime/provider mới. Chỉ sau design/manifest và authority phù hợp mới lập source work order để operator chuyển worker. Provider/real-data/production/public/deployOFF.
+**Bước kế tiếp:** Operator chuyển `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md` cho một INTERNAL_AGENT: exact2 return/EP, thẩm định12protocol criteria, existing-owner compatibility và future implementation manifest/proofplan bằng đọc source. Không sửa source/test, không chạy test/browser/provider/store/env. Adverse complete audit được trả pending review; Local chốt trước source work order theo SOP requirement12. R1UXbounded/fullR1preliveR2partial; provider/real-data/production/public/deployOFF.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.
@@ -1115,23 +1115,23 @@ orientation packets are not refreshed by this private local edit.
 
 | Field | Evidence |
 |---|---|
-| Actor | INTERNAL_AGENT Local reviewer/planner; decision owner=LOCAL |
+| Actor | INTERNAL_AGENT Local dispatcher; decision owner=LOCAL |
 | Provider or surface | private shared checkout |
-| Session or invocation | ncr-r1-exit-r2-w05-20261019 |
+| Session or invocation | ncr-r2-w05-operation-audit-dispatch-20261019 |
 | Working directory | repository root |
-| Command or tool surface | named source/evidence reads, blob identity comparison, documentary disposition |
-| Target paths | `docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md`; `docs/reviews/evidence/ncr-r1-exit-r2-w05-readonly-20261019.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Allowed scope source | standing roadmap and current PLAN_ONLY R1exit/R2W05 nextmove |
-| Before status evidence | 4c929fd59ff0d0059157c3a0ed2f2ce85f9864e5; clean worktree; empty stage |
-| After status evidence | Local review/evidence/roadmap material3 only; current6 separate |
-| Diff evidence | git diff --name-status; git diff --check; no source/test/config change |
-| Approval boundary | no worker/browser/provider/data/store/public effect; future workorder manualtransfer |
-| Claim boundary | finite source/criterion disposition only; fullR1R2prelive notclosed |
+| Command or tool surface | source/owner read, design proposal and docs-only workorder/scaffold/gates |
+| Target paths | `docs/baselines/CVF_GC018_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Allowed scope source | standing roadmap PLAN_ONLY offline admission design and manual worker transfer |
+| Before status evidence | cc30ec12432251244d1f3de4ee2fe436e776cb3e; clean worktree; empty stage |
+| After status evidence | Root material3 pair/roadmap then current6; workerexact2 later |
+| Diff evidence | git diff --name-status; git diff --check; no source changes |
+| Approval boundary | manualworker transfer; no runtime/source implementation |
+| Claim boundary | design proposal and audit readiness only |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-exit-r2-w05-20261019 |
-| Expected manifest | `docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md`; `docs/reviews/evidence/ncr-r1-exit-r2-w05-readonly-20261019.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md`; `docs/reviews/evidence/ncr-r1-exit-r2-w05-readonly-20261019.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Manifest delta | MATCH material3 |
+| Invocation ID | ncr-r2-w05-operation-audit-dispatch-20261019 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Manifest delta | MATCH Rootmaterial3; workerexact2 distinct |
 | Deletion or rename disposition | none |
 
 ## Public Export Disposition
