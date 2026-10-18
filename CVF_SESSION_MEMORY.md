@@ -47,7 +47,7 @@ Current mode: `cvf_ncr_html_draft_recovery_browser_accepted`
 
 Mode: `cvf_ncr_html_draft_recovery_browser_accepted`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-RECOVERY-CONTRACT-FOLLOWUP-20261018. Consume docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md. Child SCEC ROOT_CONTRACT_REQUIRED/NO_SUCCESSOR. Consolidate remaining R1 job/evidence/accept/cancel contract on existing owners before any new executable packet. Synthetic browser contribution accepted with original failures; production/provider/real-data/public OFF. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-RECOVERY-CONTRACT-FOLLOWUP-20261018. Consume docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md. Child SCEC ROOT_CONTRACT_REQUIRED/NO_SUCCESSOR. Consolidate remaining R1 job/evidence/accept/cancel contract on existing owners before any new executable packet. Synthetic browser contribution accepted with original failures; production/provider/real-data/public OFF. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. Accepted material c2ea4fe5c.
 
 ## Parked Checkpoints
 

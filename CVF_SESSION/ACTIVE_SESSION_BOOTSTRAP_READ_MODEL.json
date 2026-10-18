@@ -2,7 +2,7 @@
   "schemaVersion": "0.1.0",
   "currentMode": "cvf_ncr_html_draft_recovery_browser_accepted",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-RECOVERY-CONTRACT-FOLLOWUP-20261018. Consume docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md. Child SCEC ROOT_CONTRACT_REQUIRED/NO_SUCCESSOR. Consolidate remaining R1 job/evidence/accept/cancel contract on existing owners before any new executable packet. Synthetic browser contribution accepted with original failures; production/provider/real-data/public OFF. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-RECOVERY-CONTRACT-FOLLOWUP-20261018. Consume docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md. Child SCEC ROOT_CONTRACT_REQUIRED/NO_SUCCESSOR. Consolidate remaining R1 job/evidence/accept/cancel contract on existing owners before any new executable packet. Synthetic browser contribution accepted with original failures; production/provider/real-data/public OFF. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. Accepted material c2ea4fe5c.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",

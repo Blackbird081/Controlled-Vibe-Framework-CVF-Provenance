@@ -23,7 +23,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md",
     "workOrderSha256": "e79ca65ab61eea5f7142d0cd29cd49fc80db9c139ae33a8f9006d06f574f3264"
   },
-  "currentAuthoritySyncReason": "Local joined synthetic browser contribution; original failures and canonical parent retained.",
+  "currentAuthoritySyncReason": "Actual accepted browser material c2ea4fe5c351b438c7d5fef682d1924e84853fe7; original FAILs and parent retained; exact6 sync.",
   "currentMode": "cvf_ncr_html_draft_recovery_browser_accepted",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
