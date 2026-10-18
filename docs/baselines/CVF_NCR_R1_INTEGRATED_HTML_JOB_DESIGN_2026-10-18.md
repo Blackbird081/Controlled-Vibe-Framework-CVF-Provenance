@@ -171,12 +171,73 @@ Run diagnose_file on this exact baseline using governance/compat/check_semantic_
 
 The final internal semantic review found two holes: many-to-many job linking and criterion attestations without an inspectable basis. Local consolidated both into this version-keyed exclusive link and bounded review-note design; Stop during job-create and default-flow capability admission were clarified together. No implementation or product-proof claim follows. Consume valid historical source/evidence and the two internal source reviews. No duplicate browser run or per-row evidence recreation. Before any release, Local must resolve an admissible canonical architecture disposition at the existing SCEC owner; do not rerun this packet, reset counters or open a renamed recovery child. The finite design outcome ends with the actual feasibility result and current continuity synchronized. Initial reviewer-fast failed two documentary checks: missing named source-freshness section and handoff Current Mode literal. Local corrected both together; original reviewer-fast.log remains FAIL. No product proof was rerun. The initial commit shape plan also refused the mixed batch because authorization lacked the exact manifest and rollback labels; Local corrected the labels within the granted exact8 scope. Initial material-plan.log remains FAIL. The first normal commit was refused by corpus and knowledge-block literal shape; Local supplied the exact N/A verdict syntax and zero-asset reconciliation. Original material-commit-initial.log remains FAIL; product proof was not replayed.
 
+## Canonical Owner Change Proposal - Explicit Approval Required
+
+Disposition: PREPARED_PENDING_OPERATOR_SCOPE; proposal date2026-10-18, source HEAD 4228c115ac1110c6bb7951c47a8976ef236cfb83. This section resolves the next Local owner decision as far as current authority permits. The existing source design and its exact11 source/exact9 test candidates are complete; do not repeat them. No canonical rule, checker, helper, test, product source or active effect has been changed by preparing this proposal.
+
+### Why this decision requires the operator
+
+The current SCEC rule intentionally requires STOP after two non-decreasing transitions, including empty-to-empty, and forbids successors after an actual STOP. Its current owner supplies no opt-in admission for a completed root reassessment. Neither another documentary acceptance nor the Review Cost continuation declaration changes this. Local cannot repair the absence by resetting counters, using a new INITIAL key or pretending that the integrated recovery problem is unrelated.
+
+GC-049, governance/toolkit/05_OPERATION/CVF_CORE_GUARD_SELF_PROTECTION_GUARD.md, Rule and Final Clause, freezes protected machinery by default and requires an explicit, bounded, reviewable authorization before it is touched. The operator's autonomous roadmap/PLAN direction permits this proposal and documentary continuity; it does not explicitly approve changing the escalation invariant. The completed six-path Review Cost maintenance is a different scope and stays closed. The source and canonical-progression aides independently reviewed this boundary; final decision owner=LOCAL.
+
+### Exact proposed four-path owner scope
+
+- `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_AND_ESCALATION_CONTROL_STANDARD.md`
+- `governance/compat/check_semantic_convergence_control.py`
+- `governance/compat/semantic_convergence_root_admission.py`
+- `governance/compat/test_semantic_convergence_root_admission.py`
+
+| Path role | Concrete change after approval |
+|---|---|
+| SCEC standard | Add a versioned, forward-only root-contract admission exception to invariant6 and explain its interaction with ROOT_CONTRACT_REQUIRED/NO_SUCCESSOR. Preserve the absolute actual-STOP predecessor prohibition. |
+| Existing checker | Thread actual artifact path and existing repository evidence resolvers through a narrowly declared opt-in; preserve all ordinary chain/hash/blocker/counter/proof checks. Extract its current escalation function into the helper so the edited974line checker shrinks by at least50lines and stays below975. Preserve its public validation entrypoints and default results. |
+| New helper | Validate only the strict hash-bound admission contract and shared escalation predicates; no runtime, dispatcher, new SCEC chain mode or general authorization framework. |
+| New focused test | Cover positive bounded dispatch/return and negative/default/forgery/replay cases below. Existing SCEC tests are consumed and rerun under the approved focused verification scope; their source is outside the write manifest. |
+
+No hook, autorun catalog, scaffold producer, Review Cost owner/checker, threshold, old fixture, old artifact or retired actor is changed. The guard-maintenance tranche ends with its owner/test result, current continuity and committed-range closure; it does not itself execute the R1 product package.
+
+### Concrete admission rule to implement after approval
+
+1. Keep schema cvf.semanticConvergenceControl.v1, stable problemKey, SUCCESSOR, ordinal+1, exact predecessor SHA, normal blocker reconciliation and all counters. Add one optional strict rootContractAdmission pointer with schemaVersion=cvf.scecRootContractAdmissionPointer@1.0.0, path, sha256 and stage (DISPATCH or RETURN). All absent preserves current behavior. A present partial/duplicate/malformed/unverifiable pointer fails closed and never falls back to ordinary mode. No counter is reset; the selected empty-to-empty streaks remain2 at dispatch and3 at return.
+2. Pointer path names an existing non-archive UTF8 Markdown baseline or review outside worker write scope, at most65536bytes, with exactly one strict root-contract-admission-json object. Reject duplicate JSON keys, unsafe paths, invalid hashes and inconsistent types. Resolve bytes/hash from the repository, not packet-controlled roots; retain one byte snapshot for hash and object parsing. A parser PASS establishes declared bindings only; Local still verifies actual operator authority and semantic truth.
+3. Admission object exact fields: schemaVersion=cvf.scecRootContractAdmission@1.0.0, status=ACCEPTED_FOR_BOUNDED_SOURCE_IMPLEMENTATION, decisionOwner=LOCAL, operatorInstructionEvidence, problemKey, predecessor (path/sha256), sourceContract (path/sha256), workOrderPath, workerReturnPath, allowedArtifacts, effectCeilings and expiresAtUtc. The source contract and grant are outside allowedArtifacts; workOrderPath and workerReturnPath are distinct normalized governed paths. allowedArtifacts is the exact union of the future work order's valid acceptance-ledger expectedArtifacts. Compare real artifact paths, not a self-declared filename. Expiry uses current UTC; no packet clock. No self-reference, archive, traversal, symlink escape, worker-writable grant or missing source hash passes.
+4. effectCeilings has exactly providerCalls, networkCalls, publicWrites, deployments, realDataMutations, destructiveActions and productRuntimeStarts, all strict integer0. Source and isolated in-process fixture verification are the only admissible effects. Production is excluded. Old actor/effect budgets cannot be reused; normal work-order role/budget/source/gate checks still control. A future running-app/browser/provider tranche requires its own authority and cannot use this admission.
+5. DISPATCH is allowed only at the bound workOrderPath, directly after the bound actual ROOT_CONTRACT_REQUIRED predecessor with empty prior/current blockers. The declared source contract must include the consolidated root reassessment. Require ROOT_CONTRACT_REQUIRED/INTEGRATED_ROOT_CONTRACT, no runtime-readiness assertion and no INITIAL or renamed problem. The narrow exception permits that one integrated source dispatch despite the unchanged non-decreasing streak; it explicitly supersedes that predecessor's documentary NO_SUCCESSOR only for the bound pair. It never follows an actual STOP_REASSESS_ARCHITECTURE predecessor.
+6. RETURN is allowed only at the bound workerReturnPath, immediately after that bound work order and the same pinned admission. Keep ordinal and counters monotonic, empty blockers, and require READY_WITH_EXECUTABLE_PROOF/EXECUTABLE_IMPLEMENTATION with the existing nonempty claim-to-proof mapping and no documentation-only readiness. Scope readiness to actual source/fixture assertions; no app/provider/business acceptance or whole-R1 exit is inferred. An unsuccessful worker can return the ordinary STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR disposition without the opt-in; failure does not acquire a fresh attempt or successor budget.
+7. This admission is exhausted by that exact dispatch/return pair. A new path, another ordinal, a different predecessor/grant/manifest, active blockers, unbound reassessment, or any actual STOP predecessor cannot reuse it. Existing defaults and historical blocks retain their original interpretation. Existing STOP candidates in this design remain prospective historical declarations; the new source work order would bind the actual ordinal1 child rather than pretending that an actual STOP chain continued.
+
+### Required focused verification after approval
+
+| Case | Required result |
+|---|---|
+| No admission; ordinary empty-to-empty ordinal2 | Existing mandatory STOP remains enforced. |
+| Bound direct ROOT dispatch then exact immediate proof return | Accepted declared scope, preserved problem/ordinals/counters; no pre-proof READY. |
+| Actual STOP predecessor, new INITIAL, narrow scope or active blockers | Reject; no exception. |
+| Missing/malformed/partial/duplicate/wrong-stage pointer or grant | Reject; no fallback. |
+| Wrong raw hash/source contract/owner/manifest/real artifact path/expiry | Reject. |
+| Worker-writable/self-referential/unsafe/oversized/non-UTF8 grant | Reject. |
+| Nonzero/bool effects, undocumented proof or fake readiness | Reject. |
+| Reuse after the bound pair or different work-order/return path | Reject. |
+| Existing SCEC regression suite and untouched legacy artifacts | Existing expected verdicts retained; no historical counter migration. |
+| Actual R1 prospective dispatch/return objects | Evaluate both objects with canonical repository resolvers before product dispatch; zero evaluated objects is not admission. |
+
+No tests for the proposed machinery have been added or run before approval. No evidence claims the proposed exception is already installed or proven. A forward-only source patch and its focused regression result are deliverables of the requested owner-maintenance scope, conditional on approval.
+
+### Approval and continuation boundary
+
+Requested decision: authorize these exact four owner paths and their focused verification as one tranche. This is the only new permission request: it changes the mechanism judging agents. After approval, Local authors/releases the exact owner work order, delegates one internal worker, reviews the result, closes it and then continues the already-requested bounded R1 source packet if its actual candidate passes. No new permission is requested for each work-order, check, repair or commit within those granted scopes. Real data, provider/live, running product, production, public and deploy remain parked.
+
+Until a real operator answer arrives, keep all four owner paths untouched. Elapsed time, standing next messages and a written authorization-shaped block are not substitutes for that answer. This is a prepared scope request, not an approval, active source work order or executable successor.
+
+Documentary validation history for this proposal: initial reviewer-fast flagged an approval-related proximity match in the trace and missing LHW24 continuity text. Local clarified that owner changes are outside the admitted scope and retained explicit parent/freeze continuity; original reviewer-fast.log stays FAIL. No protected owner change or proposed-rule verification was performed.
+
 ## Checker Source Read-Ahead Block
 
 | Field | Value |
 |---|---|
-| applicableCheckersRead | governance/compat/check_semantic_convergence_control.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_next_move_freshness.py; governance/compat/check_public_export_disposition.py |
-| literalTokensReviewed | baseline structural sections; one active hash-bound SCEC candidate; STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR; exact8/6; documentary source versus proposed paths; no readiness assertion |
+| applicableCheckersRead | governance/compat/check_work_order_dispatch_quality_core.py; governance/compat/check_active_session_state.py; governance/compat/check_semantic_convergence_control.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_packet_authority_and_encoding.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_core_guard_self_protection.py; governance/compat/check_next_move_freshness.py; governance/compat/check_public_export_disposition.py |
+| literalTokensReviewed | baseline structural sections; one unchanged prospective SCEC STOP candidate; pending exact4 protected owner scope; exact7/6 documentary continuity; no source/authority claim |
 | gateRunPurpose | confirmation of source design, actual candidate and current continuity; not first discovery or runtime proof |
 | claimBoundary | checker validates declarations and source hashes; Local decides source semantics; no claim of agent comprehension |
 
@@ -215,22 +276,9 @@ Reason: private design/admission record; no public-sync remote/commit/artifact c
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: documentary exact8 material admission and separate exact6 actual-material continuity; no checker, hook, schema owner or product source mutation.
-Operator authorization: next on2026-10-18 and standing autonomous roadmap orchestration/review authority; no repeated six-path permission is needed.
-Protected paths: `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Rollback boundary: exact8 material then exact6 continuity; no original proof, source or retired actor mutation.
+Authorized guard-maintenance scope: current exact7 documentary proposal/continuity and separate exact6 actual-material binding only; four canonical owner code/rule paths listed in the proposal are NOT_AUTHORIZED_PENDING_OPERATOR.
 
-## Mixed Protected-Path Atomicity Authorization
-
-Disposition: AUTHORIZED_EXACT_MANIFEST
-
-Atomicity reason: the design, roadmap discovery and current6 must agree on the held execution disposition. Preserve this authorization after later continuity so historical material closure can resolve its exact manifest.
-
-Exact changed manifest:
-
-Material exact8:
-- `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
+Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -238,9 +286,29 @@ Material exact8:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: exact8 documentary material then separate exact6 continuity; preserve source and old evidence.
+Operator authorization: go through the tranche under standing autonomous roadmap authority; record the mandatory GC-049 decision without touching judgment machinery.
+Rollback boundary: exact7 then exact6; no canonical owner/source/evidence mutation.
 
-Separate continuity authorization: AUTHORIZED_EXACT_MANIFEST exact6, limited to the protected paths listed above and actual committed material binding; no baseline or roadmap change in that commit.
+## Mixed Protected-Path Atomicity Authorization
+
+Disposition: AUTHORIZED_EXACT_MANIFEST
+
+Atomicity reason: one existing design owner and current6 record the same mandatory operator decision; no guard machinery or product source in the batch.
+
+Exact changed manifest:
+- `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`
+- `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+
+Rollback boundary: exact7 documentary material, then separate exact6 continuity binding.
+
+Separate continuity authorization: AUTHORIZED_EXACT_MANIFEST exact6, limited to current6 actual-material binding.
+
+Preserved historical authorization: AUTHORIZED_EXACT_MANIFEST exact8 at 4e5feb17660412b7c2b34039d182f839df8c0f8c, limited to: `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
 
 ## Agent Operation Trace Block
 
@@ -248,22 +316,22 @@ Separate continuity authorization: AUTHORIZED_EXACT_MANIFEST exact6, limited to 
 | --- | --- |
 | Actor | Local INTERNAL_AGENT orchestrator/reviewer; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-r1-integrated-design-20261018 |
+| Session or invocation | ncr-scec-owner-admission-proposal-20261018 |
 | Working directory | repository root |
-| Command or tool surface | targeted source reads, two internal read-only advice tasks, design edits and canonical declaration checks |
-| Target paths | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator next and current PLAN under the R1 root contract |
-| Before status evidence | 1e1e004c7db9acce879341ec5acbaf6269885be2; clean before design |
-| After status evidence | exact8 documentary design; source release held; old source/proof untouched |
-| Diff evidence | git diff --name-status; git diff --check; exact8 manifest reconciliation |
-| Approval boundary | documentary design and current6 only |
-| Claim boundary | no source execution or readiness proof |
-| Agent type | INTERNAL_AGENT Local dispatcher/reviewer |
-| Invocation ID | ncr-r1-integrated-design-20261018 |
-| Expected manifest | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact8 |
-| Deletion or rename disposition | none; original child artifacts and failures retained |
+| Command or tool surface | targeted owner/source reads, one internal advisory review, concrete scope proposal and documentary continuity checks |
+| Target paths | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator go-through-tranche instruction; current PLAN owner-disposition action |
+| Before status evidence | 4228c115ac1110c6bb7951c47a8976ef236cfb83; clean worktree |
+| After status evidence | concrete exact4 guard-maintenance scope prepared; operator permission pending; no guard/product mutation |
+| Diff evidence | git diff --name-status; git diff --check; exact7 documentary manifest |
+| Approval boundary | proposal/current6 only; four canonical owner paths remain frozen until explicit scope consent |
+| Claim boundary | no installed root-admission route, proof of proposed rules or R1 source execution |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | ncr-scec-owner-admission-proposal-20261018 |
+| Expected manifest | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact7 |
+| Deletion or rename disposition | none; original child and all four proposed owner paths untouched |
 
 ## Epistemic Process Block
 

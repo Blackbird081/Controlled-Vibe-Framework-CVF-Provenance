@@ -35,20 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_integrated_design_execution_held`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=canonical architecture disposition before source release; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=PLAN; decision owner=LOCAL; parked checkpoint=real-data/provider/production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_scec_owner_scope_approval_required`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one mandatory GC-049 scope decision for prepared exact4 SCEC owner change; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=PLAN; decision owner=LOCAL; parked checkpoint=operator SCEC owner-scope approval; real-data/provider/production/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_integrated_design_execution_held`
-Current mode: `cvf_ncr_r1_integrated_design_execution_held`
+Current mode marker: `cvf_ncr_scec_owner_scope_approval_required`
+Current mode: `cvf_ncr_scec_owner_scope_approval_required`
 
-Integrated design complete; no executable release. Canonical same-problem candidate requires STOP/NO_SUCCESSOR.
+Concrete SCEC owner-change scope prepared; GC-049 permission pending.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r1_integrated_design_execution_held`
+Mode: `cvf_ncr_scec_owner_scope_approval_required`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-INTEGRATED-DESIGN-20261018. Integrated HTML job design/source packet complete: docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md; material 4e5feb176. Local must resolve admissible canonical architecture disposition at the existing SCEC owner before source release. Same-problem ordinal2 candidate STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR; historical child ordinal1 retained. No repeat design, renamed INITIAL, six-path maintenance or worker execution. Production/provider/real-data/public OFF; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-SCEC-OWNER-ADMISSION-PROPOSAL-20261018. Exact4 canonical SCEC owner-change proposal prepared in the existing R1 design baseline; committed locator follows material. Mandatory GC-049 operator scope approval is pending before rule/checker/helper/test changes. No repeated R1 design or Review Cost six-path maintenance. After approval: one owner-maintenance work order/worker/review/closure, then continue the requested R1 source package only on actual canonical admission. Source/runtime/provider/real-data/production/public remain unreleased; original child retained; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
 
 ## Parked Checkpoints
 

@@ -23,8 +23,8 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md",
     "workOrderSha256": "e79ca65ab61eea5f7142d0cd29cd49fc80db9c139ae33a8f9006d06f574f3264"
   },
-  "currentAuthoritySyncReason": "Documentary integrated R1 material 4e5feb17660412b7c2b34039d182f839df8c0f8c; baseline docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md SHA256 ec4b408e0c58833b9749e09ce1a98a5067d373f5442952ad2992efe53581acf1; roadmap SHA256 d2550e9941b9bbfa27f8725f280416586e5055eac063585071fb875618b6136d; historical recovery pair evidence only; no execution release.",
-  "currentMode": "cvf_ncr_r1_integrated_design_execution_held",
+  "currentAuthoritySyncReason": "Prepared canonical SCEC owner-change proposal in docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md SHA256 2ff7a70ebdc2ca929e5b3e4a59882b7214e6387b869e3b2ffd44fa8c436509ea; no owner/source execution authority; mandatory GC-049 scope consent pending. Closed recovery pair remains evidence only.",
+  "currentMode": "cvf_ncr_scec_owner_scope_approval_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_html_job_contract_planned",
+  "previousMode": "cvf_ncr_r1_integrated_design_execution_held",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [
