@@ -934,6 +934,136 @@
       "deferred": [
         "live SMTP/provider/browser/deploy"
       ]
+    },
+    {
+      "intakeId": "NCR-REVIEW-OVERHEAD-20261018",
+      "authority": "LOCAL_VERIFIED_INTERNAL_DOCUMENTARY_MERGE",
+      "sourceProjectClaims": "Selected committed Local R2C evidence; no external project absorption or product architecture claim.",
+      "findings": [
+        {
+          "id": "NCR-REVIEW-OVERHEAD-20261018",
+          "sourceRecord": "docs/reviews/learnings/CVF_NCR_REVIEW_OVERHEAD_LEARNING_2026-10-18.md",
+          "defectClass": "ORCHESTRATOR_PACKET_GAP",
+          "parentDisposition": "MERGED_EXISTING_RULE",
+          "dispatchBindingRequired": false,
+          "parentEvidence": {
+            "schemaVersion": "cvf.parentLearningEvidence@1.0.0",
+            "findingId": "NCR-REVIEW-OVERHEAD-20261018",
+            "source": {
+              "sourceProject": "CVF-NCR internal Local review",
+              "evidence": {
+                "path": "docs/reviews/learnings/CVF_NCR_REVIEW_OVERHEAD_LEARNING_2026-10-18.md",
+                "sha256": "719c73cefc9c4164d7411d7ee6d07d4af35d95c8c5221d56e3ca4669a95cd2f4",
+                "fragment": "Scope And Source Confidence",
+                "evidenceClass": "OBSERVED_LOCAL"
+              }
+            },
+            "valueChecks": {
+              "sourceConfidence": {
+                "status": "SUPPORTED",
+                "reason": "Committed Local completion reports 17 review minutes and multiple avoidable delays.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md",
+                    "sha256": "a6e691620e3969b68f7354b0f6b256ec4c419291addaea3797c509b292d5b265",
+                    "fragment": "Review Cost Telemetry And Stop Disposition",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Written capture of internal process overhead only; no architecture audit, new control, behavioral application or measured cost reduction."
+              },
+              "reusableMechanism": {
+                "status": "SUPPORTED",
+                "reason": "Sequential documentary repairs consume effort without closing a new product acceptance gap.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/learnings/CVF_NCR_REVIEW_OVERHEAD_LEARNING_2026-10-18.md",
+                    "sha256": "719c73cefc9c4164d7411d7ee6d07d4af35d95c8c5221d56e3ca4669a95cd2f4",
+                    "fragment": "Scope And Source Confidence",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Written capture of internal process overhead only; no architecture audit, new control, behavioral application or measured cost reduction."
+              },
+              "existingCoverage": {
+                "status": "SUPPORTED",
+                "reason": "Existing consolidated review and proportional cost controls cover this finding.",
+                "evidence": [
+                  {
+                    "path": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+                    "sha256": "59ab670a0b3d723b50f8fed690e6c40be76cb14f1b0a5b72085a38efbb4f27a7",
+                    "fragment": "Bounded Local Review Fast Path",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Written capture of internal process overhead only; no architecture audit, new control, behavioral application or measured cost reduction."
+              },
+              "incrementalValue": {
+                "status": "SUPPORTED",
+                "reason": "A focused NCR example supplies a next-task read trigger and concrete Root actions under existing owners.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/learnings/CVF_NCR_REVIEW_OVERHEAD_LEARNING_2026-10-18.md",
+                    "sha256": "719c73cefc9c4164d7411d7ee6d07d4af35d95c8c5221d56e3ca4669a95cd2f4",
+                    "fragment": "Apply At The Next Task",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Written capture of internal process overhead only; no architecture audit, new control, behavioral application or measured cost reduction."
+              },
+              "boundedProof": {
+                "status": "SUPPORTED",
+                "reason": "Retained Local telemetry supports the problem; written guidance is captured but future effectiveness remains unproven.",
+                "evidence": [
+                  {
+                    "path": "docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md",
+                    "sha256": "a6e691620e3969b68f7354b0f6b256ec4c419291addaea3797c509b292d5b265",
+                    "fragment": "Review Cost Telemetry And Stop Disposition",
+                    "evidenceClass": "OBSERVED_LOCAL"
+                  }
+                ],
+                "limits": "Written capture of internal process overhead only; no architecture audit, new control, behavioral application or measured cost reduction."
+              }
+            },
+            "decision": {
+              "state": "MERGE",
+              "reason": "Record the NCR recurrence under existing Review Cost and lifecycle owners; no new policy or checker.",
+              "reviewer": "LOCAL_CODEX_ROOT",
+              "owner": "docs/reference/review_cost_control/CVF_REVIEW_COST_AND_DIMINISHING_RETURN_CONTROL_STANDARD.md",
+              "f2gDisposition": "RULE_EXISTS",
+              "evidence": [
+                {
+                  "path": "docs/reviews/learnings/CVF_NCR_REVIEW_OVERHEAD_LEARNING_2026-10-18.md",
+                  "sha256": "719c73cefc9c4164d7411d7ee6d07d4af35d95c8c5221d56e3ca4669a95cd2f4",
+                  "fragment": "Parent Value And Dedup",
+                  "evidenceClass": "OBSERVED_LOCAL"
+                }
+              ]
+            },
+            "implementation": {
+              "state": "NOT_IMPLEMENTED",
+              "reason": "No new control introduced; existing controls apply.",
+              "evidence": []
+            },
+            "projectResolution": {
+              "state": "OPEN",
+              "reason": "A later matching task must evidence actual reduction.",
+              "evidence": []
+            },
+            "returnDelivery": {
+              "state": "NOT_RETURNED",
+              "reason": "Internal CVF record; no separate project delivery receipt.",
+              "evidence": []
+            },
+            "projectApplication": {
+              "state": "NOT_APPLIED",
+              "reason": "Saving learning does not prove subsequent application or cost reduction.",
+              "evidence": []
+            },
+            "claimLimits": "Written capture of internal process overhead only; no architecture audit, new control, behavioral application or measured cost reduction."
+          }
+        }
+      ]
     }
   ]
 }
