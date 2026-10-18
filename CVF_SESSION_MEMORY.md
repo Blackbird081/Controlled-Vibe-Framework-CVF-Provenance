@@ -35,18 +35,18 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_draft_recovery_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN isolated synthetic application qualification; role=INTERNAL_AGENT Local reviewer/closer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=real-data/production/provider/deletion/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_draft_recovery_browser_dispatch`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bounded app/browser recovery after committed release; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=real-data/production/provider/deletion/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_draft_recovery_source_accepted_bounded`
-Current mode: `cvf_ncr_html_draft_recovery_source_accepted_bounded`; bounded source/fixture acceptance only.
+Current mode marker: `cvf_ncr_html_draft_recovery_browser_dispatch`
+Current mode: `cvf_ncr_html_draft_recovery_browser_dispatch`; profile default/production OFF.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_draft_recovery_source_accepted_bounded`
+Mode: `cvf_ncr_html_draft_recovery_browser_dispatch`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Material=b75bf181b2c61a165cbedccda1de373d8c11f317; source accepted, production OFF. Plan synthetic app/browser recovery proof; no runtime effect admitted. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred. Real-data/provider/deletion/public/deploy parked.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-BROWSER-20261018. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md. After committed bound release, one INTERNAL_AGENT exact12 implements profile and finite isolated app/browser proof. Default/prod OFF; no provider/evaluate, real-data, deletion or public/deploy. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred retained.
 
 ## Parked Checkpoints
 

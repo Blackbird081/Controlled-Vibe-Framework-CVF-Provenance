@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Recovery source accepted bounded with procedure limits; original worker14, admitted API helper and distinct Local probe. Root owns source integration26 then actual-material continuity6. Previous R2C evidence remains at its recorded revision; old actors spent.
+One worker exact12 profile/source/harness plus finite real Chromium proof under explicit local-synthetic roots; normal local_mock auth; no provider/evaluate or operator .env. Root exact9 release then exact6 continuity and separate review/probe. Prior source proof b75bf181b stays at its recorded scope.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_draft_recovery_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN isolated synthetic application qualification; role=INTERNAL_AGENT Local reviewer/closer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=real-data/production/provider/deletion/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_draft_recovery_browser_dispatch`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bounded app/browser recovery after committed release; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=real-data/production/provider/deletion/public/deploy.
 
 ## Current Mode
 
-`cvf_ncr_html_draft_recovery_source_accepted_bounded`. Bounded source/fixture acceptance only.
+`cvf_ncr_html_draft_recovery_browser_dispatch`. New bounded synthetic app/browser stage; earlier source accepted at b75bf181b.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md` SHA256 `6631e2ef7fbf30b5fded752b8e0d3c5871812716ae8626df22823e21829f1f5b`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md` SHA256 `d6e3dede74176ce47b8c235ff251e7d3d99cb4601dd94541aaa33cb7ca7db1e3`. Closed bounded source; production OFF.
+Baseline `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md` SHA256 `d4a3e94af6450b4c6d961d697a29cf6ccb895e16a22a358262f49b63e23ab156`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md` SHA256 `6598c234a63e1a1e58218119b1875d9ea203be6b746df81af1cb9edcc52aae8f`. Bounded new synthetic app/browser pair; no old actor/refill.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,9 +37,9 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_draft_recovery_source_accepted_bounded`
+Mode: `cvf_ncr_html_draft_recovery_browser_dispatch`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Material=b75bf181b2c61a165cbedccda1de373d8c11f317; source accepted, production OFF. Plan synthetic app/browser recovery proof; no runtime effect admitted. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred. Real-data/provider/deletion/public/deploy parked.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-BROWSER-20261018. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md. After committed bound release, one INTERNAL_AGENT exact12 implements profile and finite isolated app/browser proof. Default/prod OFF; no provider/evaluate, real-data, deletion or public/deploy. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred retained.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -87,7 +87,7 @@ Rollback boundary: exact listed paths, no runtime replay or deletion.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: synchronize actual accepted recovery source material in current6 only; no checker/hook/source edits.
+Authorized guard-maintenance scope: admit new operator-directed synthetic app/browser pair and synchronize exact6; no checker/hook mutation.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`

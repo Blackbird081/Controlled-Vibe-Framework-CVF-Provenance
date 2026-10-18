@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_html_draft_recovery_source_accepted_bounded",
+  "currentMode": "cvf_ncr_html_draft_recovery_browser_dispatch",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Material=b75bf181b2c61a165cbedccda1de373d8c11f317; source accepted, production OFF. Plan synthetic app/browser recovery proof; no runtime effect admitted. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred. Real-data/provider/deletion/public/deploy parked.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-BROWSER-20261018. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md. After committed bound release, one INTERNAL_AGENT exact12 implements profile and finite isolated app/browser proof. Default/prod OFF; no provider/evaluate, real-data, deletion or public/deploy. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md",
-    "baselineSha256": "6631e2ef7fbf30b5fded752b8e0d3c5871812716ae8626df22823e21829f1f5b",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md",
-    "workOrderSha256": "d6e3dede74176ce47b8c235ff251e7d3d99cb4601dd94541aaa33cb7ca7db1e3"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md",
+    "baselineSha256": "d4a3e94af6450b4c6d961d697a29cf6ccb895e16a22a358262f49b63e23ab156",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md",
+    "workOrderSha256": "6598c234a63e1a1e58218119b1875d9ea203be6b746df81af1cb9edcc52aae8f"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }

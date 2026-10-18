@@ -5,7 +5,7 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.61
+Version: 2.62
 Updated: 2026-10-18
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
@@ -24,7 +24,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** Lập phạm vi proof app/browser synthetic cô lập cho Save -> refresh -> recover đúng phiên bản, gồm lỗi kết nối và đổi phiên đăng nhập. Source hiện tại đã có fixture proof; không suy ra R1/R2 stage exit, production hay policy dữ liệu thật.
+**Bước kế tiếp:** Triển khai và kiểm chứng profile local-synthetic trên app/Chromium thật theo `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md` và `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md` sau committed bound release. Một gói gồm profile wiring, isolation test, Save -> refresh -> khôi phục đúng byte, lỗi kết nối/phiên đăng nhập và teardown. Default/production OFF; không provider/evaluate hay dữ liệu thật.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.
