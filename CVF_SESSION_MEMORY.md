@@ -35,20 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_r2_exit_gap_disposition_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=prepare fresh source-only R1 UX/profile admission from completed exit/gap disposition; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=LOCAL_DISPOSITION; decision owner=LOCAL; parked checkpoint=app/browser/provider/external network success/real-data/production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r1_ux_profile_source_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bound pre-dispatch then exact4 source worker; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=SOURCE_DISPATCH; decision owner=LOCAL; parked checkpoint=test/app/browser/provider/network/real-data/production/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_r2_exit_gap_disposition_closed`
-Current mode: `cvf_ncr_r1_r2_exit_gap_disposition_closed`
+Current mode marker: `cvf_ncr_r1_ux_profile_source_dispatch_ready`
+Current mode: `cvf_ncr_r1_ux_profile_source_dispatch_ready`
 
-R1/R2 exit/gap disposition complete; next source-only admission preparation selected, with no execution release.
+Fresh source-only UI pair committed; worker release waits for bound pre-dispatch on clean current6.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r1_r2_exit_gap_disposition_closed`
+Mode: `cvf_ncr_r1_ux_profile_source_dispatch_ready`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN_ONLY; BATCH_ID=CVF-NCR-R1-R2-EXIT-GAP-20261018. R1/R2 exit/gap disposition complete in docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md at b45b0dd75e2568b0c6806d943523890b581baa47. Next prepare one fresh action-specific source-only admission for existing Work Transfer R1 Vietnamese/profile disclosure delta; enumerate actual source/test dependencies and feasible progression before release. No worker/source/app/browser successor released; no old actor replay or budget refill. R2/W05 pre-live design follows on the exact chosen effect profile. Source RETURN3/counters0,1,0,3; browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. App/browser/provider/external network success/real-data/production/public/deploy OFF pending action-specific admission. R1/R2partial,R3/R4open,R5/R6deferred.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_SOURCE_ONLY; BATCH_ID=CVF-NCR-R1-UX-PROFILE-SOURCE-20261018. Fresh exact2 UI source contract admitted at 8ef4420bd97edceb065276fa85deb2b02622392f; first run bound pre-dispatch on committed current6 and clean HEAD, then release one INTERNAL_AGENT worker under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md. Worker exact4: HtmlJobControls/ArtifactExportPanel source2 and return2; no tests, app/browser/server/provider/network, .env/private data, schema/auth/writer or public effects. Existing jobDecisions enablement retained; exact observed LOCAL_SYNTHETIC enum selects presentation only; missing enum keeps generic disclosure. New distinct UX problem initial0; old source RETURN3/counters0,1,0,3, browser RETURN1/counters0,0,0,0 and parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; no old actor replay/refill. Root consumes static source proof then exact6 material and separate current6. Component proof/walkthrough and R2/W05 pre-live remain pending; R1/R2partial,R3/R4open,R5/R6deferred; app/browser/provider/real-data/production/public/deploy OFF.
 
 ## Parked Checkpoints
 

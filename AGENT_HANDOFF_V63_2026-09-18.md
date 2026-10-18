@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `b45b0dd75e2568b0c6806d943523890b581baa47`. Accepted exit/gap roadmap material `b45b0dd75e2568b0c6806d943523890b581baa47`; browser8ab06322b/source bae47f9c7 retained; batch CVF-NCR-R1-R2-EXIT-GAP-20261018.
+Current HEAD recorded for this handoff: `8ef4420bd97edceb065276fa85deb2b02622392f`. Fresh R1 UX/profile pair2 material `8ef4420bd97edceb065276fa85deb2b02622392f`; batch CVF-NCR-R1-UX-PROFILE-SOURCE-20261018; exact current6 sync only.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,34 +13,34 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Dedicated current6 synchronization after exact1 roadmap exit/gap material b45b0dd75e2568b0c6806d943523890b581baa47. No new work order, worker, source, app/browser, test or provider effect. LOCAL owns the disposition; standing orchestration covers the next admission preparation only.
+Root exact current6 dispatch synchronization after pair2 8ef4420bd97edceb065276fa85deb2b02622392f. Worker owns source2/return2 only after bound release; Root owns review1/roadmap1 and separate current6 later. No material mixed in this sync, no worker source started, no test or runtime effect.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_r2_exit_gap_disposition_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=prepare fresh source-only R1 UX/profile admission from completed exit/gap disposition; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=LOCAL_DISPOSITION; decision owner=LOCAL; parked checkpoint=app/browser/provider/external network success/real-data/production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r1_ux_profile_source_dispatch_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bound pre-dispatch then exact4 source worker; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=SOURCE_DISPATCH; decision owner=LOCAL; parked checkpoint=test/app/browser/provider/network/real-data/production/public/deploy.
 
 ## Current Mode
 
-`cvf_ncr_r1_r2_exit_gap_disposition_closed`
+`cvf_ncr_r1_ux_profile_source_dispatch_ready`
 
-Current mode marker: `cvf_ncr_r1_r2_exit_gap_disposition_closed`
-Current mode: `cvf_ncr_r1_r2_exit_gap_disposition_closed`
+Current mode marker: `cvf_ncr_r1_ux_profile_source_dispatch_ready`
+Current mode: `cvf_ncr_r1_ux_profile_source_dispatch_ready`
 
-R1/R2 exit/gap disposition complete; next source-only admission preparation selected, with no execution release.
+Fresh source-only UI pair committed; worker release waits for bound pre-dispatch on clean current6.
 
 ## Current Authority
 
-Frozen completed browser baseline `docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md` SHA256 `d73d6d4ec19656259ce10c5217901430f50d121bca665ce9762dcbc71bf75400`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md` SHA256 `25e7480fe15f2805730384d4a884a2ef4d8f1911a79579f69fc344e041b707df`. Local browser completion SHA256 `53485824b0c43e7c9b2782f33d2c347962f90ec864d7446131ac6c66dfa2545c` retained. Current disposition `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` SHA256 `7fc1f8cc000dfcef18f44871d14794b0d5e36a42b7059b87d39c8c00a917f089`, material `b45b0dd75e2568b0c6806d943523890b581baa47`; next preparation is not a source execution grant.
+Fresh baseline `docs/baselines/CVF_GC018_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md` SHA256 `28a2385af4b5585e524a7167c381da5ab3127af13c63b2563097f3b0d1eb089c`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md` SHA256 `09cc23a13621e9fe81b961a3493f3388cb913f9b2db9087729ec62d3b6d1d442`; material `8ef4420bd97edceb065276fa85deb2b02622392f`. Source pair immutable after release. Standing operator next/autonomous roadmap authority and Local action-specific admission cover source2/return2 only; bound pre-dispatch is the final release prerequisite. No runtime/provider/test authority.
 
 ## Accepted NCR Evidence And Continuation
 
-Source bae47f9c7 fixture29/29 plus independent3/3 and browser8ab06322b Chromium1/1 with joined Root byte/auth controls remain accepted bounded; original failures retained. Browser finality `.cvf/runtime/ncr-r1-integrated-html-job-browser-preparation-20261018/browser-finality.json` records split closure and historical aggregate-marker adjudication. Roadmap exit/gap matrix now identifies mixed-language/profile-copy delta and unmet R2/W05 pre-live gates. No recovery replay. Source RETURN3/counters0,1,0,3; browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. R1/R2partial,R3/R4open,R5/R6deferred.
+Exit/gap disposition material b45b0dd75e2568b0c6806d943523890b581baa47 selected this distinct UX source gap. Original integrated source bae47f9c7 and browser8ab06322b accepted bounded, original failures retained; no replay. Source RETURN3/counters0,1,0,3; browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. New UX dispatch initial0 is not an old problem reset; current source proofs are not yet executed. R1/R2partial,R3/R4open,R5/R6deferred; component proof/walkthrough and R2/W05 pre-live remain pending.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r1_r2_exit_gap_disposition_closed`
+Mode: `cvf_ncr_r1_ux_profile_source_dispatch_ready`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN_ONLY; BATCH_ID=CVF-NCR-R1-R2-EXIT-GAP-20261018. R1/R2 exit/gap disposition complete in docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md at b45b0dd75e2568b0c6806d943523890b581baa47. Next prepare one fresh action-specific source-only admission for existing Work Transfer R1 Vietnamese/profile disclosure delta; enumerate actual source/test dependencies and feasible progression before release. No worker/source/app/browser successor released; no old actor replay or budget refill. R2/W05 pre-live design follows on the exact chosen effect profile. Source RETURN3/counters0,1,0,3; browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. App/browser/provider/external network success/real-data/production/public/deploy OFF pending action-specific admission. R1/R2partial,R3/R4open,R5/R6deferred.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_SOURCE_ONLY; BATCH_ID=CVF-NCR-R1-UX-PROFILE-SOURCE-20261018. Fresh exact2 UI source contract admitted at 8ef4420bd97edceb065276fa85deb2b02622392f; first run bound pre-dispatch on committed current6 and clean HEAD, then release one INTERNAL_AGENT worker under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md. Worker exact4: HtmlJobControls/ArtifactExportPanel source2 and return2; no tests, app/browser/server/provider/network, .env/private data, schema/auth/writer or public effects. Existing jobDecisions enablement retained; exact observed LOCAL_SYNTHETIC enum selects presentation only; missing enum keeps generic disclosure. New distinct UX problem initial0; old source RETURN3/counters0,1,0,3, browser RETURN1/counters0,0,0,0 and parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; no old actor replay/refill. Root consumes static source proof then exact6 material and separate current6. Component proof/walkthrough and R2/W05 pre-live remain pending; R1/R2partial,R3/R4open,R5/R6deferred; app/browser/provider/real-data/production/public/deploy OFF.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -69,13 +69,13 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
-Original material9 normal91 PASS/SKIPPED_NO_ELIGIBLE_CANDIDATE. Original metadata7 P4 receipt generation failed GC-020 and probe digest binding; exact marker4078abec adjudicated for metadata repair only at `.cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-browser-receipt-generation-repair-1-20261018.json`. Dedicated head sync76bdd76ed: RETRY_REJECTED_CURRENT_GATE. Corrective review material c1fd6f71a6e7e640ea096367e92c64f3e2a50e72: normal91 PASS; P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE. No manual collector or success promotion; prior seven BLOCKED/C15 exclusions remain. This sync post-commit result and final split receipts are consumed after actual execution in the owned finality ledger.
+Pair2 material 8ef4420bd97edceb065276fa85deb2b02622392f: normal91 PASS; actual P4-C1 SKIPPED_NO_ELIGIBLE_CANDIDATE. No manual collector or success promotion. Original browser finality `.cvf/runtime/ncr-r1-integrated-html-job-browser-preparation-20261018/browser-finality.json` retains historical aggregate-marker adjudication, twenty rows and seven historical BLOCKED/C15 exclusions. Consume actual post-sync result after commit; never assume a PASS row clears historical blocks.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: dedicated current6 synchronization after committed exact1 exit/gap roadmap material; no material path is mixed here.
+Atomicity reason: dedicated current6 synchronization binds committed source admission pair; no material source/roadmap path mixed here.
 
 Exact changed manifest:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -85,11 +85,11 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: exact6 metadata only; material/proof unchanged.
+Rollback boundary: exact6 metadata only; immutable pair and accepted prior proof retained.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 current-session metadata binding the exit/gap disposition material and next PLAN_ONLY move. Frozen completed browser authority retained; no guard/source/effect change.
+Authorized guard-maintenance scope: exact6 current-session metadata for fresh source-only R1 UX/profile admission and bound release; no guard or product code change.
 
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -99,35 +99,35 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: standing autonomous reviewer/continuity correction.
+Operator authorization: standing autonomous roadmap orchestration and necessary session synchronization.
 Rollback boundary: exact6 metadata only.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT session-sync steward; decision owner=LOCAL |
+| Actor | INTERNAL_AGENT Local session-sync steward; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-r1-r2-exit-gap-continuity-20261018 |
+| Session or invocation | ncr-r1-ux-profile-source-dispatch-continuity-20261018 |
 | Working directory | repository root |
-| Command or tool surface | actual roadmap material binding; dedicated current6 maintenance; session generator and normal gates |
+| Command or tool surface | actual pair binding; dedicated current6 source edits; generator and governance gates |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | standing autonomous roadmap orchestration; necessary current6 session synchronization |
-| Before status evidence | material b45b0dd75e2568b0c6806d943523890b581baa47; exact1 roadmap normal91 PASS; P4-C1 SKIPPED_NO_ELIGIBLE_CANDIDATE |
-| After status evidence | exact6 metadata only; no worker/source/app/browser release |
+| Allowed scope source | standing autonomous roadmap orchestration and Root exact source admission |
+| Before status evidence | pair2 8ef4420bd97edceb065276fa85deb2b02622392f; normal91 PASS; P4 skipped; git status --short = clean |
+| After status evidence | exact6 dispatch continuity only; bound release still required |
 | Diff evidence | git diff --name-status; git diff --check; exact6 reconciliation |
-| Approval boundary | current6 only; committed roadmap and frozen browser pair/proof retained |
-| Claim boundary | bounded synthetic observation; no stage exit or provider/business acceptance |
+| Approval boundary | current6 only; source pair immutable and worker source not started |
+| Claim boundary | no source/runtime proof or stage exit |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-r2-exit-gap-continuity-20261018 |
+| Invocation ID | ncr-r1-ux-profile-source-dispatch-continuity-20261018 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 dedicated correction sync |
+| Manifest delta | MATCH exact6 |
 | Deletion or rename disposition | none |
 
 ## Claim Boundary
 
-Accepted current-source synthetic browser contribution with retained original failures and bounded joined Root proof. Same-person review leaves immutable draft unverified/unaccepted. Source RETURN3/counters0,1,0,3 and parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; browser RETURN1/counters0,0,0,0. R1/R2partial,R3/R4open,R5/R6deferred. No provider/live, real data, production, public/deploy, business acceptance or whole-R1 exit.
+Fresh exact4 source worker scope only after actual bound release. No source proof, test, app/browser/provider execution, business acceptance, R1/R2 stage exit, real data, production/public/deploy. All parent and spent source/browser histories retained.
 
 ## Historical Terminal Timing Disclosure - Prior Source Recovery
 

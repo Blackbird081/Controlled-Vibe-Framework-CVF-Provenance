@@ -18,13 +18,13 @@
   "corpusToKnowledgeMapReconciliationGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md",
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
-    "baselineSha256": "d73d6d4ec19656259ce10c5217901430f50d121bca665ce9762dcbc71bf75400",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
-    "workOrderSha256": "25e7480fe15f2805730384d4a884a2ef4d8f1911a79579f69fc344e041b707df"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md",
+    "baselineSha256": "28a2385af4b5585e524a7167c381da5ab3127af13c63b2563097f3b0d1eb089c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md",
+    "workOrderSha256": "09cc23a13621e9fe81b961a3493f3388cb913f9b2db9087729ec62d3b6d1d442"
   },
-  "currentAuthoritySyncReason": "Documentary exit/gap disposition docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md SHA256 7fc1f8cc000dfcef18f44871d14794b0d5e36a42b7059b87d39c8c00a917f089; material b45b0dd75e2568b0c6806d943523890b581baa47. Frozen browser baseline/work order retain their completed contribution authority only. Source bae47f9c7 and browser8ab06322b Local reviews/evidence unchanged; original failures retained. R1/R2 partial; one source-only R1 UX/profile admission preparation selected, no source/run release. Dedicated current6 synchronization only; all spent-chain counters and parked effects retained. Browser closure finality .cvf/runtime/ncr-r1-integrated-html-job-browser-preparation-20261018/browser-finality.json retained; no duplicate proof or P4-success promotion.",
-  "currentMode": "cvf_ncr_r1_r2_exit_gap_disposition_closed",
+  "currentAuthoritySyncReason": "Fresh source-only R1 UX/profile pair2 material 8ef4420bd97edceb065276fa85deb2b02622392f; exact4 worker, separate current6. Final packet reviewer-fast70/70 and normal91 PASS, actual SCEC object1/violations0. Initial draft8 literal/schema classes and normal corpus-bullet failure retained in owned logs; no source edits/proof yet. One bounded source task under standing operator continuation, no test/runtime effects or old chain refill; prior browser/source evidence and parent counters retained. Source contract/proofs remain bounded; all stage exits retained.",
+  "currentMode": "cvf_ncr_r1_ux_profile_source_dispatch_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_integrated_html_job_browser_closed",
+  "previousMode": "cvf_ncr_r1_r2_exit_gap_disposition_closed",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [

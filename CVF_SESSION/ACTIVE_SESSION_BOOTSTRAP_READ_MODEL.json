@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r1_r2_exit_gap_disposition_closed",
+  "currentMode": "cvf_ncr_r1_ux_profile_source_dispatch_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN_ONLY; BATCH_ID=CVF-NCR-R1-R2-EXIT-GAP-20261018. R1/R2 exit/gap disposition complete in docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md at b45b0dd75e2568b0c6806d943523890b581baa47. Next prepare one fresh action-specific source-only admission for existing Work Transfer R1 Vietnamese/profile disclosure delta; enumerate actual source/test dependencies and feasible progression before release. No worker/source/app/browser successor released; no old actor replay or budget refill. R2/W05 pre-live design follows on the exact chosen effect profile. Source RETURN3/counters0,1,0,3; browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. App/browser/provider/external network success/real-data/production/public/deploy OFF pending action-specific admission. R1/R2partial,R3/R4open,R5/R6deferred.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_SOURCE_ONLY; BATCH_ID=CVF-NCR-R1-UX-PROFILE-SOURCE-20261018. Fresh exact2 UI source contract admitted at 8ef4420bd97edceb065276fa85deb2b02622392f; first run bound pre-dispatch on committed current6 and clean HEAD, then release one INTERNAL_AGENT worker under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md. Worker exact4: HtmlJobControls/ArtifactExportPanel source2 and return2; no tests, app/browser/server/provider/network, .env/private data, schema/auth/writer or public effects. Existing jobDecisions enablement retained; exact observed LOCAL_SYNTHETIC enum selects presentation only; missing enum keeps generic disclosure. New distinct UX problem initial0; old source RETURN3/counters0,1,0,3, browser RETURN1/counters0,0,0,0 and parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; no old actor replay/refill. Root consumes static source proof then exact6 material and separate current6. Component proof/walkthrough and R2/W05 pre-live remain pending; R1/R2partial,R3/R4open,R5/R6deferred; app/browser/provider/real-data/production/public/deploy OFF.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
-    "baselineSha256": "d73d6d4ec19656259ce10c5217901430f50d121bca665ce9762dcbc71bf75400",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
-    "workOrderSha256": "25e7480fe15f2805730384d4a884a2ef4d8f1911a79579f69fc344e041b707df"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md",
+    "baselineSha256": "28a2385af4b5585e524a7167c381da5ab3127af13c63b2563097f3b0d1eb089c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md",
+    "workOrderSha256": "09cc23a13621e9fe81b961a3493f3388cb913f9b2db9087729ec62d3b6d1d442"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
