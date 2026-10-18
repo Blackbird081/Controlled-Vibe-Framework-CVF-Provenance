@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `43d152e8e4f86376d4313cfc1bdec74b633813b4`. Fresh R1 browser dispatch material `e0e21d7dd3566c4e1454b0892daf00ae3c92c29a`; source bae47f9c7 read-only; batch CVF-NCR-R1-INTEGRATED-HTML-JOB-BROWSER-20261018.
+Current HEAD recorded for this handoff: `fe72c4eced8a47f8c15ec4cfb5de9e6539fe6b5a`. Fresh R1 browser dispatch material `e0e21d7dd3566c4e1454b0892daf00ae3c92c29a`; source bae47f9c7 read-only; batch CVF-NCR-R1-INTEGRATED-HTML-JOB-BROWSER-20261018.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -20,6 +20,8 @@ Accepted source stays read-only at bae47f9c7. One new composed-browser observati
 Startup acknowledged: current mode=`cvf_ncr_r1_integrated_html_job_browser_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one new current-source synthetic app/browser observation after gated release; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=provider/external network success/real-data/production/public/deploy.
 
 ## Current Mode
+
+`cvf_ncr_r1_integrated_html_job_browser_dispatched`
 
 Current mode marker: `cvf_ncr_r1_integrated_html_job_browser_dispatched`
 Current mode: `cvf_ncr_r1_integrated_html_job_browser_dispatched`
@@ -75,32 +77,22 @@ Prior owner observation OBS-180ac5c12daefceb and aggregate seven historical BLOC
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: pair, roadmap and current6 identify one fresh bounded synthetic app/browser observation.
+Atomicity reason: Root-only canonical bare-mode marker repair. Worker8 preserved byte-for-byte in owned custody while this exact1 metadata commit is checked; no source or browser replay.
 
 Exact changed manifest:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: exact6 only; product source and accepted proof unchanged.
+Rollback boundary: this handoff metadata only; restore exact worker8 after commit.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact9 Root browser dispatch metadata/current6, followed by exact6 actual dispatch binding.
+Authorized guard-maintenance scope: Root adds the canonical bare current-mode marker in this active handoff to unblock the same-mode return check. No mode/authority change; worker8 remains separate ownership.
 
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: standing autonomous bounded roadmap orchestration/session-sync, latest next; no guard code or source scope reopened.
-Rollback boundary: exact dispatch metadata/current6 only.
+Operator authorization: standing autonomous roadmap orchestration/reviewer continuity repair; no repeated permission needed.
+Rollback boundary: this Root-owned handoff metadata only; source11 and proof unchanged.
 
 ## Agent Operation Trace Block
 
@@ -111,18 +103,18 @@ Rollback boundary: exact dispatch metadata/current6 only.
 | Session or invocation | ncr-r1-integrated-html-job-browser-continuity-20261018 |
 | Working directory | repository root |
 | Command or tool surface | fresh action-specific admission; session generator; normal governance |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Allowed scope source | standing autonomous continuation; fresh paired Local bounded synthetic admission |
 | Before status evidence | accepted source bae47f9c7 and clean continuity6cbee8c4c; no current-source browser proof |
-| After status evidence | exact6 release metadata; prior sync3 failed DR-04 and is retained; effects require clean committed bound release |
+| After status evidence | Worker browser proof returned PASS; Root bare-marker repair is metadata only; original return refusals retained |
 | Diff evidence | git diff --name-status; git diff --check; exact manifest reconciliation |
 | Approval boundary | synthetic loopback mechanical app/browser only; product source read-only |
 | Claim boundary | new observation pending; no full-R1/provider/trusted evidence or production claim |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-r1-integrated-html-job-browser-continuity-20261018 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Manifest delta | MATCH exact1 Root marker correction; worker8 in byte-preserving custody |
 | Deletion or rename disposition | none |
 
 ## Claim Boundary
