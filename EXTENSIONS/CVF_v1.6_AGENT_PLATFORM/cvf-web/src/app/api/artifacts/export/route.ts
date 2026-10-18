@@ -4,6 +4,9 @@ import { createHash } from 'node:crypto';
 import { NextRequest, NextResponse } from 'next/server';
 
 import { authorizeRouteGovernanceProof, getRouteGovernanceProofConfig } from '@/lib/route-governance-proof';
+import { requireAdminApiSession } from '@/lib/admin-session';
+import { normalPrincipal } from '@/lib/server/html-draft-recovery-api';
+import { resolveHtmlJobSyntheticProfile } from '@/lib/server/html-job-synthetic-profile';
 import { fetchGovernanceReceipt } from './proof';
 
 type ArtifactMemoryClass = 'POINTER_RECORD' | 'FULL_RECORD';
@@ -255,6 +258,7 @@ function buildHtml(input: ValidatedExportRequest, generatedAt: string, sourceHas
 }
 
 export async function POST(request: NextRequest) {
+  const selectedJobProfile = resolveHtmlJobSyntheticProfile();
   const declaredLength = Number(request.headers.get('content-length'));
   if (Number.isFinite(declaredLength) && declaredLength > MAX_BODY_BYTES) {
     return NextResponse.json({ success: false, error: 'Artifact export body exceeds size limit.' }, { status: 413 });
@@ -268,11 +272,23 @@ export async function POST(request: NextRequest) {
   if (bodyText === null) {
     return NextResponse.json({ success: false, error: 'Artifact export body exceeds size limit.' }, { status: 413 });
   }
-  const routeAuth = await authorizeRouteGovernanceProof(
-    request,
-    bodyText,
-    getRouteGovernanceProofConfig('/api/artifacts/export'),
-  );
+  // The selected server fixture profile cannot enter the general proof helper: it
+  // reads CVF_SERVICE_TOKEN before its session branch, even when no token is sent.
+  let selectedPrincipal = false;
+  if (selectedJobProfile) {
+    const origin = request.headers.get('origin');
+    const site = request.headers.get('sec-fetch-site');
+    if (!origin || origin !== new URL(request.url).origin || (site && site !== 'same-origin')) {
+      return NextResponse.json({ success: false, error: 'ORIGIN_REFUSED' }, { status: 403, headers: { 'Cache-Control': 'no-store' } });
+    }
+    const session = await requireAdminApiSession(request, '/api/artifacts/export', { allowBreakGlass: false });
+    if (session instanceof NextResponse) { session.headers.set('Cache-Control', 'no-store'); return session; }
+    if (!normalPrincipal(session, Date.now())) return NextResponse.json({ success: false, error: 'SESSION_REFUSED' }, { status: 403, headers: { 'Cache-Control': 'no-store' } });
+    selectedPrincipal = true;
+  }
+  const routeAuth = selectedPrincipal
+    ? { allowed: true, proof: undefined, response: undefined }
+    : await authorizeRouteGovernanceProof(request, bodyText, getRouteGovernanceProofConfig('/api/artifacts/export'));
   if (!routeAuth.allowed && routeAuth.response) return routeAuth.response;
 
   if (Buffer.byteLength(bodyText, 'utf8') > MAX_BODY_BYTES) {
@@ -348,12 +364,9 @@ export async function POST(request: NextRequest) {
   const html = buildHtml(input, generatedAt, sourceHash);
   const verification = buildVerification(input, html);
 
-  const serviceToken = process.env.CVF_SERVICE_TOKEN;
-  const receiptCheck = await fetchGovernanceReceipt(
-    slugify(receiptAnchor),
-    sourceContent,
-    serviceToken,
-  );
+  const receiptCheck = selectedPrincipal
+    ? { status: 'NOT_CONFIGURED' as const, receipt: null, requestId: null }
+    : await fetchGovernanceReceipt(slugify(receiptAnchor), sourceContent, process.env.CVF_SERVICE_TOKEN);
   const governanceReceipt = receiptCheck.receipt;
 
   return NextResponse.json({
@@ -372,5 +385,5 @@ export async function POST(request: NextRequest) {
         : 'DRAFT_UNACCEPTED',
       ...(governanceReceipt ? { governanceReceipt } : {}),
     },
-  });
+  }, selectedPrincipal ? { headers: { 'Cache-Control': 'no-store' } } : undefined);
 }

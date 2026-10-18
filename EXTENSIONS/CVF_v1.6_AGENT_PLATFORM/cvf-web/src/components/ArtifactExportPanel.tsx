@@ -2,7 +2,7 @@
 
 // Text Encoding Exception: localized Vietnamese user-facing copy follows this file's existing convention.
 
-import { useCallback, useId, useMemo, useRef, useState } from 'react';
+import { useCallback, useId, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
 import {
   CheckCircle2,
@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 
 import { useLanguage } from '@/lib/i18n';
+import { useHtmlBuildAttempts, type HtmlJobReference, type SupersededOutcome } from './useHtmlBuildAttempts';
 
 export type ArtifactMemoryClass = 'POINTER_RECORD' | 'FULL_RECORD';
 
@@ -54,17 +55,12 @@ export interface ArtifactExportResult {
   governanceState?: 'DRAFT_UNACCEPTED' | 'RECEIPT_ALLOW_REVIEW_REQUIRED';
 }
 
-interface ArtifactExportApiResponse {
-  success: boolean;
-  data?: ArtifactExportResult;
-  error?: string;
-}
-
 interface ArtifactExportPanelProps {
   initialRequest?: Partial<ArtifactExportRequest>;
   initialResult?: ArtifactExportResult | null;
   exportEndpoint?: string;
   onGenerated?: (result: ArtifactExportResult) => void;
+  prepareJob?: (request: ArtifactExportRequest) => Promise<HtmlJobReference>;
   renderRecovery?: (snapshot: DisplayedResult | null, versionState: 'current' | 'stale' | 'unknown' | null) => ReactNode;
 }
 
@@ -73,18 +69,7 @@ export interface DisplayedResult {
   // Full request snapshot taken at submit; null when provenance is unknown (initialResult).
   submitted: ArtifactExportRequest | null;
   attempt: number | null;
-}
-
-interface AttemptError {
-  attempt: number;
-  message: string;
-}
-
-// Outcome of an attempt that a newer attempt replaced; it is never shown as a result.
-interface SupersededOutcome {
-  attempt: number;
-  status: 'pending' | 'success' | 'failure';
-  id?: string;
+  job?: HtmlJobReference;
 }
 
 const REQUEST_FIELDS: ReadonlyArray<keyof ArtifactExportRequest> = [
@@ -413,23 +398,18 @@ export function ArtifactExportPanel({
   initialResult = null,
   exportEndpoint = '/api/artifacts/export',
   onGenerated,
+  prepareJob,
   renderRecovery,
 }: ArtifactExportPanelProps) {
   const { language } = useLanguage();
   const labels = LABELS[language === 'vi' ? 'vi' : 'en'];
   const fieldId = useId();
   const [request, setRequest] = useState<ArtifactExportRequest>(() => normalizeRequest(initialRequest));
-  const [displayed, setDisplayed] = useState<DisplayedResult | null>(
-    () => (initialResult ? { result: initialResult, submitted: null, attempt: null } : null),
-  );
-  const [pendingAttempt, setPendingAttempt] = useState<number | null>(null);
+  const { displayed, pendingAttempt, attemptError, superseded, stoppedUnknown, generate, stop } = useHtmlBuildAttempts({
+    initialResult, exportEndpoint, prepareJob, onGenerated, sameRequest,
+  });
   const [copied, setCopied] = useState(false);
   const [printBlocked, setPrintBlocked] = useState(false);
-  const [attemptError, setAttemptError] = useState<AttemptError | null>(null);
-  const [superseded, setSuperseded] = useState<SupersededOutcome[]>([]);
-  const latestAttempt = useRef(0);
-  const pendingRequest = useRef<{ attempt: number; snapshot: ArtifactExportRequest } | null>(null);
-  const inFlightRequests = useRef<Map<number, ArtifactExportRequest>>(new Map());
   const loading = pendingAttempt !== null;
   const result = displayed?.result ?? null;
   const error = attemptError?.message ?? null;
@@ -482,53 +462,7 @@ export function ArtifactExportPanel({
     [],
   );
 
-  const handleGenerate = useCallback(async () => {
-    const submitted: ArtifactExportRequest = { ...request };
-    const inFlight = pendingRequest.current;
-    // A superseded request may still be in flight; never resend its snapshot.
-    if ([...inFlightRequests.current.values()].some(snapshot => sameRequest(snapshot, submitted))) return;
-    const attempt = latestAttempt.current + 1;
-    latestAttempt.current = attempt;
-    pendingRequest.current = { attempt, snapshot: submitted };
-    inFlightRequests.current.set(attempt, submitted);
-    const isLatest = () => latestAttempt.current === attempt;
-    const recordSuperseded = (status: 'success' | 'failure', id?: string) => {
-      setSuperseded(list => list.map(item => (item.attempt === attempt ? { ...item, status, id } : item)));
-    };
-    if (inFlight) setSuperseded(list => [...list, { attempt: inFlight.attempt, status: 'pending' }]);
-    setPendingAttempt(attempt);
-    setAttemptError(null);
-    try {
-      const response = await fetch(exportEndpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(submitted),
-      });
-      const payload = await response.json() as ArtifactExportApiResponse;
-      if (!response.ok || !payload.success || !payload.data) {
-        throw new Error(payload.error || `HTTP ${response.status}`);
-      }
-      // A superseded attempt may not replace or announce output for a newer attempt.
-      if (!isLatest()) {
-        recordSuperseded('success', payload.data.governanceReceiptAttemptId || payload.data.governanceReceipt?.receiptId || undefined);
-        return;
-      }
-      setDisplayed({ result: payload.data, submitted, attempt });
-      onGenerated?.(payload.data);
-    } catch (err) {
-      if (!isLatest()) {
-        recordSuperseded('failure');
-        return;
-      }
-      setAttemptError({ attempt, message: err instanceof Error ? err.message : 'Unknown export error' });
-    } finally {
-      inFlightRequests.current.delete(attempt);
-      if (isLatest()) {
-        pendingRequest.current = null;
-        setPendingAttempt(null);
-      }
-    }
-  }, [exportEndpoint, onGenerated, request]);
+  const handleGenerate = useCallback(() => generate(request), [generate, request]);
 
   const handleCopy = useCallback(async () => {
     if (!result) return;
@@ -747,6 +681,11 @@ export function ArtifactExportPanel({
               {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> : <ShieldCheck className="h-4 w-4" aria-hidden="true" />}
               {loading ? labels.generating : labels.generate}
             </button>
+            {loading && <button type="button" onClick={stop} data-testid="stop-html-build"
+              className="inline-flex min-h-11 items-center rounded-lg border border-amber-500 px-4 py-2 text-sm text-amber-800 dark:text-amber-200">Stop locally</button>}
+            {stoppedUnknown && <p role="status" data-testid="stopped-unknown" className="w-full text-xs text-amber-800 dark:text-amber-200">
+              Stopped locally. Remote completion and cost are unknown. This exact request cannot be sent again in this session.
+            </p>}
             {superseded.length > 0 && (
               <div role="status" data-testid="superseded-attempts" className="flex w-full flex-col gap-2">
                 {superseded.map(item => (

@@ -9,6 +9,7 @@ import { useLanguage } from '@/lib/i18n';
 import { validateHandoff, type HandoffDecision } from '@/lib/agent-handoff-validator';
 import { ArtifactExportPanel, type ArtifactExportRequest } from '@/components/ArtifactExportPanel';
 import { HtmlDraftRecovery } from '@/components/HtmlDraftRecovery';
+import { HtmlJobControls } from '@/components/HtmlJobControls';
 import { KnowledgeJourneyNav } from '@/components/KnowledgeJourneyNav';
 import type { AgentRole } from '@/lib/multi-agent';
 
@@ -276,9 +277,11 @@ export default function WorkTransferPage() {
                   </div>
                   {selectedRecord?.id === record.id && exportRequest && (
                     <div className="border-t border-gray-200 px-4 pb-4 pt-4 dark:border-gray-800" data-testid="inline-export-panel">
-                      <ArtifactExportPanel initialRequest={exportRequest} renderRecovery={(displayed, versionState) => (
-                        <HtmlDraftRecovery key={record.id} sourceRecordId={record.id} displayed={displayed} versionState={versionState} />
-                      )} />
+                      {record.id.startsWith('ncr-synthetic-')
+                        ? <HtmlJobControls key={record.id} sourceRecordId={record.id} initialRequest={exportRequest} />
+                        : <ArtifactExportPanel initialRequest={exportRequest} renderRecovery={(displayed, versionState) => (
+                          <HtmlDraftRecovery key={record.id} sourceRecordId={record.id} displayed={displayed} versionState={versionState} />
+                        )} />}
                     </div>
                   )}
                 </div>

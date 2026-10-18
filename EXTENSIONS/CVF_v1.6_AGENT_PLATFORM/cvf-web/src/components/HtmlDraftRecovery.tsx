@@ -6,9 +6,11 @@ import { useSession } from 'next-auth/react';
 import { useLanguage } from '@/lib/i18n';
 import { buildPreviewDocument, containPreviewNavigation, type DisplayedResult } from './ArtifactExportPanel';
 import type { DraftInput, DraftSnapshot } from '@/lib/html-draft-recovery-contract';
+import { clearPendingJobJournal, readPendingJobJournal, writePendingJobJournal, type PendingJobJournal } from './useHtmlBuildAttempts';
 
 type Metadata = Pick<DraftSnapshot, 'versionId' | 'filename' | 'createdAt' | 'state' | 'acceptance'>;
-type Props = { sourceRecordId: string; displayed: DisplayedResult | null; versionState: 'current' | 'stale' | 'unknown' | null; endpoint?: string };
+type Props = { sourceRecordId: string; displayed: DisplayedResult | null; versionState: 'current' | 'stale' | 'unknown' | null;
+  endpoint?: string; jobMode?: boolean; onConfirmedSnapshot?: (snapshot: DraftSnapshot, jobId?: string) => void };
 const COPY = {
   en: { title: 'Saved HTML drafts', save: 'Save displayed draft', saving: 'Saving draft', load: 'Show saved versions', restore: 'Restore',
     download: 'Download saved HTML', saved: 'Saved. You can recover this exact version.', unavailable: 'Draft unavailable or save unconfirmed. Keep this version ID for read-only lookup.',
@@ -20,7 +22,7 @@ const COPY = {
     unknown: 'Chỉ lưu được kết quả đã tạo trong phiên biểu mẫu này.', loadError: 'Không xem được các bản đã lưu. Không tạo HTML mới.' },
 };
 
-export function HtmlDraftRecovery({ sourceRecordId, displayed, versionState, endpoint = '/api/artifacts/drafts' }: Props) {
+export function HtmlDraftRecovery({ sourceRecordId, displayed, versionState, endpoint = '/api/artifacts/drafts', jobMode = false, onConfirmedSnapshot }: Props) {
   const { language } = useLanguage();
   const copy = COPY[language === 'vi' ? 'vi' : 'en'];
   const [versions, setVersions] = useState<Metadata[]>([]);
@@ -41,6 +43,7 @@ export function HtmlDraftRecovery({ sourceRecordId, displayed, versionState, end
   const sequence = useRef(0);
   const busy = useRef(false);
   const knownSave = useRef<{ id: string; record: string } | null>(null);
+  const owner = { userId: user?.userId ?? '', orgId: user?.orgId ?? '', teamId: user?.teamId ?? '' };
 
   useEffect(() => {
     epoch.current += 1;
@@ -48,6 +51,8 @@ export function HtmlDraftRecovery({ sourceRecordId, displayed, versionState, end
     setRestored(null); setVersions([]); setNotice(''); setPendingId(null);
     setUncertain(false); setSaving(false); setStateScope(scope);
     busy.current = false; knownSave.current = null;
+    if (jobMode && active) { const pending = readPendingJobJournal({ owner, sourceRecordId });
+      if (pending?.operation === 'SAVE_DRAFT' && pending.versionId) { setPendingId(pending.versionId); setUncertain(true); } }
     return () => { epoch.current += 1; sequence.current += 1; };
   }, [scope]);
   useEffect(() => {
@@ -81,6 +86,14 @@ export function HtmlDraftRecovery({ sourceRecordId, displayed, versionState, end
         || payload.data?.state !== 'CLIENT_SUBMITTED_UNVERIFIED' || payload.data?.acceptance !== 'DRAFT_UNACCEPTED') throw new Error('UNAVAILABLE');
       setRestored(payload.data as DraftSnapshot); setNotice('');
       if (knownSave.current?.id === versionId) setUncertain(false);
+      let targetJobId = knownSave.current?.id === versionId ? displayed?.job?.jobId : undefined;
+      if (jobMode) {
+        const pending = readPendingJobJournal({ owner, sourceRecordId });
+        if (pending?.operation === 'SAVE_DRAFT' && pending.versionId === versionId) {
+          targetJobId = pending.jobId; clearPendingJobJournal(pending);
+        }
+      }
+      onConfirmedSnapshot?.(payload.data as DraftSnapshot, targetJobId);
     } catch { if (scopeEpoch === epoch.current && serial === sequence.current) setNotice(copy.unavailable); }
   };
   const save = async () => {
@@ -93,18 +106,27 @@ export function HtmlDraftRecovery({ sourceRecordId, displayed, versionState, end
       versionId: id, sourceRecordId: record, request: { ...displayed.submitted }, html: displayed.result.html,
       filename: displayed.result.filename, generatedAt: displayed.result.generatedAt, buildNumber: displayed.attempt,
     };
+    let journal: PendingJobJournal | null = null;
+    if (jobMode) {
+      if (!displayed.job) return;
+      journal = { schema: 'cvf.htmlJobPending.v1', owner, sourceRecordId, jobId: displayed.job.jobId,
+        versionId: id, operation: 'SAVE_DRAFT' };
+      if (!writePendingJobJournal(journal)) { setNotice(copy.unavailable); return; }
+    }
     busy.current = true; knownSave.current = { id, record }; setPendingId(id); setSaving(true); setUncertain(true); setNotice('');
     try {
       const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(input) });
       const payload = await response.json();
       if (scopeEpoch !== epoch.current || serial !== sequence.current) return;
       if (!response.ok || !payload.success || payload.versionId !== id || payload.state !== 'SAVED') throw new Error('UNCONFIRMED');
-      setUncertain(false); setNotice(copy.saved); await list();
+      setUncertain(false); setNotice(copy.saved); await restore(id); await list();
     } catch { if (scopeEpoch === epoch.current && serial === sequence.current) setNotice(copy.unavailable); }
     finally { if (scopeEpoch === epoch.current) { busy.current = false; setSaving(false); } }
   };
   const reconcile = () => {
     if (knownSave.current?.record === sourceRecordId) void restore(knownSave.current.id);
+    else if (jobMode) { const pending = readPendingJobJournal({ owner, sourceRecordId });
+      if (pending?.operation === 'SAVE_DRAFT' && pending.versionId) void restore(pending.versionId); }
   };
   const download = () => {
     if (!active || stateScope !== scope || !restored) return;

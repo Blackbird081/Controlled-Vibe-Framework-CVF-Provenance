@@ -1,0 +1,746 @@
+{
+  "schemaVersion": "cvf.ncrR1IntegratedHtmlJobSourceWorkerEvidence@1.0.0",
+  "executionBaseHead": "12014fc13d74ef57e4b0c401b11533cbffe1c29d",
+  "role": "INTERNAL_AGENT",
+  "phase": "IMPLEMENTATION_RETURN",
+  "decisionOwner": "LOCAL_ROOT",
+  "authority": {
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md": "0033b80613e6a70f6858a08c7fc454f3875712fbfafa395e5445c331d7f18c48",
+    "docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md": "91c59a09e3d1b5c46ea9d201457358eaa0cb1148b9d23613e9c6806d152e3350",
+    "docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_ROOT_ADMISSION_2026-10-18.md": "6bd649f372f7b88e1ed5308d48575449e2ab5880b538d3ddb363371d913f8020",
+    "docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md": "2ff7a70ebdc2ca929e5b3e4a59882b7214e6387b869e3b2ffd44fa8c436509ea"
+  },
+  "sourceSha256": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "ba84ce58790f4e1d3a649af1d1190f9af29ad6c464c09df47c0abf304da64fc4",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "999f6710d4d9f18268c86f707be709f8e6aaddcb2d449656a3fa27c53f4cada8",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts": "8a20cc04ebcb3662a7078c34ab12f3a2c8f141fb0646abf0756ada3cb3f0bb88",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx": "b5b3e2c84913f5bac67e805365431af2c5a461e3066f1fe635080db784dbbc2a",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts": "bfb68c9d15afe0083d5c4d28e4ffdaf1835ae9bcb9ac11b4d77d5b2312cae9a2",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/jobs/route.ts": "1b10d2907aee9778c4662186ca9d5d0aef98e850e855191406a20278948e0367",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx": "5090247c7934b3ad440c875721e618d0b3bdfb2f27ae93a1f6612790f0d01360",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts": "138ebb622321e5114e4f742eb83df271ad9da3ffdf5245b0aa68569c6ef6d752",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "2f09a7dc52a9c8c4383ecd6905459bfb9ea9d2a67ec520c0a31d022de460dd43"
+  },
+  "testSha256": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.job.test.tsx": "3a87b3edd85c164277388ca98c9b9d1918827e32c803d1115818ca0954e728a0",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.test.tsx": "2a7b7c0feb29d04ed99b5010a6d93ad1913b67b021cfe7ed1d797e63cdeefafd",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.test.ts": "01ca13655309c3ab823a1ad5b1f6d5861a090245b6c5aa005cb58e37dd8e80b9",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.test.ts": "6a7c3bf37de6dfec15df130d11884c0d427ea6ff73d01fd9bd696701ea24bd0f",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/job.test.tsx": "daa697c2bd6dbb5f951c7070df467678d6cbf7bc52987e0aad76cc7eb633f6a2",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.job.test.tsx": "126868987b71376ea359fb4f3c6c5b4460005ecf71df12153b932f25cf540c74",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.job.test.ts": "6c2953bccdacf7b2b7b39718637c9fb4334267934c2bedcfe9f768500bcae757",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.test.ts": "9248526bce74119f44aa0597afeb554f9d3d9d6cafdc930a027381ec1bcc0699",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/job-profile.test.ts": "e1cb12922e29471dc960a9a3a809ef6eb666a19d8452d19c66ead1fa3ff3ca87"
+  },
+  "rootProbeObserved": {
+    "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/root-probe-result.json",
+    "sha256": "1e69fdd918c232ce135986d98f2ac6c4ca0e7818a1254f6517022dac61f8e3c4",
+    "isolatedCasesPassed": 3,
+    "status": "ROOT_REVIEW_PENDING"
+  },
+  "firstGateObservedSummary": {
+    "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/first-return-gate-observed-summary.txt",
+    "sha256": "a511565fe1877673396f0fad2d7a8f9915683978a0a6ad9b02b99f5c6c801909",
+    "exitCode": 1,
+    "custody": "LATER_TRANSCRIPTION_ONLY_FULL_RAW_NOT_PERSISTED"
+  },
+  "exactChangedManifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/jobs/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.job.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/job.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.job.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.job.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/job-profile.test.ts",
+    "docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_WORKER_RETURN_2026-10-18.md",
+    "docs/reviews/evidence/ncr-r1-integrated-html-job-source-worker-20261018.json"
+  ],
+  "proof": {
+    "JOIN": {
+      "assertion": "Immutable job/request/result join and version-exclusive link under exact owner; fresh reload GET only.",
+      "files": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/jobs/route.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.job.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/job.test.tsx"
+      ],
+      "focusedArgv": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-r1-integrated-html-job-source-20261018\\vitest-safe.config.mjs",
+        "src/components/ArtifactExportPanel.job.test.tsx",
+        "src/components/HtmlDraftRecovery.job.test.tsx",
+        "src/components/HtmlJobControls.test.tsx",
+        "src/lib/html-job-contract.test.ts",
+        "src/lib/server/html-draft-snapshot-store.job.test.ts",
+        "src/lib/server/html-job-api.test.ts",
+        "src/lib/server/html-job-synthetic-profile.test.ts",
+        "src/app/api/artifacts/export/job-profile.test.ts",
+        "src/app/(dashboard)/work-transfer/job.test.tsx"
+      ],
+      "exitCode": 0,
+      "rawLog": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309784.stdout.log",
+      "rawLogSha256": "c7a2a02f3d2b9683a968593fefb0467f1d1f9f3c5ab87fd3fe2581c208059e32"
+    },
+    "STOP": {
+      "assertion": "Stop invalidates the local attempt before abort; late responses cannot publish a result/callback or start export after token invalidation; same request remains blocked. An already sent CREATE_JOB can have unknown remote outcome.",
+      "files": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.job.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.job.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/job.test.tsx"
+      ],
+      "focusedArgv": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-r1-integrated-html-job-source-20261018\\vitest-safe.config.mjs",
+        "src/components/ArtifactExportPanel.job.test.tsx",
+        "src/components/HtmlDraftRecovery.job.test.tsx",
+        "src/components/HtmlJobControls.test.tsx",
+        "src/lib/html-job-contract.test.ts",
+        "src/lib/server/html-draft-snapshot-store.job.test.ts",
+        "src/lib/server/html-job-api.test.ts",
+        "src/lib/server/html-job-synthetic-profile.test.ts",
+        "src/app/api/artifacts/export/job-profile.test.ts",
+        "src/app/(dashboard)/work-transfer/job.test.tsx"
+      ],
+      "exitCode": 0,
+      "rawLog": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309784.stdout.log",
+      "rawLogSha256": "c7a2a02f3d2b9683a968593fefb0467f1d1f9f3c5ab87fd3fe2581c208059e32"
+    },
+    "SAVE": {
+      "assertion": "Journal precedes Save; ambiguous writes reconcile with authenticated GET and no POST replay.",
+      "files": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.job.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.job.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/job.test.tsx"
+      ],
+      "focusedArgv": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-r1-integrated-html-job-source-20261018\\vitest-safe.config.mjs",
+        "src/components/ArtifactExportPanel.job.test.tsx",
+        "src/components/HtmlDraftRecovery.job.test.tsx",
+        "src/components/HtmlJobControls.test.tsx",
+        "src/lib/html-job-contract.test.ts",
+        "src/lib/server/html-draft-snapshot-store.job.test.ts",
+        "src/lib/server/html-job-api.test.ts",
+        "src/lib/server/html-job-synthetic-profile.test.ts",
+        "src/app/api/artifacts/export/job-profile.test.ts",
+        "src/app/(dashboard)/work-transfer/job.test.tsx"
+      ],
+      "exitCode": 0,
+      "rawLog": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309784.stdout.log",
+      "rawLogSha256": "c7a2a02f3d2b9683a968593fefb0467f1d1f9f3c5ab87fd3fe2581c208059e32"
+    },
+    "DECISION": {
+      "assertion": "Separate person, exact version and hashes, inspectable criterion notes and explicit confirmation.",
+      "files": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.job.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.test.ts"
+      ],
+      "focusedArgv": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-r1-integrated-html-job-source-20261018\\vitest-safe.config.mjs",
+        "src/components/ArtifactExportPanel.job.test.tsx",
+        "src/components/HtmlDraftRecovery.job.test.tsx",
+        "src/components/HtmlJobControls.test.tsx",
+        "src/lib/html-job-contract.test.ts",
+        "src/lib/server/html-draft-snapshot-store.job.test.ts",
+        "src/lib/server/html-job-api.test.ts",
+        "src/lib/server/html-job-synthetic-profile.test.ts",
+        "src/app/api/artifacts/export/job-profile.test.ts",
+        "src/app/(dashboard)/work-transfer/job.test.tsx"
+      ],
+      "exitCode": 0,
+      "rawLog": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309784.stdout.log",
+      "rawLogSha256": "c7a2a02f3d2b9683a968593fefb0467f1d1f9f3c5ab87fd3fe2581c208059e32"
+    },
+    "PROFILE": {
+      "assertion": "Double server opt-in, default/production OFF, no early service-token getter or receipt fetch in selected synthetic profile.",
+      "files": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/jobs/route.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/job-profile.test.ts"
+      ],
+      "focusedArgv": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-r1-integrated-html-job-source-20261018\\vitest-safe.config.mjs",
+        "src/components/ArtifactExportPanel.job.test.tsx",
+        "src/components/HtmlDraftRecovery.job.test.tsx",
+        "src/components/HtmlJobControls.test.tsx",
+        "src/lib/html-job-contract.test.ts",
+        "src/lib/server/html-draft-snapshot-store.job.test.ts",
+        "src/lib/server/html-job-api.test.ts",
+        "src/lib/server/html-job-synthetic-profile.test.ts",
+        "src/app/api/artifacts/export/job-profile.test.ts",
+        "src/app/(dashboard)/work-transfer/job.test.tsx"
+      ],
+      "exitCode": 0,
+      "rawLog": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309784.stdout.log",
+      "rawLogSha256": "c7a2a02f3d2b9683a968593fefb0467f1d1f9f3c5ab87fd3fe2581c208059e32"
+    },
+    "TRUST": {
+      "assertion": "Unverified and unaccepted labels remain; source/owner/session/expiry and unknown outcome hold paths.",
+      "files": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.job.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.test.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/job-profile.test.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/job.test.tsx"
+      ],
+      "focusedArgv": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-r1-integrated-html-job-source-20261018\\vitest-safe.config.mjs",
+        "src/components/ArtifactExportPanel.job.test.tsx",
+        "src/components/HtmlDraftRecovery.job.test.tsx",
+        "src/components/HtmlJobControls.test.tsx",
+        "src/lib/html-job-contract.test.ts",
+        "src/lib/server/html-draft-snapshot-store.job.test.ts",
+        "src/lib/server/html-job-api.test.ts",
+        "src/lib/server/html-job-synthetic-profile.test.ts",
+        "src/app/api/artifacts/export/job-profile.test.ts",
+        "src/app/(dashboard)/work-transfer/job.test.tsx"
+      ],
+      "exitCode": 0,
+      "rawLog": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309784.stdout.log",
+      "rawLogSha256": "c7a2a02f3d2b9683a968593fefb0467f1d1f9f3c5ab87fd3fe2581c208059e32"
+    },
+    "RETURN": {
+      "assertion": "Exact22 union, final9/29 focused fixtures, type and scoped lint with four warnings, no external effects.",
+      "files": [
+        "docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_WORKER_RETURN_2026-10-18.md",
+        "docs/reviews/evidence/ncr-r1-integrated-html-job-source-worker-20261018.json"
+      ],
+      "focusedArgv": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-r1-integrated-html-job-source-20261018\\vitest-safe.config.mjs",
+        "src/components/ArtifactExportPanel.job.test.tsx",
+        "src/components/HtmlDraftRecovery.job.test.tsx",
+        "src/components/HtmlJobControls.test.tsx",
+        "src/lib/html-job-contract.test.ts",
+        "src/lib/server/html-draft-snapshot-store.job.test.ts",
+        "src/lib/server/html-job-api.test.ts",
+        "src/lib/server/html-job-synthetic-profile.test.ts",
+        "src/app/api/artifacts/export/job-profile.test.ts",
+        "src/app/(dashboard)/work-transfer/job.test.tsx"
+      ],
+      "exitCode": 0,
+      "rawLog": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309784.stdout.log",
+      "rawLogSha256": "c7a2a02f3d2b9683a968593fefb0467f1d1f9f3c5ab87fd3fe2581c208059e32"
+    }
+  },
+  "rawLogs": [
+    {
+      "id": "PRE",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/worker-pre-implementation.log",
+      "sha256": "8263ca4b054a427d510292254a0e575fb1f85ed80456078c87f12f56e6bed97b",
+      "bytes": 4798
+    },
+    {
+      "id": "FIXTURE-1792308254.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308254.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792308254.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308254.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792308307.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308307.stderr.log",
+      "sha256": "155f6657e0f8a181d47325420b72985cd100d7db008f450bf593ac98aac6d79c",
+      "bytes": 2653
+    },
+    {
+      "id": "FIXTURE-1792308307.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308307.stdout.log",
+      "sha256": "5151b4ef1b0a5faf4de1f7d0d696142ee302e2c35cf55367921455f7b5f4fa1c",
+      "bytes": 495
+    },
+    {
+      "id": "FIXTURE-1792308342.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308342.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792308342.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308342.stdout.log",
+      "sha256": "fd929a27c2b4834c8eaa9de7489bf4d2d7a69a6b70051fedcc9f2905a059cd84",
+      "bytes": 551
+    },
+    {
+      "id": "FIXTURE-1792308501.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308501.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792308501.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308501.stdout.log",
+      "sha256": "26494bbcb45a5c34b3f66cacb706827442c5da5899d84ac39d16c1a0b5c88800",
+      "bytes": 803
+    },
+    {
+      "id": "FIXTURE-1792308526.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308526.stderr.log",
+      "sha256": "4b0a444a5ea75f9e353d92a03ec7e22eeafd33be318f2cdc5d8954eed26e1ba6",
+      "bytes": 699
+    },
+    {
+      "id": "FIXTURE-1792308526.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308526.stdout.log",
+      "sha256": "1a5bcf72969495e3f175820782e5873f84d8416524e47c7c4d516929f0f46fa5",
+      "bytes": 1549
+    },
+    {
+      "id": "FIXTURE-1792308601.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308601.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792308601.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308601.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792308616.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308616.stderr.log",
+      "sha256": "b99cc889d2039e8cb76f201d9314d53875704841e9465a96e2b75584d3e0af29",
+      "bytes": 1149
+    },
+    {
+      "id": "FIXTURE-1792308616.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308616.stdout.log",
+      "sha256": "12debbe7a950344d47a09fa631f69b3bfc68dd9ce6db95fa14ff487a56c200d5",
+      "bytes": 1778
+    },
+    {
+      "id": "FIXTURE-1792308646.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308646.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792308646.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308646.stdout.log",
+      "sha256": "c4e8c574a4935cdad8e521bfdf9ee95ff84ecd64d6f5f013059b6e2160c9aa8d",
+      "bytes": 563
+    },
+    {
+      "id": "FIXTURE-1792308692.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308692.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792308692.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308692.stdout.log",
+      "sha256": "364c0d5aca2eb2cd30a6742e12ec812d13fe0aafb71c4a482b27c36b055cb260",
+      "bytes": 1534
+    },
+    {
+      "id": "FIXTURE-1792308806.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308806.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792308806.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792308806.stdout.log",
+      "sha256": "4892261c79f8eda52e2b58a41ada7afd9f6d70854ab1a0da45c2dee499248851",
+      "bytes": 1196
+    },
+    {
+      "id": "FIXTURE-1792309002.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309002.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309002.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309002.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309091.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309091.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309091.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309091.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309116.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309116.stderr.log",
+      "sha256": "8a45283b634cc0b09258297dbd1ff5ac0aeadc9d69cb2e3110a087c13f36febc",
+      "bytes": 9368
+    },
+    {
+      "id": "FIXTURE-1792309116.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309116.stdout.log",
+      "sha256": "46c97f8913958947ab95ec18cd7ec0cff6221f6a45c941605aeefe0de34352df",
+      "bytes": 3353
+    },
+    {
+      "id": "FIXTURE-1792309261.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309261.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309261.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309261.stdout.log",
+      "sha256": "93335276f7d6f450b51bc1bf4d1ea0e853cf67cfa7b6129db236cee97c60e9dd",
+      "bytes": 2211
+    },
+    {
+      "id": "FIXTURE-1792309300.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309300.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309300.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309300.stdout.log",
+      "sha256": "94b5529ee9913572c9eefd7f708d23208cc06af8d0a0285a0c18d52f689de01a",
+      "bytes": 2214
+    },
+    {
+      "id": "FIXTURE-1792309315.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309315.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309315.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309315.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309332.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309332.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309332.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309332.stdout.log",
+      "sha256": "8f1b37503ef184944641c47d5e149b15e56649672ebed9cc0b959285fb64b60b",
+      "bytes": 1664
+    },
+    {
+      "id": "FIXTURE-1792309514.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309514.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309514.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309514.stdout.log",
+      "sha256": "e1d3245e5ab1be79dafc773e51b8a8fe89a1228b82b6fb010a5d9d501a021c80",
+      "bytes": 1650
+    },
+    {
+      "id": "FIXTURE-1792309559.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309559.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309559.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309559.stdout.log",
+      "sha256": "3f010dfdf21c7d0261fbebe64bd5a5b3d01ada0f0bd1fd465224a203ca26c71c",
+      "bytes": 1651
+    },
+    {
+      "id": "FIXTURE-1792309593.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309593.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309593.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309593.stdout.log",
+      "sha256": "7ee2160f0ed7aa9a70fb6c4176f1f17bea82c68e84957ca86ab746fa8a46682a",
+      "bytes": 1652
+    },
+    {
+      "id": "FIXTURE-1792309602.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309602.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309602.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309602.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309611.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309611.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309611.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309611.stdout.log",
+      "sha256": "8f1b37503ef184944641c47d5e149b15e56649672ebed9cc0b959285fb64b60b",
+      "bytes": 1664
+    },
+    {
+      "id": "FIXTURE-1792309784.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309784.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309784.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309784.stdout.log",
+      "sha256": "c7a2a02f3d2b9683a968593fefb0467f1d1f9f3c5ab87fd3fe2581c208059e32",
+      "bytes": 1652
+    },
+    {
+      "id": "FIXTURE-1792309803.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309803.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309803.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309803.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309853.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309853.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "FIXTURE-1792309853.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309853.stdout.log",
+      "sha256": "fe7fd42d622ba7e9b617f51eff1d425765abe35ba948125a515bf9a9bbe67e93",
+      "bytes": 1666
+    },
+    {
+      "id": "PRE-FINAL-RETURN-GATE.STDERR",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/pre-final-return-gate.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "id": "PRE-FINAL-RETURN-GATE.STDOUT",
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/pre-final-return-gate.stdout.log",
+      "sha256": "f21813db9cbabe65c976ba0821d0d808170075dfa9d1fbe8dcf6994f26e2a992",
+      "bytes": 15885
+    }
+  ],
+  "finalChecks": {
+    "focused": {
+      "argv": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-r1-integrated-html-job-source-20261018\\vitest-safe.config.mjs",
+        "src/components/ArtifactExportPanel.job.test.tsx",
+        "src/components/HtmlDraftRecovery.job.test.tsx",
+        "src/components/HtmlJobControls.test.tsx",
+        "src/lib/html-job-contract.test.ts",
+        "src/lib/server/html-draft-snapshot-store.job.test.ts",
+        "src/lib/server/html-job-api.test.ts",
+        "src/lib/server/html-job-synthetic-profile.test.ts",
+        "src/app/api/artifacts/export/job-profile.test.ts",
+        "src/app/(dashboard)/work-transfer/job.test.tsx"
+      ],
+      "cwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web",
+      "allowedEnvKeys": [
+        "CI",
+        "COMSPEC",
+        "CVF_LIVE_TEST_SELECTION",
+        "CVF_NCR_R1_FIXTURE_ROOT",
+        "NODE_ENV",
+        "PATH",
+        "PATHEXT",
+        "SYSTEMROOT",
+        "TEMP",
+        "TMP",
+        "WINDIR"
+      ],
+      "durationSeconds": 11.265,
+      "files": 9,
+      "passed": 29,
+      "total": 29,
+      "exitCode": 0,
+      "stdout": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309784.stdout.log",
+      "stdoutSha256": "c7a2a02f3d2b9683a968593fefb0467f1d1f9f3c5ab87fd3fe2581c208059e32",
+      "stderr": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309784.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "type": {
+      "argv": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "durationSeconds": 5.0,
+      "exitCode": 0,
+      "stdout": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309803.stdout.log",
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309803.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scopedLint": {
+      "argv": [
+        "node",
+        "node_modules/eslint/bin/eslint.js",
+        "src/app/(dashboard)/work-transfer/job.test.tsx",
+        "src/app/api/artifacts/export/job-profile.test.ts",
+        "src/app/api/artifacts/jobs/route.ts",
+        "src/components/ArtifactExportPanel.job.test.tsx",
+        "src/components/HtmlDraftRecovery.job.test.tsx",
+        "src/components/HtmlJobControls.test.tsx",
+        "src/components/HtmlJobControls.tsx",
+        "src/components/useHtmlBuildAttempts.ts",
+        "src/lib/html-job-contract.test.ts",
+        "src/lib/html-job-contract.ts",
+        "src/lib/server/html-draft-snapshot-store.job.test.ts",
+        "src/lib/server/html-job-api.test.ts",
+        "src/lib/server/html-job-api.ts",
+        "src/lib/server/html-job-synthetic-profile.test.ts",
+        "src/lib/server/html-job-synthetic-profile.ts",
+        "src/app/(dashboard)/work-transfer/page.tsx",
+        "src/app/api/artifacts/export/route.ts",
+        "src/components/ArtifactExportPanel.tsx",
+        "src/components/HtmlDraftRecovery.tsx",
+        "src/lib/server/html-draft-snapshot-store.ts"
+      ],
+      "cwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web",
+      "allowedEnvKeys": [
+        "CI",
+        "COMSPEC",
+        "CVF_LIVE_TEST_SELECTION",
+        "CVF_NCR_R1_FIXTURE_ROOT",
+        "NODE_ENV",
+        "PATH",
+        "PATHEXT",
+        "SYSTEMROOT",
+        "TEMP",
+        "TMP",
+        "WINDIR"
+      ],
+      "files": 20,
+      "warnings": 4,
+      "durationSeconds": 3.156,
+      "exitCode": 0,
+      "stdout": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309853.stdout.log",
+      "stdoutSha256": "fe7fd42d622ba7e9b617f51eff1d425765abe35ba948125a515bf9a9bbe67e93",
+      "stderr": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixture-1792309853.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "harness": {
+    "config": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/vitest-safe.config.mjs",
+    "configSha256": "d3901ae2f8b1335f71df2f9d5be29623eaf8ea080b131d92e83e63ff9ab928fc",
+    "setup": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/vitest-safe-setup.ts",
+    "setupSha256": "c08e67f7c1851be2d314a97246d6f3cfb2a13d9c6b831fdeb4177914dd377399",
+    "runner": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/run-safe-command.py",
+    "runnerSha256": "0a483da51557e8ffbed7eee98f20a43e1f46541391a783fedbac5515640dd9d5",
+    "envDir": false,
+    "ambientEnvRead": false,
+    "fixtureRoot": ".cvf/runtime/ncr-r1-integrated-html-job-source-20261018/fixtures",
+    "fixtureResidualFiles": 0,
+    "fixtureResidualDirectories": 0
+  },
+  "effects": {
+    "providerCalls": 0,
+    "networkCalls": 0,
+    "applicationRuns": 0,
+    "browserRuns": 0,
+    "realDataMutations": 0,
+    "publicWrites": 0,
+    "deployments": 0,
+    "commits": 0
+  },
+  "limitations": [
+    "Source and in-process isolated fixture evidence only; Root independent probe and reviewer disposition pending.",
+    "Historical failed/partial fixture stdout and stderr outputs retained; first worker-return gate was tool output only and its full raw stream was not persisted. Earlier temporary fixture roots were individually removed; no recursive delete.",
+    "Scoped lint passed with four React Hook warnings (zero errors).",
+    "No runtime, live governance, product acceptance, whole-R1 exit or public export claim."
+  ]
+}
