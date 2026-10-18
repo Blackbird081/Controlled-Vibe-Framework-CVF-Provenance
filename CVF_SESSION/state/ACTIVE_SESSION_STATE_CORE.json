@@ -23,8 +23,8 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_FOCUSED_COMPLETION_2026-10-18.md",
     "workOrderSha256": "cae2c067525bf03de8d4e50ea5d057f46f644037c9f09c7717b07f2165ff7018"
   },
-  "currentAuthoritySyncReason": "Focused same-chain pair2 e9f618973cecdd2d1ab11650fac738a753bfd03b; worker exact4/later material6/current6 separate. Original source implementation accepted by Local review61ac95d1f, linked actual SHA/locator resolves source blocker only; new SCEC SUCCESSOR2/current2/counters0,0,0,0, actual1object/0violations. Mobile3/tablet3/full focus visibility/configured lint remain; original blocked return1/counters0,0,0,1/current3 and all failed runs/reads retained. One encoding comment and Root tscPASS; lint300/debug45 timeout identifies spec traversal, no rule/config suppression. Smaller focused input, quality gates before sole browser and git/PATH preflight fixed. No product/worker/browser execution during preparation. Normal91 PASS; actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Actual bound release follows current6, manual transfer to Claude; no stage/human/governance/public promotion. Release metadata correction: first pre-dispatch failed DR-05 because material marker omitted exact batch id; marker now names CVF-NCR-R1-UX-FOCUSED-COMPLETION-20261018. No work-order/source/effect change; consume the actual new bound receipt before transfer. Dedicated continuity parent SHA: 86dcf28d92974b9c23c6f37309c3a6e5ac344093. Prior release recheck caught GC-020 parent-marker staleness after the corrective sync; original material/batch marker retained and this actual parent bound before final release.",
-  "currentMode": "cvf_ncr_r1_ux_focused_claude_handoff_ready",
+  "currentAuthoritySyncReason": "Material 2da319d4cf5c83f865027e451bcc737236c109ae; batch CVF-NCR-R1-UX-FOCUSED-COMPLETION-20261018; Original focused worker BLOCKED/SUCCESSOR3/current4/counters0,0,0,1, partial mandatory reads, helper syntax failure before tool launch, useLang errors and both path-ineligible full gates retained byte-for-byte; zero runner/browser/run root/keyboard/images. Original full6 lint FAIL with2readonly baseline warnings; final source/spec Local tscPASS32.36s and strict owned2 lintPASS9.922s. Source focus leaf/spec accepted bounded; original return54835b71d949c376ee1a9cfe881889f0bdba8f23e5f862ef5717ce0d91cea462, EP443d2e67c5403b82ac1d511a2515d44f9a84346ac46e43088fd949cccaec5dd3. Mandatory registry3 correction adds existing lint config only; first normal hookGC051 failure retained. Next PLAN_ONLY correction; review docs/reviews/CVF_NCR_R1_UX_FOCUSED_COMPLETION_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 10389543fa0471fff3c0d188f42c43c7e090e98303778753bdada8bd613b361b. Normal91 PASS; actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE.",
+  "currentMode": "cvf_ncr_r1_ux_focused_locally_disposed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_ux_findings_locally_disposed",
+  "previousMode": "cvf_ncr_r1_ux_focused_claude_handoff_ready",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [
