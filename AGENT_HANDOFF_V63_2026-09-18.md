@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `7e6d6aa5eba472bb5be0bb99a44cc414e5701087`. Browser UI-assessment admission pair2 `7e6d6aa5eba472bb5be0bb99a44cc414e5701087`; batch CVF-NCR-R1-UX-READONLY-BROWSER-20261018; dedicated current6 only, manual worker transfer.
+Current HEAD recorded for this handoff: `0d33b4f73b51e2c642744083b0168f110ca0ff33`. Read-only browser Local disposition material8 `0d33b4f73b51e2c642744083b0168f110ca0ff33`; batch CVF-NCR-R1-UX-READONLY-BROWSER-20261018; dedicated current6.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,36 +13,34 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Root exact current6 for committed browser-assessment pair2 7e6d6aa5eba472bb5be0bb99a44cc414e5701087. Worker not started; operator transfers work order. Future worker exact6; Root review/roadmap later material8 and separate current6. Existing production/runner/preload/config read-only, only reviewed Next transient restoration allowed. No source or domain effect grant.
+Root exact current6 after material8 0d33b4f73b51e2c642744083b0168f110ca0ff33. Worker lane released; original exact6 preserved. Local bounded contribution accepted, full readiness withheld. No source edit or new browser grant; next finite existing-owner repair admission preparation, manual Claude transfer preference retained.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_ux_browser_claude_handoff_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bound packet release then operator manual work-order transfer; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=MANUAL_BROWSER_ASSESSMENT_HANDOFF_READY; decision owner=LOCAL; parked checkpoint=domain write/provider/nonloopback/private data/production/public/deploy; no Root worker/browser start.
+Startup acknowledged: current mode=`cvf_ncr_r1_ux_browser_locally_disposed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bounded existing-owner UX repair admission preparation only; role=INTERNAL_AGENT Local reviewer/closer; phase=UI_ASSESSMENT_LOCAL_DISPOSITION; decision owner=LOCAL; parked checkpoint=domain writes/provider/nonloopback/private data/production/public/deploy; future worker assignment=operator manual transfer to Claude.
 
 ## Current Mode
 
-`cvf_ncr_r1_ux_browser_claude_handoff_ready`
+`cvf_ncr_r1_ux_browser_locally_disposed`
 
-Current mode marker: `cvf_ncr_r1_ux_browser_claude_handoff_ready`
-Current mode: `cvf_ncr_r1_ux_browser_claude_handoff_ready`
+Current mode marker: `cvf_ncr_r1_ux_browser_locally_disposed`
+Current mode: `cvf_ncr_r1_ux_browser_locally_disposed`
 
-Fresh read-only browser UI-assessment packet for manual worker transfer. No Root app/browser/worker started; actual bound pre-dispatch follows this dedicated current6 commit.
+Bounded current-source UI browser contribution accepted with4 findings/2 unproved focus candidates. Full completion/readiness unestablished; next existing-owner UX repair admission preparation only.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_R1_UX_READONLY_BROWSER_2026-10-18.md` SHA256 `f098444795869c59aa6cce86ea255355461a07dca7e8175baa9ac68605f658d5`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_READONLY_BROWSER_2026-10-18.md` SHA256 `43239097b392d131507aca1d3b860f3d6b1012875b55c2fe1131c883adb466ac`; material 7e6d6aa5eba472bb5be0bb99a44cc414e5701087. Local action-specific read/browser/loopback/auth-fixture grant requires committed current6, actual bound pre-dispatch and worker pre-implementation. Existing runner historical authorityFiles do not replace this pair. Root stops at manual transfer, no worker/browser launch. Domain writes/provider/evaluate/execute/private data/public/deploy remain parked.
+Immutable baseline `docs/baselines/CVF_GC018_NCR_R1_UX_READONLY_BROWSER_2026-10-18.md` SHA256 `f098444795869c59aa6cce86ea255355461a07dca7e8175baa9ac68605f658d5`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_READONLY_BROWSER_2026-10-18.md` SHA256 `43239097b392d131507aca1d3b860f3d6b1012875b55c2fe1131c883adb466ac`. Local result `docs/reviews/CVF_NCR_R1_UX_READONLY_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md` SHA256 `bca4b5b1944d805903139e246819cf65b7f9ebbbbd2f7c93d1e18f98ce3093c5`; material 0d33b4f73b51e2c642744083b0168f110ca0ff33. UI contribution only; no full work-order completion or renewed execution allowance. Standing reviewer closure and necessary metadata synchronization authority, domain/provider/private data/public/deploy parked.
 
 ## Accepted NCR Evidence And Continuation
 
-Current Local UI review docs/reviews/CVF_NCR_R1_UX_COMPONENT_PROOF_LOCAL_COMPLETION_REVIEW_2026-10-18.md; PASS21/21 and8 executed agent-simulated DOM rows at test raw SHA2560a73ed4fa0c7c74fb2bf36c566dddc7bfe5cc68984e21b4070ddafd9cb829ae6. One reviewer check5.172s; two-line fixture/metadata correction, no assertion weakening. Worker original return docs/reviews/CVF_NCR_R1_UX_COMPONENT_PROOF_WORKER_RETURN_2026-10-18.md SHA256 705bc004ff033e7a54c3e9982d59a0e1f39464575f8066061aadddb11af6a9ab and EP docs/reviews/evidence/ncr-r1-ux-component-proof-worker-20261018.json SHA256 e9cd339fc5584f3682dabf13d2c4405c98deafcf3d3bf84f97151b0890941ae5 unchanged; full worker gate2 PASS binds original b84eab18 test. Original worker run1 FAIL12/21, run2 FAIL3/21; BLOCKED/ledger BLOCKED/SCEC INITIAL0/counters0,0,0,0/current blocker retained. Mandatory first-read omissions disclosed and retained as procedure limits. Prior source2/static accepted at fdf2daf07; original UX source RETURN1/counters0,0,0,1; integrated source bae47f9c7/RETURN3/counters0,1,0,3; browser8ab06322b/RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24. No actor replay/refill. Browser/human/effect outcomes and R1/R2 exits remain open.
-
-Fresh browser-assessment pair2 7e6d6aa5eba472bb5be0bb99a44cc414e5701087 is prospective INITIAL0/CURRENT_UI_BROWSER_ASSESSMENT_MISSING. Assessment completeness and measured UX findings are separate from conformance. Reuse matched boundary4 prior proof; no product proof or old actor replay occurred during preparation.
+Current Local browser review docs/reviews/CVF_NCR_R1_UX_READONLY_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md; one run12rows/3real-keyboard/6scripted-refusals,12screenshots932906bytes,0domain-write attempts. Runner/playwright exit0,163.015s; source/spec hashes and owned teardown verified. Four measured findings and2 metric-limited focus candidates, missing settled/on-screen observations retained. Worker return docs/reviews/CVF_NCR_R1_UX_READONLY_BROWSER_WORKER_RETURN_2026-10-18.md SHA256 aded88c823cef41033cb4cd839d96bc45a61cf874495e08c18a9ad4aa81751cc; EP docs/reviews/evidence/ncr-r1-ux-readonly-browser-worker-20261018.json SHA256 70e94a777a6b4bcb1bd6d3dbed2bc758a77799a45d0a0d67ade616bec35d13ec; final full gate2 PASS at exact bytes; original status/ledger/chain unchanged. Full work-order completion/UX readiness NOT_ESTABLISHED: settled focus/border/validation visuals missing; required first reads missing/partial; three invalid activations versus singular allowance; auth prefix wider than callback-only. Worker COMPLETE_PENDING_REVIEW/PASS ledger/SCEC INITIAL0/counters0,0,0,0/CURRENT_UI_BROWSER_ASSESSMENT_MISSING preserved as original declarations, no successor transition/refill. Prior UX source RETURN1/counters0,0,0,1; component INITIAL0/counters0,0,0,0 and original12/21,3/21 FAILs; integrated source RETURN3/counters0,1,0,3; pre-UX browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. Prior component Local21/21/8simulated DOM and source2 accepted; no broad rerun, new worker or product mutation. R1/R2 exit and human/business/effect outcomes open.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r1_ux_browser_claude_handoff_ready`
+Mode: `cvf_ncr_r1_ux_browser_locally_disposed`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_READONLY_BROWSER_UI; BATCH_ID=CVF-NCR-R1-UX-READONLY-BROWSER-20261018. Manual worker handoff: operator transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_READONLY_BROWSER_2026-10-18.md to Claude in the same checkout; Root must not auto-invoke worker or start browser. Pair2 7e6d6aa5eba472bb5be0bb99a44cc414e5701087; after dedicated current6 and actual bound pre-dispatch PASS, worker pins clean released HEAD/pair/source/harness/registry and runs bound pre-implementation on docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_READONLY_BROWSER_2026-10-18.md. Worker exact6=browser spec1/return2/registry source+aggregate3; product/existing runner/config/preload read-only except validated Next transient preimage restoration after owned teardown. One60min task, one fresh existing-runner Chromium invocation<=15min/retries0, static --list<=2, full return<=2. Real UI language/keyboard/viewport/refusal assessment;12 profile/viewport/language rows, explicit UX findings, screenshot<=12/24MiB. Loopback/auth-fixture/read/audit-GET and owned process/build only; zero attempted domain writes, no provider/evaluate/execute/nonloopback/private env/data. Record UX findings without source fixes; assessment completeness is not UX conformance. Root later exact8 material/current6 separate. New browser-assessment INITIAL0; prior component Local21/21/8 DOM accepted but worker BLOCKED/SCEC INITIAL0/counters0,0,0,0 retained. UX source RETURN1/counters0,0,0,1; integrated source RETURN3/counters0,1,0,3; browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24. No replay/refill; R1/R2partial,R3/R4open,R5/R6deferred, R2/W05/human comprehension and production/public/deploy remain open/parked.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN_ONLY; BATCH_ID=CVF-NCR-R1-UX-READONLY-BROWSER-20261018. Local bounded UI assessment accepted with procedure/measurement limits at 0d33b4f73b51e2c642744083b0168f110ca0ff33 via docs/reviews/CVF_NCR_R1_UX_READONLY_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md. One worker browser run12rows/3keyboard/6scriptedrefusals;0domain-write attempts;source unchanged. Four measured UX findings: long keyboard path, target heights below44, unstyled Add criterion, English Candidate pill in VI. Two focus candidates unproved. Full work-order completion/UX readiness NOT_ESTABLISHED: settled focus/border/validation visuals missing; required first reads missing/partial; three invalid activations versus singular allowance; auth prefix wider than callback-only. Worker COMPLETE_PENDING_REVIEW/PASS ledger/SCEC INITIAL0/counters0,0,0,0/CURRENT_UI_BROWSER_ASSESSMENT_MISSING preserved as original declarations, no successor transition/refill. Next prepare one finite existing-owner UX repair admission: size/style/localize affected controls, inspect shell/main owner before skip-navigation selection; require settled-scroll focus/border/background/focused screenshots and on-screen validation, strict callback/method traffic scope and single invalid action. After new work order ready operator transfers it to Claude; Root must not auto-invoke worker/browser. Prior UX source RETURN1/counters0,0,0,1; component INITIAL0/counters0,0,0,0 and original12/21,3/21 FAILs; integrated source RETURN3/counters0,1,0,3; pre-UX browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. R1/R2partial,R3/R4open,R5/R6deferred; R2/W05 effect route and real human understanding open; domain writes/provider/nonloopback/private data/production/public/deploy OFF.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -71,13 +69,13 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
-Current pair2 7e6d6aa5eba472bb5be0bb99a44cc414e5701087: normal91 PASS; P4-C1 actual SKIPPED_NO_ELIGIBLE_CANDIDATE; no manual collector or success promotion. Prior Local component row OBS-ca26e749fc072962 was bounded accepted with C15 FALSE_NEGATIVE/excludedFromSuccessDenominators; aggregate marker adjudicated in `.cvf/runtime/ncr-r1-ux-component-20261018/root-review/p4-adjudication.json` SHA256 fd931a31bd548d2f38b7ca86e5d9f4b8a834b33ee8049ea3c93bf9223e404335. Actual journal21 rows/seven historical blocked preserved byte-identically at adjudication. Consume actual post-current6 outcome; no automatic marker clearing from accepted UI result.
+Material8 0d33b4f73b51e2c642744083b0168f110ca0ff33: normal91 PASS; actual P4-C1 SKIPPED_NO_ELIGIBLE_CANDIDATE in owned material-commit.log. No manual collector/success promotion. Prior component row OBS-ca26e749fc072962/C15 FALSE_NEGATIVE/excludedFromSuccessDenominators and seven historical blocked rows retained. Consume actual post-current6 result; any marker requires current-row receipt/blob/trigger adjudication, no automatic clearing from accepted UI contribution.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: dedicated current6 binds committed pair2 and manual browser-assessment handoff; no material mixed.
+Atomicity reason: dedicated current6 binds actual material8 and bounded Local UI disposition, full completion withheld.
 
 Exact changed manifest:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -87,11 +85,11 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: exact6 metadata only; immutable pair and accepted prior results/failures retained.
+Rollback boundary: exact6 metadata only; immutable pair and original evidence retained.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Root exact6 current-session metadata for fresh read-browser UI-assessment manual handoff; no guard or production semantics change.
+Authorized guard-maintenance scope: Root exact6 current-session metadata for bounded UI assessment disposition; no guard/product semantics change.
 
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -101,35 +99,35 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: standing roadmap orchestration and explicit manual work-order transfer preference, with necessary session synchronization.
+Operator authorization: standing autonomous Local reviewer closure and necessary session synchronization; manual future Claude transfer preference retained.
 Rollback boundary: current6 only.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | INTERNAL_AGENT Local dispatcher/session-sync; decision owner=LOCAL |
+| Actor | INTERNAL_AGENT Local closer/session-sync; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-r1-ux-browser-handoff-continuity-20261018 |
+| Session or invocation | ncr-r1-ux-browser-local-continuity-20261018 |
 | Working directory | repository root |
-| Command or tool surface | actual pair/hash binding; current6 source edits/generator; mandatory governance confirmation only |
+| Command or tool surface | actual material/hash binding; current6 sources/state generator; canonical governance checks |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator continue and manual worker-transfer preference; necessary current6 binding |
-| Before status evidence | 7e6d6aa5eba472bb5be0bb99a44cc414e5701087 pair2; normal91 PASS; git status --short = clean; clean worktree |
-| After status evidence | dedicated current6 only; bound release check pending; worker/browser not started |
+| Allowed scope source | standing reviewer closure and necessary current6 synchronization; immutable UI-assessment pair |
+| Before status evidence | 0d33b4f73b51e2c642744083b0168f110ca0ff33 material8; normal91 PASS; git status --short = clean; clean worktree |
+| After status evidence | exact6 Local assessment continuity; no new execution release |
 | Diff evidence | git diff --name-status; git diff --check; exact6 reconciliation |
-| Approval boundary | current6 only; manual worker assignment follows bound release; no Root execution |
-| Claim boundary | UI-assessment admission only, no runtime result/conformance/governance/human/stage acceptance |
+| Approval boundary | current6 only; domain/provider/private data/public/deploy parked |
+| Claim boundary | bounded UI contribution only; full completion/readiness unestablished |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-ux-browser-handoff-continuity-20261018 |
+| Invocation ID | ncr-r1-ux-browser-local-continuity-20261018 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none |
+| Deletion or rename disposition | none; original evidence retained |
 
 ## Claim Boundary
 
-Admission/manual transfer only; no app/browser/worker started. Future current-source browser observations use synthetic audit input and real local fixture login, with no attempted domain writes; they cannot establish UX conformance without measured criteria, real human understanding, AI governance, writer/auth correctness or R1/R2 exit. Prior component/UX/source/browser/parent histories retained; provider/nonloopback/private data/production/public/deploy OFF.
+Bounded actual UI observations and measured findings only. Full work-order completion/UX readiness NOT_ESTABLISHED: settled focus/border/validation visuals missing; required first reads missing/partial; three invalid activations versus singular allowance; auth prefix wider than callback-only. Worker COMPLETE_PENDING_REVIEW/PASS ledger/SCEC INITIAL0/counters0,0,0,0/CURRENT_UI_BROWSER_ASSESSMENT_MISSING preserved as original declarations, no successor transition/refill. No human comprehension/accessibility/business acceptance, AI governance/provider/real-data/production/public/deploy or R1/R2 exit claim. Next admission PLAN_ONLY, then manual operator transfer to Claude, no Root auto-worker/browser.
 
 ## Historical Terminal Timing Disclosure - Prior Source Recovery
 
