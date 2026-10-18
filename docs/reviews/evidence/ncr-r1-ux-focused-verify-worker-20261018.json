@@ -1,0 +1,335 @@
+{
+  "schema": "cvf.ncrR1UxFocusedVerifyWorkerEvidence.v1",
+  "batchId": "CVF-NCR-R1-UX-FOCUSED-VERIFY-20261018",
+  "executionBaseHead": "17d8a099b234a4c8c7383d8993a95a6d928c11be",
+  "workerClockStartUtc": "2026-10-18T15:19:00Z",
+  "evidenceBuiltUtc": "2026-10-18T15:32:00Z",
+  "terminalReadinessVerdict": "READY_FOR_REVIEW",
+  "REQ-FOCUS": {
+    "status": "PASS",
+    "detail": "Six real-keyboard passes (mobile 390x844 and tablet 768x1024 across dark-indigo, light-indigo, dark-emerald) executed on running app with full Source notes focus visibility observed, 9 required inspected PNGs collected plus 2 optional skip-link screenshots (11 total), 0 missing targets, 0 unstable rows.",
+    "browserPassesExecuted": 6,
+    "requiredImages": 9,
+    "requiredImagesExpected": 9,
+    "criteria": {
+      "passes6": true,
+      "sourceNotesFullyVisible6": true,
+      "namedFieldsFullyVisible": true,
+      "toggleAndTitleFocusChange": true,
+      "fieldSizeAndContainment": true,
+      "requiredPhotos9": true,
+      "missingTargets0": true,
+      "unstableRows0": true
+    },
+    "boundary": {
+      "domainWriteAttempts": 0,
+      "browserAuthWriteAttempts": 0,
+      "effectBlocked": 0,
+      "externalBlockedHosts": [
+        "fonts.googleapis.com"
+      ],
+      "externalBlockedCount": 13,
+      "loginFormFallback": false,
+      "apiRequestContext": [
+        {
+          "method": "GET",
+          "path": "/api/auth/csrf",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/auth/callback/credentials",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/session",
+          "status": 200
+        }
+      ],
+      "callbackOnlyBootstrap": true,
+      "buildActivations": 0,
+      "invalidBuildActivations": 0,
+      "validBuildActivations": 0,
+      "trafficCounts": {
+        "allowed": 161,
+        "blocked-external": 13,
+        "fixture": 12
+      }
+    },
+    "shots": [
+      {
+        "id": "skip-link-focused-mobile-dark-indigo",
+        "kind": "optional-skip-link",
+        "file": "ux-focused-screens/skip-link-focused-mobile-dark-indigo.png",
+        "bytes": 47408,
+        "sha256": "5cd476c899bb6c565e4b922753ba99d323aadc53bebb650fc27bb01c242c43ef"
+      },
+      {
+        "id": "skip-main-landed-mobile-dark-indigo",
+        "kind": "optional-skip-link",
+        "file": "ux-focused-screens/skip-main-landed-mobile-dark-indigo.png",
+        "bytes": 42310,
+        "sha256": "427a5c65d5d8e288d6ae695e0d6095b561d80116356555f101f70af77ac18be1"
+      },
+      {
+        "id": "focused-title-mobile-dark-indigo",
+        "kind": "required-title",
+        "file": "ux-focused-screens/focused-title-mobile-dark-indigo.png",
+        "bytes": 35348,
+        "sha256": "45e6707c23dd57400c58b2a53f714ca974919524e97a619adf313516ff8ccca3"
+      },
+      {
+        "id": "focused-source-notes-mobile-dark-indigo",
+        "kind": "required-source-notes",
+        "file": "ux-focused-screens/focused-source-notes-mobile-dark-indigo.png",
+        "bytes": 39304,
+        "sha256": "4ae84f44e9d03b3897c0de5843c2e63023cd896a1d44474a6eef17f21d8f5bae"
+      },
+      {
+        "id": "focused-title-mobile-light-indigo",
+        "kind": "required-title",
+        "file": "ux-focused-screens/focused-title-mobile-light-indigo.png",
+        "bytes": 35459,
+        "sha256": "3f3c8e56a4c542e3bcab38103e3bc8765a9b583c9e7d99547537fc914bbeba28"
+      },
+      {
+        "id": "focused-source-notes-mobile-light-indigo",
+        "kind": "required-source-notes",
+        "file": "ux-focused-screens/focused-source-notes-mobile-light-indigo.png",
+        "bytes": 39793,
+        "sha256": "cb9fe128877811ae0b748372a1c218c08ecf4a31acac89ac2452e484e24a29e0"
+      },
+      {
+        "id": "focused-title-mobile-dark-emerald",
+        "kind": "required-title",
+        "file": "ux-focused-screens/focused-title-mobile-dark-emerald.png",
+        "bytes": 35220,
+        "sha256": "30faeec194e2ddb70471ea6c984df29d486adf6765c95ab546d6e817614d04ff"
+      },
+      {
+        "id": "focused-source-notes-mobile-dark-emerald",
+        "kind": "required-source-notes",
+        "file": "ux-focused-screens/focused-source-notes-mobile-dark-emerald.png",
+        "bytes": 39194,
+        "sha256": "7a64c8194c44f41ed505431925a9f567ad6131c47d383a28e50dcdb8762ad83d"
+      },
+      {
+        "id": "focused-source-notes-tablet-dark-indigo",
+        "kind": "required-source-notes",
+        "file": "ux-focused-screens/focused-source-notes-tablet-dark-indigo.png",
+        "bytes": 103148,
+        "sha256": "da2c5defcef36b2771dc0aca153214b372b3551e47cd7827a0f13e21ee29dd45"
+      },
+      {
+        "id": "focused-source-notes-tablet-light-indigo",
+        "kind": "required-source-notes",
+        "file": "ux-focused-screens/focused-source-notes-tablet-light-indigo.png",
+        "bytes": 103549,
+        "sha256": "663b713756641553d5b7301703f85f1b715ca9707cd61fe74e592968452d6d15"
+      },
+      {
+        "id": "focused-source-notes-tablet-dark-emerald",
+        "kind": "required-source-notes",
+        "file": "ux-focused-screens/focused-source-notes-tablet-dark-emerald.png",
+        "bytes": 103066,
+        "sha256": "1d57754b2f47c3c266eb58c7884330b4046e7850d7b51bdb68dbdebe67a3a1ee"
+      }
+    ],
+    "runnerExecution": {
+      "runRoot": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-r1-integrated-html-job-browser-20261018\\run-Qnaj9B",
+      "runId": "ncr_job_c9b304e1b09eaaf22573f7e0",
+      "exitCode": 0,
+      "durationMs": 293046,
+      "nextPid": 19528,
+      "playwrightPid": 27348,
+      "screenshotBytes": 623799,
+      "screenshotsCount": 11
+    }
+  },
+  "REQ-QUALITY": {
+    "status": "PASS",
+    "detail": "Accepted Local review static receipts reused under exact freshness pins. Tsc exit 0 (32.36s); strict owned2 ESLint on ArtifactExportPanel.tsx and ncr-r1-ux-readonly-browser.spec.ts exit 0 (9.922s) with max-warnings=0. Two pre-existing baseline hook warnings at HtmlJobControls.tsx 127:6 and 152:6 explicitly retained. Static list test check exit 0 (1 test in 1 file).",
+    "reusedReceipts": {
+      "tsc": {
+        "path": ".cvf/runtime/ncr-r1-ux-focused-20261018/root-review/tsc-reviewer-result.json",
+        "sha256": "556970d3f199c4b64d8300d637b96ae629508da4ec887c601d831632d8c1002e",
+        "exit": 0
+      },
+      "eslint": {
+        "path": ".cvf/runtime/ncr-r1-ux-focused-20261018/root-review/eslint-reviewer-result.json",
+        "sha256": "5fe9084643c7c8a3a15ee8e2ed3779b646358704007f49bd506cee2b39f9b647",
+        "exit": 0
+      }
+    },
+    "freshness": {
+      "path": ".cvf/runtime/ncr-r1-ux-focused-verify-20261018/source-freshness.json",
+      "sha256": "088ca3878058b5995f9fa4c0a5e46514efe960689e6953b5ffadd1e318c7033e"
+    },
+    "staticList": {
+      "exit": 0,
+      "tests": 1,
+      "config": ".cvf/runtime/ncr-r1-ux-focused-verify-20261018/worker/list.config.cjs"
+    }
+  },
+  "REQ-BOUNDARY": {
+    "status": "PASS",
+    "detail": "Single runner execution completed with exit 0. 0 domain write attempts, 0 browser auth writes, 0 evaluate/execute effects, callback-only NextAuth credential bootstrap, 0 build activations, 11 screenshots (623,799 bytes <= 12/16 MiB cap), process exited, port 3033 free, transient files tsconfig.json and next-env.d.ts exact restored, output within caps.",
+    "runnerInvoked": true,
+    "runRootCreated": true,
+    "chromiumLaunched": true,
+    "domainWriteAttempts": 0,
+    "browserAuthWriteAttempts": 0,
+    "effectBlocked": 0,
+    "buildActivations": 0,
+    "callbackOnlyBootstrap": true,
+    "teardown": {
+      "attempted": true,
+      "pid": 19528,
+      "status": 0,
+      "portFree": true,
+      "processGone": true,
+      "ownedStopped": true,
+      "transientExact": true
+    },
+    "preflight": {
+      "recordedAt": "2026-10-18T15:24:20Z",
+      "nodeExecutable": "C:\\nvm4w\\nodejs\\node.exe",
+      "nodeVersion": "v22.17.0",
+      "nodeSha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636",
+      "gitExecutable": "C:\\Program Files\\Git\\cmd\\git.exe",
+      "gitVersion": "git version 2.55.0.windows.3",
+      "gitHead": "17d8a099b234a4c8c7383d8993a95a6d928c11be",
+      "port3033Free": true
+    },
+    "transientPreimages": {
+      "tsconfig.json": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "next-env.d.ts": "91933472d42a307909e5f8f187db0ccad72559bedc766ab20a25c6169ac79498"
+    }
+  },
+  "REQ-RETURN": {
+    "status": "PASS",
+    "detail": "Mapped mandatory reads completed before execution, source and spec immutable, pre-implementation autorun gate PASSED (exit 0, 17.47s), full requiredGate verified, truthful SUCCESSOR5 outcome.",
+    "preImplementationGate": {
+      "exit": 0,
+      "seconds": 17.47,
+      "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json"
+    },
+    "firstReadsBeforeFirstEdit": [
+      {
+        "file": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_FOCUSED_VERIFY_2026-10-18.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/baselines/CVF_GC018_NCR_R1_UX_FOCUSED_VERIFY_2026-10-18.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "CVF_SESSION_MEMORY.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "AGENT_HANDOFF_V63_2026-09-18.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/reviews/CVF_NCR_R1_UX_FOCUSED_COMPLETION_LOCAL_COMPLETION_REVIEW_2026-10-18.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/reviews/CVF_NCR_R1_UX_FOCUSED_COMPLETION_WORKER_RETURN_2026-10-18.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/reference/guard_orientation/README.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "DESIGN.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/CompactHeader.tsx",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/eslint.config.mjs",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "governance/compat/check_worker_return_quality_gate.py",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "governance/compat/run_worker_return_fast_gate.py",
+        "depth": "FULL_READ"
+      }
+    ],
+    "lateReadsAfterFirstEdit": [],
+    "notRead": []
+  },
+  "sourcePins": {
+    "finalSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "a4ebd478aae36c2976a01db489e8023aca4100cfd64e5f942c92fe1878f2c5a4",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts": "a12da41b5879e69b0e452d0a27ed5cfa736f8c282cea6fb172cb7ffc1b57db70"
+    },
+    "pairSha256": {
+      "baseline": "59bd2ee2efb1b367e80c243a268cbdb01665128f82a5b6b4ae05b02bfe28590d",
+      "workOrder": "e9a5e4c2e2753bb068ed24c1cc9669c42f9247b2521daaaeb1e56f87736742b4"
+    },
+    "readOnlyHtmlJobControlsSha256": "8d6d2c35c919524e500fb18b6c08283d4678307c23bed4d8f84073278f6de751"
+  },
+  "claimBoundary": "Bounded existing-owner verification outcome only: six real-keyboard passes on mobile/tablet across 3 themes with full Source notes ring visibility and 9 required inspected PNGs on pinned readonly source/spec. Reused valid static receipts at exact matching freshness pins. No domain/auth browser writes, no build activations, callback-only fixture auth, exact owned teardown. No claim about UI readiness, whole-app accessibility, AI governance behavior, auth/writer correctness, human comprehension, R1/R2 exit, provider, real data, production, public sync or deploy."
+}

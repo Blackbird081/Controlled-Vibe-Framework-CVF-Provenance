@@ -5,14 +5,14 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.73
+Version: 2.74
 Updated: 2026-10-18
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-18
 
-**Đang ở đâu:** Local nhận source leaf Source notes và spec tập trung tại `docs/reviews/CVF_NCR_R1_UX_FOCUSED_COMPLETION_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; bản cuối tsc exit0/32,36s, ESLint strict panel/spec exit0/9,92s. Worker vẫn BLOCKED/SUCCESSOR3/current4/counters0,0,0,1, chưa gọi runner/browser và chưa có9 ảnh/6 lượt keyboard. Hai lỗi hợp đồng dispatch được xác nhận: lint gồm file readonly có2 warning và tên return bị checker loại. R1/R2 còn partial.
+**Đang ở đâu:** Nhánh focused UI được Local nhận bounded tại `docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_LOCAL_COMPLETION_REVIEW_2026-10-18.md`:6/6 lượt bàn phím mobile/tablet x3theme, Source notes hiển thị đủ6,9ảnh bắt buộc+2tùy chọn,0Build/write/effect và teardown đạt. Source/spec giữ pin; tsc/owned2lint xanh được tái dùng đúng hash,2warning nền giữ nguyên. Worker COMPLETE_PENDING_REVIEW/SUCCESSOR5/current0/counters0,0,0,0; Root sửa tài liệu nhỏ, giữ giới hạn khai báo first-read/gate. R1/R2 còn partial.
 
 | Item | Current disposition | Evidence / remaining step |
 |---|---|---|
@@ -20,11 +20,11 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | BE-R2C / R02 | ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS | docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md; docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json; actual material SHA and continuity evidence recorded in active handoff |
 | BE-R1F | ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS | docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md; immutable prior cap2 finality eea3d052c5ce1dd7e2671488aeee50bbb5565cb55bd7e5c050ffe71d8ccfa069 |
 | BE-R01 / earlier R02 | Historical accepted / blocked-spent | Old actor outcomes retained; neither substitutes for current-source pair |
-| R1 / R2 | Partial | Source UX fixes/36 rows accepted bounded; worker BLOCKED, mobile3/tablet textarea proof open; actual human understanding and stage exits pending |
+| R1 / R2 | Partial | Source/36rows và focused6keyboard9images accepted bounded; R1 exit/copy-agent walkthrough disposition và R2/W05 còn mở; người mới thật NOT_EVALUATED |
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** Ra work order xác minh cùng source/spec đã pin, tên return FOCUSED_VERIFY hợp lệ, lint chỉ panel/spec và giữ2 warning nền; cùng problem chain SUCCESSOR4 sau Local resolution, không reset. Một runner mới có preflight Git/PATH/port,6 lượt keyboard mobile/tablet x3theme,9 ảnh bắt buộc và teardown; source/spec readonly,0Build/write. Tái dùng static xanh nếu pins/config khớp,36 dòng đo/desktop/validation cũ giữ revision. Chuyển thủ công cho Claude; Root không gọi browser/worker. Provider/real-data/production/public/deploy OFF.
+**Bước kế tiếp:** Chốt disposition tiêu chí exit R1/copy-dễ-hiểu từ8DOM mô phỏng,6scripted refusal và bằng chứng browser hiện có; chỉ thiết kế lượt tương tác còn thiếu, không lặp kiểm focus. Q003 cho phép agent mô phỏng non-coder cho pilot nội bộ, người mới thật vẫn NOT_EVALUATED và không là dependency tuyển người cho R0–R3. Sau R1, tiếp tục bản đồ R2/W05 read-only cho route/profile chọn: admission/destination/data/cost/unknown-outcome trước effect. Work order cần thực thi tiếp vẫn chuyển thủ công; Root chưa mở browser/worker/provider/live. Real-data/production/public/deploy OFF.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.
@@ -39,7 +39,7 @@ Disposition: LOCAL_GAP_DISPOSITION_COMPLETE; R1/R2 PARTIAL. Consumer=Work Transf
 |---|---|---|
 | R1 job, frozen input, version and person decision | `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md`: fixture29/29 and distinct Root3/3; `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md`: Chromium1/1, exact2720-byte download and joined Root controls | SATISFIED_BOUNDED for the selected synthetic composition. Draft remains unverified/unaccepted; same-principal attestation is not actual business acceptance. No replay needed. |
 | R1 Stop, stale target and unknown writes | Source review STOP/SAVE/DECISION rows; current browser covers lost Save acknowledgement, reload GET and explicit same-pair link | SOURCE_AND_FOCUSED_FIXTURE evidence for Stop/late result and stale/foreign decisions; browser evidence covers only its named journey. Do not relabel every fixture as browser proof or require broad reruns. |
-| R1 Vietnamese/progressive disclosure and A10 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx` renders Goal/Criterion/reconcile/review in English; `ArtifactExportPanel.tsx` renders English Stop/status outside its existing language labels | SOURCE_AND_UI_STRUCTURE_ACCEPTED_BOUNDED: source2 and final component21/21/8 simulated DOM rows; Local review `docs/reviews/CVF_NCR_R1_UX_PROFILE_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md`. Current browser12 rows/3 keyboard/6 scripted refusals accepted bounded in the Local UI assessment below; focus/validation visuals and real non-coder understanding remain unproved. |
+| R1 Vietnamese/progressive disclosure and A10 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx` renders Goal/Criterion/reconcile/review in English; `ArtifactExportPanel.tsx` renders English Stop/status outside its existing language labels | SOURCE_AND_UI_STRUCTURE_ACCEPTED_BOUNDED: source2 and final component21/21/8 simulated DOM rows; Local review `docs/reviews/CVF_NCR_R1_UX_PROFILE_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md`. Browser12rows/3keyboard/6scriptedrefusals cùng source-repair36rows/validation và focused6keyboard9images được nhận bounded tại Local reviews; còn disposition nhận biết tác động của agent mô phỏng theo exit R1, người mới thật NOT_EVALUATED. |
 | R1 capability/profile/effect explanation | `ArtifactExportPanel.tsx` preGenerateDisclosure says destination depends on deployment and is not shown; `HtmlJobControls.tsx` says selected local synthetic Build stays local | SOURCE_AND_UI_STRUCTURE_ACCEPTED_BOUNDED: observed boundary selects conditional local-profile copy, separate Save, no receipt request and local Stop limits; absent/malformed boundary keeps generic disclosure. Current per-effect configuration binding remains unproved. For this slice Q008 selects no external worker runtime; do not add a provider/account chooser that controls nothing. General receipt-enabled deployment still needs its own concrete destination/data/cost decision. |
 | R2 selected isolation and storage | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts` resolveHtmlJobSyntheticProfile; `html-job-api.ts` jobRouteHandlers; `html-draft-snapshot-store.ts` writeSidecar/createJob/linkVersion/acceptVersion | SATISFIED_BOUNDED for server opt-in, production denial, owner checks, exclusive local writes and readback. These do not establish durable whole-job recovery or R2 admission/operation claim before a provider effect. |
 | R2 receipt/effect boundary and W05 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts` POST skips receipt/token branch for selectedPrincipal; `proof.ts` fetchGovernanceReceipt resolves NEXTAUTH_URL and can POST first500 source characters on the general branch | PRE_LIVE_GAP: map the actual chosen route/profile through validation→binding→claim→transform→attempt→invoke→receipt/recovery; resolve destination, data, secret references, cost/retention, denials, rollback/revoke and unknown-outcome non-replay. Synthetic no-egress proof and historical Alibaba live proof do not close this current-route gate. No call admitted here. |
@@ -49,9 +49,9 @@ Disposition: LOCAL_GAP_DISPOSITION_COMPLETE; R1/R2 PARTIAL. Consumer=Work Transf
 
 Component/UI-structure contribution is now accepted bounded in `docs/reviews/CVF_NCR_R1_UX_COMPONENT_PROOF_LOCAL_COMPLETION_REVIEW_2026-10-18.md`: final test21/21 with8 executed agent-simulated DOM rows, production source2 unchanged. Worker original12/21 and3/21 FAILs, unexecuted b84eab18 bytes, partial first reads and BLOCKED return/ledger/SCEC INITIAL0 remain. Root corrected one remaining factory site and one SAVE_DRAFT observation label, then ran one separately admitted focused check; no worker refill or third worker full gate.
 
-Current focused contribution: `docs/reviews/CVF_NCR_R1_UX_FOCUSED_COMPLETION_LOCAL_COMPLETION_REVIEW_2026-10-18.md` accepts8line Source notes focus implementation and typed registered spec; final-byte tsc/owned2 lint PASS. Original worker BLOCKED/SUCCESSOR3/current4/counters0,0,0,1, partial first reads and two path-ineligible gates retained; no runner/browser/images. Contract corrections: strict lint owned2 with baseline2warnings retained; eligible next return name, checker fixed. Same-chain actual UI proof next, manual worker transfer.
+Current focused contribution: `docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_LOCAL_COMPLETION_REVIEW_2026-10-18.md` accepts actual6keyboard/9required+2optionalimages, full Source notes visibility6themes/viewports,0Build/write/effect and exact teardown at pinned source/spec. Worker SUCCESSOR5/current0/counters0,0,0,0; original return archived, EP unchanged. Root fills documentary Knowledge/epistemic/probe gaps; first-read/full-gate history remains self-reported. Previous blocked/failed actors remain at their recorded revisions. No repeated focus/browser task needed.
 
-Expected Result / Prediction: focused source/spec should satisfy6 keyboard/9image criteria. Evidence Comparison: static proof only. Contradiction Or Gap Disposition: dispatcher defects corrected prospectively, original failures retained. Claim Update: source/static contribution only, no full completion or R1/R2 exit.
+Expected Result / Prediction: focused6keyboard9image criteria should pass. Evidence Comparison: all8criteria true in run-Qnaj9B. Contradiction Or Gap Disposition: documentary limits disclosed and corrected locally. Claim Update: finite focus concern accepted; R1/R2partial, internal novice-effect explanation disposition next, genuine-user research NOT_EVALUATED under Q003.
 
 ### Recovery Source Stage Admission - 2026-10-18
 
@@ -1117,22 +1117,22 @@ orientation packets are not refreshed by this private local edit.
 |---|---|
 | Actor | INTERNAL_AGENT Local reviewer/closer; decision owner=LOCAL |
 | Provider or surface | private shared checkout |
-| Session or invocation | ncr-r1-ux-focused-local-review-20261018 |
+| Session or invocation | ncr-r1-ux-focused-verify-local-review-20261018 |
 | Working directory | repository root |
-| Command or tool surface | exact4/hash/diff/receipt review; canonical eligibility; two named static checks; normal commit/closure |
-| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts`; `docs/reviews/CVF_NCR_R1_UX_FOCUSED_COMPLETION_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-r1-ux-focused-completion-worker-20261018.json`; `docs/reviews/CVF_NCR_R1_UX_FOCUSED_COMPLETION_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/corpus-intelligence/registry/entries/cvf-ncr-r1-ux-readonly-browser-test.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` |
-| Allowed scope source | frozen focused pair and standing autonomous Local review |
-| Before status evidence | e3ce4a8cb28cd6ee4314a4d855f7836b033a65eb; exact4 worker; stage empty |
-| After status evidence | original exact4 pins preserved plus Local review/roadmap/registry3 exact9 |
-| Diff evidence | git diff --name-status; git diff --check; exact6 and receipt hash reconciliation |
-| Approval boundary | Local review only, manual worker transfer; no Root browser or effects |
-| Claim boundary | source/static contribution; original worker blocked and visual proof absent |
+| Command or tool surface | raw/receipt/hash/screenshot sample; return documentary correction; canonical reviewer/commit/closure |
+| Target paths | `docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-r1-ux-focused-verify-worker-20261018.json`; `docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Allowed scope source | frozen verification pair and standing Local reviewer continuation |
+| Before status evidence | 17d8a099b234a4c8c7383d8993a95a6d928c11be; exact2 worker; empty stage |
+| After status evidence | return documentary correction/EP preserved plus Local review/roadmap exact4 |
+| Diff evidence | git diff --name-status; git diff --check; original/final hashes and exact4 reconciliation |
+| Approval boundary | Local review only; no Root product/browser/worker effect |
+| Claim boundary | finite pinned-source UI proof, documentary limits and parked effects retained |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-ux-focused-local-review-20261018 |
-| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts`; `docs/reviews/CVF_NCR_R1_UX_FOCUSED_COMPLETION_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-r1-ux-focused-completion-worker-20261018.json`; `docs/reviews/CVF_NCR_R1_UX_FOCUSED_COMPLETION_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/corpus-intelligence/registry/entries/cvf-ncr-r1-ux-readonly-browser-test.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` |
-| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts`; `docs/reviews/CVF_NCR_R1_UX_FOCUSED_COMPLETION_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-r1-ux-focused-completion-worker-20261018.json`; `docs/reviews/CVF_NCR_R1_UX_FOCUSED_COMPLETION_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/corpus-intelligence/registry/entries/cvf-ncr-r1-ux-readonly-browser-test.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` |
-| Manifest delta | MATCH exact9; current6 separate |
-| Deletion or rename disposition | none; original ineligible return retained |
+| Invocation ID | ncr-r1-ux-focused-verify-local-review-20261018 |
+| Expected manifest | `docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-r1-ux-focused-verify-worker-20261018.json`; `docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-r1-ux-focused-verify-worker-20261018.json`; `docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Manifest delta | MATCH exact4; current6 separate |
+| Deletion or rename disposition | none; original return archived in owned custody |
 
 ## Public Export Disposition
 
