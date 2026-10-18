@@ -18,13 +18,13 @@
   "corpusToKnowledgeMapReconciliationGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md",
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_PRE_EFFECT_WALKTHROUGH_2026-10-18.md",
-    "baselineSha256": "dca6b5b89f82d0e60db55edaf8dc348b0dba2d10a3e33faa24ac3086623fd0d4",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_PRE_EFFECT_WALKTHROUGH_2026-10-18.md",
-    "workOrderSha256": "6c450f1a5582b2d7913eeb54182169ceab9c3b18ccffb1f4aac93d648902b719"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md",
+    "baselineSha256": "2db0556ad9b02e3ab2d5d8ab04ef225d13c15a3e5be170c917aa4807c5b6100b",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md",
+    "workOrderSha256": "d9ed24e83fef354e6de172907abe073515d3022de5e1ae00259089af2412a912"
   },
-  "currentAuthoritySyncReason": "Local material4 bc03fa663b3876b876a0a90583555fb5b9feb24a; review docs/reviews/CVF_NCR_R1_PRE_EFFECT_WALKTHROUGH_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 0dfab27094b44e987f376d206d0a5a49ea58734fd2befdfee9ee6186f685276c accepts assessed contribution with procedure limits, worker BLOCKED/final gateCOMPLIANT actual hashes retained; exact S1/counters0,0,0,1 unchanged. F1-F7open, nextPLAN_ONLY existing UI contract/manual transfer. Normal91PASS; actualP4 SKIPPED_NO_ELIGIBLE_CANDIDATE. No Root app/browser/worker/provider effects.",
-  "currentMode": "cvf_ncr_r1_pre_effect_assessment_locally_reviewed",
+  "currentAuthoritySyncReason": "Dispatchmaterial3 e08059b9698e5ec4e1b0f84e3ffca0ff9deff4be; bounded UI source4/tests3/return2 manual handoff, roadmap2.77. Assessment baselineS2/current0/NO_SUCCESSOR bound to acceptedreview; originalworkerBLOCKED/S1 preserved. Distinct UIINITIAL0/current3, exact9/no backend or authority change.2SCECobjects/0violations. Normal91PASS; actualP4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Actualboundrelease before transfer; Root app/browser/worker0.",
+  "currentMode": "cvf_ncr_r1_ui_clarity_repair_handoff_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_pre_effect_walkthrough_handoff_ready",
+  "previousMode": "cvf_ncr_r1_pre_effect_assessment_locally_reviewed",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [
