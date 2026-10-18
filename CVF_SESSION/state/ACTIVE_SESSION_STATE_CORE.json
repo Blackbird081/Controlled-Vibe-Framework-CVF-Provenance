@@ -23,7 +23,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
     "workOrderSha256": "eee3ca9a069d8bad433cf10f39fc60086796ae6fd83f0c0205da9f78a72baf1b"
   },
-  "currentAuthoritySyncReason": "R2C fresh paired cap1 conditional material; accepted S14/Q05/R1F immutable",
+  "currentAuthoritySyncReason": "R2C fresh paired cap1 conditional continuity; accepted S14/Q05/R1F immutable",
   "currentMode": "cvf_ncr_html_be_r2c_runtime_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
