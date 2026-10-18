@@ -48,7 +48,7 @@ Exact4 SCEC owner maintenance approved; product R1 source remains conditional.
 
 Mode: `cvf_scec_root_contract_admission_dispatched`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=IMPLEMENT; BATCH_ID=SCEC_ROOT_CONTRACT_ADMISSION. Explicit scope4 SCEC plus verification approved; execute docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_ROOT_CONTRACT_ADMISSION_2026-10-18.md under paired baseline, WORKER_MUST_NOT_COMMIT. One INTERNAL_AGENT owner worker exact6; preserve problem/counters/default STOP and prove bound root dispatch/return declarations. No product/provider/network/real-data/production/public effects. R1 source remains conditional on actual canonical admission after owner closure; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=IMPLEMENT; BATCH_ID=SCEC_ROOT_CONTRACT_ADMISSION. Explicit scope4 SCEC plus verification approved; execute docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_ROOT_CONTRACT_ADMISSION_2026-10-18.md under paired baseline; dispatch material 3ef233def, WORKER_MUST_NOT_COMMIT. One INTERNAL_AGENT owner worker exact6; preserve problem/counters/default STOP and prove bound root dispatch/return declarations. No product/provider/network/real-data/production/public effects. R1 source remains conditional on actual canonical admission after owner closure; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
 
 ## Parked Checkpoints
 

@@ -23,7 +23,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_ROOT_CONTRACT_ADMISSION_2026-10-18.md",
     "workOrderSha256": "168d859af761a054d5b4729eb1c28cbd07e2502834c9da38d37c599b57dc95de"
   },
-  "currentAuthoritySyncReason": "Operator approved exact4 SCEC owner scope and verification; new source-owner pair replaces the historical pending consent checkpoint. Product R1 root admission is not yet installed or released.",
+  "currentAuthoritySyncReason": "Approved exact4 SCEC source-owner dispatch material 3ef233deff94eb239332b52aa46f0dd30f76a228; pair hashes current; worker release still requires committed bound pre-dispatch PASS. Product R1 source not yet admitted.",
   "currentMode": "cvf_scec_root_contract_admission_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
