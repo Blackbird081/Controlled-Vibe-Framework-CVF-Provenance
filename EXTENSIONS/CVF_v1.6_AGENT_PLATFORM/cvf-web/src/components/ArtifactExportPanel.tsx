@@ -108,6 +108,7 @@ const LABELS = {
     title: 'Review Packet Export',
     subtitle: 'Build a self-contained HTML review packet with a visible receipt reference.',
     boundary: 'HTML only. PDF, PNG, PPTX, and final proof are handled separately.',
+    candidate: 'Candidate',
     sourceTitle: 'Review Source',
     outputTitle: 'HTML Review Packet',
     verificationTitle: 'Readiness Checks',
@@ -171,6 +172,7 @@ const LABELS = {
     title: 'Xuất gói rà soát',
     subtitle: 'Tạo gói HTML tự chứa, có receipt rõ ràng để người xem biết nguồn và ranh giới.',
     boundary: 'Chỉ HTML. PDF, PNG, PPTX và bằng chứng cuối cùng được xử lý riêng.',
+    candidate: 'Bản nháp chờ rà soát',
     sourceTitle: 'Nguồn rà soát',
     outputTitle: 'Gói HTML',
     verificationTitle: 'Kiểm tra sẵn sàng',
@@ -372,6 +374,9 @@ async function writeText(text: string): Promise<boolean> {
     return false;
   }
 }
+
+const FOCUS_RING = 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:rgb(var(--cvf-accent-rgb))]';
+const FIELD_CLASS = `mt-1 min-h-11 w-full min-w-0 max-w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 transition focus-visible:border-[color:rgb(var(--cvf-accent-rgb))] ${FOCUS_RING} dark:border-gray-700 dark:bg-gray-950 dark:text-white`;
 
 function FieldLabel({ children, htmlFor }: { children: string; htmlFor: string }) {
   return (
@@ -582,7 +587,7 @@ export function ArtifactExportPanel({
           <div className="min-w-0">
             <div className="mb-2 flex flex-wrap items-center gap-2">
               <StatusPill tone="info">HTML</StatusPill>
-              <StatusPill tone="warning">Candidate</StatusPill>
+              <StatusPill tone="warning">{labels.candidate}</StatusPill>
             </div>
             <h2 className="text-2xl font-bold tracking-normal text-gray-950 dark:text-white">
               {labels.title}
@@ -612,7 +617,7 @@ export function ArtifactExportPanel({
                 aria-label={labels.titleLabel}
                 value={request.title}
                 onChange={event => updateRequest('title', event.target.value)}
-                className="mt-1 w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm outline-none transition focus:border-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
+                className={`${FIELD_CLASS} text-sm`}
               />
             </div>
             <div className="sm:col-span-2">
@@ -622,7 +627,7 @@ export function ArtifactExportPanel({
                 aria-label={labels.pathLabel}
                 value={request.sourcePath}
                 onChange={event => updateRequest('sourcePath', event.target.value)}
-                className="mt-1 w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 font-mono text-xs outline-none transition focus:border-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
+                className={`${FIELD_CLASS} font-mono text-xs`}
               />
             </div>
             <div>
@@ -632,7 +637,7 @@ export function ArtifactExportPanel({
                 aria-label={labels.memoryLabel}
                 value={request.memoryClass}
                 onChange={event => updateRequest('memoryClass', event.target.value)}
-                className="mt-1 w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm outline-none transition focus:border-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
+                className={`${FIELD_CLASS} text-sm`}
               >
                 <option value="FULL_RECORD">{labels.fullRecord}</option>
                 <option value="POINTER_RECORD">{labels.pointerRecord}</option>
@@ -645,7 +650,7 @@ export function ArtifactExportPanel({
                 aria-label={labels.statusLabel}
                 value={request.status}
                 onChange={event => updateRequest('status', event.target.value)}
-                className="mt-1 w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm outline-none transition focus:border-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
+                className={`${FIELD_CLASS} text-sm`}
               />
             </div>
             <div className="sm:col-span-2">
@@ -655,7 +660,7 @@ export function ArtifactExportPanel({
                 aria-label={labels.receiptLabel}
                 value={request.receiptAnchor}
                 onChange={event => updateRequest('receiptAnchor', event.target.value)}
-                className="mt-1 w-full rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 font-mono text-xs outline-none transition focus:border-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
+                className={`${FIELD_CLASS} font-mono text-xs`}
               />
             </div>
             <div className="sm:col-span-2">
@@ -666,7 +671,7 @@ export function ArtifactExportPanel({
                 value={request.claimBoundary}
                 onChange={event => updateRequest('claimBoundary', event.target.value)}
                 rows={3}
-                className="mt-1 w-full resize-none rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm leading-6 outline-none transition focus:border-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
+                className={`${FIELD_CLASS} resize-none text-sm leading-6`}
               />
             </div>
             <div className="sm:col-span-2">
@@ -680,7 +685,7 @@ export function ArtifactExportPanel({
                 value={request.sourceContent}
                 onChange={event => updateRequest('sourceContent', event.target.value)}
                 rows={12}
-                className="mt-1 w-full resize-y rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 font-mono text-xs leading-5 outline-none transition focus:border-indigo-500 dark:border-gray-700 dark:bg-gray-950 dark:text-white"
+                className={`${FIELD_CLASS} resize-y font-mono text-xs leading-5`}
               />
             </div>
           </div>
@@ -698,7 +703,7 @@ export function ArtifactExportPanel({
               onClick={() => void handleGenerate()}
               disabled={!request.sourceContent.trim() || !request.receiptAnchor.trim()}
               aria-busy={loading}
-              className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
+              className={`inline-flex min-h-11 items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50 ${FOCUS_RING}`}
             >
               {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> : <ShieldCheck className="h-4 w-4" aria-hidden="true" />}
               {loading ? labels.generating : labels.generate}

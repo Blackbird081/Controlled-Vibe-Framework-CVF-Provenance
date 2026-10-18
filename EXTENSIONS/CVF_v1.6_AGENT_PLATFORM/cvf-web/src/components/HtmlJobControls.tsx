@@ -11,6 +11,8 @@ import { clearPendingJobJournal, readPendingJobJournal, writePendingJobJournal, 
 type Props = { sourceRecordId: string; initialRequest: Partial<ArtifactExportRequest> };
 type VersionState = 'current' | 'stale' | 'unknown' | null;
 const endpoint = '/api/artifacts/jobs';
+const FOCUS_RING = 'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:rgb(var(--cvf-accent-rgb))]';
+const FIELD_CLASS = `mt-1 block min-h-11 w-full min-w-0 rounded border border-gray-300 p-2 text-sm focus-visible:border-[color:rgb(var(--cvf-accent-rgb))] ${FOCUS_RING} dark:border-gray-600`;
 const effects = ['LOCAL_HTML_BUILD', 'LOCAL_DRAFT_SAVE', 'LOCAL_SYNTHETIC_REVIEW'] as const;
 // Text Encoding Exception: localized Vietnamese user-facing copy follows the existing UI language owner.
 const COPY = {
@@ -248,11 +250,12 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
     <section className="rounded-lg border p-3" aria-label={copy.jobTitle}>
       <p className="text-sm font-semibold">{copy.jobTitle}</p>
       <label className="mt-2 block text-xs">{copy.goal}<textarea aria-label={copy.goal} value={goal} maxLength={2000}
-        onChange={e => setGoal(e.target.value)} className="mt-1 w-full rounded border p-2" /></label>
+        onChange={e => setGoal(e.target.value)} className={`${FIELD_CLASS} max-w-3xl`} /></label>
       {criteria.map((criterion, index) => <label key={criterion.criterionId} className="mt-2 block text-xs">{copy.criterion} {index + 1}
-        <input aria-label={`${copy.criterion} ${index + 1}`} value={criterion.text} maxLength={500} className="ml-2 rounded border p-2"
+        <input aria-label={`${copy.criterion} ${index + 1}`} value={criterion.text} maxLength={500} className={`${FIELD_CLASS} max-w-xl`}
           onChange={e => setCriteria(xs => xs.map((x, i) => i === index ? { ...x, text: e.target.value } : x))} /></label>)}
-      <button type="button" disabled={criteria.length >= 8} onClick={() => setCriteria(xs => [...xs, { criterionId: `c${xs.length + 1}`, text: '' }])}>{copy.addCriterion}</button>
+      <button type="button" disabled={criteria.length >= 8} onClick={() => setCriteria(xs => [...xs, { criterionId: `c${xs.length + 1}`, text: '' }])}
+        className={`mt-2 inline-flex min-h-11 items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-800 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 ${FOCUS_RING}`}>{copy.addCriterion}</button>
       {job && <p data-testid="current-job-id" className="text-xs">{copy.job} {job.jobId}</p>}
     </section>
     <ArtifactExportPanel key={scope} initialRequest={initialRequest} prepareJob={prepareJob} renderRecovery={recovery} profileDisclosure={profileDisclosure} />
