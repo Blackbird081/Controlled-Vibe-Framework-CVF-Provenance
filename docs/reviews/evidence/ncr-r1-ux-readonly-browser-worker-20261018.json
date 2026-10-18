@@ -1,0 +1,5751 @@
+{
+  "schemaVersion": "cvf.ncrR1UxReadonlyBrowserWorkerEvidence.v1",
+  "batchId": "CVF-NCR-R1-UX-READONLY-BROWSER-20261018",
+  "executionBaseHead": "7d2cba5bcb485ff1248a259849ac106f536676c0",
+  "workerStartUtc": "2026-10-18T12:16:30Z",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "claimBoundary": "UI-only assessment on the real running app with a synthetic audit fixture and local fixture login. Completeness is not UX conformance. No governance, auth/writer correctness, human comprehension, accessibility certification, theme/accent coverage, R1/R2 exit or production claim.",
+  "preImplementationGate": {
+    "exit": 0,
+    "stdoutSha256": "896882cd25495af3be3c18c9a6ea5c64535904dd8ffcee2117d343358a320e76",
+    "receiptSha256": "e1e7381144a9aca13458a0b14be64dfda110fd23e486930786288d8dd39f80ab",
+    "receiptKeys": [
+      "schema",
+      "status",
+      "phase",
+      "base",
+      "head",
+      "baseSha",
+      "headSha",
+      "commandManifestHash",
+      "worktreeFingerprint",
+      "verifierIdentityProfile",
+      "verifierIdentityDigest",
+      "machineVerification",
+      "receiptDigest",
+      "totalDurationSeconds",
+      "checks"
+    ]
+  },
+  "spec": {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts",
+    "sha256": "5768f2b035b4bde31cb7af72ad9b9ae4c6457884caeffc49322808dd8103b768",
+    "copyPath": ".cvf/runtime/ncr-r1-ux-browser-20261018/worker/assessment.spec.ts",
+    "copySha256": "5768f2b035b4bde31cb7af72ad9b9ae4c6457884caeffc49322808dd8103b768",
+    "identicalBeforeAndAfterRun": true,
+    "bytes": 29648
+  },
+  "staticCollection": {
+    "command": "node node_modules/@playwright/test/cli.js test --config ../../../.cvf/runtime/ncr-r1-ux-browser-20261018/worker/list.config.cjs --list",
+    "cwd": "D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+    "envKeys": [
+      "CI",
+      "COMSPEC",
+      "PATH",
+      "PATHEXT",
+      "SYSTEMROOT",
+      "TEMP",
+      "TMP",
+      "WINDIR"
+    ],
+    "exitCode": 0,
+    "elapsedMs": 6111,
+    "stdoutSha256": "75cca781e83f3b479f48625000993adc4ac769bf8ed43d8c647859eb21e44cdd",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "configSha256": "d1ba830deef3ea6f249cd8a941da9b32c24205da11fd5fc778f600a86830701e",
+    "tests": 1,
+    "attempts": 1
+  },
+  "runner": {
+    "command": "node scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs --probe-spec .cvf/runtime/ncr-r1-ux-browser-20261018/worker/assessment.spec.ts",
+    "startUtc": "2026-10-18T12:23:25Z",
+    "endUtc": "2026-10-18T12:26:09Z",
+    "outerExit": 0,
+    "runRoot": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-VQWiyG",
+    "nextPid": 12384,
+    "playwrightExit": 0,
+    "durationMs": 163015,
+    "invocations": 1,
+    "retries": 0,
+    "port": 3033,
+    "stdoutSha256": "8cea3ddb62f394c3678cb4350c9b8ffebeea82065d4f7ef890cca069a1ed33d7",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "resultJsonSha256": "58419fead682133a6efafc7abfdf5a2536acb3ab297c4c1f6eef91fb2c5b5495",
+    "manifestSha256": "f1fc613ac1bf9d016fb280d3591cd2134cc79105133010d203412d5dc85d7a31",
+    "nextLogSha256": "b720476f5ba867827917029bc984e9883dc20bcb6a2aa84525f3949b27066bbd",
+    "playwrightLogSha256": "7c4041e21bb0b7aa55eaffd61e7548302fdc02fd45e5ce2e10a6be2d9ccf05c3",
+    "isolationLogSha256": "48d004f54d0007f8fb7f544896496e4f8fa1b763cd655e099f0015b91848b27b",
+    "assessmentJsonSha256": "40319fe28e5a317703ddd9d0631a71f2e67e1111dfe8d0a4b3bdddcd50c1cb33",
+    "teardown": {
+      "attempted": true,
+      "pid": 12384,
+      "status": 0,
+      "portFree": true,
+      "processGone": true,
+      "ownedStopped": true,
+      "transientExact": true
+    },
+    "isolation": {
+      "preloadContexts": 17,
+      "envBlocked": 4,
+      "networkBlocked": 1,
+      "evaluateBlocked": 0
+    },
+    "outputBudget": {
+      "run": {
+        "bytes": 1477929,
+        "files": 25
+      },
+      "build": {
+        "bytes": 188139079,
+        "files": 202
+      },
+      "snapshots": {
+        "bytes": 117,
+        "files": 1
+      },
+      "withinCaps": true
+    },
+    "sourceDriftEntries": 26,
+    "sourceDriftChanged": 0,
+    "preloadActiveContexts": 17,
+    "note": "Independent check after exit: no listener on 3033 (23 TIME_WAIT sockets only), git status shows tsconfig.json and next-env.d.ts unchanged, hashes equal the pre-run pins."
+  },
+  "pins": {
+    "before": {
+      "scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs": "82468c072e85eb5c0e5a444c94eb50d51036a6c2ad77af5ff537b3fe94c99983",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts": "d8deae5ada9687f242eece64cdcd3f916be51bff0575e8a251b018715f39a6a9",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs": "037e3ecda32cadd25d487207fceec23418bb2cbb4f6b287701bb7fdd3833e7db",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts": "5768f2b035b4bde31cb7af72ad9b9ae4c6457884caeffc49322808dd8103b768",
+      ".cvf/runtime/ncr-r1-ux-browser-20261018/worker/assessment.spec.ts": "5768f2b035b4bde31cb7af72ad9b9ae4c6457884caeffc49322808dd8103b768",
+      ".cvf/runtime/ncr-r1-ux-browser-20261018/worker/list.config.cjs": "d1ba830deef3ea6f249cd8a941da9b32c24205da11fd5fc778f600a86830701e",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/next-env.d.ts": "91933472d42a307909e5f8f187db0ccad72559bedc766ab20a25c6169ac79498",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx": "3d2e446f08f9ae0670d96339aa4e583a5d04778f80ee04ce34fbda635c7d1d56",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "01614f81dc5a48bfbaf04ee4141b9319efe71cd35d591b5dc794829d3038c337",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "ba84ce58790f4e1d3a649af1d1190f9af29ad6c464c09df47c0abf304da64fc4",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/i18n.tsx": "105f56ca2b8f28c69ba5dfc65bdfce65bc59eb32a7be647d459094420fe4df08",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/CompactHeader.tsx": "93c9cf720bce1bfddbccd141654366cf314da50c16cc7d14c1e1fd669ea07493"
+    },
+    "after": {
+      "scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs": "82468c072e85eb5c0e5a444c94eb50d51036a6c2ad77af5ff537b3fe94c99983",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts": "d8deae5ada9687f242eece64cdcd3f916be51bff0575e8a251b018715f39a6a9",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs": "037e3ecda32cadd25d487207fceec23418bb2cbb4f6b287701bb7fdd3833e7db",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx": "3d2e446f08f9ae0670d96339aa4e583a5d04778f80ee04ce34fbda635c7d1d56",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "01614f81dc5a48bfbaf04ee4141b9319efe71cd35d591b5dc794829d3038c337",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "ba84ce58790f4e1d3a649af1d1190f9af29ad6c464c09df47c0abf304da64fc4",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/next-env.d.ts": "91933472d42a307909e5f8f187db0ccad72559bedc766ab20a25c6169ac79498"
+    },
+    "equal": true
+  },
+  "boundary": {
+    "domainWriteAttempts": 0,
+    "effectBlocked": 0,
+    "externalBlockedHosts": [
+      "fonts.googleapis.com"
+    ],
+    "externalBlockedCount": 7,
+    "externalSucceeded": 0,
+    "trafficCounts": {
+      "allowed": 95,
+      "blocked-external": 7,
+      "fixture": 6
+    },
+    "apiRequestsSeen": [
+      "GET /api/auth/session allowed",
+      "GET /api/providers allowed 200",
+      "GET /api/auth/me allowed",
+      "GET /api/auth/session allowed 200",
+      "GET /api/admin/audit fixture 200",
+      "GET /api/auth/me allowed 200",
+      "GET /api/artifacts/jobs allowed 200"
+    ],
+    "authBootstrap": "Auth bootstrap used the existing loginAs helper (APIRequestContext), which context routing cannot observe; browser-level auth GETs are in the traffic counts.",
+    "isolationEvents": {
+      "envReadBlocked": 4,
+      "networkBlocked": 1,
+      "evaluateBlocked": 0
+    },
+    "note": "The one preload-blocked network attempt is a Node server-process connection to registry.npmjs.org logged during Next startup, before the browser test (isolation log); the seven browser-side blocked requests were all to fonts.googleapis.com, aborted by the context route."
+  },
+  "screenshots": {
+    "count": 12,
+    "totalBytes": 932906,
+    "capCount": 12,
+    "capBytes": 25165824,
+    "files": [
+      {
+        "id": "desktop-selected-en",
+        "file": "ux-screens/desktop-selected-en.png",
+        "bytes": 108947
+      },
+      {
+        "id": "desktop-selected-vi",
+        "file": "ux-screens/desktop-selected-vi.png",
+        "bytes": 113851
+      },
+      {
+        "id": "desktop-generic-en",
+        "file": "ux-screens/desktop-generic-en.png",
+        "bytes": 101593
+      },
+      {
+        "id": "desktop-keyboard-build-validation",
+        "file": "ux-screens/desktop-keyboard-build-validation.png",
+        "bytes": 92521
+      },
+      {
+        "id": "tablet-selected-en",
+        "file": "ux-screens/tablet-selected-en.png",
+        "bytes": 96858
+      },
+      {
+        "id": "tablet-selected-vi",
+        "file": "ux-screens/tablet-selected-vi.png",
+        "bytes": 99226
+      },
+      {
+        "id": "tablet-generic-en",
+        "file": "ux-screens/tablet-generic-en.png",
+        "bytes": 86794
+      },
+      {
+        "id": "tablet-keyboard-build-validation",
+        "file": "ux-screens/tablet-keyboard-build-validation.png",
+        "bytes": 85112
+      },
+      {
+        "id": "mobile-selected-en",
+        "file": "ux-screens/mobile-selected-en.png",
+        "bytes": 37321
+      },
+      {
+        "id": "mobile-selected-vi",
+        "file": "ux-screens/mobile-selected-vi.png",
+        "bytes": 38337
+      },
+      {
+        "id": "mobile-generic-en",
+        "file": "ux-screens/mobile-generic-en.png",
+        "bytes": 37130
+      },
+      {
+        "id": "mobile-keyboard-build-validation",
+        "file": "ux-screens/mobile-keyboard-build-validation.png",
+        "bytes": 35216
+      }
+    ],
+    "rootRelative": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-VQWiyG/ux-screens"
+  },
+  "rows": [
+    {
+      "rowId": "selected-desktop-en",
+      "profile": "selected",
+      "viewport": "desktop",
+      "language": "en",
+      "htmlLang": "en",
+      "htmlLangMatches": true,
+      "panelRect": {
+        "x": 258,
+        "y": 481,
+        "w": 1070,
+        "h": 1492,
+        "right": 1328,
+        "bottom": 1973
+      },
+      "documentOverflow": {
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "overflowX": false
+      },
+      "panelOverflow": {
+        "scrollWidth": 1070,
+        "clientWidth": 1070,
+        "overflowX": false
+      },
+      "controlCount": 16,
+      "outsideViewport": [],
+      "overlaps": [],
+      "targets": [
+        {
+          "label": "language toggle",
+          "w": 63,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "record export button",
+          "w": 132,
+          "h": 30,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Build",
+          "w": 130,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Title field",
+          "w": 426,
+          "h": 38,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Goal field",
+          "w": 1012,
+          "h": 50,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Criterion 1 field",
+          "w": 163,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Add criterion",
+          "w": 92,
+          "h": 24,
+          "meets44": false,
+          "heightMeets44": false
+        }
+      ],
+      "ownedLabelsVisible": {
+        "Build": true,
+        "Title": true,
+        "Source reference": true,
+        "Goal": true,
+        "Criterion 1": true,
+        "Add criterion": true,
+        "Section label": true
+      },
+      "ownedLabelsMissing": [],
+      "disclosure": {
+        "text": "The server response reports a local test profile for this session: HTML is rendered on this device. A draft is saved to local test storage when you choose Save; no review receipt is requested. The draft remains unverified and unaccepted, even after a separate local test review by the same user; that review is not trusted evidence or business acceptance. HTML export configuration is resolved separately, so a later export may use a different profile. Stop only acts on this page; it does not confirm that a remote task stopped or determine cost.",
+        "rect": {
+          "x": 295,
+          "y": 1702,
+          "w": 426,
+          "h": 178,
+          "right": 721,
+          "bottom": 1880
+        },
+        "buildRect": {
+          "x": 295,
+          "y": 1892,
+          "w": 130,
+          "h": 44,
+          "right": 425,
+          "bottom": 1936
+        },
+        "aboveBuild": true,
+        "domOrderBeforeBuild": true,
+        "inViewportAfterScroll": false,
+        "textClipped": false,
+        "clippedByAncestor": false
+      },
+      "disclosureFragmentsMissing": [],
+      "disclosureWrongProfile": false,
+      "literalPreserved": null,
+      "possiblyUntranslated": [],
+      "screenshot": "desktop-selected-en"
+    },
+    {
+      "rowId": "selected-desktop-vi",
+      "profile": "selected",
+      "viewport": "desktop",
+      "language": "vi",
+      "htmlLang": "vi",
+      "htmlLangMatches": true,
+      "panelRect": {
+        "x": 258,
+        "y": 1016,
+        "w": 1070,
+        "h": 1512,
+        "right": 1328,
+        "bottom": 2528
+      },
+      "documentOverflow": {
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "overflowX": false
+      },
+      "panelOverflow": {
+        "scrollWidth": 1070,
+        "clientWidth": 1070,
+        "overflowX": false
+      },
+      "controlCount": 16,
+      "outsideViewport": [],
+      "overlaps": [],
+      "targets": [
+        {
+          "label": "language toggle",
+          "w": 68,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "record export button",
+          "w": 107,
+          "h": 30,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Build",
+          "w": 121,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Title field",
+          "w": 426,
+          "h": 38,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Goal field",
+          "w": 1012,
+          "h": 50,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Criterion 1 field",
+          "w": 163,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Add criterion",
+          "w": 95,
+          "h": 24,
+          "meets44": false,
+          "heightMeets44": false
+        }
+      ],
+      "ownedLabelsVisible": {
+        "Build": true,
+        "Title": true,
+        "Source reference": true,
+        "Goal": true,
+        "Criterion 1": true,
+        "Add criterion": true,
+        "Section label": true
+      },
+      "ownedLabelsMissing": [],
+      "disclosure": {
+        "text": "Ph\u1ea3n h\u1ed3i m\u00e1y ch\u1ee7 cho bi\u1ebft phi\u00ean n\u00e0y d\u00f9ng ch\u1ebf \u0111\u1ed9 th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9: HTML \u0111\u01b0\u1ee3c t\u1ea1o tr\u00ean m\u00e1y n\u00e0y. B\u1ea3n nh\u00e1p ch\u1ec9 \u0111\u01b0\u1ee3c l\u01b0u v\u00e0o kho th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9 khi b\u1ea1n ch\u1ecdn L\u01b0u; kh\u00f4ng c\u00f3 y\u00eau c\u1ea7u l\u1ea5y bi\u00ean nh\u1eadn ki\u1ec3m tra. B\u1ea3n nh\u00e1p v\u1eabn ch\u01b0a \u0111\u01b0\u1ee3c x\u00e1c minh v\u00e0 ch\u01b0a \u0111\u01b0\u1ee3c ch\u1ea5p nh\u1eadn, k\u1ec3 c\u1ea3 sau m\u1ed9t l\u01b0\u1ee3t r\u00e0 so\u00e1t th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9 ri\u00eang c\u1ee7a c\u00f9ng ng\u01b0\u1eddi d\u00f9ng; l\u01b0\u1ee3t r\u00e0 so\u00e1t n\u00e0y kh\u00f4ng ph\u1ea3i b\u1eb1ng ch\u1ee9ng \u0111\u00e1ng tin c\u1eady hay s\u1ef1 ch\u1ea5p nh\u1eadn trong nghi\u1ec7p v\u1ee5. C\u1ea5u h\u00ecnh t\u1ea1o HTML \u0111\u01b0\u1ee3c x\u00e1c \u0111\u1ecbnh ri\u00eang; l\u1ea7n t\u1ea1o sau c\u00f3 th\u1ec3 d\u00f9ng ch\u1ebf \u0111\u1ed9 kh\u00e1c. D\u1eebng ch\u1ec9 t\u00e1c \u0111\u1ed9ng tr\u00ean trang n\u00e0y; kh\u00f4ng x\u00e1c nh\u1eadn thao t\u00e1c t\u1eeb xa \u0111\u00e3 d\u1eebng v\u00e0 chi ph\u00ed v\u1eabn ch\u01b0a r\u00f5.",
+        "rect": {
+          "x": 295,
+          "y": 2237,
+          "w": 426,
+          "h": 198,
+          "right": 721,
+          "bottom": 2435
+        },
+        "buildRect": {
+          "x": 295,
+          "y": 2447,
+          "w": 121,
+          "h": 44,
+          "right": 416,
+          "bottom": 2491
+        },
+        "aboveBuild": true,
+        "domOrderBeforeBuild": true,
+        "inViewportAfterScroll": false,
+        "textClipped": false,
+        "clippedByAncestor": false
+      },
+      "disclosureFragmentsMissing": [],
+      "disclosureWrongProfile": false,
+      "literalPreserved": {
+        "checked": true,
+        "goal": true,
+        "criterion": true,
+        "title": true
+      },
+      "possiblyUntranslated": [
+        "Candidate"
+      ],
+      "screenshot": "desktop-selected-vi"
+    },
+    {
+      "rowId": "generic-desktop-vi",
+      "profile": "generic",
+      "viewport": "desktop",
+      "language": "vi",
+      "htmlLang": "vi",
+      "htmlLangMatches": true,
+      "panelRect": {
+        "x": 258,
+        "y": 553,
+        "w": 1070,
+        "h": 1183,
+        "right": 1328,
+        "bottom": 1736
+      },
+      "documentOverflow": {
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "overflowX": false
+      },
+      "panelOverflow": {
+        "scrollWidth": 1070,
+        "clientWidth": 1070,
+        "overflowX": false
+      },
+      "controlCount": 13,
+      "outsideViewport": [],
+      "overlaps": [],
+      "targets": [
+        {
+          "label": "language toggle",
+          "w": 68,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "record export button",
+          "w": 107,
+          "h": 30,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Build",
+          "w": 121,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Title field",
+          "w": 426,
+          "h": 38,
+          "meets44": false,
+          "heightMeets44": false
+        }
+      ],
+      "ownedLabelsVisible": {
+        "Build": true,
+        "Title": true,
+        "Source reference": true
+      },
+      "ownedLabelsMissing": [],
+      "disclosure": {
+        "text": "Vi\u1ec7c t\u1ea1o g\u00f3i n\u00e0y c\u00f3 th\u1ec3 g\u1eedi m\u1ed9t \u0111o\u1ea1n ng\u1eafn n\u1ed9i dung c\u1ee7a b\u1ea1n \u0111\u1ebfn m\u1ed9t d\u1ecbch v\u1ee5 ki\u1ec3m tra r\u00e0 so\u00e1t. Vi\u1ec7c n\u00e0y c\u00f3 x\u1ea3y ra hay kh\u00f4ng, v\u00e0 d\u1eef li\u1ec7u \u0111i \u0111\u00e2u, ph\u1ee5 thu\u1ed9c v\u00e0o c\u1ea5u h\u00ecnh tri\u1ec3n khai v\u00e0 kh\u00f4ng hi\u1ec3n th\u1ecb \u1edf \u0111\u00e2y.",
+        "rect": {
+          "x": 295,
+          "y": 1565,
+          "w": 426,
+          "h": 78,
+          "right": 721,
+          "bottom": 1643
+        },
+        "buildRect": {
+          "x": 295,
+          "y": 1655,
+          "w": 121,
+          "h": 44,
+          "right": 416,
+          "bottom": 1699
+        },
+        "aboveBuild": true,
+        "domOrderBeforeBuild": true,
+        "inViewportAfterScroll": false,
+        "textClipped": false,
+        "clippedByAncestor": false
+      },
+      "disclosureFragmentsMissing": [],
+      "disclosureWrongProfile": false,
+      "literalPreserved": null,
+      "possiblyUntranslated": [
+        "Candidate"
+      ],
+      "screenshot": null
+    },
+    {
+      "rowId": "generic-desktop-en",
+      "profile": "generic",
+      "viewport": "desktop",
+      "language": "en",
+      "htmlLang": "en",
+      "htmlLangMatches": true,
+      "panelRect": {
+        "x": 258,
+        "y": 1087,
+        "w": 1070,
+        "h": 1183,
+        "right": 1328,
+        "bottom": 2270
+      },
+      "documentOverflow": {
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "overflowX": false
+      },
+      "panelOverflow": {
+        "scrollWidth": 1070,
+        "clientWidth": 1070,
+        "overflowX": false
+      },
+      "controlCount": 13,
+      "outsideViewport": [],
+      "overlaps": [],
+      "targets": [
+        {
+          "label": "language toggle",
+          "w": 63,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "record export button",
+          "w": 132,
+          "h": 30,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Build",
+          "w": 130,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Title field",
+          "w": 426,
+          "h": 38,
+          "meets44": false,
+          "heightMeets44": false
+        }
+      ],
+      "ownedLabelsVisible": {
+        "Build": true,
+        "Title": true,
+        "Source reference": true
+      },
+      "ownedLabelsMissing": [],
+      "disclosure": {
+        "text": "Building this packet may send a short excerpt of your text to a review-checking service. Whether that happens, and where the data goes, depends on this deployment's setup and is not shown here.",
+        "rect": {
+          "x": 295,
+          "y": 2099,
+          "w": 426,
+          "h": 78,
+          "right": 721,
+          "bottom": 2177
+        },
+        "buildRect": {
+          "x": 295,
+          "y": 2189,
+          "w": 130,
+          "h": 44,
+          "right": 425,
+          "bottom": 2233
+        },
+        "aboveBuild": true,
+        "domOrderBeforeBuild": true,
+        "inViewportAfterScroll": false,
+        "textClipped": false,
+        "clippedByAncestor": false
+      },
+      "disclosureFragmentsMissing": [],
+      "disclosureWrongProfile": false,
+      "literalPreserved": null,
+      "possiblyUntranslated": [],
+      "screenshot": "desktop-generic-en"
+    },
+    {
+      "rowId": "selected-tablet-en",
+      "profile": "selected",
+      "viewport": "tablet",
+      "language": "en",
+      "htmlLang": "en",
+      "htmlLangMatches": true,
+      "panelRect": {
+        "x": 258,
+        "y": 543,
+        "w": 472,
+        "h": 2511,
+        "right": 730,
+        "bottom": 3054
+      },
+      "documentOverflow": {
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "overflowX": false
+      },
+      "panelOverflow": {
+        "scrollWidth": 472,
+        "clientWidth": 472,
+        "overflowX": false
+      },
+      "controlCount": 16,
+      "outsideViewport": [],
+      "overlaps": [],
+      "targets": [
+        {
+          "label": "language toggle",
+          "w": 63,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "record export button",
+          "w": 132,
+          "h": 30,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Build",
+          "w": 130,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Title field",
+          "w": 398,
+          "h": 38,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Goal field",
+          "w": 414,
+          "h": 50,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Criterion 1 field",
+          "w": 163,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Add criterion",
+          "w": 92,
+          "h": 24,
+          "meets44": false,
+          "heightMeets44": false
+        }
+      ],
+      "ownedLabelsVisible": {
+        "Build": true,
+        "Title": true,
+        "Source reference": true,
+        "Goal": true,
+        "Criterion 1": true,
+        "Add criterion": true,
+        "Section label": true
+      },
+      "ownedLabelsMissing": [],
+      "disclosure": {
+        "text": "The server response reports a local test profile for this session: HTML is rendered on this device. A draft is saved to local test storage when you choose Save; no review receipt is requested. The draft remains unverified and unaccepted, even after a separate local test review by the same user; that review is not trusted evidence or business acceptance. HTML export configuration is resolved separately, so a later export may use a different profile. Stop only acts on this page; it does not confirm that a remote task stopped or determine cost.",
+        "rect": {
+          "x": 295,
+          "y": 1850,
+          "w": 398,
+          "h": 178,
+          "right": 693,
+          "bottom": 2028
+        },
+        "buildRect": {
+          "x": 295,
+          "y": 2040,
+          "w": 130,
+          "h": 44,
+          "right": 425,
+          "bottom": 2084
+        },
+        "aboveBuild": true,
+        "domOrderBeforeBuild": true,
+        "inViewportAfterScroll": false,
+        "textClipped": false,
+        "clippedByAncestor": false
+      },
+      "disclosureFragmentsMissing": [],
+      "disclosureWrongProfile": false,
+      "literalPreserved": null,
+      "possiblyUntranslated": [],
+      "screenshot": "tablet-selected-en"
+    },
+    {
+      "rowId": "selected-tablet-vi",
+      "profile": "selected",
+      "viewport": "tablet",
+      "language": "vi",
+      "htmlLang": "vi",
+      "htmlLangMatches": true,
+      "panelRect": {
+        "x": 258,
+        "y": 1557,
+        "w": 472,
+        "h": 2503,
+        "right": 730,
+        "bottom": 4060
+      },
+      "documentOverflow": {
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "overflowX": false
+      },
+      "panelOverflow": {
+        "scrollWidth": 472,
+        "clientWidth": 472,
+        "overflowX": false
+      },
+      "controlCount": 16,
+      "outsideViewport": [],
+      "overlaps": [],
+      "targets": [
+        {
+          "label": "language toggle",
+          "w": 68,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "record export button",
+          "w": 107,
+          "h": 30,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Build",
+          "w": 121,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Title field",
+          "w": 398,
+          "h": 38,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Goal field",
+          "w": 414,
+          "h": 50,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Criterion 1 field",
+          "w": 163,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Add criterion",
+          "w": 95,
+          "h": 24,
+          "meets44": false,
+          "heightMeets44": false
+        }
+      ],
+      "ownedLabelsVisible": {
+        "Build": true,
+        "Title": true,
+        "Source reference": true,
+        "Goal": true,
+        "Criterion 1": true,
+        "Add criterion": true,
+        "Section label": true
+      },
+      "ownedLabelsMissing": [],
+      "disclosure": {
+        "text": "Ph\u1ea3n h\u1ed3i m\u00e1y ch\u1ee7 cho bi\u1ebft phi\u00ean n\u00e0y d\u00f9ng ch\u1ebf \u0111\u1ed9 th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9: HTML \u0111\u01b0\u1ee3c t\u1ea1o tr\u00ean m\u00e1y n\u00e0y. B\u1ea3n nh\u00e1p ch\u1ec9 \u0111\u01b0\u1ee3c l\u01b0u v\u00e0o kho th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9 khi b\u1ea1n ch\u1ecdn L\u01b0u; kh\u00f4ng c\u00f3 y\u00eau c\u1ea7u l\u1ea5y bi\u00ean nh\u1eadn ki\u1ec3m tra. B\u1ea3n nh\u00e1p v\u1eabn ch\u01b0a \u0111\u01b0\u1ee3c x\u00e1c minh v\u00e0 ch\u01b0a \u0111\u01b0\u1ee3c ch\u1ea5p nh\u1eadn, k\u1ec3 c\u1ea3 sau m\u1ed9t l\u01b0\u1ee3t r\u00e0 so\u00e1t th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9 ri\u00eang c\u1ee7a c\u00f9ng ng\u01b0\u1eddi d\u00f9ng; l\u01b0\u1ee3t r\u00e0 so\u00e1t n\u00e0y kh\u00f4ng ph\u1ea3i b\u1eb1ng ch\u1ee9ng \u0111\u00e1ng tin c\u1eady hay s\u1ef1 ch\u1ea5p nh\u1eadn trong nghi\u1ec7p v\u1ee5. C\u1ea5u h\u00ecnh t\u1ea1o HTML \u0111\u01b0\u1ee3c x\u00e1c \u0111\u1ecbnh ri\u00eang; l\u1ea7n t\u1ea1o sau c\u00f3 th\u1ec3 d\u00f9ng ch\u1ebf \u0111\u1ed9 kh\u00e1c. D\u1eebng ch\u1ec9 t\u00e1c \u0111\u1ed9ng tr\u00ean trang n\u00e0y; kh\u00f4ng x\u00e1c nh\u1eadn thao t\u00e1c t\u1eeb xa \u0111\u00e3 d\u1eebng v\u00e0 chi ph\u00ed v\u1eabn ch\u01b0a r\u00f5.",
+        "rect": {
+          "x": 295,
+          "y": 2884,
+          "w": 398,
+          "h": 198,
+          "right": 693,
+          "bottom": 3082
+        },
+        "buildRect": {
+          "x": 295,
+          "y": 3094,
+          "w": 121,
+          "h": 44,
+          "right": 416,
+          "bottom": 3138
+        },
+        "aboveBuild": true,
+        "domOrderBeforeBuild": true,
+        "inViewportAfterScroll": false,
+        "textClipped": false,
+        "clippedByAncestor": false
+      },
+      "disclosureFragmentsMissing": [],
+      "disclosureWrongProfile": false,
+      "literalPreserved": {
+        "checked": true,
+        "goal": true,
+        "criterion": true,
+        "title": true
+      },
+      "possiblyUntranslated": [
+        "Candidate"
+      ],
+      "screenshot": "tablet-selected-vi"
+    },
+    {
+      "rowId": "generic-tablet-vi",
+      "profile": "generic",
+      "viewport": "tablet",
+      "language": "vi",
+      "htmlLang": "vi",
+      "htmlLangMatches": true,
+      "panelRect": {
+        "x": 258,
+        "y": 615,
+        "w": 472,
+        "h": 2174,
+        "right": 730,
+        "bottom": 2789
+      },
+      "documentOverflow": {
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "overflowX": false
+      },
+      "panelOverflow": {
+        "scrollWidth": 472,
+        "clientWidth": 472,
+        "overflowX": false
+      },
+      "controlCount": 13,
+      "outsideViewport": [],
+      "overlaps": [],
+      "targets": [
+        {
+          "label": "language toggle",
+          "w": 68,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "record export button",
+          "w": 107,
+          "h": 30,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Build",
+          "w": 121,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Title field",
+          "w": 398,
+          "h": 38,
+          "meets44": false,
+          "heightMeets44": false
+        }
+      ],
+      "ownedLabelsVisible": {
+        "Build": true,
+        "Title": true,
+        "Source reference": true
+      },
+      "ownedLabelsMissing": [],
+      "disclosure": {
+        "text": "Vi\u1ec7c t\u1ea1o g\u00f3i n\u00e0y c\u00f3 th\u1ec3 g\u1eedi m\u1ed9t \u0111o\u1ea1n ng\u1eafn n\u1ed9i dung c\u1ee7a b\u1ea1n \u0111\u1ebfn m\u1ed9t d\u1ecbch v\u1ee5 ki\u1ec3m tra r\u00e0 so\u00e1t. Vi\u1ec7c n\u00e0y c\u00f3 x\u1ea3y ra hay kh\u00f4ng, v\u00e0 d\u1eef li\u1ec7u \u0111i \u0111\u00e2u, ph\u1ee5 thu\u1ed9c v\u00e0o c\u1ea5u h\u00ecnh tri\u1ec3n khai v\u00e0 kh\u00f4ng hi\u1ec3n th\u1ecb \u1edf \u0111\u00e2y.",
+        "rect": {
+          "x": 295,
+          "y": 1733,
+          "w": 398,
+          "h": 78,
+          "right": 693,
+          "bottom": 1811
+        },
+        "buildRect": {
+          "x": 295,
+          "y": 1823,
+          "w": 121,
+          "h": 44,
+          "right": 416,
+          "bottom": 1867
+        },
+        "aboveBuild": true,
+        "domOrderBeforeBuild": true,
+        "inViewportAfterScroll": false,
+        "textClipped": false,
+        "clippedByAncestor": false
+      },
+      "disclosureFragmentsMissing": [],
+      "disclosureWrongProfile": false,
+      "literalPreserved": null,
+      "possiblyUntranslated": [
+        "Candidate"
+      ],
+      "screenshot": null
+    },
+    {
+      "rowId": "generic-tablet-en",
+      "profile": "generic",
+      "viewport": "tablet",
+      "language": "en",
+      "htmlLang": "en",
+      "htmlLangMatches": true,
+      "panelRect": {
+        "x": 258,
+        "y": 1599,
+        "w": 472,
+        "h": 2202,
+        "right": 730,
+        "bottom": 3801
+      },
+      "documentOverflow": {
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "overflowX": false
+      },
+      "panelOverflow": {
+        "scrollWidth": 472,
+        "clientWidth": 472,
+        "overflowX": false
+      },
+      "controlCount": 13,
+      "outsideViewport": [],
+      "overlaps": [],
+      "targets": [
+        {
+          "label": "language toggle",
+          "w": 63,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "record export button",
+          "w": 132,
+          "h": 30,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Build",
+          "w": 130,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Title field",
+          "w": 398,
+          "h": 38,
+          "meets44": false,
+          "heightMeets44": false
+        }
+      ],
+      "ownedLabelsVisible": {
+        "Build": true,
+        "Title": true,
+        "Source reference": true
+      },
+      "ownedLabelsMissing": [],
+      "disclosure": {
+        "text": "Building this packet may send a short excerpt of your text to a review-checking service. Whether that happens, and where the data goes, depends on this deployment's setup and is not shown here.",
+        "rect": {
+          "x": 295,
+          "y": 2697,
+          "w": 398,
+          "h": 78,
+          "right": 693,
+          "bottom": 2775
+        },
+        "buildRect": {
+          "x": 295,
+          "y": 2787,
+          "w": 130,
+          "h": 44,
+          "right": 425,
+          "bottom": 2831
+        },
+        "aboveBuild": true,
+        "domOrderBeforeBuild": true,
+        "inViewportAfterScroll": false,
+        "textClipped": false,
+        "clippedByAncestor": false
+      },
+      "disclosureFragmentsMissing": [],
+      "disclosureWrongProfile": false,
+      "literalPreserved": null,
+      "possiblyUntranslated": [],
+      "screenshot": "tablet-generic-en"
+    },
+    {
+      "rowId": "selected-mobile-en",
+      "profile": "selected",
+      "viewport": "mobile",
+      "language": "en",
+      "htmlLang": "en",
+      "htmlLangMatches": true,
+      "panelRect": {
+        "x": 38,
+        "y": 461,
+        "w": 314,
+        "h": 3016,
+        "right": 352,
+        "bottom": 3477
+      },
+      "documentOverflow": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowX": false
+      },
+      "panelOverflow": {
+        "scrollWidth": 314,
+        "clientWidth": 314,
+        "overflowX": false
+      },
+      "controlCount": 16,
+      "outsideViewport": [],
+      "overlaps": [],
+      "targets": [
+        {
+          "label": "language toggle",
+          "w": 63,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "record export button",
+          "w": 132,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Build",
+          "w": 130,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Title field",
+          "w": 240,
+          "h": 38,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Goal field",
+          "w": 256,
+          "h": 50,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Criterion 1 field",
+          "w": 163,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Add criterion",
+          "w": 92,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        }
+      ],
+      "ownedLabelsVisible": {
+        "Build": true,
+        "Title": true,
+        "Source reference": true,
+        "Goal": true,
+        "Criterion 1": true,
+        "Add criterion": true,
+        "Section label": true
+      },
+      "ownedLabelsMissing": [],
+      "disclosure": {
+        "text": "The server response reports a local test profile for this session: HTML is rendered on this device. A draft is saved to local test storage when you choose Save; no review receipt is requested. The draft remains unverified and unaccepted, even after a separate local test review by the same user; that review is not trusted evidence or business acceptance. HTML export configuration is resolved separately, so a later export may use a different profile. Stop only acts on this page; it does not confirm that a remote task stopped or determine cost.",
+        "rect": {
+          "x": 75,
+          "y": 1939,
+          "w": 240,
+          "h": 318,
+          "right": 315,
+          "bottom": 2257
+        },
+        "buildRect": {
+          "x": 75,
+          "y": 2269,
+          "w": 130,
+          "h": 44,
+          "right": 205,
+          "bottom": 2313
+        },
+        "aboveBuild": true,
+        "domOrderBeforeBuild": true,
+        "inViewportAfterScroll": false,
+        "textClipped": false,
+        "clippedByAncestor": false
+      },
+      "disclosureFragmentsMissing": [],
+      "disclosureWrongProfile": false,
+      "literalPreserved": null,
+      "possiblyUntranslated": [],
+      "screenshot": "mobile-selected-en"
+    },
+    {
+      "rowId": "selected-mobile-vi",
+      "profile": "selected",
+      "viewport": "mobile",
+      "language": "vi",
+      "htmlLang": "vi",
+      "htmlLangMatches": true,
+      "panelRect": {
+        "x": 38,
+        "y": 1718,
+        "w": 314,
+        "h": 2956,
+        "right": 352,
+        "bottom": 4674
+      },
+      "documentOverflow": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowX": false
+      },
+      "panelOverflow": {
+        "scrollWidth": 314,
+        "clientWidth": 314,
+        "overflowX": false
+      },
+      "controlCount": 16,
+      "outsideViewport": [],
+      "overlaps": [],
+      "targets": [
+        {
+          "label": "language toggle",
+          "w": 68,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "record export button",
+          "w": 107,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Build",
+          "w": 121,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Title field",
+          "w": 240,
+          "h": 38,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Goal field",
+          "w": 256,
+          "h": 50,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Criterion 1 field",
+          "w": 163,
+          "h": 34,
+          "meets44": false,
+          "heightMeets44": false
+        },
+        {
+          "label": "Add criterion",
+          "w": 95,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        }
+      ],
+      "ownedLabelsVisible": {
+        "Build": true,
+        "Title": true,
+        "Source reference": true,
+        "Goal": true,
+        "Criterion 1": true,
+        "Add criterion": true,
+        "Section label": true
+      },
+      "ownedLabelsMissing": [],
+      "disclosure": {
+        "text": "Ph\u1ea3n h\u1ed3i m\u00e1y ch\u1ee7 cho bi\u1ebft phi\u00ean n\u00e0y d\u00f9ng ch\u1ebf \u0111\u1ed9 th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9: HTML \u0111\u01b0\u1ee3c t\u1ea1o tr\u00ean m\u00e1y n\u00e0y. B\u1ea3n nh\u00e1p ch\u1ec9 \u0111\u01b0\u1ee3c l\u01b0u v\u00e0o kho th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9 khi b\u1ea1n ch\u1ecdn L\u01b0u; kh\u00f4ng c\u00f3 y\u00eau c\u1ea7u l\u1ea5y bi\u00ean nh\u1eadn ki\u1ec3m tra. B\u1ea3n nh\u00e1p v\u1eabn ch\u01b0a \u0111\u01b0\u1ee3c x\u00e1c minh v\u00e0 ch\u01b0a \u0111\u01b0\u1ee3c ch\u1ea5p nh\u1eadn, k\u1ec3 c\u1ea3 sau m\u1ed9t l\u01b0\u1ee3t r\u00e0 so\u00e1t th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9 ri\u00eang c\u1ee7a c\u00f9ng ng\u01b0\u1eddi d\u00f9ng; l\u01b0\u1ee3t r\u00e0 so\u00e1t n\u00e0y kh\u00f4ng ph\u1ea3i b\u1eb1ng ch\u1ee9ng \u0111\u00e1ng tin c\u1eady hay s\u1ef1 ch\u1ea5p nh\u1eadn trong nghi\u1ec7p v\u1ee5. C\u1ea5u h\u00ecnh t\u1ea1o HTML \u0111\u01b0\u1ee3c x\u00e1c \u0111\u1ecbnh ri\u00eang; l\u1ea7n t\u1ea1o sau c\u00f3 th\u1ec3 d\u00f9ng ch\u1ebf \u0111\u1ed9 kh\u00e1c. D\u1eebng ch\u1ec9 t\u00e1c \u0111\u1ed9ng tr\u00ean trang n\u00e0y; kh\u00f4ng x\u00e1c nh\u1eadn thao t\u00e1c t\u1eeb xa \u0111\u00e3 d\u1eebng v\u00e0 chi ph\u00ed v\u1eabn ch\u01b0a r\u00f5.",
+        "rect": {
+          "x": 75,
+          "y": 3188,
+          "w": 240,
+          "h": 338,
+          "right": 315,
+          "bottom": 3526
+        },
+        "buildRect": {
+          "x": 75,
+          "y": 3538,
+          "w": 121,
+          "h": 44,
+          "right": 196,
+          "bottom": 3582
+        },
+        "aboveBuild": true,
+        "domOrderBeforeBuild": true,
+        "inViewportAfterScroll": false,
+        "textClipped": false,
+        "clippedByAncestor": false
+      },
+      "disclosureFragmentsMissing": [],
+      "disclosureWrongProfile": false,
+      "literalPreserved": {
+        "checked": true,
+        "goal": true,
+        "criterion": true,
+        "title": true
+      },
+      "possiblyUntranslated": [
+        "Candidate"
+      ],
+      "screenshot": "mobile-selected-vi"
+    },
+    {
+      "rowId": "generic-mobile-vi",
+      "profile": "generic",
+      "viewport": "mobile",
+      "language": "vi",
+      "htmlLang": "vi",
+      "htmlLangMatches": true,
+      "panelRect": {
+        "x": 38,
+        "y": 549,
+        "w": 314,
+        "h": 2527,
+        "right": 352,
+        "bottom": 3076
+      },
+      "documentOverflow": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowX": false
+      },
+      "panelOverflow": {
+        "scrollWidth": 314,
+        "clientWidth": 314,
+        "overflowX": false
+      },
+      "controlCount": 13,
+      "outsideViewport": [],
+      "overlaps": [],
+      "targets": [
+        {
+          "label": "language toggle",
+          "w": 68,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "record export button",
+          "w": 107,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Build",
+          "w": 121,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Title field",
+          "w": 240,
+          "h": 38,
+          "meets44": false,
+          "heightMeets44": false
+        }
+      ],
+      "ownedLabelsVisible": {
+        "Build": true,
+        "Title": true,
+        "Source reference": true
+      },
+      "ownedLabelsMissing": [],
+      "disclosure": {
+        "text": "Vi\u1ec7c t\u1ea1o g\u00f3i n\u00e0y c\u00f3 th\u1ec3 g\u1eedi m\u1ed9t \u0111o\u1ea1n ng\u1eafn n\u1ed9i dung c\u1ee7a b\u1ea1n \u0111\u1ebfn m\u1ed9t d\u1ecbch v\u1ee5 ki\u1ec3m tra r\u00e0 so\u00e1t. Vi\u1ec7c n\u00e0y c\u00f3 x\u1ea3y ra hay kh\u00f4ng, v\u00e0 d\u1eef li\u1ec7u \u0111i \u0111\u00e2u, ph\u1ee5 thu\u1ed9c v\u00e0o c\u1ea5u h\u00ecnh tri\u1ec3n khai v\u00e0 kh\u00f4ng hi\u1ec3n th\u1ecb \u1edf \u0111\u00e2y.",
+        "rect": {
+          "x": 75,
+          "y": 1790,
+          "w": 240,
+          "h": 138,
+          "right": 315,
+          "bottom": 1928
+        },
+        "buildRect": {
+          "x": 75,
+          "y": 1940,
+          "w": 121,
+          "h": 44,
+          "right": 196,
+          "bottom": 1984
+        },
+        "aboveBuild": true,
+        "domOrderBeforeBuild": true,
+        "inViewportAfterScroll": false,
+        "textClipped": false,
+        "clippedByAncestor": false
+      },
+      "disclosureFragmentsMissing": [],
+      "disclosureWrongProfile": false,
+      "literalPreserved": null,
+      "possiblyUntranslated": [
+        "Candidate"
+      ],
+      "screenshot": null
+    },
+    {
+      "rowId": "generic-mobile-en",
+      "profile": "generic",
+      "viewport": "mobile",
+      "language": "en",
+      "htmlLang": "en",
+      "htmlLangMatches": true,
+      "panelRect": {
+        "x": 38,
+        "y": 1866,
+        "w": 314,
+        "h": 2607,
+        "right": 352,
+        "bottom": 4473
+      },
+      "documentOverflow": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowX": false
+      },
+      "panelOverflow": {
+        "scrollWidth": 314,
+        "clientWidth": 314,
+        "overflowX": false
+      },
+      "controlCount": 13,
+      "outsideViewport": [],
+      "overlaps": [],
+      "targets": [
+        {
+          "label": "language toggle",
+          "w": 63,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "record export button",
+          "w": 132,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Build",
+          "w": 130,
+          "h": 44,
+          "meets44": true,
+          "heightMeets44": true
+        },
+        {
+          "label": "Title field",
+          "w": 240,
+          "h": 38,
+          "meets44": false,
+          "heightMeets44": false
+        }
+      ],
+      "ownedLabelsVisible": {
+        "Build": true,
+        "Title": true,
+        "Source reference": true
+      },
+      "ownedLabelsMissing": [],
+      "disclosure": {
+        "text": "Building this packet may send a short excerpt of your text to a review-checking service. Whether that happens, and where the data goes, depends on this deployment's setup and is not shown here.",
+        "rect": {
+          "x": 75,
+          "y": 3115,
+          "w": 240,
+          "h": 138,
+          "right": 315,
+          "bottom": 3253
+        },
+        "buildRect": {
+          "x": 75,
+          "y": 3265,
+          "w": 130,
+          "h": 44,
+          "right": 205,
+          "bottom": 3309
+        },
+        "aboveBuild": true,
+        "domOrderBeforeBuild": true,
+        "inViewportAfterScroll": false,
+        "textClipped": false,
+        "clippedByAncestor": false
+      },
+      "disclosureFragmentsMissing": [],
+      "disclosureWrongProfile": false,
+      "literalPreserved": null,
+      "possiblyUntranslated": [],
+      "screenshot": "mobile-generic-en"
+    }
+  ],
+  "keyboard": [
+    {
+      "viewport": "desktop",
+      "found": {
+        "languageToggle": 1,
+        "recordButton": 44,
+        "goal": 45,
+        "criterion1": 46,
+        "build": 55
+      },
+      "tabsUsed": 61,
+      "enterToggledToVi": true,
+      "spaceToggledToEn": true,
+      "enterOpenedPanel": true,
+      "backAndForthReturnedToBuild": true,
+      "emptyGoalValidation": {
+        "visible": true,
+        "text": "Enter the goal and all criteria before building.",
+        "expectedText": "Enter the goal and all criteria before building.",
+        "matchesExpected": true,
+        "domainWriteAttemptsCaused": 0
+      },
+      "focusMovedAway": true,
+      "focusReturnable": true,
+      "stops": [
+        {
+          "seq": 1,
+          "key": "Tab",
+          "tag": "button",
+          "name": "\ud83c\udf10 VI",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 0px rgb(228, 230, 234)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(51, 51, 52)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 1225,
+            "y": 11,
+            "w": 63,
+            "h": 34
+          }
+        },
+        {
+          "seq": 2,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Preferences",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.75)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 1300,
+            "y": 13,
+            "w": 42,
+            "h": 30
+          }
+        },
+        {
+          "seq": 3,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle Home group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 129,
+            "w": 199,
+            "h": 22
+          }
+        },
+        {
+          "seq": 4,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Home",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(163, 179, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.785 0.115 274.713)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 155,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 5,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Landing Page",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 187,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 6,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle AI Work group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 223,
+            "w": 199,
+            "h": 22
+          }
+        },
+        {
+          "seq": 7,
+          "key": "Tab",
+          "tag": "a",
+          "name": "CVF Workspace",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 248,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 8,
+          "key": "Tab",
+          "tag": "button",
+          "name": "AI Agent",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 281,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 9,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Multi-Agent",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 313,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 10,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Tools",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 346,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 11,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Simulation",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 378,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 12,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle Knowledge & Review group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 414,
+            "w": 199,
+            "h": 22
+          }
+        },
+        {
+          "seq": 13,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Knowledge",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 439,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 14,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Knowledge Intake",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 472,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 15,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Review Packets",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 504,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 16,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Work Transfer",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(163, 179, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.785 0.115 274.713)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 537,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 17,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Skills",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 569,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 18,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Skill Search",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 602,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 19,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Help",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 634,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 20,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Docs",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 667,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 21,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle Advanced Operations group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 702,
+            "w": 199,
+            "h": 22
+          }
+        },
+        {
+          "seq": 22,
+          "key": "Tab",
+          "tag": "button",
+          "name": "History",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 728,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 23,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Analytics",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 760,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 24,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Runtime Monitor",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 786,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 25,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Marketplace",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 550,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 26,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Governance",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 583,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 27,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Enterprise",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 615,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 28,
+          "key": "Tab",
+          "tag": "button",
+          "name": "AI Safety",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 648,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 29,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle Account group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 683,
+            "w": 199,
+            "h": 22
+          }
+        },
+        {
+          "seq": 30,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Context",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 709,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 31,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Settings",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 741,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 32,
+          "key": "Tab",
+          "tag": "button",
+          "name": "AI Usage",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 774,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 33,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Logout",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 826,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 34,
+          "key": "Tab",
+          "tag": "button",
+          "name": "English",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.45)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.45)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 860,
+            "w": 199,
+            "h": 29
+          }
+        },
+        {
+          "seq": 35,
+          "key": "Tab",
+          "tag": "a",
+          "name": "1. Learn",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(202, 213, 226)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.869 0.022 252.894)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 245,
+            "y": 231,
+            "w": 104,
+            "h": 36
+          }
+        },
+        {
+          "seq": 36,
+          "key": "Tab",
+          "tag": "a",
+          "name": "2. Intake",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(202, 213, 226)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.869 0.022 252.894)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 374,
+            "y": 231,
+            "w": 110,
+            "h": 36
+          }
+        },
+        {
+          "seq": 37,
+          "key": "Tab",
+          "tag": "a",
+          "name": "3. Govern",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(202, 213, 226)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.869 0.022 252.894)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 509,
+            "y": 231,
+            "w": 117,
+            "h": 36
+          }
+        },
+        {
+          "seq": 38,
+          "key": "Tab",
+          "tag": "a",
+          "name": "4. Export",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(202, 213, 226)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.869 0.022 252.894)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 651,
+            "y": 231,
+            "w": 113,
+            "h": 36
+          }
+        },
+        {
+          "seq": 39,
+          "key": "Tab",
+          "tag": "a",
+          "name": "5. Handoff",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(163, 179, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.785 0.115 274.713)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 789,
+            "y": 231,
+            "w": 123,
+            "h": 36
+          }
+        },
+        {
+          "seq": 40,
+          "key": "Tab",
+          "tag": "select",
+          "name": "Coordinator Planner Maker Reviewer",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 257,
+            "y": 393,
+            "w": 231,
+            "h": 39
+          }
+        },
+        {
+          "seq": 41,
+          "key": "Tab",
+          "tag": "select",
+          "name": "Coordinator Planner Maker Reviewer",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 504,
+            "y": 393,
+            "w": 231,
+            "h": 39
+          }
+        },
+        {
+          "seq": 42,
+          "key": "Tab",
+          "tag": "select",
+          "name": "completed running failed",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 257,
+            "y": 472,
+            "w": 231,
+            "h": 39
+          }
+        },
+        {
+          "seq": 43,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 257,
+            "y": 551,
+            "w": 478,
+            "h": 162
+          }
+        },
+        {
+          "seq": 44,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Export as HTML",
+          "testid": "export-record-ncr-synthetic-ux-job-001",
+          "focusVisible": true,
+          "outline": "auto 1px rgb(198, 210, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(22, 22, 23)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 1180,
+            "y": 975,
+            "w": 132,
+            "h": 30
+          }
+        },
+        {
+          "seq": 45,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "Goal",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 287,
+            "y": 862,
+            "w": 1012,
+            "h": 50
+          }
+        },
+        {
+          "seq": 46,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Criterion 1",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 351,
+            "y": 848,
+            "w": 163,
+            "h": 34
+          }
+        },
+        {
+          "seq": 47,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Add criterion",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 287,
+            "y": 882,
+            "w": 92,
+            "h": 24
+          }
+        },
+        {
+          "seq": 48,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Title",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1128,
+            "w": 426,
+            "h": 38
+          }
+        },
+        {
+          "seq": 49,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Source reference",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1210,
+            "w": 426,
+            "h": 34
+          }
+        },
+        {
+          "seq": 50,
+          "key": "Tab",
+          "tag": "select",
+          "name": "Record type",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1288,
+            "w": 205,
+            "h": 39
+          }
+        },
+        {
+          "seq": 51,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Review status",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 516,
+            "y": 1288,
+            "w": 205,
+            "h": 38
+          }
+        },
+        {
+          "seq": 52,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Receipt reference",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1371,
+            "w": 426,
+            "h": 34
+          }
+        },
+        {
+          "seq": 53,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "Review boundary",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1449,
+            "w": 426,
+            "h": 90
+          }
+        },
+        {
+          "seq": 54,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "Source notes",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1598,
+            "w": 426,
+            "h": 258
+          }
+        },
+        {
+          "seq": 55,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Build HTML",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 2068,
+            "w": 130,
+            "h": 44
+          }
+        },
+        {
+          "seq": 56,
+          "key": "Shift+Tab",
+          "tag": "textarea",
+          "name": "Source notes",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1598,
+            "w": 426,
+            "h": 258
+          }
+        },
+        {
+          "seq": 57,
+          "key": "Shift+Tab",
+          "tag": "textarea",
+          "name": "Review boundary",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1449,
+            "w": 426,
+            "h": 90
+          }
+        },
+        {
+          "seq": 58,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "Source notes",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1598,
+            "w": 426,
+            "h": 258
+          }
+        },
+        {
+          "seq": 59,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Build HTML",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(16, 16, 16)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 2068,
+            "w": 130,
+            "h": 44
+          }
+        },
+        {
+          "seq": 60,
+          "key": "Tab",
+          "tag": "summary",
+          "name": "Technical detail",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.808 0.107414 0.0381871 / 0.8)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 450,
+            "y": 2036,
+            "w": 239,
+            "h": 16
+          }
+        },
+        {
+          "seq": 61,
+          "key": "Shift+Tab",
+          "tag": "button",
+          "name": "Build HTML",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": null,
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1950,
+            "w": 130,
+            "h": 44
+          }
+        }
+      ]
+    },
+    {
+      "viewport": "tablet",
+      "found": {
+        "languageToggle": 1,
+        "recordButton": 44,
+        "goal": 45,
+        "criterion1": 46,
+        "build": 55
+      },
+      "tabsUsed": 61,
+      "enterToggledToVi": true,
+      "spaceToggledToEn": true,
+      "enterOpenedPanel": true,
+      "backAndForthReturnedToBuild": true,
+      "emptyGoalValidation": {
+        "visible": true,
+        "text": "Enter the goal and all criteria before building.",
+        "expectedText": "Enter the goal and all criteria before building.",
+        "matchesExpected": true,
+        "domainWriteAttemptsCaused": 0
+      },
+      "focusMovedAway": true,
+      "focusReturnable": true,
+      "stops": [
+        {
+          "seq": 1,
+          "key": "Tab",
+          "tag": "button",
+          "name": "\ud83c\udf10 VI",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 0px rgb(229, 231, 235)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(23, 23, 23)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 627,
+            "y": 11,
+            "w": 63,
+            "h": 34
+          }
+        },
+        {
+          "seq": 2,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Preferences",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.75)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 702,
+            "y": 13,
+            "w": 42,
+            "h": 30
+          }
+        },
+        {
+          "seq": 3,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle Home group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 129,
+            "w": 199,
+            "h": 22
+          }
+        },
+        {
+          "seq": 4,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Home",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(163, 179, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.785 0.115 274.713)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 155,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 5,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Landing Page",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 187,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 6,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle AI Work group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 223,
+            "w": 199,
+            "h": 22
+          }
+        },
+        {
+          "seq": 7,
+          "key": "Tab",
+          "tag": "a",
+          "name": "CVF Workspace",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 248,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 8,
+          "key": "Tab",
+          "tag": "button",
+          "name": "AI Agent",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 281,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 9,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Multi-Agent",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 313,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 10,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Tools",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 346,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 11,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Simulation",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 378,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 12,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle Knowledge & Review group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 414,
+            "w": 199,
+            "h": 22
+          }
+        },
+        {
+          "seq": 13,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Knowledge",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 439,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 14,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Knowledge Intake",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 472,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 15,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Review Packets",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 504,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 16,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Work Transfer",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(163, 179, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.785 0.115 274.713)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 537,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 17,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Skills",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 569,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 18,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Skill Search",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 602,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 19,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Help",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 634,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 20,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Docs",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 667,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 21,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle Advanced Operations group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 702,
+            "w": 199,
+            "h": 22
+          }
+        },
+        {
+          "seq": 22,
+          "key": "Tab",
+          "tag": "button",
+          "name": "History",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 728,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 23,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Analytics",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 760,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 24,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Runtime Monitor",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 793,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 25,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Marketplace",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 825,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 26,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Governance",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 858,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 27,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Enterprise",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 890,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 28,
+          "key": "Tab",
+          "tag": "button",
+          "name": "AI Safety",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 910,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 29,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle Account group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 807,
+            "w": 199,
+            "h": 22
+          }
+        },
+        {
+          "seq": 30,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Context",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 833,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 31,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Settings",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 865,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 32,
+          "key": "Tab",
+          "tag": "button",
+          "name": "AI Usage",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 898,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 33,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Logout",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 950,
+            "w": 199,
+            "h": 32
+          }
+        },
+        {
+          "seq": 34,
+          "key": "Tab",
+          "tag": "button",
+          "name": "English",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.45)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.45)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 10,
+            "y": 984,
+            "w": 199,
+            "h": 29
+          }
+        },
+        {
+          "seq": 35,
+          "key": "Tab",
+          "tag": "a",
+          "name": "1. Learn",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(202, 213, 226)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.869 0.022 252.894)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 245,
+            "y": 291,
+            "w": 104,
+            "h": 36
+          }
+        },
+        {
+          "seq": 36,
+          "key": "Tab",
+          "tag": "a",
+          "name": "2. Intake",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(202, 213, 226)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.869 0.022 252.894)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 374,
+            "y": 291,
+            "w": 110,
+            "h": 36
+          }
+        },
+        {
+          "seq": 37,
+          "key": "Tab",
+          "tag": "a",
+          "name": "3. Govern",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(202, 213, 226)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.869 0.022 252.894)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 509,
+            "y": 291,
+            "w": 117,
+            "h": 36
+          }
+        },
+        {
+          "seq": 38,
+          "key": "Tab",
+          "tag": "a",
+          "name": "4. Export",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(202, 213, 226)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.869 0.022 252.894)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 651,
+            "y": 291,
+            "w": 113,
+            "h": 36
+          }
+        },
+        {
+          "seq": 39,
+          "key": "Tab",
+          "tag": "a",
+          "name": "5. Handoff",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(163, 179, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.785 0.115 274.713)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 620,
+            "y": 291,
+            "w": 123,
+            "h": 36
+          }
+        },
+        {
+          "seq": 40,
+          "key": "Tab",
+          "tag": "select",
+          "name": "Coordinator Planner Maker Reviewer",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 257,
+            "y": 453,
+            "w": 229,
+            "h": 39
+          }
+        },
+        {
+          "seq": 41,
+          "key": "Tab",
+          "tag": "select",
+          "name": "Coordinator Planner Maker Reviewer",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 502,
+            "y": 453,
+            "w": 229,
+            "h": 39
+          }
+        },
+        {
+          "seq": 42,
+          "key": "Tab",
+          "tag": "select",
+          "name": "completed running failed",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 257,
+            "y": 532,
+            "w": 229,
+            "h": 39
+          }
+        },
+        {
+          "seq": 43,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 257,
+            "y": 611,
+            "w": 474,
+            "h": 162
+          }
+        },
+        {
+          "seq": 44,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Export as HTML",
+          "testid": "export-record-ncr-synthetic-ux-job-001",
+          "focusVisible": true,
+          "outline": "auto 1px rgb(198, 210, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(22, 22, 23)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 582,
+            "y": 1491,
+            "w": 132,
+            "h": 30
+          }
+        },
+        {
+          "seq": 45,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "Goal",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 287,
+            "y": 1443,
+            "w": 414,
+            "h": 50
+          }
+        },
+        {
+          "seq": 46,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Criterion 1",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 351,
+            "y": 1389,
+            "w": 163,
+            "h": 34
+          }
+        },
+        {
+          "seq": 47,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Add criterion",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 287,
+            "y": 1423,
+            "w": 92,
+            "h": 24
+          }
+        },
+        {
+          "seq": 48,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Title",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1807,
+            "w": 398,
+            "h": 38
+          }
+        },
+        {
+          "seq": 49,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Source reference",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1889,
+            "w": 398,
+            "h": 34
+          }
+        },
+        {
+          "seq": 50,
+          "key": "Tab",
+          "tag": "select",
+          "name": "Record type",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 1967,
+            "w": 191,
+            "h": 39
+          }
+        },
+        {
+          "seq": 51,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Review status",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 502,
+            "y": 1967,
+            "w": 191,
+            "h": 38
+          }
+        },
+        {
+          "seq": 52,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Receipt reference",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 2050,
+            "w": 398,
+            "h": 34
+          }
+        },
+        {
+          "seq": 53,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "Review boundary",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 2128,
+            "w": 398,
+            "h": 90
+          }
+        },
+        {
+          "seq": 54,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "Source notes",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 2277,
+            "w": 398,
+            "h": 258
+          }
+        },
+        {
+          "seq": 55,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Build HTML",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 2747,
+            "w": 130,
+            "h": 44
+          }
+        },
+        {
+          "seq": 56,
+          "key": "Shift+Tab",
+          "tag": "textarea",
+          "name": "Source notes",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 2277,
+            "w": 398,
+            "h": 258
+          }
+        },
+        {
+          "seq": 57,
+          "key": "Shift+Tab",
+          "tag": "textarea",
+          "name": "Review boundary",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 2128,
+            "w": 398,
+            "h": 90
+          }
+        },
+        {
+          "seq": 58,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "Source notes",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 2277,
+            "w": 398,
+            "h": 258
+          }
+        },
+        {
+          "seq": 59,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Build HTML",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(16, 16, 16)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 2747,
+            "w": 130,
+            "h": 44
+          }
+        },
+        {
+          "seq": 60,
+          "key": "Tab",
+          "tag": "summary",
+          "name": "Technical detail",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.808 0.107414 0.0381871 / 0.8)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 308,
+            "y": 2777,
+            "w": 239,
+            "h": 16
+          }
+        },
+        {
+          "seq": 61,
+          "key": "Shift+Tab",
+          "tag": "button",
+          "name": "Build HTML",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": null,
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 295,
+            "y": 2672,
+            "w": 130,
+            "h": 44
+          }
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "found": {
+        "languageToggle": 3,
+        "recordButton": 47,
+        "goal": 48,
+        "criterion1": 49,
+        "build": 58
+      },
+      "tabsUsed": 64,
+      "enterToggledToVi": true,
+      "spaceToggledToEn": true,
+      "enterOpenedPanel": true,
+      "backAndForthReturnedToBuild": true,
+      "emptyGoalValidation": {
+        "visible": true,
+        "text": "Enter the goal and all criteria before building.",
+        "expectedText": "Enter the goal and all criteria before building.",
+        "matchesExpected": true,
+        "domainWriteAttemptsCaused": 0
+      },
+      "focusMovedAway": true,
+      "focusReturnable": true,
+      "stops": [
+        {
+          "seq": 1,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Open sidebar",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.928 0.006 264.531)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 16,
+            "y": 11,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "seq": 2,
+          "key": "Tab",
+          "tag": "a",
+          "name": "CVF",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(0, 0, 0)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 72,
+            "y": 11,
+            "w": 62,
+            "h": 44
+          }
+        },
+        {
+          "seq": 3,
+          "key": "Tab",
+          "tag": "button",
+          "name": "\ud83c\udf10 VI",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 0px rgb(229, 231, 235)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(131, 133, 135)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 259,
+            "y": 11,
+            "w": 63,
+            "h": 44
+          }
+        },
+        {
+          "seq": 4,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Preferences",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.75)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 330,
+            "y": 11,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "seq": 5,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Close sidebar",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.4)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.4)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -63,
+            "y": 18,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "seq": 6,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle Home group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 141,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 7,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Home",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(163, 179, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.785 0.115 274.713)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 189,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 8,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Landing Page",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 234,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 9,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle AI Work group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 282,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 10,
+          "key": "Tab",
+          "tag": "a",
+          "name": "CVF Workspace",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 330,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 11,
+          "key": "Tab",
+          "tag": "button",
+          "name": "AI Agent",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 375,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 12,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Multi-Agent",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 420,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 13,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Tools",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 465,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 14,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Simulation",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 510,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 15,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle Knowledge & Review group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 558,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 16,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Knowledge",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 606,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 17,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Knowledge Intake",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 651,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 18,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Review Packets",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 689,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 19,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Work Transfer",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(163, 179, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.785 0.115 274.713)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 411,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 20,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Skills",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 456,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 21,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Skill Search",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 501,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 22,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Help",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 546,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 23,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Docs",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 591,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 24,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle Advanced Operations group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 639,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 25,
+          "key": "Tab",
+          "tag": "button",
+          "name": "History",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 687,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 26,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Analytics",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 689,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 27,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Runtime Monitor",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 411,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 28,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Marketplace",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 456,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 29,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Governance",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 501,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 30,
+          "key": "Tab",
+          "tag": "a",
+          "name": "Enterprise",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 546,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 31,
+          "key": "Tab",
+          "tag": "button",
+          "name": "AI Safety",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 591,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 32,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Toggle Account group",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.25)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.25)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 639,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 33,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Context",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 687,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 34,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Settings",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 689,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 35,
+          "key": "Tab",
+          "tag": "button",
+          "name": "AI Usage",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 677,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 36,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Logout",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.5)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 742,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 37,
+          "key": "Tab",
+          "tag": "button",
+          "name": "English",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgba(255, 255, 255, 0.45)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.999994 0.0000455678 0.0000200868 / 0.45)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": -210,
+            "y": 788,
+            "w": 199,
+            "h": 44
+          }
+        },
+        {
+          "seq": 38,
+          "key": "Tab",
+          "tag": "a",
+          "name": "1. Learn",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(202, 213, 226)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.869 0.022 252.894)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 25,
+            "y": 337,
+            "w": 104,
+            "h": 44
+          }
+        },
+        {
+          "seq": 39,
+          "key": "Tab",
+          "tag": "a",
+          "name": "2. Intake",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(202, 213, 226)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.869 0.022 252.894)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 154,
+            "y": 337,
+            "w": 110,
+            "h": 44
+          }
+        },
+        {
+          "seq": 40,
+          "key": "Tab",
+          "tag": "a",
+          "name": "3. Govern",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(202, 213, 226)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.869 0.022 252.894)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 289,
+            "y": 337,
+            "w": 117,
+            "h": 44
+          }
+        },
+        {
+          "seq": 41,
+          "key": "Tab",
+          "tag": "a",
+          "name": "4. Export",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(202, 213, 226)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.869 0.022 252.894)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 139,
+            "y": 337,
+            "w": 113,
+            "h": 44
+          }
+        },
+        {
+          "seq": 42,
+          "key": "Tab",
+          "tag": "a",
+          "name": "5. Handoff",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(163, 179, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.785 0.115 274.713)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 277,
+            "y": 337,
+            "w": 123,
+            "h": 44
+          }
+        },
+        {
+          "seq": 43,
+          "key": "Tab",
+          "tag": "select",
+          "name": "Coordinator Planner Maker Reviewer",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 37,
+            "y": 507,
+            "w": 316,
+            "h": 39
+          }
+        },
+        {
+          "seq": 44,
+          "key": "Tab",
+          "tag": "select",
+          "name": "Coordinator Planner Maker Reviewer",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 37,
+            "y": 586,
+            "w": 316,
+            "h": 39
+          }
+        },
+        {
+          "seq": 45,
+          "key": "Tab",
+          "tag": "select",
+          "name": "completed running failed",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": true,
+          "rect": {
+            "x": 37,
+            "y": 665,
+            "w": 316,
+            "h": 39
+          }
+        },
+        {
+          "seq": 46,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 37,
+            "y": 744,
+            "w": 316,
+            "h": 162
+          }
+        },
+        {
+          "seq": 47,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Export as HTML",
+          "testid": "export-record-ncr-synthetic-ux-job-001",
+          "focusVisible": true,
+          "outline": "auto 1px rgb(198, 210, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(22, 22, 23)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 204,
+            "y": 1717,
+            "w": 132,
+            "h": 44
+          }
+        },
+        {
+          "seq": 48,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "Goal",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 67,
+            "y": 1618,
+            "w": 256,
+            "h": 50
+          }
+        },
+        {
+          "seq": 49,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Criterion 1",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 131,
+            "y": 1545,
+            "w": 163,
+            "h": 34
+          }
+        },
+        {
+          "seq": 50,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Add criterion",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklch(0.967 0.003 264.542)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 67,
+            "y": 1577,
+            "w": 92,
+            "h": 44
+          }
+        },
+        {
+          "seq": 51,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Title",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 2033,
+            "w": 240,
+            "h": 38
+          }
+        },
+        {
+          "seq": 52,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Source reference",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 2113,
+            "w": 240,
+            "h": 34
+          }
+        },
+        {
+          "seq": 53,
+          "key": "Tab",
+          "tag": "select",
+          "name": "Record type",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 2191,
+            "w": 240,
+            "h": 39
+          }
+        },
+        {
+          "seq": 54,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Review status",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 2272,
+            "w": 240,
+            "h": 38
+          }
+        },
+        {
+          "seq": 55,
+          "key": "Tab",
+          "tag": "input",
+          "name": "Receipt reference",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 2354,
+            "w": 240,
+            "h": 34
+          }
+        },
+        {
+          "seq": 56,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "Review boundary",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 2430,
+            "w": 240,
+            "h": 90
+          }
+        },
+        {
+          "seq": 57,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "Source notes",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 2596,
+            "w": 240,
+            "h": 258
+          }
+        },
+        {
+          "seq": 58,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Build HTML",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 3204,
+            "w": 130,
+            "h": 44
+          }
+        },
+        {
+          "seq": 59,
+          "key": "Shift+Tab",
+          "tag": "textarea",
+          "name": "Source notes",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 2594,
+            "w": 240,
+            "h": 258
+          }
+        },
+        {
+          "seq": 60,
+          "key": "Shift+Tab",
+          "tag": "textarea",
+          "name": "Review boundary",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 2426,
+            "w": 240,
+            "h": 90
+          }
+        },
+        {
+          "seq": 61,
+          "key": "Tab",
+          "tag": "textarea",
+          "name": "Source notes",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "none 0px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(255, 255, 255)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 2592,
+            "w": 240,
+            "h": 258
+          }
+        },
+        {
+          "seq": 62,
+          "key": "Tab",
+          "tag": "button",
+          "name": "Build HTML",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(255, 255, 255)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px rgb(16, 16, 16)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 3200,
+            "w": 130,
+            "h": 44
+          }
+        },
+        {
+          "seq": 63,
+          "key": "Tab",
+          "tag": "summary",
+          "name": "Technical detail",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": {
+            "outline": "none 0px oklab(0.808 0.107414 0.0381871 / 0.8)",
+            "boxShadow": "none"
+          },
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 88,
+            "y": 3279,
+            "w": 214,
+            "h": 16
+          }
+        },
+        {
+          "seq": 64,
+          "key": "Shift+Tab",
+          "tag": "button",
+          "name": "Build HTML",
+          "testid": null,
+          "focusVisible": true,
+          "outline": "auto 1px rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "blurred": null,
+          "inViewportAtRead": false,
+          "rect": {
+            "x": 75,
+            "y": 3129,
+            "w": 130,
+            "h": 44
+          }
+        }
+      ]
+    }
+  ],
+  "noviceDecisions": [
+    {
+      "profile": "selected",
+      "viewport": "desktop",
+      "language": "vi",
+      "explanationExcerpt": "Ph\u1ea3n h\u1ed3i m\u00e1y ch\u1ee7 cho bi\u1ebft phi\u00ean n\u00e0y d\u00f9ng ch\u1ebf \u0111\u1ed9 th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9: HTML \u0111\u01b0\u1ee3c t\u1ea1o tr\u00ean m\u00e1y n\u00e0y. B\u1ea3n nh\u00e1p ch\u1ec9 \u0111\u01b0\u1ee3c l\u01b0u v\u00e0o kho th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9 khi b\u1ea1n ch\u1ecdn L\u01b0u; kh\u00f4ng c\u00f3 y\u00eau c\u1ea7u l\u1ea5y bi\u00ean nh\u1eadn ki\u1ec3m tra. B\u1ea3n nh\u00e1p v\u1eabn ch\u01b0a ",
+      "ambiguity": "disclosure states a local test profile and says later export may use a different profile",
+      "action": "left the panel without Build",
+      "domainWriteAttemptsDuring": 0,
+      "panelClosed": true
+    },
+    {
+      "profile": "generic",
+      "viewport": "desktop",
+      "language": "en",
+      "explanationExcerpt": "Building this packet may send a short excerpt of your text to a review-checking service. Whether that happens, and where the data goes, depends on this deployment's setup and is not shown here.",
+      "ambiguity": "destination of the excerpt and whether a receipt appears are not stated here",
+      "action": "left the panel without Build",
+      "domainWriteAttemptsDuring": 0,
+      "panelClosed": true
+    },
+    {
+      "profile": "selected",
+      "viewport": "tablet",
+      "language": "vi",
+      "explanationExcerpt": "Ph\u1ea3n h\u1ed3i m\u00e1y ch\u1ee7 cho bi\u1ebft phi\u00ean n\u00e0y d\u00f9ng ch\u1ebf \u0111\u1ed9 th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9: HTML \u0111\u01b0\u1ee3c t\u1ea1o tr\u00ean m\u00e1y n\u00e0y. B\u1ea3n nh\u00e1p ch\u1ec9 \u0111\u01b0\u1ee3c l\u01b0u v\u00e0o kho th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9 khi b\u1ea1n ch\u1ecdn L\u01b0u; kh\u00f4ng c\u00f3 y\u00eau c\u1ea7u l\u1ea5y bi\u00ean nh\u1eadn ki\u1ec3m tra. B\u1ea3n nh\u00e1p v\u1eabn ch\u01b0a ",
+      "ambiguity": "disclosure states a local test profile and says later export may use a different profile",
+      "action": "left the panel without Build",
+      "domainWriteAttemptsDuring": 0,
+      "panelClosed": true
+    },
+    {
+      "profile": "generic",
+      "viewport": "tablet",
+      "language": "en",
+      "explanationExcerpt": "Building this packet may send a short excerpt of your text to a review-checking service. Whether that happens, and where the data goes, depends on this deployment's setup and is not shown here.",
+      "ambiguity": "destination of the excerpt and whether a receipt appears are not stated here",
+      "action": "left the panel without Build",
+      "domainWriteAttemptsDuring": 0,
+      "panelClosed": true
+    },
+    {
+      "profile": "selected",
+      "viewport": "mobile",
+      "language": "vi",
+      "explanationExcerpt": "Ph\u1ea3n h\u1ed3i m\u00e1y ch\u1ee7 cho bi\u1ebft phi\u00ean n\u00e0y d\u00f9ng ch\u1ebf \u0111\u1ed9 th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9: HTML \u0111\u01b0\u1ee3c t\u1ea1o tr\u00ean m\u00e1y n\u00e0y. B\u1ea3n nh\u00e1p ch\u1ec9 \u0111\u01b0\u1ee3c l\u01b0u v\u00e0o kho th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9 khi b\u1ea1n ch\u1ecdn L\u01b0u; kh\u00f4ng c\u00f3 y\u00eau c\u1ea7u l\u1ea5y bi\u00ean nh\u1eadn ki\u1ec3m tra. B\u1ea3n nh\u00e1p v\u1eabn ch\u01b0a ",
+      "ambiguity": "disclosure states a local test profile and says later export may use a different profile",
+      "action": "left the panel without Build",
+      "domainWriteAttemptsDuring": 0,
+      "panelClosed": true
+    },
+    {
+      "profile": "generic",
+      "viewport": "mobile",
+      "language": "en",
+      "explanationExcerpt": "Building this packet may send a short excerpt of your text to a review-checking service. Whether that happens, and where the data goes, depends on this deployment's setup and is not shown here.",
+      "ambiguity": "destination of the excerpt and whether a receipt appears are not stated here",
+      "action": "left the panel without Build",
+      "domainWriteAttemptsDuring": 0,
+      "panelClosed": true
+    }
+  ],
+  "assessmentAreas": {
+    "languageSwitching": {
+      "disposition": "UX_CONFORMANT_FOR_MEASURED_ITEMS_WITH_FINDING_UXF-06",
+      "basis": "12/12 rows: html lang matches, owned labels visible, expected disclosure fragments present with no wrong-profile text, real visible toggle used, literal goal/criterion/title preserved in 3/3 selected switches."
+    },
+    "keyboard": {
+      "disposition": "UX_FINDINGS_RECORDED",
+      "basis": "Toggle, record button, Goal, Criterion 1 and Build reached by real Tab at all 3 viewports; Enter and Space toggled language; Enter opened the panel; Shift+Tab/Tab round trip returned to Build; Tab moved away from and back to Build after validation; no trap. Findings UXF-01..03."
+    },
+    "geometry": {
+      "disposition": "UX_CONFORMANT_FOR_OVERFLOW_OVERLAP_AND_DISCLOSURE_WITH_FINDINGS_UXF-04_05",
+      "basis": "12/12 rows: no document or panel horizontal overflow, 0 controls outside the viewport, 0 overlaps, disclosure above Build in DOM and position and not clipped."
+    },
+    "preEffectRefusal": {
+      "disposition": "UX_CONFORMANT_AS_AGENT_SIMULATED_WIRING",
+      "basis": "6/6 agent-simulated decisions read the disclosure, left the panel without Build and caused 0 write attempts; empty-goal prevalidation produced the localized actionable message and 0 write attempts."
+    }
+  },
+  "findings": [
+    {
+      "id": "UXF-01-LONG-KEYBOARD-PATH",
+      "disposition": "UX_FINDINGS_RECORDED",
+      "severity": "MEDIUM",
+      "evidence": "Tab stops needed from page start to the selected record export button: desktop 44, tablet 44, mobile 47; Build button at stop 55, 55, 58. No skip link was observed in the sequence (first stops are header and sidebar items).",
+      "rows": [
+        "keyboard-desktop",
+        "keyboard-tablet",
+        "keyboard-mobile"
+      ],
+      "sourceLocator": "dashboard shell sidebar navigation (exact component not inspected by this worker)",
+      "suggestedBoundedFix": "Add a skip-to-main-content link or collapse sidebar groups from the tab order."
+    },
+    {
+      "id": "UXF-02-FIELD-FOCUS-INDICATOR",
+      "disposition": "UX_FINDINGS_RECORDED_METRIC_LIMITED",
+      "severity": "HIGH_CANDIDATE",
+      "evidence": "For every text input, select and textarea in the export panel (the seven field stops at each viewport: stops 48-54 desktop and tablet, 51-57 mobile) the computed focused outline was none 0px and box-shadow none, identical to the blurred state. The classes use outline-none with focus:border-indigo-500; border-color change was not measured and no screenshot shows a focused field, so whether a visible border-only indicator exists is NOT_ESTABLISHED.",
+      "rows": [
+        "keyboard-desktop",
+        "keyboard-tablet",
+        "keyboard-mobile"
+      ],
+      "sourceLocator": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx field className (outline-none focus:border-indigo-500)",
+      "suggestedBoundedFix": "Add a focus-visible ring (DESIGN.md section 6) and re-measure with border/background included."
+    },
+    {
+      "id": "UXF-03-TOGGLE-FOCUS-OUTLINE-ZERO-WIDTH",
+      "disposition": "UX_FINDINGS_RECORDED_METRIC_LIMITED",
+      "severity": "MEDIUM_CANDIDATE",
+      "evidence": "The language toggle focused outline computed as auto 0px (width zero) at the toggle stop on all three viewports (stop 1 desktop and tablet, stop 3 mobile); no screenshot was taken with the toggle focused, so visibility is NOT_ESTABLISHED.",
+      "rows": [
+        "keyboard-desktop",
+        "keyboard-tablet",
+        "keyboard-mobile"
+      ],
+      "sourceLocator": "src/lib/i18n.tsx LanguageToggle button className",
+      "suggestedBoundedFix": "Give the toggle an explicit focus-visible ring."
+    },
+    {
+      "id": "UXF-04-TARGET-SIZE-LT44",
+      "disposition": "UX_FINDINGS_RECORDED",
+      "severity": "MEDIUM",
+      "evidence": "All 12 rows contain a primary target below 44px height. Desktop/tablet: language toggle 34, record export button 30, Add criterion 24, Criterion 1 field 34, Title field 38. Mobile (390): toggle, record button and Add criterion measure 44, but Criterion 1 field is 34 and Title field 38.",
+      "rows": [
+        "selected-desktop-en",
+        "selected-desktop-vi",
+        "generic-desktop-vi",
+        "generic-desktop-en",
+        "selected-tablet-en",
+        "selected-tablet-vi",
+        "generic-tablet-vi",
+        "generic-tablet-en",
+        "selected-mobile-en",
+        "selected-mobile-vi",
+        "generic-mobile-vi",
+        "generic-mobile-en"
+      ],
+      "sourceLocator": "src/lib/i18n.tsx LanguageToggle; work-transfer page record button; HtmlJobControls.tsx Add criterion and Criterion input; EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx fields",
+      "suggestedBoundedFix": "Apply min-h-11 to those controls at touch widths."
+    },
+    {
+      "id": "UXF-05-ADD-CRITERION-LOOKS-LIKE-TEXT",
+      "disposition": "UX_FINDINGS_RECORDED",
+      "severity": "LOW",
+      "evidence": "Add criterion renders as plain unstyled text 92x24 (EN) on desktop and tablet (see desktop-keyboard-build-validation screenshot); nothing shows it is a button.",
+      "rows": [
+        "selected-desktop-en",
+        "selected-tablet-en"
+      ],
+      "sourceLocator": "src/components/HtmlJobControls.tsx Add criterion button (no className)",
+      "suggestedBoundedFix": "Reuse the existing secondary button style."
+    },
+    {
+      "id": "UXF-06-VI-ENGLISH-PILL",
+      "disposition": "UX_FINDINGS_RECORDED",
+      "severity": "LOW",
+      "evidence": "In Vietnamese the export panel still shows the English pill Candidate (and the acronym HTML) in 6 of 6 selected-vi and generic-vi rows (possiblyUntranslated lists Candidate).",
+      "rows": [
+        "selected-desktop-vi",
+        "generic-desktop-vi",
+        "selected-tablet-vi",
+        "generic-tablet-vi",
+        "selected-mobile-vi",
+        "generic-mobile-vi"
+      ],
+      "sourceLocator": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx StatusPill Candidate",
+      "suggestedBoundedFix": "Localize the pill text."
+    },
+    {
+      "id": "UXF-NE-01-FOCUS-IN-VIEWPORT",
+      "disposition": "NOT_EVALUATED",
+      "severity": "NONE",
+      "evidence": "The inViewportAtRead flag was false at most stops because global CSS sets scroll-behavior smooth (globals.css line 185) and focus was read immediately after the key press, mid-scroll. The 86 off-screen flags are a measurement-timing artifact and are not reported as a finding.",
+      "rows": [],
+      "sourceLocator": "measurement design",
+      "suggestedBoundedFix": "Wait for scroll end before reading focus geometry in a later admission."
+    },
+    {
+      "id": "UXF-NE-02-VALIDATION-VISIBLE-IN-SCREENSHOT",
+      "disposition": "NOT_EVALUATED",
+      "severity": "NONE",
+      "evidence": "The empty-goal validation text was visible in the DOM (isVisible true, exact localized text), but the keyboard screenshots were taken mid-scroll and do not show it; on-screen visibility is unverified.",
+      "rows": [],
+      "sourceLocator": "measurement design",
+      "suggestedBoundedFix": "Scroll the message into view before the screenshot."
+    }
+  ],
+  "notEvaluated": [
+    "dark, light and non-default accent themes (DESIGN.md 14.6)",
+    "contrast and screen-reader behavior",
+    "real novice comprehension and informed consent",
+    "valid Build, export, Save, link, review, download and print outcomes",
+    "Stop and remote cancellation (reused DOM-only evidence)",
+    "on-screen visibility of the validation message",
+    "focus visibility of fields via border change"
+  ],
+  "REQ-ASSESSMENT": {
+    "status": "PASS",
+    "meaning": "all 12 rows executed with measurements and 12 screenshots; findings UXF-04..06 recorded; not UX conformance"
+  },
+  "REQ-KEYBOARD": {
+    "status": "PASS",
+    "meaning": "real Tab/Shift+Tab/Enter/Space evidence recorded at 3 viewports with explicit findings UXF-01..03 and not-evaluated items"
+  },
+  "REQ-BOUNDARY": {
+    "status": "PASS",
+    "meaning": "0 attempted domain writes, 0 evaluate/execute, 0 external successes, owned process stopped, preimages exact, pins unchanged, caps respected"
+  },
+  "REQ-REGISTRATION": {
+    "status": "PASS",
+    "meaning": "registry source entry created at registryOrder 224; aggregate JSON regenerated by the canonical generator and the check passes; companion note appended"
+  },
+  "REQ-RETURN": {
+    "status": "PASS",
+    "meaning": "return and evidence complete; stage-one full gate passed (stdout sha256 d7a9a6b1d7c93e5e05a58202097c38bd95867b7676c6bb1318932154e03148c2); the final-package gate result is in the detached receipt gate2-receipt.json"
+  },
+  "tempResources": {
+    "ownedRoot": ".cvf/runtime/ncr-r1-ux-browser-20261018/worker",
+    "runRoot": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-VQWiyG",
+    "buildDir": "retained under the app directory as .next-cvf-ncr-job-<run id> (see manifest)",
+    "cleanup": "no deletion; build and run artifacts retained under Local custody"
+  }
+}

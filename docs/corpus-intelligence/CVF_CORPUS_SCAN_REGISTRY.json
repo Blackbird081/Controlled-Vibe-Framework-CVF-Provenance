@@ -9233,6 +9233,37 @@
       "nextScanRecommendation": "Targeted registration only; semantic scan remains NOT_STARTED. Consume worker and Local proof at recorded source pins."
     },
     {
+      "id": "cvf-ncr-r1-ux-readonly-browser-test",
+      "corpusType": "CVF_EXTENSION",
+      "displayName": "NCR R1 read-only browser UX assessment test",
+      "scopePaths": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs"
+      ],
+      "fileCount": null,
+      "status": "NOT_STARTED",
+      "scanWave": null,
+      "scanDate": null,
+      "manifestHash": null,
+      "hashAlgorithm": null,
+      "hashInput": null,
+      "manifestPath": null,
+      "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_READONLY_BROWSER_2026-10-18.md",
+      "completionReviewPath": null,
+      "gcBaselineRef": "docs/baselines/CVF_GC018_NCR_R1_UX_READONLY_BROWSER_2026-10-18.md",
+      "verdicts": {
+        "gc047": "NOT_RUN",
+        "gc048": "NOT_RUN",
+        "gc050": "NOT_RUN"
+      },
+      "semanticRegions": [],
+      "priorAbsorption": "Registration of a bounded read-only browser UI assessment test only; no semantic corpus scan and no UI result. Root independent review and Local disposition remain separately owned.",
+      "findings": [],
+      "negativeSearchTerms": [],
+      "nextScanRecommendation": "Targeted registration only; semantic scan remains NOT_STARTED. Consume worker and Local assessment evidence at recorded source pins."
+    },
+    {
       "id": "ccma-shared-learning-delta-20261012",
       "corpusType": "PROJECT_SOURCE",
       "displayName": "Customer Care ten shared learning records, 2026-10-12 delta",
