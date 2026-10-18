@@ -1,0 +1,28 @@
+{
+  "registryOrder": 223,
+  "id": "cvf-ncr-r1-integrated-html-job-browser-test",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "NCR R1 integrated HTML job synthetic browser test",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-integrated-html-job-browser.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs"
+  ],
+  "fileCount": null,
+  "status": "NOT_STARTED",
+  "scanWave": null,
+  "scanDate": null,
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
+  "verdicts": {"gc047": "NOT_RUN", "gc048": "NOT_RUN", "gc050": "NOT_RUN"},
+  "semanticRegions": [],
+  "priorAbsorption": "Bounded current-source synthetic browser observation only; no semantic corpus scan. Root independent probe and Local review remain separately owned.",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "Targeted registration only; semantic scan remains NOT_STARTED. Consume worker and Local proof at recorded source pins."
+}

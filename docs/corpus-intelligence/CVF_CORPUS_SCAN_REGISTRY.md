@@ -287,3 +287,7 @@ Eight named new source/test paths; finite worker16 evidence and Root six cancell
 ## NCR HTML Draft Recovery Browser Registration - 2026-10-18
 
 The new synthetic browser spec/config are registered at `docs/corpus-intelligence/registry/entries/cvf-ncr-html-draft-recovery-browser-test.json`; status NOT_STARTED, no semantic scan or full-corpus claim. Local bounded joined proof and original failed tests: `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md`. Source entry and generated machine registry are synchronized in the same material batch.
+
+## NCR R1 Integrated HTML Job Browser Registration - 2026-10-18
+
+The current-source synthetic browser spec is registered at `docs/corpus-intelligence/registry/entries/cvf-ncr-r1-integrated-html-job-browser-test.json`; status NOT_STARTED. Its bounded worker observation is recorded at `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_WORKER_RETURN_2026-10-18.md`. No semantic scan or corpus-completeness claim is made.

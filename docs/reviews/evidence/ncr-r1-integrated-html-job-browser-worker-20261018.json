@@ -1,0 +1,1163 @@
+{
+  "schemaVersion": "cvf.ncrR1IntegratedHtmlJobBrowserWorkerEvidence@1.0.0",
+  "executionBaseHead": "fe72c4eced8a47f8c15ec4cfb5de9e6539fe6b5a",
+  "dispatchWorkOrder": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
+  "runRoot": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr",
+  "singleInvocation": {
+    "argv": [
+      "node",
+      "scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs"
+    ],
+    "cwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF",
+    "exitCode": 0,
+    "durationSeconds": 217.281,
+    "stdoutPath": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/browser-1.stdout.log",
+    "stdoutSha256": "989217e57aded8075b47292e0188d1d58b9954c80ba90d8c4405860e05e451fe",
+    "stderrPath": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/browser-1.stderr.log",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "manifest": {
+    "id": "ncr_job_7a3f8c687816d3fc0d87206c",
+    "root": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-r1-integrated-html-job-browser-20261018\\run-Ta0GXr",
+    "start": 1792312408184,
+    "deadline": 1792313308184,
+    "executionBaseHead": "fe72c4eced8a47f8c15ec4cfb5de9e6539fe6b5a",
+    "spec": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-integrated-html-job-browser.spec.ts",
+    "argv": [
+      [
+        "node",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/next/dist/bin/next",
+        "dev",
+        "--webpack",
+        "--hostname",
+        "localhost",
+        "--port",
+        "3033"
+      ],
+      [
+        "node",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@playwright/test/cli.js",
+        "test",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-integrated-html-job-browser.spec.ts",
+        "--config",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+        "--workers=1",
+        "--retries=0"
+      ]
+    ],
+    "pins": [
+      {
+        "path": "scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs",
+        "bytes": 16043,
+        "sha256": "82468c072e85eb5c0e5a444c94eb50d51036a6c2ad77af5ff537b3fe94c99983"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs",
+        "bytes": 3356,
+        "sha256": "037e3ecda32cadd25d487207fceec23418bb2cbb4f6b287701bb7fdd3833e7db"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+        "bytes": 776,
+        "sha256": "d8deae5ada9687f242eece64cdcd3f916be51bff0575e8a251b018715f39a6a9"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-integrated-html-job-browser.spec.ts",
+        "bytes": 15374,
+        "sha256": "68aea698967005d09652d38a5bb42f9728f5159c7b7832e659e14c4ffbb35714"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/next/dist/bin/next",
+        "bytes": 17023,
+        "sha256": "19337d5e1b3b82ff72a6cd28b06cc47a3e18979da4282b074321c5ba4085b385"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@playwright/test/cli.js",
+        "bytes": 707,
+        "sha256": "79e23e6a249176295b8490567daa7717448a75866d6ea6f6b296ff3d23305c69"
+      },
+      {
+        "path": "C:/Users/DELL/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe",
+        "bytes": 3006464,
+        "sha256": "ff0c99fc5bb2301cad77930aa76e5354cf2a5fefb7efdcf3b3bc10ba0550c015"
+      },
+      {
+        "path": "docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
+        "bytes": 15960,
+        "sha256": "d73d6d4ec19656259ce10c5217901430f50d121bca665ce9762dcbc71bf75400"
+      },
+      {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
+        "bytes": 48400,
+        "sha256": "25e7480fe15f2805730384d4a884a2ef4d8f1911a79579f69fc344e041b707df"
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md",
+        "bytes": 35265,
+        "sha256": "4dfbc4dc40f53e8ca1779a4ba4c7347da61f36fa640951b28ee30c254bfbb674"
+      },
+      {
+        "path": "docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md",
+        "bytes": 44416,
+        "sha256": "2ff7a70ebdc2ca929e5b3e4a59882b7214e6387b869e3b2ffd44fa8c436509ea"
+      },
+      {
+        "path": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+        "bytes": 1955,
+        "sha256": "8f636459894e44c8df579588948597c1c4457dfbdc5009bfa8968f367338c65e"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts",
+        "bytes": 1920,
+        "sha256": "dcb8cdd8a98f49f345b53c9ea9d824b11785f0a12854023b545cc34cdfe3a23b"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts",
+        "bytes": 5533,
+        "sha256": "c5399e838b6c195423912f7ae33da4f352f94c66958c8aeccb29fe3bdeaf4d88"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts",
+        "bytes": 488,
+        "sha256": "2453278bb49e41b06330c17f320213e190851aadd05c9b9e33ba65a70471cfc9"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+        "bytes": 17973,
+        "sha256": "ba84ce58790f4e1d3a649af1d1190f9af29ad6c464c09df47c0abf304da64fc4"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+        "bytes": 15275,
+        "sha256": "2f09a7dc52a9c8c4383ecd6905459bfb9ea9d2a67ec520c0a31d022de460dd43"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/jobs/route.ts",
+        "bytes": 460,
+        "sha256": "1b10d2907aee9778c4662186ca9d5d0aef98e850e855191406a20278948e0367"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+        "bytes": 47853,
+        "sha256": "999f6710d4d9f18268c86f707be709f8e6aaddcb2d449656a3fa27c53f4cada8"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx",
+        "bytes": 11604,
+        "sha256": "5090247c7934b3ad440c875721e618d0b3bdfb2f27ae93a1f6612790f0d01360"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+        "bytes": 18570,
+        "sha256": "b5b3e2c84913f5bac67e805365431af2c5a461e3066f1fe635080db784dbbc2a"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+        "bytes": 8276,
+        "sha256": "8a20cc04ebcb3662a7078c34ab12f3a2c8f141fb0646abf0756ada3cb3f0bb88"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+        "bytes": 10747,
+        "sha256": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+        "bytes": 11981,
+        "sha256": "138ebb622321e5114e4f742eb83df271ad9da3ffdf5245b0aa68569c6ef6d752"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+        "bytes": 7813,
+        "sha256": "bfb68c9d15afe0083d5c4d28e4ffdaf1835ae9bcb9ac11b4d77d5b2312cae9a2"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts",
+        "bytes": 693,
+        "sha256": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8"
+      }
+    ],
+    "port": 3033,
+    "chromiumBinary": "C:\\Users\\DELL\\AppData\\Local\\ms-playwright\\chromium-1208\\chrome-win64\\chrome.exe",
+    "markerSha256": "1e58ae5c928070275afd555fee48c4164387e85b68c5fe9062669764c0ff5907",
+    "envNames": [
+      "AUTH_URL",
+      "CI",
+      "CVF_ADMIN_PASS",
+      "CVF_ADMIN_USER",
+      "CVF_CONTROL_PLANE_EVENTS_PATH",
+      "CVF_DURABLE_MEMORY_STORE_PATH",
+      "CVF_FALSE_POSITIVE_REPORTS_PATH",
+      "CVF_NCR_DRAFT_PROFILE",
+      "CVF_NCR_DRAFT_ROOT",
+      "CVF_NCR_DRAFT_RUN_ID",
+      "CVF_NCR_HTML_JOB_PROFILE",
+      "CVF_NCR_ISOLATION_LOG",
+      "CVF_NCR_RUNNER_PROFILE",
+      "CVF_NCR_RUN_ROOT",
+      "CVF_POLICY_SNAPSHOT_DIR",
+      "CVF_STORAGE_ADAPTER_TYPE",
+      "NEXTAUTH_SECRET",
+      "NEXTAUTH_URL",
+      "NEXT_DIST_DIR",
+      "NEXT_TELEMETRY_DISABLED",
+      "NODE_ENV",
+      "NODE_OPTIONS",
+      "PATH",
+      "PLAYWRIGHT_BASE_URL",
+      "SystemRoot",
+      "TEMP",
+      "TMP",
+      "WINDIR"
+    ],
+    "preimages": {
+      "tsconfig.json": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "next-env.d.ts": "91933472d42a307909e5f8f187db0ccad72559bedc766ab20a25c6169ac79498"
+    }
+  },
+  "result": {
+    "id": "ncr_job_7a3f8c687816d3fc0d87206c",
+    "root": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-r1-integrated-html-job-browser-20261018\\run-Ta0GXr",
+    "startedAt": "2026-10-18T08:33:28.184Z",
+    "manifest": "manifest.json",
+    "outcomes": [
+      {
+        "phase": "port-preflight",
+        "status": "FREE"
+      },
+      {
+        "phase": "next-startup",
+        "status": 200,
+        "durationMs": 53461
+      },
+      {
+        "phase": "post-init-fence",
+        "status": "ACTIVE",
+        "contexts": 3,
+        "blockedExternalAttempts": 1
+      },
+      {
+        "phase": "playwright",
+        "code": 0,
+        "signal": null,
+        "pid": 5516,
+        "durationMs": 215769
+      },
+      {
+        "phase": "transient-restore",
+        "file": "tsconfig.json",
+        "sha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6"
+      },
+      {
+        "phase": "transient-restore",
+        "file": "next-env.d.ts",
+        "sha256": "91933472d42a307909e5f8f187db0ccad72559bedc766ab20a25c6169ac79498"
+      }
+    ],
+    "nextPid": 29368,
+    "teardown": {
+      "attempted": true,
+      "pid": 29368,
+      "status": 0,
+      "portFree": true,
+      "processGone": true,
+      "ownedStopped": true,
+      "transientExact": true
+    },
+    "isolation": {
+      "preloadContexts": 14,
+      "envBlocked": 4,
+      "networkBlocked": 1,
+      "evaluateBlocked": 0
+    },
+    "finishedAt": "2026-10-18T08:37:05.332Z",
+    "durationMs": 217148,
+    "outputBudget": {
+      "run": {
+        "bytes": 211017,
+        "files": 22
+      },
+      "build": {
+        "bytes": 189257167,
+        "files": 228
+      },
+      "snapshots": {
+        "bytes": 6088,
+        "files": 5
+      },
+      "withinCaps": true
+    },
+    "sourceDrift": [
+      {
+        "path": "scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-integrated-html-job-browser.spec.ts",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/next/dist/bin/next",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@playwright/test/cli.js",
+        "unchanged": true
+      },
+      {
+        "path": "C:/Users/DELL/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe",
+        "unchanged": true
+      },
+      {
+        "path": "docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
+        "unchanged": true
+      },
+      {
+        "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
+        "unchanged": true
+      },
+      {
+        "path": "docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md",
+        "unchanged": true
+      },
+      {
+        "path": "docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md",
+        "unchanged": true
+      },
+      {
+        "path": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/jobs/route.ts",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+        "unchanged": true
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts",
+        "unchanged": true
+      }
+    ],
+    "outputs": [
+      {
+        "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/next.log",
+        "bytes": 4403,
+        "sha256": "aaa6c10580822f859de4dde9dd1f49d9ff86eab12a64f80d8098d5e7e366dd9e"
+      },
+      {
+        "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/playwright.log",
+        "bytes": 525,
+        "sha256": "6f799d5f0dcbf0f69639404ce89dd6d50a1e87d1e54ff021d85050625ed2b13a"
+      },
+      {
+        "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/isolation.jsonl",
+        "bytes": 1455,
+        "sha256": "406fa01e5c1651c972aac2a46f827d799adb815ee723827d5ad5164f0d410dd1"
+      }
+    ]
+  },
+  "journey": {
+    "browser": "145.0.7632.6",
+    "recordId": "ncr-synthetic-audit-job-001",
+    "jobId": "fc2e3b20-5ca2-47f1-9f1b-12a86b555034",
+    "versionId": "a67f3b78-73d0-48ef-9cb9-09e4c398b5bc",
+    "owner": {
+      "userId": "99",
+      "orgId": "org_cvf",
+      "teamId": "team_exec"
+    },
+    "requestSha256": "84f9ea865078f6078bbef177236b1af4942774a91859e7226eec960d039112a0",
+    "htmlBytes": 2720,
+    "htmlSha256": "7859c4fcff3d2b63a09093479de1a872e49f75c911cca3e37819768cc49c5ee9",
+    "exportResponse": {
+      "bytes": 4029,
+      "sha256": "3c2aeb91605db93b3036b3f12092840f1b5b65f24d682f7565785e5d68a98010",
+      "status": 200
+    },
+    "createdResponse": {
+      "bytes": 623,
+      "sha256": "9d0bcf311854946d5c52e0b34e957f1cfe9d38f0c82ee9f2b6b125ad2497403f",
+      "status": 201
+    },
+    "saveResponse": {
+      "bytes": 83,
+      "sha256": "2f1365d962337890b73a05a71f423c62cce5ac922ebedeb74c5133767bcc3e14",
+      "status": 201,
+      "submittedBytes": 3449,
+      "submittedSha256": "7e58f5b19519d357caa27e453f3edc1c0ed0e571e5c9a6cf64b146da9f3491c2",
+      "acknowledgmentDropped": true
+    },
+    "draftRead": {
+      "bytes": 3883,
+      "sha256": "c3b219b55de047e0b9d796d8eec828286091954252b20324cf2e896448b2b766",
+      "status": 200,
+      "state": "CLIENT_SUBMITTED_UNVERIFIED",
+      "acceptance": "DRAFT_UNACCEPTED"
+    },
+    "savedFile": {
+      "bytes": 3859,
+      "sha256": "1da22319faf5d80236d2d95321609ed25fecd33a70e18b87951c2b1dd6768ebf"
+    },
+    "downloaded": {
+      "bytes": 2720,
+      "sha256": "7859c4fcff3d2b63a09093479de1a872e49f75c911cca3e37819768cc49c5ee9"
+    },
+    "link": {
+      "jobId": "fc2e3b20-5ca2-47f1-9f1b-12a86b555034",
+      "versionId": "a67f3b78-73d0-48ef-9cb9-09e4c398b5bc",
+      "requestSha256": "84f9ea865078f6078bbef177236b1af4942774a91859e7226eec960d039112a0",
+      "htmlSha256": "7859c4fcff3d2b63a09093479de1a872e49f75c911cca3e37819768cc49c5ee9"
+    },
+    "decision": {
+      "decisionId": "794934c7-2a27-4802-aa9e-1dbda609fdc9",
+      "jobId": "fc2e3b20-5ca2-47f1-9f1b-12a86b555034",
+      "versionId": "a67f3b78-73d0-48ef-9cb9-09e4c398b5bc",
+      "requestSha256": "84f9ea865078f6078bbef177236b1af4942774a91859e7226eec960d039112a0",
+      "htmlSha256": "7859c4fcff3d2b63a09093479de1a872e49f75c911cca3e37819768cc49c5ee9",
+      "actor": {
+        "userId": "99",
+        "orgId": "org_cvf",
+        "teamId": "team_exec"
+      }
+    },
+    "exactBytes": true,
+    "missingLinkStatus": 404,
+    "postCounts": {
+      "create": 1,
+      "export": 1,
+      "save": 1,
+      "link": 1,
+      "accept": 1
+    },
+    "traffic": [
+      {
+        "method": "GET",
+        "path": "/home",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/css/app/layout.css",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/webpack.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/main-app.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/app-pages-internals.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/app/layout.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/app/(dashboard)/layout.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/app/(dashboard)/home/page.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/session",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/providers",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/__nextjs_font/geist-latin.woff2",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/6661d12f2b018032.webpack.hot-update.json",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/webpack.6661d12f2b018032.hot-update.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/c16c8cdcfd0c9afc.webpack.hot-update.json",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/work-transfer",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/webpack.c16c8cdcfd0c9afc.hot-update.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/session"
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/7e2413d6d03e32ce.webpack.hot-update.json",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/webpack.7e2413d6d03e32ce.hot-update.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/css/app/layout.css",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/webpack.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/main-app.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/app-pages-internals.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/app/layout.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/app/(dashboard)/layout.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/app/(dashboard)/work-transfer/page.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/session",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/admin/audit",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/session",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/artifacts/jobs",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/artifacts/jobs",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/__nextjs_font/geist-latin.woff2",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/work-transfer",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/b498462bb26ad22d.webpack.hot-update.json",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/css/app/layout.css",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/app/layout.b498462bb26ad22d.hot-update.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/webpack.b498462bb26ad22d.hot-update.js",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/api/artifacts/jobs",
+        "action": "CREATE_JOB",
+        "status": 201
+      },
+      {
+        "method": "POST",
+        "path": "/__nextjs_original-stack-frames",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/work-transfer",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/ed1d0a4beb828228.webpack.hot-update.json",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/css/app/layout.css",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/app/layout.ed1d0a4beb828228.hot-update.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/webpack.ed1d0a4beb828228.hot-update.js",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/api/artifacts/export",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/__nextjs_original-stack-frames",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/5bf3ed3b444c857d.webpack.hot-update.json",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/webpack.5bf3ed3b444c857d.hot-update.js",
+        "status": 200
+      },
+      {
+        "method": "POST",
+        "path": "/api/artifacts/drafts"
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/f745c5a33c1968b6.webpack.hot-update.json",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/webpack/webpack.f745c5a33c1968b6.hot-update.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/work-transfer",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/css/app/layout.css",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/webpack.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/main-app.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/app-pages-internals.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/app/layout.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/app/(dashboard)/layout.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/_next/static/chunks/app/(dashboard)/work-transfer/page.js",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/session",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/admin/audit",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/me",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/session",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/artifacts/jobs",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/artifacts/jobs",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/artifacts/drafts",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/artifacts/jobs",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/artifacts/drafts",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/artifacts/jobs",
+        "status": 404
+      },
+      {
+        "method": "POST",
+        "path": "/api/artifacts/jobs",
+        "action": "LINK_VERSION",
+        "status": 201
+      },
+      {
+        "method": "POST",
+        "path": "/api/artifacts/jobs",
+        "action": "ACCEPT_VERSION",
+        "status": 201
+      }
+    ],
+    "externalBlocked": [
+      "fonts.googleapis.com",
+      "fonts.googleapis.com",
+      "fonts.googleapis.com",
+      "fonts.googleapis.com",
+      "fonts.googleapis.com"
+    ],
+    "externalSucceeded": [],
+    "evalExecuteRequests": 0,
+    "draftStateAfterDecision": "CLIENT_SUBMITTED_UNVERIFIED",
+    "draftAcceptanceAfterDecision": "DRAFT_UNACCEPTED"
+  },
+  "ownedPathHashes": [
+    {
+      "path": "scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs",
+      "bytes": 16043,
+      "sha256": "82468c072e85eb5c0e5a444c94eb50d51036a6c2ad77af5ff537b3fe94c99983"
+    },
+    {
+      "path": "scripts/test_cvf_ncr_r1_integrated_html_job_browser.cjs",
+      "bytes": 3806,
+      "sha256": "20992dde7a54df29ff1dcaeb3a1ffa480001dd1304a8b2f9ab41033f84ad95af"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-integrated-html-job-browser.spec.ts",
+      "bytes": 15374,
+      "sha256": "68aea698967005d09652d38a5bb42f9728f5159c7b7832e659e14c4ffbb35714"
+    },
+    {
+      "path": "docs/corpus-intelligence/registry/entries/cvf-ncr-r1-integrated-html-job-browser-test.json",
+      "bytes": 1382,
+      "sha256": "4ba1bc9ed78ae8ec197a2b5e23c0a9943f03fac81e26bc66348ee5dbcd19d163"
+    },
+    {
+      "path": "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+      "bytes": 552935,
+      "sha256": "a627a1e7833bd6f8be26e2b4736567310e8c006e0c9fad98855999bbae673037"
+    },
+    {
+      "path": "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md",
+      "bytes": 29840,
+      "sha256": "5c21ca90bfdb00e2717081c31e4f5f97a490246053f655ada583636e48c5c047"
+    }
+  ],
+  "rawLogCustody": [
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/browser-1.json",
+      "bytes": 632,
+      "sha256": "d0ff6e2fdf55a97483fac06e189f582f283a0447613ec76d1056e6ee34d20cb2"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/browser-1.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/browser-1.stdout.log",
+      "bytes": 536,
+      "sha256": "989217e57aded8075b47292e0188d1d58b9954c80ba90d8c4405860e05e451fe"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/capture-command.py",
+      "bytes": 1053,
+      "sha256": "f351f5ce965de83120dcdb638a3b082f5020b918d74bafdf474e82d268bf1468"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/gate-1.json",
+      "bytes": 834,
+      "sha256": "a36790c67a86ae8d3fb4f29ea0a2b340ea316d313bf0b5b289a4f4fb62b53f51"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/gate-1.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/gate-1.stdout.log",
+      "bytes": 15122,
+      "sha256": "5d4336786e54fdbbc017f49c3b1bccdd229b043e37173e0ba38e3e2b940dd6bc"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/gate-2.json",
+      "bytes": 833,
+      "sha256": "47e0d84467222800a83281caf63b3795ba3f2bb06d32c40cb87e92c1babf7cec"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/gate-2.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/gate-2.stdout.log",
+      "bytes": 13104,
+      "sha256": "a9abf51da655754c3ea42bcc744759f483078b00ceef7dc0e056f5e34492e4b8"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/gate-3.json",
+      "bytes": 834,
+      "sha256": "b596484f5deb9f564e52ae958a65d3545b5e697aff129a9297d7c507de338e4e"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/gate-3.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/gate-3.stdout.log",
+      "bytes": 12481,
+      "sha256": "561aec6dd180d489536dbaf1d125f47e149a28d86f827bad0a1bc738a7d48172"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/lint-1.json",
+      "bytes": 710,
+      "sha256": "b8422515e541971b9e0b62e0c8151cd5c8794fc0c861712220bd9a91c0870188"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/lint-1.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/lint-1.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/pre-implementation.json",
+      "bytes": 826,
+      "sha256": "5fd13652100ae0db5fa3eb1286ea27c8b1b7af97c468fde02a614d8082132572"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/pre-implementation.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/pre-implementation.stdout.log",
+      "bytes": 4761,
+      "sha256": "d7321563b45666b322bbc0c7efca0fd9dced41ee5ab1e070c562655a6df84639"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/pure-unit-1.json",
+      "bytes": 635,
+      "sha256": "0f77eae7568ff5a3c48a8af222118028cc3d06fb1777574c23cc50437b0d58ff"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/pure-unit-1.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/pure-unit-1.stdout.log",
+      "bytes": 190,
+      "sha256": "4cd8cecd0317c2d5397386e18c06ebcc33c56f32df8f1739a47407d7cb5d40de"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/scaffold.json",
+      "bytes": 832,
+      "sha256": "aae52433ee098da62c1e82140327f057cf0c0450822162289e3eb5f0bb330a39"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/scaffold.stderr.log",
+      "bytes": 86,
+      "sha256": "344bd00b2ff10aa5ca977feadb98c061566d847bd3c31896d0159d37acc96f51"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/scaffold.stdout.log",
+      "bytes": 169,
+      "sha256": "481a19a51f0ffb87222308a53ff6ce4a5bb1d005a33fd62ec04c71224ac67768"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/seal-return.py",
+      "bytes": 18552,
+      "sha256": "5f9dc3717c1cff1e9f9221ab0c313f8d7d735e9088a90b23255992eb2af2e743"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/type-1.json",
+      "bytes": 665,
+      "sha256": "b58e34ee8eb37b1ab73afc40e4fc9fd3dd2409ae54dba0a61a9f0d0d53e99ada"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/type-1.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-worker-20261018/type-1.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/downloaded.html",
+      "bytes": 2720,
+      "sha256": "7859c4fcff3d2b63a09093479de1a872e49f75c911cca3e37819768cc49c5ee9"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/draft-read-response.json",
+      "bytes": 3883,
+      "sha256": "c3b219b55de047e0b9d796d8eec828286091954252b20324cf2e896448b2b766"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/export-response.json",
+      "bytes": 4029,
+      "sha256": "3c2aeb91605db93b3036b3f12092840f1b5b65f24d682f7565785e5d68a98010"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/exported.html",
+      "bytes": 2720,
+      "sha256": "7859c4fcff3d2b63a09093479de1a872e49f75c911cca3e37819768cc49c5ee9"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/isolation.jsonl",
+      "bytes": 1455,
+      "sha256": "406fa01e5c1651c972aac2a46f827d799adb815ee723827d5ad5164f0d410dd1"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/journey.json",
+      "bytes": 10740,
+      "sha256": "196ebab56d3f0bb235016f9168cf282949f2876891eb516785a14c1d7f5e4cca"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/manifest.json",
+      "bytes": 7715,
+      "sha256": "c36cf932ce47ec9c4d5617bf9781e2a596d152cc40e103d2a08a6ea8995371eb"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/next.log",
+      "bytes": 4403,
+      "sha256": "aaa6c10580822f859de4dde9dd1f49d9ff86eab12a64f80d8098d5e7e366dd9e"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/playwright.log",
+      "bytes": 525,
+      "sha256": "6f799d5f0dcbf0f69639404ce89dd6d50a1e87d1e54ff021d85050625ed2b13a"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/result.json",
+      "bytes": 5818,
+      "sha256": "12e0e661722258a7588d281517cf6dd1836544c2d61d0d9a50e422f5680b5df3"
+    },
+    {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Ta0GXr/save-server-response.json",
+      "bytes": 83,
+      "sha256": "2f1365d962337890b73a05a71f423c62cce5ac922ebedeb74c5133767bcc3e14"
+    }
+  ],
+  "claims": {
+    "REQ-BOUNDARY": {
+      "status": "PASS",
+      "evidence": [
+        "manifest.pins",
+        "manifest.envNames",
+        "result.isolation",
+        "result.teardown",
+        "result.sourceDrift",
+        "result.outputBudget",
+        "rawLogCustody"
+      ],
+      "limits": "cooperative Node and Chromium loopback fences, not universal OS interception"
+    },
+    "REQ-JOURNEY": {
+      "status": "PASS",
+      "evidence": [
+        "journey.postCounts",
+        "journey.saveResponse",
+        "journey.draftRead",
+        "journey.missingLinkStatus",
+        "journey.traffic",
+        "rawLogCustody"
+      ],
+      "limits": "one selected local synthetic record, one browser worker, one run"
+    },
+    "REQ-JOIN": {
+      "status": "PASS",
+      "evidence": [
+        "journey.jobId",
+        "journey.versionId",
+        "journey.owner",
+        "journey.requestSha256",
+        "journey.htmlSha256",
+        "journey.link",
+        "journey.decision"
+      ],
+      "limits": "same-principal local person decision; no four-eyes claim"
+    },
+    "REQ-BYTES": {
+      "status": "PASS",
+      "evidence": [
+        "journey.htmlBytes",
+        "journey.htmlSha256",
+        "journey.savedFile",
+        "journey.downloaded",
+        "journey.exactBytes"
+      ],
+      "limits": "local synthetic HTML bytes only"
+    },
+    "REQ-RETURN": {
+      "status": "BLOCKED",
+      "evidence": [
+        "ownedPathHashes",
+        "rawLogCustody",
+        "result.teardown"
+      ],
+      "limits": "Final worker gate exhausted 3/3 on shared Root-owned handoff ninth path; Root metadata conversion, independent probe and Local review pending"
+    }
+  },
+  "claimBoundary": "Current-source synthetic loopback browser observation only. Draft remains CLIENT_SUBMITTED_UNVERIFIED and DRAFT_UNACCEPTED. No provider/evaluate/execute, external network success, real data, production, public/deploy, four-eyes or whole-R1 exit claim.",
+  "timingNote": "result.outcomes playwright durationMs is a cumulative runner timing field; use overall result.durationMs and browser-1 durationSeconds for whole invocation, and playwright.log for test timing."
+}
