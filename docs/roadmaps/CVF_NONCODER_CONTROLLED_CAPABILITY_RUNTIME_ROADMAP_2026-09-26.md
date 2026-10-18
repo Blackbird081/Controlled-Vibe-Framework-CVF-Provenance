@@ -5,14 +5,14 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.65
+Version: 2.66
 Updated: 2026-10-18
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-18
 
-**Đang ở đâu:** Recovery HTML draft trên Next/Chromium đã được nghiệm thu bounded, có giới hạn quy trình: `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-browser-local-20261018.json`. Save/tra cứu/refresh/khôi phục đúng byte, file tải trùng hash; lỗi đọc và phiên khác được kiểm. Worker và lượt Root đầu vẫn giữ kết quả lỗi gốc; bằng chứng nghiệm thu là phần đã thực thi cộng lượt chỉ đọc. Production OFF.
+**Đang ở đâu:** Source R1 tích hợp job/phiên bản, Stop, journal qua reload và quyết định người dùng đã được nghiệm thu bounded tại `bae47f9c7`: `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md`. Fixture29/29 và probe Local3/3 PASS; giới hạn quy trình/lỗi gốc được giữ. Chưa có proof Chromium cho tổ hợp source này; kết quả recovery browser cũ chỉ có giá trị tại revision đã ghi. Production OFF.
 
 | Item | Current disposition | Evidence / remaining step |
 |---|---|---|
@@ -24,12 +24,12 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** Chuẩn bị một packet thiết kế/source R1 tích hợp theo R1 Integrated HTML Job Contract: join job/phiên bản, Stop/kết quả đến muộn, unknown Save và acceptance. Chốt feasibility/SCEC, owner ghi quyết định và manifest trước dispatch; không mở tranche recovery hẹp khác. Dữ liệu thật/provider/production/public vẫn giữ.
+**Bước kế tiếp:** Một phiên app/Chromium riêng trên source đã chốt: Build một job, Save mất phản hồi, reload/reconcile đúng ID, liên kết đúng phiên bản rồi ghi quyết định của cùng chủ thể synthetic. Admission mới và manifest phải chốt trước chạy; không sửa source sản phẩm hoặc tái dùng actor/budget cũ. Dữ liệu thật/provider/production/public vẫn giữ OFF.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.
 
-Historical detail and governed evidence remain in the ledger below; this checkpoint reports the current R2C state.
+Historical detail and governed evidence remain in the ledger below; this checkpoint reports accepted R1 source and the current-source browser proof gap.
 
 ### Recovery Source Stage Admission - 2026-10-18
 
@@ -39,11 +39,11 @@ Source implementation and distinct Local fixture probe are accepted bounded: `do
 
 Disposition: CONTRACT_DEFINED_DOCUMENTARY; receiving consumer=existing Work Transfer HTML flow. Local architecture decision: retain the artifacts-domain payload owner and compose the missing job/stop/accept boundaries in one integrated R1 design. This section is the root planning contract; it creates no execution grant or runtime-readiness claim.
 
-Integrated design/source packet: `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`. Design complete; source execution held by the actual same-problem ordinal2 STOP/NO_SUCCESSOR candidate. Schema/API and exact prospective source/proof/registry manifest are locked there; no renamed chain or execution release.
+Integrated design/source packet: `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`. Design and separately admitted source implementation are accepted at `bae47f9c7`; the source chain ends at RETURN ordinal3/counters0,1,0,3. Immutable source admission and original STOP history remain in the Local source completion. This contract does not grant an app run.
 
 #### Existing owners and source limits
 
-Targeted symbol reads at `ceb878a933ae04e75cfb495ae6f876a3bfccdcbd`; these rows map selected symbols; no directory census is selected.
+Historical pre-implementation survey at `ceb878a933ae04e75cfb495ae6f876a3bfccdcbd`: the following rows and proposed behavior describe that revision. Current implementation and its limits are in the R1 Local source completion; no directory census is selected.
 
 | Concern | Source owner and verified symbol | Contract disposition |
 |---|---|---|
