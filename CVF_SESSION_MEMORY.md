@@ -35,20 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_exit_reconciled_r2_w05_offline_design`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN_ONLY R2/W05 offline admission/operation design under existing owners; role=INTERNAL_AGENT Local reviewer/planner; phase=R1_EXIT_ROUTE_DELTA_RECONCILED; decision owner=LOCAL; parked checkpoint=actual endpoint/data/writer/provider/cost/acceptance effects, production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r2_w05_operation_audit_handoff_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=boundrelease then operator manual transfer of exact2 source/design audit; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=R2_W05_AUDIT_MANUAL_HANDOFF_READY; decision owner=LOCAL; parked checkpoint=source BUILD, provider/data/store effects, production/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_exit_reconciled_r2_w05_offline_design`
-Current mode: `cvf_ncr_r1_exit_reconciled_r2_w05_offline_design`
+Current mode marker: `cvf_ncr_r2_w05_operation_audit_handoff_ready`
+Current mode: `cvf_ncr_r2_w05_operation_audit_handoff_ready`
 
-R1 UX/contract usable bounded for local synthetic; full R1 prelive/R2 not closed. Next independent offline operation design, no execution grant.
+Docs-only operation protocol audit ready for manualtransfer after actualboundrelease; no source BUILD or runtime effect.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r1_exit_reconciled_r2_w05_offline_design`
+Mode: `cvf_ncr_r2_w05_operation_audit_handoff_ready`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN_ONLY; BATCH_ID=CVF-NCR-R1-EXIT-R2-W05-20261019. R2_W05_OFFLINE_ADMISSION_DESIGN: one existing artifacts/governance operation contract before a general-receipt effect. Use docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md (Next Offline Action Contract Design Brief) and hash-bound EP. Bind selected synthetic versus prospective general receipt, configrevision/actor/input-version/destination/auth/data/secretrefs/cost/retention; locate existing durable-intent/exclusive-operation owner, deny outgoing attempt on claim/write failure; operation versus attempt/receipt identities, unknown-outcome exactlookup/no blindretry, localStop versus remoteunknown/revoke, riskR1/R0disposition, exact future source/test/dependency manifest and offline positive/negative/fault plan. Planning has sufficient authority; actual endpoint/data/writer/provider/cost/acceptance permission gates only dependent effects. No product test/app/browser/provider/env/secret/store run or read; no new runtime/SDK/host. R1UXbounded/fullR1preliveR2partial,R3R4open,R5R6deferred. GoalLocalS3/current0/counters0,0,0,0 and originalworkerS2fork/late-read/41of43FAIL; oldclarityS1current3/counters0,0,0,1; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 remain. Any future executable workorder must be concrete/released and manually transferred by operator; Root does not start worker. Provider/private-data/production/public/deployOFF.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R2_W05_OPERATION_AUDIT; BATCH_ID=CVF-NCR-R2-W05-OPERATION-AUDIT-20261019. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md after actual boundrelease PASS. One INTERNAL_AGENT75min, exact2return/EP, trackedsource/contracts readonly, full requiredGate<=3, actualreads/pins/finalgates. Source-validate12D01-D12 design criteria, compare artifactsstore/pendingSQLite/attemptquota/gateway/downstreamledger, choose concrete authenticated server producer/lookup/transport or precise held alternative; exactfutureimplementation manifest/dependencies/size and offline proofplan. Adverse complete audit may be pendingreview; Local decides semantics before any BUILD. No test creation/execution, app/browser/provider/network, env/secret/active-store access, source/policy/registry/session edits, workerstage/commit/subagents. Root does not invoke worker. Sourcefacts/designchoices/assumptions separate; late/partialreads cannot be cured by hashes/gate. SCECINITIAL0/current0/docclaim/NO_SUCCESSOR; returnS1 actualWO, canonical0to0streak1 absentnewtaskblockers, no executableproofclaim. R1UXbounded/fullR1preliveR2partial,R3R4open,R5R6deferred; GoalS3current0/counters0,0,0,0/originalfork; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 fixed. Provider/private-data/production/public/deployOFF.
 
 ## Parked Checkpoints
 
