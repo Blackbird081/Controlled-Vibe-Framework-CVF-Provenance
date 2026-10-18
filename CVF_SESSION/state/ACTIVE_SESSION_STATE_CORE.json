@@ -23,8 +23,8 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
     "workOrderSha256": "25e7480fe15f2805730384d4a884a2ef4d8f1911a79579f69fc344e041b707df"
   },
-  "currentAuthoritySyncReason": "Accepted exact9 browser material 8ab06322b43c561cce442e3869de9d82f51d812b; Local review docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 53485824b0c43e7c9b2782f33d2c347962f90ec864d7446131ac6c66dfa2545c; unchanged worker evidence SHA256 9cfc0f6ee390b5168bff45afdf21a9e1dfe9bc8c715f83dadf80f1f031ad36af. Original worker BLOCKED/gates3 exhausted preserved; Root metadata conversion final-byte PASS. Worker browser1/1 plus joined distinct Root observations, original query FAIL and zero-write completion retained. Root marker-only 32414c311e92a7f087259b805c43b38719336969 is metadata only; current6 plus existing Root-owned roadmap synchronize as7 without source/effect expansion. Source RETURN3/counters0,1,0,3, browser RETURN1/counters0,0,0,0 and parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; no automatic successor. Corrective review-result binding material1=c1fd6f71a6e7e640ea096367e92c64f3e2a50e72; original browser support material9=8ab06322b43c561cce442e3869de9d82f51d812b; dedicated current6 sync only. Original receipt failures/marker adjudication retained; no runtime/test replay or P4-success promotion.",
-  "currentMode": "cvf_ncr_r1_integrated_html_job_browser_closed",
+  "currentAuthoritySyncReason": "Documentary exit/gap disposition docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md SHA256 7fc1f8cc000dfcef18f44871d14794b0d5e36a42b7059b87d39c8c00a917f089; material b45b0dd75e2568b0c6806d943523890b581baa47. Frozen browser baseline/work order retain their completed contribution authority only. Source bae47f9c7 and browser8ab06322b Local reviews/evidence unchanged; original failures retained. R1/R2 partial; one source-only R1 UX/profile admission preparation selected, no source/run release. Dedicated current6 synchronization only; all spent-chain counters and parked effects retained. Browser closure finality .cvf/runtime/ncr-r1-integrated-html-job-browser-preparation-20261018/browser-finality.json retained; no duplicate proof or P4-success promotion.",
+  "currentMode": "cvf_ncr_r1_r2_exit_gap_disposition_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_integrated_html_job_browser_dispatched",
+  "previousMode": "cvf_ncr_r1_integrated_html_job_browser_closed",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [

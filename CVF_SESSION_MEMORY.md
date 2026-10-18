@@ -35,20 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_integrated_html_job_browser_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=consume bounded browser result and prepare only R1/R2 exit/gap disposition; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=BROWSER_CLOSURE; decision owner=LOCAL; parked checkpoint=app/browser/provider/external network success/real-data/production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r1_r2_exit_gap_disposition_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=prepare fresh source-only R1 UX/profile admission from completed exit/gap disposition; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=LOCAL_DISPOSITION; decision owner=LOCAL; parked checkpoint=app/browser/provider/external network success/real-data/production/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_integrated_html_job_browser_closed`
-Current mode: `cvf_ncr_r1_integrated_html_job_browser_closed`
+Current mode marker: `cvf_ncr_r1_r2_exit_gap_disposition_closed`
+Current mode: `cvf_ncr_r1_r2_exit_gap_disposition_closed`
 
-Selected current-source synthetic browser contribution accepted with procedure limits; no fresh effect admission.
+R1/R2 exit/gap disposition complete; next source-only admission preparation selected, with no execution release.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r1_integrated_html_job_browser_closed`
+Mode: `cvf_ncr_r1_r2_exit_gap_disposition_closed`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-R1-INTEGRATED-HTML-JOB-BROWSER-20261018. Bounded browser contribution accepted at 8ab06322b43c561cce442e3869de9d82f51d812b; consume docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md before one source-derived R1/R2 exit/gap disposition. Worker browser1/1 PASS; distinct Root joined controls accepted with original FAIL and zero-write completion retained. No automatic app/browser/source successor, old actor replay or budget refill. Source RETURN3/counters0,1,0,3; browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged. App/browser/provider/external network success/real-data/production/public/deploy OFF pending fresh action-specific admission. R1/R2partial,R3/R4open,R5/R6deferred. Corrective review metadata SHA=c1fd6f71a6e7e640ea096367e92c64f3e2a50e72; original browser support material9 unchanged; no extra effects.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN_ONLY; BATCH_ID=CVF-NCR-R1-R2-EXIT-GAP-20261018. R1/R2 exit/gap disposition complete in docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md at b45b0dd75e2568b0c6806d943523890b581baa47. Next prepare one fresh action-specific source-only admission for existing Work Transfer R1 Vietnamese/profile disclosure delta; enumerate actual source/test dependencies and feasible progression before release. No worker/source/app/browser successor released; no old actor replay or budget refill. R2/W05 pre-live design follows on the exact chosen effect profile. Source RETURN3/counters0,1,0,3; browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. App/browser/provider/external network success/real-data/production/public/deploy OFF pending action-specific admission. R1/R2partial,R3/R4open,R5/R6deferred.
 
 ## Parked Checkpoints
 
