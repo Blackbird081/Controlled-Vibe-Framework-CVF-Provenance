@@ -18,13 +18,13 @@
   "corpusToKnowledgeMapReconciliationGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md",
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_UX_FOCUSED_VERIFY_2026-10-18.md",
-    "baselineSha256": "59bd2ee2efb1b367e80c243a268cbdb01665128f82a5b6b4ae05b02bfe28590d",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_FOCUSED_VERIFY_2026-10-18.md",
-    "workOrderSha256": "e9a5e4c2e2753bb068ed24c1cc9669c42f9247b2521daaaeb1e56f87736742b4"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_PRE_EFFECT_WALKTHROUGH_2026-10-18.md",
+    "baselineSha256": "dca6b5b89f82d0e60db55edaf8dc348b0dba2d10a3e33faa24ac3086623fd0d4",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_PRE_EFFECT_WALKTHROUGH_2026-10-18.md",
+    "workOrderSha256": "6c450f1a5582b2d7913eeb54182169ceab9c3b18ccffb1f4aac93d648902b719"
   },
-  "currentAuthoritySyncReason": "Local material4 2f72bbf2941547cb92414b0ff2d849d79e65ee4c; Focused verification accepted bounded at 2f72bbf2941547cb92414b0ff2d849d79e65ee4c via docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 5fd0b3e1cc4e87c9aab7a9417d56ac0bc295f47424e780774266eab2835d5659. Actual run-Qnaj9B/293.046s:6of6mobile/tablet3theme keyboard passes, all8criteria true, full Source notes visibility6,9required+2optionalimages/623799bytes,0Build/domain/browser-auth writes/effects,1fixturecallbackPOST and exact owned teardown;26pins stable, static tscPASS32.36s/strict owned2lintPASS9.922s reused,2baselinewarnings retained. Worker COMPLETE_PENDING_REVIEW/SUCCESSOR5/current0/counters0,0,0,0 retained; original return c050007b1466879c9086e3a3fb4fd10939100319268e228913efec86b3865206 archived, final documentary correction dce6ca3b000801440ba8bd2780acc50b17cbc512fc8966d00774b40db930ddc2, EP e7e24e703d8775197e19a0527008ad78a116588d1662c1fb8074cf0350aed0f3 unchanged. Knowledge/epistemic/probe applicability clarified; original full-gate/read order self-reported, not independent proof. Local sampled3existingPNG/hash-verified11; captured intake exact2 canonicalledger0issues, reviewer-return PASS after recorded Root active-envelope/enum correction; no product/browser replay. Normal91PASS; actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Next PLAN_ONLY R1 evidence disposition, Q003 internal simulation, no automatic browser/worker or effect.",
-  "currentMode": "cvf_ncr_r1_ux_focused_verify_locally_accepted",
+  "currentAuthoritySyncReason": "Material3 5818fb2672f74fc0719b70e24fc511b7c911ee55; R1 evidence disposition identifies assisted pre-effect UI explanation observation absent from8DOM/scripted6refusals/focusproof. New INITIAL0/current1 criterion, existing focusS5/current0 retained; exact2 future worker/source readonly/0Build-write, UI unfavorable findings permitted, no comprehension claim. Normal91PASS, actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Actual bound release/manual transfer only; provider/private data/production/public/deployOFF.",
+  "currentMode": "cvf_ncr_r1_pre_effect_walkthrough_handoff_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_ux_focused_verify_manual_handoff_ready",
+  "previousMode": "cvf_ncr_r1_ux_focused_verify_locally_accepted",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [
