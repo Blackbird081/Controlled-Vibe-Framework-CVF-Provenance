@@ -23,7 +23,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md",
     "workOrderSha256": "d6e3dede74176ce47b8c235ff251e7d3d99cb4601dd94541aaa33cb7ca7db1e3"
   },
-  "currentAuthoritySyncReason": "Recovery source accepted with procedure limits; synthetic fixture proof only, production OFF.",
+  "currentAuthoritySyncReason": "Recovery source material b75bf181b2c61a165cbedccda1de373d8c11f317; fixture proof only, production OFF.",
   "currentMode": "cvf_ncr_html_draft_recovery_source_accepted_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",

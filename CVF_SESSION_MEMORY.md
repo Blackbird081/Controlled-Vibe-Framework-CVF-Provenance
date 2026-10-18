@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_draft_recovery_source_accepted_bounded`; bounded sou
 
 Mode: `cvf_ncr_html_draft_recovery_source_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Recovery source accepted bounded, production OFF. Next plan isolated synthetic app/browser refresh-recovery proof from final source; no effect admitted by this projection. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred. Real-data/provider/deletion/public/deploy parked.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Material=b75bf181b2c61a165cbedccda1de373d8c11f317; source accepted, production OFF. Plan synthetic app/browser recovery proof; no runtime effect admitted. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred. Real-data/provider/deletion/public/deploy parked.
 
 ## Parked Checkpoints
 

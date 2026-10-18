@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `4f58d3270e9b80012989374d5af50f2be907170a`. Material dispatch SHA: `f0bc13812f4413e38c2058acc2065f58878a2512`; batch CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Source-only recovery implementation; local synthetic fixture profile, production OFF.
+Current HEAD recorded for this handoff: `b75bf181b2c61a165cbedccda1de373d8c11f317`. Accepted source material SHA: `b75bf181b2c61a165cbedccda1de373d8c11f317`; batch CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Source26/continuity6; synthetic fixture proof only, production OFF.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 Mode: `cvf_ncr_html_draft_recovery_source_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Recovery source accepted bounded, production OFF. Next plan isolated synthetic app/browser refresh-recovery proof from final source; no effect admitted by this projection. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred. Real-data/provider/deletion/public/deploy parked.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Material=b75bf181b2c61a165cbedccda1de373d8c11f317; source accepted, production OFF. Plan synthetic app/browser recovery proof; no runtime effect admitted. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred. Real-data/provider/deletion/public/deploy parked.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -68,13 +68,13 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
-R2C closure material b87f5111770c42418da211e52efc5529f02f078e: actual post-commit pending observations SKIPPED_NO_ELIGIBLE_CANDIDATE observed 2026-10-18T02:06:28.127873+00:00; source `.cvf/runtime/ncr-be-r2c-runtime-20261018/p4-material-observation.root.json` SHA256 `0be8108c5b2009cf9e0f60409e14c35ffd42ca9f36081783203e3db79628cf6c`. No manual collector rerun/promotion or prior7 change. M5/M10/safety/M20 retained.
+Recovery source material `b75bf181b2c61a165cbedccda1de373d8c11f317`: normal91 pre-commit PASS, actual post-commit SKIPPED_NO_ELIGIBLE_CANDIDATE. Raw `.cvf/runtime/ncr-html-draft-recovery-20261018/closure-material-commit.log` SHA256 `9a5b332ad656773ccd3e2bc93105fd699a72abce32d4d68c37d841fd42f6e544`. No manual collector rerun or parent counter change; M5/M10/safety/M20 retained.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: operator-approved source packet, roadmap and current authority align in exact9 material; actual-material-SHA continuity follows as exact6.
+Atomicity reason: exact6 records the actual accepted source material; source26 and proof bytes remain unchanged.
 
 Exact changed manifest:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -87,7 +87,7 @@ Rollback boundary: exact listed paths, no runtime replay or deletion.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: admit approved recovery source packet and exact6 continuity only; no checker or hook edits.
+Authorized guard-maintenance scope: synchronize actual accepted recovery source material in current6 only; no checker/hook/source edits.
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -110,8 +110,8 @@ Rollback boundary: exact manifest; source18/S14/Q05/R1F/R1E/R02 and original cus
 | Command or tool surface | consume sealed worker14; bounded Root source repair/regression; distinct Local reviewer probe; normal gates/commits |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | approved recovery sequence, current pair and Local Review Repair Admission |
-| Before status evidence | HEAD 123179bc44f469d6076333f2ae35ec27294c7413; exact14 worker return, stage empty |
-| After status evidence | exact6 reviewed integration; production OFF |
+| Before status evidence | clean accepted material b75bf181b2c61a165cbedccda1de373d8c11f317; normal91 PASS; no source mutation |
+| After status evidence | exact6 actual-material-SHA continuity; production OFF |
 | Diff evidence | git diff --check; exact tracked/untracked union reconciled |
 | Approval boundary | source plus isolated synthetic fixture I/O; no real-data/live effect |
 | Claim boundary | unverified saved draft recovery source only; no R1/R2 stage exit |
@@ -165,3 +165,7 @@ First bound release refused DR-06 because nextAllowedMove omitted the exact work
 ## Recovery Source Acceptance
 
 docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md; docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json. Original worker115/115 consumed at recorded scope; Root9/9, final type/lint and distinct Local probe accepted source only. Source integration26 and final actual-SHA6 remain Root-measured. No current browser/provider/runtime claim.
+
+## Recovery Final Continuity
+
+Accepted source material `b75bf181b2c61a165cbedccda1de373d8c11f317`: normal91 and actual P4 skip recorded above. Earlier pre-closure before actual-SHA sync refused only GC-020; original `.cvf/runtime/ncr-html-draft-recovery-20261018/closure-material-range.log` retained. This exact6 resolves that pending continuity condition; final material/continuity ranges are checked separately after commit. Source13 pins, original115/115 scope, Root9/9 plus auth-cache2cases/9assertions, distinct independent2/2, final type/lint and all procedure limits remain unchanged.
