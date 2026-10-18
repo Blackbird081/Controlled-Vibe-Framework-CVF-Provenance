@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8768d1f2d4a5af7e3e53edaedb18bb4944080c89`. Material `8768d1f2d4a5af7e3e53edaedb18bb4944080c89`; batch CVF-NCR-R1-UX-FOCUSED-VERIFY-20261018; immediate continuity parent 8768d1f2d4a5af7e3e53edaedb18bb4944080c89.
+Current HEAD recorded for this handoff: `2f72bbf2941547cb92414b0ff2d849d79e65ee4c`. Material `2f72bbf2941547cb92414b0ff2d849d79e65ee4c`; batch CVF-NCR-R1-UX-FOCUSED-VERIFY-20261018; immediate continuity parent 2f72bbf2941547cb92414b0ff2d849d79e65ee4c.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,38 +13,38 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Root exact current6 after material 8768d1f2d4a5af7e3e53edaedb18bb4944080c89. Pair2 only; worker exact2 return/EP, source/spec readonly; Local material4/current6 later. Manual operator transfer required. No Root app/browser/worker effect.
+Root exact current6 after material4 2f72bbf2941547cb92414b0ff2d849d79e65ee4c. Worker exact2 terminal lane released; source/spec/EP/raw fixed, return documentary correction disclosed. No new worker/app/browser; next R1/Q003 evidence disposition and R2/W05 read-only planning only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_ux_focused_verify_manual_handoff_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=actual bound release then manual operator worker transfer; role=INTERNAL_AGENT Local reviewer/dispatcher; phase=MANUAL_VERIFY_HANDOFF_READY; decision owner=LOCAL; parked checkpoint=domain/provider/nonloopback/private data/production/public/deploy; no Root worker/browser start.
+Startup acknowledged: current mode=`cvf_ncr_r1_ux_focused_verify_locally_accepted`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=R1 exit/readability evidence disposition and bounded missing-proof planning only; role=INTERNAL_AGENT Local reviewer/closer; phase=FOCUSED_UI_ACCEPTED_LOCAL; decision owner=LOCAL; parked checkpoint=domain/provider/nonloopback/private data/production/public/deploy; manual worker transfer retained.
 
 ## Current Mode
 
-`cvf_ncr_r1_ux_focused_verify_manual_handoff_ready`
+`cvf_ncr_r1_ux_focused_verify_locally_accepted`
 
-Current mode marker: `cvf_ncr_r1_ux_focused_verify_manual_handoff_ready`
-Current mode: `cvf_ncr_r1_ux_focused_verify_manual_handoff_ready`
+Current mode marker: `cvf_ncr_r1_ux_focused_verify_locally_accepted`
+Current mode: `cvf_ncr_r1_ux_focused_verify_locally_accepted`
 
-Corrected verification-only pair ready for manual transfer after bound release; no Root worker/browser.
+Finite focused UI proof accepted bounded; next evidence disposition/planning only, no automatic worker/browser.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_R1_UX_FOCUSED_VERIFY_2026-10-18.md` SHA256 `59bd2ee2efb1b367e80c243a268cbdb01665128f82a5b6b4ae05b02bfe28590d`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_FOCUSED_VERIFY_2026-10-18.md` SHA256 `e9a5e4c2e2753bb068ed24c1cc9669c42f9247b2521daaaeb1e56f87736742b4`; material 8768d1f2d4a5af7e3e53edaedb18bb4944080c89; batch CVF-NCR-R1-UX-FOCUSED-VERIFY-20261018. Local review `docs/reviews/CVF_NCR_R1_UX_FOCUSED_COMPLETION_LOCAL_COMPLETION_REVIEW_2026-10-18.md` SHA256 `10389543fa0471fff3c0d188f42c43c7e090e98303778753bdada8bd613b361b`. Corrected REWORK2/SUCCESSOR4/current1; actual bound release before manual transfer; full read/pin/pre-implementation prerequisites.
+Frozen baseline `docs/baselines/CVF_GC018_NCR_R1_UX_FOCUSED_VERIFY_2026-10-18.md` SHA256 `59bd2ee2efb1b367e80c243a268cbdb01665128f82a5b6b4ae05b02bfe28590d`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_FOCUSED_VERIFY_2026-10-18.md` SHA256 `e9a5e4c2e2753bb068ed24c1cc9669c42f9247b2521daaaeb1e56f87736742b4`; Local review `docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_LOCAL_COMPLETION_REVIEW_2026-10-18.md` SHA256 `5fd0b3e1cc4e87c9aab7a9417d56ac0bc295f47424e780774266eab2835d5659`; material4 2f72bbf2941547cb92414b0ff2d849d79e65ee4c; batch CVF-NCR-R1-UX-FOCUSED-VERIFY-20261018. Finite focused UI outcome accepted bounded with documentary limits; no whole-workflow readiness or renewed execution grant.
 
 ## Accepted NCR Evidence And Continuation
 
-Original focused worker BLOCKED/SUCCESSOR3/current4/counters0,0,0,1, partial mandatory reads, helper syntax failure before tool launch, useLang errors and both path-ineligible full gates retained byte-for-byte; zero runner/browser/run root/keyboard/images. Original full6 lint FAIL with2readonly baseline warnings; final source/spec Local tscPASS32.36s and strict owned2 lintPASS9.922s. Source focus leaf/spec accepted bounded; original return54835b71d949c376ee1a9cfe881889f0bdba8f23e5f862ef5717ce0d91cea462, EP443d2e67c5403b82ac1d511a2515d44f9a84346ac46e43088fd949cccaec5dd3. Mandatory registry3 correction adds existing lint config only; first normal hookGC051 failure retained.
+Focused verification accepted bounded at 2f72bbf2941547cb92414b0ff2d849d79e65ee4c via docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 5fd0b3e1cc4e87c9aab7a9417d56ac0bc295f47424e780774266eab2835d5659. Actual run-Qnaj9B/293.046s:6of6mobile/tablet3theme keyboard passes, all8criteria true, full Source notes visibility6,9required+2optionalimages/623799bytes,0Build/domain/browser-auth writes/effects,1fixturecallbackPOST and exact owned teardown;26pins stable, static tscPASS32.36s/strict owned2lintPASS9.922s reused,2baselinewarnings retained. Worker COMPLETE_PENDING_REVIEW/SUCCESSOR5/current0/counters0,0,0,0 retained; original return c050007b1466879c9086e3a3fb4fd10939100319268e228913efec86b3865206 archived, final documentary correction dce6ca3b000801440ba8bd2780acc50b17cbc512fc8966d00774b40db930ddc2, EP e7e24e703d8775197e19a0527008ad78a116588d1662c1fb8074cf0350aed0f3 unchanged. Knowledge/epistemic/probe applicability clarified; original full-gate/read order self-reported, not independent proof. Local sampled3existingPNG/hash-verified11; captured intake exact2 canonicalledger0issues, reviewer-return PASS after recorded Root active-envelope/enum correction; no product/browser replay.
 
-Prior repair BLOCKED/SUCCESSOR1/counters0,0,0,1/current3/two runner invocations-onebrowser/required-read omissions/failed gates retained; source36rows/6completekeyboard accepted at61ac95d1f, continuity3085c195b. Prior browser INITIAL0; component BLOCKED/INITIAL0/12of21 and3of21FAILs, Local21of21/8DOM; UX sourceRETURN1/counters0,0,0,1; integratedRETURN3/counters0,1,0,3; preUXbrowserRETURN1/counters0,0,0,0; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained.
+Original focused completion BLOCKED/SUCCESSOR3/current4/counters0,0,0,1/partialreads/useLang/full6lintFAIL/path-ineligiblegates retained; contract correction SUCCESSOR4/current1 at8768d1f2d/17d8a099b. Prior repair BLOCKED/SUCCESSOR1/current3/counters0,0,0,1/two runner invocations-onebrowser/first117byte marker retained; source36rows/6keyboard accepted61ac95d1f/3085c195b. Prior browser INITIAL0; component BLOCKED/INITIAL0/12of21 and3of21FAILs/Local21of21with8DOM; UXsourceRETURN1/counters0,0,0,1; integratedRETURN3/counters0,1,0,3; preUXbrowserRETURN1/counters0,0,0,0; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained.
 
-Corrected successor4 resolves completed-lint timeout and two dispatch-contract blockers by accepted review;4->1 canonical blocker decrease; visual proof remains. Source/spec readonly, no historical gate/read repair.
+Q003 internal pilot uses agent simulation/operator Human decisions as applicable; genuine-user research NOT_EVALUATED is not an internal R0-R3 gate. Next disposition should reuse valid UI evidence and isolate genuinely missing proof, no automatic focus rerun.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r1_ux_focused_verify_manual_handoff_ready`
+Mode: `cvf_ncr_r1_ux_focused_verify_locally_accepted`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_FOCUSED_UI_VERIFY; BATCH_ID=CVF-NCR-R1-UX-FOCUSED-VERIFY-20261018. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_FOCUSED_VERIFY_2026-10-18.md to Claude in same checkout. Pair2 8768d1f2d4a5af7e3e53edaedb18bb4944080c89 after dedicated current6 and actual bound pre-dispatch PASS; then full scoped reads/clean actual HEAD/pins/pre-implementation. Worker exact2 new return/EP only; source/spec/config/runner/registry readonly, runner validated transient restore only. SUCCESSOR4/current1/counters0,0,0,0 derives from actual3/current4 and accepted static/contract evidence; returnSUCCESSOR5, no INITIAL/reset. Reuse Local final-byte tsc/strict owned2lint only when pins/config/tool/dependency identities match; preserve2baseline hookwarnings. One60min task, one copied final pinned spec/static list<=1, one runner<=15min/retries0 after exact node/Git/PATH/3033 preflight,6mobile/tablet theme keyboard passes/9inspected required PNG<=12/16MiB,0Build/domain/auth-browser-write/effect attempts, callback-only fixture auth and owned teardown. No source/spec repair or runner retry; incomplete proof returns BLOCKED. Root later material4/current6 separate. Original focused worker BLOCKED/SUCCESSOR3/current4/counters0,0,0,1, partial mandatory reads, helper syntax failure before tool launch, useLang errors and both path-ineligible full gates retained byte-for-byte; zero runner/browser/run root/keyboard/images. Original full6 lint FAIL with2readonly baseline warnings; final source/spec Local tscPASS32.36s and strict owned2 lintPASS9.922s. Source focus leaf/spec accepted bounded; original return54835b71d949c376ee1a9cfe881889f0bdba8f23e5f862ef5717ce0d91cea462, EP443d2e67c5403b82ac1d511a2515d44f9a84346ac46e43088fd949cccaec5dd3. Mandatory registry3 correction adds existing lint config only; first normal hookGC051 failure retained. Prior repair BLOCKED/SUCCESSOR1/counters0,0,0,1/current3/two runner invocations-onebrowser/required-read omissions/failed gates retained; source36rows/6completekeyboard accepted at61ac95d1f, continuity3085c195b. Prior browser INITIAL0; component BLOCKED/INITIAL0/12of21 and3of21FAILs, Local21of21/8DOM; UX sourceRETURN1/counters0,0,0,1; integratedRETURN3/counters0,1,0,3; preUXbrowserRETURN1/counters0,0,0,0; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. R1/R2partial,R3/R4open,R5/R6deferred; sidebar/R2/W05/human-business acceptance remain separate; domain/provider/nonloopback/private data/production/public/deploy OFF.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN_ONLY; BATCH_ID=CVF-NCR-R1-UX-FOCUSED-VERIFY-20261018. Focused verification accepted bounded at 2f72bbf2941547cb92414b0ff2d849d79e65ee4c via docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 5fd0b3e1cc4e87c9aab7a9417d56ac0bc295f47424e780774266eab2835d5659. Actual run-Qnaj9B/293.046s:6of6mobile/tablet3theme keyboard passes, all8criteria true, full Source notes visibility6,9required+2optionalimages/623799bytes,0Build/domain/browser-auth writes/effects,1fixturecallbackPOST and exact owned teardown;26pins stable, static tscPASS32.36s/strict owned2lintPASS9.922s reused,2baselinewarnings retained. Worker COMPLETE_PENDING_REVIEW/SUCCESSOR5/current0/counters0,0,0,0 retained; original return c050007b1466879c9086e3a3fb4fd10939100319268e228913efec86b3865206 archived, final documentary correction dce6ca3b000801440ba8bd2780acc50b17cbc512fc8966d00774b40db930ddc2, EP e7e24e703d8775197e19a0527008ad78a116588d1662c1fb8074cf0350aed0f3 unchanged. Knowledge/epistemic/probe applicability clarified; original full-gate/read order self-reported, not independent proof. Local sampled3existingPNG/hash-verified11; captured intake exact2 canonicalledger0issues, reviewer-return PASS after recorded Root active-envelope/enum correction; no product/browser replay. Next finite roadmap move: R1 exit/copy-effect explanation evidence disposition using existing component8DOM/scripted6refusals/current actual UI evidence; identify only genuinely missing agent-simulated novice interactions and prepare bounded contract if needed, no repeated focus campaign. Q003 permits agent simulation in internal pilot; genuine-user research NOT_EVALUATED, no recruitment prerequisite for R0-R3. R2/W05 selected-route pre-live destination/data/cost/admission/unknown-outcome read-only mapping remains separate; no effect grant. Future worker instructions go to operator for manual Claude transfer; Root must not auto-invoke worker/app/browser. Original focused completion BLOCKED/SUCCESSOR3/current4/counters0,0,0,1/partialreads/useLang/full6lintFAIL/path-ineligiblegates retained; contract correction SUCCESSOR4/current1 at8768d1f2d/17d8a099b. Prior repair BLOCKED/SUCCESSOR1/current3/counters0,0,0,1/two runner invocations-onebrowser/first117byte marker retained; source36rows/6keyboard accepted61ac95d1f/3085c195b. Prior browser INITIAL0; component BLOCKED/INITIAL0/12of21 and3of21FAILs/Local21of21with8DOM; UXsourceRETURN1/counters0,0,0,1; integratedRETURN3/counters0,1,0,3; preUXbrowserRETURN1/counters0,0,0,0; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. R1/R2partial,R3/R4open,R5/R6deferred; sidebarUXQ01 separate; actual business acceptance/provider/nonloopback/private data/production/public/deploy OFF.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -73,13 +73,13 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
-Material 8768d1f2d4a5af7e3e53edaedb18bb4944080c89: normal91 PASS, actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Prior22row custody and OBS-0364c4ca2af2d214/C15 FALSE_NEGATIVE/excludedFromSuccessDenominators/seven historical blocked retained. Prior adjudication22131e9dea023093b87e159a0243a7f1fa7c7f6341f4aee9ae14237585aa529b. Inspect actual post-current6 marker/result; no manual collector or success promotion.
+Material4 2f72bbf2941547cb92414b0ff2d849d79e65ee4c: normal91PASS, actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Prior22row custody/OBS-0364c4ca2af2d214/C15 FALSE_NEGATIVE/excludedFromSuccessDenominators and seven historical blocked retained. Original adjudication22131e9dea023093b87e159a0243a7f1fa7c7f6341f4aee9ae14237585aa529b is prior evidence only. Inspect actual post-current6 marker/result, no manual collector or success promotion.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: dedicated current6 binds actual material 8768d1f2d4a5af7e3e53edaedb18bb4944080c89 and finite next move.
+Atomicity reason: dedicated current6 binds material4 and accepted finite UI outcome with next planning boundary.
 
 Exact changed manifest:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -89,11 +89,11 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: metadata6 only; source/proof/old chains separate.
+Rollback boundary: current6 only; raw proof/old chains separate.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Root exact6 session metadata only; no guard semantics change.
+Authorized guard-maintenance scope: Root exact6 session metadata; no guard semantics change.
 
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -103,27 +103,27 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: standing roadmap/reviewer continuation and necessary current6 synchronization; manual worker-transfer preference.
+Operator authorization: standing autonomous reviewer/roadmap continuation and necessary current6 synchronization, manual worker transfer retained.
 Rollback boundary: current6 only.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | INTERNAL_AGENT Local reviewer/dispatcher/session-sync; decision owner=LOCAL |
+| Actor | INTERNAL_AGENT Local reviewer/closer/session-sync; decision owner=LOCAL |
 | Provider or surface | private shared checkout |
-| Session or invocation | ncr-r1-ux-focused-dispatch-continuity-20261018 |
+| Session or invocation | ncr-r1-ux-focused-verify-local-continuity-20261018 |
 | Working directory | repository root |
-| Command or tool surface | material/pair hash binding; current6 source/generator; mandatory governance gates |
+| Command or tool surface | actual material/hash/decision binding; current6 source/generator and canonical gates |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | standing Local continuation and necessary metadata sync |
-| Before status evidence | 8768d1f2d4a5af7e3e53edaedb18bb4944080c89; git status --short = clean; clean worktree; normal91 PASS |
-| After status evidence | dedicated current6 only; no Root app/browser/worker start |
+| Allowed scope source | standing Local review and necessary metadata synchronization |
+| Before status evidence | 2f72bbf2941547cb92414b0ff2d849d79e65ee4c; git status --short = clean; clean worktree; normal91PASS |
+| After status evidence | dedicated current6 only; finite UI accepted, next PLAN_ONLY |
 | Diff evidence | git diff --name-status; git diff --check; exact6 reconciliation |
-| Approval boundary | metadata6; manual worker-transfer and parked effects retained |
-| Claim boundary | source/static or dispatch contribution only; actual visual proof absent |
+| Approval boundary | metadata6; no new browser/worker/provider effect |
+| Claim boundary | bounded focused UI outcome; no R1/R2/wholeUX/human/governance completion |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-ux-focused-dispatch-continuity-20261018 |
+| Invocation ID | ncr-r1-ux-focused-verify-local-continuity-20261018 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH exact6 |
@@ -131,7 +131,7 @@ Rollback boundary: current6 only.
 
 ## Claim Boundary
 
-Bounded source/static or prospective verification admission only. Original focused worker BLOCKED/SUCCESSOR3/current4/counters0,0,0,1, partial mandatory reads, helper syntax failure before tool launch, useLang errors and both path-ineligible full gates retained byte-for-byte; zero runner/browser/run root/keyboard/images. Original full6 lint FAIL with2readonly baseline warnings; final source/spec Local tscPASS32.36s and strict owned2 lintPASS9.922s. Source focus leaf/spec accepted bounded; original return54835b71d949c376ee1a9cfe881889f0bdba8f23e5f862ef5717ce0d91cea462, EP443d2e67c5403b82ac1d511a2515d44f9a84346ac46e43088fd949cccaec5dd3. Mandatory registry3 correction adds existing lint config only; first normal hookGC051 failure retained. No UI/worker/human/business/governance/R1-R2 completion. Provider/private data/production/public/deploy OFF.
+Focused verification accepted bounded at 2f72bbf2941547cb92414b0ff2d849d79e65ee4c via docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 5fd0b3e1cc4e87c9aab7a9417d56ac0bc295f47424e780774266eab2835d5659. Actual run-Qnaj9B/293.046s:6of6mobile/tablet3theme keyboard passes, all8criteria true, full Source notes visibility6,9required+2optionalimages/623799bytes,0Build/domain/browser-auth writes/effects,1fixturecallbackPOST and exact owned teardown;26pins stable, static tscPASS32.36s/strict owned2lintPASS9.922s reused,2baselinewarnings retained. Worker COMPLETE_PENDING_REVIEW/SUCCESSOR5/current0/counters0,0,0,0 retained; original return c050007b1466879c9086e3a3fb4fd10939100319268e228913efec86b3865206 archived, final documentary correction dce6ca3b000801440ba8bd2780acc50b17cbc512fc8966d00774b40db930ddc2, EP e7e24e703d8775197e19a0527008ad78a116588d1662c1fb8074cf0350aed0f3 unchanged. Knowledge/epistemic/probe applicability clarified; original full-gate/read order self-reported, not independent proof. Local sampled3existingPNG/hash-verified11; captured intake exact2 canonicalledger0issues, reviewer-return PASS after recorded Root active-envelope/enum correction; no product/browser replay. Original focused completion BLOCKED/SUCCESSOR3/current4/counters0,0,0,1/partialreads/useLang/full6lintFAIL/path-ineligiblegates retained; contract correction SUCCESSOR4/current1 at8768d1f2d/17d8a099b. Prior repair BLOCKED/SUCCESSOR1/current3/counters0,0,0,1/two runner invocations-onebrowser/first117byte marker retained; source36rows/6keyboard accepted61ac95d1f/3085c195b. Prior browser INITIAL0; component BLOCKED/INITIAL0/12of21 and3of21FAILs/Local21of21with8DOM; UXsourceRETURN1/counters0,0,0,1; integratedRETURN3/counters0,1,0,3; preUXbrowserRETURN1/counters0,0,0,0; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. No whole UX/accessibility/human/business/governance/R1-R2 exit; future work planning only, parked effects OFF.
 
 ## Historical Terminal Timing Disclosure - Prior Source Recovery
 
