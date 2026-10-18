@@ -5,27 +5,31 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.56
+Version: 2.57
 Updated: 2026-10-18
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-18
 
-**Current status:** Fresh S14-source R1F cap2 mechanical journey accepted bounded. Actual Local first-result proof `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json`; completion `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`. The R1F actor is spent. This is a current S14-source synthetic cap2 result with procedure findings; no final two-actor B-E claim.
+**Đang ở đâu:** R1F cap2 trên nguồn S14 đã nghiệm thu trong phạm vi kiểm thử tổng hợp; finality PASS_CLEAN_SPLIT, Root PURE10 đạt10/10. Bằng chứng Local: `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json`; báo cáo: `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`. R2C cap1 đã soạn quyền riêng có điều kiện, chưa chạy; hai actor B-E chưa được nghiệm thu chung.
 
 | Item | Current disposition | Evidence / remaining step |
 |---|---|---|
 | BE-S14 / BE-Q05 | Accepted bounded on their recorded source/control scope | Existing source release and Q05 finality retained |
+| BE-R2C | CONDITIONAL_PAIRED_CAP1_DISPATCH; RESULT_PENDING | Fresh source18 actor /root/r2c_execute, program1 actual9/26 then Root PURE10 barrier and one original cap1 D.execute only after committed bound release/freeze; no result yet |
 | BE-R1F | ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS | docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json; actual material SHA and continuity evidence recorded in active handoff |
 | BE-R01 / BE-R02 | Historical accepted / blocked-spent | Old actor outcomes retained; neither substitutes for R1F |
 | R1 / R2 | Partial | Supporting results do not close stage exits |
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Next:** Plan distinct cap1 authority after R1F committed finality; no effect admitted. Root preserves first failures including premature preparation gate and normal-commit Unicode repair. Local hard deadline was 2026-10-18T01:20:00Z; decision observed 2026-10-18T00:42:25.193875+00:00. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged; provider/real-data/deletion/public/deploy parked.
+**Bước kế tiếp:** Chốt commit/gate và envelope R2C; worker mới chạy control cap1 đúng một lần. Root kiểm tra PURE10 rồi mới cấp bước journey v1. Clock R2C mới bắt đầu00:50:14Z ngày18/10, latest launch02:12Z, worker hard02:30Z và Local hard03:00Z (tương ứng09:12/09:30/10:00 Asia/Saigon); không chuyển deadline/lượt cũ. Giữ nguyên lỗi đầu tiên và giới hạn thủ tục của R1F. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2 partial, R3/R4 open, R5/R6 deferred; provider/dữ liệu thật/xóa/public/deploy vẫn giữ.
 
-Historical detail and governed evidence remain in the ledger below; this checkpoint reports the current R1F state.
+- [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
+- [ ] BE-R02 / R2C fresh cap1 pending actual result; earlier R2B actor blocked-spent.
+
+Historical detail and governed evidence remain in the ledger below; this checkpoint reports conditional R2C dispatch after R1F acceptance.
 
 ## Admission Owner Ruling - 2026-10-15
 
@@ -47,7 +51,7 @@ are evidence quantities, not product-completion percentages.
 
 ## Current Runtime Freshness Verification
 
-Current mechanical qualification: BE-Q05 execution base `686e858929b7146c2575aa2135a5bbea6b2fdda0`, current S14 source13/adjunct5, actual cap2 controls9/26, Docker4 and separate Local PURE10. Consume the linked Q05 completion at its recorded scope. R1F has file-only preparation, with no current-source whole-journey runtime result. Historical R1E product acceptance remains tied to its older source revision; earlier control base `a3c9dad29e8720a43331260a424d00371d4da506` is historical. No new provider/live freshness is asserted.
+Current mechanical qualification: BE-Q05 execution base `686e858929b7146c2575aa2135a5bbea6b2fdda0`, current S14 source13/adjunct5, actual cap2 controls9/26, Docker4 and separate Local PURE10. Consume the linked Q05 completion at its recorded scope. R1F current-source cap2 mechanical journey is accepted bounded; R2C cap1 remains pending its own actual controls and journey. Historical R1E product acceptance remains tied to its older source revision; earlier control base `a3c9dad29e8720a43331260a424d00371d4da506` is historical. No new provider/live freshness is asserted.
 
 ### Current Bounded Browser Contribution - 2026-10-13
 

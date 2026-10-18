@@ -18,13 +18,13 @@
   "corpusToKnowledgeMapReconciliationGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md",
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md",
-    "baselineSha256": "90723c8145e023c4a9d2655c3be197e0764110817eae2f2a017469865cff0fd4",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md",
-    "workOrderSha256": "5c318d642ebb7613a99cacfba832c24089e5017f69d01dee0761c5ee5203acea"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
+    "baselineSha256": "35b1c1aed5794c0388883a0939894a3502ef54c41254fda6c6c4c0b22eac9ed8",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
+    "workOrderSha256": "eee3ca9a069d8bad433cf10f39fc60086796ae6fd83f0c0205da9f78a72baf1b"
   },
-  "currentAuthoritySyncReason": "R1F continuity first result; Fresh S14-source R1F cap2 mechanical journey accepted bounded",
-  "currentMode": "cvf_ncr_html_r1f_current_source_cap2_accepted_bounded",
+  "currentAuthoritySyncReason": "R2C fresh paired cap1 conditional material; accepted S14/Q05/R1F immutable",
+  "currentMode": "cvf_ncr_html_be_r2c_runtime_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_html_be_r1f_runtime_dispatched",
+  "previousMode": "cvf_ncr_html_r1f_current_source_cap2_accepted_bounded",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [
