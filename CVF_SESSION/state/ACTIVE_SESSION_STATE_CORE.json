@@ -18,13 +18,13 @@
   "corpusToKnowledgeMapReconciliationGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md",
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_UX_READONLY_BROWSER_2026-10-18.md",
-    "baselineSha256": "f098444795869c59aa6cce86ea255355461a07dca7e8175baa9ac68605f658d5",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_READONLY_BROWSER_2026-10-18.md",
-    "workOrderSha256": "43239097b392d131507aca1d3b860f3d6b1012875b55c2fe1131c883adb466ac"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_UX_FINDINGS_REPAIR_2026-10-18.md",
+    "baselineSha256": "db4c53ecd51ccfa569bef86e6c064fd55375a015ad015adcefeaf4beba603b8a",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_FINDINGS_REPAIR_2026-10-18.md",
+    "workOrderSha256": "3b9df894794aebbe842b3c4d95d74e59a602a7acdd09661530e47ec777e43140"
   },
-  "currentAuthoritySyncReason": "Immutable browser pair retained; material8 0d33b4f73b51e2c642744083b0168f110ca0ff33; Local review docs/reviews/CVF_NCR_R1_UX_READONLY_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 bca4b5b1944d805903139e246819cf65b7f9ebbbbd2f7c93d1e18f98ce3093c5; return SHA256 aded88c823cef41033cb4cd839d96bc45a61cf874495e08c18a9ad4aa81751cc; EP SHA256 70e94a777a6b4bcb1bd6d3dbed2bc758a77799a45d0a0d67ade616bec35d13ec. Bounded actual UI assessment12rows/3keyboard/6scriptedrefusals,0domain-write attempts; source unchanged;4 measured findings/2 unproved focus candidates. Full work-order completion/UX readiness NOT_ESTABLISHED: settled focus/border/validation visuals missing; required first reads missing/partial; three invalid activations versus singular allowance; auth prefix wider than callback-only. Worker COMPLETE_PENDING_REVIEW/PASS ledger/SCEC INITIAL0/counters0,0,0,0/CURRENT_UI_BROWSER_ASSESSMENT_MISSING preserved as original declarations, no successor transition/refill. No Root browser/test replay or source repair. Normal91 PASS; material P4 actual SKIPPED_NO_ELIGIBLE_CANDIDATE. Next PLAN_ONLY bounded existing-owner UX repair, then manual operator transfer to Claude. Prior UX source RETURN1/counters0,0,0,1; component INITIAL0/counters0,0,0,0 and original12/21,3/21 FAILs; integrated source RETURN3/counters0,1,0,3; pre-UX browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained.",
-  "currentMode": "cvf_ncr_r1_ux_browser_locally_disposed",
+  "currentAuthoritySyncReason": "New UI source-repair pair2 2bbcc70514c2be2f623936ca665a071d61444b50; source5/spec/return2 exact8 and future Local material10/current6 separate. Source owners and preimages pinned; boundary4 matches prior actual proof without replay; no product code/test/browser/worker started in preparation. Normal91 PASS; SCEC actual object1/violations0. Named44px/style/VI/skip/focus design with36rows/9keyboard/22inspectedimages and one invalid Build total. Required first-read matrix before editing, callback-only fixture auth, stable final tested revision and truthful SCEC successor required. Prior bounded browser full-completion refusal and all counters remain; no refill or R1/R2 exit. Actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Operator manually transfers to Claude only after committed current6 and actual bound release PASS; parked effects retained.",
+  "currentMode": "cvf_ncr_r1_ux_repair_claude_handoff_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_ux_browser_claude_handoff_ready",
+  "previousMode": "cvf_ncr_r1_ux_browser_locally_disposed",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [
