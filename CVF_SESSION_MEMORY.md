@@ -35,20 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_scec_owner_scope_approval_required`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one mandatory GC-049 scope decision for prepared exact4 SCEC owner change; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=PLAN; decision owner=LOCAL; parked checkpoint=operator SCEC owner-scope approval; real-data/provider/production/public/deploy.
+Startup acknowledged: current mode=`cvf_scec_root_contract_admission_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=execute approved exact4 SCEC owner work order and focused verification; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=product runtime/provider/real-data/production/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_scec_owner_scope_approval_required`
-Current mode: `cvf_ncr_scec_owner_scope_approval_required`
+Current mode marker: `cvf_scec_root_contract_admission_dispatched`
+Current mode: `cvf_scec_root_contract_admission_dispatched`
 
-Concrete SCEC owner-change scope prepared; GC-049 permission pending.
+Exact4 SCEC owner maintenance approved; product R1 source remains conditional.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_scec_owner_scope_approval_required`
+Mode: `cvf_scec_root_contract_admission_dispatched`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-SCEC-OWNER-ADMISSION-PROPOSAL-20261018. Exact4 canonical SCEC owner-change proposal: docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md, Canonical Owner Change Proposal; material 93976484d. Mandatory GC-049 operator scope approval is pending before rule/checker/helper/test changes. No repeated R1 design or Review Cost six-path maintenance. After approval: one owner-maintenance work order/worker/review/closure, then continue the requested R1 source package only on actual canonical admission. Source/runtime/provider/real-data/production/public remain unreleased; original child retained; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=IMPLEMENT; BATCH_ID=SCEC_ROOT_CONTRACT_ADMISSION. Explicit scope4 SCEC plus verification approved; execute docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_ROOT_CONTRACT_ADMISSION_2026-10-18.md under paired baseline, WORKER_MUST_NOT_COMMIT. One INTERNAL_AGENT owner worker exact6; preserve problem/counters/default STOP and prove bound root dispatch/return declarations. No product/provider/network/real-data/production/public effects. R1 source remains conditional on actual canonical admission after owner closure; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
 
 ## Parked Checkpoints
 
