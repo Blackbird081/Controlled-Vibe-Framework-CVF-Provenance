@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `742eafefa24f6d97e1e59a7bf523688b68dbccc4`. Accepted documentary material SHA: `c49e0682cc7b771847ef46e4402ed011a8c1cbbd`; batch CVF-NCR-R1-HTML-JOB-ROOT-CONTRACT-20261018. Exact7/continuity6; root planning contract only. Prior recovery source/evidence and original failures unchanged; production OFF.
+Current HEAD recorded for this handoff: `4e5feb17660412b7c2b34039d182f839df8c0f8c`. Accepted documentary material SHA: `4e5feb17660412b7c2b34039d182f839df8c0f8c`; batch CVF-NCR-R1-INTEGRATED-DESIGN-20261018. Design/schema/API/manifest complete; evaluated ordinal2 STOP candidate, no implementation release. Exact8/continuity6; historical recovery evidence and failures retained.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 Mode: `cvf_ncr_r1_integrated_design_execution_held`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-INTEGRATED-DESIGN-20261018. Integrated HTML job design/source packet complete; exact committed locator follows material. Local must resolve admissible canonical architecture disposition at the existing SCEC owner before source release. Same-problem ordinal2 candidate STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR; historical child ordinal1 retained. No repeat design, renamed INITIAL, six-path maintenance or worker execution. Production/provider/real-data/public OFF; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-INTEGRATED-DESIGN-20261018. Integrated HTML job design/source packet complete: docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md; material 4e5feb176. Local must resolve admissible canonical architecture disposition at the existing SCEC owner before source release. Same-problem ordinal2 candidate STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR; historical child ordinal1 retained. No repeat design, renamed INITIAL, six-path maintenance or worker execution. Production/provider/real-data/public OFF; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -68,17 +68,15 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
-Documentary R1 material `c49e0682cc7b771847ef46e4402ed011a8c1cbbd`: normal91 pre-commit PASS; actual post-commit SKIPPED_NO_ELIGIBLE_CANDIDATE. Raw `.cvf/runtime/ncr-r1-root-contract-20261018/material-commit.log` SHA256 `f35b1e9a2fcfb7b4b52888948274387f618440298276c3c1d7a4c9427c253eaa`. No manual collector; M5/M10/safety/M20 retained. No product/provider proof rerun.
+Documentary integrated R1 material `4e5feb17660412b7c2b34039d182f839df8c0f8c`: normal91 pre-commit PASS; actual post-commit SKIPPED_NO_ELIGIBLE_CANDIDATE. Raw `.cvf/runtime/ncr-r1-integrated-design-20261018/material-commit.log` SHA256 `5fe79b0361b6a8ebb7d1cbe22fb90e70dd6daec82c741d0cf25aedfe5a2d65ab`. No manual collector, product proof or old actor replay; M5/M10/safety/M20 retained. Initial normal-commit failure remains in material-commit-initial.log.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: exact8 current design and held execution state; stable full authorization remains in the new design baseline.
+Atomicity reason: exact6 binds the committed integrated R1 design and its held execution disposition; stable historical exact8 authorization remains in `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`.
 
 Exact changed manifest:
-- `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -86,11 +84,13 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Separate exact6 continuity authorized; preserved historical material authorization: AUTHORIZED_EXACT_MANIFEST exact7 at c49e0682cc7b771847ef46e4402ed011a8c1cbbd, limited to `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`. Rollback boundary: exact8 then6; no source/runtime mutation.
+Preserved historical material authorization: AUTHORIZED_EXACT_MANIFEST exact7 at c49e0682cc7b771847ef46e4402ed011a8c1cbbd, limited to `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Rollback boundary: exact6 only; no baseline/roadmap/source/proof mutation.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact8 documentary design plus separate exact6 actual-material continuity. No checker/product source mutation.
+Authorized guard-maintenance scope: exact6 documentary actual-material continuity only.
 
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -101,30 +101,30 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
 Operator authorization: next and standing autonomous roadmap/reviewer authority.
-Rollback boundary: exact8 then6; original source/proof and child remain intact.
+Rollback boundary: exact6; source and evaluated design candidate unchanged.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 | --- | --- |
-| Actor | Local INTERNAL_AGENT orchestrator/reviewer; decision owner=LOCAL |
+| Actor | Local INTERNAL_AGENT session-sync steward; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-r1-integrated-design-20261018 |
+| Session or invocation | ncr-r1-integrated-design-continuity-20261018 |
 | Working directory | repository root |
-| Command or tool surface | targeted source reads, two internal read-only advice tasks, design edits and canonical declaration checks |
-| Target paths | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator next and current PLAN under the R1 root contract |
-| Before status evidence | 1e1e004c7db9acce879341ec5acbaf6269885be2; clean before design |
-| After status evidence | exact8 documentary design; source release held; old source/proof untouched |
-| Diff evidence | git diff --name-status; git diff --check; exact8 manifest reconciliation |
-| Approval boundary | documentary design and current6 only |
-| Claim boundary | no source execution or readiness proof |
-| Agent type | INTERNAL_AGENT Local dispatcher/reviewer |
-| Invocation ID | ncr-r1-integrated-design-20261018 |
-| Expected manifest | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact8 |
-| Deletion or rename disposition | none; original child artifacts and failures retained |
+| Command or tool surface | actual documentary material binding; exact6 continuity and session generator |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator next and standing autonomous roadmap/reviewer authority |
+| Before status evidence | clean material 4e5feb17660412b7c2b34039d182f839df8c0f8c; normal91 PASS, actual P4 skipped no eligible candidate |
+| After status evidence | actual material bound; execution held; no source/proof mutation |
+| Diff evidence | git diff --name-status; git diff --check; exact6 reconciliation |
+| Approval boundary | continuity metadata only |
+| Claim boundary | no product implementation/test/runtime or readiness proof |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | ncr-r1-integrated-design-continuity-20261018 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact6 |
+| Deletion or rename disposition | none; old source, original failures and retired actor limits retained |
 
 ## Claim Boundary
 

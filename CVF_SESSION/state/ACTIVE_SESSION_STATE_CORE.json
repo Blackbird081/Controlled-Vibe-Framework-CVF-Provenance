@@ -23,7 +23,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md",
     "workOrderSha256": "e79ca65ab61eea5f7142d0cd29cd49fc80db9c139ae33a8f9006d06f574f3264"
   },
-  "currentAuthoritySyncReason": "Documentary integrated design docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md SHA256 ec4b408e0c58833b9749e09ce1a98a5067d373f5442952ad2992efe53581acf1; roadmap SHA256 d2550e9941b9bbfa27f8725f280416586e5055eac063585071fb875618b6136d; recovery pair evidence only; ordinal2 candidate STOP/NO_SUCCESSOR, no source execution.",
+  "currentAuthoritySyncReason": "Documentary integrated R1 material 4e5feb17660412b7c2b34039d182f839df8c0f8c; baseline docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md SHA256 ec4b408e0c58833b9749e09ce1a98a5067d373f5442952ad2992efe53581acf1; roadmap SHA256 d2550e9941b9bbfa27f8725f280416586e5055eac063585071fb875618b6136d; historical recovery pair evidence only; no execution release.",
   "currentMode": "cvf_ncr_r1_integrated_design_execution_held",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",

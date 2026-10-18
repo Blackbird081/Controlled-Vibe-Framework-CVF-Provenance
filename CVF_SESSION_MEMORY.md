@@ -48,7 +48,7 @@ Integrated design complete; no executable release. Canonical same-problem candid
 
 Mode: `cvf_ncr_r1_integrated_design_execution_held`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-INTEGRATED-DESIGN-20261018. Integrated HTML job design/source packet complete; exact committed locator follows material. Local must resolve admissible canonical architecture disposition at the existing SCEC owner before source release. Same-problem ordinal2 candidate STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR; historical child ordinal1 retained. No repeat design, renamed INITIAL, six-path maintenance or worker execution. Production/provider/real-data/public OFF; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-INTEGRATED-DESIGN-20261018. Integrated HTML job design/source packet complete: docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md; material 4e5feb176. Local must resolve admissible canonical architecture disposition at the existing SCEC owner before source release. Same-problem ordinal2 candidate STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR; historical child ordinal1 retained. No repeat design, renamed INITIAL, six-path maintenance or worker execution. Production/provider/real-data/public OFF; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
 
 ## Parked Checkpoints
 
