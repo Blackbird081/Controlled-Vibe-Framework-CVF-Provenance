@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `c49e0682cc7b771847ef46e4402ed011a8c1cbbd`. Accepted documentary material SHA: `c49e0682cc7b771847ef46e4402ed011a8c1cbbd`; batch CVF-NCR-R1-HTML-JOB-ROOT-CONTRACT-20261018. Exact7/continuity6; root planning contract only. Prior recovery source/evidence and original failures unchanged; production OFF.
+Current HEAD recorded for this handoff: `742eafefa24f6d97e1e59a7bf523688b68dbccc4`. Accepted documentary material SHA: `c49e0682cc7b771847ef46e4402ed011a8c1cbbd`; batch CVF-NCR-R1-HTML-JOB-ROOT-CONTRACT-20261018. Exact7/continuity6; root planning contract only. Prior recovery source/evidence and original failures unchanged; production OFF.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -76,55 +76,47 @@ Documentary R1 material `c49e0682cc7b771847ef46e4402ed011a8c1cbbd`: normal91 pre
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: exact6 binds actual R1 documentary material and committed next-move locator; roadmap bytes unchanged.
+Atomicity reason: preserve the already-approved exact7 material authorization after exact6 continuity replaced the active section; this corrective delta changes only the handoff.
 
 Exact changed manifest:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: exact6; no runtime replay or deletion.
+Preserved historical material authorization: AUTHORIZED_EXACT_MANIFEST exact7 at `c49e0682cc7b771847ef46e4402ed011a8c1cbbd`, from the same operator authority; immutable original permission remains valid for that material range only: `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`.
+
+Rollback boundary: current handoff-only correction; no new material/source/runtime scope is granted. Current source, root contract and generated state remain unchanged.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 documentary material-SHA continuity only; source, roadmap and proof unchanged.
+Authorized guard-maintenance scope: restore historical exact7 documentary-material authorization and current parent marker in the active handoff only; no checker, source, roadmap or generated-state change.
 
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: explicit next and standing autonomous roadmap authority.
-Rollback boundary: exact6; parent and child convergence dispositions retained.
+Operator authorization: standing autonomous roadmap/reviewer authority; original exact7 was approved in its material commit.
+Rollback boundary: handoff only; no runtime or original-evidence mutation.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT planning/steward; decision owner=LOCAL |
+| Actor | Local INTERNAL_AGENT reviewer/steward; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-r1-root-contract-continuity-20261018 |
+| Session or invocation | ncr-r1-root-contract-authorization-retention-20261018 |
 | Working directory | repository root |
-| Command or tool surface | exact6 actual documentary material binding; normal governance only |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator next and standing autonomous roadmap authority |
-| Before status evidence | clean worktree at material c49e0682cc7b771847ef46e4402ed011a8c1cbbd; normal91 PASS |
-| After status evidence | exact6 actual SHA; integrated contract remains documentary |
-| Diff evidence | git diff --name-status; git diff --check; exact6 union reconciled |
-| Approval boundary | continuity metadata only |
-| Claim boundary | no code, product test, runtime or stage-exit proof |
+| Command or tool surface | preserve historical accepted authorization; normal handoff commit and final closure checks |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Allowed scope source | same standing authority and original exact7 authorization |
+| Before status evidence | clean worktree at 742eafefa24f6d97e1e59a7bf523688b68dbccc4; material steward rejected lost current authorization carrier |
+| After status evidence | handoff-only historical authorization restored; no source/state change |
+| Diff evidence | git diff --name-status; git diff --check; exact1 reconciled |
+| Approval boundary | documentary correction only |
+| Claim boundary | current guards read active disk authorization; not a new historical content certificate |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-root-contract-continuity-20261018 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; all prior source/evidence retained |
+| Invocation ID | ncr-r1-root-contract-authorization-retention-20261018 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Manifest delta | MATCH exact1 |
+| Deletion or rename disposition | none; all originals retained |
 
 ## Claim Boundary
 
