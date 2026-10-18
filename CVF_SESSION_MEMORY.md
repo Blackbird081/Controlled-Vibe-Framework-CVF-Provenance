@@ -48,7 +48,7 @@ Concrete SCEC owner-change scope prepared; GC-049 permission pending.
 
 Mode: `cvf_ncr_scec_owner_scope_approval_required`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-SCEC-OWNER-ADMISSION-PROPOSAL-20261018. Exact4 canonical SCEC owner-change proposal prepared in the existing R1 design baseline; committed locator follows material. Mandatory GC-049 operator scope approval is pending before rule/checker/helper/test changes. No repeated R1 design or Review Cost six-path maintenance. After approval: one owner-maintenance work order/worker/review/closure, then continue the requested R1 source package only on actual canonical admission. Source/runtime/provider/real-data/production/public remain unreleased; original child retained; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-SCEC-OWNER-ADMISSION-PROPOSAL-20261018. Exact4 canonical SCEC owner-change proposal: docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md, Canonical Owner Change Proposal; material 93976484d. Mandatory GC-049 operator scope approval is pending before rule/checker/helper/test changes. No repeated R1 design or Review Cost six-path maintenance. After approval: one owner-maintenance work order/worker/review/closure, then continue the requested R1 source package only on actual canonical admission. Source/runtime/provider/real-data/production/public remain unreleased; original child retained; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
 
 ## Parked Checkpoints
 

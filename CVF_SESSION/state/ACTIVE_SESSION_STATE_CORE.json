@@ -23,7 +23,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md",
     "workOrderSha256": "e79ca65ab61eea5f7142d0cd29cd49fc80db9c139ae33a8f9006d06f574f3264"
   },
-  "currentAuthoritySyncReason": "Prepared canonical SCEC owner-change proposal in docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md SHA256 2ff7a70ebdc2ca929e5b3e4a59882b7214e6387b869e3b2ffd44fa8c436509ea; no owner/source execution authority; mandatory GC-049 scope consent pending. Closed recovery pair remains evidence only.",
+  "currentAuthoritySyncReason": "Documentary SCEC owner-scope proposal material 93976484d473d16d49fcb34b2061a9e11e52dc22; docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md SHA256 2ff7a70ebdc2ca929e5b3e4a59882b7214e6387b869e3b2ffd44fa8c436509ea; exact4 owner code/rule scope awaits explicit GC-049 consent; closed recovery pair is evidence only, no source release.",
   "currentMode": "cvf_ncr_scec_owner_scope_approval_required",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
