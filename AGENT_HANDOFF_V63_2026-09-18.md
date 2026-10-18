@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `f0bc13812f4413e38c2058acc2065f58878a2512`. Material dispatch SHA: `f0bc13812f4413e38c2058acc2065f58878a2512`; batch CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Source-only recovery implementation; local synthetic fixture profile, production OFF.
+Current HEAD recorded for this handoff: `4f58d3270e9b80012989374d5af50f2be907170a`. Material dispatch SHA: `f0bc13812f4413e38c2058acc2065f58878a2512`; batch CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Source-only recovery implementation; local synthetic fixture profile, production OFF.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Material f0bc13812f4413e38c2058acc2065f58878a2512; after committed bound release PASS, one INTERNAL_AGENT source worker implements exact14 and isolated synthetic proof; Root reviews/probes/closes. Default profile OFF; no running-app, real-data, provider, R2C replay, deletion or public/deploy effect. Parent gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md. One INTERNAL_AGENT exact14 source worker after committed bound PASS; Root probes/reviews/closes. Isolated synthetic profile only, production OFF. No R2C replay/real-data/provider/deletion/public/deploy. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged; R1/R2partial,R3/R4open,R5/R6deferred.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -116,7 +116,7 @@ Rollback boundary: exact manifest; source18/S14/Q05/R1F/R1E/R02 and original cus
 | Invocation ID | ncr-html-draft-recovery-continuity-20261018 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 continuity; source implementation pending |
+| Manifest delta | MATCH exact6 continuity correction; source implementation pending |
 | Deletion or rename disposition | none; original actors/custody immutable |
 
 
@@ -155,3 +155,7 @@ Historical 17/10 preparation and quota hold: `.cvf/runtime/ncr-be-r1f-runtime-20
 ## R2C Pre-Effect Range Repair
 
 Root retains unreleased original normal9/6 pair and refused shape preflight. A corrective exact9/6 binds quoted atomicity paths; effect ceilings, original clock, parent and source18 remain unchanged. No controls/runtime/provider program started.
+
+## Recovery Release Correction
+
+First bound release refused DR-06 because nextAllowedMove omitted the exact work-order path. Root corrects only current6 metadata; packet and source contract unchanged. Original receipt `.cvf/runtime/ncr-html-draft-recovery-20261018/bound-release.log` retained. Recheck confirms the corrected path binding; no worker/source effect preceded release.

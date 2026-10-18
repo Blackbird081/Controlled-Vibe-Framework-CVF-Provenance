@@ -23,7 +23,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md",
     "workOrderSha256": "f811cdc5f78df9e31e0f4f52df40f27730497e14687041c99ca0798367ee454d"
   },
-  "currentAuthoritySyncReason": "Recovery dispatch material f0bc13812f4413e38c2058acc2065f58878a2512; synthetic source lane only.",
+  "currentAuthoritySyncReason": "Recovery source dispatch; exact work-order path bound after DR-06 documentary correction.",
   "currentMode": "cvf_ncr_html_draft_recovery_source_dispatch",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",

@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_draft_recovery_source_dispatch`; previous mode marke
 
 Mode: `cvf_ncr_html_draft_recovery_source_dispatch`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Material f0bc13812f4413e38c2058acc2065f58878a2512; after committed bound release PASS, one INTERNAL_AGENT source worker implements exact14 and isolated synthetic proof; Root reviews/probes/closes. Default profile OFF; no running-app, real-data, provider, R2C replay, deletion or public/deploy effect. Parent gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md. One INTERNAL_AGENT exact14 source worker after committed bound PASS; Root probes/reviews/closes. Isolated synthetic profile only, production OFF. No R2C replay/real-data/provider/deletion/public/deploy. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged; R1/R2partial,R3/R4open,R5/R6deferred.
 
 ## Parked Checkpoints
 
