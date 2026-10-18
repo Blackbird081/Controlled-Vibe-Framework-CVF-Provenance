@@ -35,19 +35,19 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_draft_recovery_browser_accepted`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN remaining R1 contract gap; role=INTERNAL_AGENT Local reviewer; phase=CLOSURE; decision owner=LOCAL; parked checkpoint=real-data/provider/production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r1_html_job_contract_planned`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=integrated R1 design/source packet preparation; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=PLAN; decision owner=LOCAL; parked checkpoint=real-data/provider/production/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_draft_recovery_browser_accepted`
-Current mode: `cvf_ncr_html_draft_recovery_browser_accepted`
-`cvf_ncr_html_draft_recovery_browser_accepted`; joined synthetic proof accepted, production OFF.
+Current mode marker: `cvf_ncr_r1_html_job_contract_planned`
+Current mode: `cvf_ncr_r1_html_job_contract_planned`
+`cvf_ncr_r1_html_job_contract_planned`; R1 root planning contract defined, no executable release.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_draft_recovery_browser_accepted`
+Mode: `cvf_ncr_r1_html_job_contract_planned`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-RECOVERY-CONTRACT-FOLLOWUP-20261018. Consume docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md. Child SCEC ROOT_CONTRACT_REQUIRED/NO_SUCCESSOR. Consolidate remaining R1 job/evidence/accept/cancel contract on existing owners before any new executable packet. Synthetic browser contribution accepted with original failures; production/provider/real-data/public OFF. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. Accepted material c2ea4fe5c.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-HTML-JOB-ROOT-CONTRACT-20261018. Root contract: R1 Integrated HTML Job Contract in the current NCR roadmap; exact committed locator follows material commit. Prepare one integrated R1 design/source packet for job/version join, HTML Stop, unknown Save and explicit acceptance; settle canonical progression, synthetic writer schema/API and exact manifest before release. Recovery child ROOT_CONTRACT_REQUIRED/NO_SUCCESSOR retained; no narrow recovery successor or execution grant. Production/provider/real-data/public OFF; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
 
 ## Parked Checkpoints
 
