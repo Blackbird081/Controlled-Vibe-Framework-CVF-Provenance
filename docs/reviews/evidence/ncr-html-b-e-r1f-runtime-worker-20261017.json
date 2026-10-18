@@ -1,0 +1,472 @@
+{
+  "schemaVersion": "cvf.ncrBeR1fRuntimeWorkerEvidence@1.0.0",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "role": "INTERNAL_AGENT",
+  "phase": "RETURN",
+  "decisionOwner": "LOCAL",
+  "executionBaseHead": "84b2dc7877f95f8784e61f016f10e529699a225a",
+  "authority": {
+    "baseline": {
+      "path": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md",
+      "bytes": 28069,
+      "sha256": "644d9978d567d78a0c210ff89b0743b39d5fb901719547132e9ded87af13fa80"
+    },
+    "workOrder": {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md",
+      "bytes": 60340,
+      "sha256": "6e80ad5dc1e698731f6723f6c4e9b8379c070a2288e16b9815dc895d0c24c6f2"
+    },
+    "releasedInvocationEnvelope": {
+      "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/invocation-envelope.json",
+      "bytes": 2070,
+      "sha256": "1564864025ab43f99fbf8d7274b9caafeb6d5ad465ebae21e987eeb2edc87c35"
+    },
+    "workerPreImplementationGate": {
+      "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --base 84b2dc7877f95f8784e61f016f10e529699a225a --head HEAD --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md",
+      "status": "COMPLIANT",
+      "passCommands": 88,
+      "receiptPath": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+      "receiptBytes": 41529,
+      "receiptSha256": "555cd5a523f935edbdb67f0e93301b30d0a6abcd76322fa83e0e393ac605c9c5"
+    },
+    "rootReleaseDisposition": "LOCAL_ROOT_RELEASED_ONE_ACTOR_AFTER_REQUIRED_PINS_ADMISSION_AND_FREEZE",
+    "rootOwnedControlsBoundary": "Worker cites the released pair, raw-hash-bound invocation envelope, launch receipt, and worker pre-implementation gate. Root-owned pin/admission/oracle materials were not read by the worker."
+  },
+  "invocation": {
+    "runId": "ncr-be-worker-20261017-r1f",
+    "actor": "IMPLEMENTATION_WORKER",
+    "ordinal": 1,
+    "cap": 2,
+    "startUtc": "2026-10-18T00:03:51.856Z",
+    "endUtc": "2026-10-18T00:05:44.442Z",
+    "programExitCode": 0,
+    "timedOut": false,
+    "programElapsedSeconds": 112.406,
+    "launcherWallSeconds": 112.569,
+    "commandPrefix": [
+      "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF\\.cvf\\runtime\\ncr-be-r1f-runtime-20261017\\launch_once.py",
+      "worker"
+    ],
+    "appendedEnvelopeRawSha256": "1564864025ab43f99fbf8d7274b9caafeb6d5ad465ebae21e987eeb2edc87c35",
+    "launchReceipt": {
+      "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/launch-receipt.json",
+      "bytes": 1069,
+      "sha256": "ffa6774f1bf6b09140323b51065911183fad7d34e9c3d269a503428d0b882748"
+    },
+    "stdout": {
+      "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/launch-20261018T000351Z.stdout.log",
+      "bytes": 82,
+      "sha256": "1616bd8b1defed861b1a2c867d62bfc08d2230da2db7e2e2129ef7e361f2adbc"
+    },
+    "stderr": {
+      "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/launch-20261018T000351Z.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "spentMarker": {
+      "path": "D:/CVF_NCR_RUNTIME/custody-be-r1f-20261017/ncr-be-worker-20261017-r1f.spent.json",
+      "bytes": 229,
+      "sha256": "f2fa266a917edb76160d06b67f65f304c6b50a61774aeef8d93f345b336308df"
+    },
+    "startsMarker": {
+      "path": "D:/CVF_NCR_RUNTIME/custody-be-r1f-20261017/ncr-be-worker-20261017-r1f.starts.json",
+      "bytes": 2305,
+      "sha256": "8a323e7d1b9aa238da45f01c73d2577da4439d640ed446169f88b19690e8c4d8"
+    }
+  },
+  "runtime": {
+    "namespace": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f",
+    "custodyRoot": "D:/CVF_NCR_RUNTIME/custody-be-r1f-20261017",
+    "runnerResult": {
+      "path": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/runner-result.json",
+      "bytes": 57239,
+      "sha256": "7a881c0e9a33dbba9a7cf753e1c9defe3c0b18179e73bbb4ad92e8d3f7842f5c",
+      "ok": true,
+      "failureCount": 0,
+      "counters": {
+        "completed": 2,
+        "evaluateArrivals": 2,
+        "evaluateAttempts": 2,
+        "exports": 2
+      },
+      "providerStarts": 0,
+      "actualDataConfigStoreReads": 0
+    },
+    "rawRuntimeArtifacts": [
+      {
+        "path": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/terminal-evidence.json",
+        "bytes": 11259,
+        "sha256": "6134e7b04b23379a372014818276817bfe225d66080eb56c2c8f787ee0ed2249"
+      },
+      {
+        "path": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/browser.json",
+        "bytes": 15891,
+        "sha256": "f15acce98b5735f9c513d4174b550d1e70accba58ca8a62b383f4db3fd835448"
+      },
+      {
+        "path": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/browser-binding.json",
+        "bytes": 1409,
+        "sha256": "fc67d8b47aa173bfd584abdecc3ac4424bf098bdae1f57c94452c6b660d7b0ab"
+      },
+      {
+        "path": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/browser-fence.json",
+        "bytes": 597,
+        "sha256": "7b9b4a929128e3a7afe09d5758e7cec976e7d3ad7a07d6a6de43eca62216af72"
+      },
+      {
+        "path": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/sql-rows.json",
+        "bytes": 1348,
+        "sha256": "d050ed19f60f9efd2ea044a820606cb11aa76d97c9fdfd8b4abf2c2a771cdca8"
+      },
+      {
+        "path": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/v1-route.json",
+        "bytes": 5942,
+        "sha256": "119d749245a8db9d88c9569d6b74df7efcdb096e8f7c1a5b825f3ec993e02b40"
+      },
+      {
+        "path": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/v2-route.json",
+        "bytes": 6067,
+        "sha256": "3f5ac4fb1248fcdf26eef7c3663e1813edf1b24b8987eadfcac27fb01666a98f"
+      },
+      {
+        "path": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/v1-download.html",
+        "bytes": 3734,
+        "sha256": "a8b807e712c16aae0512bade648164554450827ae5da194865533a41ef051585"
+      },
+      {
+        "path": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/v2-download.html",
+        "bytes": 3850,
+        "sha256": "0d0dd4cee5f0e8bf5548f58f8438796ec18ccf789fd1cd8064f113fa1bd9ca25"
+      }
+    ],
+    "terminal": {
+      "evidencePath": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/terminal-evidence.json",
+      "evidenceBytes": 11259,
+      "evidenceSha256": "6134e7b04b23379a372014818276817bfe225d66080eb56c2c8f787ee0ed2249",
+      "primaryFailures": [],
+      "uncertainOperations": [],
+      "observations": {
+        "containerQuery": "ABSENT",
+        "descendantQuery": "ABSENT",
+        "listenerQuery": "ABSENT",
+        "processQuery": "ABSENT"
+      },
+      "disposalTarget": "SAFE",
+      "preAckDisposition": "ACCEPTED_RETAINED_STAGE_EVIDENCE",
+      "stageRetained": true,
+      "actualDisposal": "NOT_ATTEMPTED",
+      "actionCount": 21,
+      "acknowledgment": {
+        "canonicalOwnerPath": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/runner-result.json",
+        "jsonPointer": "/terminal/acknowledgment",
+        "write": "ACKNOWLEDGED",
+        "readBack": "MATCH",
+        "error": null
+      },
+      "child": {
+        "confirmed": true,
+        "snapshot": "READ",
+        "exit": "SUCCESS",
+        "claimMatch": true,
+        "bytes": 15891,
+        "sha256": "f15acce98b5735f9c513d4174b550d1e70accba58ca8a62b383f4db3fd835448",
+        "teardown": {
+          "contextClose": "OK",
+          "stdinDestroy": "OK"
+        }
+      }
+    },
+    "browser": {
+      "evidencePath": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/browser.json",
+      "mode": "owned-profile",
+      "bindingPath": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/browser-binding.json",
+      "bindingSha256": "fc67d8b47aa173bfd584abdecc3ac4424bf098bdae1f57c94452c6b660d7b0ab",
+      "fencePath": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/browser-fence.json",
+      "fenceSha256": "7b9b4a929128e3a7afe09d5758e7cec976e7d3ad7a07d6a6de43eca62216af72",
+      "fenceInvocations": 1,
+      "fenceVerified": true,
+      "builds": 2,
+      "exportPosts": 2,
+      "teardown": {
+        "contextClose": "OK",
+        "stdinDestroy": "OK"
+      },
+      "externalRequestsObserved": [
+        {
+          "method": "GET",
+          "host": "fonts.googleapis.com"
+        }
+      ]
+    },
+    "journey": {
+      "routes": [
+        {
+          "path": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/v1-route.json",
+          "success": true,
+          "route": "/api/artifacts/export",
+          "decision": "ALLOW",
+          "actor": "usr_3",
+          "verificationChecks": 8,
+          "verificationAllPassed": true,
+          "receiptStatus": "PRESENT",
+          "governanceState": "DRAFT_UNACCEPTED",
+          "receiptAnchor": "onboarding-synth-v1",
+          "requestId": "artifact-proof-onboarding-synth-v1-1792281937910",
+          "download": {
+            "filename": "huong-dan-nhan-vien-moi-ban-ra-soat-v1.html",
+            "bytes": 3734,
+            "sha256": "a8b807e712c16aae0512bade648164554450827ae5da194865533a41ef051585"
+          }
+        },
+        {
+          "path": "D:/CVF_NCR_RUNTIME/ncr-be-worker-20261017-r1f/custody/v2-route.json",
+          "success": true,
+          "route": "/api/artifacts/export",
+          "decision": "ALLOW",
+          "actor": "usr_3",
+          "verificationChecks": 8,
+          "verificationAllPassed": true,
+          "receiptStatus": "PRESENT",
+          "governanceState": "DRAFT_UNACCEPTED",
+          "receiptAnchor": "onboarding-synth-v2",
+          "requestId": "artifact-proof-onboarding-synth-v2-1792281940484",
+          "download": {
+            "filename": "huong-dan-nhan-vien-moi-ban-ra-soat-v2.html",
+            "bytes": 3850,
+            "sha256": "0d0dd4cee5f0e8bf5548f58f8438796ec18ccf789fd1cd8064f113fa1bd9ca25"
+          }
+        }
+      ],
+      "sqliteRows": [
+        {
+          "ordinal": 1,
+          "requestId": "artifact-proof-onboarding-synth-v1-1792281937910",
+          "blockHash": "bbdde1302a5a663e345509bce5d8305c69703e9229ea79cc3a1c3a9348c6fd7f",
+          "previousHash": "GENESIS"
+        },
+        {
+          "ordinal": 2,
+          "requestId": "artifact-proof-onboarding-synth-v2-1792281940484",
+          "blockHash": "6e61faa095fafeedd7ec9faf8f357e6dbf83dbd8a79b8071821e1bdfcf0a9085",
+          "previousHash": "bbdde1302a5a663e345509bce5d8305c69703e9229ea79cc3a1c3a9348c6fd7f"
+        }
+      ],
+      "joinDisposition": "PASS_TWO_UNIQUE_V1_V2_EXPORT_EVALUATE_DOWNLOAD_SQL_ASSOCIATIONS"
+    }
+  },
+  "proofs": {
+    "PROOF-ADMISSION": {
+      "status": "PASS",
+      "references": [
+        "released B/W raw hashes",
+        "worker pre-implementation autorun PASS receipt",
+        "raw-SHA-256-bound released invocation envelope",
+        "launch receipt with matching appended envelope SHA-256 and exit 0"
+      ],
+      "authorityBoundary": "Root owns external pins, admission and before-effect release; worker does not read private Root proof internals."
+    },
+    "PROOF-JOURNEY": {
+      "status": "PASS",
+      "references": [
+        "runner-result.json",
+        "browser.json",
+        "v1-route.json",
+        "v2-route.json",
+        "v1-download.html",
+        "v2-download.html",
+        "sql-rows.json"
+      ]
+    },
+    "PROOF-TERMINAL": {
+      "status": "PASS",
+      "references": [
+        "raw terminal-evidence.json bytes/hash",
+        "separate runner-result.json /terminal/acknowledgment",
+        "four positive ABSENT observations",
+        "confirmed child and matching browser hash/teardown",
+        "preserved start/spent markers"
+      ]
+    },
+    "PROOF-RETURN": {
+      "status": "PENDING_AUTHORIZED_FINAL_V3_RECHECK",
+      "references": [
+        "exact two worker artifact paths and unchanged HEAD/no-commit result",
+        "v1 and v2 full fast-gate invocations both exited 1; distinct immutable receipts are retained",
+        "one Root-authorized v3 full-gate invocation is required; actual result belongs to its detached receipt"
+      ]
+    }
+  },
+  "documentaryChecks": {
+    "corpusIntegrity": {
+      "command": "python governance/compat/check_corpus_completeness_report_integrity.py --base 84b2dc7877f95f8784e61f016f10e529699a225a --head HEAD --enforce",
+      "range": {
+        "base": "84b2dc7877f95f8784e61f016f10e529699a225a",
+        "head": "HEAD",
+        "includesCurrentWorkingTree": true
+      },
+      "status": "COMPLIANT",
+      "rawOutputAndTimingReceipt": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/corpus-integrity-receipt.json"
+    },
+    "workerReturnFastGate": {
+      "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md --max-return-lines 450 --max-return-bytes 64000",
+      "status": "PENDING_AUTHORIZED_FINAL_V3_RECHECK",
+      "completedInvocationCountAtPacketFreeze": 2,
+      "firstInvocation": {
+        "command": "python governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md --max-return-lines 450 --max-return-bytes 64000",
+        "status": "FAIL",
+        "exitCode": 1,
+        "elapsedSeconds": 9.92,
+        "stdoutPath": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/worker-return-fast-gate.stdout.log",
+        "stdoutBytes": 18515,
+        "stdoutSha256": "147e10a4f0595a2c457d6649713b6c00666aca895f66af4cd8fe640c1cc34de0",
+        "stderrPath": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/worker-return-fast-gate.stderr.log",
+        "stderrBytes": 0,
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "receiptPath": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/worker-return-fast-gate-receipt.json",
+        "receiptSha256": "278aa5446e6bd989adf166341d65c33e68dcce1885d30f25634726f271e908d3"
+      },
+      "authorizedFinalInvocation": {
+        "requiredOutcome": "PASS_OR_COMPLIANT",
+        "statusAtPacketFreeze": "PENDING",
+        "receiptPath": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/worker-return-fast-gate-v3-receipt.json",
+        "actualOutcomeOwner": "detached v3 receipt; exact2 packet is frozen before the v3 invocation"
+      },
+      "secondInvocation": {
+        "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md --max-return-lines 450 --max-return-bytes 64000",
+        "status": "FAIL",
+        "exitCode": 1,
+        "startedUtc": "2026-10-18T00:24:30.641Z",
+        "endedUtc": "2026-10-18T00:24:40.520Z",
+        "elapsedSeconds": 9.875,
+        "stdoutPath": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/worker-return-fast-gate-v2.stdout.log",
+        "stdoutBytes": 11565,
+        "stdoutSha256": "891b082be30839d9684078d83b9cac7ed4a8dfbb9976171cf82c53579169eb96",
+        "stderrPath": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/worker-return-fast-gate-v2.stderr.log",
+        "stderrBytes": 0,
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "receiptPath": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/worker-return-fast-gate-v2-receipt.json",
+        "receiptBytes": 2500,
+        "receiptSha256": "5a2cb518c0ca27dc4ee6c01394529b06597a2f19a653c1d240c6fc95ac286ea2",
+        "failure": "reviewer-fast governed artifact checker read-ahead: gateRunPurpose lacked a required confirmation/evidence marker"
+      }
+    }
+  },
+  "workerReturn": {
+    "path": "docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md",
+    "companionEvidencePath": "docs/reviews/evidence/ncr-html-b-e-r1f-runtime-worker-20261017.json",
+    "status": "COMPLETE_PENDING_REVIEW",
+    "commitPerformed": false,
+    "trackedWriteCount": 2,
+    "reviewerDisposition": "PENDING_LOCAL_FIRST_RESULT_REVIEW"
+  },
+  "procedureNotes": [
+    "Initial ACK interpretation looked only at the null terminal-evidence field; Root corrected the evidence owner to runner-result.json /terminal/acknowledgment. No query, file, retry or runtime action followed.",
+    "Full active state registry was read during initial preparation instead of targeted lookup; disclosed to Root and retained for reviewer awareness."
+  ],
+  "documentaryRepair": {
+    "rootAuthorization": "second bounded documentary repair plus one distinct full v3 metadata gate",
+    "firstFailureDisposition": "v1_FAIL_RETAINED_IMMUTABLY",
+    "preRepairExact2Preimages": {
+      "workerReturn": {
+        "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/first-failure-preimage/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md",
+        "bytes": 27592,
+        "sha256": "04ebf847c826a77af2c68c0d73b30761cf621f0fc12f4e49451863d6c9f77c9c"
+      },
+      "evidenceJson": {
+        "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/first-failure-preimage/ncr-html-b-e-r1f-runtime-worker-20261017.json",
+        "bytes": 13649,
+        "sha256": "b5830b1360b20bfe55c5c19cfe4d265baf39f0af073a23971fe561435c0b84b8"
+      }
+    },
+    "repairScope": [
+      "source-owned enum and reason-delimiter fields",
+      "canonical governed Internal source path and learning class/lane",
+      "rescan checker verdict punctuation mismatch",
+      "gateRunPurpose confirmation/evidence marker using Root-provided wording",
+      "top-level workerActorId and workerInvocationId from actual worker identity"
+    ],
+    "substantiveRescanPerformed": false,
+    "runtimeOrControlReplayed": false,
+    "finalGateActualOutcomeOwner": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/worker-return-fast-gate-v3-receipt.json",
+    "secondFailureDisposition": "v2_FAIL_RETAINED_IMMUTABLY",
+    "v2PreRepairExact2Preimages": {
+      "workerReturn": {
+        "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/v2-failure-preimage/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md",
+        "bytes": 29741,
+        "sha256": "8cdc6cb3a8c642fbf9d26680c2b82fb24e607dbff27f42ce8b5639d90229395d"
+      },
+      "evidenceJson": {
+        "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/v2-failure-preimage/ncr-html-b-e-r1f-runtime-worker-20261017.json",
+        "bytes": 16312,
+        "sha256": "48c31732dc4903dc0fc2cce78dc4bb2ae603705396a31c90c9a23ff5fdb0141f"
+      }
+    },
+    "secondFailure": {
+      "receiptPath": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/worker-return-fast-gate-v2-receipt.json",
+      "receiptBytes": 2500,
+      "receiptSha256": "5a2cb518c0ca27dc4ee6c01394529b06597a2f19a653c1d240c6fc95ac286ea2",
+      "stdout": {
+        "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/worker-return-fast-gate-v2.stdout.log",
+        "bytes": 11565,
+        "sha256": "891b082be30839d9684078d83b9cac7ed4a8dfbb9976171cf82c53579169eb96"
+      },
+      "stderr": {
+        "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/worker-return-fast-gate-v2.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "exitCode": 1,
+      "elapsedSeconds": 9.875,
+      "violation": "reviewer-fast governed artifact checker read-ahead: gateRunPurpose lacked a required confirmation/evidence marker"
+    }
+  },
+  "workerActorId": "/root/r1f_execute",
+  "workerInvocationId": "ncr-be-worker-20261017-r1f",
+  "rootDocumentaryCustody": {
+    "author": "/root",
+    "implementationWorkerActor": "/root/r1f_execute",
+    "phase": "ROOT_DOCUMENTARY_CUSTODY",
+    "originalWorkerReturn": {
+      "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/resume-20261018/root-closure-first-normal-failure/0.bytes",
+      "sha256": "b33e6809e5d82d0cd3f3fcd753a22175769b3b4597671dd0e679c91622a42153",
+      "bytes": 32014,
+      "originalPath": "docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md",
+      "originalSha256": "b33e6809e5d82d0cd3f3fcd753a22175769b3b4597671dd0e679c91622a42153"
+    },
+    "originalWorkerEvidence": {
+      "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/resume-20261018/root-closure-first-normal-failure/1.bytes",
+      "sha256": "a813e0ee861b07164fab99763fe556146b78d8d561c5d915ae6721e65b827095",
+      "bytes": 19455,
+      "originalPath": "docs/reviews/evidence/ncr-html-b-e-r1f-runtime-worker-20261017.json",
+      "originalSha256": "a813e0ee861b07164fab99763fe556146b78d8d561c5d915ae6721e65b827095"
+    },
+    "originalV3FullGate": {
+      "path": ".cvf/runtime/ncr-be-r1f-runtime-20261017/worker/worker-return-fast-gate-v3-receipt.json",
+      "sha256": "16401800da153ef856e23d540c5b3a3cdb34ae94732ef25d8c8ece95d53fa659"
+    },
+    "rootRepairAdmission": {
+      "path": ".cvf/runtime/ncr-r1f-root-20261018/root-custody-repair-admission.root.json",
+      "sha256": "237d08483a3a5b8b164a2cbf50b35a0ea3c3e66d8c5ba1d7c9781693d8746b7b"
+    },
+    "changedMeaning": "Parent projection stays ordinal2 and original accepted counters; no new transition or counter reset. Complete15-field nonknowledge reconciliation, no knowledge completeness claim.",
+    "runtimeChanged": false,
+    "runtimeReplayed": false,
+    "privateOracleReplayed": false,
+    "newMetadataGateOutcomeOwner": ".cvf/runtime/ncr-r1f-root-20261018/root-custody-full-gate.json",
+    "secondMetadataRepair": {
+      "admission": {
+        "path": ".cvf/runtime/ncr-r1f-root-20261018/root-custody-second-repair-admission.root.json",
+        "sha256": "9ce988fb25733032cf4a9f3935bcad2daa641d31163578fb8a14d6db08213171"
+      },
+      "previousRootMetadataGate": {
+        "path": ".cvf/runtime/ncr-r1f-root-20261018/root-custody-full-gate.json",
+        "sha256": "9938cd75187587edaff2879f1b41e82ec75df7ce45cce0c113d455ce1ff0eabc"
+      },
+      "newGateOutcomeOwner": ".cvf/runtime/ncr-r1f-root-20261018/root-custody-full-gate-v2.json",
+      "rawAuthorityCorrection": "Exact committed/frozen UTF8 LF bytes restored; no source18 or runtime change.",
+      "learningGap": "Cap2 alone leaves separate cap1 proof outside this order; explicit runtime-learning row, no invented failure."
+    }
+  }
+}

@@ -35,18 +35,18 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_be_r1f_runtime_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one R1F worker after committed bound release; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=cap1 separate; provider/real-data/deletion/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_r1f_current_source_cap2_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN distinct future cap1 authority after accepted R1F; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=cap1/retry/provider/deletion/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_be_r1f_runtime_dispatched`
-Current mode: `cvf_ncr_html_be_r1f_runtime_dispatched`; previous mode marker: `cvf_ncr_html_login_readiness_qualification_accepted_bounded`
+Current mode marker: `cvf_ncr_html_r1f_current_source_cap2_accepted_bounded`
+Current mode: `cvf_ncr_html_r1f_current_source_cap2_accepted_bounded`; previous mode marker: `cvf_ncr_html_be_r1f_runtime_dispatched`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_be_r1f_runtime_dispatched`
+Mode: `cvf_ncr_html_r1f_current_source_cap2_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017. Under `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md` and `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`, release eligible INTERNAL_AGENT worker only after normal exact9/6, bound pre-dispatch, reviewed external pins/admission/grant/envelope, clean source and worker preimplementation/scaffold. One fresh ordinal1 IMPLEMENTATION_WORKER cap2 runId ncr-be-worker-20261017-r1f via frozen launch_once/default D.execute; work900s/cleanup120s, external1080s, starts56/8, readiness4/6/2 total12, Job1/container1/web1/browser1/exports2/evaluates2/provider0/stageDeletion0. New phase prep2026-10-17T23:48Z, latestlaunch2026-10-18T00:42Z, workerhard01:00Z, Localhard01:20Z (Asia/Saigon18/10/2026); preserve old S14/Q05 clocks and original preparation/history. Q05 9/26/Docker4/PURE10/source18 accepted proof reused, not rerun; original runtime retains fresh prerequisites. Worker exact2/no commit, original terminal/full gate frozen; Root independent pre-frozen pure oracle only after actual worker terminal, exact13/6 first-result closure. Worker declared initial overbroad full-state read; procedure limit retained, no private oracle read. Old quota errors historical, fresh worker available. Historical R1E/R01 accepted and R2B/R02 blocked-spent retained; fresh cap1 separately conditional after accepted new cap2. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged. Reviewer may record bounded necessary repair/recheck with original outcomes/contradiction/gain/cost; no per-tranche confirmation. Provider/real-data/deletion/public/deploy parked. Actual R1F dispatch material anchor d11760cd06f5f46ae5a461753ab7a7acb2e88869.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017. Fresh S14-source R1F cap2 mechanical journey accepted bounded. Plan distinct future cap1 authority only after finality; no automatic effect. S14 source and Q05 qualification unchanged; R1E accepted historical BE-R01 and R02 spent blocked remain immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged.
 
 ## Parked Checkpoints
 

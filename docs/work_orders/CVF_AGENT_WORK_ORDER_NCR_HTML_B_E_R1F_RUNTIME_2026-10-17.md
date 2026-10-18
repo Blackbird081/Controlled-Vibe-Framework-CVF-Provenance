@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS
 Date: 2026-10-18
 Batch ID: CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017
 Inspection base: 34318509b8937aaa39b7a0171ddd1366e9c276ff
@@ -454,10 +454,13 @@ No fresh R1F runtime readiness has been observed. S14 source18 immutable and Q05
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: R1F pair, roadmap/current mode/raw authority hashes align before release; actual-material-SHA source6 follows separately.
+Atomicity reason: one spent R1F actor, actual first-result disposition, closed authority and session projection align in material; following actual-material-SHA continuity is exact6.
 
 Exact changed manifest:
-
+- `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-worker-20261017.json`
+- `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
@@ -467,7 +470,7 @@ Exact changed manifest:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Rollback boundary: listed metadata only; one new actor after committed bound release, no old replay.
+Rollback boundary: exact listed paths, no runtime replay or deletion.
 
 ## Source Verification Block
 
@@ -500,8 +503,12 @@ No R1F program, utility, native, Docker, browser, product or provider effect is 
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact9 conditional R1F authority/roadmap/source-generated continuity only; source18/accepted source and Q05/checker/hook bytes unchanged.
+Authorized guard-maintenance scope: close fresh R1F first result, roadmap and current6 only.
 Protected paths:
+- `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-worker-20261017.json`
+- `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`
+- `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
@@ -511,8 +518,8 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: explicit CVF-NCR R1F continuation, standing Local finite admission/reviewer stewardship.
-Rollback boundary: listed metadata only; S14/Q05 receipts and old actors/custody/parent remain immutable.
+Operator authorization: R1F current work order and standing Local first-result closure.
+Rollback boundary: exact manifest; source18/S14/Q05/R1E/R02 and original custody immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged.
 
 ## ADIF Defect Registry Disclosure
 
@@ -543,24 +550,24 @@ Resolver query: taskClass=`Work-order authoring / dispatch`, role=`dispatcher`, 
 
 | Field | Evidence |
 |---|---|
-| Actor | LOCAL INTERNAL_AGENT dispatcher/reviewer/steward |
+| Actor | LOCAL INTERNAL_AGENT reviewer/closer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017:material |
-| Working directory | D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF |
-| Command or tool surface | consume accepted Q05; fresh file identities/ADIF/scaffold; conditional authority and canonical generation; normal commits separately |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator explicit continue CVF-NCR R1F; existing finite Local technical disposition |
-| Before status evidence | HEAD 34318509b8937aaa39b7a0171ddd1366e9c276ff; clean worktree/stage; source18 and accepted Q05 immutable; R1F no effect program started |
-| After status evidence | exact9 conditional metadata; actual runtime outcome pending |
-| Diff evidence | git diff --name-status and untracked union equal exact manifest |
-| Approval boundary | one fresh cap2 original driver only after all committed bound gates/freeze/preimplementation; cap1/provider/deletion/public/deploy excluded |
-| Claim boundary | conditional R1F admission only, no current-source whole-journey outcome or AI governance efficacy |
+| Session or invocation | ncr-be-r1f-r01-material-20261018 |
+| Working directory | repository root |
+| Command or tool surface | consume frozen worker exact2 and distinct Root PURE10; metadata closure only |
+| Target paths | `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | R1F one-actor first-result and standing Local closure/steward authority |
+| Before status evidence | actual clean worktree at committed dispatch HEAD 84b2dc7877f95f8784e61f016f10e529699a225a; frozen exact2 worker return pending at Local review |
+| After status evidence | Fresh S14-source R1F cap2 mechanical journey accepted bounded; R1F grant spent |
+| Diff evidence | exact13 material manifest |
+| Approval boundary | metadata only; no effect retry, cap1, provider or deletion |
+| Claim boundary | R1F cap2 first result only, no final two-actor B-E or AI governance efficacy |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017:material |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
-| Deletion or rename disposition | none; source/old actors/raw proof/custody retained |
+| Invocation ID | ncr-be-r1f-r01-material-20261018 |
+| Expected manifest | `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact13 |
+| Deletion or rename disposition | none; preserve actual custody |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -689,3 +696,7 @@ Before effects inspect output predicates and create a return scaffold only in ig
 ## Resume Packet Provenance And Binding Status
 
 Binding disposition: CONDITIONAL_COMMITTED_BOUND_RELEASE. This ignored 2026-10-18 candidate derives from sealed v2, accepted Q05 finality and preparation receipt; v1/v2 remain unchanged. Actual admission date is 2026-10-18 Asia/Saigon; original artifact filenames and actor retain 2026-10-17 lineage. The latest launch 00:42Z leaves exactly 1080 seconds before the 01:00Z worker hard stop; 01:20Z Local hard stop is separate. Root must check current time before adoption; elapsed clock fails closed, with no retrospective grant. Today's file freshness receipt is `.cvf/runtime/ncr-be-r1f-runtime-20261017/resume-20261018/preparation.root.json` SHA256 `b39fc9b18e5507309fae25dbeb6cf06b25da4427a3f5ddc71e6f664daee6522f`: source18/immutable30, physical tools8/Chrome/module and helper3/input match, fresh namespace/custody absent, zero effect starts. ADIF and scaffold Root receipts are hash-bound above. The worker disclosed one initial overbroad active-state aggregate read; private oracle body was not read; this is a procedure limit with no proof replay. Raw freeze/pins/envelope follow committed release; they are prospective technical inputs. No gate, target import, Docker, native or provider result is claimed by this file-only packet.
+
+## Local First-Result Grant Disposition
+
+Fresh S14-source R1F cap2 mechanical journey accepted bounded. One R1F grant spent; original program/terminal and first failures preserved. No retry, cap1, provider, deletion or release repin. docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json.
