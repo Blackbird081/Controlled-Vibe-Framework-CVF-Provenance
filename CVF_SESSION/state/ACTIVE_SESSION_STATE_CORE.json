@@ -18,13 +18,13 @@
   "corpusToKnowledgeMapReconciliationGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md",
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_SCEC_ROOT_CONTRACT_ADMISSION_2026-10-18.md",
-    "baselineSha256": "207069b3b00b98b8c700d2ae31bc133a34a93d5b2a33b32d14de74db886a11de",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_ROOT_CONTRACT_ADMISSION_2026-10-18.md",
-    "workOrderSha256": "168d859af761a054d5b4729eb1c28cbd07e2502834c9da38d37c599b57dc95de"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md",
+    "baselineSha256": "91c59a09e3d1b5c46ea9d201457358eaa0cb1148b9d23613e9c6806d152e3350",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md",
+    "workOrderSha256": "0033b80613e6a70f6858a08c7fc454f3875712fbfafa395e5445c331d7f18c48"
   },
-  "currentAuthoritySyncReason": "Accepted SCEC source owner material e59618b1b7955b0ab89204e0d1444df83f97710d; completion docs/reviews/CVF_SCEC_ROOT_CONTRACT_ADMISSION_LOCAL_REVIEW_2026-10-18.md SHA256 8159447ca43c61a8fd760c842db53864e1aa43c5b3b1e653f1aebf6d6429e710. Immutable dispatch pair hashes retained; final legacy119/new18, Root23+2/package import, full final-byte return PASS. Actual product grant/candidate not yet released.",
-  "currentMode": "cvf_scec_root_contract_admission_closed",
+  "currentAuthoritySyncReason": "R1 source pair prepared after owner e59618b1b7955b0ab89204e0d1444df83f97710d and continuity 86a8e13b66b8eaac1177db6b3c50027d76c8f3a9; split closure PASS and P4 historical-marker adjudication retained. Exact22 Root grant docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_ROOT_ADMISSION_2026-10-18.md SHA256 6bd649f372f7b88e1ed5308d48575449e2ab5880b538d3ddb363371d913f8020; actual candidate and clean committed bound release required. No product source/verification run yet.",
+  "currentMode": "cvf_ncr_r1_integrated_html_job_source_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_scec_root_contract_admission_dispatched",
+  "previousMode": "cvf_scec_root_contract_admission_closed",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [

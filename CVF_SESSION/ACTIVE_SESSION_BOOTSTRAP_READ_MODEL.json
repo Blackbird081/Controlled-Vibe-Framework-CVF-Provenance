@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_scec_root_contract_admission_closed",
+  "currentMode": "cvf_ncr_r1_integrated_html_job_source_dispatched",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-INTEGRATED-HTML-JOB-SOURCE-20261018. SCEC exact4 owner maintenance accepted at e59618b1b; Local review docs/reviews/CVF_SCEC_ROOT_CONTRACT_ADMISSION_LOCAL_REVIEW_2026-10-18.md. Finalize actual R1 source baseline/work order and strict Root grant from the locked design; evaluate actual ordinal2 DISPATCH and prospective immediate RETURN through installed owner before clean bound source release. R1 worker exact22, necessary Local review gives closure23; dispatch docs3/current6 exact9, then separate continuity6. Preserve product problem/ordinals/counters and default STOP; source/in-process fixtures only. No app/provider/network/real-data/production/public/deploy; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=IMPLEMENT; BATCH_ID=CVF-NCR-R1-INTEGRATED-HTML-JOB-SOURCE-20261018. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md under immutable baseline/grant after canonical actual-candidate and clean bound pre-dispatch PASS; WORKER_MUST_NOT_COMMIT. Worker exact22 (source11/tests9/return2); source closure23 includes one Local review, current6 separately. Same product problem SUCCESSOR2/counters0,1,0,2; immediate proof return3/streak3 only, no retry/refill. No app/browser/provider/network/real-data/production/public/deploy; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_SCEC_ROOT_CONTRACT_ADMISSION_2026-10-18.md",
-    "baselineSha256": "207069b3b00b98b8c700d2ae31bc133a34a93d5b2a33b32d14de74db886a11de",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_SCEC_ROOT_CONTRACT_ADMISSION_2026-10-18.md",
-    "workOrderSha256": "168d859af761a054d5b4729eb1c28cbd07e2502834c9da38d37c599b57dc95de"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md",
+    "baselineSha256": "91c59a09e3d1b5c46ea9d201457358eaa0cb1148b9d23613e9c6806d152e3350",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md",
+    "workOrderSha256": "0033b80613e6a70f6858a08c7fc454f3875712fbfafa395e5445c331d7f18c48"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
