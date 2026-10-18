@@ -18,13 +18,13 @@
   "corpusToKnowledgeMapReconciliationGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md",
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_UX_FINDINGS_REPAIR_2026-10-18.md",
-    "baselineSha256": "db4c53ecd51ccfa569bef86e6c064fd55375a015ad015adcefeaf4beba603b8a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_FINDINGS_REPAIR_2026-10-18.md",
-    "workOrderSha256": "3b9df894794aebbe842b3c4d95d74e59a602a7acdd09661530e47ec777e43140"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_UX_FOCUSED_COMPLETION_2026-10-18.md",
+    "baselineSha256": "f312f9732991210b1f296c060631dc6183bb7ab75b068206b974cf86a1b8982f",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_FOCUSED_COMPLETION_2026-10-18.md",
+    "workOrderSha256": "cae2c067525bf03de8d4e50ea5d057f46f644037c9f09c7717b07f2165ff7018"
   },
-  "currentAuthoritySyncReason": "Immutable source-repair pair retained; material10 61ac95d1f3be78ef7bbe5aeb3aa0a7a258307c5f; Local review docs/reviews/CVF_NCR_R1_UX_FINDINGS_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 7c43000dbfadc36aa5db18fcb04544b838526e7f645e83cf1041df31c34a90d5; original worker return SHA256 e47e63f03aa7f461ff03ab99f8fbba24441d1554eb13f1f7e300d548b5ca8e13 and EP SHA256 4cde96a9f4d0926c55999d502e013c0bc960785bdc297c7cdcfab12fb353a4ec. Source/36rows/6completekeyboard contribution only; mobile3/images3 and tablet Source notes3theme focus failed. Root comment-only encoding repair; tscPASS62.922s, lint300timeout and45s debug identifies spec traversal but no lint verdict. Worker BLOCKED/STYLE,VISUAL,RETURN BLOCKED/BOUNDARY PASS; SUCCESSOR1/counters0,0,0,1/current3 blockers retained byte-identically; failed full gates1/2 and final documentary edits retained. Two runner invocations/one browser: failed first root contains117byte marker and3 directories, not empty; no Next/Chromium on first attempt. Required first-read omissions remain. Normal91 PASS, actual material P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Next PLAN_ONLY focused same-chain continuation then manual Claude transfer; no Root browser/worker, full readiness or old-chain refill.",
-  "currentMode": "cvf_ncr_r1_ux_findings_locally_disposed",
+  "currentAuthoritySyncReason": "Focused same-chain pair2 e9f618973cecdd2d1ab11650fac738a753bfd03b; worker exact4/later material6/current6 separate. Original source implementation accepted by Local review61ac95d1f, linked actual SHA/locator resolves source blocker only; new SCEC SUCCESSOR2/current2/counters0,0,0,0, actual1object/0violations. Mobile3/tablet3/full focus visibility/configured lint remain; original blocked return1/counters0,0,0,1/current3 and all failed runs/reads retained. One encoding comment and Root tscPASS; lint300/debug45 timeout identifies spec traversal, no rule/config suppression. Smaller focused input, quality gates before sole browser and git/PATH preflight fixed. No product/worker/browser execution during preparation. Normal91 PASS; actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Actual bound release follows current6, manual transfer to Claude; no stage/human/governance/public promotion.",
+  "currentMode": "cvf_ncr_r1_ux_focused_claude_handoff_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_ux_repair_claude_handoff_ready",
+  "previousMode": "cvf_ncr_r1_ux_findings_locally_disposed",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [
