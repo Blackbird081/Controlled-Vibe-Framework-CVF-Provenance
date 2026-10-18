@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `86a8e13b66b8eaac1177db6b3c50027d76c8f3a9`. R1 source dispatch material pending; batch CVF-NCR-R1-INTEGRATED-HTML-JOB-SOURCE-20261018. Accepted owner material `e59618b1b7955b0ab89204e0d1444df83f97710d`; actual source worker not released.
+Current HEAD recorded for this handoff: `1ba679d66f13937e35112c86b5b1aa91883d98e7`. Accepted R1 source dispatch material SHA: `1ba679d66f13937e35112c86b5b1aa91883d98e7`; batch CVF-NCR-R1-INTEGRATED-HTML-JOB-SOURCE-20261018. Exact9 dispatch/continuity6; source worker22 only after committed bound gate.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 Mode: `cvf_ncr_r1_integrated_html_job_source_dispatched`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=IMPLEMENT; BATCH_ID=CVF-NCR-R1-INTEGRATED-HTML-JOB-SOURCE-20261018. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md under immutable baseline/grant after canonical actual-candidate and clean bound pre-dispatch PASS; WORKER_MUST_NOT_COMMIT. Worker exact22 (source11/tests9/return2); source closure23 includes one Local review, current6 separately. Same product problem SUCCESSOR2/counters0,1,0,2; immediate proof return3/streak3 only, no retry/refill. No app/browser/provider/network/real-data/production/public/deploy; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=IMPLEMENT; BATCH_ID=CVF-NCR-R1-INTEGRATED-HTML-JOB-SOURCE-20261018. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md under immutable baseline/grant; dispatch material 1ba679d66, after canonical actual-candidate and clean bound pre-dispatch PASS; WORKER_MUST_NOT_COMMIT. Worker exact22 (source11/tests9/return2); source closure23 includes one Local review, current6 separately. Same product problem SUCCESSOR2/counters0,1,0,2; immediate proof return3/streak3 only, no retry/refill. No app/browser/provider/network/real-data/production/public/deploy; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -68,18 +68,17 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
+R1 source dispatch 1ba679d66f13937e35112c86b5b1aa91883d98e7: normal91 PASS; actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Raw `.cvf/runtime/ncr-r1-integrated-html-job-source-20261018/dispatch-commit-corrected.log` SHA256 `8b1b32f79d8bbfc11268432596a1b5f6d4f9329162b21298ae87840dec44dff2`. No manual collector. M5/M10/safety/M20 retained.
+
 Owner material e59618b1b7955b0ab89204e0d1444df83f97710d actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Owner continuity 86a8e13b66b8eaac1177db6b3c50027d76c8f3a9 actual UNSAFE_MACHINECLOSUREWHERETRUSTEDBLOCKS: observation OBS-180ac5c12daefceb accepted bounded; aggregate seven historical BLOCKED rows preserved. Local adjudication `.cvf/runtime/mfrp-p4-shadow-canary/adjudications/scec-root-contract-owner-marker-20261018.json` SHA256 `6e9879d0122cc019a5688166fcbf9f5089898fa06c167ef719e3bbc9af9c45fc`; exact verified marker removed. No manual collector or denominator promotion; M5/M10/safety/M20 retained.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: immutable source pair/grant and exact current6 must identify one bounded source release. Stable dispatch9/closure23/current6 authorization stays in the work order.
+Atomicity reason: current6 records the actual source dispatch material; stable dispatch9/source23/current6 authorization remains in the work order.
 
 Exact changed manifest:
-- `docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md`
-- `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_ROOT_ADMISSION_2026-10-18.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -87,11 +86,11 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: exact9 dispatch metadata then exact6 actual material binding; no product code in dispatch.
+Rollback boundary: exact6 only; no source/pair/grant/proof mutation.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact9 Root source dispatch metadata/current6, then exact6 actual dispatch binding.
+Authorized guard-maintenance scope: exact6 actual R1 source dispatch binding only.
 
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -101,31 +100,31 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: standing autonomous bounded R1 source continuation following explicitly approved SCEC owner scope/verification; no guard code change in this batch.
-Rollback boundary: dispatch9/current6 only; no product or owner source.
+Operator authorization: standing autonomous bounded R1 source continuation and session-sync; accepted owner scope/verification already closed.
+Rollback boundary: exact6 only; immutable source pair/grant and product source unchanged.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher/reviewer; decision owner=LOCAL |
+| Actor | Local INTERNAL_AGENT session-sync steward; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-r1-integrated-html-job-source-dispatch-20261018 |
+| Session or invocation | ncr-r1-integrated-html-job-source-dispatch-continuity-20261018 |
 | Working directory | repository root |
-| Command or tool surface | source freshness/hash reconciliation; strict grant and immutable source pair; normal dispatch gates |
-| Target paths | `docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md`; `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_ROOT_ADMISSION_2026-10-18.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | standing autonomous source R1 continuation after accepted SCEC owner; locked design and explicit scope4 verification reply |
-| Before status evidence | clean owner closure 86a8e13b66b8eaac1177db6b3c50027d76c8f3a9; source20 occupancy5 existing/15 new and raw identities reconciled |
-| After status evidence | exact9 dispatch documents/current6 prepared; worker not released until actual candidate and committed bound gate PASS |
-| Diff evidence | git diff --name-status; git diff --check; exact9 raw-byte/status reconciliation before freeze |
-| Approval boundary | source22 and isolated verification only; no app/provider or reused actor effects |
-| Claim boundary | declared root admission and source authority only; no product readiness or implementation proof |
+| Command or tool surface | actual source dispatch material binding and session generator; normal governance |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | standing autonomous R1 source continuation and immutable work-order exact6 continuity boundary |
+| Before status evidence | clean dispatch 1ba679d66f13937e35112c86b5b1aa91883d98e7; normal91 PASS; actual post-commit disposition below |
+| After status evidence | exact6 actual dispatch binding; worker release still requires committed bound pre-dispatch PASS |
+| Diff evidence | git diff --name-status; git diff --check; exact6 raw-byte reconciliation |
+| Approval boundary | current6 only; immutable BP/work-order/grant and product source unchanged |
+| Claim boundary | dispatch metadata; no implementation or runtime proof |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-integrated-html-job-source-dispatch-20261018 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md`; `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_ROOT_ADMISSION_2026-10-18.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md`; `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_ROOT_ADMISSION_2026-10-18.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
-| Deletion or rename disposition | none; immutable owner and historical chains retained |
+| Invocation ID | ncr-r1-integrated-html-job-source-dispatch-continuity-20261018 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact6 |
+| Deletion or rename disposition | none; grant/source scopes retained |
 
 ## Claim Boundary
 
