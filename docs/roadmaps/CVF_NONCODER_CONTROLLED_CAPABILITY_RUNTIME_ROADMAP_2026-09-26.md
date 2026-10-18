@@ -5,7 +5,7 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.64
+Version: 2.65
 Updated: 2026-10-18
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
@@ -38,6 +38,8 @@ Source implementation and distinct Local fixture probe are accepted bounded: `do
 ### R1 Integrated HTML Job Contract - 2026-10-18
 
 Disposition: CONTRACT_DEFINED_DOCUMENTARY; receiving consumer=existing Work Transfer HTML flow. Local architecture decision: retain the artifacts-domain payload owner and compose the missing job/stop/accept boundaries in one integrated R1 design. This section is the root planning contract; it creates no execution grant or runtime-readiness claim.
+
+Integrated design/source packet: `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`. Design complete; source execution held by the actual same-problem ordinal2 STOP/NO_SUCCESSOR candidate. Schema/API and exact prospective source/proof/registry manifest are locked there; no renamed chain or execution release.
 
 #### Existing owners and source limits
 
@@ -1083,32 +1085,32 @@ orientation packets are not refreshed by this private local edit.
 | Field | Evidence |
 |---|---|
 | applicableCheckersRead | governance/compat/check_roadmap_closure_freshness.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_governed_file_size.py; governance/compat/check_public_export_disposition.py |
-| literalTokensReviewed | unchanged top Status; documentary root contract; exact7 trace; protected current6; DEFERRED_PRIVATE_ONLY; stable SCEC child and source-only gaps; active Markdown size budget |
+| literalTokensReviewed | unchanged top Status; integrated source design; exact8 trace; protected current6; DEFERRED_PRIVATE_ONLY; stable SCEC child and source-only gaps; active Markdown size budget |
 | gateRunPurpose | confirmation of documentary routing repair and initial R1 support matrix against accepted evidence; not first discovery or new behavior proof |
 | claimBoundary | named source interfaces and recorded completion scopes only; no corpus, runtime freshness, stage-exit or durable-owner implementation claim |
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
-|---|---|
+| --- | --- |
 | Actor | Local INTERNAL_AGENT orchestrator/reviewer; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-r1-root-contract-20261018 |
+| Session or invocation | ncr-r1-integrated-design-20261018 |
 | Working directory | repository root |
-| Command or tool surface | targeted source/symbol reads; existing-roadmap integrated contract; static governance and normal commits |
-| Target paths | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator next and standing autonomous roadmap authority; current PLAN move |
-| Before status evidence | clean worktree at ceb878a933ae04e75cfb495ae6f876a3bfccdcbd; recovery child ROOT_CONTRACT_REQUIRED/NO_SUCCESSOR |
-| After status evidence | exact7 documentary plan/current continuity; product and old evidence unchanged |
-| Diff evidence | git diff --name-status; git diff --check; exact7 union reconciled |
-| Approval boundary | documentary contract and current6 only; no runtime/worker/provider effect |
-| Claim boundary | planning contract only, no execution/acceptance or stage-exit proof |
-| Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-root-contract-20261018 |
-| Expected manifest | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact7 |
-| Deletion or rename disposition | none; historical proof and retired actors retained |
+| Command or tool surface | targeted source reads, two internal read-only advice tasks, design edits and canonical declaration checks |
+| Target paths | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | operator next and current PLAN under the R1 root contract |
+| Before status evidence | 1e1e004c7db9acce879341ec5acbaf6269885be2; clean before design |
+| After status evidence | exact8 documentary design; source release held; old source/proof untouched |
+| Diff evidence | git diff --name-status; git diff --check; exact8 manifest reconciliation |
+| Approval boundary | documentary design and current6 only |
+| Claim boundary | no source execution or readiness proof |
+| Agent type | INTERNAL_AGENT Local dispatcher/reviewer |
+| Invocation ID | ncr-r1-integrated-design-20261018 |
+| Expected manifest | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact8 |
+| Deletion or rename disposition | none; original child artifacts and failures retained |
 
 ## Public Export Disposition
 

@@ -35,19 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_html_job_contract_planned`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=integrated R1 design/source packet preparation; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=PLAN; decision owner=LOCAL; parked checkpoint=real-data/provider/production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r1_integrated_design_execution_held`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=canonical architecture disposition before source release; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=PLAN; decision owner=LOCAL; parked checkpoint=real-data/provider/production/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_html_job_contract_planned`
-Current mode: `cvf_ncr_r1_html_job_contract_planned`
-`cvf_ncr_r1_html_job_contract_planned`; R1 root planning contract defined, no executable release.
+Current mode marker: `cvf_ncr_r1_integrated_design_execution_held`
+Current mode: `cvf_ncr_r1_integrated_design_execution_held`
+
+Integrated design complete; no executable release. Canonical same-problem candidate requires STOP/NO_SUCCESSOR.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r1_html_job_contract_planned`
+Mode: `cvf_ncr_r1_integrated_design_execution_held`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-HTML-JOB-ROOT-CONTRACT-20261018. Root contract: docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md, R1 Integrated HTML Job Contract; material c49e0682c. Prepare one integrated R1 design/source packet for job/version join, HTML Stop, unknown Save and explicit acceptance; settle canonical progression, synthetic writer schema/API and exact manifest before release. Recovery child ROOT_CONTRACT_REQUIRED/NO_SUCCESSOR retained; no narrow recovery successor or execution grant. Production/provider/real-data/public OFF; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-R1-INTEGRATED-DESIGN-20261018. Integrated HTML job design/source packet complete; exact committed locator follows material. Local must resolve admissible canonical architecture disposition at the existing SCEC owner before source release. Same-problem ordinal2 candidate STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR; historical child ordinal1 retained. No repeat design, renamed INITIAL, six-path maintenance or worker execution. Production/provider/real-data/public OFF; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
 
 ## Parked Checkpoints
 
