@@ -18,13 +18,13 @@
   "corpusToKnowledgeMapReconciliationGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md",
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md",
-    "baselineSha256": "28a2385af4b5585e524a7167c381da5ab3127af13c63b2563097f3b0d1eb089c",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md",
-    "workOrderSha256": "09cc23a13621e9fe81b961a3493f3388cb913f9b2db9087729ec62d3b6d1d442"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R1_UX_COMPONENT_PROOF_2026-10-18.md",
+    "baselineSha256": "2259b199b61c1a20b878820ce6c0d4f5fcaf8aaca8dc2fa2d0beb6c8b9e83432",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_COMPONENT_PROOF_2026-10-18.md",
+    "workOrderSha256": "a269b3267840aa833fe0e4a03a4e2b4b69c82e14f1360ecbf9a510fee396543d"
   },
-  "currentAuthoritySyncReason": "Immutable source pair retained; material6 fdf2daf079c427465e57498580e9d1c4cd213a2f Local review docs/reviews/CVF_NCR_R1_UX_PROFILE_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 c0915e78cfde6556def1aefe88eb2d6e31805bdb29fefba9faa41a76f77682e6; worker return SHA256 4d731ef75b42a73bb595fdf60f0bbf6a24211da4608cb9281951c74a90cbf7b2; Evidence JSON SHA256 933e734ed371a4d7edcb62fbbc4bec36a9842ddebfb663d917efc0e5104c7774. Source2/static accepted bounded with procedure limits only, worker terminal remains BLOCKED/REQ-RETURN BLOCKED, exact1/counters0,0,0,1; no third worker bound gate or source replay. Root corrected blocked metadata after normal-gate findings, retaining original return and all raw failures. Normal91 PASS at material commit; original worker compiler AMBIGUOUS/FAIL and separate Root compiler PASS plus lint0errors/2warnings consumed. Fresh proof admission preparation only; no current UI proof or whole-stage completion. Old chain counters and parked effects retained.",
-  "currentMode": "cvf_ncr_r1_ux_profile_source_locally_disposed",
+  "currentAuthoritySyncReason": "Manual worker handoff packet 268f0ba0858de868a04e65f6a51747aa96b95d0f; immutable UI-structure pair2, worker test1/return2 only, closure5/current6 separate. Normal91 PASS and one actual SCEC object/zero violations. First normal attempt failed four Root contract/literal families; original log retained and consolidated correction completed before release. No product test or worker invocation; no improved efficiency claim. Exact bound pre-dispatch after this current6 remains final release check. Operator explicitly requested work order for Claude; Local review retains final authority. Prior accepted source2/static and blocked source-worker status/counters retained separately; browser/human/governance runtime evidence not admitted.",
+  "currentMode": "cvf_ncr_r1_ux_component_claude_handoff_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_ux_profile_source_dispatch_ready",
+  "previousMode": "cvf_ncr_r1_ux_profile_source_locally_disposed",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [

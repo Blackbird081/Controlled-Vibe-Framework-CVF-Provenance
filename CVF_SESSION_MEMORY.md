@@ -35,20 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_ux_profile_source_locally_disposed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=fresh bounded component/walkthrough admission preparation only; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=SOURCE_LOCAL_DISPOSITION; decision owner=LOCAL; parked checkpoint=test/app/browser/provider/network/real-data/production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r1_ux_component_claude_handoff_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bound packet release then manual operator transfer of work order, no Root worker launch; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=MANUAL_WORKER_HANDOFF_READY; decision owner=LOCAL; parked checkpoint=actual app/browser/provider/network/real-data/production/public/deploy; assignment handoff=operator to Claude.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_ux_profile_source_locally_disposed`
-Current mode: `cvf_ncr_r1_ux_profile_source_locally_disposed`
+Current mode marker: `cvf_ncr_r1_ux_component_claude_handoff_ready`
+Current mode: `cvf_ncr_r1_ux_component_claude_handoff_ready`
 
-Local source2/static acceptance with procedure limits; blocked worker terminal retained separately. No current component/walkthrough proof.
+UI-structure proof packet prepared for manual worker handoff. No product test or worker has been started. Actual bound release check follows this dedicated current6 commit.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r1_ux_profile_source_locally_disposed`
+Mode: `cvf_ncr_r1_ux_component_claude_handoff_ready`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN_ONLY; BATCH_ID=CVF-NCR-R1-UX-PROFILE-SOURCE-20261018. Local bounded source2/static disposition at fdf2daf079c427465e57498580e9d1c4cd213a2f via docs/reviews/CVF_NCR_R1_UX_PROFILE_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md; worker terminal remains BLOCKED_WITH_REASON/REQ-RETURN BLOCKED after two failed full bound gates, with original bytes archived and Root metadata-only projection. Prepare a fresh bounded component/user-role walkthrough admission on this exact revision; cite Local acceptance and blocked return separately. No test/app/browser release yet. TypeScript Root recheck PASS and scoped lint PASS0errors/2warnings; worker TSC AMBIGUOUS then FAIL retained; no product proof rerun. New UX RETURN1/counters0,0,0,1 retains original blocker in worker SCEC; Local source decision does not rewrite it or permit worker redispatch/refill. Old source RETURN3/counters0,1,0,3, browser RETURN1/counters0,0,0,0 and parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. Next proof targets vi/en, observed-profile/generic fallback, errors, Stop/Save/review semantics, keyboard/small-screen and non-coder refusal/pre-effect understanding. R2/W05 effect-route pre-live remains open; R1/R2partial,R3/R4open,R5/R6deferred; provider/network/real-data/production/public/deploy OFF.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_UI_STRUCTURE_ONLY; BATCH_ID=CVF-NCR-R1-UX-COMPONENT-PROOF-20261018. Manual worker handoff: operator transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_COMPONENT_PROOF_2026-10-18.md to Claude in the same local checkout; Root must not invoke a worker. Pair2 material 268f0ba0858de868a04e65f6a51747aa96b95d0f; after dedicated current6 committed and actual bound pre-dispatch PASS, the selected INTERNAL_AGENT captures clean released HEAD and runs bound pre-implementation on docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_COMPONENT_PROOF_2026-10-18.md before edits. Worker test1/return2 exact3; source2/all existing tests/configs/setup read-only. One45min task starting at worker preflight; focused Vitest <=2 runs, full return <=2 with truthful blocked-then-ready sequence. Only UI-structure mock/agent-simulated DOM proof; isolated owned config/setup envDir=false without default env loader, allowlisted child env, deterministic fetch spies. No actual app/browser/auth/writer/provider/network or secrets. Root reviews returned evidence, closure exact5 then separate current6; no Root tracked mutation while worker lane active. Prior UX source Local acceptance fdf2daf07 remains separate from worker BLOCKED/REQ-RETURN BLOCKED, RETURN1/counters0,0,0,1; old source RETURN3/counters0,1,0,3, browser RETURN1/counters0,0,0,0, parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. New component DOM evidence problem INITIAL0 is distinct from prior exhausted source chain; no replay/refill or prior blocker rewrite. Browser keyboard/small-screen/full user-role and R2/W05 effects remain pending; R1/R2partial,R3/R4open,R5/R6deferred; actual app/browser/provider/real-data/production/public/deploy OFF.
 
 ## Parked Checkpoints
 
