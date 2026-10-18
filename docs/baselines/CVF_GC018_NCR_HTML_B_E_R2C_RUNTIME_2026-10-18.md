@@ -5,7 +5,7 @@ docType: baseline
 Status: DISPATCH_READY
 Date: 2026-10-18
 Batch ID: CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018
-Inspection base: d08f88760761738efe588572e97f1b294bef5a5f
+Inspection base: d807577ce7970e05890c607283ea8c8ba415f481
 Commit mode: WORKER_MUST_NOT_COMMIT
 rawMemoryReleased=false
 Decision owner: LOCAL
@@ -91,7 +91,7 @@ Rollback boundary: listed metadata only; old actor/parent and private oracles un
 | Command or tool surface | accepted R1F finality; fresh R2C file preparation/scaffold/ADIF; conditional authority and generated continuity |
 | Target paths | docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md; docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
 | Allowed scope source | operator explicit continuation; existing finite Local technical disposition |
-| Before status evidence | HEAD d08f88760761738efe588572e97f1b294bef5a5f; clean worktree/stage; S14/Q05/R1F accepted immutable; R2C zero programs |
+| Before status evidence | HEAD d807577ce7970e05890c607283ea8c8ba415f481; clean worktree/stage; S14/Q05/R1F accepted immutable; R2C zero programs |
 | After status evidence | exact9 conditional metadata; R2C actual outcome pending |
 | Diff evidence | changed set equals exact manifest |
 | Approval boundary | one fresh paired cap1 actor after committed bound release and initial external freeze |
@@ -141,15 +141,15 @@ Atomicity reason: one conditional R2C B/W, roadmap and source/generated continui
 
 Exact changed manifest:
 
-- docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md
-- docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md
-- docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md
-- AGENT_HANDOFF_V63_2026-09-18.md
-- CVF_SESSION_MEMORY.md
-- CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json
-- CVF_SESSION/state/entries/nextAllowedMove.json
-- CVF_SESSION/ACTIVE_SESSION_STATE.json
-- CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json
+- `docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
+- `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
 Rollback boundary: listed metadata only; accepted source18 and old actors remain immutable.
 
@@ -189,3 +189,7 @@ Actual R1F accepted finality SHA eea3d052c5ce1dd7e2671488aeee50bbb5565cb55bd7e5c
 ## R2C v3 Root Binding Gate
 
 Actual R1F accepted finality SHA eea3d052c5ce1dd7e2671488aeee50bbb5565cb55bd7e5c050ffe71d8ccfa069; new R2C Root clock SHA a27e559c9fb013764b61520d1056ef868144c7701b8002535def709e13e84145, file preparation SHA fc2853750f27775a61615246251e997cfb8cae4a1e6f9424ed336c32d2cd1cfe, scaffold SHA 0fb2d33c6a5ba7cfc94f2c41afe353ad4dd4cd2d680385be180228b72db48a96, ADIF SHA 5a626559004a48772527a008152a85a063d221bb78deea1c4a227c45fd4214c5. Source/program/helper hashes reviewed under Root program-review SHA 677d8ece7603d192ed7b894e091d049e5400e65d809c15c6563093e887b1d5aa. Paired control program1 actual9/26, Root PURE10 stage2 barrier, then one original cap1 D.execute. No R2C program/result claimed. Parent gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
+
+## Root Pre-Effect Range Repair
+
+Original normal exact9/6 pair 8f305e4111c30f52b42ad452fd5d2a1298dde33d / d807577ce7970e05890c607283ea8c8ba415f481 is retained but not released. First range preflight refused the unquoted atomicity manifest; Root corrected the existing declaration format without changing granted scope, source18, clock or effect ceilings. This corrective exact9 plus following actual-SHA exact6 is the release pair; both mandatory normal/range/bound gates remain required. Original attempts and raw receipts retained under .cvf/runtime/ncr-r2c-root-20261018. Zero programs have started.
