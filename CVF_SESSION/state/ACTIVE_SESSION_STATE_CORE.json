@@ -23,8 +23,8 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_COMPONENT_PROOF_2026-10-18.md",
     "workOrderSha256": "a269b3267840aa833fe0e4a03a4e2b4b69c82e14f1360ecbf9a510fee396543d"
   },
-  "currentAuthoritySyncReason": "Manual worker handoff packet 268f0ba0858de868a04e65f6a51747aa96b95d0f; immutable UI-structure pair2, worker test1/return2 only, closure5/current6 separate. Normal91 PASS and one actual SCEC object/zero violations. First normal attempt failed four Root contract/literal families; original log retained and consolidated correction completed before release. No product test or worker invocation; no improved efficiency claim. Exact bound pre-dispatch after this current6 remains final release check. Operator explicitly requested work order for Claude; Local review retains final authority. Prior accepted source2/static and blocked source-worker status/counters retained separately; browser/human/governance runtime evidence not admitted.",
-  "currentMode": "cvf_ncr_r1_ux_component_claude_handoff_ready",
+  "currentAuthoritySyncReason": "Immutable UI-proof pair retained; exact5 material 22b8a4e5094d11885a808f7851fc8cdf54e11af7; Local review docs/reviews/CVF_NCR_R1_UX_COMPONENT_PROOF_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 b6e30fc74776ca12afd83d56e33751b330b528b84c63a1e9e9971225433111fc; original worker return SHA256 705bc004ff033e7a54c3e9982d59a0e1f39464575f8066061aadddb11af6a9ab and EP SHA256 e9cd339fc5584f3682dabf13d2c4405c98deafcf3d3bf84f97151b0890941ae5. Actual reviewer check PASS21/21/8 simulated DOM rows after two-line test correction; source2 unchanged. Original worker BLOCKED/ledger BLOCKED/SCEC INITIAL0 and two failed product runs preserved; bound worker gate2 PASS consumed at original b84eab18 bytes, no third worker gate/run or full work-order fulfillment. Worker partial first reads remain procedure limits. One material/current6 sequence, normal91 PASS; P4 actual SKIPPED_NO_ELIGIBLE_CANDIDATE. Next actual-browser/user-role admission PLAN_ONLY, then manual operator transfer to Claude; no auto-worker or parked effects.",
+  "currentMode": "cvf_ncr_r1_ux_component_locally_disposed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_ux_profile_source_locally_disposed",
+  "previousMode": "cvf_ncr_r1_ux_component_claude_handoff_ready",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [
