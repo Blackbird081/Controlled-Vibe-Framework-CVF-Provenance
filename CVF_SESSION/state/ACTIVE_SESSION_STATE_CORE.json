@@ -23,8 +23,8 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md",
     "workOrderSha256": "0033b80613e6a70f6858a08c7fc454f3875712fbfafa395e5445c331d7f18c48"
   },
-  "currentAuthoritySyncReason": "Immutable R1 source dispatch material 1ba679d66f13937e35112c86b5b1aa91883d98e7; exact9/actual-material6. Pair and grant hashes current; actual dispatch/prospective return each1/0 violations. Worker release requires final committed bound pre-dispatch. Owner P4 seven historical blocks/C15 and exact-marker adjudication retained; product effects remain OFF.",
-  "currentMode": "cvf_ncr_r1_integrated_html_job_source_dispatched",
+  "currentAuthoritySyncReason": "Accepted exact23 R1 integrated HTML job source material bae47f9c745886694242c9f2acab5ce01b7e4cc0; Local review docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 4dfbc4dc40f53e8ca1779a4ba4c7347da61f36fa640951b28ee30c254bfbb674; worker evidence SHA256 92cf53f6aa950663aa8062472cfbfc615c6bb68ed4403d1b59fdf89bc0218ddd; exact9 fixtures 29/29, type/scoped lint and distinct Local probe3/3 PASS. One consolidated seven-cluster repair; original failures/temporary-fixture custody limits retained. Same product ordinal3/counters0,1,0,3; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24. No effect, whole-R1 exit, successor or retry grant. P4 seven historical blocks/C15 exclusions retained; no manual collection.",
+  "currentMode": "cvf_ncr_r1_integrated_html_job_source_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_scec_root_contract_admission_closed",
+  "previousMode": "cvf_ncr_r1_integrated_html_job_source_dispatched",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [

@@ -35,20 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_integrated_html_job_source_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=release exact22 source worker after actual admission and committed bound pre-dispatch PASS; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=app/browser/provider/network/real-data/production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r1_integrated_html_job_source_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=consume accepted source result and prepare only the next action-specific checkpoint; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=SOURCE_CLOSURE; decision owner=LOCAL; parked checkpoint=app/browser/provider/network/real-data/production/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r1_integrated_html_job_source_dispatched`
-Current mode: `cvf_ncr_r1_integrated_html_job_source_dispatched`
+Current mode marker: `cvf_ncr_r1_integrated_html_job_source_closed`
+Current mode: `cvf_ncr_r1_integrated_html_job_source_closed`
 
-R1 source-only grant and pair prepared; no worker source execution before gated release.
+Selected source tranche accepted bounded; no running-product proof or fresh effect admission.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r1_integrated_html_job_source_dispatched`
+Mode: `cvf_ncr_r1_integrated_html_job_source_closed`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=IMPLEMENT; BATCH_ID=CVF-NCR-R1-INTEGRATED-HTML-JOB-SOURCE-20261018. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md under immutable baseline/grant; dispatch material 1ba679d66, after canonical actual-candidate and clean bound pre-dispatch PASS; WORKER_MUST_NOT_COMMIT. Worker exact22 (source11/tests9/return2); source closure23 includes one Local review, current6 separately. Same product problem SUCCESSOR2/counters0,1,0,2; immediate proof return3/streak3 only, no retry/refill. No app/browser/provider/network/real-data/production/public/deploy; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-R1-INTEGRATED-HTML-JOB-SOURCE-20261018. Bounded source tranche accepted at bae47f9c7; consume docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md before proposing one fresh current-source app/browser proof checkpoint. No automatic source successor, actor replay or budget refill; product RETURN ordinal3/counters0,1,0,3. App/browser/provider/network/real-data/production/public/deploy remain OFF until action-specific admission. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred.
 
 ## Parked Checkpoints
 

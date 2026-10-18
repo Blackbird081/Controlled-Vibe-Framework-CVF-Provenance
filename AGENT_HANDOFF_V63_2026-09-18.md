@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `1ba679d66f13937e35112c86b5b1aa91883d98e7`. Accepted R1 source dispatch material SHA: `1ba679d66f13937e35112c86b5b1aa91883d98e7`; batch CVF-NCR-R1-INTEGRATED-HTML-JOB-SOURCE-20261018. Exact9 dispatch/continuity6; source worker22 only after committed bound gate.
+Current HEAD recorded for this handoff: `bae47f9c745886694242c9f2acab5ce01b7e4cc0`. Accepted R1 integrated HTML job source material SHA: `bae47f9c745886694242c9f2acab5ce01b7e4cc0`; exact23/current6 separate. Source and fixtures only; batch CVF-NCR-R1-INTEGRATED-HTML-JOB-SOURCE-20261018.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,33 +13,32 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-R1 source exact11/test9/return2 only after clean bound admission. Root owns dispatch9, independent Local review and source closure23/current6 separately. Owner maintenance closed e59618b1b7955b0ab89204e0d1444df83f97710d with continuity 86a8e13b66b8eaac1177db6b3c50027d76c8f3a9 and both split ranges PASS; original failures/procedure limits retained. No old actor or app/provider effect replay.
+Source worker22 plus one Local review accepted as exact23 at bae47f9c745886694242c9f2acab5ce01b7e4cc0. One consolidated seven-cluster source/test repair; original outcomes and procedure limits retained. Current6 records actual material separately. No source successor or app/provider effects.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_integrated_html_job_source_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=release exact22 source worker after actual admission and committed bound pre-dispatch PASS; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=app/browser/provider/network/real-data/production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r1_integrated_html_job_source_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=consume accepted source result and prepare only the next action-specific checkpoint; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=SOURCE_CLOSURE; decision owner=LOCAL; parked checkpoint=app/browser/provider/network/real-data/production/public/deploy.
 
 ## Current Mode
 
-`cvf_ncr_r1_integrated_html_job_source_dispatched`; source-only Root admission prepared, clean bound release pending.
+Current mode marker: `cvf_ncr_r1_integrated_html_job_source_closed`
+Current mode: `cvf_ncr_r1_integrated_html_job_source_closed`
+
+Selected source tranche accepted bounded; no running-product proof or fresh effect admission.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md` SHA256 `91c59a09e3d1b5c46ea9d201457358eaa0cb1148b9d23613e9c6806d152e3350`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md` SHA256 `0033b80613e6a70f6858a08c7fc454f3875712fbfafa395e5445c331d7f18c48`; immutable grant `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_ROOT_ADMISSION_2026-10-18.md` SHA256 `6bd649f372f7b88e1ed5308d48575449e2ab5880b538d3ddb363371d913f8020`. Source11+tests9 already covered by existing corpus registry; worker22, Root closure23. Source freshness and owner/P4 evidence in pair; actual candidate and committed bound release pending.
+Immutable baseline `docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md` SHA256 `91c59a09e3d1b5c46ea9d201457358eaa0cb1148b9d23613e9c6806d152e3350`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md` SHA256 `0033b80613e6a70f6858a08c7fc454f3875712fbfafa395e5445c331d7f18c48`; grant `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_ROOT_ADMISSION_2026-10-18.md` SHA256 `6bd649f372f7b88e1ed5308d48575449e2ab5880b538d3ddb363371d913f8020`. Local completion `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md` SHA256 `4dfbc4dc40f53e8ca1779a4ba4c7347da61f36fa640951b28ee30c254bfbb674`; proof `docs/reviews/evidence/ncr-r1-integrated-html-job-source-worker-20261018.json` SHA256 `92cf53f6aa950663aa8062472cfbfc615c6bb68ed4403d1b59fdf89bc0218ddd`. Pair/grant stay frozen; actual product RETURN ordinal3/counters0,1,0,3; no effect or successor grant.
 
 ## Accepted NCR Evidence And Continuation
 
-Closed history is preserved as exact raw preimage `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_BRIEF_REOPEN_2026-10-13.md`; SHA256 `8b2c763668d87f99b4d85ea2a5d7df9c0a66c3bd94790414e21c32d5de31867b`; NOT_ACTIVE_AUTHORITY, targeted lookup only.
-Latest accepted offline composition: docs/reviews/CVF_NCR_OFFLINE_JOURNEY_COMPLETION_2026-10-13.md; test-only bounded acceptance, procedure PARTIAL_WITH_REASON, production unchanged;24 model observations. All historical BLOCKED/procedure and provider/whole-job limits retained in their owners.
-Primary panel behavior independently1/1 PASS, return quality rejected; original failures preserved. Root single chrome assertion correction3/3 and actual digest supplementation resolve admission dependency. Integrated final conditional Sol proof/return validates current14; panel/source/tests frozen; no SourceR2/kernel/provider chain reopen.
-Latest direct Local clipboard feedback evidence: `docs/reviews/evidence/ncr-brief-copy-local-20261013.json`; source RED1/1 -> exact-oracle GREEN1/1,46/46/type/lint; read-only Luna review. No independent executed worker oracle or new implementation-model observation. Root procedure limitations retained.
-Finite clipboard result ordering is accepted; actual OS write cancellation, whole job/browser/backend/R3/R4 and parked effects remain unproved.
+Latest source acceptance: `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; worker exact9 fixtures 29/29, type/scoped lint; distinct Root3/3 source-bound probe. Job/request/version/decision joins, local Stop and pending-ID GET reconciliation only. Source material bae47f9c745886694242c9f2acab5ce01b7e4cc0; prior source/runtime evidence remains at its recorded revision. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and all prior STOPs retained. R1/R2partial,R3/R4open,R5/R6deferred; no whole-R1 exit.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r1_integrated_html_job_source_dispatched`
+Mode: `cvf_ncr_r1_integrated_html_job_source_closed`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=IMPLEMENT; BATCH_ID=CVF-NCR-R1-INTEGRATED-HTML-JOB-SOURCE-20261018. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_2026-10-18.md under immutable baseline/grant; dispatch material 1ba679d66, after canonical actual-candidate and clean bound pre-dispatch PASS; WORKER_MUST_NOT_COMMIT. Worker exact22 (source11/tests9/return2); source closure23 includes one Local review, current6 separately. Same product problem SUCCESSOR2/counters0,1,0,2; immediate proof return3/streak3 only, no retry/refill. No app/browser/provider/network/real-data/production/public/deploy; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-R1-INTEGRATED-HTML-JOB-SOURCE-20261018. Bounded source tranche accepted at bae47f9c7; consume docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md before proposing one fresh current-source app/browser proof checkpoint. No automatic source successor, actor replay or budget refill; product RETURN ordinal3/counters0,1,0,3. App/browser/provider/network/real-data/production/public/deploy remain OFF until action-specific admission. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -68,15 +67,15 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
-R1 source dispatch 1ba679d66f13937e35112c86b5b1aa91883d98e7: normal91 PASS; actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Raw `.cvf/runtime/ncr-r1-integrated-html-job-source-20261018/dispatch-commit-corrected.log` SHA256 `8b1b32f79d8bbfc11268432596a1b5f6d4f9329162b21298ae87840dec44dff2`. No manual collector. M5/M10/safety/M20 retained.
+Source material bae47f9c745886694242c9f2acab5ce01b7e4cc0: normal91 PASS; actual P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE. Raw `.cvf/runtime/ncr-r1-integrated-html-job-source-20261018/source-commit.log` SHA256 `a6b70980d8ee6de777e344e7fdbac88aef44f9f1c4f23cf5a8f04ff73b787047`. No manual collector; routine M5/M10/safety/M20 retained.
 
-Owner material e59618b1b7955b0ab89204e0d1444df83f97710d actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Owner continuity 86a8e13b66b8eaac1177db6b3c50027d76c8f3a9 actual UNSAFE_MACHINECLOSUREWHERETRUSTEDBLOCKS: observation OBS-180ac5c12daefceb accepted bounded; aggregate seven historical BLOCKED rows preserved. Local adjudication `.cvf/runtime/mfrp-p4-shadow-canary/adjudications/scec-root-contract-owner-marker-20261018.json` SHA256 `6e9879d0122cc019a5688166fcbf9f5089898fa06c167ef719e3bbc9af9c45fc`; exact verified marker removed. No manual collector or denominator promotion; M5/M10/safety/M20 retained.
+Prior owner observation OBS-180ac5c12daefceb and aggregate seven historical BLOCKED/C15 exclusions remain. Exact-marker adjudication `.cvf/runtime/mfrp-p4-shadow-canary/adjudications/scec-root-contract-owner-marker-20261018.json` SHA256 `6e9879d0122cc019a5688166fcbf9f5089898fa06c167ef719e3bbc9af9c45fc`; no denominator promotion. This continuity commit post-commit result is consumed after its actual execution; it is not preclaimed here.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: current6 records the actual source dispatch material; stable dispatch9/source23/current6 authorization remains in the work order.
+Atomicity reason: current6 records the actual accepted source material; exact23 source and exact6 continuity remain separate.
 
 Exact changed manifest:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -90,7 +89,7 @@ Rollback boundary: exact6 only; no source/pair/grant/proof mutation.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact6 actual R1 source dispatch binding only.
+Authorized guard-maintenance scope: exact6 accepted R1 source continuity only.
 
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -100,8 +99,8 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: standing autonomous bounded R1 source continuation and session-sync; accepted owner scope/verification already closed.
-Rollback boundary: exact6 only; immutable source pair/grant and product source unchanged.
+Operator authorization: standing autonomous bounded R1 source orchestration/session-sync; exact4 SCEC approval already closed.
+Rollback boundary: exact6 only; immutable inputs, accepted source and proof stay fixed.
 
 ## Agent Operation Trace Block
 
@@ -109,26 +108,26 @@ Rollback boundary: exact6 only; immutable source pair/grant and product source u
 |---|---|
 | Actor | Local INTERNAL_AGENT session-sync steward; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-r1-integrated-html-job-source-dispatch-continuity-20261018 |
+| Session or invocation | ncr-r1-integrated-html-job-source-closure-continuity-20261018 |
 | Working directory | repository root |
-| Command or tool surface | actual source dispatch material binding and session generator; normal governance |
+| Command or tool surface | actual accepted source material binding; session generator; normal governance |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | standing autonomous R1 source continuation and immutable work-order exact6 continuity boundary |
-| Before status evidence | clean dispatch 1ba679d66f13937e35112c86b5b1aa91883d98e7; normal91 PASS; actual post-commit disposition below |
-| After status evidence | exact6 actual dispatch binding; worker release still requires committed bound pre-dispatch PASS |
-| Diff evidence | git diff --name-status; git diff --check; exact6 raw-byte reconciliation |
-| Approval boundary | current6 only; immutable BP/work-order/grant and product source unchanged |
-| Claim boundary | dispatch metadata; no implementation or runtime proof |
+| Allowed scope source | standing R1 source orchestration and immutable exact6 continuity authorization |
+| Before status evidence | clean source material bae47f9c745886694242c9f2acab5ce01b7e4cc0; normal91 PASS; actual material post-commit disposition below |
+| After status evidence | exact6 source-only closure; no fresh effect/worker released |
+| Diff evidence | git diff --name-status; git diff --check; exact6 reconciliation |
+| Approval boundary | current6 only; immutable pair/grant and accepted source/proof untouched |
+| Claim boundary | source/isolated fixtures; no product effect or whole-R1 exit |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-integrated-html-job-source-dispatch-continuity-20261018 |
+| Invocation ID | ncr-r1-integrated-html-job-source-closure-continuity-20261018 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH exact6 |
-| Deletion or rename disposition | none; grant/source scopes retained |
+| Deletion or rename disposition | none |
 
 ## Claim Boundary
 
-Current-source R1F cap2 plus R2C cap1 bounded mechanical pair disposition only; no R1/R2 stage-exit, provider/live R3/R4 or deployment claim. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged.
+Bounded R1 integrated HTML job source/isolated-fixture closure only. Local synthetic person review does not upgrade draft provenance; Stop does not prove remote cancellation or billing. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred. No runtime, provider, real-data, public or deployment claim.
 
 ## Historical Terminal Timing Disclosure - Prior Source Recovery
 
