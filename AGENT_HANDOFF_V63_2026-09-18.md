@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `8ab06322b43c561cce442e3869de9d82f51d812b`. Accepted R1 integrated HTML job browser material `8ab06322b43c561cce442e3869de9d82f51d812b`; exact9/current7 separate; source bae47f9c7 read-only; batch CVF-NCR-R1-INTEGRATED-HTML-JOB-BROWSER-20261018.
+Current HEAD recorded for this handoff: `c301014932d00957116c7c825b4a602aced6c7ed`. Accepted R1 integrated HTML job browser material `8ab06322b43c561cce442e3869de9d82f51d812b`; exact9/current7 separate; source bae47f9c7 read-only; batch CVF-NCR-R1-INTEGRATED-HTML-JOB-BROWSER-20261018.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -75,33 +75,22 @@ Actual browser material 8ab06322b43c561cce442e3869de9d82f51d812b: normal91 PASS;
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: actual accepted material, completion evidence and current roadmap must agree across front door, handoff and generated models. Worker9 material is separate; this exact7 is only Root-owned metadata.
+Atomicity reason: Root-only GC-020 actual-HEAD marker synchronization after the mixed roadmap/current6 commit. Proof-oracle digest correction remains a separate exact1 material step; no source/effect replay.
 
 Exact changed manifest:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 
-Rollback boundary: exact7 only; no implementation/proof rewrite or effect grant.
+Rollback boundary: this handoff metadata only.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact7 browser closure metadata: current6 plus existing Root-owned roadmap. No guard/product/pair/proof edit.
+Authorized guard-maintenance scope: Root synchronizes active handoff HEAD marker only; same closed mode, source/proof and effect ceilings.
 
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
-- `CVF_SESSION_MEMORY.md`
-- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
-- `CVF_SESSION/state/entries/nextAllowedMove.json`
-- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
-- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: standing autonomous roadmap/reviewer continuity work; Local completion explicitly records exact7 packaging correction.
-Rollback boundary: exact7 metadata only; accepted material and original evidence remain fixed.
+Operator authorization: standing autonomous reviewer/continuity repair; source and effects stay fixed.
+Rollback boundary: exact1 handoff metadata only.
 
 ## Agent Operation Trace Block
 
@@ -112,7 +101,7 @@ Rollback boundary: exact7 metadata only; accepted material and original evidence
 | Session or invocation | ncr-r1-integrated-html-job-browser-closure-continuity-20261018 |
 | Working directory | repository root |
 | Command or tool surface | actual material binding; roadmap/current6 maintenance; session generator and normal gates |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
 | Allowed scope source | standing roadmap orchestration; explicit exact7 Root metadata authorization in accepted Local review |
 | Before status evidence | material 8ab06322b43c561cce442e3869de9d82f51d812b; normal91 PASS; worker8 and Root review1 committed; original failures retained |
 | After status evidence | exact7 metadata only; no new worker/app/browser effect |
@@ -121,9 +110,9 @@ Rollback boundary: exact7 metadata only; accepted material and original evidence
 | Claim boundary | bounded synthetic observation; no stage exit or provider/business acceptance |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-r1-integrated-html-job-browser-closure-continuity-20261018 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Manifest delta | MATCH exact7 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
+| Manifest delta | MATCH exact1 marker synchronization |
 | Deletion or rename disposition | none |
 
 ## Claim Boundary
