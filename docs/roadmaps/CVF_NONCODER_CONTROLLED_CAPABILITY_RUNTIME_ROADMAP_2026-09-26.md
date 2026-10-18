@@ -5,7 +5,7 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.76
+Version: 2.77
 Updated: 2026-10-19
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
@@ -24,7 +24,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** Assessment4kịch bản/7câu trả lời/4checkpoint đã hoàn tất; Local review `docs/reviews/CVF_NCR_R1_PRE_EFFECT_WALKTHROUGH_LOCAL_COMPLETION_REVIEW_2026-10-18.md` nhận bằng chứng có giới hạn thủ tục. Worker BLOCKED_WITH_REASON được giữ nguyên: gate1FAIL/gate2COMPLIANT, SUCCESSOR1/current1/counters0,0,0,1. F1-F7 còn mở; bước kế tiếp PLAN_ONLY hợp đồng sửa nhãn mở/đóng, giải thích đầu vào/từ chối, trình bày destination/access/cost/Stop và trạng thái nháp, kèm exact paths/test. Sửa mâu thuẫn mutation/freshness của packet kế tiếp trước release; chuyển Claude thủ công. Không lặp browser để sửa hồ sơ. R1/R2partial; provider/real-data/production/public/deploy OFF.
+**Bước kế tiếp:** Work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md` sửa source4/test3/return2 cho F1-F7: nhãn mở/đóng, vai trò đầu vào, bỏ chỉnh sửa chưa gửi, nhóm disclosure/unknown/cost/Stop, trạng thái bản nháp. Baseline đóng riêng observationS2/current0 bằng accepted review; task source/UI mới INITIAL0/current3, giữ nguyên worker assessmentBLOCKED/S1/counters0,0,0,1. Không sửa API/storage/authority. Worker kiểm chứng finalstatic rồi đóng băng source, một browser7pass/13ảnh bắt buộc; fullgate<=3 cho phép sửa format trước ready. Chuyển thủ công sau boundrelease; Root không mở worker/browser. R1/R2partial, provider/real-data/production/public/deployOFF.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.
@@ -1115,23 +1115,23 @@ orientation packets are not refreshed by this private local edit.
 
 | Field | Evidence |
 |---|---|
-| Actor | INTERNAL_AGENT Local reviewer/closer; decision owner=LOCAL |
+| Actor | INTERNAL_AGENT Local dispatcher; decision owner=LOCAL |
 | Provider or surface | private shared checkout |
-| Session or invocation | ncr-r1-pre-effect-walkthrough-local-review-20261019 |
+| Session or invocation | ncr-r1-ui-clarity-repair-dispatch-20261019 |
 | Working directory | repository root |
-| Command or tool surface | readonly raw/hash/receipt/PNG sample; review/roadmap; canonical documentary/commit/closure gates |
-| Target paths | `docs/reviews/CVF_NCR_R1_PRE_EFFECT_WALKTHROUGH_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-r1-pre-effect-walkthrough-worker-20261018.json`; `docs/reviews/CVF_NCR_R1_PRE_EFFECT_WALKTHROUGH_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Allowed scope source | frozen manual-transfer work order and standing Local reviewer continuation |
-| Before status evidence | fe58c3aac6bfefcf56d79ce0ad10e235c8ee243c; exact2 untracked; empty stage |
-| After status evidence | material4; worker exact2 preserved; Local review and roadmap only |
-| Diff evidence | git diff --name-status; git diff --check; exact4 and original hashes |
-| Approval boundary | Local review only; no Root browser/worker/product execution |
-| Claim boundary | bounded assisted observation; original BLOCKED/procedure and parked effects retained |
+| Command or tool surface | source/design/evidence reads, scaffold, paired UI contract and deterministic admission |
+| Target paths | `docs/baselines/CVF_GC018_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Allowed scope source | operator standing roadmap continuation and current next |
+| Before status evidence | ec7fac7c9bfbb9f14bb36d9e9a3aedb4e92b374d; clean worktree; empty stage |
+| After status evidence | dispatch3 only; source7/worker2 untouched; no Root browser/worker |
+| Diff evidence | git diff --name-status; git diff --check; exact3 manifest |
+| Approval boundary | manual worker transfer only; no provider/backend/storage effect |
+| Claim boundary | finite source/UI contract readiness, no executed implementation |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-pre-effect-walkthrough-local-review-20261019 |
-| Expected manifest | `docs/reviews/CVF_NCR_R1_PRE_EFFECT_WALKTHROUGH_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-r1-pre-effect-walkthrough-worker-20261018.json`; `docs/reviews/CVF_NCR_R1_PRE_EFFECT_WALKTHROUGH_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `docs/reviews/CVF_NCR_R1_PRE_EFFECT_WALKTHROUGH_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-r1-pre-effect-walkthrough-worker-20261018.json`; `docs/reviews/CVF_NCR_R1_PRE_EFFECT_WALKTHROUGH_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Manifest delta | MATCH exact4; current6 separate |
+| Invocation ID | ncr-r1-ui-clarity-repair-dispatch-20261019 |
+| Expected manifest | `docs/baselines/CVF_GC018_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `docs/baselines/CVF_GC018_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Manifest delta | MATCH exact3; current6 separate |
 | Deletion or rename disposition | none |
 
 ## Public Export Disposition
