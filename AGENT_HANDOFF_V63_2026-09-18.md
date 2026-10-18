@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `7b0d8cd1c632532cc17661498a5da26e1309e9f8`. Inherited learning-commit GC-020 marker repair; R2C material identity below is retained. Material SHA: `b87f5111770c42418da211e52efc5529f02f078e`. Batch ID: CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018. Exact6 actual-material continuity; clean split closure follows.
+Current HEAD recorded for this handoff: `ddbf11ff79eb91f46fedd06d982137f266c268d6`. Documentary material SHA: `ddbf11ff79eb91f46fedd06d982137f266c268d6`; roadmap-only support matrix and historical-routing correction. Current mode and effect authority retained. Accepted R2C material SHA: `b87f5111770c42418da211e52efc5529f02f078e`; R2C batch CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018 remains the current runtime authority.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
