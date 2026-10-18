@@ -5,14 +5,14 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.66
+Version: 2.67
 Updated: 2026-10-18
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-18
 
-**Đang ở đâu:** Source R1 tích hợp job/phiên bản, Stop, journal qua reload và quyết định người dùng đã được nghiệm thu bounded tại `bae47f9c7`: `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md`. Fixture29/29 và probe Local3/3 PASS; giới hạn quy trình/lỗi gốc được giữ. Chưa có proof Chromium cho tổ hợp source này; kết quả recovery browser cũ chỉ có giá trị tại revision đã ghi. Production OFF.
+**Đang ở đâu:** Source R1 tích hợp đã chốt tại `bae47f9c7`; Chromium hiện tại đã PASS luồng job → Build → Save mất phản hồi → reload/GET → link → quyết định cùng người dùng. Review bounded: `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; material `8ab06322b43c561cce442e3869de9d82f51d812b`. Byte/hash và cookie-absent401 được kiểm độc lập bằng proof ghép, giữ nguyên lượt Root FAIL do sai tham số GET và mọi lỗi đóng gói. Draft vẫn unverified/unaccepted; không đóng toàn bộ R1.
 
 | Item | Current disposition | Evidence / remaining step |
 |---|---|---|
@@ -20,16 +20,16 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | BE-R2C / R02 | ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS | docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md; docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json; actual material SHA and continuity evidence recorded in active handoff |
 | BE-R1F | ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS | docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md; immutable prior cap2 finality eea3d052c5ce1dd7e2671488aeee50bbb5565cb55bd7e5c050ffe71d8ccfa069 |
 | BE-R01 / earlier R02 | Historical accepted / blocked-spent | Old actor outcomes retained; neither substitutes for current-source pair |
-| R1 / R2 | Partial | Supporting results do not close stage exits |
+| R1 / R2 | Partial | Integrated current-source browser contribution accepted with procedure limits; supporting results do not close stage exits |
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** Một phiên app/Chromium riêng trên source đã chốt: Build một job, Save mất phản hồi, reload/reconcile đúng ID, liên kết đúng phiên bản rồi ghi quyết định của cùng chủ thể synthetic. Admission mới và manifest phải chốt trước chạy; không sửa source sản phẩm hoặc tái dùng actor/budget cũ. Dữ liệu thật/provider/production/public vẫn giữ OFF.
+**Bước kế tiếp:** Đối chiếu exit R1/R2 với source và browser proof đã có, ghi rõ phần đủ bằng chứng và gap thực sự trước pilot; không replay recovery đã chứng minh hoặc mở actor kế tiếp tự động. App/browser mới cần admission riêng; dữ liệu thật/provider/production/public vẫn OFF.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.
 
-Historical detail and governed evidence remain in the ledger below; this checkpoint reports accepted R1 source and the current-source browser proof gap.
+Historical detail and governed evidence remain in the ledger below; this checkpoint reports accepted R1 source and its bounded current-source browser contribution.
 
 ### Recovery Source Stage Admission - 2026-10-18
 

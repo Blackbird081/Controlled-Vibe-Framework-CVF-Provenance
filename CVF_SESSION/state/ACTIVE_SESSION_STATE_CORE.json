@@ -23,8 +23,8 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md",
     "workOrderSha256": "25e7480fe15f2805730384d4a884a2ef4d8f1911a79579f69fc344e041b707df"
   },
-  "currentAuthoritySyncReason": "Fresh Local current-source composed-browser observation under standing operator continuation; action-specific pair, not source-grant reuse. Accepted source bae47f9c745886694242c9f2acab5ce01b7e4cc0 and continuity 6cbee8c4c4eb290a7753761f1c21a851df3144da retained; no source correction/successor or counter reset. Dispatch material e0e21d7dd3566c4e1454b0892daf00ae3c92c29a; bound actual candidate and committed release required; provider/real-data/production/public/deploy OFF. Corrective exact6 synchronization after retained sync3 DR-04 refusal; release requires one committed sync across front door, handoff and generated models. Sync predecessor SHA=43d152e8e4f86376d4313cfc1bdec74b633813b4; packet material e0e21d7dd3566c4e1454b0892daf00ae3c92c29a remains fixed. Retained DR-04 and GC-020 refusals corrected together, no runtime run.",
-  "currentMode": "cvf_ncr_r1_integrated_html_job_browser_dispatched",
+  "currentAuthoritySyncReason": "Accepted exact9 browser material 8ab06322b43c561cce442e3869de9d82f51d812b; Local review docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 b94c580007fde19405cb5b78e6b2868a04860ce6a38ec759741f456f055fd6c1; unchanged worker evidence SHA256 9cfc0f6ee390b5168bff45afdf21a9e1dfe9bc8c715f83dadf80f1f031ad36af. Original worker BLOCKED/gates3 exhausted preserved; Root metadata conversion final-byte PASS. Worker browser1/1 plus joined distinct Root observations, original query FAIL and zero-write completion retained. Root marker-only 32414c311e92a7f087259b805c43b38719336969 is metadata only; current6 plus existing Root-owned roadmap synchronize as7 without source/effect expansion. Source RETURN3/counters0,1,0,3, browser RETURN1/counters0,0,0,0 and parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; no automatic successor.",
+  "currentMode": "cvf_ncr_r1_integrated_html_job_browser_closed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_integrated_html_job_source_closed",
+  "previousMode": "cvf_ncr_r1_integrated_html_job_browser_dispatched",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [

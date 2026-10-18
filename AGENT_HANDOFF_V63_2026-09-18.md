@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `fe72c4eced8a47f8c15ec4cfb5de9e6539fe6b5a`. Fresh R1 browser dispatch material `e0e21d7dd3566c4e1454b0892daf00ae3c92c29a`; source bae47f9c7 read-only; batch CVF-NCR-R1-INTEGRATED-HTML-JOB-BROWSER-20261018.
+Current HEAD recorded for this handoff: `8ab06322b43c561cce442e3869de9d82f51d812b`. Accepted R1 integrated HTML job browser material `8ab06322b43c561cce442e3869de9d82f51d812b`; exact9/current7 separate; source bae47f9c7 read-only; batch CVF-NCR-R1-INTEGRATED-HTML-JOB-BROWSER-20261018.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,34 +13,34 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Accepted source stays read-only at bae47f9c7. One new composed-browser observation: worker8 harness/proof/registration; Root dispatch9, material9 and continuity6 separately. Source/parent terminal history and counters retained; no source successor or old actor reuse.
+Worker8 plus Local review1 accepted as exact9 material 8ab06322b43c561cce442e3869de9d82f51d812b. Root marker-only metadata commit 32414c311e92a7f087259b805c43b38719336969 and original blocked worker/gate history retained. Current6 plus already Root-owned roadmap synchronize separately as exact7. Product source11 unchanged; one finite synthetic browser contribution only.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r1_integrated_html_job_browser_dispatched`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one new current-source synthetic app/browser observation after gated release; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=provider/external network success/real-data/production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r1_integrated_html_job_browser_closed`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=consume bounded browser result and prepare only R1/R2 exit/gap disposition; role=INTERNAL_AGENT Local orchestrator/reviewer; phase=BROWSER_CLOSURE; decision owner=LOCAL; parked checkpoint=app/browser/provider/external network success/real-data/production/public/deploy.
 
 ## Current Mode
 
-`cvf_ncr_r1_integrated_html_job_browser_dispatched`
+`cvf_ncr_r1_integrated_html_job_browser_closed`
 
-Current mode marker: `cvf_ncr_r1_integrated_html_job_browser_dispatched`
-Current mode: `cvf_ncr_r1_integrated_html_job_browser_dispatched`
+Current mode marker: `cvf_ncr_r1_integrated_html_job_browser_closed`
+Current mode: `cvf_ncr_r1_integrated_html_job_browser_closed`
 
-Fresh bounded synthetic browser observation admitted by Local; clean bound release precedes effects.
+Selected current-source synthetic browser contribution accepted with procedure limits; no fresh effect admission.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md` SHA256 `d73d6d4ec19656259ce10c5217901430f50d121bca665ce9762dcbc71bf75400`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md` SHA256 `25e7480fe15f2805730384d4a884a2ef4d8f1911a79579f69fc344e041b707df`. Fresh Local isolated synthetic app/browser admission in this pair; source grant remains immutable and grants no runtime. Accepted source Local completion `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md` SHA256 `4dfbc4dc40f53e8ca1779a4ba4c7347da61f36fa640951b28ee30c254bfbb674`. No current-source browser result preclaimed.
+Frozen baseline `docs/baselines/CVF_GC018_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md` SHA256 `d73d6d4ec19656259ce10c5217901430f50d121bca665ce9762dcbc71bf75400`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md` SHA256 `25e7480fe15f2805730384d4a884a2ef4d8f1911a79579f69fc344e041b707df`. Local completion `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md` SHA256 `b94c580007fde19405cb5b78e6b2868a04860ce6a38ec759741f456f055fd6c1`; worker evidence `docs/reviews/evidence/ncr-r1-integrated-html-job-browser-worker-20261018.json` SHA256 `9cfc0f6ee390b5168bff45afdf21a9e1dfe9bc8c715f83dadf80f1f031ad36af`. Original worker BLOCKED/gates3 exhausted preserved; Root metadata conversion final-byte confirmation PASS. Source grant and source terminal chain remain unchanged; no fresh effect grant.
 
 ## Accepted NCR Evidence And Continuation
 
-Latest source acceptance: `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md`; worker exact9 fixtures 29/29, type/scoped lint; distinct Root3/3 source-bound probe. Job/request/version/decision joins, local Stop and pending-ID GET reconciliation only. Source material bae47f9c745886694242c9f2acab5ce01b7e4cc0; prior source/runtime evidence remains at its recorded revision. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and all prior STOPs retained. R1/R2partial,R3/R4open,R5/R6deferred; no whole-R1 exit.
+Latest browser acceptance: `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md`. Worker Chromium1/1 actual Build/unknown Save/reload/explicit link/person decision and exact2720-byte download hash; one boundary unit process/type/scoped lint PASS. Distinct Root normal joined decision proof plus read-only exact snapshot/session-cookie401 controls, original Root overall FAIL retained. Three owned process/port/preimage teardowns positive, caps satisfied, no source drift. Source bae47f9c7 remains its recorded source/fixture result. Browser RETURN1/counters0,0,0,0; source RETURN3/counters0,1,0,3; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged; no whole-R1 exit.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r1_integrated_html_job_browser_dispatched`
+Mode: `cvf_ncr_r1_integrated_html_job_browser_closed`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=IMPLEMENT; BATCH_ID=CVF-NCR-R1-INTEGRATED-HTML-JOB-BROWSER-20261018. Execute docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md only after fresh Local app/browser admission, actual candidate and clean committed bound pre-dispatch PASS; WORKER_MUST_NOT_COMMIT. Worker8 harness/proof/registration, Root closure9 and current6 separately; immutable product source read-only. New composed-browser observation INITIAL0; source RETURN3/counters0,1,0,3 and parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. One fresh synthetic loopback run; no old actor replay, source successor or refill. Provider/external network success/real-data/production/public/deploy OFF. R1/R2partial,R3/R4open,R5/R6deferred. Dispatch material SHA=e0e21d7dd3566c4e1454b0892daf00ae3c92c29a; current6 must share one committed synchronization. Sync predecessor SHA=43d152e8e4f86376d4313cfc1bdec74b633813b4.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=LOCAL_DISPOSITION_ONLY; BATCH_ID=CVF-NCR-R1-INTEGRATED-HTML-JOB-BROWSER-20261018. Bounded browser contribution accepted at 8ab06322b43c561cce442e3869de9d82f51d812b; consume docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md before one source-derived R1/R2 exit/gap disposition. Worker browser1/1 PASS; distinct Root joined controls accepted with original FAIL and zero-write completion retained. No automatic app/browser/source successor, old actor replay or budget refill. Source RETURN3/counters0,1,0,3; browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged. App/browser/provider/external network success/real-data/production/public/deploy OFF pending fresh action-specific admission. R1/R2partial,R3/R4open,R5/R6deferred.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -69,57 +69,66 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
-Source material bae47f9c745886694242c9f2acab5ce01b7e4cc0: normal91 PASS; actual P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE. Raw `.cvf/runtime/ncr-r1-integrated-html-job-source-20261018/source-commit.log` SHA256 `a6b70980d8ee6de777e344e7fdbac88aef44f9f1c4f23cf5a8f04ff73b787047`. No manual collector; routine M5/M10/safety/M20 retained.
-
-Prior owner observation OBS-180ac5c12daefceb and aggregate seven historical BLOCKED/C15 exclusions remain. Exact-marker adjudication `.cvf/runtime/mfrp-p4-shadow-canary/adjudications/scec-root-contract-owner-marker-20261018.json` SHA256 `6e9879d0122cc019a5688166fcbf9f5089898fa06c167ef719e3bbc9af9c45fc`; no denominator promotion. This continuity commit post-commit result is consumed after its actual execution; it is not preclaimed here.
+Actual browser material 8ab06322b43c561cce442e3869de9d82f51d812b: normal91 PASS; P4-C1: SKIPPED_NO_ELIGIBLE_CANDIDATE. Raw `.cvf/runtime/ncr-r1-integrated-html-job-browser-preparation-20261018/material-commit.log` SHA256 `fb8b842905b5884f225fbf1885c90b799e015e5b797f5587d13600dea105a457`. No manual collector; routine M5/M10/safety/M20 retained. Prior seven historical BLOCKED/C15 exclusions and adjudications remain unchanged. This continuity commit post-commit result is consumed after actual execution, not preclaimed.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: Root-only canonical bare-mode marker repair. Worker8 preserved byte-for-byte in owned custody while this exact1 metadata commit is checked; no source or browser replay.
+Atomicity reason: actual accepted material, completion evidence and current roadmap must agree across front door, handoff and generated models. Worker9 material is separate; this exact7 is only Root-owned metadata.
 
 Exact changed manifest:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 
-Rollback boundary: this handoff metadata only; restore exact worker8 after commit.
+Rollback boundary: exact7 only; no implementation/proof rewrite or effect grant.
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: Root adds the canonical bare current-mode marker in this active handoff to unblock the same-mode return check. No mode/authority change; worker8 remains separate ownership.
+Authorized guard-maintenance scope: exact7 browser closure metadata: current6 plus existing Root-owned roadmap. No guard/product/pair/proof edit.
 
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: standing autonomous roadmap orchestration/reviewer continuity repair; no repeated permission needed.
-Rollback boundary: this Root-owned handoff metadata only; source11 and proof unchanged.
+Operator authorization: standing autonomous roadmap/reviewer continuity work; Local completion explicitly records exact7 packaging correction.
+Rollback boundary: exact7 metadata only; accepted material and original evidence remain fixed.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher/session-sync steward; decision owner=LOCAL |
+| Actor | Local INTERNAL_AGENT session-sync steward; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-r1-integrated-html-job-browser-continuity-20261018 |
+| Session or invocation | ncr-r1-integrated-html-job-browser-closure-continuity-20261018 |
 | Working directory | repository root |
-| Command or tool surface | fresh action-specific admission; session generator; normal governance |
-| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md` |
-| Allowed scope source | standing autonomous continuation; fresh paired Local bounded synthetic admission |
-| Before status evidence | accepted source bae47f9c7 and clean continuity6cbee8c4c; no current-source browser proof |
-| After status evidence | Worker browser proof returned PASS; Root bare-marker repair is metadata only; original return refusals retained |
-| Diff evidence | git diff --name-status; git diff --check; exact manifest reconciliation |
-| Approval boundary | synthetic loopback mechanical app/browser only; product source read-only |
-| Claim boundary | new observation pending; no full-R1/provider/trusted evidence or production claim |
+| Command or tool surface | actual material binding; roadmap/current6 maintenance; session generator and normal gates |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Allowed scope source | standing roadmap orchestration; explicit exact7 Root metadata authorization in accepted Local review |
+| Before status evidence | material 8ab06322b43c561cce442e3869de9d82f51d812b; normal91 PASS; worker8 and Root review1 committed; original failures retained |
+| After status evidence | exact7 metadata only; no new worker/app/browser effect |
+| Diff evidence | git diff --name-status; git diff --check; exact7 reconciliation |
+| Approval boundary | current6 and existing Root-owned roadmap; frozen pair/material/proof untouched |
+| Claim boundary | bounded synthetic observation; no stage exit or provider/business acceptance |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-integrated-html-job-browser-continuity-20261018 |
-| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md` |
-| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md` |
-| Manifest delta | MATCH exact1 Root marker correction; worker8 in byte-preserving custody |
+| Invocation ID | ncr-r1-integrated-html-job-browser-closure-continuity-20261018 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Manifest delta | MATCH exact7 |
 | Deletion or rename disposition | none |
 
 ## Claim Boundary
 
-New composed-browser observation pending on immutable R1 source. Mechanical synthetic behavior only; same-person review cannot upgrade draft provenance. Source RETURN3/counters0,1,0,3 and parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained. R1/R2partial,R3/R4open,R5/R6deferred; provider/real-data/production/public/deploy OFF.
+Accepted current-source synthetic browser contribution with retained original failures and bounded joined Root proof. Same-person review leaves immutable draft unverified/unaccepted. Source RETURN3/counters0,1,0,3 and parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; browser RETURN1/counters0,0,0,0. R1/R2partial,R3/R4open,R5/R6deferred. No provider/live, real data, production, public/deploy, business acceptance or whole-R1 exit.
 
 ## Historical Terminal Timing Disclosure - Prior Source Recovery
 
