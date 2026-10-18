@@ -260,7 +260,15 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
       <p id={`${helpId}-criteria`} data-testid="job-criteria-help" className="mt-1 text-xs leading-5 text-gray-600 dark:text-gray-300">{copy.criteriaHelp}</p>
       <p id={`${helpId}-lifetime`} data-testid="job-lifetime-help" className="mt-1 text-xs leading-5 text-gray-600 dark:text-gray-300">{copy.lifetimeHelp}</p>
       <label className="mt-2 block text-xs">{copy.goal}<textarea aria-label={copy.goal} aria-describedby={`${helpId}-goal ${helpId}-lifetime`} value={goal} maxLength={2000}
-        onChange={e => setGoal(e.target.value)} className={`${FIELD_CLASS} max-w-3xl`} /></label>
+        onChange={e => setGoal(e.target.value)} className={`${FIELD_CLASS} max-w-3xl`}
+        onFocus={event => {
+          const field = event.currentTarget;
+          requestAnimationFrame(() => {
+            if (field.isConnected && field.getBoundingClientRect().height + 8 <= window.innerHeight) {
+              field.scrollIntoView({ block: 'center', inline: 'nearest' });
+            }
+          });
+        }} /></label>
       {criteria.map((criterion, index) => <label key={criterion.criterionId} className="mt-2 block text-xs">{copy.criterion} {index + 1}
         <input aria-label={`${copy.criterion} ${index + 1}`} aria-describedby={`${helpId}-criteria ${helpId}-lifetime`} value={criterion.text} maxLength={500} className={`${FIELD_CLASS} max-w-xl`}
           onChange={e => setCriteria(xs => xs.map((x, i) => i === index ? { ...x, text: e.target.value } : x))} /></label>)}

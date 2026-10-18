@@ -513,6 +513,66 @@ describe('grouped pre-Build disclosure and input help (real components, clarity 
     expect(sessionStorage.getItem(JOURNAL_KEY)).toBeNull();
   });
 
+  // Goal focus presentation (real onFocus handler). requestAnimationFrame and scrollIntoView are controlled in jsdom only and restored per case.
+  describe.each([
+    ['en', 'Goal', 'does not write or change the page'],
+    ['vi', 'Mục tiêu', 'không tự viết hay sửa trang'],
+  ] as const)('Goal focus handler (%s)', (lang, goalName, helpFragment) => {
+    const frames: FrameRequestCallback[] = [];
+    const scrolls: { target: Element; options: unknown }[] = [];
+    const originalRaf = window.requestAnimationFrame;
+    const originalScroll = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'scrollIntoView');
+    beforeEach(() => {
+      frames.length = 0; scrolls.length = 0;
+      window.requestAnimationFrame = (cb: FrameRequestCallback) => frames.push(cb);
+      Object.defineProperty(HTMLElement.prototype, 'scrollIntoView', { configurable: true, writable: true,
+        value(this: Element, options?: unknown) { scrolls.push({ target: this, options }); } });
+    });
+    afterEach(() => {
+      window.requestAnimationFrame = originalRaf;
+      if (originalScroll) Object.defineProperty(HTMLElement.prototype, 'scrollIntoView', originalScroll);
+      else delete (HTMLElement.prototype as { scrollIntoView?: unknown }).scrollIntoView;
+    });
+    const runFrames = () => { frames.splice(0).forEach(cb => cb(0)); };
+
+    it('center-scrolls the focused Goal once when it fits the viewport, keeps its name and help association, and sends no write', async () => {
+      h.lang = lang;
+      await mountJob();
+      const goal = screen.getByRole('textbox', { name: goalName }) as HTMLTextAreaElement;
+      const fits = vi.spyOn(goal, 'getBoundingClientRect').mockReturnValue({ height: 58, width: 300, top: 0, left: 0, right: 300, bottom: 58, x: 0, y: 0, toJSON: () => ({}) });
+      expect(scrolls).toEqual([]);
+      fireEvent.focus(goal);
+      expect(scrolls).toEqual([]);
+      expect(frames).toHaveLength(1);
+      runFrames();
+      expect(scrolls).toEqual([{ target: goal, options: { block: 'center', inline: 'nearest' } }]);
+      expect(fits).toHaveBeenCalled();
+      expect(screen.getByRole('textbox', { name: goalName })).toBe(goal);
+      const described = (goal.getAttribute('aria-describedby') ?? '').split(' ').filter(Boolean);
+      expect(described).toHaveLength(2);
+      expect(text(document.getElementById(described[0]))).toContain(helpFragment);
+      expect(goal.maxLength).toBe(2000);
+      expect(posts()).toEqual([]);
+      expect(sessionStorage.getItem(JOURNAL_KEY)).toBeNull();
+    });
+
+    it('does not scroll when the field is taller than the viewport or has left the document before the frame runs', async () => {
+      h.lang = lang;
+      const view = await mountJob();
+      const goal = screen.getByRole('textbox', { name: goalName }) as HTMLTextAreaElement;
+      vi.spyOn(goal, 'getBoundingClientRect').mockReturnValue({ height: window.innerHeight, width: 300, top: 0, left: 0, right: 300, bottom: window.innerHeight, x: 0, y: 0, toJSON: () => ({}) });
+      fireEvent.focus(goal);
+      runFrames();
+      expect(scrolls).toEqual([]);
+      vi.spyOn(goal, 'getBoundingClientRect').mockReturnValue({ height: 58, width: 300, top: 0, left: 0, right: 300, bottom: 58, x: 0, y: 0, toJSON: () => ({}) });
+      fireEvent.focus(goal);
+      view.unmount();
+      runFrames();
+      expect(scrolls).toEqual([]);
+      expect(posts()).toEqual([]);
+    });
+  });
+
   it('starts a reopened panel empty: edits that were not submitted are discarded and nothing was written', async () => {
     const first = await mountJob();
     fillJob();

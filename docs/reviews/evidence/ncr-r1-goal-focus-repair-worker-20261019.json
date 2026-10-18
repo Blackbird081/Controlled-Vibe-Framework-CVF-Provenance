@@ -1,0 +1,605 @@
+{
+ "schemaVersion": "cvf.ncrR1GoalFocusRepairWorkerEvidence.v1",
+ "textEncodingException": "Text Encoding Exception: Vietnamese UI copy is an intentional task literal; this evidence file is ASCII and carries no Vietnamese literals.",
+ "batchId": "CVF-NCR-R1-GOAL-FOCUS-REPAIR-20261019",
+ "executionBaseHead": "cb48fea8a7ad696e78613e4ba8ce23a1b347dac6",
+ "workOrderSha256": "15845329b2fa2ab36531a681634e98529b0e18ed8fdce6e650e4cc4d2374a3f6",
+ "baselineSha256": "822fb60d8286428ec221c4a174ce7c61a45228168c5d53369d6b2eec6b1c3dda",
+ "workerClock": {
+  "start": "2026-10-19T05:05:22+07:00",
+  "browserStart": "2026-10-19T05:12:38+07:00",
+  "browserEnd": "2026-10-19T05:16:50+07:00"
+ },
+ "source2": {
+  "preimage": {
+   "HtmlJobControls.tsx": "74405469d2c194b5e63bd0ee7a71a65d30b9c4f5d72a8186cbbbb3c772def4a5",
+   "HtmlJobControls.ux-profile.test.tsx": "d81ba73119187e5105cb612ece2e4c4f36a863f6e8b88719e6684af22c10782c"
+  },
+  "final": {
+   "src/components/HtmlJobControls.tsx": "36a03380619cc5bbca540cabfbe2b7a96b9ff4f656265a2f3ea8390c1cb30b45",
+   "src/components/HtmlJobControls.ux-profile.test.tsx": "b031cda68f7168b7c2b2cb7a5e1eb47055a4d029afde8a218c23491128045187"
+  }
+ },
+ "readonly5": {
+  "sha256": {
+   "src/app/(dashboard)/work-transfer/page.tsx": "4d0df1a163a78800da996eddaa9a559bbe34defd926f269e70989cdfc5a9ab47",
+   "src/components/ArtifactExportPanel.tsx": "d4f2c2d8ec50de9aeb31e2c850ba311f7facbabf02bec9a667d12daf10caaa8c",
+   "src/components/HtmlDraftRecovery.tsx": "57522717db38c4f1ab070376c1682e19c644f4e547a182dabd22662db0e68987",
+   "src/components/HtmlDraftRecovery.test.tsx": "4b2d02d85f52cd6a7918291082dad798580b985c7ec0ef334afeba52f5705e85",
+   "tests/e2e/ncr-r1-ux-readonly-browser.spec.ts": "a7446412a585fe427aa4726b77803e508d2d4b07a74e370a50e77c238342d38a"
+  },
+  "stableAcrossRun": true
+ },
+ "sourceChange": "HtmlJobControls.tsx: Goal textarea gains an onFocus presentation handler (capture currentTarget, requestAnimationFrame, guard isConnected and height+8<=innerHeight, scrollIntoView block center inline nearest), identical in form to the existing Source notes handler; no other source line changed.",
+ "staticChecks": {
+  "tsc": [
+   {
+    "cmd": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+    "exit": 0,
+    "start": "05:07:27",
+    "end": "05:08:39",
+    "log": "worker/tsc1.out.log",
+    "logSha256": "4abd38c555326f0c120484adbbb2754ea0f4273918d7e8c732db63174ae493d5",
+    "note": "source1 final, test before the seam fix"
+   },
+   {
+    "cmd": "same",
+    "exit": 0,
+    "start": "05:11:37",
+    "end": "05:11:58",
+    "log": "worker/tsc2.out.log",
+    "logSha256": "4698534a12fb92b7160c22d692b496777e95c014952b44a1ac9332f487ddccfe",
+    "note": "final bytes of both owned files"
+   }
+  ],
+  "vitest": [
+   {
+    "cmd": "node node_modules/vitest/vitest.mjs run src/components/HtmlJobControls.ux-profile.test.tsx src/components/HtmlDraftRecovery.test.tsx",
+    "exit": 1,
+    "result": "2 failed, 41 passed (43)",
+    "cause": "own new test installed the scrollIntoView seam on Element.prototype but src/test/setup.ts defines an own HTMLElement.prototype.scrollIntoView that shadows it",
+    "log": "worker/vitest1.out.log",
+    "logSha256": "fd086949c6116dee5339d090e7e6a4d2a9617ef898e458e214f758755ce24a87"
+   },
+   {
+    "cmd": "same",
+    "exit": 0,
+    "result": "43 passed (43): 33 UX profile (29 existing + 4 new) + 10 recovery",
+    "log": "worker/vitest2.out.log",
+    "logSha256": "e070d8aa8c785108d3af799fe9501859b405a49a2ed5cf0cdb69717321c24f6b"
+   }
+  ],
+  "eslint": [
+   {
+    "cmd": "node node_modules/eslint/bin/eslint.js --max-warnings 3 <7 scoped files>",
+    "exit": 0,
+    "start": "05:10:24",
+    "end": "05:11:32",
+    "errors": 0,
+    "warnings": 3,
+    "log": "worker/lint1.out.log",
+    "logSha256": "cb5eee1705cc1f7e25bbe3421d3016327b65a3d4bd411525f050b23509e41cb2",
+    "baselineFingerprints": [
+     "react-hooks/exhaustive-deps HtmlDraftRecovery.tsx useEffect missing active, jobMode, owner, sourceRecordId",
+     "react-hooks/exhaustive-deps HtmlJobControls.tsx useEffect missing active, owner, sourceRecordId, still",
+     "react-hooks/exhaustive-deps HtmlJobControls.tsx useCallback missing owner, still"
+    ],
+    "newWarnings": 0,
+    "suppressions": 0,
+    "secondAttemptUsed": false
+   }
+  ],
+  "playwrightList": [
+   {
+    "exit": 0,
+    "tests": 1,
+    "log": "worker/list1.out.log",
+    "logSha256": "95d8facab64b71dde8a594375d221e461538627c11e0f1f888c5cd11d9819bff"
+   }
+  ],
+  "preImplementationAutorun": {
+   "exit": 0,
+   "result": "COMPLIANT 12.92s",
+   "log": "worker/pre-implementation.out.log",
+   "logSha256": "39193c90be34a71b8529143304a3a433b40c1379647d061a9d0a2661747bf921",
+   "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+   "receiptSha256": "8beaea6b31a7d0d2dbbdd2b144975068d6da5ac9d8e265eda6e398a92420a5b3"
+  }
+ },
+ "REQ-FOCUS": {
+  "status": "PASS",
+  "mobileGoal3": [
+   {
+    "combo": "mobile-dark-indigo",
+    "rect": {
+     "x": 67,
+     "y": 393,
+     "w": 256,
+     "h": 58
+    },
+    "vis": {
+     "fits": true,
+     "insideViewport": true,
+     "clippedBy": [],
+     "obscuredPoints": 0,
+     "fullyVisible": true
+    },
+    "scrollY": 1815,
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "focusVisible": true,
+    "settle": {
+     "settled": true,
+     "attempts": 29,
+     "ms": 477
+    }
+   },
+   {
+    "combo": "mobile-light-indigo",
+    "rect": {
+     "x": 67,
+     "y": 393,
+     "w": 256,
+     "h": 58
+    },
+    "vis": {
+     "fits": true,
+     "insideViewport": true,
+     "clippedBy": [],
+     "obscuredPoints": 0,
+     "fullyVisible": true
+    },
+    "scrollY": 1815,
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "focusVisible": true,
+    "settle": {
+     "settled": true,
+     "attempts": 29,
+     "ms": 472
+    }
+   },
+   {
+    "combo": "mobile-dark-emerald",
+    "rect": {
+     "x": 67,
+     "y": 393,
+     "w": 256,
+     "h": 58
+    },
+    "vis": {
+     "fits": true,
+     "insideViewport": true,
+     "clippedBy": [],
+     "obscuredPoints": 0,
+     "fullyVisible": true
+    },
+    "scrollY": 1815,
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "focusVisible": true,
+    "settle": {
+     "settled": true,
+     "attempts": 29,
+     "ms": 473
+    }
+   }
+  ],
+  "tablet3": [
+   {
+    "combo": "tablet-dark-indigo",
+    "rect": {
+     "x": 287,
+     "y": 483,
+     "w": 414,
+     "h": 58
+    },
+    "vis": {
+     "fits": true,
+     "insideViewport": true,
+     "clippedBy": [],
+     "obscuredPoints": 0,
+     "fullyVisible": true
+    },
+    "scrollY": 1364,
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "focusVisible": true,
+    "settle": {
+     "settled": true,
+     "attempts": 26,
+     "ms": 425
+    }
+   },
+   {
+    "combo": "tablet-light-indigo",
+    "rect": {
+     "x": 287,
+     "y": 483,
+     "w": 414,
+     "h": 58
+    },
+    "vis": {
+     "fits": true,
+     "insideViewport": true,
+     "clippedBy": [],
+     "obscuredPoints": 0,
+     "fullyVisible": true
+    },
+    "scrollY": 1364,
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "focusVisible": true,
+    "settle": {
+     "settled": true,
+     "attempts": 26,
+     "ms": 425
+    }
+   },
+   {
+    "combo": "tablet-dark-emerald",
+    "rect": {
+     "x": 287,
+     "y": 483,
+     "w": 414,
+     "h": 58
+    },
+    "vis": {
+     "fits": true,
+     "insideViewport": true,
+     "clippedBy": [],
+     "obscuredPoints": 0,
+     "fullyVisible": true
+    },
+    "scrollY": 1364,
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "focusVisible": true,
+    "settle": {
+     "settled": true,
+     "attempts": 25,
+     "ms": 416
+    }
+   }
+  ],
+  "priorDefect": "prior clarity worker run: mobile Goal y799 h58 in 844px viewport, fullyVisible false; evidence of the defect only, not current-source proof",
+  "unitFocusCases": "4 new Vitest cases (EN and VI x center-scroll case and guard case)"
+ },
+ "REQ-REGRESSION": {
+  "status": "PASS",
+  "oracle": "tests/e2e/ncr-r1-ux-readonly-browser.spec.ts byte-copied to worker/clarity.spec.ts (sha a7446412a585fe427aa4726b77803e508d2d4b07a74e370a50e77c238342d38a)",
+  "criteria": {
+   "passes6": true,
+   "sourceNotesFullyVisible6": true,
+   "namedFieldsFullyVisible": true,
+   "toggleAndTitleFocusChange": true,
+   "fieldSizeAndContainment": true,
+   "requiredPhotos9": true,
+   "missingTargets0": true,
+   "unstableRows0": true,
+   "clarityPass1": true,
+   "copyCheckpoints4": true,
+   "requiredPhotos13": true,
+   "passes7": true
+  },
+  "criteriaKeyCount": 12,
+  "passRows": [
+   {
+    "combo": "mobile-dark-indigo",
+    "complete": true,
+    "error": null,
+    "sourceNotesFullyVisible": true,
+    "namedNotVisible": [],
+    "narrow": []
+   },
+   {
+    "combo": "mobile-light-indigo",
+    "complete": true,
+    "error": null,
+    "sourceNotesFullyVisible": true,
+    "namedNotVisible": [],
+    "narrow": []
+   },
+   {
+    "combo": "mobile-dark-emerald",
+    "complete": true,
+    "error": null,
+    "sourceNotesFullyVisible": true,
+    "namedNotVisible": [],
+    "narrow": []
+   },
+   {
+    "combo": "tablet-dark-indigo",
+    "complete": true,
+    "error": null,
+    "sourceNotesFullyVisible": true,
+    "namedNotVisible": [],
+    "narrow": []
+   },
+   {
+    "combo": "tablet-light-indigo",
+    "complete": true,
+    "error": null,
+    "sourceNotesFullyVisible": true,
+    "namedNotVisible": [],
+    "narrow": []
+   },
+   {
+    "combo": "tablet-dark-emerald",
+    "complete": true,
+    "error": null,
+    "sourceNotesFullyVisible": true,
+    "namedNotVisible": [],
+    "narrow": []
+   }
+  ],
+  "clarity": {
+   "complete": true,
+   "steps": [
+    [
+     "vi-language-and-rows-before-open",
+     true
+    ],
+    [
+     "selected-open-groups-help-draft",
+     true
+    ],
+    [
+     "synthetic-edit-without-build",
+     true
+    ],
+    [
+     "decline-by-closing-panel",
+     true
+    ],
+    [
+     "reopen-shows-empty-inputs-and-pending-facts",
+     true
+    ],
+    [
+     "generic-open-groups-draft",
+     true
+    ]
+   ]
+  },
+  "checkpoints": [
+   {
+    "id": "copy-selected-mobile-dark-indigo",
+    "bytes": 264263,
+    "sha256": "f80640f105c544e48b4fe1433bf4cb88d51135dc59f6e5530343198ff731d0e1",
+    "groupsRendered": 5,
+    "groupsFullyInViewport": 2,
+    "groupsRenderedOffscreen": 3
+   },
+   {
+    "id": "copy-selected-tablet-dark-indigo",
+    "bytes": 325674,
+    "sha256": "cce08014d1480531b259490f12314fe8c7d198e10d7005ad48fe3eb403440203",
+    "groupsRendered": 5,
+    "groupsFullyInViewport": 3,
+    "groupsRenderedOffscreen": 2
+   },
+   {
+    "id": "copy-selected-desktop-dark-indigo",
+    "bytes": 335649,
+    "sha256": "c90e5ef10b89312603654505df43a312735e615ab1a50948d8fefdad94e3b2a3",
+    "groupsRendered": 5,
+    "groupsFullyInViewport": 0,
+    "groupsRenderedOffscreen": 5
+   },
+   {
+    "id": "copy-generic-desktop-dark-indigo",
+    "bytes": 302015,
+    "sha256": "d04931d35fbcb88884af574f242c09ba2d9bc3a36446f7165d52ed862e8a7cec",
+    "groupsRendered": 5,
+    "groupsFullyInViewport": 3,
+    "groupsRenderedOffscreen": 2
+   }
+  ],
+  "images": [
+   {
+    "id": "skip-link-focused-mobile-dark-indigo",
+    "kind": "optional-skip-link",
+    "bytes": 47408,
+    "sha256": "5cd476c899bb6c565e4b922753ba99d323aadc53bebb650fc27bb01c242c43ef"
+   },
+   {
+    "id": "skip-main-landed-mobile-dark-indigo",
+    "kind": "optional-skip-link",
+    "bytes": 42310,
+    "sha256": "427a5c65d5d8e288d6ae695e0d6095b561d80116356555f101f70af77ac18be1"
+   },
+   {
+    "id": "focused-title-mobile-dark-indigo",
+    "kind": "required-title",
+    "bytes": 35348,
+    "sha256": "3a2ffab9d5cfec2063d2e9f9f795ded35b0749493ddf30d272c3a36c83a6c5fd"
+   },
+   {
+    "id": "focused-source-notes-mobile-dark-indigo",
+    "kind": "required-source-notes",
+    "bytes": 39716,
+    "sha256": "08899eb3dc5030dbe636dcefcb18b194a11d720d3a73168041c8817dec41f6eb"
+   },
+   {
+    "id": "copy-selected-mobile-dark-indigo",
+    "kind": "required-copy-checkpoint",
+    "bytes": 264263,
+    "sha256": "f80640f105c544e48b4fe1433bf4cb88d51135dc59f6e5530343198ff731d0e1"
+   },
+   {
+    "id": "focused-title-mobile-light-indigo",
+    "kind": "required-title",
+    "bytes": 35461,
+    "sha256": "bc3ebbbb96fe2c3fc5469566ee986a57147d075a26b7be0a9d261a049afe2e3a"
+   },
+   {
+    "id": "focused-source-notes-mobile-light-indigo",
+    "kind": "required-source-notes",
+    "bytes": 40379,
+    "sha256": "8ce7cfcae7f13e99a0c5d86d75ac8a8d3ad80c80538295491f168251757d1033"
+   },
+   {
+    "id": "focused-title-mobile-dark-emerald",
+    "kind": "required-title",
+    "bytes": 35220,
+    "sha256": "707fed80561f1ac7f66a9463f7ccaf6d069b9b797795c63a07c7239d12700317"
+   },
+   {
+    "id": "focused-source-notes-mobile-dark-emerald",
+    "kind": "required-source-notes",
+    "bytes": 39610,
+    "sha256": "a875e74735825a74a007ad2871272673fd047c3ca3730738e905513d4df2d4bd"
+   },
+   {
+    "id": "focused-source-notes-tablet-dark-indigo",
+    "kind": "required-source-notes",
+    "bytes": 101563,
+    "sha256": "015dde7fd86ccced99a2c681e24678b10d4f918cbb240cb4b30594e037877bf0"
+   },
+   {
+    "id": "copy-selected-tablet-dark-indigo",
+    "kind": "required-copy-checkpoint",
+    "bytes": 325674,
+    "sha256": "cce08014d1480531b259490f12314fe8c7d198e10d7005ad48fe3eb403440203"
+   },
+   {
+    "id": "focused-source-notes-tablet-light-indigo",
+    "kind": "required-source-notes",
+    "bytes": 102059,
+    "sha256": "8b742b87d6290b899bb39c5b161dfc483fe43a5fa77d798cc21bbf322b8cab48"
+   },
+   {
+    "id": "focused-source-notes-tablet-dark-emerald",
+    "kind": "required-source-notes",
+    "bytes": 101484,
+    "sha256": "adbb2ad9e62b9b84d506bdeb1a3b5731d603314e6233d4e962d1196f45ab3dea"
+   },
+   {
+    "id": "copy-selected-desktop-dark-indigo",
+    "kind": "required-copy-checkpoint",
+    "bytes": 335649,
+    "sha256": "c90e5ef10b89312603654505df43a312735e615ab1a50948d8fefdad94e3b2a3"
+   },
+   {
+    "id": "copy-generic-desktop-dark-indigo",
+    "kind": "required-copy-checkpoint",
+    "bytes": 302015,
+    "sha256": "d04931d35fbcb88884af574f242c09ba2d9bc3a36446f7165d52ed862e8a7cec"
+   }
+  ],
+  "imageCount": 15,
+  "screenshotBytes": 1848159,
+  "settleFailures": []
+ },
+ "REQ-BOUNDARY": {
+  "status": "PASS",
+  "boundary": {
+   "domainWriteAttempts": 0,
+   "browserAuthWriteAttempts": 0,
+   "effectBlocked": 0,
+   "externalBlockedHosts": [
+    "fonts.googleapis.com"
+   ],
+   "externalBlockedCount": 14,
+   "loginFormFallback": false,
+   "apiRequestContext": [
+    {
+     "method": "GET",
+     "path": "/api/auth/csrf",
+     "status": 200
+    },
+    {
+     "method": "POST",
+     "path": "/api/auth/callback/credentials",
+     "status": 200
+    },
+    {
+     "method": "GET",
+     "path": "/api/auth/session",
+     "status": 200
+    }
+   ],
+   "callbackOnlyBootstrap": true,
+   "buildActivations": 0,
+   "invalidBuildActivations": 0,
+   "validBuildActivations": 0,
+   "trafficCounts": {
+    "allowed": 176,
+    "blocked-external": 14,
+    "fixture": 13
+   }
+  },
+  "runRoot": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-3fi5V3",
+  "runRootResultSha256": "c8786726613543e948babde737faa14b2a1cf1cdfbf7f2614c2681c7ae49c9c5",
+  "assessmentSha256": "99d769a4a56e45a5a9cbb37b982999c8f5b0d6fe3dcbd521ccd0ad0ffd4cb303",
+  "playwrightLogSha256": "31d746c1c0cc209f6279b420f32710eb866e25b443a6e7b26aa216b73dbb1e16",
+  "manifestSha256": "f768c4c86d122b00b2834bcfdfdbc7da8599e109e0d5b6b55ee633f8adc8f384",
+  "isolationLogSha256": "ad44b55df2fdf9e0c25f30d1f1c21c0e2dcb8ff51c2d0ef489958145b14cf896",
+  "teardown": {
+   "attempted": true,
+   "pid": 26708,
+   "status": 0,
+   "portFree": true,
+   "processGone": true,
+   "ownedStopped": true,
+   "transientExact": true
+  },
+  "outputBudget": {
+   "run": {
+    "bytes": 2852704,
+    "files": 29
+   },
+   "build": {
+    "bytes": 202376097,
+    "files": 205
+   },
+   "snapshots": {
+    "bytes": 117,
+    "files": 1
+   },
+   "withinCaps": true
+  },
+  "isolation": {
+   "preloadContexts": 25,
+   "envBlocked": 4,
+   "networkBlocked": 1,
+   "evaluateBlocked": 0
+  },
+  "runnerSourceDriftRows": 26,
+  "runnerSourceDriftUnchanged": true,
+  "workerPins": {
+   "pre": "b6b245e8e71050d377b0837dcf067cc7be5ef68dd5abf4dc0dd8c9f60b70bc7b",
+   "post": "b6b245e8e71050d377b0837dcf067cc7be5ef68dd5abf4dc0dd8c9f60b70bc7b",
+   "count": 23,
+   "stable": true
+  },
+  "launchResultSha256": "5771127287efc21fbb57947bab1571bf44e5bfba39fa035766a89ff9265b6a67",
+  "runnerInvocations": 1,
+  "retries": 0,
+  "launcherPreflightSha256": "38f06f7b856994284c5f1ec164c2607f350b795e531e2869da6c6e7883c46d07"
+ },
+ "REQ-RETURN": {
+  "status": "PASS_PENDING_FINAL_GATE",
+  "note": "full-gate results live in the detached receipt under worker custody; this file does not self-declare them"
+ },
+ "limits": [
+  "The oracle criteria object carries 12 boolean keys, all true; the 13 in the work order maps to 13 required images (9 focus + 4 copy checkpoints), also all present. No claim beyond what the oracle measures.",
+  "Copy checkpoints are full-page captures; not every disclosure group is in the viewport at once.",
+  "Mock/jsdom unit proof is pure UI structure; no AI governance, writer, cancellation or business correctness claim.",
+  "No human comprehension, accessibility certification, R1/R2 exit, provider, production or deploy claim.",
+  "Historical: the previous worker did not fully read utils.ts; this worker read it in full but that does not cure the old limit."
+ ]
+}
