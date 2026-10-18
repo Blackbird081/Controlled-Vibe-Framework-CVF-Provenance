@@ -23,8 +23,8 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_PRE_EFFECT_WALKTHROUGH_2026-10-18.md",
     "workOrderSha256": "6c450f1a5582b2d7913eeb54182169ceab9c3b18ccffb1f4aac93d648902b719"
   },
-  "currentAuthoritySyncReason": "Material3 5818fb2672f74fc0719b70e24fc511b7c911ee55; R1 evidence disposition identifies assisted pre-effect UI explanation observation absent from8DOM/scripted6refusals/focusproof. New INITIAL0/current1 criterion, existing focusS5/current0 retained; exact2 future worker/source readonly/0Build-write, UI unfavorable findings permitted, no comprehension claim. Normal91PASS, actual P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Actual bound release/manual transfer only; provider/private data/production/public/deployOFF.",
-  "currentMode": "cvf_ncr_r1_pre_effect_walkthrough_handoff_ready",
+  "currentAuthoritySyncReason": "Local material4 bc03fa663b3876b876a0a90583555fb5b9feb24a; review docs/reviews/CVF_NCR_R1_PRE_EFFECT_WALKTHROUGH_LOCAL_COMPLETION_REVIEW_2026-10-18.md SHA256 0dfab27094b44e987f376d206d0a5a49ea58734fd2befdfee9ee6186f685276c accepts assessed contribution with procedure limits, worker BLOCKED/final gateCOMPLIANT actual hashes retained; exact S1/counters0,0,0,1 unchanged. F1-F7open, nextPLAN_ONLY existing UI contract/manual transfer. Normal91PASS; actualP4 SKIPPED_NO_ELIGIBLE_CANDIDATE. No Root app/browser/worker/provider effects.",
+  "currentMode": "cvf_ncr_r1_pre_effect_assessment_locally_reviewed",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_ux_focused_verify_locally_accepted",
+  "previousMode": "cvf_ncr_r1_pre_effect_walkthrough_handoff_ready",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [
