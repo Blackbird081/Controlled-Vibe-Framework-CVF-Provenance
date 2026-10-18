@@ -35,22 +35,22 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_r2c_current_source_pair_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN bounded paired review only; no automatic successor; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=successor3/retry/provider/deletion/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_draft_recovery_source_dispatch`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bounded recovery source implementation after committed release; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=real-data/production/provider/deletion/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_r2c_current_source_pair_accepted_bounded`
-Current mode: `cvf_ncr_html_r2c_current_source_pair_accepted_bounded`; previous mode marker: `cvf_ncr_html_r2c_runtime_documentary_repair`
+Current mode marker: `cvf_ncr_html_draft_recovery_source_dispatch`
+Current mode: `cvf_ncr_html_draft_recovery_source_dispatch`; previous mode marker: `cvf_ncr_html_r2c_current_source_pair_accepted_bounded`
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_r2c_current_source_pair_accepted_bounded`
+Mode: `cvf_ncr_html_draft_recovery_source_dispatch`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018. Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Plan only a separately admitted future stage decision; no automatic effect or successor3. S14/Q05/R1F accepted bounded sources unchanged; historical R1E BE-R01 and R2B BE-R02 spent blocked remain immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged. Actual R2C material SHA b87f5111770c42418da211e52efc5529f02f078e; finality and clean split remain Root-measured.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. After committed bound release PASS, one INTERNAL_AGENT source worker implements exact14 and isolated synthetic proof; Root reviews/probes/closes. Default profile OFF; no running-app, real-data, provider, R2C replay, deletion or public/deploy effect. Parent gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred retained.
 
 ## Parked Checkpoints
 
-NCR-R0 limited pilot selection is retained; real-data writer/custody, business acceptance and effect-specific cost decisions remain action-specific checkpoints. U1 code import/runtime use, out-of-manifest production TypeScript edits, unrelated existing-guard edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation, CLI/MCP invocation, public sync, deployment, production, trusted-evidence readiness and cross-runtime determinism claims remain parked.
+NCR-R0 limited pilot selection is retained; real-data writer/custody, business acceptance and effect-specific cost decisions remain action-specific checkpoints. U1 code import/runtime use, out-of-manifest TypeScript edits, unrelated existing-guard edits, hook/autorun/CI wiring, provider/live, credential access, quota mutation, CLI/MCP invocation, public sync, deployment, production, trusted-evidence readiness and cross-runtime determinism claims remain parked.
 T4 closed as standalone static checker work with no hook wiring or production-source mutation.
 Prior unrelated checkpoints remain historical.
 

@@ -5,7 +5,7 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.59
+Version: 2.60
 Updated: 2026-10-18
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
@@ -24,12 +24,16 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** Plan only a separately admitted future stage decision; no effect admitted. Root preserves actual first outcomes and historical R1F closure repair as distinct history. Local hard deadline was 2026-10-18T03:00:00Z; decision observed 2026-10-18T02:04:51.014478+00:00. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged; provider/real-data/deletion/public/deploy parked.
+**Bước kế tiếp:** Triển khai source-only HTML draft recovery theo baseline/work order2026-10-18 đã được operator duyệt. Explicit Save, immutable owner-bound snapshot, exact-byte lookup không gọi lại export; profile mặc định OFF, chỉ kiểm thử fixture synthetic cô lập. R1/R2 vẫn partial; R3/R4 open; dữ liệu thật/provider/public/deploy giữ checkpoint riêng.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.
 
 Historical detail and governed evidence remain in the ledger below; this checkpoint reports the current R2C state.
+
+### Recovery Source Stage Admission - 2026-10-18
+
+Local accepts `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md` and dispatches `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md` after committed bound release. One INTERNAL_AGENT worker exact14; Local independent byte/principal/no-replay probe. Source changes require their own proof; previous browser/R2C results remain tied to their recorded revisions. No R2C successor/replay, live governance proof or application enablement is selected.
 
 ### R1 Initial Support Matrix And Next Stage Selection - 2026-10-18
 

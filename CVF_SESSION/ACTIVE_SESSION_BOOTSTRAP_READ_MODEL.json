@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_html_r2c_current_source_pair_accepted_bounded",
+  "currentMode": "cvf_ncr_html_draft_recovery_source_dispatch",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018. Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Plan only a separately admitted future stage decision; no automatic effect or successor3. S14/Q05/R1F accepted bounded sources unchanged; historical R1E BE-R01 and R2B BE-R02 spent blocked remain immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged. Actual R2C material SHA b87f5111770c42418da211e52efc5529f02f078e; finality and clean split remain Root-measured.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. After committed bound release PASS, one INTERNAL_AGENT source worker implements exact14 and isolated synthetic proof; Root reviews/probes/closes. Default profile OFF; no running-app, real-data, provider, R2C replay, deletion or public/deploy effect. Parent gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred retained.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
-    "baselineSha256": "0f9de80c7aa2d3f6ed02bd15153623c3168ea42818664397c1f5642e85864236",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
-    "workOrderSha256": "9bd3158e7fd556160b17e320fe489e01697fa656f6950c93c44bfbf0a234b6fd"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md",
+    "baselineSha256": "18087b7bc3efe23aaedecef188e1aadae4eae961ccbbfddea61e90900eafe01d",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md",
+    "workOrderSha256": "f811cdc5f78df9e31e0f4f52df40f27730497e14687041c99ca0798367ee454d"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
