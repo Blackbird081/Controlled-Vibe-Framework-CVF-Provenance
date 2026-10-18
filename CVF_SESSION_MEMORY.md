@@ -35,7 +35,7 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_r1f_current_source_cap2_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN distinct future cap1 authority after accepted R1F; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=cap1/retry/provider/deletion/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_r1f_current_source_cap2_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN distinct future cap1 authority after accepted R1F; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=cap1/retry/provider/deletion/public/deploy.
 
 ## Current Mode
 
@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_r1f_current_source_cap2_accepted_bounded`; previous 
 
 Mode: `cvf_ncr_html_r1f_current_source_cap2_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017. Fresh S14-source R1F cap2 mechanical journey accepted bounded. Plan distinct future cap1 authority only after finality; no automatic effect. S14 source and Q05 qualification unchanged; R1E accepted historical BE-R01 and R02 spent blocked remain immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017. Fresh S14-source R1F cap2 mechanical journey accepted bounded. Plan distinct future cap1 authority only after finality; no automatic effect. S14 source and Q05 qualification unchanged; R1E accepted historical BE-R01 and R02 spent blocked remain immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged. Actual R1F material SHA 862957c7930d79ba01b7241f0ccf6caf29a8b8df; finality and clean split remain Root-measured.
 
 ## Parked Checkpoints
 

@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `d11760cd06f5f46ae5a461753ab7a7acb2e88869`. Material SHA: `d11760cd06f5f46ae5a461753ab7a7acb2e88869`. Batch ID: CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017. Exact6 actual R1F dispatch material continuity.
+Current HEAD recorded for this handoff: `862957c7930d79ba01b7241f0ccf6caf29a8b8df`. Material SHA: `862957c7930d79ba01b7241f0ccf6caf29a8b8df`. Batch ID: CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017. Exact6 actual-material continuity; clean split closure follows.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -17,7 +17,7 @@ Fresh S14-source R1F cap2 mechanical journey accepted bounded. Original sealed w
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_r1f_current_source_cap2_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN distinct future cap1 authority after accepted R1F; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=cap1/retry/provider/deletion/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_r1f_current_source_cap2_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN distinct future cap1 authority after accepted R1F; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=cap1/retry/provider/deletion/public/deploy.
 
 ## Current Mode
 
@@ -37,7 +37,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017. Fresh S14-source R1F cap2 mechanical journey accepted bounded. Plan distinct future cap1 authority only after finality; no automatic effect. S14 source and Q05 qualification unchanged; R1E accepted historical BE-R01 and R02 spent blocked remain immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R1F-RUNTIME-20261017. Fresh S14-source R1F cap2 mechanical journey accepted bounded. Plan distinct future cap1 authority only after finality; no automatic effect. S14 source and Q05 qualification unchanged; R1E accepted historical BE-R01 and R02 spent blocked remain immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged. Actual R1F material SHA 862957c7930d79ba01b7241f0ccf6caf29a8b8df; finality and clean split remain Root-measured.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -75,13 +75,6 @@ Disposition: AUTHORIZED_EXACT_MANIFEST
 Atomicity reason: one spent R1F actor, actual first-result disposition, closed authority and session projection align in material; following actual-material-SHA continuity is exact6.
 
 Exact changed manifest:
-- `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md`
-- `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-worker-20261017.json`
-- `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`
-- `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json`
-- `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -94,13 +87,6 @@ Rollback boundary: exact listed paths, no runtime replay or deletion.
 
 Authorized guard-maintenance scope: close fresh R1F first result, roadmap and current6 only.
 Protected paths:
-- `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md`
-- `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-worker-20261017.json`
-- `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`
-- `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json`
-- `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`
-- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`
-- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
 - `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
@@ -116,21 +102,21 @@ Rollback boundary: exact manifest; source18/S14/Q05/R1E/R02 and original custody
 |---|---|
 | Actor | LOCAL INTERNAL_AGENT reviewer/closer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-be-r1f-r01-material-20261018 |
+| Session or invocation | ncr-be-r1f-r01-continuity-20261018 |
 | Working directory | repository root |
 | Command or tool surface | consume frozen worker exact2 and distinct Root PURE10; metadata closure only |
-| Target paths | `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | R1F one-actor first-result and standing Local closure/steward authority |
-| Before status evidence | actual clean worktree at committed dispatch HEAD 84b2dc7877f95f8784e61f016f10e529699a225a; frozen exact2 worker return pending at Local review |
+| Before status evidence | actual clean worktree at committed dispatch HEAD 862957c7930d79ba01b7241f0ccf6caf29a8b8df; frozen exact2 worker return pending at Local review |
 | After status evidence | Fresh S14-source R1F cap2 mechanical journey accepted bounded; R1F grant spent |
-| Diff evidence | exact13 material manifest |
+| Diff evidence | exact6 continuity manifest |
 | Approval boundary | metadata only; no effect retry, cap1, provider or deletion |
 | Claim boundary | R1F cap2 first result only, no final two-actor B-E or AI governance efficacy |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-be-r1f-r01-material-20261018 |
-| Expected manifest | `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_WORKER_RETURN_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-worker-20261017.json`; `docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md`; `docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact13 |
+| Invocation ID | ncr-be-r1f-r01-continuity-20261018 |
+| Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact6 |
 | Deletion or rename disposition | none; preserve actual custody |
 
 ## Claim Boundary

@@ -23,7 +23,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R1F_RUNTIME_2026-10-17.md",
     "workOrderSha256": "5c318d642ebb7613a99cacfba832c24089e5017f69d01dee0761c5ee5203acea"
   },
-  "currentAuthoritySyncReason": "R1F material first result; Fresh S14-source R1F cap2 mechanical journey accepted bounded",
+  "currentAuthoritySyncReason": "R1F continuity first result; Fresh S14-source R1F cap2 mechanical journey accepted bounded",
   "currentMode": "cvf_ncr_html_r1f_current_source_cap2_accepted_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
