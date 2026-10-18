@@ -5,7 +5,7 @@ docType: work_order
 Status: DISPATCH_READY
 Date: 2026-10-18
 Batch ID: CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018
-Inspection base: d807577ce7970e05890c607283ea8c8ba415f481
+Inspection base: 9cf7c8fbe8fd6e2ecf4c20494ebeaa459320fbe4
 Commit mode: WORKER_MUST_NOT_COMMIT
 providerExecutionAuthority: FORBIDDEN
 rawMemoryReleased=false
@@ -229,7 +229,7 @@ Contract source archive-qualified exception: docs/reference/CVF_AHB_T2_AGENT_HAN
 | route | MULTI_AGENT_MULTI_ROLE |
 | rolePattern | Local dispatcher -> INTERNAL_AGENT implementation worker -> Local reviewer/closer -> session-sync steward |
 | phase | dispatch; implementation; return; first-result review; closure; continuity |
-| baseHeadFor(phase) | dispatchBaseHead=d807577ce7970e05890c607283ea8c8ba415f481; executionBaseHead=actual released clean HEAD before edits; closureBaseHead=actual reviewer HEAD |
+| baseHeadFor(phase) | dispatchBaseHead=9cf7c8fbe8fd6e2ecf4c20494ebeaa459320fbe4; executionBaseHead=actual released clean HEAD before edits; closureBaseHead=actual reviewer HEAD |
 | changedSetScope(phase) | dispatch exact9 B/W+roadmap+source6; worker exact2; final material exact13 worker2+CP/LP2+B/W2+roadmap+source6; following continuity exact6 |
 | traceScope(phase, actor) | actual invocation/manifest/evidence per actor; root owns first-result disposition |
 | commitOwner(phase) | Local dispatch/material; steward continuity; worker no commit |
@@ -347,7 +347,7 @@ Exact required worker handoff is the two rows in Required Artifact Manifest. At 
 
 ## Commit Mode And Base-Anchor Lifecycle
 
-dispatchBaseHead: d807577ce7970e05890c607283ea8c8ba415f481
+dispatchBaseHead: 9cf7c8fbe8fd6e2ecf4c20494ebeaa459320fbe4
 executionBaseHead: actual committed/released clean HEAD captured before worker target import or tracked output
 closureBaseHead: actual Local reviewer HEAD captured before final material closure
 Worker never substitutes dispatchBaseHead for executionBaseHead. Root's dispatch exact9 B/W+roadmap+source6 precedes external frozen runtime pins/admission/launcher digest; final material exact13 and following actual-SHA exact6 are distinct. No self-hash backedge to this packet. Old authority bytes remain historical.
@@ -507,7 +507,7 @@ Rollback boundary: listed metadata only; old actor/parent and private oracles un
 
 ## ADIF Defect Registry Disclosure
 
-Resolver query: taskClass=Work-order authoring / dispatch, role=dispatcher, lifecyclePhase=pre-dispatch, maxResults=100. Fresh R2C actual argv ["python", "-B", "governance/compat/run_adif_defect_resolver.py", "--task-class", "Work-order authoring / dispatch", "--role", "dispatcher", "--lifecycle-phase", "pre-dispatch", "--max-results", "100", "--json"]; exit0/0.109s; raw stdout .cvf/runtime/ncr-r2c-root-20261018/adif.stdout.log SHA256 669a86021fd61cb8fd91fba96e39dce168ebd62345ac043d635612a531b3b687; 27 IDs: ADIF-0001, ADIF-0002, ADIF-0014, ADIF-0015, ADIF-0020, ADIF-0021, ADIF-0028, ADIF-0029, ADIF-0033, ADIF-0044, ADIF-0045, ADIF-0051, ADIF-0052, ADIF-0056, ADIF-0057, ADIF-0058, ADIF-0061, ADIF-0062, ADIF-0007, ADIF-0016, ADIF-0017, ADIF-0024, ADIF-0031, ADIF-0039, ADIF-0043, ADIF-0049, ADIF-0006. Applicable authoring risks are checker read-ahead, exact source/manifest/closure bindings, clean source admission and role boundaries. No broad defect-body scan or all-entry-body-read claim. Historical Q05/R1F records are not relabelled as R2C.
+Resolver query: taskClass=`Work-order authoring / dispatch`, role=`dispatcher`, lifecyclePhase=`pre-dispatch`, maxResults=100. Fresh R2C actual argv ["python", "-B", "governance/compat/run_adif_defect_resolver.py", "--task-class", "Work-order authoring / dispatch", "--role", "dispatcher", "--lifecycle-phase", "pre-dispatch", "--max-results", "100", "--json"]; exit0/0.109s; raw stdout .cvf/runtime/ncr-r2c-root-20261018/adif.stdout.log SHA256 669a86021fd61cb8fd91fba96e39dce168ebd62345ac043d635612a531b3b687; 27 IDs: ADIF-0001, ADIF-0002, ADIF-0014, ADIF-0015, ADIF-0020, ADIF-0021, ADIF-0028, ADIF-0029, ADIF-0033, ADIF-0044, ADIF-0045, ADIF-0051, ADIF-0052, ADIF-0056, ADIF-0057, ADIF-0058, ADIF-0061, ADIF-0062, ADIF-0007, ADIF-0016, ADIF-0017, ADIF-0024, ADIF-0031, ADIF-0039, ADIF-0043, ADIF-0049, ADIF-0006. Applicable authoring risks are checker read-ahead, exact source/manifest/closure bindings, clean source admission and role boundaries. No broad defect-body scan or all-entry-body-read claim. Historical Q05/R1F records are not relabelled as R2C.
 
 ## Checker Source Read-Ahead Block
 
@@ -541,7 +541,7 @@ Resolver query: taskClass=Work-order authoring / dispatch, role=dispatcher, life
 | Command or tool surface | accepted R1F finality; fresh R2C file preparation/scaffold/ADIF; conditional authority and generated continuity |
 | Target paths | docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md; docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
 | Allowed scope source | operator explicit continuation; existing finite Local technical disposition |
-| Before status evidence | HEAD d807577ce7970e05890c607283ea8c8ba415f481; clean worktree/stage; S14/Q05/R1F accepted immutable; R2C zero programs |
+| Before status evidence | HEAD 9cf7c8fbe8fd6e2ecf4c20494ebeaa459320fbe4; clean worktree/stage; S14/Q05/R1F accepted immutable; R2C zero programs |
 | After status evidence | exact9 conditional metadata; R2C actual outcome pending |
 | Diff evidence | changed set equals exact manifest |
 | Approval boundary | one fresh paired cap1 actor after committed bound release and initial external freeze |
@@ -669,3 +669,7 @@ Actual R1F accepted finality SHA eea3d052c5ce1dd7e2671488aeee50bbb5565cb55bd7e5c
 ## Root Pre-Effect Range Repair
 
 Original normal exact9/6 pair 8f305e4111c30f52b42ad452fd5d2a1298dde33d / d807577ce7970e05890c607283ea8c8ba415f481 is retained but not released. First range preflight refused the unquoted atomicity manifest; Root corrected the existing declaration format without changing granted scope, source18, clock or effect ceilings. This corrective exact9 plus following actual-SHA exact6 is the release pair; both mandatory normal/range/bound gates remain required. Original attempts and raw receipts retained under .cvf/runtime/ncr-r2c-root-20261018. Zero programs have started.
+
+## Root ADIF Range Confirmation
+
+The prior corrective pair ab6d7ea5d73fd590f6417a4ddf17f110a1aca370 / 9cf7c8fbe8fd6e2ecf4c20494ebeaa459320fbe4 is retained unreleased:83/84 range guards passed; ADIF disclosure refused plain query values. Root corrected the existing backtick literal only; the actual fresh27-ID resolver receipt and dispositions are unchanged. This current corrective exact9/6 replaces that release candidate; no effects or deadline reset.

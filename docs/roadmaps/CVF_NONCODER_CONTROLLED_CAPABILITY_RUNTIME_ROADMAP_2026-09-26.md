@@ -17,7 +17,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | Item | Current disposition | Evidence / remaining step |
 |---|---|---|
 | BE-S14 / BE-Q05 | Accepted bounded on their recorded source/control scope | Existing source release and Q05 finality retained |
-| BE-R2C | CONDITIONAL_CAP1_RANGE_REPAIR; RESULT_PENDING | Fresh source18 actor /root/r2c_execute, program1 actual9/26 then Root PURE10 barrier and one original cap1 D.execute only after committed bound release/freeze; no result yet |
+| BE-R2C | CONDITIONAL_CAP1_ADIF_FORMAT_REPAIR; RESULT_PENDING | Fresh source18 actor /root/r2c_execute, program1 actual9/26 then Root PURE10 barrier and one original cap1 D.execute only after committed bound release/freeze; no result yet |
 | BE-R1F | ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS | docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md; docs/reviews/evidence/ncr-html-b-e-r1f-runtime-local-20261017.json; actual material SHA and continuity evidence recorded in active handoff |
 | BE-R01 / BE-R02 | Historical accepted / blocked-spent | Old actor outcomes retained; neither substitutes for R1F |
 | R1 / R2 | Partial | Supporting results do not close stage exits |

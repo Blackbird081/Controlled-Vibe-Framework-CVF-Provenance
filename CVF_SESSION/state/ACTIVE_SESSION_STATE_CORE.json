@@ -19,11 +19,11 @@
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
-    "baselineSha256": "d6fdf3848cdfc34ac09d4992b1eee38ea4453c14fabf2f4d8083d9782b7af8dd",
+    "baselineSha256": "a59a48830d14962ace3763f0178d16be93c4fcc47365c9ee5019ca27a3f623e8",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
-    "workOrderSha256": "925dfd548afd39ac56707320d9deeaa541e187f8828c986ea245de3b1580ed74"
+    "workOrderSha256": "a8b48535fb2e8be1c88085bf4fc0109654d24f49d7e1dcf3ddcdd071a600a855"
   },
-  "currentAuthoritySyncReason": "R2C fresh paired cap1 conditional continuity; accepted S14/Q05/R1F immutable",
+  "currentAuthoritySyncReason": "R2C fresh paired cap1 conditional material; accepted S14/Q05/R1F immutable",
   "currentMode": "cvf_ncr_html_be_r2c_runtime_dispatched",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
