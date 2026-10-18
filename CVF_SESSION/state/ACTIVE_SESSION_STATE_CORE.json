@@ -23,7 +23,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
     "workOrderSha256": "9bd3158e7fd556160b17e320fe489e01697fa656f6950c93c44bfbf0a234b6fd"
   },
-  "currentAuthoritySyncReason": "R2C material paired first result; Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded",
+  "currentAuthoritySyncReason": "R2C continuity paired first result; Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded",
   "currentMode": "cvf_ncr_html_r2c_current_source_pair_accepted_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",

@@ -35,7 +35,7 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_r2c_current_source_pair_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN bounded paired review only; no automatic successor; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=successor3/retry/provider/deletion/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_r2c_current_source_pair_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN bounded paired review only; no automatic successor; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=successor3/retry/provider/deletion/public/deploy.
 
 ## Current Mode
 
@@ -46,7 +46,7 @@ Current mode: `cvf_ncr_html_r2c_current_source_pair_accepted_bounded`; previous 
 
 Mode: `cvf_ncr_html_r2c_current_source_pair_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018. Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Plan only a separately admitted future stage decision; no automatic effect or successor3. S14/Q05/R1F accepted bounded sources unchanged; historical R1E BE-R01 and R2B BE-R02 spent blocked remain immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018. Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Plan only a separately admitted future stage decision; no automatic effect or successor3. S14/Q05/R1F accepted bounded sources unchanged; historical R1E BE-R01 and R2B BE-R02 spent blocked remain immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged. Actual R2C material SHA b87f5111770c42418da211e52efc5529f02f078e; finality and clean split remain Root-measured.
 
 ## Parked Checkpoints
 
