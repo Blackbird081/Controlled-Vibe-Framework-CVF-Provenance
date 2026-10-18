@@ -23,7 +23,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md",
     "workOrderSha256": "6598c234a63e1a1e58218119b1875d9ea203be6b746df81af1cb9edcc52aae8f"
   },
-  "currentAuthoritySyncReason": "New bounded synthetic app/browser recovery packet; no old actor transfer.",
+  "currentAuthoritySyncReason": "Actual dispatch material 4f37b89cd7f68eeed7b9a7098dd7b7b2d5f4427b; exact6 continuity; bound release required.",
   "currentMode": "cvf_ncr_html_draft_recovery_browser_dispatch",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",

@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `b75bf181b2c61a165cbedccda1de373d8c11f317`. Accepted source material SHA: `b75bf181b2c61a165cbedccda1de373d8c11f317`; batch CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Source26/continuity6; synthetic fixture proof only, production OFF.
+Current HEAD recorded for this handoff: `4f37b89cd7f68eeed7b9a7098dd7b7b2d5f4427b`. Dispatch material SHA: `4f37b89cd7f68eeed7b9a7098dd7b7b2d5f4427b`; batch CVF-NCR-HTML-DRAFT-RECOVERY-BROWSER-20261018. New synthetic app/browser packet, exact9/continuity6; bound release required.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -39,7 +39,7 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 Mode: `cvf_ncr_html_draft_recovery_browser_dispatch`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-BROWSER-20261018. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md. After committed bound release, one INTERNAL_AGENT exact12 implements profile and finite isolated app/browser proof. Default/prod OFF; no provider/evaluate, real-data, deletion or public/deploy. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred retained.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-BROWSER-20261018. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md. Dispatch material 4f37b89cd7f68eeed7b9a7098dd7b7b2d5f4427b; after bound release, one INTERNAL_AGENT exact12 implements profile and finite isolated app/browser proof. Default/prod OFF; no provider/evaluate, real-data, deletion or public/deploy. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred retained.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
