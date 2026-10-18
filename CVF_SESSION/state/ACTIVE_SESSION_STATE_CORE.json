@@ -23,8 +23,8 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_GOAL_FOCUS_REPAIR_2026-10-19.md",
     "workOrderSha256": "15845329b2fa2ab36531a681634e98529b0e18ed8fdce6e650e4cc4d2374a3f6"
   },
-  "currentAuthoritySyncReason": "Material6 7d8c0e1c4a393511ab8b3029951f1815b76b1d5c and Local review docs/reviews/CVF_NCR_R1_GOAL_FOCUS_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md SHA256ce769e0c531cb056ca3db76526c75db5ceecd6466242cf99fae26f7f68978a6b accept finite Goal UI proof with procedure limits. Frozen baseline/workorder pair retained as spent authority. ActualLocalS3 resolves dispatchGoal1to0, workerfork/late-read/counterror/firstFAIL retained. Next PLAN_ONLY R1exit/R2W05. Normal91PASS/P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Rootproductruns0; effectsOFF.",
-  "currentMode": "cvf_ncr_r1_goal_focus_accepted_exit_planning",
+  "currentAuthoritySyncReason": "Material3 05a83a7f4e834d5ab8c7a5df1e85ad6a450f4277 Localreview docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md SHA25664def6e3bb923533a810e527dc67bbbfeeab0b7a5502f4133b4729de6adb331b completes R1exit/W05current-source disposition. Existing frozen spent Goalpair retained as provenance, no executable newworkorder. R1UXbounded/local synthetic/fullR1preliveR2notclosed; nextPLAN_ONLY R2offlineadmissiondesign. Normal91PASS/P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Rootproduct/effects0.",
+  "currentMode": "cvf_ncr_r1_exit_reconciled_r2_w05_offline_design",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r1_goal_focus_repair_handoff_ready",
+  "previousMode": "cvf_ncr_r1_goal_focus_accepted_exit_planning",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [
