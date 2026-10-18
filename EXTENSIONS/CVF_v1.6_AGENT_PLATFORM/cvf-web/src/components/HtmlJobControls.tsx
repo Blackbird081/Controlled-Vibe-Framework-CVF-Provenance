@@ -1,6 +1,7 @@
 'use client';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSession } from 'next-auth/react';
+import { useLanguage } from '@/lib/i18n';
 import type { DraftSnapshot } from '@/lib/html-draft-recovery-contract';
 import type { HtmlJob, HtmlJobDecision, HtmlJobVersion, JobCriterion } from '@/lib/html-job-contract';
 import { ArtifactExportPanel, type ArtifactExportRequest, type DisplayedResult } from './ArtifactExportPanel';
@@ -11,6 +12,48 @@ type Props = { sourceRecordId: string; initialRequest: Partial<ArtifactExportReq
 type VersionState = 'current' | 'stale' | 'unknown' | null;
 const endpoint = '/api/artifacts/jobs';
 const effects = ['LOCAL_HTML_BUILD', 'LOCAL_DRAFT_SAVE', 'LOCAL_SYNTHETIC_REVIEW'] as const;
+// Text Encoding Exception: localized Vietnamese user-facing copy follows the existing UI language owner.
+const COPY = {
+  en: {
+    scopeChecking: 'Checking local test job scope...', sessionRequired: 'Normal session required for the local test job.',
+    capabilityChecking: 'Checking local HTML job availability...', jobTitle: 'Local test HTML job', goal: 'Goal', criterion: 'Criterion',
+    addCriterion: 'Add criterion', job: 'Job', reviewTitle: 'Review saved HTML version', draft: 'Saved draft',
+    reviewNote: 'Review note',
+    operation: { CREATE_JOB: 'job creation', SAVE_DRAFT: 'draft saving', LINK_VERSION: 'version linking', ACCEPT_VERSION: 'review recording' },
+    draftState: 'sent from this device, not verified, not accepted.', reopened: 'Reopened original job and saved version.', current: 'Current displayed job and saved version.',
+    reviewStale: 'Review target is stale or unconfirmed; this does not accept current work.',
+    reviewExact: 'I reviewed this exact saved version', recordReview: 'Record local test review',
+    reviewRecorded: 'A local test review by the same user was recorded for this original version:',
+    provenanceUnverified: 'Draft provenance remains unverified.', linkSaved: 'Link this confirmed saved version to its original job',
+    reconcile: 'Reconcile', jobOutcomeUnknown: 'Job outcome unknown. Reconcile this exact ID before another Build.',
+    originalJobRecovered: 'Original job recovered. No Build was started.', savedVersionRecovered: 'Exact saved version and original job recovered by read-only lookup.',
+    savedVersionConfirmed: 'Saved version confirmed; no link exists. Link this same pair explicitly.',
+    reconcileUnknown: 'Exact read-only reconciliation did not confirm this operation. Its ID remains pending.',
+    pendingLink: 'Resolve the pending operation before linking.', linked: 'Exact saved version linked.',
+    linkUnknown: 'Link outcome unknown. Reconcile this exact version ID.', criterionNotesRequired: 'Add an inspectable note for every criterion.',
+    pendingReview: 'Resolve the pending operation first.', reviewUnknown: 'Review outcome unknown. Reconcile the exact decision ID.',
+  },
+  vi: {
+    scopeChecking: 'Đang kiểm tra phạm vi tác vụ thử nghiệm cục bộ...', sessionRequired: 'Cần phiên đăng nhập thông thường để dùng tác vụ HTML thử nghiệm cục bộ.',
+    capabilityChecking: 'Đang kiểm tra khả năng dùng tác vụ HTML thử nghiệm cục bộ...', jobTitle: 'Tác vụ HTML thử nghiệm cục bộ', goal: 'Mục tiêu', criterion: 'Tiêu chí',
+    addCriterion: 'Thêm tiêu chí', job: 'Tác vụ', reviewTitle: 'Rà soát phiên bản HTML đã lưu', draft: 'Bản nháp đã lưu',
+    reviewNote: 'Ghi chú rà soát',
+    operation: { CREATE_JOB: 'tạo tác vụ', SAVE_DRAFT: 'lưu bản nháp', LINK_VERSION: 'liên kết phiên bản', ACCEPT_VERSION: 'ghi nhận lượt rà soát' },
+    draftState: 'đã gửi từ thiết bị này, chưa xác minh, chưa được chấp nhận.', reopened: 'Đã mở lại tác vụ gốc và phiên bản đã lưu.', current: 'Tác vụ và phiên bản đã lưu đang hiển thị.',
+    reviewStale: 'Đối tượng rà soát đã cũ hoặc chưa được xác nhận; thao tác này không chấp nhận nội dung hiện tại.',
+    reviewExact: 'Tôi đã rà soát đúng phiên bản đã lưu này', recordReview: 'Ghi nhận lượt rà soát thử nghiệm cục bộ',
+    reviewRecorded: 'Đã ghi nhận lượt rà soát thử nghiệm cục bộ của cùng người dùng cho phiên bản gốc này:',
+    provenanceUnverified: 'Nguồn gốc bản nháp vẫn chưa được xác minh.', linkSaved: 'Liên kết phiên bản đã lưu được xác nhận này với tác vụ gốc',
+    reconcile: 'Đối soát', jobOutcomeUnknown: 'Chưa rõ kết quả tác vụ. Hãy đối soát đúng mã này trước khi tạo lại.',
+    originalJobRecovered: 'Đã khôi phục tác vụ gốc. Không bắt đầu lượt tạo mới.', savedVersionRecovered: 'Đã khôi phục phiên bản đã lưu và tác vụ gốc bằng tra cứu chỉ đọc.',
+    savedVersionConfirmed: 'Đã xác nhận phiên bản đã lưu; chưa có liên kết. Hãy liên kết rõ ràng đúng cặp này.',
+    reconcileUnknown: 'Đối soát chỉ đọc chưa xác nhận thao tác này. Mã vẫn đang chờ xử lý.',
+    pendingLink: 'Hãy xử lý thao tác đang chờ trước khi liên kết.', linked: 'Đã liên kết đúng phiên bản đã lưu.',
+    linkUnknown: 'Chưa rõ kết quả liên kết. Hãy đối soát đúng mã phiên bản này.', criterionNotesRequired: 'Hãy thêm ghi chú có thể kiểm tra cho từng tiêu chí.',
+    pendingReview: 'Hãy xử lý thao tác đang chờ trước.', reviewUnknown: 'Chưa rõ kết quả rà soát. Hãy đối soát đúng mã quyết định.',
+  },
+} as const;
+type NoticeKey = keyof Omit<typeof COPY.en, 'operation'>;
 const url = (values: Record<string, string>) => `${endpoint}?${new URLSearchParams(values)}`;
 async function data<T>(response: Response): Promise<T> {
   const payload = await response.json() as { success?: boolean; data?: T; error?: string };
@@ -29,6 +72,8 @@ const joined = (job: HtmlJob, saved: DraftSnapshot, link: HtmlJobVersion) =>
 
 export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
   const { data: session, status } = useSession();
+  const { language } = useLanguage();
+  const copy = COPY[language === 'vi' ? 'vi' : 'en'];
   const user = session?.user as { userId?: string; orgId?: string; teamId?: string; realUserId?: string; realRole?: string; impersonation?: unknown } | undefined;
   const owner = { userId: user?.userId ?? '', orgId: user?.orgId ?? '', teamId: user?.teamId ?? '' };
   const expires = session?.expires ? Date.parse(session.expires) : NaN;
@@ -41,6 +86,7 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
   const epoch = useRef(0);
   const busy = useRef(false);
   const [capability, setCapability] = useState<'loading' | 'enabled' | 'disabled'>('loading');
+  const [effectBoundary, setEffectBoundary] = useState<'LOCAL_SYNTHETIC' | null>(null);
   const enabled = capability === 'enabled';
   const [goal, setGoal] = useState('');
   const [criteria, setCriteria] = useState<JobCriterion[]>([{ criterionId: 'c1', text: '' }]);
@@ -55,7 +101,7 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
   const [reopened, setReopened] = useState(false);
   const [linkAbsent, setLinkAbsent] = useState(false);
   const [pending, setPending] = useState<PendingJobJournal | null>(null);
-  const [notice, setNotice] = useState('');
+  const [notice, setNotice] = useState<NoticeKey | null>(null);
   const signature = JSON.stringify([goal, criteria]);
   const still = (token: number, key: string) => epoch.current === token && scopeRef.current === key && active && Date.now() < expires;
 
@@ -63,13 +109,17 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
     epoch.current += 1; busy.current = false;
     setStateScope(scope); setGoal(''); setCriteria([{ criterionId: 'c1', text: '' }]);
     setNotes({}); setConfirmed(false); setJobSignature('');
-    setCapability('loading'); setJob(null); setSnapshot(null); setLink(null); setDecision(null);
-    setPending(null); setNotice(''); setVersionState(null); setReopened(false); setLinkAbsent(false);
+    setCapability('loading'); setEffectBoundary(null); setJob(null); setSnapshot(null); setLink(null); setDecision(null);
+    setPending(null); setNotice(null); setVersionState(null); setReopened(false); setLinkAbsent(false);
     const token = epoch.current; const key = scope;
     if (!active || !sourceRecordId.startsWith('ncr-synthetic-')) { setCapability('disabled'); return; }
     setPending(readPendingJobJournal({ owner, sourceRecordId }));
-    void fetch(url({ kind: 'capabilities' }), { cache: 'no-store' }).then(data<{ jobDecisions: true }>)
-      .then(value => { if (still(token, key)) setCapability(value.jobDecisions === true ? 'enabled' : 'disabled'); })
+    void fetch(url({ kind: 'capabilities' }), { cache: 'no-store' }).then(data<{ jobDecisions?: unknown; effectBoundary?: unknown }>)
+      .then(value => { if (still(token, key)) {
+        const decisionsEnabled = value.jobDecisions === true;
+        setCapability(decisionsEnabled ? 'enabled' : 'disabled');
+        setEffectBoundary(decisionsEnabled && value.effectBoundary === 'LOCAL_SYNTHETIC' ? 'LOCAL_SYNTHETIC' : null);
+      } })
       .catch(() => { if (still(token, key)) setCapability('disabled'); });
     return () => { epoch.current += 1; };
   }, [scope]);
@@ -95,7 +145,7 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
       clearPendingJobJournal(journal); setPending(null); setJob(created); setJobSignature(JSON.stringify([created.goal, created.criteria]));
       setSnapshot(null); setLink(null); setDecision(null); setNotes({}); setConfirmed(false); setReopened(false); setLinkAbsent(false);
       return { jobId, sourceRecordId };
-    } catch (error) { if (still(token, key)) setNotice('Job outcome unknown. Reconcile this exact ID before another Build.'); throw error; }
+    } catch (error) { if (still(token, key)) setNotice('jobOutcomeUnknown'); throw error; }
     finally { if (still(token, key)) busy.current = false; }
   }, [active, expires, enabled, goal, criteria, owner.userId, owner.orgId, owner.teamId, sourceRecordId, scope]);
 
@@ -113,7 +163,7 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
         setGoal(foundJob.goal); setCriteria(foundJob.criteria); setJob(foundJob);
         setNotes({}); setConfirmed(false);
         setJobSignature(JSON.stringify([foundJob.goal, foundJob.criteria])); setReopened(true);
-        clearPendingJobJournal(target); setPending(null); setNotice('Original job recovered. No Build was started.'); return;
+        clearPendingJobJournal(target); setPending(null); setNotice('originalJobRecovered'); return;
       }
       const versionId = target.versionId!;
       const foundSnapshot = await loadSnapshot(versionId);
@@ -139,9 +189,8 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
       setNotes({}); setConfirmed(false);
       setSnapshot(foundSnapshot); setLink(foundLink); setReopened(true); setLinkAbsent(!foundLink);
       clearPendingJobJournal(target); setPending(null);
-      setNotice(foundLink ? 'Exact saved version and original job recovered by read-only lookup.'
-        : 'Saved version confirmed; no link exists. Link this same pair explicitly.');
-    } catch { if (still(token, key)) setNotice('Exact read-only reconciliation did not confirm this operation. Its ID remains pending.'); }
+      setNotice(foundLink ? 'savedVersionRecovered' : 'savedVersionConfirmed');
+    } catch { if (still(token, key)) setNotice('reconcileUnknown'); }
   };
 
   const linkSnapshot = async (saved: DraftSnapshot, targetJobId?: string) => {
@@ -151,26 +200,26 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
     const token = epoch.current; const key = scope;
     const journal: PendingJobJournal = { schema: 'cvf.htmlJobPending.v1', owner, sourceRecordId,
       jobId: job.jobId, versionId: saved.versionId, operation: 'LINK_VERSION' };
-    if (!writePendingJobJournal(journal)) { setNotice('Resolve the pending operation before linking.'); return; }
+    if (!writePendingJobJournal(journal)) { setNotice('pendingLink'); return; }
     setPending(journal); setSnapshot(saved); setLink(null); setDecision(null); setNotes({}); setConfirmed(false); setLinkAbsent(false);
     try {
       const created = await data<HtmlJobVersion>(await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'LINK_VERSION', jobId: job.jobId, sourceRecordId, versionId: saved.versionId }) }));
       if (!still(token, key)) return;
       if (!joined(job, saved, created)) throw new Error('Link readback mismatch.');
-      clearPendingJobJournal(journal); setPending(null); setLink(created); setNotice('Exact saved version linked.');
-    } catch { if (still(token, key)) setNotice('Link outcome unknown. Reconcile this exact version ID.'); }
+      clearPendingJobJournal(journal); setPending(null); setLink(created); setNotice('linked');
+    } catch { if (still(token, key)) setNotice('linkUnknown'); }
   };
 
   const accept = async () => {
     if (!active || Date.now() >= expires || !job || !link || !snapshot || !confirmed || pending || decision
       || jobSignature !== signature || (!reopened && versionState !== 'current') || !joined(job, snapshot, link)) return;
     const reviews = job.criteria.map(c => ({ criterionId: c.criterionId, passed: true as const, reviewNote: notes[c.criterionId] ?? '' }));
-    if (reviews.some(r => !r.reviewNote.trim() || r.reviewNote.length > 1000)) { setNotice('Add an inspectable note for every criterion.'); return; }
+    if (reviews.some(r => !r.reviewNote.trim() || r.reviewNote.length > 1000)) { setNotice('criterionNotesRequired'); return; }
     const token = epoch.current; const key = scope; const decisionId = crypto.randomUUID();
     const journal: PendingJobJournal = { schema: 'cvf.htmlJobPending.v1', owner, sourceRecordId, jobId: job.jobId,
       versionId: link.versionId, decisionId, operation: 'ACCEPT_VERSION' };
-    if (!writePendingJobJournal(journal)) { setNotice('Resolve the pending operation first.'); return; }
+    if (!writePendingJobJournal(journal)) { setNotice('pendingReview'); return; }
     setPending(journal);
     try {
       const created = await data<HtmlJobDecision>(await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -180,52 +229,52 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
       if (created.decisionId !== decisionId || created.jobId !== job.jobId || created.versionId !== link.versionId
         || created.requestSha256 !== link.requestSha256 || created.htmlSha256 !== link.htmlSha256) throw new Error('Decision readback mismatch.');
       clearPendingJobJournal(journal); setPending(null); setDecision(created);
-    } catch { if (still(token, key)) setNotice('Review outcome unknown. Reconcile the exact decision ID.'); }
+    } catch { if (still(token, key)) setNotice('reviewUnknown'); }
   };
 
   const canReview = !!job && !!link && !!snapshot && joined(job, snapshot, link) && jobSignature === signature
     && (reopened || versionState === 'current');
+  const profileDisclosure = enabled && effectBoundary === 'LOCAL_SYNTHETIC' ? effectBoundary : undefined;
   const recovery = (displayed: DisplayedResult | null, current: VersionState) => <>
     <VersionStateObserver value={current} update={setVersionState} />
     <HtmlDraftRecovery key={scope} sourceRecordId={sourceRecordId} displayed={displayed} versionState={current}
       jobMode={enabled} onConfirmedSnapshot={(saved, targetJobId) => { void linkSnapshot(saved, targetJobId); }} />
   </>;
-  if (stateScope !== scope) return <p role="status">Checking local synthetic job scope...</p>;
-  if (!active) return <p role="status">Normal session required for the local synthetic job.</p>;
-  if (capability === 'loading') return <p role="status">Checking local synthetic job capability...</p>;
+  if (stateScope !== scope) return <p role="status">{copy.scopeChecking}</p>;
+  if (!active) return <p role="status">{copy.sessionRequired}</p>;
+  if (capability === 'loading') return <p role="status">{copy.capabilityChecking}</p>;
   if (!enabled) return <ArtifactExportPanel key={scope} initialRequest={initialRequest} renderRecovery={recovery} />;
   return <div data-testid="html-job-controls" className="space-y-4">
-    <section className="rounded-lg border p-3" aria-label="Local synthetic HTML job">
-      <p className="text-sm font-semibold">Local synthetic HTML job</p>
-      <p className="text-xs">Build stays local to this selected profile. Stop is local; remote completion and cost can remain unknown.</p>
-      <label className="mt-2 block text-xs">Goal<textarea aria-label="Goal" value={goal} maxLength={2000}
+    <section className="rounded-lg border p-3" aria-label={copy.jobTitle}>
+      <p className="text-sm font-semibold">{copy.jobTitle}</p>
+      <label className="mt-2 block text-xs">{copy.goal}<textarea aria-label={copy.goal} value={goal} maxLength={2000}
         onChange={e => setGoal(e.target.value)} className="mt-1 w-full rounded border p-2" /></label>
-      {criteria.map((criterion, index) => <label key={criterion.criterionId} className="mt-2 block text-xs">Criterion {index + 1}
-        <input aria-label={`Criterion ${index + 1}`} value={criterion.text} maxLength={500} className="ml-2 rounded border p-2"
+      {criteria.map((criterion, index) => <label key={criterion.criterionId} className="mt-2 block text-xs">{copy.criterion} {index + 1}
+        <input aria-label={`${copy.criterion} ${index + 1}`} value={criterion.text} maxLength={500} className="ml-2 rounded border p-2"
           onChange={e => setCriteria(xs => xs.map((x, i) => i === index ? { ...x, text: e.target.value } : x))} /></label>)}
-      <button type="button" disabled={criteria.length >= 8} onClick={() => setCriteria(xs => [...xs, { criterionId: `c${xs.length + 1}`, text: '' }])}>Add criterion</button>
-      {job && <p data-testid="current-job-id" className="text-xs">Job {job.jobId}</p>}
+      <button type="button" disabled={criteria.length >= 8} onClick={() => setCriteria(xs => [...xs, { criterionId: `c${xs.length + 1}`, text: '' }])}>{copy.addCriterion}</button>
+      {job && <p data-testid="current-job-id" className="text-xs">{copy.job} {job.jobId}</p>}
     </section>
-    <ArtifactExportPanel key={scope} initialRequest={initialRequest} prepareJob={prepareJob} renderRecovery={recovery} />
+    <ArtifactExportPanel key={scope} initialRequest={initialRequest} prepareJob={prepareJob} renderRecovery={recovery} profileDisclosure={profileDisclosure} />
     {pending && <button type="button" onClick={() => void reconcile()} data-testid="reconcile-job-operation">
-      Reconcile {pending.operation} {pending.jobId} {pending.versionId ?? ''} {pending.decisionId ?? ''}</button>}
+      {copy.reconcile} {copy.operation[pending.operation]} {pending.jobId} {pending.versionId ?? ''} {pending.decisionId ?? ''}</button>}
     {linkAbsent && job && snapshot && !pending && <button type="button" data-testid="link-confirmed-version"
-      onClick={() => void linkSnapshot(snapshot, job.jobId)}>Link this confirmed saved version to its original job</button>}
-    {notice && <p role="status">{notice}</p>}
-    {job && snapshot && <section className="rounded-lg border p-3" aria-label="Review saved HTML version">
-      <p>Saved draft {snapshot.versionId}: client submitted, unverified, unaccepted.</p>
-      <p>{reopened ? 'Reopened original job and saved version.' : 'Current displayed job and saved version.'}</p>
-      {!canReview && <p data-testid="review-target-stale">Review target is stale or unconfirmed; this does not accept current work.</p>}
+      onClick={() => void linkSnapshot(snapshot, job.jobId)}>{copy.linkSaved}</button>}
+    {notice && <p role="status">{copy[notice]}</p>}
+    {job && snapshot && <section className="rounded-lg border p-3" aria-label={copy.reviewTitle}>
+      <p>{copy.draft} {snapshot.versionId}: {copy.draftState}</p>
+      <p>{reopened ? copy.reopened : copy.current}</p>
+      {!canReview && <p data-testid="review-target-stale">{copy.reviewStale}</p>}
       {link && canReview && <>
         {job.criteria.map(c => <label key={c.criterionId} className="mt-2 block text-xs">{c.text}
-          <textarea aria-label={`Review note ${c.criterionId}`} maxLength={1000} value={notes[c.criterionId] ?? ''}
+          <textarea aria-label={`${copy.reviewNote} ${c.criterionId}`} maxLength={1000} value={notes[c.criterionId] ?? ''}
             onChange={e => setNotes(xs => ({ ...xs, [c.criterionId]: e.target.value }))} className="mt-1 w-full rounded border p-2" /></label>)}
-        <label className="block text-xs"><input type="checkbox" checked={confirmed} onChange={e => setConfirmed(e.target.checked)} /> I reviewed this exact saved version</label>
-        <button type="button" disabled={!active || !!pending || !!decision} onClick={() => void accept()} data-testid="accept-synthetic-version">Record local synthetic review</button>
+        <label className="block text-xs"><input type="checkbox" checked={confirmed} onChange={e => setConfirmed(e.target.checked)} /> {copy.reviewExact}</label>
+        <button type="button" disabled={!active || !!pending || !!decision} onClick={() => void accept()} data-testid="accept-synthetic-version">{copy.recordReview}</button>
       </>}
       {decision && canReview && decision.jobId === job.jobId && decision.versionId === snapshot.versionId
         && decision.requestSha256 === snapshot.requestSha256 && decision.htmlSha256 === snapshot.htmlSha256
-        && <p data-testid="synthetic-review-decision">Local synthetic person review recorded for this original version: {decision.decisionId}. Draft provenance remains unverified.</p>}
+        && <p data-testid="synthetic-review-decision">{copy.reviewRecorded} {decision.decisionId}. {copy.provenanceUnverified}</p>}
     </section>}
   </div>;
 }

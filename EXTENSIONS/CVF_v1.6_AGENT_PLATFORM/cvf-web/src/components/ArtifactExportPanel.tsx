@@ -62,6 +62,7 @@ interface ArtifactExportPanelProps {
   onGenerated?: (result: ArtifactExportResult) => void;
   prepareJob?: (request: ArtifactExportRequest) => Promise<HtmlJobReference>;
   renderRecovery?: (snapshot: DisplayedResult | null, versionState: 'current' | 'stale' | 'unknown' | null) => ReactNode;
+  profileDisclosure?: 'LOCAL_SYNTHETIC';
 }
 
 export interface DisplayedResult {
@@ -126,11 +127,18 @@ const LABELS = {
     noOutput: 'Build an HTML review packet to preview it here.',
     noChecks: 'Readiness checks will appear after the packet is built.',
     failed: 'Export failed',
+    genericFailure: 'This build could not be confirmed. Check the details before deciding what to do next.',
+    completeGoalCriteria: 'Enter the goal and all criteria before building.',
+    pendingOperationRecovery: 'A pending operation could not be recorded. Reconcile it before another write.',
+    technicalDetail: 'Technical detail',
+    stop: 'Stop locally',
+    stoppedUnknown: 'Stopped locally. Remote completion and cost are unknown. This exact request cannot be sent again in this session.',
     sourceHint: 'Paste approved source text. The packet should make review easier without changing the meaning.',
     previewTitle: 'Preview',
     fullRecord: 'Complete record',
     pointerRecord: 'Reference record',
     preGenerateDisclosure: "Building this packet may send a short excerpt of your text to a review-checking service. Whether that happens, and where the data goes, depends on this deployment's setup and is not shown here.",
+    selectedProfileDisclosure: 'The server response reports a local test profile for this session: HTML is rendered on this device. A draft is saved to local test storage when you choose Save; no review receipt is requested. The draft remains unverified and unaccepted, even after a separate local test review by the same user; that review is not trusted evidence or business acceptance. HTML export configuration is resolved separately, so a later export may use a different profile. Stop only acts on this page; it does not confirm that a remote task stopped or determine cost.',
     receiptAbsentNote: 'No review-checking receipt was returned this time. This does not necessarily mean nothing was sent — see the note above.',
     receiptTimedOutNote: 'The review check timed out. No receipt was received, but the service may still have processed the request. Ask an operator to check the attempt ID before trying again.',
     receiptUnavailableNote: 'The review check was unavailable. No receipt was received; the request may still have reached the service. Check the attempt ID before trying again.',
@@ -182,11 +190,18 @@ const LABELS = {
     noOutput: 'Tạo gói HTML để xem trước tại đây.',
     noChecks: 'Các kiểm tra sẵn sàng sẽ hiện sau khi tạo.',
     failed: 'Xuất thất bại',
+    genericFailure: 'Chưa xác nhận được kết quả tạo. Hãy xem chi tiết trước khi quyết định bước tiếp theo.',
+    completeGoalCriteria: 'Hãy nhập mục tiêu và đầy đủ tiêu chí trước khi tạo HTML.',
+    pendingOperationRecovery: 'Chưa ghi nhận được thao tác đang chờ. Hãy đối soát thao tác đó trước khi ghi thêm.',
+    technicalDetail: 'Chi tiết kỹ thuật',
+    stop: 'Dừng tại đây',
+    stoppedUnknown: 'Đã dừng tại đây. Thao tác từ xa có thể vẫn tiếp tục và chi phí chưa rõ. Không thể gửi lại đúng yêu cầu này trong phiên hiện tại.',
     sourceHint: 'Dán nội dung đã được duyệt. Gói này giúp review dễ hơn mà không đổi ý nghĩa.',
     previewTitle: 'Xem trước',
     fullRecord: 'Bản đầy đủ',
     pointerRecord: 'Bản tham chiếu',
     preGenerateDisclosure: 'Việc tạo gói này có thể gửi một đoạn ngắn nội dung của bạn đến một dịch vụ kiểm tra rà soát. Việc này có xảy ra hay không, và dữ liệu đi đâu, phụ thuộc vào cấu hình triển khai và không hiển thị ở đây.',
+    selectedProfileDisclosure: 'Phản hồi máy chủ cho biết phiên này dùng chế độ thử nghiệm cục bộ: HTML được tạo trên máy này. Bản nháp chỉ được lưu vào kho thử nghiệm cục bộ khi bạn chọn Lưu; không có yêu cầu lấy biên nhận kiểm tra. Bản nháp vẫn chưa được xác minh và chưa được chấp nhận, kể cả sau một lượt rà soát thử nghiệm cục bộ riêng của cùng người dùng; lượt rà soát này không phải bằng chứng đáng tin cậy hay sự chấp nhận trong nghiệp vụ. Cấu hình tạo HTML được xác định riêng; lần tạo sau có thể dùng chế độ khác. Dừng chỉ tác động trên trang này; không xác nhận thao tác từ xa đã dừng và chi phí vẫn chưa rõ.',
     receiptAbsentNote: 'Lần này không có biên nhận kiểm tra rà soát nào được trả về. Điều này không chắc có nghĩa là không có gì được gửi — xem ghi chú ở trên.',
     receiptTimedOutNote: 'Kiểm tra rà soát đã hết thời gian chờ. Chưa nhận được receipt, nhưng dịch vụ có thể vẫn đã xử lý yêu cầu. Hãy nhờ người vận hành kiểm tra mã lần thử trước khi thử lại.',
     receiptUnavailableNote: 'Dịch vụ kiểm tra rà soát không sẵn sàng. Chưa nhận được receipt; yêu cầu vẫn có thể đã tới dịch vụ. Hãy kiểm tra mã lần thử trước khi thử lại.',
@@ -367,6 +382,8 @@ function FieldLabel({ children, htmlFor }: { children: string; htmlFor: string }
 }
 
 function recoveryMessageFor(rawError: string, labels: typeof LABELS['en']): string | null {
+  if (rawError === 'Complete the goal and criteria first.') return labels.completeGoalCriteria;
+  if (rawError === 'Resolve the pending operation before another write.') return labels.pendingOperationRecovery;
   if (
     rawError === 'Potential secret-like value detected in artifact export fields.'
     || rawError === 'Potential secret-like value detected in source content.'
@@ -400,6 +417,7 @@ export function ArtifactExportPanel({
   onGenerated,
   prepareJob,
   renderRecovery,
+  profileDisclosure,
 }: ArtifactExportPanelProps) {
   const { language } = useLanguage();
   const labels = LABELS[language === 'vi' ? 'vi' : 'en'];
@@ -413,6 +431,10 @@ export function ArtifactExportPanel({
   const loading = pendingAttempt !== null;
   const result = displayed?.result ?? null;
   const error = attemptError?.message ?? null;
+  const friendlyError = error ? recoveryMessageFor(error, labels) ?? labels.genericFailure : null;
+  const preGenerateDisclosure = profileDisclosure === 'LOCAL_SYNTHETIC'
+    ? labels.selectedProfileDisclosure
+    : labels.preGenerateDisclosure;
   const versionState: 'current' | 'stale' | 'unknown' | null = !displayed
     ? null
     : !displayed.submitted
@@ -667,7 +689,7 @@ export function ArtifactExportPanel({
             data-testid="pre-generate-disclosure"
             className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-5 text-amber-800 dark:border-amber-900/70 dark:bg-amber-950/30 dark:text-amber-200"
           >
-            {labels.preGenerateDisclosure}
+            {preGenerateDisclosure}
           </p>
 
           <div className="mt-3 flex flex-wrap items-center gap-3">
@@ -682,9 +704,9 @@ export function ArtifactExportPanel({
               {loading ? labels.generating : labels.generate}
             </button>
             {loading && <button type="button" onClick={stop} data-testid="stop-html-build"
-              className="inline-flex min-h-11 items-center rounded-lg border border-amber-500 px-4 py-2 text-sm text-amber-800 dark:text-amber-200">Stop locally</button>}
+              className="inline-flex min-h-11 items-center rounded-lg border border-amber-500 px-4 py-2 text-sm text-amber-800 dark:text-amber-200">{labels.stop}</button>}
             {stoppedUnknown && <p role="status" data-testid="stopped-unknown" className="w-full text-xs text-amber-800 dark:text-amber-200">
-              Stopped locally. Remote completion and cost are unknown. This exact request cannot be sent again in this session.
+              {labels.stoppedUnknown}
             </p>}
             {superseded.length > 0 && (
               <div role="status" data-testid="superseded-attempts" className="flex w-full flex-col gap-2">
@@ -710,13 +732,14 @@ export function ArtifactExportPanel({
                     <span data-testid="export-error-build" className="font-mono">{labels.errorBuild.replace('{n}', String(attemptError.attempt))}</span>
                   )}
                 </div>
-                <span data-testid="export-error-recovery">{recoveryMessageFor(error, labels) ?? error}</span>
+                <span data-testid="export-error-recovery">{friendlyError}</span>
                 {errorPreviewNote && (
                   <span data-testid="export-error-preview-note">{errorPreviewNote}</span>
                 )}
-                {recoveryMessageFor(error, labels) && (
-                  <span data-testid="export-error-detail" className="text-red-600/80 dark:text-red-300/80">{error}</span>
-                )}
+                <details className="text-red-600/80 dark:text-red-300/80">
+                  <summary>{labels.technicalDetail}</summary>
+                  <span data-testid="export-error-detail" className="font-mono">{error}</span>
+                </details>
               </div>
             )}
           </div>

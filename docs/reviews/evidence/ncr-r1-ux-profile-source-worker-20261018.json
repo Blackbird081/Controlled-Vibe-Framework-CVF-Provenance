@@ -1,0 +1,300 @@
+{
+  "schemaVersion": "cvf.ncrR1UxProfileSourceEvidence@1.0.0",
+  "taskId": "CVF-NCR-R1-UX-PROFILE-SOURCE-20261018",
+  "role": {
+    "agentType": "INTERNAL_AGENT",
+    "phase": "WORKER_RETURN",
+    "decisionOwner": "LOCAL Root",
+    "commitMode": "WORKER_MUST_NOT_COMMIT"
+  },
+  "authority": {
+    "baseline": {
+      "path": "docs/baselines/CVF_GC018_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md",
+      "sha256": "28a2385af4b5585e524a7167c381da5ab3127af13c63b2563097f3b0d1eb089c"
+    },
+    "workOrder": {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md",
+      "sha256": "09cc23a13621e9fe81b961a3493f3388cb913f9b2db9087729ec62d3b6d1d442"
+    },
+    "pairMaterialCommit": "8ef4420bd97edceb065276fa85deb2b02622392f",
+    "executionBaseHead": "3309cc66f8784ae2c459c8ee637d7c007ca26652",
+    "preImplementationGate": {
+      "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md",
+      "result": "PASS",
+      "elapsedSeconds": 13.95,
+      "stdoutSha256": "f5b15322bc3e29431efc4524ff2cb94402deb8cc1dbad7a70063931fd7c79bf2",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "receipt": {
+        "path": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+        "sha256": "10b8d097cd1363678d1701574c894df444af98854df98feb622730c042a55276"
+      }
+    }
+  },
+  "manifest": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+      "action": "MODIFY",
+      "sha256": "3d2e446f08f9ae0670d96339aa4e583a5d04778f80ee04ce34fbda635c7d1d56",
+      "bytes": 23363,
+      "lines": 280
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "action": "MODIFY",
+      "sha256": "01614f81dc5a48bfbaf04ee4141b9319efe71cd35d591b5dc794829d3038c337",
+      "bytes": 50895,
+      "lines": 906,
+      "limit": "below 975 lines"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_R1_UX_PROFILE_SOURCE_WORKER_RETURN_2026-10-18.md",
+      "action": "CREATE"
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-r1-ux-profile-source-worker-20261018.json",
+      "action": "CREATE",
+      "selfHash": "intentionally omitted; return Markdown pins this artifact's final raw-byte hash"
+    }
+  ],
+  "sourceFreeze": {
+    "path": ".cvf/runtime/ncr-r1-ux-profile-20261018/worker/source-freeze.json",
+    "sha256": "8076ed3f58e32a262f85ae6cfc91721d766738338534542ed8ed088da1118a33",
+    "rule": "Source2 remained frozen at these hashes through static checks and final return preparation."
+  },
+  "proofs": [
+    {
+      "proofId": "PROOF-REQ-LANGUAGE",
+      "requirementId": "REQ-LANGUAGE",
+      "kind": "SOURCE_INSPECTION",
+      "artifacts": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx"
+      ],
+      "result": "PASS_SOURCE_PROPERTIES",
+      "observations": [
+        "Both owned components use the existing useLanguage owner and render owned labels/notices/errors from vi/en copy tables.",
+        "New notice state stores a copy key and resolves text using the current language at render time, so switching language updates the notice.",
+        "Vietnamese copy uses plain wording for local testing, simulated data, draft not verified/not accepted, creating HTML, stopping locally, and review receipt; English copy describes the server-reported local test profile without exposing protocol enum labels.",
+        "The existing CREATE_JOB, SAVE_DRAFT, LINK_VERSION, and ACCEPT_VERSION operation values remain protocol values while presentation labels are localized.",
+        "The two actual pre-Build client validation messages are localized: Complete the goal and criteria first.; Resolve the pending operation before another write. Unknown arbitrary error text remains generic friendly copy with raw technical detail collapsed."
+      ],
+      "boundary": "Static source inspection; UI rendering, accessibility and user comprehension were not evaluated."
+    },
+    {
+      "proofId": "PROOF-REQ-PROFILE",
+      "requirementId": "REQ-PROFILE",
+      "kind": "SOURCE_INSPECTION",
+      "artifacts": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts"
+      ],
+      "result": "PASS_SOURCE_PROPERTIES",
+      "observations": [
+        "The existing authenticated capabilities GET exposes jobDecisions and effectBoundary; the UI uses this existing response without a server schema or writer change.",
+        "The job-control enabled predicate remains jobDecisions === true. Only the exact LOCAL_SYNTHETIC enum, observed under the existing scope/epoch fence while jobDecisions is true, is passed as the optional presentation-only profileDisclosure prop.",
+        "The boundary state clears on scope reset. Missing or malformed boundary data leaves the job workflow enabled under its existing predicate and uses the existing generic disclosure.",
+        "Standalone/fallback panel use stays generic. The selected disclosure is explicitly limited to the observed profile because HTML export resolves separately and may use different later configuration."
+      ],
+      "boundary": "Capabilities describe observed configuration; this is not an authorization grant, future export guarantee, or runtime proof."
+    },
+    {
+      "proofId": "PROOF-REQ-LIMITS",
+      "requirementId": "REQ-LIMITS",
+      "kind": "SOURCE_INSPECTION",
+      "artifacts": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx"
+      ],
+      "result": "PASS_SOURCE_PROPERTIES",
+      "observations": [
+        "Selected-profile copy says local HTML is produced; the local simulated draft is stored only when the user chooses Save; no governance receipt is requested; a draft remains unverified and unaccepted even after separate same-user local test review; that review is not trusted evidence or business acceptance.",
+        "Local Stop is described as an in-page action and does not promise remote stopping or cost prevention. Unknown Stop outcomes remain bounded.",
+        "Source diff preserves user text and identifiers, protocol values, job decision enablement, existing auth/scope/epoch/expiry fencing, journal and readback/hash joins, and write/decision control flow. No server, API, schema, auth, writer, i18n, recovery component, hook, test or generated dependency path changed.",
+        "The generic disclosure remains available when the exact selected profile is absent. HtmlDraftRecovery remains read-only."
+      ],
+      "boundary": "These are source-diff properties only; no write path, UI behavior, remote effect or stage exit was executed."
+    },
+    {
+      "proofId": "PROOF-REQ-RETURN",
+      "requirementId": "REQ-RETURN",
+      "kind": "SOURCE_INSPECTION_AND_STATIC_CHECKS",
+      "artifacts": [
+        "docs/reviews/CVF_NCR_R1_UX_PROFILE_SOURCE_WORKER_RETURN_2026-10-18.md",
+        "docs/reviews/evidence/ncr-r1-ux-profile-source-worker-20261018.json"
+      ],
+      "result": "BLOCKED_RETURN_GATE_AFTER_TWO_BOUNDED_ATTEMPTS_WITH_RETAINED_WORKER_TSC_FAILURE_AND_SUPPLEMENTAL_REVIEWER_PASS",
+      "staticChecks": [
+        {
+          "owner": "worker",
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "cwd": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+          "attempt": 1,
+          "result": "AMBIGUOUS_NON_PASS",
+          "rawRecord": {
+            "path": ".cvf/runtime/ncr-r1-ux-profile-20261018/worker/tsc-attempt-1-ambiguous.json",
+            "sha256": "8bd072d7fe7e2389afac1e64ab083fb51053e304d875c98cfe7faa9737b683c5"
+          },
+          "note": "The wrapper yielded with a session identifier that was not retained; no exit or output was captured. A matching compiler process was not found later. This is not recorded as a pass."
+        },
+        {
+          "owner": "worker",
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "cwd": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+          "attempt": 2,
+          "result": "FAIL",
+          "exitCode": 2,
+          "elapsedSeconds": 19.625,
+          "sourceAtAttempt": {
+            "HtmlJobControls.tsx": "e520030474419063952b45e80b9ee848946bbd55b3137906e8f73d2df8fd675b",
+            "ArtifactExportPanel.tsx": "01614f81dc5a48bfbaf04ee4141b9319efe71cd35d591b5dc794829d3038c337"
+          },
+          "stdoutSha256": "f3f18c870d658a4c38680aa73c7c257cc4dc584bee72bb420e9b660b2423e4c4",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diagnostic": "TS2322 at HtmlJobControls.tsx(263,33): the operation-label object was included in a ReactNode lookup.",
+          "originalMetadata": {
+            "path": ".cvf/runtime/ncr-r1-ux-profile-20261018/worker/tsc-attempt-2-meta.json",
+            "sha256": "7c72a6a368c5345ffc54c662e3c0f86b97596a7fdd8ceddeaf11599536986824",
+            "disposition": "raw bytes preserved; file has literal trailing backslash+n after the JSON object and is not valid JSON"
+          },
+          "correction": "NoticeKey was narrowed to keyof Omit<typeof COPY.en, 'operation'>. This was the only source correction after this failed attempt; final source was frozen before supplemental review TSC."
+        },
+        {
+          "owner": "worker",
+          "command": "node node_modules/eslint/bin/eslint.js src/components/HtmlJobControls.tsx src/components/ArtifactExportPanel.tsx",
+          "cwd": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+          "result": "PASS_WITH_NONBLOCKING_EXISTING_REACT_HOOKS_WARNINGS",
+          "exitCode": 0,
+          "elapsedSeconds": 70.516,
+          "sourceHashes": {
+            "HtmlJobControls.tsx": "3d2e446f08f9ae0670d96339aa4e583a5d04778f80ee04ce34fbda635c7d1d56",
+            "ArtifactExportPanel.tsx": "01614f81dc5a48bfbaf04ee4141b9319efe71cd35d591b5dc794829d3038c337"
+          },
+          "stdoutSha256": "0313f7014ac93c985e7a76e605fab6dbafa3ef67c66e617a9e8083766c8f2891",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rawMetadata": {
+            "path": ".cvf/runtime/ncr-r1-ux-profile-20261018/worker/eslint-meta.json",
+            "sha256": "0832c6bfe079cdaece24c4293d0a2a04e941bef0977fafd635d1a4a59b4f57a",
+            "disposition": "raw bytes preserved; metadata contains literal trailing backslash+n after JSON"
+          },
+          "warning": "Two nonblocking React Hooks dependency warnings are reported in the raw output at the affected existing hook sites; their dependency logic was not changed by this diff."
+        },
+        {
+          "owner": "LOCAL reviewer",
+          "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+          "cwd": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web",
+          "result": "PASS",
+          "exitCode": 0,
+          "elapsedSeconds": 18.438,
+          "sourceHashes": {
+            "HtmlJobControls.tsx": "3d2e446f08f9ae0670d96339aa4e583a5d04778f80ee04ce34fbda635c7d1d56",
+            "ArtifactExportPanel.tsx": "01614f81dc5a48bfbaf04ee4141b9319efe71cd35d591b5dc794829d3038c337"
+          },
+          "admission": {
+            "path": ".cvf/runtime/ncr-r1-ux-profile-20261018/root-static/admission.json",
+            "sha256": "9bb877467c3823f222bbe832a35839b705fd384639706a40257db5bb310084ce"
+          },
+          "resultRecord": {
+            "path": ".cvf/runtime/ncr-r1-ux-profile-20261018/root-static/tsc-result.json",
+            "sha256": "fba6fef4c8170484f6ce97ceef1df7afd9423e8441a674b270d50aec5a962183"
+          },
+          "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "claimBoundary": "Supplemental one-time Local reviewer contradiction check on final source; it does not rewrite or relabel the worker's earlier ambiguous/failing attempts."
+        },
+        {
+          "owner": "worker",
+          "command": "git diff --check",
+          "result": "PASS",
+          "exitCode": 0,
+          "elapsedMilliseconds": 47,
+          "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderrSha256": "5a3ef104bbf0250e39109f73205c3c9879b1cccad2784d76df94820cf725c4ed",
+          "stderrNote": "Git emitted a CRLF-to-LF notice for ArtifactExportPanel.tsx."
+        }
+      ],
+      "deferredProofTargets": [
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-integrated-html-job-browser.spec.ts",
+          "disposition": "READ_ONLY_FUTURE_TARGET_NOT_RUN",
+          "purpose": "Future separately admitted browser/user-role walkthrough; no current component, keyboard, viewport, accessibility, comprehension or runtime assertion."
+        }
+      ],
+      "runtimeAndEffectEvidence": "NONE: no app/browser/provider/network/runtime/test/writer was run or changed."
+    }
+  ],
+  "scopeAndClaimBoundaries": {
+    "exactChangedSet": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "docs/reviews/CVF_NCR_R1_UX_PROFILE_SOURCE_WORKER_RETURN_2026-10-18.md",
+      "docs/reviews/evidence/ncr-r1-ux-profile-source-worker-20261018.json"
+    ],
+    "readOnlyOwners": [
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/hooks/useHtmlBuildAttempts.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+      "Work Transfer language owner and existing scoped test target"
+    ],
+    "unchangedInterfacesAndEffects": [
+      "No server route, API schema, auth, writer, generated file, hook, recovery component, i18n owner, or test file change.",
+      "Job decision enablement, auth and scope/epoch/expiry fencing, journal behavior, readback and hash/version joins, write and decision control flow stay under their pre-existing source semantics.",
+      "Existing operation enums, identifiers and user-entered content remain literal protocol/data values."
+    ],
+    "nonClaims": [
+      "No UI, browser, component runtime, accessibility, keyboard/small-screen, noncoder comprehension or user walkthrough result.",
+      "No runtime, provider/live, receipt, production, public export, deployment, remote device, cost, R1/R2 stage-exit or future export configuration guarantee.",
+      "No claim that the historical browser proof validates these source changes."
+    ],
+    "parkedOperatorCheckpoints": [
+      "app/browser",
+      "provider/live",
+      "real-data writer/custody",
+      "production/public/deploy"
+    ]
+  },
+  "learningApplication": {
+    "findingId": "NCR-LEARNING-APPLICATION-OBSERVABILITY",
+    "defectClass": "MACHINE_GATE_GAP",
+    "disposition": "DEFERRED_MEASUREMENT_ONLY",
+    "reason": "Record actual source-task and Local review outcome before assessing learning effectiveness; no APPLIED or effectiveness claim is made here."
+  },
+  "corpusAndKnowledge": {
+    "corpusVerdict": "NOT_APPLICABLE_WITH_REASON",
+    "reason": "Named source/dependency reads only; no all-files claim or corpus scan was made.",
+    "knowledgeMapVerdict": "PARTIAL",
+    "reasonKnowledgeMap": "Source implementation return; no source manifest or knowledge map produced."
+  },
+  "terminalGate": {
+    "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_PROFILE_SOURCE_2026-10-18.md --max-return-lines 450 --max-return-bytes 64000",
+    "attempt1": {
+      "result": "FAIL_RETURN_DOCUMENT_DEFECTS",
+      "exitCode": 1,
+      "elapsedMilliseconds": 12968,
+      "stdoutPath": ".cvf/runtime/ncr-r1-ux-profile-20261018/worker/full-return-gate-1.stdout.txt",
+      "stdoutSha256": "b9b16c0b6ef291bef3ab12b28dadb9ba336136551b01424b6f6c43c43184bf87",
+      "stderrPath": ".cvf/runtime/ncr-r1-ux-profile-20261018/worker/full-return-gate-1.stderr.txt",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "metadataPath": ".cvf/runtime/ncr-r1-ux-profile-20261018/worker/full-return-gate-1-meta.json",
+      "metadataSha256": "15e655dd70c16645df008d461179643de1bfa6c71a4abb95aaba9cf8417303dc"
+    },
+    "status": "BLOCKED_WITH_REASON",
+    "blocker": "Both permitted full bound return gate attempts failed on return-document findings. No further worker gate retry is authorized.",
+    "attempt2": {
+      "result": "FAIL_RETURN_DOCUMENT_DEFECTS",
+      "exitCode": 1,
+      "elapsedMilliseconds": 8079,
+      "stdoutPath": ".cvf/runtime/ncr-r1-ux-profile-20261018/worker/full-return-gate-2.stdout.txt",
+      "stdoutSha256": "011d938abcd65b9809bd2337009374e7414fa1cf431527b3de84c1bc85017832",
+      "stderrPath": ".cvf/runtime/ncr-r1-ux-profile-20261018/worker/full-return-gate-2.stderr.txt",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "metadataPath": ".cvf/runtime/ncr-r1-ux-profile-20261018/worker/full-return-gate-2-meta.json",
+      "metadataSha256": "3eaec79eaf3b2a00f03f41eca9461bf8811cf55a4c4256df8bbfc30fee33cbf9",
+      "remainingFindings": [
+        "Worker-return quality gate requires PASS/COMPLIANT evidence for the required full worker-return fast gate before COMPLETE_PENDING_REVIEW.",
+        "Review-cost telemetry requires adversarialRegressionDisposition to equal PASS_TARGETED_DEFECT_CLASS exactly."
+      ]
+    },
+    "boundary": "No source edit, test, runtime, browser or effect occurred after source freeze. Local Root may choose bounded documentary conversion; worker retry ceiling is exhausted."
+  }
+}
