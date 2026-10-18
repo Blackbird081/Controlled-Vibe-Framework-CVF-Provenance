@@ -5,14 +5,14 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.79
+Version: 2.80
 Updated: 2026-10-19
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-19
 
-**Đang ở đâu:** Goal focus repair được Local nhận ACCEPTED_TECHNICAL_BOUNDED_PROCEDURE_PARTIAL tại `docs/reviews/CVF_NCR_R1_GOAL_FOCUS_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md`: final43of43,12criteria đều true,13ảnh bắt buộc/15PNG, Goal mobile3vàtablet3đủ khung,0Build/write và teardown exact. Giữ first41of43FAIL, late-read và workerS2fork; LocalS3 nối frozen dispatchS2/current1 thànhcurrent0/counters0,0,0,0. Copy review trước vẫn bounded; R1/R2partial.
+**Đang ở đâu:** Local đã đối chiếu R1 exit và current R2/W05 tại `docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md`. UX/contract đủ dùng bounded cho slice LOCAL_SYNTHETIC: source/job/version/recovery, copy và Goal focus đã có evidence; fullR1prelive/R2 vẫn PARTIAL. Current route branch được tách khỏi historical W05 engine/SQLite proof;10Gitpins so với execution07/10 có6giữ nguyên/4đổi. Giữ mọi FAIL/procedure/counters.
 
 | Item | Current disposition | Evidence / remaining step |
 |---|---|---|
@@ -20,29 +20,29 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | BE-R2C / R02 | ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS | docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md; docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json; actual material SHA and continuity evidence recorded in active handoff |
 | BE-R1F | ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS | docs/reviews/CVF_NCR_HTML_B_E_R1F_RUNTIME_LOCAL_COMPLETION_2026-10-17.md; immutable prior cap2 finality eea3d052c5ce1dd7e2671488aeee50bbb5565cb55bd7e5c050ffe71d8ccfa069 |
 | BE-R01 / earlier R02 | Historical accepted / blocked-spent | Old actor outcomes retained; neither substitutes for current-source pair |
-| R1 / R2 | Partial | Source/36rows và focused6keyboard9images accepted bounded; R1 exit criterion reconciliation và R2/W05 còn mở; copy/Goal nhận bounded; người mới thật NOT_EVALUATED |
+| R1 / R2 | R1 UX contract bounded; full R1 prelive / R2 partial | Local exit disposition19/10 reconciles accepted source/copy/Goal/agent assessment; next R2/W05 offline operation contract; người mới thật NOT_EVALUATED |
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** PLAN_ONLY đối chiếu tiêu chí thoát R1 với source/component/browser/assessment/copy/Goal proof đã nhận; sau đó chuẩn bị read-only R2/W05 theo route thực tế (destination/data/cost/permissions/unknown outcome). Không tạo thêm focus repair hay chạy lại browser. Oracle thật12criteria/13ảnh, số13criteria của work order là lỗi đếm của Root được sửa tại Local review; mandatory reads trễ không được chữa lịch sử. Provider/real-data/production/public/deployOFF.
+**Bước kế tiếp:** R2_W05_OFFLINE_ADMISSION_DESIGN: một operation contract theo existing artifacts/governance owners, bind profile/config/destination/auth/data/cost/retention và durable intent/exclusive claim trước effect; xác định reconcile unknown outcome/no blind retry cùng proof plan. Thiết kế read-only được phép; không mở lại focus/browser, không chọn runtime/provider mới. Chỉ sau design/manifest và authority phù hợp mới lập source work order để operator chuyển worker. Provider/real-data/production/public/deployOFF.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.
 
 Historical detail and governed evidence remain in the ledger below; this checkpoint reports accepted R1 source and its bounded current-source browser contribution.
 
-### R1/R2 Exit And Gap Disposition - 2026-10-18
+### R1/R2 Exit And Gap Disposition - 2026-10-19
 
-Disposition: LOCAL_GAP_DISPOSITION_COMPLETE; R1/R2 PARTIAL. Consumer=Work Transfer HTML; decision owner=LOCAL; phase=LOCAL_DISPOSITION. Basis: source material `bae47f9c745886694242c9f2acab5ce01b7e4cc0`, browser material `8ab06322b43c561cce442e3869de9d82f51d812b`, and their Local completion reviews named below. This is a criterion-to-evidence decision, not another execution grant.
+Disposition: LOCAL_EXIT_AND_ROUTE_DELTA_RECONCILED_BOUNDED; fullR1prelive/R2 PARTIAL. Current owner `docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md`; R1UX/contract SATISFIED_BOUNDED_LOCAL_SYNTHETIC, không phải wholeR1exit. Consumed accepted source/browser/copy/Goal and existing W05 history; no new runtime/worker. This matrix grants no effect.
 
 | Exit concern | Accepted evidence / current source | Gap and disposition |
 |---|---|---|
 | R1 job, frozen input, version and person decision | `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md`: fixture29/29 and distinct Root3/3; `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md`: Chromium1/1, exact2720-byte download and joined Root controls | SATISFIED_BOUNDED for the selected synthetic composition. Draft remains unverified/unaccepted; same-principal attestation is not actual business acceptance. No replay needed. |
 | R1 Stop, stale target and unknown writes | Source review STOP/SAVE/DECISION rows; current browser covers lost Save acknowledgement, reload GET and explicit same-pair link | SOURCE_AND_FOCUSED_FIXTURE evidence for Stop/late result and stale/foreign decisions; browser evidence covers only its named journey. Do not relabel every fixture as browser proof or require broad reruns. |
-| R1 Vietnamese/progressive disclosure and A10 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx` renders Goal/Criterion/reconcile/review in English; `ArtifactExportPanel.tsx` renders English Stop/status outside its existing language labels | SOURCE_AND_UI_STRUCTURE_ACCEPTED_BOUNDED: source2 and final component21/21/8 simulated DOM rows; Local review `docs/reviews/CVF_NCR_R1_UX_PROFILE_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md`. Browser12rows/3keyboard/6scriptedrefusals cùng source-repair36rows/validation và focused6keyboard9images được nhận bounded tại Local reviews; assessment pre-effect4kịch bản/7câu trả lời đã được Local nhận có giới hạn thủ tục; F1-F7copy và Goal focus được nhận bounded tại Local reviews19/10; actual12criteria/13requiredimages và43of43final. WorkerBLOCKED/gate1FAIL lịch sử và late-read/lineage limits được giữ. Agent được task brief hỗ trợ, người mới thật NOT_EVALUATED. |
+| R1 Vietnamese/progressive disclosure and A10 | Current Local Goal/copy reviews19/10 and pre-effect assessment18/10, named in Local exit disposition | ACCEPTED_BOUNDED_UI_CONTRACT: final43of43/12criteria/13requiredimages; realkeyboard6 plus desktop clarity. Assessment was task-assisted/pre-copy-repair; late-read/fork/firstFAIL retained, no fresh unassisted interpretation or human-comprehension claim. |
 | R1 capability/profile/effect explanation | `ArtifactExportPanel.tsx` preGenerateDisclosure says destination depends on deployment and is not shown; `HtmlJobControls.tsx` says selected local synthetic Build stays local | SOURCE_AND_UI_STRUCTURE_ACCEPTED_BOUNDED: observed boundary selects conditional local-profile copy, separate Save, no receipt request and local Stop limits; absent/malformed boundary keeps generic disclosure. Current per-effect configuration binding remains unproved. For this slice Q008 selects no external worker runtime; do not add a provider/account chooser that controls nothing. General receipt-enabled deployment still needs its own concrete destination/data/cost decision. |
 | R2 selected isolation and storage | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts` resolveHtmlJobSyntheticProfile; `html-job-api.ts` jobRouteHandlers; `html-draft-snapshot-store.ts` writeSidecar/createJob/linkVersion/acceptVersion | SATISFIED_BOUNDED for server opt-in, production denial, owner checks, exclusive local writes and readback. These do not establish durable whole-job recovery or R2 admission/operation claim before a provider effect. |
-| R2 receipt/effect boundary and W05 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts` POST skips receipt/token branch for selectedPrincipal; `proof.ts` fetchGovernanceReceipt resolves NEXTAUTH_URL and can POST first500 source characters on the general branch | PRE_LIVE_GAP: map the actual chosen route/profile through validation→binding→claim→transform→attempt→invoke→receipt/recovery; resolve destination, data, secret references, cost/retention, denials, rollback/revoke and unknown-outcome non-replay. Synthetic no-egress proof and historical Alibaba live proof do not close this current-route gate. No call admitted here. |
+| R2 receipt/effect boundary and W05 | Current export/proof/proxy/client/auth source and historical W05 owner;10pin freshness and9stage locators in Local exit EP | PRELIVE_NOT_CLOSED: selected synthetic bypasses receipt; general route needs resolved config/destination/auth/data/cost, intent/exclusive operation claim, unknown-outcome reconciliation and exact-instance proof before effect. Existing W05-P1..P5 retained historically; offline operation contract next, no invocation admitted. |
 | R3/R4 and A01–A12 applicability | Roadmap R3/R4 and Acceptance Criteria remain the owners | R3/R4 OPEN: actual provider-bound result/business acceptance, full applicable negative/fault checks, current secret/revoke scope and pilot timing/cost baseline are unproved. Two connections and clean restore/RPO/RTO belong to R4; genuine-user usability remains NOT_EVALUATED, not a recruitment gate for internal R1–R3. |
 
 **Selected finite follow-through:** Source-only delta completed in the fresh exact2 component/return2 packet; HtmlDraftRecovery and server/page/hook/i18n/test owners stayed read-only. Local completion `docs/reviews/CVF_NCR_R1_UX_PROFILE_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md` records one consolidated copy correction, dependent type fix, original compiler ambiguity/FAIL, final Root compiler PASS and worker lint PASS. No new helper, chooser, schema, writer or runtime. Earlier planning contract is retained at material b45b0dd75e2568b0c6806d943523890b581baa47.
@@ -1115,23 +1115,23 @@ orientation packets are not refreshed by this private local edit.
 
 | Field | Evidence |
 |---|---|
-| Actor | INTERNAL_AGENT Local reviewer; decision owner=LOCAL |
+| Actor | INTERNAL_AGENT Local reviewer/planner; decision owner=LOCAL |
 | Provider or surface | private shared checkout |
-| Session or invocation | ncr-r1-goal-focus-local-review-20261019 |
+| Session or invocation | ncr-r1-exit-r2-w05-20261019 |
 | Working directory | repository root |
-| Command or tool surface | read-only raw/hash/source/receipt and2PNG samples; Local review/roadmap |
-| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.ux-profile.test.tsx`; `docs/reviews/CVF_NCR_R1_GOAL_FOCUS_REPAIR_WORKER_RETURN_2026-10-19.md`; `docs/reviews/evidence/ncr-r1-goal-focus-repair-worker-20261019.json`; `docs/reviews/CVF_NCR_R1_GOAL_FOCUS_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Allowed scope source | standing roadmap/Local reviewer continuation; current exact4return |
-| Before status evidence | cb48fea8a7ad696e78613e4ba8ce23a1b347dac6; workerexact4pending; empty stage |
-| After status evidence | worker4 preserved; Localreview/roadmap material6; no Root source edits |
-| Diff evidence | git diff --name-status; git diff --check; exact6 and originalworker/source hashes |
-| Approval boundary | no Root app/browser/worker; provider/private-data/production/public/deployOFF |
-| Claim boundary | finite UI acceptance/procedurepartial; R1/R2exit separate |
+| Command or tool surface | named source/evidence reads, blob identity comparison, documentary disposition |
+| Target paths | `docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md`; `docs/reviews/evidence/ncr-r1-exit-r2-w05-readonly-20261019.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Allowed scope source | standing roadmap and current PLAN_ONLY R1exit/R2W05 nextmove |
+| Before status evidence | 4c929fd59ff0d0059157c3a0ed2f2ce85f9864e5; clean worktree; empty stage |
+| After status evidence | Local review/evidence/roadmap material3 only; current6 separate |
+| Diff evidence | git diff --name-status; git diff --check; no source/test/config change |
+| Approval boundary | no worker/browser/provider/data/store/public effect; future workorder manualtransfer |
+| Claim boundary | finite source/criterion disposition only; fullR1R2prelive notclosed |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-goal-focus-local-review-20261019 |
-| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.ux-profile.test.tsx`; `docs/reviews/CVF_NCR_R1_GOAL_FOCUS_REPAIR_WORKER_RETURN_2026-10-19.md`; `docs/reviews/evidence/ncr-r1-goal-focus-repair-worker-20261019.json`; `docs/reviews/CVF_NCR_R1_GOAL_FOCUS_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.ux-profile.test.tsx`; `docs/reviews/CVF_NCR_R1_GOAL_FOCUS_REPAIR_WORKER_RETURN_2026-10-19.md`; `docs/reviews/evidence/ncr-r1-goal-focus-repair-worker-20261019.json`; `docs/reviews/CVF_NCR_R1_GOAL_FOCUS_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Manifest delta | MATCH material6; current6 separate |
+| Invocation ID | ncr-r1-exit-r2-w05-20261019 |
+| Expected manifest | `docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md`; `docs/reviews/evidence/ncr-r1-exit-r2-w05-readonly-20261019.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md`; `docs/reviews/evidence/ncr-r1-exit-r2-w05-readonly-20261019.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Manifest delta | MATCH material3 |
 | Deletion or rename disposition | none |
 
 ## Public Export Disposition

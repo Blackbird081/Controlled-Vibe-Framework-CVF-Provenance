@@ -1,0 +1,290 @@
+{
+  "schemaVersion": "cvf.ncrR1ExitR2W05ReadOnlyDisposition.v1",
+  "base": "4c929fd59ff0d0059157c3a0ed2f2ce85f9864e5",
+  "role": "INTERNAL_AGENT Local reviewer/planner",
+  "phase": "PLAN_ONLY",
+  "decisionOwner": "LOCAL",
+  "r1Disposition": "UX_CONTRACT_SATISFIED_BOUNDED_LOCAL_SYNTHETIC; FULL_R1_PRELIVE_NOT_CLOSED",
+  "r2Disposition": "PRELIVE_NOT_CLOSED; READ_ONLY_ROUTE_DELTA_RECONCILED",
+  "sourceFreshnessAgainstActualW05Execution": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+      "oldExecutionBlobSha256": "0ed365b59324bb836d8ec56cba143df941e7a7f8dfa11b841b28a68212f1b35d",
+      "currentBlobSha256": "4d0df1a163a78800da996eddaa9a559bbe34defd926f269e70989cdfc5a9ab47",
+      "sameAsOldExecution": false,
+      "currentWorktreeSha256": "4d0df1a163a78800da996eddaa9a559bbe34defd926f269e70989cdfc5a9ab47",
+      "readDepth": "IDENTITY_COMPARISON_ONLY"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+      "oldExecutionBlobSha256": "0b1005a456c2e400d0f9ae1323351716bf877ca4ff83ca1941e6f786356c27d8",
+      "currentBlobSha256": "1de90ef0c98969cc51cef7863002bd5da98c4f6f9d2e43f8e99c1da9305f735c",
+      "sameAsOldExecution": false,
+      "currentWorktreeSha256": "d4f2c2d8ec50de9aeb31e2c850ba311f7facbabf02bec9a667d12daf10caaa8c",
+      "readDepth": "TARGETED_SOURCE_SPANS"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "oldExecutionBlobSha256": "22f08a7ed8a4a4eb06c63bde244c0e2e9f752758bb6f48acbfb12bf57a2862f1",
+      "currentBlobSha256": "053ed828736276a4099f42e0938784c1bf69f0d08a0a60a44c556978abd983a5",
+      "sameAsOldExecution": false,
+      "currentWorktreeSha256": "2f09a7dc52a9c8c4383ecd6905459bfb9ea9d2a67ec520c0a31d022de460dd43",
+      "readDepth": "TARGETED_SOURCE_SPANS"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+      "oldExecutionBlobSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "currentBlobSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "sameAsOldExecution": true,
+      "currentWorktreeSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+      "readDepth": "TARGETED_SOURCE_SPANS"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts",
+      "oldExecutionBlobSha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+      "currentBlobSha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+      "sameAsOldExecution": true,
+      "currentWorktreeSha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+      "readDepth": "TARGETED_SOURCE_SPANS"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts",
+      "oldExecutionBlobSha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+      "currentBlobSha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+      "sameAsOldExecution": true,
+      "currentWorktreeSha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+      "readDepth": "TARGETED_SOURCE_SPANS"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+      "oldExecutionBlobSha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+      "currentBlobSha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+      "sameAsOldExecution": true,
+      "currentWorktreeSha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+      "readDepth": "TARGETED_SOURCE_SPANS"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py",
+      "oldExecutionBlobSha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "currentBlobSha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "sameAsOldExecution": true,
+      "currentWorktreeSha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "readDepth": "IDENTITY_COMPARISON_ONLY"
+    },
+    {
+      "path": "scripts/probe_cvf_q001_synthetic_system_chain.py",
+      "oldExecutionBlobSha256": "a6098d834e0be48b8f070706753275605c9c4d781035fcd2fb41501e25e0b2bd",
+      "currentBlobSha256": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+      "sameAsOldExecution": false,
+      "currentWorktreeSha256": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+      "readDepth": "IDENTITY_COMPARISON_ONLY"
+    },
+    {
+      "path": "scripts/test_probe_cvf_q001_synthetic_system_chain.py",
+      "oldExecutionBlobSha256": "c836986e3cafbfe6c418d1fd3b8b4ba4c68996b8aad2e6c64092116421db4873",
+      "currentBlobSha256": "c836986e3cafbfe6c418d1fd3b8b4ba4c68996b8aad2e6c64092116421db4873",
+      "sameAsOldExecution": true,
+      "currentWorktreeSha256": "c836986e3cafbfe6c418d1fd3b8b4ba4c68996b8aad2e6c64092116421db4873",
+      "readDepth": "IDENTITY_COMPARISON_ONLY"
+    }
+  ],
+  "historicalW05Evidence": {
+    "path": "docs/reviews/evidence/cvf-ncr-w05-chain-reconciliation-2026-10-07.json",
+    "sha256": "78309ff2e7e9484c8e08ed9701084dbe0d3e14b6248ef6554a9008d7cf5f6fde",
+    "historicalCases": "W05-P1..P5 passed in recorded synthetic process/store; not current profile/runtime proof"
+  },
+  "acceptedReviewPins": [
+    {
+      "path": "docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md",
+      "sha256": "4dfbc4dc40f53e8ca1779a4ba4c7347da61f36fa640951b28ee30c254bfbb674",
+      "readDepth": "TARGETED_FINDINGS_DECISION_LIMITS"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md",
+      "sha256": "53485824b0c43e7c9b2782f33d2c347962f90ec864d7446131ac6c66dfa2545c",
+      "readDepth": "TARGETED_FINDINGS_DECISION_LIMITS"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_R1_UX_PROFILE_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md",
+      "sha256": "c0915e78cfde6556def1aefe88eb2d6e31805bdb29fefba9faa41a76f77682e6",
+      "readDepth": "TARGETED_FINDINGS_DECISION_LIMITS"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_R1_UX_COMPONENT_PROOF_LOCAL_COMPLETION_REVIEW_2026-10-18.md",
+      "sha256": "b6e30fc74776ca12afd83d56e33751b330b528b84c63a1e9e9971225433111fc",
+      "readDepth": "TARGETED_FINDINGS_DECISION_LIMITS"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_R1_PRE_EFFECT_WALKTHROUGH_LOCAL_COMPLETION_REVIEW_2026-10-18.md",
+      "sha256": "0dfab27094b44e987f376d206d0a5a49ea58734fd2befdfee9ee6186f685276c",
+      "readDepth": "TARGETED_FINDINGS_DECISION_LIMITS"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_R1_UI_CLARITY_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md",
+      "sha256": "5b093f51041c232b9048902a66684a7b79f15d979366a0576a4d956a64592c18",
+      "readDepth": "TARGETED_FINDINGS_DECISION_LIMITS"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_R1_GOAL_FOCUS_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md",
+      "sha256": "ce769e0c531cb056ca3db76526c75db5ceecd6466242cf99fae26f7f68978a6b",
+      "readDepth": "TARGETED_FINDINGS_DECISION_LIMITS"
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+      "sha256": "f6f68f743129f442d971cc2efd18f6ab831597a197f4aed5eeaa95be656210d5",
+      "readDepth": "TARGETED_FINDINGS_DECISION_LIMITS"
+    }
+  ],
+  "currentGoalSource7Match": true,
+  "selectedProfile": {
+    "name": "LOCAL_SYNTHETIC",
+    "sources": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts",
+        "line": 6,
+        "symbol": "export function resolveHtmlJobSyntheticProfile",
+        "sha256": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts",
+        "line": 10,
+        "symbol": "export function resolveHtmlDraftSyntheticProfile",
+        "sha256": "dcb8cdd8a98f49f345b53c9ea9d824b11785f0a12854023b545cc34cdfe3a23b"
+      }
+    ],
+    "receiptBranch": "selectedPrincipal bypasses general proof/token and returns NOT_CONFIGURED",
+    "production": "resolver denies production",
+    "realDataOrProviderAuthority": false
+  },
+  "generalReceiptBranch": {
+    "status": "NOT_SELECTED_OR_RELEASED_FOR_EXECUTION",
+    "stages": [
+      {
+        "stage": "validation",
+        "source": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+          "line": 260,
+          "symbol": "export async function POST",
+          "sha256": "2f09a7dc52a9c8c4383ecd6905459bfb9ea9d2a67ec520c0a31d022de460dd43"
+        },
+        "observed": "Bounded body, authorization, required/type/size/key/memoryClass and secret-pattern refusal precede the receipt call.",
+        "disposition": "SOURCE_ONLY; detector patterns are not complete confidentiality proof"
+      },
+      {
+        "stage": "binding",
+        "source": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+          "line": 26,
+          "symbol": "export const ROUTE_GOVERNANCE_PROOF_REGISTRY",
+          "sha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e"
+        },
+        "observed": "Registered export risk R1; raw-body signature/session proof. Request body values and resolved destination are not an approved per-effect configuration.",
+        "disposition": "AUTHENTICATION_PROOF_NOT_OPERATION_ADMISSION"
+      },
+      {
+        "stage": "claim",
+        "source": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+          "line": 363,
+          "symbol": "const sourceHash =",
+          "sha256": "2f09a7dc52a9c8c4383ecd6905459bfb9ea9d2a67ec520c0a31d022de460dd43"
+        },
+        "observed": "Trimmed sourceContent SHA256 and slugged receipt anchor; accepted job snapshot joins are separate.",
+        "disposition": "NO_DURABLE_PRE_HOP_CLAIM_EVIDENCED_IN_THE_WEB_CALL_PATH; downstream historical ledger proof retained"
+      },
+      {
+        "stage": "transform",
+        "source": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+          "line": 364,
+          "symbol": "const html = buildHtml",
+          "sha256": "2f09a7dc52a9c8c4383ecd6905459bfb9ea9d2a67ec520c0a31d022de460dd43"
+        },
+        "observed": "Escaped Markdown-lite HTML with separate source/receipt metadata.",
+        "disposition": "UI_PRESENTATION_NOT_BUSINESS_ACCEPTANCE"
+      },
+      {
+        "stage": "attempt",
+        "source": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+          "line": 77,
+          "symbol": "const requestId =",
+          "sha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf"
+        },
+        "observed": "artifact-proof anchor plus Date.now; one fetch in this helper.",
+        "disposition": "PROCESS_LOCAL_ATTEMPT_ID_NOT_EXCLUSIVE_OPERATION_CLAIM"
+      },
+      {
+        "stage": "invoke1",
+        "source": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+          "line": 84,
+          "symbol": "const response = await fetch",
+          "sha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf"
+        },
+        "observed": "POST configured NEXTAUTH_URL + /api/governance/evaluate; payload content is JS slice(0,500), not 500 bytes; REVIEW/R0. Optional x-cvf-service-token; no browser cookie forwarding in this fetch.",
+        "disposition": "ACTUAL_DESTINATION_AND_AUTH_BINDING_UNKNOWN_NO_ENV_READ"
+      },
+      {
+        "stage": "invoke2",
+        "source": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts",
+          "line": 30,
+          "symbol": "url: process.env.GOVERNANCE_ENGINE_URL",
+          "sha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde"
+        },
+        "observed": "Proxy calls governanceEvaluate -> POST /api/v1/evaluate, config engine URL default localhost:8000, enabled unless false; own timeout.",
+        "disposition": "NO_CURRENT_INSTANCE_PROVIDER_OR_STORE_IDENTITY_CLAIM"
+      },
+      {
+        "stage": "receipt",
+        "source": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+          "line": 112,
+          "symbol": "if (report?.request_summary)",
+          "sha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf"
+        },
+        "observed": "Check request/artifact/decision/action/ledger fields or compatible legacy envelope.",
+        "disposition": "RECEIPT_NOT_ARTIFACT_APPROVAL; old engine/store proof remains revision-bound"
+      },
+      {
+        "stage": "recovery",
+        "source": {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+          "line": 156,
+          "symbol": "? 'TIMED_OUT' : 'UNAVAILABLE'",
+          "sha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf"
+        },
+        "observed": "Own AbortController timeout 4s default / 1..30s configured; no incoming signal passed to this helper, no retry loop in helper/client selected path.",
+        "disposition": "LOCAL_TIMEOUT_NOT_REMOTE_CANCEL; no automatic retry is distinct from durable duplicate prevention"
+      }
+    ],
+    "sourceRiskMismatch": "export registry R1 while receipt payload declares R0; source fact, no exploit/runtime assertion",
+    "downstreamBoundary": "existing W05 selected-chain owner and immutable engine/ledger evidence; no new Python service scan"
+  },
+  "nextActionContract": {
+    "name": "R2_W05_OFFLINE_ADMISSION_DESIGN",
+    "outcome": "one exact general-receipt operation contract in existing artifacts/governance owners before any implementation/proof",
+    "mustBind": [
+      "profile and config revision/server authority",
+      "input/output/version + actor + destination/auth scope",
+      "pre-effect durable intent and exclusive operation claim / write-failure deny",
+      "transform payload and risk R1/R0 reconciliation",
+      "single attempt / unknown outcome lookup / no blind retry",
+      "effect budget/cost/retention/secret-reference/revoke constraints",
+      "current exact-instance proof and negative/fault plan; no execution grant"
+    ],
+    "independentWorkAllowed": "source/design under standing roadmap; no .env/secret/store/process/provider read or run",
+    "effectCheckpoints": "actual endpoint, data permission, writer/store custody, provider/call/cost and acceptance authority before dependent effect only"
+  },
+  "counts": {
+    "sourceFreshnessPaths": 10,
+    "acceptedReviews": 8,
+    "rootProductTests": 0,
+    "rootBrowserRuns": 0,
+    "rootProviderCalls": 0,
+    "rootWorkerInvocations": 0,
+    "rootSourceEdits": 0
+  },
+  "claimBoundary": "Finite source/evidence reconciliation; no new empirical AI governance, full R1/R2 exit, real-user comprehension, real-data, provider/live/production/public/deploy claim."
+}
