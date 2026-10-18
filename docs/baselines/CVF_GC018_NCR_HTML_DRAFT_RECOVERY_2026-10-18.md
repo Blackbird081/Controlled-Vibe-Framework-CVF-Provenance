@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: CLOSED_ACCEPTED_BOUNDED_SOURCE_WITH_PROCEDURE_LIMITS
 Date: 2026-10-18
 Batch ID: CVF-NCR-HTML-DRAFT-RECOVERY-20261018
 Inspection base: db3d4058910a76662b0a31dfe579f49d98b62586
@@ -159,3 +159,43 @@ Reason: private source implementation and synthetic proof; public sync is separa
 ## Claim Boundary
 
 Accepted source design only. Unit/fixture proof cannot establish real auth deployment, AI governance efficacy, live provider behavior, R1/R2 stage exit or R3/R4 durability readiness.
+
+## Local Review Repair Admission - 2026-10-18
+
+Original exact14 worker return and source bytes are sealed in `.cvf/runtime/ncr-html-draft-recovery-20261018/worker-seal.json`; original 115/115 and full gate remain their recorded evidence. Local found a consolidated dependency class: Next route exports include non-route helper functions; UI Save completion closes over an old record; ambiguous Save permits replacing its reconciliation ID; cached drafts lack a session lifecycle join. These are source acceptance blockers under REQ-ROUTE/UI/NOREPLAY, not new product outcomes.
+
+Local admits one bounded reviewer source repair, retaining original worker14 evidence, adding only DOC_ONLY_NEW `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts` to integration ownership so route.ts exports only Next-supported entries. Existing twelve source/test paths remain in scope. Reuse the Auth.js session lifecycle pattern in IntentSpecConfirmation.tsx; require complete user/org/team identity and finite future expiry, clear/suppress data on identity/loading/logout/expiry transitions. Preserve known ambiguous Save ID and forbid blind write retry; capture scope epoch for every async publication. No new data profile/effect or runtime activation.
+
+Root may spend an additional20min on the consolidated repair and focused regression checks; one separate INTERNAL_AGENT Local reviewer receives20min for an independently authored fixture/UI probe against frozen final source. This is the one independent acceptance probe; Root's repair regression is not independent proof. Probe writes only owned ignored task evidence, never tracked source. Root owns final technical disposition and metadata. Original source worker lane is released; no source-worker redispatch.
+
+## Local Source Disposition
+
+Accepted bounded source and synthetic fixture behavior after one consolidated Root repair and distinct Local probe. Original worker14 and its first outcomes remain sealed; final integration adds only the admitted server API helper. Default production route remains disabled; configured running-app/browser proof, actual-data custody/retention, provider/live and stage exits are not established.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md | closed bounded source; original exact14 retained, Root helper admitted | PASS source only |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md; docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json | distinct actual Local probe and final source pins | PASS with procedure limits |
+| Roadmap state | docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md | recovery source contribution; R1/R2partial, R3/R4open | PASS bounded |
+| Registry JSON | existing registries | no registry transition selected; parent counters unchanged | PASS unchanged owners |
+| Registry Markdown | existing registries | no registry transition selected | PASS unchanged owners |
+| External evidence digest | docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json | internal worker/probe command and hash custody; worker SHA256 68ebf76ce35bec03850ee8801d2ecf7013b483a6253e32144503d5e1d7c30110 | PASS internal evidence only |
+| System loop interlock | parent gen9/SCEC2/counters2,0,2,0 | freeze/prior7/LHW24 retained | N/A with reason - no parent transition |
+| Session continuity | canonical current6 | source/generated projection; actual material-SHA sync follows | N/A with reason - actual commits recorded by final continuity |
+
+## Current Runtime Freshness Verification
+
+Final source is pinned in Local evidence. Source-only immutable file/UI fixtures are accepted; no running-app, browser, deployed-session or AI-governance efficacy freshness is asserted. Earlier R2C/provider proofs retain their recorded revision and are not fresh recovery proof. Current route GET/POST calls the default-disabled factory; tests inject a separate synthetic profile.
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-CONTRACT | strict exact-byte unverified snapshot | unchanged contract tests and independent exact hash | PASS source |
+| REQ-STORE | immutable owner/record/version read | real synthetic files, collision/tamper/expiry/unavailable proof | PASS fixture |
+| REQ-ROUTE | authenticated scope, no-store, default OFF | route tests, type guard, Root actual-helper auth-denial2cases/9assertions | PASS source/fixture |
+| REQ-UI | exact displayed save and scoped response | Root9/9 and independent UI adversaries | PASS source composition |
+| REQ-NOREPLAY | recovery without new export | independent observed request set | PASS fixture |
+| REQ-RETURN | original outcomes and final reviewed integration | sealed worker14/full gate, Local proof and exact26 | PASS with procedure limits |

@@ -1,0 +1,263 @@
+{
+  "schemaVersion": "cvf.ncr.htmlDraftRecovery.localReview.v1",
+  "batchId": "CVF-NCR-HTML-DRAFT-RECOVERY-20261018",
+  "verdict": "ACCEPTED_BOUNDED_SOURCE_WITH_PROCEDURE_LIMITS",
+  "executionBaseHead": "123179bc44f469d6076333f2ae35ec27294c7413",
+  "sourcePins": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.test.ts": "eb3ae6732dd6170ba7a783befb019076b15b185610f446c9bdec3d9fcb478344",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts": "9d7bbc8f73418d64520485d06cf5f5861d1663d7d6b85817c34f9b690e943b3b",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts": "07ba622fb72225bc68a0fee604804a561ec6551755431523bc61c6b8b1625a09",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts": "71a36925e1272587e724cf4df0fc8539eea0c37ed69a4e02da111c00f823e5b1",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts": "b782f045bfd0e1273f6cdb2a55b06c43609c16f63fd20ec70c50930bf34e24c3",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx": "8bb93c9f037a6893083b8715495994d6523ee09366e47a9bd258f69a2c3e9964",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx": "8d5c6bce81afed6d7d240269b3a329eaa02603a057c1eb07ae62dbac9094ab48",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "c3e0b768f444fc452c6cd72815ef13b27ca8ac24e1506698123732a71152f625",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.recovery.test.tsx": "57ca247142ef6356c4801365f87048d670934d53b5f9660eec75bd90f68da042",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "469bab1358bb65eef69e730a2203404ac6eddb8ffcbfad57edde750d35d23b0d",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/recovery.test.tsx": "6d638e8490959b277a4bf2e3225fea3afdb94106e8b929377cc2757a02de5b9a",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts": "e044e9259bf7d842be93898fc82eabd33a39f0ed2a20a79d918682b2bb9b76a8"
+  },
+  "authority": {
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md",
+    "baselineSha256": "6631e2ef7fbf30b5fded752b8e0d3c5871812716ae8626df22823e21829f1f5b",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md",
+    "workOrderSha256": "d6e3dede74176ce47b8c235ff251e7d3d99cb4601dd94541aaa33cb7ca7db1e3"
+  },
+  "worker": {
+    "returnPath": "docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_WORKER_RETURN_2026-10-18.md",
+    "returnSha256": "f4e58d831c1a80225667ae9da634ed9c94a48f063cde0d7da551d2d0ed8d5c67",
+    "evidencePath": "docs/reviews/evidence/ncr-html-draft-recovery-worker-20261018.json",
+    "evidenceSha256": "68ebf76ce35bec03850ee8801d2ecf7013b483a6253e32144503d5e1d7c30110",
+    "originalFocused": "8/8 files,115/115 tests",
+    "originalGate": {
+      "path": ".cvf/runtime/ncr-html-draft-recovery-20261018/worker/full-return-final.log",
+      "sha256": "47c7f0d9613fc76b14ae2ea0462706eccc6aa16ccaac05b7d74f38a7fe02c626"
+    },
+    "seal": {
+      "capturedAt": "2026-10-18T03:48:46.098914+00:00",
+      "records": [
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts",
+          "sha256": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.test.ts",
+          "sha256": "eb3ae6732dd6170ba7a783befb019076b15b185610f446c9bdec3d9fcb478344"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+          "sha256": "9d7bbc8f73418d64520485d06cf5f5861d1663d7d6b85817c34f9b690e943b3b"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts",
+          "sha256": "07ba622fb72225bc68a0fee604804a561ec6551755431523bc61c6b8b1625a09"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts",
+          "sha256": "99f91b5eb7ace21c50507893e0d0219799f295c59ec467f4ad3e2fea4a7d3666"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts",
+          "sha256": "95bae994dd371d36dae411c8c827a31b5e39c2003d5ab48559375d8d2ca65d3d"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx",
+          "sha256": "68e9bdcb5fd85fbdd27bb1cd5acc83221724b5bfdd47ebdeeb36af9a94d72b9e"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx",
+          "sha256": "c5ced202aff3c63f38dcf2957fd4ff3d944d01d0efa1287cbe421d9661e61d67"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+          "sha256": "c3e0b768f444fc452c6cd72815ef13b27ca8ac24e1506698123732a71152f625"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.recovery.test.tsx",
+          "sha256": "57ca247142ef6356c4801365f87048d670934d53b5f9660eec75bd90f68da042"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+          "sha256": "469bab1358bb65eef69e730a2203404ac6eddb8ffcbfad57edde750d35d23b0d"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/recovery.test.tsx",
+          "sha256": "6d638e8490959b277a4bf2e3225fea3afdb94106e8b929377cc2757a02de5b9a"
+        },
+        {
+          "path": "docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_WORKER_RETURN_2026-10-18.md",
+          "sha256": "e1ed3349d8460d0947f4f3f5f37b55f70a419cb8a19a16997a8bb6923d8f68f9"
+        },
+        {
+          "path": "docs/reviews/evidence/ncr-html-draft-recovery-worker-20261018.json",
+          "sha256": "68ebf76ce35bec03850ee8801d2ecf7013b483a6253e32144503d5e1d7c30110"
+        }
+      ]
+    },
+    "originalReturnSha256": "e1ed3349d8460d0947f4f3f5f37b55f70a419cb8a19a16997a8bb6923d8f68f9",
+    "missingOriginalLogLocators": [
+      ".cvf/runtime/ncr-html-draft-recovery-20261018/worker/tsc-r2.log",
+      ".cvf/runtime/ncr-html-draft-recovery-20261018/worker/eslint-r1.log"
+    ]
+  },
+  "rootRepair": {
+    "findings": [
+      "ROUTE-EXPORT-SHAPE",
+      "SAVE-SCOPE-EPOCH",
+      "AMBIGUOUS-SAVE-ID",
+      "SESSION-LIFECYCLE",
+      "AUTH-DENIAL-NO-STORE"
+    ],
+    "regression": {
+      "path": ".cvf/runtime/ncr-html-draft-recovery-20261018/root-repair-focused.log",
+      "sha256": "8c3f15d3b2abf83a788bc0f8843d939f707f68c317b3966d31679f6865571c24",
+      "result": "2/2 files,9/9 tests PASS"
+    },
+    "authDenialProbe": {
+      "result": {
+        "status": "PASS",
+        "cases": 2,
+        "assertions": 9,
+        "scope": "actual server helper with injected denial; GET and same-origin POST cache headers; no real auth/store/provider",
+        "authCalls": 2
+      },
+      "harnessSha256": "6c5cc458c627b3ec9a992ab7df5bf1dfa63190ec11d3e79b1eacff98ffd5a818",
+      "logSha256": "d25c23ed065a5db91ec9fc01c982b6128b5991ca86b2dcf12512055e3764d711"
+    },
+    "typecheck": {
+      "path": ".cvf/runtime/ncr-html-draft-recovery-20261018/root-tsc-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit": 0
+    },
+    "eslint": {
+      "path": ".cvf/runtime/ncr-html-draft-recovery-20261018/root-eslint-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit": 0
+    }
+  },
+  "independentProbe": {
+    "path": ".cvf/runtime/ncr-html-draft-recovery-20261018/independent/probe-result.json",
+    "sha256": "c240e29076d8121c24d4cbf895957f4f3320a33f310569f774b0ffdc54b636d0",
+    "summary": {
+      "accepted": true,
+      "observed": "PASS2/2 actual independent storage/UI cases; all13 source/test pins matched; four zero-collection harness failures retained; auth-denial cache independent source-only, separately Root runtime2cases/9assertions PASS",
+      "limit": "No independent executed auth-denial or whole application/browser proof"
+    },
+    "actual": {
+      "schemaVersion": "cvf.ncr.independentProbeResult@1.0.0",
+      "role": "INTERNAL_AGENT LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+      "phase": "INDEPENDENT_REVIEW_PROBE",
+      "decisionOwner": "LOCAL Root",
+      "verdict": "PASS",
+      "capturedAt": "2026-10-18T03:54:44.6036957Z",
+      "grantPath": ".cvf/runtime/ncr-html-draft-recovery-20261018/independent-probe-grant.json",
+      "runnerStartsUsed": 5,
+      "runnerStartsCeiling": 5,
+      "originalRunnerOutcomes": [
+        {
+          "start": 1,
+          "status": "HARNESS_STARTUP_FAILURE",
+          "reason": "wrong relative config path; no tests collected"
+        },
+        {
+          "start": 2,
+          "status": "HARNESS_STARTUP_FAILURE",
+          "reason": "extensionless direct vitest/config import unresolved; no tests collected"
+        },
+        {
+          "start": 3,
+          "status": "HARNESS_IMPORT_FAILURE",
+          "reason": "react import from external runtime harness unresolved; no tests collected"
+        },
+        {
+          "start": 4,
+          "status": "HARNESS_MOCK_IMPORT_FAILURE",
+          "reason": "Vitest mock API imported from direct dist path; no tests collected"
+        },
+        {
+          "start": 5,
+          "status": "PASS",
+          "reason": "2 independent tests passed in 9.29 s; exit 0"
+        }
+      ],
+      "executedCases": [
+        {
+          "case": "storage-byte-hash-owner-record-collision-tamper-expiry-unavailable",
+          "status": "PASS",
+          "evidence": "actual synthetic file save/readback; independent SHA256 of UTF-8 fixture; concurrent exclusive collision; principal/record denial; tampered payload; expiry; unavailable missing root"
+        },
+        {
+          "case": "ui-uncertain-save-no-replay-old-record-response",
+          "status": "PASS",
+          "evidence": "one POST; known ID retained; read-only GET reconciliation; stale response after record change suppressed; zero export or receipt requests"
+        }
+      ],
+      "authDenialCache": {
+        "status": "STATIC_PASS_RUNTIME_UNEXECUTED",
+        "evidence": "current helper auth-denial NextResponse branch sets Cache-Control no-store, Pragma no-cache, Vary Cookie, Origin",
+        "limitation": "No independent executed route/auth-denial assertion within five-start grant"
+      },
+      "fixtureRoot": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-independent-Zy9kxV",
+      "fixtureFiles": "C:\\Users\\DELL\\AppData\\Local\\Temp\\cvf-ncr-independent-Zy9kxV\\ae1d3b83b8b35ef68151083cc9eed9eb19bc20d8a94bb79fa5b525035d02f4f3\\f92c3b17-c5ea-47a4-ae4d-81306df31971.json",
+      "sourceHashMismatches": [],
+      "sourceHashesAfter": {
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.test.ts": "eb3ae6732dd6170ba7a783befb019076b15b185610f446c9bdec3d9fcb478344",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts": "9d7bbc8f73418d64520485d06cf5f5861d1663d7d6b85817c34f9b690e943b3b",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts": "07ba622fb72225bc68a0fee604804a561ec6551755431523bc61c6b8b1625a09",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts": "71a36925e1272587e724cf4df0fc8539eea0c37ed69a4e02da111c00f823e5b1",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts": "b782f045bfd0e1273f6cdb2a55b06c43609c16f63fd20ec70c50930bf34e24c3",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx": "8bb93c9f037a6893083b8715495994d6523ee09366e47a9bd258f69a2c3e9964",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx": "8d5c6bce81afed6d7d240269b3a329eaa02603a057c1eb07ae62dbac9094ab48",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "c3e0b768f444fc452c6cd72815ef13b27ca8ac24e1506698123732a71152f625",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.recovery.test.tsx": "57ca247142ef6356c4801365f87048d670934d53b5f9660eec75bd90f68da042",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "469bab1358bb65eef69e730a2203404ac6eddb8ffcbfad57edde750d35d23b0d",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/recovery.test.tsx": "6d638e8490959b277a4bf2e3225fea3afdb94106e8b929377cc2757a02de5b9a",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts": "e044e9259bf7d842be93898fc82eabd33a39f0ed2a20a79d918682b2bb9b76a8"
+      },
+      "trackedWritesByProbe": "none",
+      "claimBoundary": "Isolated synthetic file and jsdom component proof only; no live provider, browser, server, production, or route auth-denial runtime behavior proof."
+    }
+  },
+  "reviewManifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.recovery.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/recovery.test.tsx",
+    "docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_WORKER_RETURN_2026-10-18.md",
+    "docs/reviews/evidence/ncr-html-draft-recovery-worker-20261018.json",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts",
+    "docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md",
+    "docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md",
+    "docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "procedureLimits": [
+    "Dispatch authoring literal/schema cascade; original normal refusals retained",
+    "Worker late mapped reads and first test/type/return gate failures retained",
+    "Root initial dependency audit did not include auth-denial cache branch; fixed before first collected independent test",
+    "Independent harness initial module/config failures collected zero tests; explicit bounded budget amendment retained",
+    "No current app/browser, deployed auth, provider/governance efficacy or production durability proof",
+    "Root bounded documentary completion of worker knowledge-reconciliation fields; original final-byte gate retained on sealed preimage, normal integration gates validate current metadata.",
+    "First reviewer-fast closure shape refused missing B/W freshness/matrix/digest fields and handoff mode grammar; corrected documentary fields only, original log retained.",
+    "Original worker type/lint raw log locators are missing; their reported outcomes are not accepted as raw custody. Root fresh final type/lint logs exist and provide current evidence."
+  ],
+  "parent": "gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged",
+  "capturedAt": "2026-10-18T03:57:25.467309+00:00"
+}

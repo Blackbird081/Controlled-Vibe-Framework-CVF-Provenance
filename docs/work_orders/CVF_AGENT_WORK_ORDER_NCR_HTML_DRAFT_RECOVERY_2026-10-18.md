@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_ACCEPTED_BOUNDED_SOURCE_WITH_PROCEDURE_LIMITS
 Date: 2026-10-18
 Batch ID: CVF-NCR-HTML-DRAFT-RECOVERY-20261018
 Dispatch base head: db3d4058910a76662b0a31dfe579f49d98b62586
@@ -509,26 +509,27 @@ Rollback boundary: exact listed metadata/packet paths; no source/runtime deletio
 
 ## Agent Operation Trace Block
 
+
 | Field | Evidence |
-| --- | --- |
-| Actor | Local INTERNAL_AGENT dispatcher/reviewer; phase=DESIGN_AND_DISPATCH; decision owner=LOCAL |
+|---|---|
+| Actor | Local INTERNAL_AGENT reviewer/closer/steward; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-html-draft-recovery-packet-20261018 |
+| Session or invocation | ncr-html-draft-recovery-material-20261018 |
 | Working directory | repository root |
-| Command or tool surface | named source reads; read-only INTERNAL_AGENT aide; actual scaffold/ADIF; exact packet/current-state authoring and release gates |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator approved recovery sequence and standing autonomous orchestration; source-only synthetic profile |
-| Before status evidence | HEAD db3d4058910a76662b0a31dfe579f49d98b62586; clean worktree; current R2C effect actors spent; PLAN recovery scope |
-| After status evidence | exact9 source-only dispatch candidate; implementation/probe pending |
-| Diff evidence | git diff --name-status and git diff --check; exact9 then exact6 ranges separately |
-| Approval boundary | named source edits plus owned synthetic test I/O only |
-| Claim boundary | accepted design/source packet; no implemented recovery or live governance result |
+| Command or tool surface | consume sealed worker14; bounded Root source repair/regression; distinct Local reviewer probe; normal gates/commits |
+| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.recovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/recovery.test.tsx`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-worker-20261018.json`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts`; `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | approved recovery sequence, current pair and Local Review Repair Admission |
+| Before status evidence | HEAD 123179bc44f469d6076333f2ae35ec27294c7413; exact14 worker return, stage empty |
+| After status evidence | exact26 reviewed integration; production OFF |
+| Diff evidence | git diff --check; exact tracked/untracked union reconciled |
+| Approval boundary | source plus isolated synthetic fixture I/O; no real-data/live effect |
+| Claim boundary | unverified saved draft recovery source only; no R1/R2 stage exit |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-draft-recovery-packet-20261018 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 candidate; no worker source changes at dispatch |
-| Deletion or rename disposition | none; original actors/custody immutable |
+| Invocation ID | ncr-html-draft-recovery-material-20261018 |
+| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.recovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/recovery.test.tsx`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-worker-20261018.json`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts`; `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.recovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/recovery.test.tsx`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-worker-20261018.json`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts`; `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact26 |
+| Deletion or rename disposition | none; original worker bytes/evidence and temp roots retained |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -550,3 +551,43 @@ Expected Result / Prediction: exact bound immutable draft retrieval closes the s
 ## Claim Boundary
 
 Source implementation and bounded synthetic fixture I/O only. Real application enablement, actual-data retention/custody, provider/live and business artifact acceptance are not admitted. R1/R2 remain partial; R3/R4 open; R5/R6 deferred. Preserve parent gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24.
+
+## Local Review Repair Admission - 2026-10-18
+
+Original exact14 worker return and source bytes are sealed in `.cvf/runtime/ncr-html-draft-recovery-20261018/worker-seal.json`; original 115/115 and full gate remain their recorded evidence. Local found a consolidated dependency class: Next route exports include non-route helper functions; UI Save completion closes over an old record; ambiguous Save permits replacing its reconciliation ID; cached drafts lack a session lifecycle join. These are source acceptance blockers under REQ-ROUTE/UI/NOREPLAY, not new product outcomes.
+
+Local admits one bounded reviewer source repair, retaining original worker14 evidence, adding only DOC_ONLY_NEW `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts` to integration ownership so route.ts exports only Next-supported entries. Existing twelve source/test paths remain in scope. Reuse the Auth.js session lifecycle pattern in IntentSpecConfirmation.tsx; require complete user/org/team identity and finite future expiry, clear/suppress data on identity/loading/logout/expiry transitions. Preserve known ambiguous Save ID and forbid blind write retry; capture scope epoch for every async publication. No new data profile/effect or runtime activation.
+
+Root may spend an additional20min on the consolidated repair and focused regression checks; one separate INTERNAL_AGENT Local reviewer receives20min for an independently authored fixture/UI probe against frozen final source. This is the one independent acceptance probe; Root's repair regression is not independent proof. Probe writes only owned ignored task evidence, never tracked source. Root owns final technical disposition and metadata. Original source worker lane is released; no source-worker redispatch.
+
+## Local Source Disposition
+
+Accepted bounded source and synthetic fixture behavior after one consolidated Root repair and distinct Local probe. Original worker14 and its first outcomes remain sealed; final integration adds only the admitted server API helper. Default production route remains disabled; configured running-app/browser proof, actual-data custody/retention, provider/live and stage exits are not established.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md | closed bounded source; original exact14 retained, Root helper admitted | PASS source only |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md; docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json | distinct actual Local probe and final source pins | PASS with procedure limits |
+| Roadmap state | docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md | recovery source contribution; R1/R2partial, R3/R4open | PASS bounded |
+| Registry JSON | existing registries | no registry transition selected; parent counters unchanged | PASS unchanged owners |
+| Registry Markdown | existing registries | no registry transition selected | PASS unchanged owners |
+| External evidence digest | docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json | internal worker/probe command and hash custody; worker SHA256 68ebf76ce35bec03850ee8801d2ecf7013b483a6253e32144503d5e1d7c30110 | PASS internal evidence only |
+| System loop interlock | parent gen9/SCEC2/counters2,0,2,0 | freeze/prior7/LHW24 retained | N/A with reason - no parent transition |
+| Session continuity | canonical current6 | source/generated projection; actual material-SHA sync follows | N/A with reason - actual commits recorded by final continuity |
+
+## Current Runtime Freshness Verification
+
+Final source is pinned in Local evidence. Source-only immutable file/UI fixtures are accepted; no running-app, browser, deployed-session or AI-governance efficacy freshness is asserted. Earlier R2C/provider proofs retain their recorded revision and are not fresh recovery proof. Current route GET/POST calls the default-disabled factory; tests inject a separate synthetic profile.
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-CONTRACT | strict exact-byte unverified snapshot | unchanged contract tests and independent exact hash | PASS source |
+| REQ-STORE | immutable owner/record/version read | real synthetic files, collision/tamper/expiry/unavailable proof | PASS fixture |
+| REQ-ROUTE | authenticated scope, no-store, default OFF | route tests, type guard, Root actual-helper auth-denial2cases/9assertions | PASS source/fixture |
+| REQ-UI | exact displayed save and scoped response | Root9/9 and independent UI adversaries | PASS source composition |
+| REQ-NOREPLAY | recovery without new export | independent observed request set | PASS fixture |
+| REQ-RETURN | original outcomes and final reviewed integration | sealed worker14/full gate, Local proof and exact26 | PASS with procedure limits |

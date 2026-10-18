@@ -35,18 +35,18 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_draft_recovery_source_dispatch`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bounded recovery source implementation after committed release; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=real-data/production/provider/deletion/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_draft_recovery_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN isolated synthetic application qualification; role=INTERNAL_AGENT Local reviewer/closer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=real-data/production/provider/deletion/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_html_draft_recovery_source_dispatch`
-Current mode: `cvf_ncr_html_draft_recovery_source_dispatch`; previous mode marker: `cvf_ncr_html_r2c_current_source_pair_accepted_bounded`
+Current mode marker: `cvf_ncr_html_draft_recovery_source_accepted_bounded`
+Current mode: `cvf_ncr_html_draft_recovery_source_accepted_bounded`; bounded source/fixture acceptance only.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_html_draft_recovery_source_dispatch`
+Mode: `cvf_ncr_html_draft_recovery_source_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md. One INTERNAL_AGENT exact14 source worker after committed bound PASS; Root probes/reviews/closes. Isolated synthetic profile only, production OFF. No R2C replay/real-data/provider/deletion/public/deploy. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged; R1/R2partial,R3/R4open,R5/R6deferred.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Recovery source accepted bounded, production OFF. Next plan isolated synthetic app/browser refresh-recovery proof from final source; no effect admitted by this projection. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred. Real-data/provider/deletion/public/deploy parked.
 
 ## Parked Checkpoints
 

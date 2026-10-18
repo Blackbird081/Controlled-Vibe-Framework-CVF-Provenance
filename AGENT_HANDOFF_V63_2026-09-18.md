@@ -13,19 +13,19 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Operator-approved recovery source implementation, exact14 worker paths and isolated synthetic fixture I/O only. Root owns exact9 dispatch material, exact6 continuity and final review. Production profile disabled; prior R2C actors stay spent.
+Recovery source accepted bounded with procedure limits; original worker14, admitted API helper and distinct Local probe. Root owns source integration26 then actual-material continuity6. Previous R2C evidence remains at its recorded revision; old actors spent.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_html_draft_recovery_source_dispatch`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bounded recovery source implementation after committed release; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=DISPATCH; decision owner=LOCAL; parked checkpoint=real-data/production/provider/deletion/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_draft_recovery_source_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN isolated synthetic application qualification; role=INTERNAL_AGENT Local reviewer/closer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=real-data/production/provider/deletion/public/deploy.
 
 ## Current Mode
 
-`cvf_ncr_html_draft_recovery_source_dispatch`. Source implementation admitted conditionally on committed bound release. R2C accepted evidence remains at its recorded revision; changed UI source cannot inherit a fresh runtime claim. Parent counters and parked effects retained.
+`cvf_ncr_html_draft_recovery_source_accepted_bounded`. Bounded source/fixture acceptance only.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md` SHA256 `18087b7bc3efe23aaedecef188e1aadae4eae961ccbbfddea61e90900eafe01d`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md` SHA256 `f811cdc5f78df9e31e0f4f52df40f27730497e14687041c99ca0798367ee454d`. Recovery source-only pair; real-data production profile is not enabled.
+Baseline `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md` SHA256 `6631e2ef7fbf30b5fded752b8e0d3c5871812716ae8626df22823e21829f1f5b`; work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md` SHA256 `d6e3dede74176ce47b8c235ff251e7d3d99cb4601dd94541aaa33cb7ca7db1e3`. Closed bounded source; production OFF.
 
 ## Accepted NCR Evidence And Continuation
 
@@ -37,7 +37,9 @@ Finite clipboard result ordering is accepted; actual OS write cancellation, whol
 
 ## Next Allowed Move
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. WORK_ORDER=docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md. One INTERNAL_AGENT exact14 source worker after committed bound PASS; Root probes/reviews/closes. Isolated synthetic profile only, production OFF. No R2C replay/real-data/provider/deletion/public/deploy. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged; R1/R2partial,R3/R4open,R5/R6deferred.
+Mode: `cvf_ncr_html_draft_recovery_source_accepted_bounded`
+
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-DRAFT-RECOVERY-20261018. Recovery source accepted bounded, production OFF. Next plan isolated synthetic app/browser refresh-recovery proof from final source; no effect admitted by this projection. Parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained; R1/R2partial,R3/R4open,R5/R6deferred. Real-data/provider/deletion/public/deploy parked.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -98,27 +100,27 @@ Rollback boundary: exact manifest; source18/S14/Q05/R1F/R1E/R02 and original cus
 
 ## Agent Operation Trace Block
 
+
 | Field | Evidence |
-| --- | --- |
-| Actor | Local INTERNAL_AGENT dispatcher/reviewer; phase=DESIGN_AND_DISPATCH; decision owner=LOCAL |
+|---|---|
+| Actor | Local INTERNAL_AGENT reviewer/closer/steward; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
 | Session or invocation | ncr-html-draft-recovery-continuity-20261018 |
 | Working directory | repository root |
-| Command or tool surface | named source reads; read-only INTERNAL_AGENT aide; actual scaffold/ADIF; exact packet/current-state authoring and release gates |
+| Command or tool surface | consume sealed worker14; bounded Root source repair/regression; distinct Local reviewer probe; normal gates/commits |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator approved recovery sequence and standing autonomous orchestration; source-only synthetic profile |
-| Before status evidence | HEAD db3d4058910a76662b0a31dfe579f49d98b62586; clean worktree; current R2C effect actors spent; PLAN recovery scope |
-| After status evidence | committed source packet f0bc13812f4413e38c2058acc2065f58878a2512; worker/probe pending |
-| Diff evidence | git diff --name-status and git diff --check; exact9 then exact6 ranges separately |
-| Approval boundary | named source edits plus owned synthetic test I/O only |
-| Claim boundary | accepted design/source packet; no implemented recovery or live governance result |
+| Allowed scope source | approved recovery sequence, current pair and Local Review Repair Admission |
+| Before status evidence | HEAD 123179bc44f469d6076333f2ae35ec27294c7413; exact14 worker return, stage empty |
+| After status evidence | exact6 reviewed integration; production OFF |
+| Diff evidence | git diff --check; exact tracked/untracked union reconciled |
+| Approval boundary | source plus isolated synthetic fixture I/O; no real-data/live effect |
+| Claim boundary | unverified saved draft recovery source only; no R1/R2 stage exit |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-html-draft-recovery-continuity-20261018 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact6 continuity correction; source implementation pending |
-| Deletion or rename disposition | none; original actors/custody immutable |
-
+| Manifest delta | MATCH exact6 |
+| Deletion or rename disposition | none; original worker bytes/evidence and temp roots retained |
 
 ## Claim Boundary
 
@@ -159,3 +161,7 @@ Root retains unreleased original normal9/6 pair and refused shape preflight. A c
 ## Recovery Release Correction
 
 First bound release refused DR-06 because nextAllowedMove omitted the exact work-order path. Root corrects only current6 metadata; packet and source contract unchanged. Original receipt `.cvf/runtime/ncr-html-draft-recovery-20261018/bound-release.log` retained. Recheck confirms the corrected path binding; no worker/source effect preceded release.
+
+## Recovery Source Acceptance
+
+docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md; docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json. Original worker115/115 consumed at recorded scope; Root9/9, final type/lint and distinct Local probe accepted source only. Source integration26 and final actual-SHA6 remain Root-measured. No current browser/provider/runtime claim.

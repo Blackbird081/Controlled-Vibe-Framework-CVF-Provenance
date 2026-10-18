@@ -1,0 +1,115 @@
+{
+  "batchId": "CVF-NCR-HTML-DRAFT-RECOVERY-20261018",
+  "executionBaseHead": "123179bc44f469d6076333f2ae35ec27294c7413",
+  "claimBoundary": "Source-only local synthetic fixture; no deployed profile, provider, browser, real-data or live governance proof.",
+  "sourceSha256": {
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.test.ts": "eb3ae6732dd6170ba7a783befb019076b15b185610f446c9bdec3d9fcb478344",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts": "9d7bbc8f73418d64520485d06cf5f5861d1663d7d6b85817c34f9b690e943b3b",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts": "07ba622fb72225bc68a0fee604804a561ec6551755431523bc61c6b8b1625a09",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts": "99f91b5eb7ace21c50507893e0d0219799f295c59ec467f4ad3e2fea4a7d3666",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts": "95bae994dd371d36dae411c8c827a31b5e39c2003d5ab48559375d8d2ca65d3d",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx": "68e9bdcb5fd85fbdd27bb1cd5acc83221724b5bfdd47ebdeeb36af9a94d72b9e",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx": "c5ced202aff3c63f38dcf2957fd4ff3d944d01d0efa1287cbe421d9661e61d67",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "c3e0b768f444fc452c6cd72815ef13b27ca8ac24e1506698123732a71152f625",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.recovery.test.tsx": "57ca247142ef6356c4801365f87048d670934d53b5f9660eec75bd90f68da042",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": "469bab1358bb65eef69e730a2203404ac6eddb8ffcbfad57edde750d35d23b0d",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/recovery.test.tsx": "6d638e8490959b277a4bf2e3225fea3afdb94106e8b929377cc2757a02de5b9a"
+  },
+  "proofs": {
+    "REQ-CONTRACT": {
+      "assertions": [
+        "Exact seven-field request and seven-field Save DTO",
+        "No unknown keys, unpaired surrogate, secret-like string",
+        "Exact UTF-8 HTML and fixed request-key SHA-256, unverified/unaccepted state"
+      ],
+      "test": "contract.test.ts 2 PASS"
+    },
+    "REQ-STORE": {
+      "assertions": [
+        "Exclusive create collision under concurrent Save",
+        "Real fixture byte readback and owner/record join",
+        "Corrupt hash/partial/expired unavailable"
+      ],
+      "test": "snapshot-store.test.ts 2 PASS"
+    },
+    "REQ-ROUTE": {
+      "assertions": [
+        "Normal current non-impersonated admin session",
+        "Origin and fetch-site mutation guard",
+        "Default route profile disabled; injected synthetic root only",
+        "No-store exact GET and bounded list"
+      ],
+      "test": "drafts/route.test.ts 2 PASS"
+    },
+    "REQ-UI": {
+      "assertions": [
+        "Panel slot receives exact displayed submit/result, stale state",
+        "Work Transfer binds selected audit record",
+        "Companion explicit Save, list and restore with old selection response rejection"
+      ],
+      "test": "recovery UI tests 5 PASS"
+    },
+    "REQ-NOREPLAY": {
+      "assertions": [
+        "Save, failed Save reconciliation, list and restore fetch only /api/artifacts/drafts",
+        "No receipt/provider/export invocation in tested UI route composition"
+      ],
+      "test": "focused selection 115 PASS, mock-only UI assertion"
+    },
+    "REQ-RETURN": {
+      "assertions": [
+        "Exact14 tracked paths and pending independent Local probe",
+        "First failed type/test outcomes disclosed",
+        "No worker commit"
+      ],
+      "test": "full bound gate result retained outside this JSON"
+    }
+  },
+  "commands": [
+    {
+      "kind": "pre_implementation",
+      "result": "PASS",
+      "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json"
+    },
+    {
+      "kind": "tsc_first",
+      "result": "FAIL",
+      "reason": "route test mock inferred break-glass union; fixed test type"
+    },
+    {
+      "kind": "focused_first",
+      "result": "FAIL",
+      "reason": "route test imported next-auth in Vitest; 7/8 files and 112 tests passed; added local admin-session mock"
+    },
+    {
+      "kind": "route_rerun",
+      "result": "PASS 2/2",
+      "log": ".cvf/runtime/ncr-html-draft-recovery-20261018/worker/focused-route-r2.log"
+    },
+    {
+      "kind": "tsc_second",
+      "result": "PASS",
+      "log": ".cvf/runtime/ncr-html-draft-recovery-20261018/worker/tsc-r2.log",
+      "limit": "preceded final two test-only assertions"
+    },
+    {
+      "kind": "eslint_first",
+      "result": "PASS",
+      "log": ".cvf/runtime/ncr-html-draft-recovery-20261018/worker/eslint-r1.log",
+      "limit": "preceded final two test-only assertions"
+    },
+    {
+      "kind": "focused_final",
+      "result": "PASS 8/8 files, 115/115 tests",
+      "log": ".cvf/runtime/ncr-html-draft-recovery-20261018/worker/focused-final-r4.log"
+    }
+  ],
+  "procedureDeviations": [
+    "Several mapped storage/domain and source-verification reads occurred after first edit, not before.",
+    "First log Tee-Object path used one extra parent hop; no test ran in that attempt.",
+    "Second TypeScript and first lint preceded two final test-only assertions; final Vitest transformed those tests."
+  ],
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "profile": "isolated local-synthetic fixture only; exported route remains disabled"
+}

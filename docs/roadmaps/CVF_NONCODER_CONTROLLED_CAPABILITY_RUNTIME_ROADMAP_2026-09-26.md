@@ -5,14 +5,14 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.60
+Version: 2.61
 Updated: 2026-10-18
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-18
 
-**Đang ở đâu:** Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Actual Local paired first-result proof `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`; completion `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`. The R2C actor is spent. Accepted R1F cap2 remains an immutable predecessor; the pair is a bounded synthetic mechanical result only if both actual actors passed. No R1/R2 stage-exit claim.
+**Đang ở đâu:** Recovery HTML draft source accepted bounded with procedure limits: `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json`. Explicit Save và khôi phục đúng byte, ràng buộc người dùng/bản ghi/phiên bản, không gọi lại export. Profile production vẫn OFF. Kết quả R2C trước đó giữ đúng revision cũ; chưa có browser/app recovery proof trên source mới.
 
 | Item | Current disposition | Evidence / remaining step |
 |---|---|---|
@@ -24,7 +24,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** Triển khai source-only HTML draft recovery theo baseline/work order2026-10-18 đã được operator duyệt. Explicit Save, immutable owner-bound snapshot, exact-byte lookup không gọi lại export; profile mặc định OFF, chỉ kiểm thử fixture synthetic cô lập. R1/R2 vẫn partial; R3/R4 open; dữ liệu thật/provider/public/deploy giữ checkpoint riêng.
+**Bước kế tiếp:** Lập phạm vi proof app/browser synthetic cô lập cho Save -> refresh -> recover đúng phiên bản, gồm lỗi kết nối và đổi phiên đăng nhập. Source hiện tại đã có fixture proof; không suy ra R1/R2 stage exit, production hay policy dữ liệu thật.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.
@@ -33,7 +33,7 @@ Historical detail and governed evidence remain in the ledger below; this checkpo
 
 ### Recovery Source Stage Admission - 2026-10-18
 
-Local accepts `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md` and dispatches `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md` after committed bound release. One INTERNAL_AGENT worker exact14; Local independent byte/principal/no-replay probe. Source changes require their own proof; previous browser/R2C results remain tied to their recorded revisions. No R2C successor/replay, live governance proof or application enablement is selected.
+Source implementation and distinct Local fixture probe are accepted bounded: `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md`. Original worker14 plus one admitted server helper; Root lifecycle/route repairs, fresh type/lint and independent fixture evidence. Running-app/browser qualification is next; previous browser/R2C results remain tied to their recorded revisions. No live/provider or production enablement.
 
 ### R1 Initial Support Matrix And Next Stage Selection - 2026-10-18
 
@@ -44,12 +44,12 @@ Documentary R1 contribution: translate accepted evidence into the selected HTML 
 | Edit, build, preview and download the selected draft | `docs/reviews/CVF_NCR_WORK_TRANSFER_BROWSER_COMPLETION_2026-10-13.md`: real Chromium journey, matching saved HTML bytes, stale-version and selection controls | Recorded configuration and revision only; output remains a draft, with separate artifact acceptance required |
 | Join an export to its current-source synthetic engine result | `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`: accepted bounded S14-source cap2/cap1 mechanical pair | Not a business-accepted job; procedure limitations retained; no additional actor or replay selected |
 | Stop the selected text request | `docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md`: local abort and suppressed retry/late publication | Different selected request path; remote completion and billing remain unknown; not HTML cancellation proof |
-| Reload and recover the exact HTML version | Browser completion records reload clearing the draft result; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx` stores the response in component state and publishes it through optional `onGenerated` | Selected next PLAN: source-only refresh/recovery contract mapping; do not solve recovery by replaying the export |
-| Find a persistence owner for that exact artifact | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts` returns generated bytes; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/session-store.ts` defines conversation sessions; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/workspace/state/route.ts` exposes the existing read model | These inspected interfaces do not establish a durable HTML artifact/version owner. Reuse requires an explicit contract join, retention/data scope and failure behavior; no parallel ledger or writer is selected |
+| Reload and recover the exact HTML version | Browser completion records reload clearing the draft result; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx` stores the response in component state and publishes it through optional `onGenerated` | Source/fixture accepted bounded in docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md; actual app/browser refresh journey remains unproved |
+| Find a persistence owner for that exact artifact | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts` returns generated bytes; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/session-store.ts` defines conversation sessions; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/workspace/state/route.ts` exposes the existing read model | New artifacts-domain HTML snapshot owner is source/fixture accepted under the recovery pair; immutable local-synthetic profile only, production OFF; real-data policy remains open |
 | Verify artifact identity and completion | `EXTENSIONS/CVF_EXECUTION_PLANE_FOUNDATION/src/mao/artifact.completion.scope.contract.ts`: `evaluateArtifactCompletionScope` joins expected paths, content hashes, assigned writers and assembly verifier into a receipt | Reuse candidate for verification semantics only; this pure evaluator does not supply HTML persistence or Web retrieval, and no external runtime adapter is selected |
 | Accept and retain a completed job, restore it after failure | R3/R4 requirements below remain the controlling acceptance criteria | Q001/Q004 data/writer/custody, business acceptance and action-specific effects remain separate decisions; no stage exit inferred from this matrix |
 
-Planning decision: recover a previously generated version by exact version/input/output identity, with authorization and explicit failure/unknown semantics; refreshing the page must not invoke another export. Chat-session storage and the generated workspace read model are not selected as artifact storage. The existing MAO evaluator is a verification-contract candidate only. Persistence/retrieval ownership is NOT_ESTABLISHED_IN_NAMED_INTERFACES, a bounded finding on the listed interfaces, not a repository-wide absence claim. The next source-verified contract must resolve that owner join and retention/data scope before storage implementation. Current S14/Q05/R1F/R2C evidence is the starting point; the historical October15 V2 snapshot is not an executable successor. Standing operator direction permits continued planning; no additional R2C invocation, helper, storage mechanism or runtime campaign is selected by this documentary contribution.
+Current source decision: the recovery pair selects an explicit Save and immutable HTML payload owner in the existing artifacts domain. Authenticated principal and record/version joins, exact-byte hashes, session-bound UI and unknown-state reconciliation have bounded fixture proof. No running-app recovery, real-data retention/custody, provider/live result or R1/R2 stage exit follows. The historical October15 V2 snapshot remains non-executable; old R2C actors stay spent.
 
 Root procedure disclosure: an initial closure-shape plan using HEAD..HEAD was refused because that mode requires a committed range. First reviewer-fast was69/70; the inherited learning commit lacked its GC-020 HEAD marker. Dedicated handoff-only repair `2d922f1e6` resolved that continuity defect before this material update. Final normal hooks and separate material/handoff range checks control this batch. commitPlanDisposition: EXCEPTION_WITH_REASON: inherited handoff repair precedes the ordinary documentary material and final handoff sync. Total review duration was not captured; no latency-improvement claim is made. No product/provider proof was repeated.
 
@@ -67,7 +67,7 @@ are evidence quantities, not product-completion percentages.
 
 ## Current Runtime Freshness Verification
 
-Current mechanical qualification: BE-Q05 execution base `686e858929b7146c2575aa2135a5bbea6b2fdda0`, current S14 source13/adjunct5, actual cap2 controls9/26, Docker4 and separate Local PURE10. Consume the linked Q05 completion at its recorded scope. R1F current-source cap2 mechanical journey is accepted bounded; R2C cap1 first result: ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS; Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded; actor spent. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R1E product acceptance remains tied to its older source revision; earlier control base `a3c9dad29e8720a43331260a424d00371d4da506` is historical. No new provider/live freshness is asserted.
+Recorded mechanical qualification before recovery UI edits: BE-Q05 execution base `686e858929b7146c2575aa2135a5bbea6b2fdda0`, current S14 source13/adjunct5, actual cap2 controls9/26, Docker4 and separate Local PURE10. Consume the linked Q05 completion at its recorded scope. R1F current-source cap2 mechanical journey is accepted bounded; R2C cap1 first result: ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS; Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded; actor spent. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R1E product acceptance remains tied to its older source revision; earlier control base `a3c9dad29e8720a43331260a424d00371d4da506` is historical. No new provider/live freshness is asserted.
 
 ### Current Bounded Browser Contribution - 2026-10-13
 
@@ -1055,26 +1055,27 @@ orientation packets are not refreshed by this private local edit.
 
 ## Agent Operation Trace Block
 
-| Field | Value |
+
+| Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT reviewer/documentation steward; phase=ROADMAP_SYNC; decision owner=LOCAL |
+| Actor | Local INTERNAL_AGENT reviewer/closer/steward; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-roadmap-support-and-routing-20261018 |
+| Session or invocation | ncr-html-draft-recovery-material-20261018 |
 | Working directory | repository root |
-| Command or tool surface | current bootstrap/handoff, accepted Review Cost and R2C/browser/cancellation completions, selected export/session/workspace source reads; roadmap-only patch and documentary validation |
-| Target paths | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Allowed scope source | operator standing request to continue the roadmap autonomously as orchestrator/reviewer; current PLAN and Local documentation stewardship |
-| Before status evidence | initial HEAD 7b0d8cd1c632532cc17661498a5da26e1309e9f8; clean worktree and stage; R2C accepted bounded; inherited handoff marker repaired at2d922f1e6 before material; historical maintenance ruling still advertised pending scope |
-| After status evidence | exact1 roadmap update; completed maintenance correctly routed; initial R1 support limits and source-only refresh/recovery planning outcome explicit |
-| Diff evidence | git diff --name-status: one modified roadmap; git diff --check required before commit |
-| Approval boundary | documentation only; no new execution, budget, source, provider or public authority |
-| Claim boundary | accepted evidence summarized at recorded scopes; R1/R2 partial, R3/R4 open, R5/R6 deferred; no effect or successor dispatch |
+| Command or tool surface | consume sealed worker14; bounded Root source repair/regression; distinct Local reviewer probe; normal gates/commits |
+| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.recovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/recovery.test.tsx`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-worker-20261018.json`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts`; `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | approved recovery sequence, current pair and Local Review Repair Admission |
+| Before status evidence | HEAD 123179bc44f469d6076333f2ae35ec27294c7413; exact14 worker return, stage empty |
+| After status evidence | exact26 reviewed integration; production OFF |
+| Diff evidence | git diff --check; exact tracked/untracked union reconciled |
+| Approval boundary | source plus isolated synthetic fixture I/O; no real-data/live effect |
+| Claim boundary | unverified saved draft recovery source only; no R1/R2 stage exit |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-roadmap-support-and-routing-20261018 |
-| Expected manifest | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Manifest delta | MATCH exact1 material; inherited and final handoff-only syncs follow the disclosed commit-plan exception |
-| Deletion or rename disposition | none; source/old grants/proofs/stages retained |
+| Invocation ID | ncr-html-draft-recovery-material-20261018 |
+| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.recovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/recovery.test.tsx`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-worker-20261018.json`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts`; `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.recovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/recovery.test.tsx`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-worker-20261018.json`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts`; `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_2026-10-18.md`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-local-20261018.json`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact26 |
+| Deletion or rename disposition | none; original worker bytes/evidence and temp roots retained |
 
 ## Public Export Disposition
 

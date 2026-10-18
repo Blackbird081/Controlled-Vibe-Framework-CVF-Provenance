@@ -65,9 +65,10 @@ interface ArtifactExportPanelProps {
   initialResult?: ArtifactExportResult | null;
   exportEndpoint?: string;
   onGenerated?: (result: ArtifactExportResult) => void;
+  renderRecovery?: (snapshot: DisplayedResult | null, versionState: 'current' | 'stale' | 'unknown' | null) => ReactNode;
 }
 
-interface DisplayedResult {
+export interface DisplayedResult {
   result: ArtifactExportResult;
   // Full request snapshot taken at submit; null when provenance is unknown (initialResult).
   submitted: ArtifactExportRequest | null;
@@ -412,6 +413,7 @@ export function ArtifactExportPanel({
   initialResult = null,
   exportEndpoint = '/api/artifacts/export',
   onGenerated,
+  renderRecovery,
 }: ArtifactExportPanelProps) {
   const { language } = useLanguage();
   const labels = LABELS[language === 'vi' ? 'vi' : 'en'];
@@ -903,6 +905,7 @@ export function ArtifactExportPanel({
                 </div>
               )}
             </div>
+            {renderRecovery?.(displayed, versionState)}
           </div>
 
           <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-800 dark:bg-gray-900">
