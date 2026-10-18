@@ -98,7 +98,7 @@ const clickBuild = () => fireEvent.click(screen.getByRole('button', { name: h.la
 const disclosure = () => text(screen.getByTestId('pre-generate-disclosure'));
 const expectAll = (haystack: string, needles: string[]) => needles.forEach(n => expect(haystack).toContain(n));
 
-beforeEach(() => { h.lang = 'en'; h.session = newSession(); calls.length = 0; denied.length = 0; });
+beforeEach(() => { h.lang = 'en'; h.session = newSession(); calls.length = 0; denied.length = 0; sessionStorage.removeItem(JOURNAL_KEY); });
 afterEach(() => { expect(denied).toEqual([]); });
 
 describe('ArtifactExportPanel standalone (real component)', () => {
@@ -374,5 +374,154 @@ describe('HtmlJobControls with real ArtifactExportPanel (composition)', () => {
       visibleEvidence: excerpt(screen.getByTestId('synthetic-review-decision'), 160), action: 'Build, stub Save, tick confirmation without note, add note, record review',
       observed: 'spy order CREATE_JOB, export, SAVE_DRAFT, LINK_VERSION, ACCEPT_VERSION; empty-note notice shown in vi then en; decision text and literal decision ID present; typed note literal',
       uncertainty: 'Save is a stub and these POSTs are mocked; no draft-save, link, review, writer or auth correctness is claimed' });
+  });
+});
+
+// Clarity repair (F3, F4, F7): grouped pre-Build disclosure and Goal/criterion help. UI-structure assertions on real components only.
+const KEYS = ['output', 'destination', 'cost', 'save', 'decline'] as const;
+type Lang = 'en' | 'vi';
+type Variant = 'selected' | 'generic';
+const GROUP_TITLES: Record<Lang, string[]> = {
+  en: ['Output and inputs', 'Data destination and access', 'Cost', 'Save and review status', 'Decline and Stop limits'],
+  vi: ['Kết quả và đầu vào', 'Nơi dữ liệu đi và quyền truy cập', 'Chi phí', 'Trạng thái lưu và rà soát', 'Từ chối và giới hạn của Dừng'],
+};
+const GROUP_FRAGMENTS: Record<Variant, Record<Lang, Record<(typeof KEYS)[number], string[]>>> = {
+  selected: {
+    en: {
+      output: ['local test profile', 'HTML is rendered on this device'],
+      destination: ['does not show where data goes or who can access it', 'does not grant any access or permission',
+        'HTML export configuration is resolved separately, so a later export may use a different profile'],
+      cost: ['does not establish a price', 'do not assume it is zero'],
+      save: ['only when you choose Save', 'no review receipt is requested', 'unverified and unaccepted', 'not trusted evidence or business acceptance'],
+      decline: ['decline before Build', 'Opening or closing the panel does not start a build', 'Stop only acts on this page',
+        'does not confirm that a remote task stopped or determine cost'],
+    },
+    vi: {
+      output: ['chế độ thử nghiệm cục bộ', 'HTML được tạo trên máy này'],
+      destination: ['không cho biết dữ liệu đi đâu hay ai được truy cập', 'không cấp quyền truy cập nào', 'lần tạo sau có thể dùng chế độ khác'],
+      cost: ['không xác lập giá', 'đừng mặc định là bằng không'],
+      save: ['khi bạn chọn Lưu', 'không có yêu cầu lấy biên nhận', 'chưa được xác minh và chưa được chấp nhận',
+        'không phải bằng chứng đáng tin cậy hay sự chấp nhận trong nghiệp vụ'],
+      decline: ['từ chối trước khi tạo', 'Mở hay đóng bảng không bắt đầu lượt tạo', 'Dừng chỉ tác động trên trang này',
+        'không xác nhận thao tác từ xa đã dừng', 'chi phí vẫn chưa rõ'],
+    },
+  },
+  generic: {
+    en: {
+      output: ['one HTML review packet'],
+      destination: ['may send a short excerpt', 'depends on this deployment', 'Who can access that data is also unknown'],
+      cost: ['Cost is unknown here', 'Do not assume it is free'],
+      save: ['unverified and unaccepted', 'separate step'],
+      decline: ['decline before Build', 'ask an operator', 'cannot prove that a remote task stopped or what it cost'],
+    },
+    vi: {
+      output: ['gói HTML rà soát'],
+      destination: ['có thể gửi một đoạn ngắn', 'phụ thuộc vào cấu hình triển khai', 'Ai được truy cập dữ liệu đó cũng chưa rõ'],
+      cost: ['Chi phí chưa rõ ở đây', 'Đừng mặc định là miễn phí'],
+      save: ['chưa được xác minh và chưa được chấp nhận', 'một bước riêng'],
+      decline: ['từ chối trước khi tạo', 'hỏi người vận hành', 'không chứng minh được thao tác từ xa đã dừng hay chi phí là bao nhiêu'],
+    },
+  },
+};
+const HELP_FRAGMENTS: Record<Lang, { goal: string[]; criteria: string[]; lifetime: string[] }> = {
+  en: { goal: ['does not write or change the page'],
+    criteria: ['not applied to the HTML automatically', 'built from the review source fields below'],
+    lifetime: ['Nothing typed here is saved until you click Build HTML', 'clears edits you have not submitted', 'checked with Reconcile'] },
+  vi: { goal: ['không tự viết hay sửa trang'],
+    criteria: ['không tự áp vào HTML', 'tạo từ các trường nguồn rà soát bên dưới'],
+    lifetime: ['Chưa có gì được lưu cho đến khi bạn bấm Tạo HTML', 'xóa các chỉnh sửa chưa gửi', 'kiểm tra bằng Đối soát'] },
+};
+const box = () => screen.getByTestId('pre-generate-disclosure');
+const groupOf = (key: string) => box().querySelector(`[data-disclosure-group="${key}"]`);
+function expectGroups(variant: Variant, lang: Lang) {
+  expect(box().getAttribute('data-disclosure')).toBe(variant === 'selected' ? 'selected-profile' : 'generic');
+  expect(box().closest('details')).toBeNull();
+  expect(Array.from(box().querySelectorAll('[data-disclosure-group]')).map(g => g.getAttribute('data-disclosure-group'))).toEqual([...KEYS]);
+  expect(Array.from(box().querySelectorAll('h4')).map(h => text(h))).toEqual(GROUP_TITLES[lang]);
+  KEYS.forEach(key => expectAll(text(groupOf(key)), GROUP_FRAGMENTS[variant][lang][key]));
+  expect(screen.getByRole('group', { name: lang === 'vi' ? 'Trước khi tạo' : 'Before you build' })).toBe(box());
+}
+
+describe('grouped pre-Build disclosure and input help (real components, clarity repair)', () => {
+  it('shows five always-visible labelled groups for the observed local-test profile in EN and VI, each qualification inside its own group, before Build', async () => {
+    const view = await mountJob();
+    expectGroups('selected', 'en');
+    expect(text(box())).not.toContain(GENERIC_EN);
+    expect(box().compareDocumentPosition(screen.getByRole('button', { name: 'Build HTML' })) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    switchTo(view, 'vi', jobUi());
+    expectGroups('selected', 'vi');
+    expect(text(box())).not.toContain(GENERIC_VI);
+    expect(box().compareDocumentPosition(screen.getByRole('button', { name: 'Tạo HTML' })) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(posts()).toEqual([]);
+  });
+
+  it.each([
+    ['standalone panel', undefined],
+    ['job controls with a missing boundary', { jobDecisions: true }],
+    ['job controls with jobDecisions false', { jobDecisions: false, effectBoundary: 'LOCAL_SYNTHETIC' }],
+  ])('renders the grouped generic fallback for %s: access and cost unknown, Stop limit, a decline path and no invented numbers', async (_name, caps) => {
+    let view: ReturnType<typeof render>;
+    const standalone = () => <ArtifactExportPanel initialRequest={REQ} />;
+    if (caps === undefined) { installFetch(); view = render(standalone()); } else view = await mountJob({ caps: () => reply(caps) });
+    const ui = () => (caps === undefined ? standalone() : jobUi());
+    expectGroups('generic', 'en');
+    expect(text(box())).not.toMatch(/[$€₫]|\d/);
+    expect(text(box())).not.toContain('local test profile');
+    switchTo(view, 'vi', ui());
+    expectGroups('generic', 'vi');
+    expect(text(box())).not.toMatch(/[$€₫]|\d/);
+    expect(text(box())).not.toContain('chế độ thử nghiệm cục bộ');
+    expect(posts()).toEqual([]);
+  });
+
+  it.each(['owner', 'sourceRecordId'] as const)('keeps the grouped generic fallback after a late exact-boundary reply once the %s changed (UI negative only)', async (change) => {
+    const first = deferred<unknown>(); const second = deferred<unknown>(); let n = 0;
+    installFetch({ caps: () => (++n === 1 ? first.promise : second.promise) });
+    const view = render(jobUi());
+    await waitFor(() => expect(n).toBe(1));
+    if (change === 'owner') { h.session = newSession('u2'); view.rerender(jobUi()); } else view.rerender(jobUi('ncr-synthetic-ux-proof-other'));
+    await waitFor(() => expect(n).toBe(2));
+    second.resolve(reply({ jobDecisions: true }));
+    await screen.findByTestId('html-job-controls');
+    expectGroups('generic', 'en');
+    first.resolve(reply({ jobDecisions: true, effectBoundary: 'LOCAL_SYNTHETIC' }));
+    await flush();
+    expectGroups('generic', 'en');
+    expect(box().getAttribute('data-disclosure')).toBe('generic');
+    expect(posts()).toEqual([]);
+  });
+
+  it('binds the Goal and criterion help by aria-describedby in EN and VI, outside the accessible names, and editing then leaving sends no write', async () => {
+    const view = await mountJob();
+    const described = (name: string) => (screen.getByRole('textbox', { name }).getAttribute('aria-describedby') ?? '')
+      .split(' ').filter(Boolean).map(id => text(document.getElementById(id)));
+    const check = (lang: Lang) => {
+      const goalName = lang === 'vi' ? 'Mục tiêu' : 'Goal'; const criterionName = lang === 'vi' ? 'Tiêu chí 1' : 'Criterion 1';
+      const goal = described(goalName); const criterion = described(criterionName);
+      expect(goal).toHaveLength(2); expect(criterion).toHaveLength(2);
+      expectAll(goal[0], HELP_FRAGMENTS[lang].goal); expectAll(goal[1], HELP_FRAGMENTS[lang].lifetime);
+      expectAll(criterion[0], HELP_FRAGMENTS[lang].criteria); expectAll(criterion[1], HELP_FRAGMENTS[lang].lifetime);
+      expect(text(screen.getByRole('textbox', { name: goalName }).closest('label'))).toBe(goalName);
+    };
+    check('en');
+    switchTo(view, 'vi', jobUi());
+    check('vi');
+    fillJob();
+    expect(posts()).toEqual([]);
+    view.unmount();
+    expect(posts()).toEqual([]);
+    expect(sessionStorage.getItem(JOURNAL_KEY)).toBeNull();
+  });
+
+  it('starts a reopened panel empty: edits that were not submitted are discarded and nothing was written', async () => {
+    const first = await mountJob();
+    fillJob();
+    expect((screen.getByRole('textbox', { name: 'Goal' }) as HTMLTextAreaElement).value).toBe('ncr-synthetic goal');
+    first.unmount();
+    await mountJob();
+    expect((screen.getByRole('textbox', { name: 'Goal' }) as HTMLTextAreaElement).value).toBe('');
+    expect((screen.getByRole('textbox', { name: 'Criterion 1' }) as HTMLInputElement).value).toBe('');
+    expect(posts()).toEqual([]);
+    expect(sessionStorage.getItem(JOURNAL_KEY)).toBeNull();
   });
 });

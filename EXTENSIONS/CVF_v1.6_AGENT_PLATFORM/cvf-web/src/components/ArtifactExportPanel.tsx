@@ -83,6 +83,8 @@ const REQUEST_FIELDS: ReadonlyArray<keyof ArtifactExportRequest> = [
   'receiptAnchor',
 ];
 
+const DISCLOSURE_GROUPS = ['output', 'destination', 'cost', 'save', 'decline'] as const;
+
 const DEFAULT_REQUEST: ArtifactExportRequest = {
   title: 'CVF HTML Review Packet',
   sourcePath: 'docs/reviews/example.md',
@@ -138,8 +140,28 @@ const LABELS = {
     previewTitle: 'Preview',
     fullRecord: 'Complete record',
     pointerRecord: 'Reference record',
-    preGenerateDisclosure: "Building this packet may send a short excerpt of your text to a review-checking service. Whether that happens, and where the data goes, depends on this deployment's setup and is not shown here.",
-    selectedProfileDisclosure: 'The server response reports a local test profile for this session: HTML is rendered on this device. A draft is saved to local test storage when you choose Save; no review receipt is requested. The draft remains unverified and unaccepted, even after a separate local test review by the same user; that review is not trusted evidence or business acceptance. HTML export configuration is resolved separately, so a later export may use a different profile. Stop only acts on this page; it does not confirm that a remote task stopped or determine cost.',
+    disclosureTitle: 'Before you build',
+    disclosureGroupTitles: {
+      output: 'Output and inputs',
+      destination: 'Data destination and access',
+      cost: 'Cost',
+      save: 'Save and review status',
+      decline: 'Decline and Stop limits',
+    },
+    genericDisclosure: {
+      output: 'Build uses the source fields below to make one HTML review packet.',
+      destination: "Building this packet may send a short excerpt of your text to a review-checking service. Whether that happens, and where the data goes, depends on this deployment's setup and is not shown here. Who can access that data is also unknown here.",
+      cost: 'Cost is unknown here. Do not assume it is free.',
+      save: 'The built packet is a draft that is unverified and unaccepted. Saving a draft, if offered, is a separate step that you choose.',
+      decline: 'You can decline before Build: do not click Build, or ask an operator about the setup first. Stop only acts on this page; it cannot prove that a remote task stopped or what it cost.',
+    },
+    selectedDisclosure: {
+      output: 'Build uses the source fields below to make one HTML review packet. The server response reports a local test profile for this session: HTML is rendered on this device.',
+      destination: 'This profile does not show where data goes or who can access it, and it does not grant any access or permission. HTML export configuration is resolved separately, so a later export may use a different profile.',
+      cost: 'This profile does not establish a price. Cost is not shown here; do not assume it is zero.',
+      save: 'A draft is saved to local test storage only when you choose Save; no review receipt is requested. The draft remains unverified and unaccepted, even after a separate local test review by the same user; that review is not trusted evidence or business acceptance.',
+      decline: 'You can decline before Build: do not click Build, or ask an operator first. Opening or closing the panel does not start a build. Stop only acts on this page; it does not confirm that a remote task stopped or determine cost.',
+    },
     receiptAbsentNote: 'No review-checking receipt was returned this time. This does not necessarily mean nothing was sent — see the note above.',
     receiptTimedOutNote: 'The review check timed out. No receipt was received, but the service may still have processed the request. Ask an operator to check the attempt ID before trying again.',
     receiptUnavailableNote: 'The review check was unavailable. No receipt was received; the request may still have reached the service. Check the attempt ID before trying again.',
@@ -202,8 +224,28 @@ const LABELS = {
     previewTitle: 'Xem trước',
     fullRecord: 'Bản đầy đủ',
     pointerRecord: 'Bản tham chiếu',
-    preGenerateDisclosure: 'Việc tạo gói này có thể gửi một đoạn ngắn nội dung của bạn đến một dịch vụ kiểm tra rà soát. Việc này có xảy ra hay không, và dữ liệu đi đâu, phụ thuộc vào cấu hình triển khai và không hiển thị ở đây.',
-    selectedProfileDisclosure: 'Phản hồi máy chủ cho biết phiên này dùng chế độ thử nghiệm cục bộ: HTML được tạo trên máy này. Bản nháp chỉ được lưu vào kho thử nghiệm cục bộ khi bạn chọn Lưu; không có yêu cầu lấy biên nhận kiểm tra. Bản nháp vẫn chưa được xác minh và chưa được chấp nhận, kể cả sau một lượt rà soát thử nghiệm cục bộ riêng của cùng người dùng; lượt rà soát này không phải bằng chứng đáng tin cậy hay sự chấp nhận trong nghiệp vụ. Cấu hình tạo HTML được xác định riêng; lần tạo sau có thể dùng chế độ khác. Dừng chỉ tác động trên trang này; không xác nhận thao tác từ xa đã dừng và chi phí vẫn chưa rõ.',
+    disclosureTitle: 'Trước khi tạo',
+    disclosureGroupTitles: {
+      output: 'Kết quả và đầu vào',
+      destination: 'Nơi dữ liệu đi và quyền truy cập',
+      cost: 'Chi phí',
+      save: 'Trạng thái lưu và rà soát',
+      decline: 'Từ chối và giới hạn của Dừng',
+    },
+    genericDisclosure: {
+      output: 'Tạo HTML dùng các trường nguồn bên dưới để tạo một gói HTML rà soát.',
+      destination: 'Việc tạo gói này có thể gửi một đoạn ngắn nội dung của bạn đến một dịch vụ kiểm tra rà soát. Việc này có xảy ra hay không, và dữ liệu đi đâu, phụ thuộc vào cấu hình triển khai và không hiển thị ở đây. Ai được truy cập dữ liệu đó cũng chưa rõ ở đây.',
+      cost: 'Chi phí chưa rõ ở đây. Đừng mặc định là miễn phí.',
+      save: 'Gói đã tạo là bản nháp, chưa được xác minh và chưa được chấp nhận. Việc lưu bản nháp, nếu có, là một bước riêng do bạn chọn.',
+      decline: 'Bạn có thể từ chối trước khi tạo: không bấm Tạo HTML, hoặc hỏi người vận hành về cấu hình trước. Dừng chỉ tác động trên trang này; không chứng minh được thao tác từ xa đã dừng hay chi phí là bao nhiêu.',
+    },
+    selectedDisclosure: {
+      output: 'Tạo HTML dùng các trường nguồn bên dưới để tạo một gói HTML rà soát. Phản hồi máy chủ cho biết phiên này dùng chế độ thử nghiệm cục bộ: HTML được tạo trên máy này.',
+      destination: 'Chế độ này không cho biết dữ liệu đi đâu hay ai được truy cập, và không cấp quyền truy cập nào. Cấu hình tạo HTML được xác định riêng; lần tạo sau có thể dùng chế độ khác.',
+      cost: 'Chế độ này không xác lập giá. Chi phí không hiển thị ở đây; đừng mặc định là bằng không.',
+      save: 'Bản nháp chỉ được lưu vào kho thử nghiệm cục bộ khi bạn chọn Lưu; không có yêu cầu lấy biên nhận kiểm tra. Bản nháp vẫn chưa được xác minh và chưa được chấp nhận, kể cả sau một lượt rà soát thử nghiệm cục bộ riêng của cùng người dùng; lượt rà soát này không phải bằng chứng đáng tin cậy hay sự chấp nhận trong nghiệp vụ.',
+      decline: 'Bạn có thể từ chối trước khi tạo: không bấm Tạo HTML, hoặc hỏi người vận hành trước. Mở hay đóng bảng không bắt đầu lượt tạo. Dừng chỉ tác động trên trang này; không xác nhận thao tác từ xa đã dừng và chi phí vẫn chưa rõ.',
+    },
     receiptAbsentNote: 'Lần này không có biên nhận kiểm tra rà soát nào được trả về. Điều này không chắc có nghĩa là không có gì được gửi — xem ghi chú ở trên.',
     receiptTimedOutNote: 'Kiểm tra rà soát đã hết thời gian chờ. Chưa nhận được receipt, nhưng dịch vụ có thể vẫn đã xử lý yêu cầu. Hãy nhờ người vận hành kiểm tra mã lần thử trước khi thử lại.',
     receiptUnavailableNote: 'Dịch vụ kiểm tra rà soát không sẵn sàng. Chưa nhận được receipt; yêu cầu vẫn có thể đã tới dịch vụ. Hãy kiểm tra mã lần thử trước khi thử lại.',
@@ -437,9 +479,9 @@ export function ArtifactExportPanel({
   const result = displayed?.result ?? null;
   const error = attemptError?.message ?? null;
   const friendlyError = error ? recoveryMessageFor(error, labels) ?? labels.genericFailure : null;
-  const preGenerateDisclosure = profileDisclosure === 'LOCAL_SYNTHETIC'
-    ? labels.selectedProfileDisclosure
-    : labels.preGenerateDisclosure;
+  const disclosureText = profileDisclosure === 'LOCAL_SYNTHETIC'
+    ? labels.selectedDisclosure
+    : labels.genericDisclosure;
   const versionState: 'current' | 'stale' | 'unknown' | null = !displayed
     ? null
     : !displayed.submitted
@@ -698,12 +740,23 @@ export function ArtifactExportPanel({
             </div>
           </div>
 
-          <p
+          <div
             data-testid="pre-generate-disclosure"
-            className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-5 text-amber-800 dark:border-amber-900/70 dark:bg-amber-950/30 dark:text-amber-200"
+            data-disclosure={profileDisclosure === 'LOCAL_SYNTHETIC' ? 'selected-profile' : 'generic'}
+            role="group"
+            aria-labelledby={`${fieldId}-disclosure-title`}
+            className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-3 py-3 text-xs leading-5 text-amber-800 dark:border-amber-900/70 dark:bg-amber-950/30 dark:text-amber-200"
           >
-            {preGenerateDisclosure}
-          </p>
+            <p id={`${fieldId}-disclosure-title`} className="font-semibold">{labels.disclosureTitle}</p>
+            <div className="mt-2 grid gap-3 sm:grid-cols-2">
+              {DISCLOSURE_GROUPS.map(group => (
+                <div key={group} data-disclosure-group={group} className={group === 'save' ? 'sm:col-span-2' : undefined}>
+                  <h4 className="font-semibold">{labels.disclosureGroupTitles[group]}</h4>
+                  <p className="mt-0.5">{disclosureText[group]}</p>
+                </div>
+              ))}
+            </div>
+          </div>
 
           <div className="mt-3 flex flex-wrap items-center gap-3">
             <button

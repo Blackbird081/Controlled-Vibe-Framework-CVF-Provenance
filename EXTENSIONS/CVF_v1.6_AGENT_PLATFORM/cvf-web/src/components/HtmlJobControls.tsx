@@ -1,5 +1,5 @@
 'use client';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useLanguage } from '@/lib/i18n';
 import type { DraftSnapshot } from '@/lib/html-draft-recovery-contract';
@@ -21,6 +21,9 @@ const COPY = {
     capabilityChecking: 'Checking local HTML job availability...', jobTitle: 'Local test HTML job', goal: 'Goal', criterion: 'Criterion',
     addCriterion: 'Add criterion', job: 'Job', reviewTitle: 'Review saved HTML version', draft: 'Saved draft',
     reviewNote: 'Review note',
+    goalHelp: 'Goal: the work you intend this job to do. It is recorded with the job and does not write or change the page.',
+    criteriaHelp: 'Criteria: what a reviewer will check later. They are not applied to the HTML automatically. The HTML packet is built from the review source fields below.',
+    lifetimeHelp: 'Nothing typed here is saved until you click Build HTML. Closing and reopening this panel clears edits you have not submitted. After a build starts, its job ID is recorded and an unclear result is checked with Reconcile.',
     operation: { CREATE_JOB: 'job creation', SAVE_DRAFT: 'draft saving', LINK_VERSION: 'version linking', ACCEPT_VERSION: 'review recording' },
     draftState: 'sent from this device, not verified, not accepted.', reopened: 'Reopened original job and saved version.', current: 'Current displayed job and saved version.',
     reviewStale: 'Review target is stale or unconfirmed; this does not accept current work.',
@@ -40,6 +43,9 @@ const COPY = {
     capabilityChecking: 'Đang kiểm tra khả năng dùng tác vụ HTML thử nghiệm cục bộ...', jobTitle: 'Tác vụ HTML thử nghiệm cục bộ', goal: 'Mục tiêu', criterion: 'Tiêu chí',
     addCriterion: 'Thêm tiêu chí', job: 'Tác vụ', reviewTitle: 'Rà soát phiên bản HTML đã lưu', draft: 'Bản nháp đã lưu',
     reviewNote: 'Ghi chú rà soát',
+    goalHelp: 'Mục tiêu: công việc bạn muốn tác vụ này thực hiện. Nội dung này được ghi cùng tác vụ, không tự viết hay sửa trang.',
+    criteriaHelp: 'Tiêu chí: điều người rà soát sẽ kiểm tra sau. Tiêu chí không tự áp vào HTML. Gói HTML được tạo từ các trường nguồn rà soát bên dưới.',
+    lifetimeHelp: 'Chưa có gì được lưu cho đến khi bạn bấm Tạo HTML. Đóng rồi mở lại bảng sẽ xóa các chỉnh sửa chưa gửi. Sau khi lượt tạo bắt đầu, mã tác vụ được ghi lại và kết quả chưa rõ được kiểm tra bằng Đối soát.',
     operation: { CREATE_JOB: 'tạo tác vụ', SAVE_DRAFT: 'lưu bản nháp', LINK_VERSION: 'liên kết phiên bản', ACCEPT_VERSION: 'ghi nhận lượt rà soát' },
     draftState: 'đã gửi từ thiết bị này, chưa xác minh, chưa được chấp nhận.', reopened: 'Đã mở lại tác vụ gốc và phiên bản đã lưu.', current: 'Tác vụ và phiên bản đã lưu đang hiển thị.',
     reviewStale: 'Đối tượng rà soát đã cũ hoặc chưa được xác nhận; thao tác này không chấp nhận nội dung hiện tại.',
@@ -76,6 +82,7 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
   const { data: session, status } = useSession();
   const { language } = useLanguage();
   const copy = COPY[language === 'vi' ? 'vi' : 'en'];
+  const helpId = useId();
   const user = session?.user as { userId?: string; orgId?: string; teamId?: string; realUserId?: string; realRole?: string; impersonation?: unknown } | undefined;
   const owner = { userId: user?.userId ?? '', orgId: user?.orgId ?? '', teamId: user?.teamId ?? '' };
   const expires = session?.expires ? Date.parse(session.expires) : NaN;
@@ -249,10 +256,13 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
   return <div data-testid="html-job-controls" className="space-y-4">
     <section className="rounded-lg border p-3" aria-label={copy.jobTitle}>
       <p className="text-sm font-semibold">{copy.jobTitle}</p>
-      <label className="mt-2 block text-xs">{copy.goal}<textarea aria-label={copy.goal} value={goal} maxLength={2000}
+      <p id={`${helpId}-goal`} data-testid="job-goal-help" className="mt-1 text-xs leading-5 text-gray-600 dark:text-gray-300">{copy.goalHelp}</p>
+      <p id={`${helpId}-criteria`} data-testid="job-criteria-help" className="mt-1 text-xs leading-5 text-gray-600 dark:text-gray-300">{copy.criteriaHelp}</p>
+      <p id={`${helpId}-lifetime`} data-testid="job-lifetime-help" className="mt-1 text-xs leading-5 text-gray-600 dark:text-gray-300">{copy.lifetimeHelp}</p>
+      <label className="mt-2 block text-xs">{copy.goal}<textarea aria-label={copy.goal} aria-describedby={`${helpId}-goal ${helpId}-lifetime`} value={goal} maxLength={2000}
         onChange={e => setGoal(e.target.value)} className={`${FIELD_CLASS} max-w-3xl`} /></label>
       {criteria.map((criterion, index) => <label key={criterion.criterionId} className="mt-2 block text-xs">{copy.criterion} {index + 1}
-        <input aria-label={`${copy.criterion} ${index + 1}`} value={criterion.text} maxLength={500} className={`${FIELD_CLASS} max-w-xl`}
+        <input aria-label={`${copy.criterion} ${index + 1}`} aria-describedby={`${helpId}-criteria ${helpId}-lifetime`} value={criterion.text} maxLength={500} className={`${FIELD_CLASS} max-w-xl`}
           onChange={e => setCriteria(xs => xs.map((x, i) => i === index ? { ...x, text: e.target.value } : x))} /></label>)}
       <button type="button" disabled={criteria.length >= 8} onClick={() => setCriteria(xs => [...xs, { criterionId: `c${xs.length + 1}`, text: '' }])}
         className={`mt-2 inline-flex min-h-11 items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-800 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 ${FOCUS_RING}`}>{copy.addCriterion}</button>

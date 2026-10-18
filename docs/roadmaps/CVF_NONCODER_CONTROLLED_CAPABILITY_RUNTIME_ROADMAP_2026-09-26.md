@@ -5,14 +5,14 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.77
+Version: 2.78
 Updated: 2026-10-19
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
 
 ## Current Delivery Checkpoint - 2026-10-19
 
-**Đang ở đâu:** Nhánh focused UI được Local nhận bounded tại `docs/reviews/CVF_NCR_R1_UX_FOCUSED_VERIFY_LOCAL_COMPLETION_REVIEW_2026-10-18.md`:6/6 lượt bàn phím mobile/tablet x3theme, Source notes hiển thị đủ6,9ảnh bắt buộc+2tùy chọn,0Build/write/effect và teardown đạt. Source/spec giữ pin; tsc/owned2lint xanh được tái dùng đúng hash,2warning nền giữ nguyên. Worker COMPLETE_PENDING_REVIEW/SUCCESSOR5/current0/counters0,0,0,0; Root sửa tài liệu nhỏ, giữ giới hạn khai báo first-read/gate. R1/R2 còn partial.
+**Đang ở đâu:** Candidate UI clarity đang BLOCKED: copy/F1-F7 được Local nhận bounded tại `docs/reviews/CVF_NCR_R1_UI_CLARITY_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md`, tsc0/final39of39; nhưng Goal bị khuất ở mobile3 (y799/h58 trong844px) và lệnh lint cũ exit1 vì baseline có3warnings. Source notes vẫn đủ6. Giữ nguyên workerS1/current3/counters0,0,0,1, browserFAIL và giới hạn thủ tục; R1/R2partial.
 
 | Item | Current disposition | Evidence / remaining step |
 |---|---|---|
@@ -24,7 +24,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** Work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md` sửa source4/test3/return2 cho F1-F7: nhãn mở/đóng, vai trò đầu vào, bỏ chỉnh sửa chưa gửi, nhóm disclosure/unknown/cost/Stop, trạng thái bản nháp. Baseline đóng riêng observationS2/current0 bằng accepted review; task source/UI mới INITIAL0/current3, giữ nguyên worker assessmentBLOCKED/S1/counters0,0,0,1. Không sửa API/storage/authority. Worker kiểm chứng finalstatic rồi đóng băng source, một browser7pass/13ảnh bắt buộc; fullgate<=3 cho phép sửa format trước ready. Chuyển thủ công sau boundrelease; Root không mở worker/browser. R1/R2partial, provider/real-data/production/public/deployOFF.
+**Bước kế tiếp:** Chuyển thủ công work order `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_GOAL_FOCUS_REPAIR_2026-10-19.md`: exact4 source1/test1/return2, sửa nativeGoalonFocus theo Source notes hiện có, giữ nguyên copy/oracle. S2 dựa trên acceptedcopyreview giải3copyblockers và ghi1mobilefocusblocker (3to1/streak0); không sửa trạng thái worker cũ. Lint mới nhận đúng3baselinefingerprints, finalstaticexit0 trước một browser7pass/13criteria/13ảnh bắt buộc. Root không mở browser/worker; provider/real-data/production/public/deployOFF.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.
@@ -1115,23 +1115,23 @@ orientation packets are not refreshed by this private local edit.
 
 | Field | Evidence |
 |---|---|
-| Actor | INTERNAL_AGENT Local dispatcher; decision owner=LOCAL |
+| Actor | INTERNAL_AGENT Local reviewer/dispatcher; decision owner=LOCAL |
 | Provider or surface | private shared checkout |
-| Session or invocation | ncr-r1-ui-clarity-repair-dispatch-20261019 |
+| Session or invocation | ncr-r1-goal-focus-repair-dispatch-20261019 |
 | Working directory | repository root |
-| Command or tool surface | source/design/evidence reads, scaffold, paired UI contract and deterministic admission |
-| Target paths | `docs/baselines/CVF_GC018_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Allowed scope source | operator standing roadmap continuation and current next |
-| Before status evidence | ec7fac7c9bfbb9f14bb36d9e9a3aedb4e92b374d; clean worktree; empty stage |
-| After status evidence | dispatch3 only; source7/worker2 untouched; no Root browser/worker |
-| Diff evidence | git diff --name-status; git diff --check; exact3 manifest |
-| Approval boundary | manual worker transfer only; no provider/backend/storage effect |
-| Claim boundary | finite source/UI contract readiness, no executed implementation |
+| Command or tool surface | blockedcandidate evidence review and finite source/focus successor admission |
+| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.ux-profile.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts`; `docs/reviews/CVF_NCR_R1_UI_CLARITY_REPAIR_WORKER_RETURN_2026-10-19.md`; `docs/reviews/evidence/ncr-r1-ui-clarity-repair-worker-20261019.json`; `docs/reviews/CVF_NCR_R1_UI_CLARITY_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/baselines/CVF_GC018_NCR_R1_GOAL_FOCUS_REPAIR_2026-10-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_GOAL_FOCUS_REPAIR_2026-10-19.md` |
+| Allowed scope source | standingroadmap/Local review and currentworkerreturn; boundedUIrepair |
+| Before status evidence | 4c4ce1a7c4f850aaca3e34f0889097a91e1eab3b; workerexact9pending; empty stage |
+| After status evidence | material13checkpoint/review/nextpair; Rootsource/runtime0 |
+| Diff evidence | git diff --name-status; git diff --check; originalworkerhashes and exact13 |
+| Approval boundary | manualworkertransfer; no Root app/browser/worker |
+| Claim boundary | candidateblocked, acceptedcopyonly; futureGoalproofnotexecuted |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r1-ui-clarity-repair-dispatch-20261019 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UI_CLARITY_REPAIR_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
-| Manifest delta | MATCH exact3; current6 separate |
+| Invocation ID | ncr-r1-goal-focus-repair-dispatch-20261019 |
+| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.ux-profile.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts`; `docs/reviews/CVF_NCR_R1_UI_CLARITY_REPAIR_WORKER_RETURN_2026-10-19.md`; `docs/reviews/evidence/ncr-r1-ui-clarity-repair-worker-20261019.json`; `docs/reviews/CVF_NCR_R1_UI_CLARITY_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/baselines/CVF_GC018_NCR_R1_GOAL_FOCUS_REPAIR_2026-10-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_GOAL_FOCUS_REPAIR_2026-10-19.md` |
+| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.ux-profile.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts`; `docs/reviews/CVF_NCR_R1_UI_CLARITY_REPAIR_WORKER_RETURN_2026-10-19.md`; `docs/reviews/evidence/ncr-r1-ui-clarity-repair-worker-20261019.json`; `docs/reviews/CVF_NCR_R1_UI_CLARITY_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `docs/baselines/CVF_GC018_NCR_R1_GOAL_FOCUS_REPAIR_2026-10-19.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_GOAL_FOCUS_REPAIR_2026-10-19.md` |
+| Manifest delta | MATCH currentmaterial13; current6separate |
 | Deletion or rename disposition | none |
 
 ## Public Export Disposition

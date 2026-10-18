@@ -1,0 +1,1509 @@
+{
+ "schema": "cvf.ncrR1UiClarityRepairWorkerEvidence.v1",
+ "batchId": "CVF-NCR-R1-UI-CLARITY-REPAIR-20261019",
+ "textEncodingException": "Text Encoding Exception: Vietnamese UI copy is an intentional task literal.",
+ "executionBaseHead": "4c4ce1a7c4f850aaca3e34f0889097a91e1eab3b",
+ "workOrderSha256": "d9ed24e83fef354e6de172907abe073515d3022de5e1ae00259089af2412a912",
+ "baselineSha256": "2db0556ad9b02e3ab2d5d8ab04ef225d13c15a3e5be170c917aa4807c5b6100b",
+ "claimBoundary": "UI presentation repair evidence only; assisted automated checks, not human comprehension, governance, business acceptance or R1/R2 exit.",
+ "sourceHashes": {
+  "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx": {
+   "preimage": "d7fb54a9c55f6e786511020dac3d91fc51202ab57efa47dd3228143726792a82",
+   "final": "4d0df1a163a78800da996eddaa9a559bbe34defd926f269e70989cdfc5a9ab47"
+  },
+  "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx": {
+   "preimage": "8d6d2c35c919524e500fb18b6c08283d4678307c23bed4d8f84073278f6de751",
+   "final": "74405469d2c194b5e63bd0ee7a71a65d30b9c4f5d72a8186cbbbb3c772def4a5"
+  },
+  "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": {
+   "preimage": "a4ebd478aae36c2976a01db489e8023aca4100cfd64e5f942c92fe1878f2c5a4",
+   "final": "d4f2c2d8ec50de9aeb31e2c850ba311f7facbabf02bec9a667d12daf10caaa8c"
+  },
+  "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx": {
+   "preimage": "5090247c7934b3ad440c875721e618d0b3bdfb2f27ae93a1f6612790f0d01360",
+   "final": "57522717db38c4f1ab070376c1682e19c644f4e547a182dabd22662db0e68987"
+  },
+  "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.ux-profile.test.tsx": {
+   "preimage": "0a73ed4fa0c7c74fb2bf36c566dddc7bfe5cc68984e21b4070ddafd9cb829ae6",
+   "final": "d81ba73119187e5105cb612ece2e4c4f36a863f6e8b88719e6684af22c10782c"
+  },
+  "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx": {
+   "preimage": "8d5c6bce81afed6d7d240269b3a329eaa02603a057c1eb07ae62dbac9094ab48",
+   "final": "4b2d02d85f52cd6a7918291082dad798580b985c7ec0ef334afeba52f5705e85"
+  },
+  "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts": {
+   "preimage": "a12da41b5879e69b0e452d0a27ed5cfa736f8c282cea6fb172cb7ffc1b57db70",
+   "final": "a7446412a585fe427aa4726b77803e508d2d4b07a74e370a50e77c238342d38a"
+  }
+ },
+ "numstat": [
+  "12\t4\tEXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+  "64\t11\tEXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+  "56\t2\tEXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.test.tsx",
+  "11\t3\tEXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx",
+  "13\t3\tEXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+  "150\t1\tEXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.ux-profile.test.tsx",
+  "216\t6\tEXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts"
+ ],
+ "REQ-CLARITY": {
+  "findingMatrix": [
+   {
+    "finding": "F1",
+    "owner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+    "en": [
+     "Open HTML panel",
+     "Close HTML panel",
+     "Opening the panel does not build or save anything. Closing it before Build discards edits you have not submitted. Closing does not cancel, or confirm the stop of, a build that already started."
+    ],
+    "vi": [
+     "Mở bảng HTML",
+     "Đóng bảng HTML",
+     "Mở bảng không tạo hay lưu gì. Đóng bảng trước khi tạo sẽ bỏ các chỉnh sửa chưa gửi. Đóng bảng không hủy, cũng không xác nhận đã dừng, một lượt tạo đã bắt đầu."
+    ],
+    "executableEvidence": "browser clarity steps vi-language-and-rows-before-open, selected-open-groups-help-draft, decline-by-closing-panel, generic-open-groups-draft (names and aria-expanded recorded)"
+   },
+   {
+    "finding": "F2",
+    "owner": "page.tsx + HtmlJobControls.tsx",
+    "en": [
+     "closing before Build discards unsubmitted edits"
+    ],
+    "vi": [
+     "Đóng bảng trước khi tạo sẽ bỏ các chỉnh sửa chưa gửi"
+    ],
+    "executableEvidence": "browser steps synthetic-edit-without-build, decline-by-closing-panel, reopen-shows-empty-inputs-and-pending-facts; component case \"starts a reopened panel empty\""
+   },
+   {
+    "finding": "F3",
+    "owner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+    "en": [
+     "Who can access that data is also unknown here.",
+     "Cost is unknown here. Do not assume it is free.",
+     "it cannot prove that a remote task stopped or what it cost"
+    ],
+    "vi": [
+     "Ai được truy cập dữ liệu đó cũng chưa rõ ở đây.",
+     "Chi phí chưa rõ ở đây. Đừng mặc định là miễn phí.",
+     "không chứng minh được thao tác từ xa đã dừng hay chi phí là bao nhiêu"
+    ],
+    "executableEvidence": "component cases for generic fallback (3 scenarios x EN/VI) and late capability reply; browser step generic-open-groups-draft; checkpoint copy-generic-desktop-dark-indigo"
+   },
+   {
+    "finding": "F4",
+    "owner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+    "en": [
+     "Output and inputs",
+     "Data destination and access",
+     "Cost",
+     "Save and review status",
+     "Decline and Stop limits"
+    ],
+    "vi": [
+     "Kết quả và đầu vào",
+     "Nơi dữ liệu đi và quyền truy cập",
+     "Chi phí",
+     "Trạng thái lưu và rà soát",
+     "Từ chối và giới hạn của Dừng"
+    ],
+    "executableEvidence": "component case with five labelled groups EN/VI incl. all seven original qualifications; browser step selected-open-groups-help-draft; copy checkpoints selected desktop, mobile, tablet"
+   },
+   {
+    "finding": "F5",
+    "owner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlDraftRecovery.tsx",
+    "en": [
+     "HTML drafts",
+     "Any draft saved here is client-submitted · unverified · unaccepted",
+     "No packet is built yet. Build one first; no draft is saved until you choose Save."
+    ],
+    "vi": [
+     "Bản nháp HTML",
+     "Bản nháp nào được lưu ở đây cũng do trình duyệt gửi · chưa xác minh · chưa chấp nhận",
+     "Chưa có gói nào được tạo. Hãy tạo một gói trước; chưa có bản nháp nào được lưu cho đến khi bạn chọn Lưu."
+    ],
+    "executableEvidence": "HtmlDraftRecovery component cases (4 new, EN/VI, no fetch on render); browser draftOk in steps selected-open and generic-open"
+   },
+   {
+    "finding": "F6",
+    "owner": "named components only",
+    "en": [],
+    "vi": [],
+    "executableEvidence": "DEFERRED by contract: broader sidebar and fixture-English translation not attempted; user-supplied source and claim-boundary strings unchanged"
+   },
+   {
+    "finding": "F7",
+    "owner": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+    "en": [
+     "Goal: the work you intend this job to do. It is recorded with the job and does not write or change the page."
+    ],
+    "vi": [
+     "Mục tiêu: công việc bạn muốn tác vụ này thực hiện. Nội dung này được ghi cùng tác vụ, không tự viết hay sửa trang."
+    ],
+    "executableEvidence": "component case binding Goal and Criterion help by aria-describedby EN/VI; browser fieldHelpOk in step selected-open-groups-help-draft"
+   }
+  ],
+  "browserClarityPass": {
+   "viewport": "desktop",
+   "theme": "dark-indigo",
+   "language": "vi",
+   "themeAsserted": true,
+   "steps": [
+    {
+     "step": "vi-language-and-rows-before-open",
+     "ok": true,
+     "facts": {
+      "langBefore": "en",
+      "langMid": "en",
+      "langAfter": "vi",
+      "note": "Mở bảng không tạo hay lưu gì. Đóng bảng trước khi tạo sẽ bỏ các chỉnh sửa chưa gửi. Đóng bảng không hủy, cũng không xác nhận đã dừng, một lượt tạo đã bắt đầu.",
+      "before": {
+       "selected": {
+        "name": "Mở bảng HTML",
+        "expanded": "false",
+        "controls": null,
+        "described": "record-panel-note"
+       },
+       "generic": {
+        "name": "Mở bảng HTML",
+        "expanded": "false",
+        "controls": null,
+        "described": "record-panel-note"
+       }
+      }
+     }
+    },
+    {
+     "step": "selected-open-groups-help-draft",
+     "ok": true,
+     "facts": {
+      "opened": {
+       "selected": {
+        "name": "Đóng bảng HTML",
+        "expanded": "true",
+        "controls": "record-panel-ncr-synthetic-ux-job-001",
+        "described": "record-panel-note"
+       },
+       "generic": {
+        "name": "Mở bảng HTML",
+        "expanded": "false",
+        "controls": null,
+        "described": "record-panel-note"
+       }
+      },
+      "panelCount": 1,
+      "selectedDisclosure": {
+       "variant": "selected-profile",
+       "title": "Trước khi tạo",
+       "groups": [
+        {
+         "key": "output",
+         "heading": "Kết quả và đầu vào",
+         "text": "Kết quả và đầu vàoTạo HTML dùng các trường nguồn bên dưới để tạo một gói HTML rà soát. Phản hồi máy chủ cho biết phiên này dùng chế độ thử nghiệm cục bộ: HTML được tạo trên máy này.",
+         "rendered": true,
+         "inViewport": false,
+         "partlyInViewport": false,
+         "top": 1956,
+         "height": 162
+        },
+        {
+         "key": "destination",
+         "heading": "Nơi dữ liệu đi và quyền truy cập",
+         "text": "Nơi dữ liệu đi và quyền truy cậpChế độ này không cho biết dữ liệu đi đâu hay ai được truy cập, và không cấp quyền truy cập nào. Cấu hình tạo HTML được xác định riêng; lần tạo sau có thể dùng chế độ khác.",
+         "rendered": true,
+         "inViewport": false,
+         "partlyInViewport": false,
+         "top": 1956,
+         "height": 162
+        },
+        {
+         "key": "cost",
+         "heading": "Chi phí",
+         "text": "Chi phíChế độ này không xác lập giá. Chi phí không hiển thị ở đây; đừng mặc định là bằng không.",
+         "rendered": true,
+         "inViewport": false,
+         "partlyInViewport": false,
+         "top": 2130,
+         "height": 82
+        },
+        {
+         "key": "save",
+         "heading": "Trạng thái lưu và rà soát",
+         "text": "Trạng thái lưu và rà soátBản nháp chỉ được lưu vào kho thử nghiệm cục bộ khi bạn chọn Lưu; không có yêu cầu lấy biên nhận kiểm tra. Bản nháp vẫn chưa được xác minh và chưa được chấp nhận, kể cả sau một lượt rà soát thử nghiệm cục bộ riêng của cùng người dùng; lượt rà soát này không phải bằng chứng đáng tin cậy hay sự chấp nhận trong nghiệp vụ.",
+         "rendered": true,
+         "inViewport": false,
+         "partlyInViewport": false,
+         "top": 2224,
+         "height": 142
+        },
+        {
+         "key": "decline",
+         "heading": "Từ chối và giới hạn của Dừng",
+         "text": "Từ chối và giới hạn của DừngBạn có thể từ chối trước khi tạo: không bấm Tạo HTML, hoặc hỏi người vận hành trước. Mở hay đóng bảng không bắt đầu lượt tạo. Dừng chỉ tác động trên trang này; không xác nhận thao tác từ xa đã dừng và chi phí vẫn chưa rõ.",
+         "rendered": true,
+         "inViewport": false,
+         "partlyInViewport": false,
+         "top": 2378,
+         "height": 182
+        }
+       ],
+       "insideDetails": false,
+       "boxTop": 1915,
+       "pageHeight": 3718,
+       "scrollY": 577,
+       "vw": 1280,
+       "vh": 900
+      },
+      "selectedPanel": {
+       "goalDescribed": [
+        "Mục tiêu: công việc bạn muốn tác vụ này thực hiện. Nội dung này được ghi cùng tác vụ, không tự viết hay sửa trang.",
+        "Chưa có gì được lưu cho đến khi bạn bấm Tạo HTML. Đóng rồi mở lại bảng sẽ xóa các chỉnh sửa chưa gửi. Sau khi lượt tạo bắt đầu, mã tác vụ được ghi lại và kết quả chưa rõ được kiểm tra bằng Đối soát."
+       ],
+       "criterionDescribed": [
+        "Tiêu chí: điều người rà soát sẽ kiểm tra sau. Tiêu chí không tự áp vào HTML. Gói HTML được tạo từ các trường nguồn rà soát bên dưới.",
+        "Chưa có gì được lưu cho đến khi bạn bấm Tạo HTML. Đóng rồi mở lại bảng sẽ xóa các chỉnh sửa chưa gửi. Sau khi lượt tạo bắt đầu, mã tác vụ được ghi lại và kết quả chưa rõ được kiểm tra bằng Đối soát."
+       ],
+       "recoveryTitle": "Bản nháp HTML",
+       "recoveryStatus": "Bản nháp nào được lưu ở đây cũng do trình duyệt gửi · chưa xác minh · chưa chấp nhận",
+       "recoveryGuidance": "Chưa có gói nào được tạo. Hãy tạo một gói trước; chưa có bản nháp nào được lưu cho đến khi bạn chọn Lưu. Xem các bản đã lưu chỉ liệt kê các bản đã lưu trước đó.",
+       "recoveryButtons": [
+        "Lưu bản nháp đang xem",
+        "Xem các bản đã lưu"
+       ],
+       "pendingReconcileButtons": 0,
+       "draftReconcileButtons": 0,
+       "journalPresent": false
+      }
+     }
+    },
+    {
+     "step": "synthetic-edit-without-build",
+     "ok": true,
+     "facts": {
+      "titleBefore": "Audit Record - ncr-synthetic selected job flow",
+      "edited": {
+       "goal": "ncr-synthetic goal",
+       "criterion": "ncr-synthetic criterion",
+       "title": "ncr-synthetic title edit"
+      }
+     }
+    },
+    {
+     "step": "decline-by-closing-panel",
+     "ok": true,
+     "facts": {
+      "closed": {
+       "selected": {
+        "name": "Mở bảng HTML",
+        "expanded": "false",
+        "controls": null,
+        "described": "record-panel-note"
+       },
+       "panels": 0
+      }
+     }
+    },
+    {
+     "step": "reopen-shows-empty-inputs-and-pending-facts",
+     "ok": true,
+     "facts": {
+      "reopened": {
+       "row": {
+        "name": "Đóng bảng HTML",
+        "expanded": "true",
+        "controls": "record-panel-ncr-synthetic-ux-job-001",
+        "described": "record-panel-note"
+       },
+       "goal": "",
+       "criterion": "",
+       "title": "Audit Record - ncr-synthetic selected job flow"
+      },
+      "pendingReconcileButtons": 0,
+      "draftReconcileButtons": 0,
+      "journalPresent": false,
+      "recoveryButtons": [
+       "Lưu bản nháp đang xem",
+       "Xem các bản đã lưu"
+      ]
+     }
+    },
+    {
+     "step": "generic-open-groups-draft",
+     "ok": true,
+     "facts": {
+      "genericRows": {
+       "selected": {
+        "name": "Mở bảng HTML",
+        "expanded": "false",
+        "controls": null,
+        "described": "record-panel-note"
+       },
+       "generic": {
+        "name": "Đóng bảng HTML",
+        "expanded": "true",
+        "controls": "record-panel-ux-generic-audit-001",
+        "described": "record-panel-note"
+       }
+      },
+      "genericDisclosure": {
+       "variant": "generic",
+       "title": "Trước khi tạo",
+       "groups": [
+        {
+         "key": "output",
+         "heading": "Kết quả và đầu vào",
+         "text": "Kết quả và đầu vàoTạo HTML dùng các trường nguồn bên dưới để tạo một gói HTML rà soát.",
+         "rendered": true,
+         "inViewport": false,
+         "partlyInViewport": true,
+         "top": -147,
+         "height": 222
+        },
+        {
+         "key": "destination",
+         "heading": "Nơi dữ liệu đi và quyền truy cập",
+         "text": "Nơi dữ liệu đi và quyền truy cậpViệc tạo gói này có thể gửi một đoạn ngắn nội dung của bạn đến một dịch vụ kiểm tra rà soát. Việc này có xảy ra hay không, và dữ liệu đi đâu, phụ thuộc vào cấu hình triển khai và không hiển thị ở đây. Ai được truy cập dữ liệu đó cũng chưa rõ ở đây.",
+         "rendered": true,
+         "inViewport": false,
+         "partlyInViewport": true,
+         "top": -147,
+         "height": 222
+        },
+        {
+         "key": "cost",
+         "heading": "Chi phí",
+         "text": "Chi phíChi phí chưa rõ ở đây. Đừng mặc định là miễn phí.",
+         "rendered": true,
+         "inViewport": true,
+         "partlyInViewport": true,
+         "top": 87,
+         "height": 62
+        },
+        {
+         "key": "save",
+         "heading": "Trạng thái lưu và rà soát",
+         "text": "Trạng thái lưu và rà soátGói đã tạo là bản nháp, chưa được xác minh và chưa được chấp nhận. Việc lưu bản nháp, nếu có, là một bước riêng do bạn chọn.",
+         "rendered": true,
+         "inViewport": true,
+         "partlyInViewport": true,
+         "top": 161,
+         "height": 62
+        },
+        {
+         "key": "decline",
+         "heading": "Từ chối và giới hạn của Dừng",
+         "text": "Từ chối và giới hạn của DừngBạn có thể từ chối trước khi tạo: không bấm Tạo HTML, hoặc hỏi người vận hành về cấu hình trước. Dừng chỉ tác động trên trang này; không chứng minh được thao tác từ xa đã dừng hay chi phí là bao nhiêu.",
+         "rendered": true,
+         "inViewport": true,
+         "partlyInViewport": true,
+         "top": 235,
+         "height": 162
+        }
+       ],
+       "insideDetails": false,
+       "boxTop": -188,
+       "pageHeight": 3294,
+       "scrollY": 2394,
+       "vw": 1280,
+       "vh": 900
+      },
+      "genericPanel": {
+       "goalDescribed": [],
+       "criterionDescribed": [],
+       "recoveryTitle": "Bản nháp HTML",
+       "recoveryStatus": "Bản nháp nào được lưu ở đây cũng do trình duyệt gửi · chưa xác minh · chưa chấp nhận",
+       "recoveryGuidance": "Chưa có gói nào được tạo. Hãy tạo một gói trước; chưa có bản nháp nào được lưu cho đến khi bạn chọn Lưu. Xem các bản đã lưu chỉ liệt kê các bản đã lưu trước đó.",
+       "recoveryButtons": [
+        "Lưu bản nháp đang xem",
+        "Xem các bản đã lưu"
+       ],
+       "pendingReconcileButtons": 0,
+       "draftReconcileButtons": 0,
+       "journalPresent": false
+      }
+     }
+    }
+   ],
+   "complete": true
+  },
+  "copyCheckpoints": [
+   {
+    "id": "copy-selected-mobile-dark-indigo",
+    "viewport": "mobile",
+    "variant": "selected-profile",
+    "captureMode": "full-page",
+    "file": "ux-focused-screens/copy-selected-mobile-dark-indigo.png",
+    "bytes": 264263,
+    "sha256": "f80640f105c544e48b4fe1433bf4cb88d51135dc59f6e5530343198ff731d0e1",
+    "facts": {
+     "variant": "selected-profile",
+     "title": "Before you build",
+     "groups": [
+      {
+       "key": "output",
+       "heading": "Output and inputs",
+       "text": "Output and inputsBuild uses the source fields below to make one HTML review packet. The server response reports a local test profile for this session: HTML is rendered on this device.",
+       "rendered": true,
+       "inViewport": false,
+       "partlyInViewport": false,
+       "top": -323.5,
+       "height": 122
+      },
+      {
+       "key": "destination",
+       "heading": "Data destination and access",
+       "text": "Data destination and accessThis profile does not show where data goes or who can access it, and it does not grant any access or permission. HTML export configuration is resolved separately, so a later export may use a different profile.",
+       "rendered": true,
+       "inViewport": false,
+       "partlyInViewport": false,
+       "top": -189.5,
+       "height": 142
+      },
+      {
+       "key": "cost",
+       "heading": "Cost",
+       "text": "CostThis profile does not establish a price. Cost is not shown here; do not assume it is zero.",
+       "rendered": true,
+       "inViewport": false,
+       "partlyInViewport": true,
+       "top": -35.5,
+       "height": 82
+      },
+      {
+       "key": "save",
+       "heading": "Save and review status",
+       "text": "Save and review statusA draft is saved to local test storage only when you choose Save; no review receipt is requested. The draft remains unverified and unaccepted, even after a separate local test review by the same user; that review is not trusted evidence or business acceptance.",
+       "rendered": true,
+       "inViewport": true,
+       "partlyInViewport": true,
+       "top": 58.5,
+       "height": 162
+      },
+      {
+       "key": "decline",
+       "heading": "Decline and Stop limits",
+       "text": "Decline and Stop limitsYou can decline before Build: do not click Build, or ask an operator first. Opening or closing the panel does not start a build. Stop only acts on this page; it does not confirm that a remote task stopped or determine cost.",
+       "rendered": true,
+       "inViewport": true,
+       "partlyInViewport": true,
+       "top": 232.5,
+       "height": 142
+      }
+     ],
+     "insideDetails": false,
+     "boxTop": -364.5,
+     "pageHeight": 6369,
+     "scrollY": 4052,
+     "vw": 390,
+     "vh": 844
+    },
+    "groupsRendered": 5,
+    "groupsFullyInViewport": 2,
+    "groupsRenderedOffscreen": 3,
+    "note": "Full-page capture: groups outside the viewport are rendered offscreen text; not every group was in the viewport at the same time."
+   },
+   {
+    "id": "copy-selected-tablet-dark-indigo",
+    "viewport": "tablet",
+    "variant": "selected-profile",
+    "captureMode": "full-page",
+    "file": "ux-focused-screens/copy-selected-tablet-dark-indigo.png",
+    "bytes": 325674,
+    "sha256": "cce08014d1480531b259490f12314fe8c7d198e10d7005ad48fe3eb403440203",
+    "facts": {
+     "variant": "selected-profile",
+     "title": "Before you build",
+     "groups": [
+      {
+       "key": "output",
+       "heading": "Output and inputs",
+       "text": "Output and inputsBuild uses the source fields below to make one HTML review packet. The server response reports a local test profile for this session: HTML is rendered on this device.",
+       "rendered": true,
+       "inViewport": false,
+       "partlyInViewport": true,
+       "top": -79,
+       "height": 162
+      },
+      {
+       "key": "destination",
+       "heading": "Data destination and access",
+       "text": "Data destination and accessThis profile does not show where data goes or who can access it, and it does not grant any access or permission. HTML export configuration is resolved separately, so a later export may use a different profile.",
+       "rendered": true,
+       "inViewport": false,
+       "partlyInViewport": true,
+       "top": -79,
+       "height": 162
+      },
+      {
+       "key": "cost",
+       "heading": "Cost",
+       "text": "CostThis profile does not establish a price. Cost is not shown here; do not assume it is zero.",
+       "rendered": true,
+       "inViewport": true,
+       "partlyInViewport": true,
+       "top": 95,
+       "height": 82
+      },
+      {
+       "key": "save",
+       "heading": "Save and review status",
+       "text": "Save and review statusA draft is saved to local test storage only when you choose Save; no review receipt is requested. The draft remains unverified and unaccepted, even after a separate local test review by the same user; that review is not trusted evidence or business acceptance.",
+       "rendered": true,
+       "inViewport": true,
+       "partlyInViewport": true,
+       "top": 189,
+       "height": 102
+      },
+      {
+       "key": "decline",
+       "heading": "Decline and Stop limits",
+       "text": "Decline and Stop limitsYou can decline before Build: do not click Build, or ask an operator first. Opening or closing the panel does not start a build. Stop only acts on this page; it does not confirm that a remote task stopped or determine cost.",
+       "rendered": true,
+       "inViewport": true,
+       "partlyInViewport": true,
+       "top": 303,
+       "height": 162
+      }
+     ],
+     "insideDetails": false,
+     "boxTop": -120,
+     "pageHeight": 5417,
+     "scrollY": 3290,
+     "vw": 768,
+     "vh": 1024
+    },
+    "groupsRendered": 5,
+    "groupsFullyInViewport": 3,
+    "groupsRenderedOffscreen": 2,
+    "note": "Full-page capture: groups outside the viewport are rendered offscreen text; not every group was in the viewport at the same time."
+   },
+   {
+    "id": "copy-selected-desktop-dark-indigo",
+    "viewport": "desktop",
+    "variant": "selected-profile",
+    "captureMode": "full-page",
+    "file": "ux-focused-screens/copy-selected-desktop-dark-indigo.png",
+    "bytes": 335649,
+    "sha256": "c90e5ef10b89312603654505df43a312735e615ab1a50948d8fefdad94e3b2a3",
+    "facts": {
+     "variant": "selected-profile",
+     "title": "Trước khi tạo",
+     "groups": [
+      {
+       "key": "output",
+       "heading": "Kết quả và đầu vào",
+       "text": "Kết quả và đầu vàoTạo HTML dùng các trường nguồn bên dưới để tạo một gói HTML rà soát. Phản hồi máy chủ cho biết phiên này dùng chế độ thử nghiệm cục bộ: HTML được tạo trên máy này.",
+       "rendered": true,
+       "inViewport": false,
+       "partlyInViewport": false,
+       "top": 1956,
+       "height": 162
+      },
+      {
+       "key": "destination",
+       "heading": "Nơi dữ liệu đi và quyền truy cập",
+       "text": "Nơi dữ liệu đi và quyền truy cậpChế độ này không cho biết dữ liệu đi đâu hay ai được truy cập, và không cấp quyền truy cập nào. Cấu hình tạo HTML được xác định riêng; lần tạo sau có thể dùng chế độ khác.",
+       "rendered": true,
+       "inViewport": false,
+       "partlyInViewport": false,
+       "top": 1956,
+       "height": 162
+      },
+      {
+       "key": "cost",
+       "heading": "Chi phí",
+       "text": "Chi phíChế độ này không xác lập giá. Chi phí không hiển thị ở đây; đừng mặc định là bằng không.",
+       "rendered": true,
+       "inViewport": false,
+       "partlyInViewport": false,
+       "top": 2130,
+       "height": 82
+      },
+      {
+       "key": "save",
+       "heading": "Trạng thái lưu và rà soát",
+       "text": "Trạng thái lưu và rà soátBản nháp chỉ được lưu vào kho thử nghiệm cục bộ khi bạn chọn Lưu; không có yêu cầu lấy biên nhận kiểm tra. Bản nháp vẫn chưa được xác minh và chưa được chấp nhận, kể cả sau một lượt rà soát thử nghiệm cục bộ riêng của cùng người dùng; lượt rà soát này không phải bằng chứng đáng tin cậy hay sự chấp nhận trong nghiệp vụ.",
+       "rendered": true,
+       "inViewport": false,
+       "partlyInViewport": false,
+       "top": 2224,
+       "height": 142
+      },
+      {
+       "key": "decline",
+       "heading": "Từ chối và giới hạn của Dừng",
+       "text": "Từ chối và giới hạn của DừngBạn có thể từ chối trước khi tạo: không bấm Tạo HTML, hoặc hỏi người vận hành trước. Mở hay đóng bảng không bắt đầu lượt tạo. Dừng chỉ tác động trên trang này; không xác nhận thao tác từ xa đã dừng và chi phí vẫn chưa rõ.",
+       "rendered": true,
+       "inViewport": false,
+       "partlyInViewport": false,
+       "top": 2378,
+       "height": 182
+      }
+     ],
+     "insideDetails": false,
+     "boxTop": 1915,
+     "pageHeight": 3718,
+     "scrollY": 577,
+     "vw": 1280,
+     "vh": 900
+    },
+    "groupsRendered": 5,
+    "groupsFullyInViewport": 0,
+    "groupsRenderedOffscreen": 5,
+    "note": "Full-page capture: groups outside the viewport are rendered offscreen text; not every group was in the viewport at the same time."
+   },
+   {
+    "id": "copy-generic-desktop-dark-indigo",
+    "viewport": "desktop",
+    "variant": "generic",
+    "captureMode": "full-page",
+    "file": "ux-focused-screens/copy-generic-desktop-dark-indigo.png",
+    "bytes": 302015,
+    "sha256": "d04931d35fbcb88884af574f242c09ba2d9bc3a36446f7165d52ed862e8a7cec",
+    "facts": {
+     "variant": "generic",
+     "title": "Trước khi tạo",
+     "groups": [
+      {
+       "key": "output",
+       "heading": "Kết quả và đầu vào",
+       "text": "Kết quả và đầu vàoTạo HTML dùng các trường nguồn bên dưới để tạo một gói HTML rà soát.",
+       "rendered": true,
+       "inViewport": false,
+       "partlyInViewport": true,
+       "top": -147,
+       "height": 222
+      },
+      {
+       "key": "destination",
+       "heading": "Nơi dữ liệu đi và quyền truy cập",
+       "text": "Nơi dữ liệu đi và quyền truy cậpViệc tạo gói này có thể gửi một đoạn ngắn nội dung của bạn đến một dịch vụ kiểm tra rà soát. Việc này có xảy ra hay không, và dữ liệu đi đâu, phụ thuộc vào cấu hình triển khai và không hiển thị ở đây. Ai được truy cập dữ liệu đó cũng chưa rõ ở đây.",
+       "rendered": true,
+       "inViewport": false,
+       "partlyInViewport": true,
+       "top": -147,
+       "height": 222
+      },
+      {
+       "key": "cost",
+       "heading": "Chi phí",
+       "text": "Chi phíChi phí chưa rõ ở đây. Đừng mặc định là miễn phí.",
+       "rendered": true,
+       "inViewport": true,
+       "partlyInViewport": true,
+       "top": 87,
+       "height": 62
+      },
+      {
+       "key": "save",
+       "heading": "Trạng thái lưu và rà soát",
+       "text": "Trạng thái lưu và rà soátGói đã tạo là bản nháp, chưa được xác minh và chưa được chấp nhận. Việc lưu bản nháp, nếu có, là một bước riêng do bạn chọn.",
+       "rendered": true,
+       "inViewport": true,
+       "partlyInViewport": true,
+       "top": 161,
+       "height": 62
+      },
+      {
+       "key": "decline",
+       "heading": "Từ chối và giới hạn của Dừng",
+       "text": "Từ chối và giới hạn của DừngBạn có thể từ chối trước khi tạo: không bấm Tạo HTML, hoặc hỏi người vận hành về cấu hình trước. Dừng chỉ tác động trên trang này; không chứng minh được thao tác từ xa đã dừng hay chi phí là bao nhiêu.",
+       "rendered": true,
+       "inViewport": true,
+       "partlyInViewport": true,
+       "top": 235,
+       "height": 162
+      }
+     ],
+     "insideDetails": false,
+     "boxTop": -188,
+     "pageHeight": 3294,
+     "scrollY": 2394,
+     "vw": 1280,
+     "vh": 900
+    },
+    "groupsRendered": 5,
+    "groupsFullyInViewport": 3,
+    "groupsRenderedOffscreen": 2,
+    "note": "Full-page capture: groups outside the viewport are rendered offscreen text; not every group was in the viewport at the same time."
+   }
+  ],
+  "criteria": {
+   "clarityPass1": true,
+   "copyCheckpoints4": true,
+   "requiredPhotos13": true,
+   "passes7": true
+  }
+ },
+ "REQ-REGRESSION": {
+  "status": "BLOCKED",
+  "reasons": [
+   "Retained browser criterion namedFieldsFullyVisible is false: Goal not fully visible at focus on all three mobile passes; Playwright exit 1 (single run, no rerun).",
+   "Scoped ESLint exit 1 under --max-warnings 2: 3 warnings, identical in rule and message to the HEAD baseline of 3 (one extra pre-existing HtmlDraftRecovery warning the packet did not list); 0 new warnings."
+  ],
+  "static": {
+   "tsc": [
+    {
+     "run": 1,
+     "exit": 0,
+     "seconds": 28
+    },
+    {
+     "run": 2,
+     "exit": 0,
+     "seconds": 32
+    }
+   ],
+   "vitest": [
+    {
+     "run": 1,
+     "exit": 1,
+     "seconds": 52,
+     "summary": "4 failed, 35 passed of 39 (2 own recovery assertions case-sensitive; 2 existing Build cases blocked by a leaked pending journal)"
+    },
+    {
+     "run": 2,
+     "exit": 1,
+     "seconds": 12,
+     "summary": "2 failed, 37 passed (own recovery assertion case)"
+    },
+    {
+     "run": 3,
+     "exit": 0,
+     "seconds": 19,
+     "summary": "39 passed of 39 on final bytes: ux-profile 29 (21 original + 8 new), recovery 10 (6 original + 4 new)"
+    }
+   ],
+   "eslintScoped": [
+    {
+     "run": 1,
+     "exit": 124,
+     "seconds": 121,
+     "summary": "timeout at 120 s, original output kept"
+    },
+    {
+     "run": 2,
+     "exit": 1,
+     "seconds": 4,
+     "warnings": 3,
+     "errors": 0,
+     "fingerprints": [
+      "HtmlDraftRecovery.tsx react-hooks/exhaustive-deps useEffect missing active, jobMode, owner, sourceRecordId",
+      "HtmlJobControls.tsx react-hooks/exhaustive-deps useEffect missing active, owner, sourceRecordId, still",
+      "HtmlJobControls.tsx react-hooks/exhaustive-deps useCallback missing owner, still"
+     ]
+    }
+   ],
+   "eslintDiagnosticsNotAcceptance": "per-file timings 3-4 s each (first file 30 s cold); spec-only runs exit 0; HEAD versions via stdin show 1 + 2 = 3 warnings at 57:6, 127:6, 152:6 (now 63:6, 134:6, 159:6)",
+   "playwrightList": {
+    "run": 1,
+    "exit": 0,
+    "seconds": 28,
+    "tests": 1
+   }
+  },
+  "browser": {
+   "runnerExitOuter": 1,
+   "playwrightExit": 1,
+   "durationMs": 320685,
+   "criteria": {
+    "passes6": true,
+    "sourceNotesFullyVisible6": true,
+    "namedFieldsFullyVisible": false,
+    "toggleAndTitleFocusChange": true,
+    "fieldSizeAndContainment": true,
+    "requiredPhotos9": true,
+    "missingTargets0": true,
+    "unstableRows0": true,
+    "clarityPass1": true,
+    "copyCheckpoints4": true,
+    "requiredPhotos13": true,
+    "passes7": true
+   },
+   "passRows": [
+    {
+     "combo": "mobile-dark-indigo",
+     "error": null,
+     "themeAsserted": true,
+     "complete": true,
+     "missingFound": [],
+     "missingFlags": [],
+     "sourceNotes": {
+      "rect": {
+       "x": 75,
+       "y": 292.5,
+       "w": 240,
+       "h": 258
+      },
+      "vis": {
+       "fits": true,
+       "insideViewport": true,
+       "clippedBy": [],
+       "obscuredPoints": 0,
+       "fullyVisible": true
+      },
+      "scrollY": 3115,
+      "settle": {
+       "settled": true,
+       "attempts": 28,
+       "ms": 457
+      }
+     },
+     "sourceNotesFullyVisible": true,
+     "toggleFocusChange": true,
+     "titleFocusChange": true,
+     "namedNotVisible": [
+      "Goal:{\"fits\":true,\"insideViewport\":false,\"clippedBy\":[],\"obscuredPoints\":1,\"fullyVisible\":false}"
+     ],
+     "narrow": []
+    },
+    {
+     "combo": "mobile-light-indigo",
+     "error": null,
+     "themeAsserted": true,
+     "complete": true,
+     "missingFound": [],
+     "missingFlags": [],
+     "sourceNotes": {
+      "rect": {
+       "x": 75,
+       "y": 292.5,
+       "w": 240,
+       "h": 258
+      },
+      "vis": {
+       "fits": true,
+       "insideViewport": true,
+       "clippedBy": [],
+       "obscuredPoints": 0,
+       "fullyVisible": true
+      },
+      "scrollY": 3115,
+      "settle": {
+       "settled": true,
+       "attempts": 28,
+       "ms": 459
+      }
+     },
+     "sourceNotesFullyVisible": true,
+     "toggleFocusChange": true,
+     "titleFocusChange": true,
+     "namedNotVisible": [
+      "Goal:{\"fits\":true,\"insideViewport\":false,\"clippedBy\":[],\"obscuredPoints\":1,\"fullyVisible\":false}"
+     ],
+     "narrow": []
+    },
+    {
+     "combo": "mobile-dark-emerald",
+     "error": null,
+     "themeAsserted": true,
+     "complete": true,
+     "missingFound": [],
+     "missingFlags": [],
+     "sourceNotes": {
+      "rect": {
+       "x": 75,
+       "y": 292.5,
+       "w": 240,
+       "h": 258
+      },
+      "vis": {
+       "fits": true,
+       "insideViewport": true,
+       "clippedBy": [],
+       "obscuredPoints": 0,
+       "fullyVisible": true
+      },
+      "scrollY": 3115,
+      "settle": {
+       "settled": true,
+       "attempts": 28,
+       "ms": 460
+      }
+     },
+     "sourceNotesFullyVisible": true,
+     "toggleFocusChange": true,
+     "titleFocusChange": true,
+     "namedNotVisible": [
+      "Goal:{\"fits\":true,\"insideViewport\":false,\"clippedBy\":[],\"obscuredPoints\":1,\"fullyVisible\":false}"
+     ],
+     "narrow": []
+    },
+    {
+     "combo": "tablet-dark-indigo",
+     "error": null,
+     "themeAsserted": true,
+     "complete": true,
+     "missingFound": [],
+     "missingFlags": [],
+     "sourceNotes": {
+      "rect": {
+       "x": 295,
+       "y": 383,
+       "w": 398,
+       "h": 258
+      },
+      "vis": {
+       "fits": true,
+       "insideViewport": true,
+       "clippedBy": [],
+       "obscuredPoints": 0,
+       "fullyVisible": true
+      },
+      "scrollY": 2507,
+      "settle": {
+       "settled": true,
+       "attempts": 35,
+       "ms": 572
+      }
+     },
+     "sourceNotesFullyVisible": true,
+     "toggleFocusChange": true,
+     "titleFocusChange": true,
+     "namedNotVisible": [],
+     "narrow": []
+    },
+    {
+     "combo": "tablet-light-indigo",
+     "error": null,
+     "themeAsserted": true,
+     "complete": true,
+     "missingFound": [],
+     "missingFlags": [],
+     "sourceNotes": {
+      "rect": {
+       "x": 295,
+       "y": 383,
+       "w": 398,
+       "h": 258
+      },
+      "vis": {
+       "fits": true,
+       "insideViewport": true,
+       "clippedBy": [],
+       "obscuredPoints": 0,
+       "fullyVisible": true
+      },
+      "scrollY": 2507,
+      "settle": {
+       "settled": true,
+       "attempts": 35,
+       "ms": 575
+      }
+     },
+     "sourceNotesFullyVisible": true,
+     "toggleFocusChange": true,
+     "titleFocusChange": true,
+     "namedNotVisible": [],
+     "narrow": []
+    },
+    {
+     "combo": "tablet-dark-emerald",
+     "error": null,
+     "themeAsserted": true,
+     "complete": true,
+     "missingFound": [],
+     "missingFlags": [],
+     "sourceNotes": {
+      "rect": {
+       "x": 295,
+       "y": 383,
+       "w": 398,
+       "h": 258
+      },
+      "vis": {
+       "fits": true,
+       "insideViewport": true,
+       "clippedBy": [],
+       "obscuredPoints": 0,
+       "fullyVisible": true
+      },
+      "scrollY": 2507,
+      "settle": {
+       "settled": true,
+       "attempts": 35,
+       "ms": 577
+      }
+     },
+     "sourceNotesFullyVisible": true,
+     "toggleFocusChange": true,
+     "titleFocusChange": true,
+     "namedNotVisible": [],
+     "narrow": []
+    }
+   ],
+   "goalStops": [
+    {
+     "combo": "mobile-dark-indigo",
+     "rect": {
+      "x": 67,
+      "y": 799,
+      "w": 256,
+      "h": 58
+     },
+     "vis": {
+      "fits": true,
+      "insideViewport": false,
+      "clippedBy": [],
+      "obscuredPoints": 1,
+      "fullyVisible": false
+     },
+     "scrollY": 1409,
+     "viewport": {
+      "w": 390,
+      "h": 844
+     },
+     "settled": true
+    },
+    {
+     "combo": "mobile-light-indigo",
+     "rect": {
+      "x": 67,
+      "y": 799,
+      "w": 256,
+      "h": 58
+     },
+     "vis": {
+      "fits": true,
+      "insideViewport": false,
+      "clippedBy": [],
+      "obscuredPoints": 1,
+      "fullyVisible": false
+     },
+     "scrollY": 1409,
+     "viewport": {
+      "w": 390,
+      "h": 844
+     },
+     "settled": true
+    },
+    {
+     "combo": "mobile-dark-emerald",
+     "rect": {
+      "x": 67,
+      "y": 799,
+      "w": 256,
+      "h": 58
+     },
+     "vis": {
+      "fits": true,
+      "insideViewport": false,
+      "clippedBy": [],
+      "obscuredPoints": 1,
+      "fullyVisible": false
+     },
+     "scrollY": 1409,
+     "viewport": {
+      "w": 390,
+      "h": 844
+     },
+     "settled": true
+    },
+    {
+     "combo": "tablet-dark-indigo",
+     "rect": {
+      "x": 287,
+      "y": 776,
+      "w": 414,
+      "h": 58
+     },
+     "vis": {
+      "fits": true,
+      "insideViewport": true,
+      "clippedBy": [],
+      "obscuredPoints": 0,
+      "fullyVisible": true
+     },
+     "scrollY": 1071,
+     "viewport": {
+      "w": 768,
+      "h": 1024
+     },
+     "settled": true
+    },
+    {
+     "combo": "tablet-light-indigo",
+     "rect": {
+      "x": 287,
+      "y": 776,
+      "w": 414,
+      "h": 58
+     },
+     "vis": {
+      "fits": true,
+      "insideViewport": true,
+      "clippedBy": [],
+      "obscuredPoints": 0,
+      "fullyVisible": true
+     },
+     "scrollY": 1071,
+     "viewport": {
+      "w": 768,
+      "h": 1024
+     },
+     "settled": true
+    },
+    {
+     "combo": "tablet-dark-emerald",
+     "rect": {
+      "x": 287,
+      "y": 776,
+      "w": 414,
+      "h": 58
+     },
+     "vis": {
+      "fits": true,
+      "insideViewport": true,
+      "clippedBy": [],
+      "obscuredPoints": 0,
+      "fullyVisible": true
+     },
+     "scrollY": 1071,
+     "viewport": {
+      "w": 768,
+      "h": 1024
+     },
+     "settled": true
+    }
+   ],
+   "shots": [
+    {
+     "id": "skip-link-focused-mobile-dark-indigo",
+     "kind": "optional-skip-link",
+     "file": "ux-focused-screens/skip-link-focused-mobile-dark-indigo.png",
+     "bytes": 47408,
+     "sha256": "5cd476c899bb6c565e4b922753ba99d323aadc53bebb650fc27bb01c242c43ef"
+    },
+    {
+     "id": "skip-main-landed-mobile-dark-indigo",
+     "kind": "optional-skip-link",
+     "file": "ux-focused-screens/skip-main-landed-mobile-dark-indigo.png",
+     "bytes": 42310,
+     "sha256": "427a5c65d5d8e288d6ae695e0d6095b561d80116356555f101f70af77ac18be1"
+    },
+    {
+     "id": "focused-title-mobile-dark-indigo",
+     "kind": "required-title",
+     "file": "ux-focused-screens/focused-title-mobile-dark-indigo.png",
+     "bytes": 35351,
+     "sha256": "60dd96d00f0c2bb01d0901062053396b84bf5506905b29e1d8318877f7d6a656"
+    },
+    {
+     "id": "focused-source-notes-mobile-dark-indigo",
+     "kind": "required-source-notes",
+     "file": "ux-focused-screens/focused-source-notes-mobile-dark-indigo.png",
+     "bytes": 39716,
+     "sha256": "08899eb3dc5030dbe636dcefcb18b194a11d720d3a73168041c8817dec41f6eb"
+    },
+    {
+     "id": "copy-selected-mobile-dark-indigo",
+     "kind": "required-copy-checkpoint",
+     "file": "ux-focused-screens/copy-selected-mobile-dark-indigo.png",
+     "bytes": 264263,
+     "sha256": "f80640f105c544e48b4fe1433bf4cb88d51135dc59f6e5530343198ff731d0e1"
+    },
+    {
+     "id": "focused-title-mobile-light-indigo",
+     "kind": "required-title",
+     "file": "ux-focused-screens/focused-title-mobile-light-indigo.png",
+     "bytes": 35461,
+     "sha256": "bc3ebbbb96fe2c3fc5469566ee986a57147d075a26b7be0a9d261a049afe2e3a"
+    },
+    {
+     "id": "focused-source-notes-mobile-light-indigo",
+     "kind": "required-source-notes",
+     "file": "ux-focused-screens/focused-source-notes-mobile-light-indigo.png",
+     "bytes": 40379,
+     "sha256": "8ce7cfcae7f13e99a0c5d86d75ac8a8d3ad80c80538295491f168251757d1033"
+    },
+    {
+     "id": "focused-title-mobile-dark-emerald",
+     "kind": "required-title",
+     "file": "ux-focused-screens/focused-title-mobile-dark-emerald.png",
+     "bytes": 35220,
+     "sha256": "707fed80561f1ac7f66a9463f7ccaf6d069b9b797795c63a07c7239d12700317"
+    },
+    {
+     "id": "focused-source-notes-mobile-dark-emerald",
+     "kind": "required-source-notes",
+     "file": "ux-focused-screens/focused-source-notes-mobile-dark-emerald.png",
+     "bytes": 39610,
+     "sha256": "a875e74735825a74a007ad2871272673fd047c3ca3730738e905513d4df2d4bd"
+    },
+    {
+     "id": "focused-source-notes-tablet-dark-indigo",
+     "kind": "required-source-notes",
+     "file": "ux-focused-screens/focused-source-notes-tablet-dark-indigo.png",
+     "bytes": 101563,
+     "sha256": "015dde7fd86ccced99a2c681e24678b10d4f918cbb240cb4b30594e037877bf0"
+    },
+    {
+     "id": "copy-selected-tablet-dark-indigo",
+     "kind": "required-copy-checkpoint",
+     "file": "ux-focused-screens/copy-selected-tablet-dark-indigo.png",
+     "bytes": 325674,
+     "sha256": "cce08014d1480531b259490f12314fe8c7d198e10d7005ad48fe3eb403440203"
+    },
+    {
+     "id": "focused-source-notes-tablet-light-indigo",
+     "kind": "required-source-notes",
+     "file": "ux-focused-screens/focused-source-notes-tablet-light-indigo.png",
+     "bytes": 102053,
+     "sha256": "2037404c3cac87feece3187a45be4aafdff6410888381a716008bf47cc5ea079"
+    },
+    {
+     "id": "focused-source-notes-tablet-dark-emerald",
+     "kind": "required-source-notes",
+     "file": "ux-focused-screens/focused-source-notes-tablet-dark-emerald.png",
+     "bytes": 101492,
+     "sha256": "6133b57f266b245141e3dae4e7af430e671826f7c29cd751a724202df001cd54"
+    },
+    {
+     "id": "copy-selected-desktop-dark-indigo",
+     "kind": "required-copy-checkpoint",
+     "file": "ux-focused-screens/copy-selected-desktop-dark-indigo.png",
+     "bytes": 335649,
+     "sha256": "c90e5ef10b89312603654505df43a312735e615ab1a50948d8fefdad94e3b2a3"
+    },
+    {
+     "id": "copy-generic-desktop-dark-indigo",
+     "kind": "required-copy-checkpoint",
+     "file": "ux-focused-screens/copy-generic-desktop-dark-indigo.png",
+     "bytes": 302015,
+     "sha256": "d04931d35fbcb88884af574f242c09ba2d9bc3a36446f7165d52ed862e8a7cec"
+    }
+   ],
+   "screenshotBytes": 1848164,
+   "screenshotCount": 15
+  }
+ },
+ "REQ-BOUNDARY": {
+  "boundary": {
+   "domainWriteAttempts": 0,
+   "browserAuthWriteAttempts": 0,
+   "effectBlocked": 0,
+   "externalBlockedHosts": [
+    "fonts.googleapis.com"
+   ],
+   "externalBlockedCount": 14,
+   "loginFormFallback": false,
+   "apiRequestContext": [
+    {
+     "method": "GET",
+     "path": "/api/auth/csrf",
+     "status": 200
+    },
+    {
+     "method": "POST",
+     "path": "/api/auth/callback/credentials",
+     "status": 200
+    },
+    {
+     "method": "GET",
+     "path": "/api/auth/session",
+     "status": 200
+    }
+   ],
+   "callbackOnlyBootstrap": true,
+   "buildActivations": 0,
+   "invalidBuildActivations": 0,
+   "validBuildActivations": 0,
+   "trafficCounts": {
+    "allowed": 176,
+    "blocked-external": 14,
+    "fixture": 13
+   }
+  },
+  "teardown": {
+   "attempted": true,
+   "pid": 26536,
+   "status": 0,
+   "portFree": true,
+   "processGone": true,
+   "ownedStopped": true,
+   "transientExact": true
+  },
+  "isolation": {
+   "preloadContexts": 24,
+   "envBlocked": 4,
+   "networkBlocked": 1,
+   "evaluateBlocked": 0
+  },
+  "outputBudget": {
+   "run": {
+    "bytes": 2873826,
+    "files": 30
+   },
+   "build": {
+    "bytes": 202375007,
+    "files": 205
+   },
+   "snapshots": {
+    "bytes": 117,
+    "files": 1
+   },
+   "withinCaps": true
+  },
+  "sourceDriftAllUnchanged": true,
+  "preflight": {
+   "startedAt": "2026-10-18T18:38:17.144Z",
+   "node": {
+    "exe": "C:\\nvm4w\\nodejs\\node.exe",
+    "version": "v22.17.0",
+    "status": 0
+   },
+   "git": {
+    "version": "git version 2.55.0.windows.3",
+    "status": 0
+   },
+   "head": {
+    "value": "4c4ce1a7c4f850aaca3e34f0889097a91e1eab3b",
+    "status": 0
+   },
+   "stagedPaths": "",
+   "portFree": true,
+   "probeIdentical": true,
+   "envKeys": [
+    "SystemRoot",
+    "WINDIR",
+    "PATH",
+    "TEMP",
+    "TMP",
+    "CI"
+   ],
+   "path": "C:\\nvm4w\\nodejs;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\System32",
+   "ok": true
+  },
+  "pinsStable": true,
+  "runnerOutcomes": [
+   {
+    "phase": "port-preflight",
+    "status": "FREE"
+   },
+   {
+    "phase": "next-startup",
+    "status": 200,
+    "durationMs": 46538
+   },
+   {
+    "phase": "post-init-fence",
+    "status": "ACTIVE",
+    "contexts": 3,
+    "blockedExternalAttempts": 1
+   },
+   {
+    "phase": "playwright",
+    "code": 1,
+    "signal": null,
+    "pid": 13316,
+    "durationMs": 318780
+   },
+   {
+    "phase": "transient-restore",
+    "file": "tsconfig.json",
+    "sha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6"
+   },
+   {
+    "phase": "transient-restore",
+    "file": "next-env.d.ts",
+    "sha256": "91933472d42a307909e5f8f187db0ccad72559bedc766ab20a25c6169ac79498"
+   }
+  ]
+ },
+ "REQ-RETURN": {
+  "returnPath": "docs/reviews/CVF_NCR_R1_UI_CLARITY_REPAIR_WORKER_RETURN_2026-10-19.md",
+  "note": "Final return bytes and full requiredGate results are bound by the detached receipt in owned custody, not inside this file."
+ },
+ "rawArtifacts": {
+  "tsc1.stdout.txt": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/tsc1.stdout.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "tsc2.stdout.txt": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/tsc2.stdout.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "vitest1.stderr.txt": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/vitest1.stderr.txt",
+   "sha256": "4f1a54b94beb2dacb111270cf13923af95c0e2e8668698615527f080aac36f74"
+  },
+  "vitest2.stderr.txt": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/vitest2.stderr.txt",
+   "sha256": "16e1b487cf03efe14e38e5043ea134acac6d0fa3b4e50166ded44c75a604cf12"
+  },
+  "vitest3.stdout.txt": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/vitest3.stdout.txt",
+   "sha256": "4b9378c38e9bbcba49081ed8d38d281f6cf8d9fc77be3949cd96c45eb6ab0893"
+  },
+  "lint1.exit.txt": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/lint1.exit.txt",
+   "sha256": "7645bbb350edba53a56c3bf22f2c8794020438cc776c4cf749a36f9a0c63c184"
+  },
+  "lint2.stdout.txt": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/lint2.stdout.txt",
+   "sha256": "9a6b41350fbef07c81e9c586c7938085beac187b3a4ace24c25c28eced114954"
+  },
+  "list1.log": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/list1.log",
+   "sha256": "e3db1991b57d64f03914b6a3dc78462f3542a29f2b71d76bc32bae2f0d50dd0d"
+  },
+  "lint-diag-per-file.txt": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/lint-diag-per-file.txt",
+   "sha256": "a6ae4b1ee9cd49fe34767556308049edd40ab54b2fb60130ed172f9b8732ef7b"
+  },
+  "lint-baseline-head-stdin.txt": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/lint-baseline-head-stdin.txt",
+   "sha256": "a90c6fe7641d465340b0617842604db5e851cc6fc40bf936b29146ab735112ea"
+  },
+  "preflight.json": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/preflight.json",
+   "sha256": "0bc04e5e78f5f96dfdea26b6369b224702df1f8ae4aaf537a070b309ecdd82cb"
+  },
+  "pins-pre.json": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/pins-pre.json",
+   "sha256": "2d56df9a118566f806404a8b8154fdeb28d9017858d265092778ad14de6deef4"
+  },
+  "pins-post.json": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/pins-post.json",
+   "sha256": "2d56df9a118566f806404a8b8154fdeb28d9017858d265092778ad14de6deef4"
+  },
+  "launch-result.json": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/launch-result.json",
+   "sha256": "c61334dd8a54c6bccb98a849c27c382af904721f5370e56b26e197563f61c37b"
+  },
+  "runner.stdout.log": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/runner.stdout.log",
+   "sha256": "621fff67a50b278345e1b72bf771bceeced385599a6cd2a2f3c97fe7018c47a9"
+  },
+  "runner.stderr.log": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/runner.stderr.log",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source7-frozen-pre-browser.txt": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/source7-frozen-pre-browser.txt",
+   "sha256": "0a002452ef9d3bfaf0482629a42d99cf3a3b3ba2f388ad4ebbb44edf5c1521bb"
+  },
+  "source7-post-browser.txt": {
+   "path": ".cvf/runtime/ncr-r1-ui-clarity-repair-20261019/worker/source7-post-browser.txt",
+   "sha256": "0a002452ef9d3bfaf0482629a42d99cf3a3b3ba2f388ad4ebbb44edf5c1521bb"
+  },
+  "ux-focused-assessment.json": {
+   "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Mp5hxW/ux-focused-assessment.json",
+   "sha256": "45de6b1ab654fb93e76ad1bf161489802c76273364eea081548319fbb9902346"
+  },
+  "result.json": {
+   "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Mp5hxW/result.json",
+   "sha256": "c1b6a58d7b01a6a0997bf16edf4d8a24420e66508e8c014c4687fa3b80335b7a"
+  },
+  "playwright.log": {
+   "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-Mp5hxW/playwright.log",
+   "sha256": "57364421c426f67080aa9e6088778c2056e93c4b2b5da59224acfd1728a5f9d0"
+  }
+ },
+ "disclosedDiscrepancies": [
+  "Auth helper tests/e2e/utils.ts was read only to line 80 before the browser launch, not in full as the work order requires; a later read cannot cure this.",
+  "Work order lint acceptance names exactly two pre-existing HtmlJobControls warnings; HEAD also carries one HtmlDraftRecovery warning, so the literal lint criterion cannot reach exit 0 without a behaviour change or a forbidden suppression.",
+  "Existing component cases Stop and status and records separate simulated Build failed on the first Vitest run because an earlier case leaves its pending-journal key in session storage; the owned correction clears that key in the top-level beforeEach. Why this did not surface at baseline is not established.",
+  "Unowned adjacent test files that query the changed components were reviewed statically for copy dependencies and not executed.",
+  "Spec edited after tsc run 2 (one line adding an en then vi toggle) and after scoped ESLint run 2; covered by spec-only diagnostic ESLint exit 0 and the Playwright transpile, not by a third tsc.",
+  "Test title of the registered spec still says six passes; seven passes run."
+ ]
+}

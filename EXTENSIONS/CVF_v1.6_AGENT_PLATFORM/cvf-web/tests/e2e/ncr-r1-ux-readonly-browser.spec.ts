@@ -3,6 +3,10 @@
 // denies every non-GET/HEAD/OPTIONS request (auth included) and counts it before it is sent; the only credentials POST is the existing
 // loginAs APIRequestContext bootstrap, observed by method/path/status only. No provider, evaluate/execute, external network or private data.
 // Focus is only ever moved by real keyboard presses; the test never calls focus() or scrolls a focused field.
+// Clarity repair extension: one desktop 1280x900 dark-indigo Vietnamese pass (real language toggle, real open/close of the selected
+// and generic records, synthetic Goal/criterion/title edit then decline and reopen, no Build) plus four full-page copy checkpoints.
+// It never activates Build, Save, Stop, link, review, accept, download, print or copy.
+// Text Encoding Exception: localized Vietnamese user-facing copy assertions follow the existing bilingual UI convention.
 import type { Browser, BrowserContext, JSHandle, Page, Request, Route } from '@playwright/test';
 import { createRequire } from 'node:module';
 import crypto from 'node:crypto';
@@ -28,6 +32,38 @@ const THEMES = [
   { name: 'light-indigo', theme: 'light', accent: 'indigo', rgb: '99 102 241', css: 'rgb(99, 102, 241)' },
   { name: 'dark-emerald', theme: 'dark', accent: 'emerald', rgb: '16 185 129', css: 'rgb(16, 185, 129)' },
 ];
+const DESKTOP = { name: 'desktop', width: 1280, height: 900 };
+const CLARITY_THEME = THEMES[0];
+const OPEN_VI = 'Mở bảng HTML';
+const CLOSE_VI = 'Đóng bảng HTML';
+const GROUP_KEYS = ['output', 'destination', 'cost', 'save', 'decline'];
+const VI_TITLES = ['Kết quả và đầu vào', 'Nơi dữ liệu đi và quyền truy cập', 'Chi phí', 'Trạng thái lưu và rà soát', 'Từ chối và giới hạn của Dừng'];
+// Qualification fragments that must be present per group, and phrases that must be absent, for each disclosure variant (Vietnamese).
+const VI_FRAGMENTS: Record<string, Record<string, string[]>> = {
+  'selected-profile': {
+    output: ['chế độ thử nghiệm cục bộ', 'HTML được tạo trên máy này'],
+    destination: ['không cho biết dữ liệu đi đâu hay ai được truy cập', 'không cấp quyền truy cập nào', 'lần tạo sau có thể dùng chế độ khác'],
+    cost: ['không xác lập giá', 'đừng mặc định là bằng không'],
+    save: ['khi bạn chọn Lưu', 'không có yêu cầu lấy biên nhận', 'chưa được xác minh và chưa được chấp nhận', 'không phải bằng chứng đáng tin cậy hay sự chấp nhận trong nghiệp vụ'],
+    decline: ['từ chối trước khi tạo', 'Mở hay đóng bảng không bắt đầu lượt tạo', 'Dừng chỉ tác động trên trang này', 'không xác nhận thao tác từ xa đã dừng', 'chi phí vẫn chưa rõ'],
+  },
+  generic: {
+    output: ['gói HTML rà soát'],
+    destination: ['có thể gửi một đoạn ngắn', 'phụ thuộc vào cấu hình triển khai', 'Ai được truy cập dữ liệu đó cũng chưa rõ'],
+    cost: ['Chi phí chưa rõ ở đây', 'Đừng mặc định là miễn phí'],
+    save: ['chưa được xác minh và chưa được chấp nhận', 'một bước riêng'],
+    decline: ['từ chối trước khi tạo', 'hỏi người vận hành', 'không chứng minh được thao tác từ xa đã dừng hay chi phí là bao nhiêu'],
+  },
+};
+const VI_FORBIDDEN: Record<string, string[]> = { 'selected-profile': ['có thể gửi một đoạn ngắn'], generic: ['chế độ thử nghiệm cục bộ'] };
+const VI_HELP = {
+  goal: ['không tự viết hay sửa trang'],
+  criteria: ['không tự áp vào HTML', 'tạo từ các trường nguồn rà soát bên dưới'],
+  lifetime: ['Chưa có gì được lưu cho đến khi bạn bấm Tạo HTML', 'xóa các chỉnh sửa chưa gửi', 'kiểm tra bằng Đối soát'],
+};
+const COPY_CHECKPOINT_IDS = ['copy-selected-desktop-dark-indigo', 'copy-generic-desktop-dark-indigo', 'copy-selected-mobile-dark-indigo', 'copy-selected-tablet-dark-indigo'];
+const MAX_SHOTS = 16;
+const MAX_SHOT_BYTES = 12 * 1024 * 1024;
 const AUDIT_FIXTURE = [
   { id: SELECTED, timestamp: '2026-10-18T02:00:00.000Z', action: 'ncr-synthetic selected job flow', actorId: 'ncr-synthetic-worker',
     actorRole: 'admin', targetResource: 'fixtures/ux-selected.md', outcome: 'SYNTHETIC_READY_FOR_REVIEW' },
@@ -55,6 +91,15 @@ type Pass = {
   flags: Record<string, boolean>; sequence: string[]; error?: string;
 };
 type Shot = { id: string; kind: string; file: string; bytes: number; sha256: string };
+type GroupFact = { key: string; heading: string; text: string; rendered: boolean; inViewport: boolean; partlyInViewport: boolean; top: number; height: number };
+type DisclosureFacts = { variant: string | null; title: string; groups: GroupFact[]; insideDetails: boolean; boxTop: number; pageHeight: number; scrollY: number; vw: number; vh: number };
+type PanelFacts = { goalDescribed: string[]; criterionDescribed: string[]; recoveryTitle: string; recoveryStatus: string; recoveryGuidance: string; recoveryButtons: string[];
+  pendingReconcileButtons: number; draftReconcileButtons: number; journalPresent: boolean | null };
+type RowFacts = { name: string; expanded: string | null; controls: string | null; described: string | null };
+type Checkpoint = { id: string; viewport: string; variant: string; captureMode: 'full-page'; file: string; bytes: number; sha256: string; facts: DisclosureFacts | null;
+  groupsRendered: number; groupsFullyInViewport: number; groupsRenderedOffscreen: number; note: string; error?: string };
+type Step = { step: string; ok: boolean; facts: Record<string, unknown> };
+type Clarity = { viewport: string; theme: string; language: string; themeAsserted: boolean; steps: Step[]; complete: boolean; error?: string };
 type TrafficRow = { method: string; host: string; path: string; decision: string; nav: boolean; status?: number };
 
 // Pure DOM read of the currently focused element: identity, computed focus style and full-visibility geometry.
@@ -128,13 +173,50 @@ const SETTLE_STYLE = (el: Element, [frames, deadlineMs]: [number, number]) => ne
   requestAnimationFrame(tick);
 });
 
+// Pure DOM reads for the clarity pass (no input, no focus, no scroll): disclosure groups with viewport-versus-rendered position, and panel facts.
+const READ_DISCLOSURE = (): DisclosureFacts | null => {
+  const box = document.querySelector('[data-testid="pre-generate-disclosure"]');
+  if (!box) return null;
+  const vh = window.innerHeight;
+  const clean = (value: string | null | undefined) => (value ?? '').replace(/\s+/g, ' ').trim();
+  const groups = Array.from(box.querySelectorAll('[data-disclosure-group]')).map((g): GroupFact => {
+    const r = g.getBoundingClientRect(); const rendered = r.width > 0 && r.height > 0;
+    return { key: g.getAttribute('data-disclosure-group') ?? '', heading: clean(g.querySelector('h4')?.textContent), text: clean(g.textContent), rendered,
+      inViewport: rendered && r.top >= 0 && r.bottom <= vh, partlyInViewport: rendered && r.bottom > 0 && r.top < vh,
+      top: Math.round(r.top * 10) / 10, height: Math.round(r.height * 10) / 10 };
+  });
+  return { variant: box.getAttribute('data-disclosure'), title: clean(box.querySelector(':scope > p')?.textContent), groups, insideDetails: !!box.closest('details'),
+    boxTop: Math.round(box.getBoundingClientRect().top * 10) / 10, pageHeight: document.documentElement.scrollHeight, scrollY: Math.round(window.scrollY * 10) / 10,
+    vw: window.innerWidth, vh };
+};
+const READ_PANEL_FACTS = (labels: { goal: string; criterion: string }): PanelFacts => {
+  const clean = (value: string | null | undefined) => (value ?? '').replace(/\s+/g, ' ').trim();
+  const byLabel = (name: string) => document.querySelector(`[aria-label="${name}"]`);
+  const described = (el: Element | null) => (el?.getAttribute('aria-describedby') ?? '').split(/\s+/).filter(Boolean).map(id => clean(document.getElementById(id)?.textContent));
+  const rec = document.querySelector('[data-testid="html-draft-recovery"]');
+  return { goalDescribed: described(byLabel(labels.goal)), criterionDescribed: described(byLabel(labels.criterion)),
+    recoveryTitle: clean(rec?.querySelector('h4')?.textContent), recoveryStatus: clean(rec?.querySelector('h4 + p')?.textContent),
+    recoveryGuidance: clean(rec?.querySelector('[data-testid="draft-recovery-guidance"]')?.textContent),
+    recoveryButtons: Array.from(rec?.querySelectorAll('button') ?? []).map(b => clean(b.textContent)),
+    pendingReconcileButtons: document.querySelectorAll('[data-testid="reconcile-job-operation"]').length,
+    draftReconcileButtons: document.querySelectorAll('[data-testid="reconcile-draft"]').length,
+    journalPresent: (() => { try { return sessionStorage.getItem('cvf-html-job-pending-v1') !== null; } catch { return null; } })() };
+};
+
+const groupsOk = (d: DisclosureFacts | null, variant: string) => !!d && d.variant === variant && !d.insideDetails && d.groups.length === GROUP_KEYS.length
+  && d.groups.every((g, i) => g.key === GROUP_KEYS[i] && g.heading === VI_TITLES[i] && g.rendered
+    && VI_FRAGMENTS[variant][g.key].every(f => g.text.includes(f)) && VI_FORBIDDEN[variant].every(f => !g.text.includes(f)));
+const fieldHelpOk = (f: PanelFacts) => f.goalDescribed.length === 2 && VI_HELP.goal.every(x => f.goalDescribed[0].includes(x)) && VI_HELP.lifetime.every(x => f.goalDescribed[1].includes(x))
+  && f.criterionDescribed.length === 2 && VI_HELP.criteria.every(x => f.criterionDescribed[0].includes(x)) && VI_HELP.lifetime.every(x => f.criterionDescribed[1].includes(x));
+const draftOk = (f: PanelFacts) => f.recoveryTitle === 'Bản nháp HTML' && !f.recoveryStatus.includes('Bản nháp do trình duyệt gửi') && f.recoveryGuidance.includes('Chưa có gói nào được tạo');
+
 const sameStyle = (a: Style | null | undefined, b: Style | null | undefined) => !!a && !!b && JSON.stringify(a) === JSON.stringify(b);
 const outlineVisible = (s: Style | null | undefined, css: string) => !!s && s.outlineStyle !== 'none' && parseFloat(s.outlineWidth) >= 2 && s.outlineColor === css;
 const blurredHidden = (s: Style | null | undefined) => !!s && (s.outlineStyle === 'none' || parseFloat(s.outlineWidth) === 0);
 const focusChanges = (s: Stop | null | undefined, css: string) => !!s && s.focusVisible && outlineVisible(s.style, css) && blurredHidden(s.blurred) && !sameStyle(s.style, s.blurred);
 
 test('focused completion: six real-keyboard passes with full Source notes focus visibility on mobile and tablet', async ({ page, context, browser }: { page: Page; context: BrowserContext; browser: Browser }) => {
-  test.setTimeout(660_000);
+  test.setTimeout(780_000);
   expect(browser.browserType().name()).toBe('chromium');
   const traffic: TrafficRow[] = [];
   const rowOf = new Map<Request, TrafficRow>();
@@ -188,11 +270,33 @@ test('focused completion: six real-keyboard passes with full Source notes focus 
     settleLog.push({ where, ...result }); return result;
   };
   const shot = async (id: string, kind: string) => {
-    if (shots.length >= 12) throw new Error('SCREENSHOT_CAP');
+    if (shots.length >= MAX_SHOTS) throw new Error('SCREENSHOT_CAP');
     const file = path.join(screens, `${id}.png`);
     await page.screenshot({ path: file, animations: 'disabled' });
     const bytes = fs.readFileSync(file);
     shots.push({ id, kind, file: path.relative(RUN_ROOT, file).replaceAll('\\', '/'), bytes: bytes.length, sha256: crypto.createHash('sha256').update(bytes).digest('hex') });
+  };
+  // Copy checkpoint: genuine full-page capture of the pre-Build disclosure. Facts are read first (viewport versus rendered-offscreen per group);
+  // nothing is scrolled, focused or injected, so a group below the fold is reported as rendered offscreen, never as simultaneously visible.
+  const checkpoints: Checkpoint[] = [];
+  const copyCheckpoint = async (id: string, viewport: string, variant: string): Promise<Checkpoint> => {
+    const cp: Checkpoint = { id, viewport, variant, captureMode: 'full-page', file: '', bytes: 0, sha256: '', facts: null, groupsRendered: 0, groupsFullyInViewport: 0,
+      groupsRenderedOffscreen: 0, note: '' };
+    try {
+      if (shots.length >= MAX_SHOTS) throw new Error('SCREENSHOT_CAP');
+      cp.facts = await page.evaluate(READ_DISCLOSURE);
+      const file = path.join(screens, `${id}.png`);
+      await page.screenshot({ path: file, fullPage: true, animations: 'disabled' });
+      const bytes = fs.readFileSync(file);
+      cp.file = path.relative(RUN_ROOT, file).replaceAll('\\', '/'); cp.bytes = bytes.length; cp.sha256 = crypto.createHash('sha256').update(bytes).digest('hex');
+      shots.push({ id, kind: 'required-copy-checkpoint', file: cp.file, bytes: cp.bytes, sha256: cp.sha256 });
+      const groups = cp.facts?.groups ?? [];
+      cp.groupsRendered = groups.filter(g => g.rendered).length; cp.groupsFullyInViewport = groups.filter(g => g.inViewport).length;
+      cp.groupsRenderedOffscreen = groups.filter(g => g.rendered && !g.inViewport).length;
+      cp.note = cp.groupsFullyInViewport === cp.groupsRendered ? 'Every rendered group was inside the viewport at capture.'
+        : 'Full-page capture: groups outside the viewport are rendered offscreen text; not every group was in the viewport at the same time.';
+    } catch (error) { cp.error = String((error as Error).message ?? error).slice(0, 300); }
+    checkpoints.push(cp); return cp;
   };
   // Enter/Space are only ever sent to the skip link, language toggle or record button; a focused Build control stops the test.
   const activate = async (key: string) => {
@@ -278,6 +382,8 @@ test('focused completion: six real-keyboard passes with full Source notes focus 
         const away = await press('Tab'); const returned = await press('Shift+Tab');
         pass.flags.focusMovedAway = away.name !== 'Build HTML' || away.tag !== 'button'; pass.flags.focusReturnable = returned.name === 'Build HTML';
       }
+      // Copy checkpoint after all keyboard stops of the dark-indigo pass (nothing is pressed, focused or scrolled for it).
+      if (th.name === CLARITY_THEME.name && pass.flags.enterOpenedPanel) await copyCheckpoint(`copy-selected-${vp.name}-${th.name}`, vp.name, 'selected-profile');
     } catch (error) { pass.error = String((error as Error).message ?? error).slice(0, 300); }
     return pass;
   };
@@ -286,9 +392,98 @@ test('focused completion: six real-keyboard passes with full Source notes focus 
   for (const vp of VIEWPORTS) {
     for (const th of THEMES) {
       passes.push(await runPass(vp, th, index === 0)); index += 1;
-      fs.writeFileSync(path.join(RUN_ROOT, 'ux-focused-partial.json'), JSON.stringify({ passesDone: index, passes, shots, domainWrites: domainWrites(), authWrites: authWrites() }));
+      fs.writeFileSync(path.join(RUN_ROOT, 'ux-focused-partial.json'), JSON.stringify({ passesDone: index, passes, shots, checkpoints, domainWrites: domainWrites(), authWrites: authWrites() }));
     }
   }
+
+  // Desktop clarity pass (Vietnamese): real language toggle, real open/close of the selected and generic records, synthetic edit then decline and reopen. No Build.
+  const clean = (value: string | null | undefined) => (value ?? '').replace(/\s+/g, ' ').trim();
+  const rowFacts = async (id: string): Promise<RowFacts> => {
+    const button = page.getByTestId(`export-record-${id}`);
+    return { name: clean(await button.textContent()), expanded: await button.getAttribute('aria-expanded'), controls: await button.getAttribute('aria-controls'),
+      described: await button.getAttribute('aria-describedby') };
+  };
+  const runClarity = async (): Promise<Clarity> => {
+    const c: Clarity = { viewport: DESKTOP.name, theme: CLARITY_THEME.name, language: 'vi', themeAsserted: false, steps: [], complete: false };
+    const step = (name: string, ok: boolean, facts: Record<string, unknown>) => { c.steps.push({ step: name, ok, facts }); };
+    const labels = { goal: 'Mục tiêu', criterion: 'Tiêu chí 1' };
+    try {
+      await page.evaluate(({ theme, accent }: { theme: string; accent: string }) => {
+        localStorage.setItem('cvf_theme', theme); localStorage.setItem('cvf_ui_tweaks', JSON.stringify({ accent, radius: 14, density: 'normal' }));
+      }, { theme: CLARITY_THEME.theme, accent: CLARITY_THEME.accent });
+      await page.setViewportSize({ width: DESKTOP.width, height: DESKTOP.height });
+      await page.goto('/work-transfer', { waitUntil: 'domcontentloaded', timeout: 120_000 });
+      await expect(page.getByTestId('history-list')).toBeVisible({ timeout: 120_000 });
+      await page.waitForFunction((rgb: string) => getComputedStyle(document.documentElement).getPropertyValue('--cvf-accent-rgb').trim() === rgb, CLARITY_THEME.rgb);
+      await page.waitForFunction((dark: boolean) => document.documentElement.classList.contains('dark') === dark, CLARITY_THEME.theme === 'dark');
+      c.themeAsserted = true;
+      const langBefore = await html.getAttribute('lang');
+      await switchLang('en');
+      const langMid = await html.getAttribute('lang');
+      await switchLang('vi');
+      const langAfter = await html.getAttribute('lang');
+      const note = clean(await page.getByTestId('record-panel-note').textContent());
+      const before = { selected: await rowFacts(SELECTED), generic: await rowFacts(GENERIC) };
+      step('vi-language-and-rows-before-open', langMid === 'en' && langAfter === 'vi' && before.selected.name === OPEN_VI && before.selected.expanded === 'false'
+        && before.generic.name === OPEN_VI && before.generic.expanded === 'false' && note.includes('Mở bảng không tạo hay lưu gì')
+        && before.selected.described === 'record-panel-note', { langBefore, langMid, langAfter, note, before });
+
+      const selectedButton = page.getByTestId(`export-record-${SELECTED}`);
+      const genericButton = page.getByTestId(`export-record-${GENERIC}`);
+      await selectedButton.click();
+      await expect(page.getByTestId('html-job-controls')).toBeVisible();
+      await expect(page.locator('[data-testid="pre-generate-disclosure"][data-disclosure="selected-profile"]')).toBeVisible();
+      const opened = { selected: await rowFacts(SELECTED), generic: await rowFacts(GENERIC) };
+      const panelCount = opened.selected.controls ? await page.locator(`[id="${opened.selected.controls}"]`).count() : 0;
+      const selectedDisclosure = await page.evaluate(READ_DISCLOSURE);
+      const selectedPanel = await page.evaluate(READ_PANEL_FACTS, labels);
+      step('selected-open-groups-help-draft', opened.selected.name === CLOSE_VI && opened.selected.expanded === 'true' && panelCount === 1
+        && opened.generic.name === OPEN_VI && opened.generic.expanded === 'false' && groupsOk(selectedDisclosure, 'selected-profile') && fieldHelpOk(selectedPanel) && draftOk(selectedPanel),
+      { opened, panelCount, selectedDisclosure, selectedPanel });
+      await copyCheckpoint('copy-selected-desktop-dark-indigo', DESKTOP.name, 'selected-profile');
+
+      const panel = page.getByTestId('inline-export-panel');
+      const goalBox = panel.getByRole('textbox', { name: labels.goal, exact: true });
+      const criterionBox = panel.getByRole('textbox', { name: labels.criterion, exact: true });
+      const titleBox = panel.getByRole('textbox', { name: 'Tiêu đề', exact: true });
+      const titleBefore = await titleBox.inputValue();
+      await goalBox.fill('ncr-synthetic goal'); await criterionBox.fill('ncr-synthetic criterion'); await titleBox.fill('ncr-synthetic title edit');
+      const edited = { goal: await goalBox.inputValue(), criterion: await criterionBox.inputValue(), title: await titleBox.inputValue() };
+      step('synthetic-edit-without-build', edited.goal === 'ncr-synthetic goal' && edited.criterion === 'ncr-synthetic criterion' && edited.title === 'ncr-synthetic title edit',
+        { titleBefore, edited });
+
+      await selectedButton.click();
+      await expect(page.getByTestId('html-job-controls')).toHaveCount(0);
+      const closed = { selected: await rowFacts(SELECTED), panels: await page.getByTestId('inline-export-panel').count() };
+      step('decline-by-closing-panel', closed.selected.name === OPEN_VI && closed.selected.expanded === 'false' && closed.panels === 0, { closed });
+
+      await selectedButton.click();
+      await expect(page.getByTestId('html-job-controls')).toBeVisible();
+      await expect(page.locator('[data-testid="pre-generate-disclosure"][data-disclosure="selected-profile"]')).toBeVisible();
+      const reopenedPanel = page.getByTestId('inline-export-panel');
+      const reopened = { row: await rowFacts(SELECTED), goal: await reopenedPanel.getByRole('textbox', { name: labels.goal, exact: true }).inputValue(),
+        criterion: await reopenedPanel.getByRole('textbox', { name: labels.criterion, exact: true }).inputValue(),
+        title: await reopenedPanel.getByRole('textbox', { name: 'Tiêu đề', exact: true }).inputValue() };
+      const reopenedFacts = await page.evaluate(READ_PANEL_FACTS, labels);
+      step('reopen-shows-empty-inputs-and-pending-facts', reopened.row.name === CLOSE_VI && reopened.row.expanded === 'true' && reopened.goal === '' && reopened.criterion === ''
+        && reopened.title === titleBefore, { reopened, pendingReconcileButtons: reopenedFacts.pendingReconcileButtons, draftReconcileButtons: reopenedFacts.draftReconcileButtons,
+        journalPresent: reopenedFacts.journalPresent, recoveryButtons: reopenedFacts.recoveryButtons });
+
+      await genericButton.click();
+      await expect(page.getByTestId('html-job-controls')).toHaveCount(0);
+      await expect(page.locator('[data-testid="pre-generate-disclosure"][data-disclosure="generic"]')).toBeVisible();
+      const genericRows = { selected: await rowFacts(SELECTED), generic: await rowFacts(GENERIC) };
+      const genericDisclosure = await page.evaluate(READ_DISCLOSURE);
+      const genericPanel = await page.evaluate(READ_PANEL_FACTS, labels);
+      step('generic-open-groups-draft', genericRows.generic.name === CLOSE_VI && genericRows.generic.expanded === 'true' && genericRows.selected.name === OPEN_VI
+        && genericRows.selected.expanded === 'false' && groupsOk(genericDisclosure, 'generic') && draftOk(genericPanel), { genericRows, genericDisclosure, genericPanel });
+      await copyCheckpoint('copy-generic-desktop-dark-indigo', DESKTOP.name, 'generic');
+      c.complete = c.steps.length === 6 && c.steps.every(s => s.ok);
+    } catch (error) { c.error = String((error as Error).message ?? error).slice(0, 300); }
+    return c;
+  };
+  const clarity = await runClarity();
+  fs.writeFileSync(path.join(RUN_ROOT, 'ux-focused-partial.json'), JSON.stringify({ passesDone: index, passes, shots, checkpoints, clarity, domainWrites: domainWrites(), authWrites: authWrites() }));
 
   // Consolidate objective criteria. Evidence is written before any assertion can fail the test.
   const NAMED = new Set(PANEL_STOPS.map(([, name]) => name).filter(name => name !== 'Build HTML'));
@@ -327,6 +522,14 @@ test('focused completion: six real-keyboard passes with full Source notes focus 
     requiredPhotos9: requiredShots.length === 9,
     missingTargets0: stopsMissingTargets === 0,
     unstableRows0: settleFailures.length === 0 && passRows.every(r => r.themeAsserted),
+    clarityPass1: clarity.complete && clarity.themeAsserted && !clarity.error,
+    copyCheckpoints4: COPY_CHECKPOINT_IDS.every(id => {
+      const cp = checkpoints.find(x => x.id === id);
+      const variant = id.startsWith('copy-generic') ? 'generic' : 'selected-profile';
+      return !!cp && !cp.error && cp.bytes > 0 && cp.captureMode === 'full-page' && cp.facts?.variant === variant && cp.groupsRendered === GROUP_KEYS.length;
+    }),
+    requiredPhotos13: requiredShots.length === 9 && COPY_CHECKPOINT_IDS.every(id => shots.some(s => s.id === id && s.bytes > 0)),
+    passes7: passRows.length === 6 && passRows.every(r => r.complete) && clarity.complete,
   };
   const callbackPosts = authApi.filter(a => a.method === 'POST');
   const boundary = {
@@ -338,11 +541,14 @@ test('focused completion: six real-keyboard passes with full Source notes focus 
     buildActivations: buildActivations.length, invalidBuildActivations: 0, validBuildActivations: 0,
     trafficCounts: traffic.reduce((m: Record<string, number>, t) => { m[t.decision] = (m[t.decision] ?? 0) + 1; return m; }, {}),
   };
-  const evidence = { schema: 'cvf.ncrR1UxFocusedCompletion.v1', browser: browser.version(), viewports: VIEWPORTS, themes: THEMES, ringMargin: RING_MARGIN, passes, passRows, criteria,
+  const evidence = { schema: 'cvf.ncrR1UxFocusedCompletion.v1', browser: browser.version(), viewports: VIEWPORTS, desktopViewport: DESKTOP, themes: THEMES, ringMargin: RING_MARGIN, passes, passRows, criteria,
+    clarity, checkpoints, copyCheckpointIds: COPY_CHECKPOINT_IDS,
     shots, requiredShotIds: [...requiredIds], settleLog, settleFailures, boundary, screenshotBytes: shotBytes,
     traffic: traffic.filter(t => t.path.startsWith('/api/') || t.method !== 'GET').map(({ method, path: p, decision, status }) => ({ method, path: p, decision, status })) };
   fs.writeFileSync(path.join(RUN_ROOT, 'ux-focused-assessment.json'), JSON.stringify(evidence, null, 2));
   console.log('NCR_R1_UX_FOCUSED ' + JSON.stringify({ criteria, screenshots: shots.length, screenshotBytes: shotBytes,
+    clarity: { complete: clarity.complete, steps: clarity.steps.map(s => `${s.step}:${s.ok}`), error: clarity.error ?? null },
+    checkpoints: checkpoints.map(c => ({ id: c.id, bytes: c.bytes, rendered: c.groupsRendered, inViewport: c.groupsFullyInViewport, offscreen: c.groupsRenderedOffscreen, error: c.error ?? null })),
     boundary: { domainWriteAttempts: boundary.domainWriteAttempts, browserAuthWriteAttempts: boundary.browserAuthWriteAttempts, effectBlocked: boundary.effectBlocked,
       buildActivations: boundary.buildActivations, callbackOnlyBootstrap: boundary.callbackOnlyBootstrap } }));
 
@@ -353,9 +559,13 @@ test('focused completion: six real-keyboard passes with full Source notes focus 
   expect(boundary.loginFormFallback).toBe(false);
   expect(boundary.callbackOnlyBootstrap).toBe(true);
   expect(boundary.buildActivations).toBe(0);
-  expect(shots.length).toBeLessThanOrEqual(12);
-  expect(shotBytes).toBeLessThanOrEqual(16 * 1024 * 1024);
+  expect(shots.length).toBeLessThanOrEqual(MAX_SHOTS);
+  expect(shotBytes).toBeLessThanOrEqual(MAX_SHOT_BYTES);
   expect(passRows.length).toBe(6);
+  expect(criteria.clarityPass1).toBe(true);
+  expect(criteria.copyCheckpoints4).toBe(true);
+  expect(criteria.requiredPhotos13).toBe(true);
+  expect(criteria.passes7).toBe(true);
   expect(criteria.passes6).toBe(true);
   expect(criteria.sourceNotesFullyVisible6).toBe(true);
   expect(criteria.requiredPhotos9).toBe(true);

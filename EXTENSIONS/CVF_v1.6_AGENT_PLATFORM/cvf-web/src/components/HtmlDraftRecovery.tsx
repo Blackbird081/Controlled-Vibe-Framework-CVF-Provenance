@@ -12,11 +12,17 @@ type Metadata = Pick<DraftSnapshot, 'versionId' | 'filename' | 'createdAt' | 'st
 type Props = { sourceRecordId: string; displayed: DisplayedResult | null; versionState: 'current' | 'stale' | 'unknown' | null;
   endpoint?: string; jobMode?: boolean; onConfirmedSnapshot?: (snapshot: DraftSnapshot, jobId?: string) => void };
 const COPY = {
-  en: { title: 'Saved HTML drafts', save: 'Save displayed draft', saving: 'Saving draft', load: 'Show saved versions', restore: 'Restore',
+  en: { title: 'HTML drafts', unverifiedPre: 'Any draft saved here is client-submitted · unverified · unaccepted',
+    guidanceBuild: 'No packet is built yet. Build one first; no draft is saved until you choose Save. Show saved versions only lists drafts that were saved earlier.',
+    guidanceReady: 'A built packet is shown. No draft is saved until you choose Save. Show saved versions only lists drafts that were saved earlier.',
+    save: 'Save displayed draft', saving: 'Saving draft', load: 'Show saved versions', restore: 'Restore',
     download: 'Download saved HTML', saved: 'Saved. You can recover this exact version.', unavailable: 'Draft unavailable or save unconfirmed. Keep this version ID for read-only lookup.',
     empty: 'No saved drafts are available for this record.', unverified: 'Saved client-submitted draft · unverified · unaccepted',
     unknown: 'Only a result built in this form session can be saved.', loadError: 'Saved drafts are unavailable. No new export was started.' },
-  vi: { title: 'Bản nháp HTML đã lưu', save: 'Lưu bản nháp đang xem', saving: 'Đang lưu bản nháp', load: 'Xem các bản đã lưu', restore: 'Khôi phục',
+  vi: { title: 'Bản nháp HTML', unverifiedPre: 'Bản nháp nào được lưu ở đây cũng do trình duyệt gửi · chưa xác minh · chưa chấp nhận',
+    guidanceBuild: 'Chưa có gói nào được tạo. Hãy tạo một gói trước; chưa có bản nháp nào được lưu cho đến khi bạn chọn Lưu. Xem các bản đã lưu chỉ liệt kê các bản đã lưu trước đó.',
+    guidanceReady: 'Đang hiển thị một gói đã tạo. Chưa có bản nháp nào được lưu cho đến khi bạn chọn Lưu. Xem các bản đã lưu chỉ liệt kê các bản đã lưu trước đó.',
+    save: 'Lưu bản nháp đang xem', saving: 'Đang lưu bản nháp', load: 'Xem các bản đã lưu', restore: 'Khôi phục',
     download: 'Tải HTML đã lưu', saved: 'Đã lưu. Có thể khôi phục đúng phiên bản này.', unavailable: 'Không mở được bản nháp hoặc chưa xác nhận lưu. Giữ mã phiên bản để chỉ tra cứu.',
     empty: 'Không có bản nháp đã lưu cho bản ghi này.', unverified: 'Bản nháp do trình duyệt gửi · chưa xác minh · chưa chấp nhận',
     unknown: 'Chỉ lưu được kết quả đã tạo trong phiên biểu mẫu này.', loadError: 'Không xem được các bản đã lưu. Không tạo HTML mới.' },
@@ -137,9 +143,11 @@ export function HtmlDraftRecovery({ sourceRecordId, displayed, versionState, end
   };
   const visible = active && stateScope === scope;
   const preview = visible && restored ? containPreviewNavigation(restored.html) : null;
+  const hasDraft = !!restored || versions.length > 0 || !!pendingId;
   return <section className="mt-4 rounded-xl border border-gray-200 bg-gray-50 p-4 text-xs dark:border-gray-700 dark:bg-gray-950" data-testid="html-draft-recovery">
     <h4 className="font-semibold text-gray-900 dark:text-white">{copy.title}</h4>
-    <p className="mt-1 text-amber-700 dark:text-amber-300">{copy.unverified}</p>
+    <p className="mt-1 text-amber-700 dark:text-amber-300">{hasDraft ? copy.unverified : copy.unverifiedPre}</p>
+    {visible && !hasDraft && !saving && !notice && <p className="mt-1 text-gray-600 dark:text-gray-300" data-testid="draft-recovery-guidance">{displayed?.submitted && displayed.attempt ? copy.guidanceReady : copy.guidanceBuild}</p>}
     <div className="mt-3 flex flex-wrap gap-2">
       <button type="button" onClick={() => void save()} disabled={!visible || !displayed?.submitted || !displayed.attempt || saving || uncertain} className="rounded-lg border border-indigo-300 px-3 py-2 disabled:opacity-50" data-testid="save-displayed-draft">{saving ? copy.saving : copy.save}</button>
       <button type="button" onClick={() => void list()} disabled={!visible} className="rounded-lg border px-3 py-2 disabled:opacity-50" data-testid="list-saved-drafts">{copy.load}</button>
