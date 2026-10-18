@@ -1,0 +1,316 @@
+{
+  "schema": "cvf.ncrR1UxFocusedCompletionWorkerEvidence.v1",
+  "batchId": "CVF-NCR-R1-UX-FOCUSED-COMPLETION-20261018",
+  "executionBaseHead": "e3ce4a8cb28cd6ee4314a4d855f7836b033a65eb",
+  "workerClockStartUtc": "2026-10-18T14:39:12Z",
+  "evidenceBuiltUtc": "2026-10-18T14:54:01Z",
+  "terminalReadinessVerdict": "BLOCKED_WITH_REASON",
+  "blockedReasons": [
+    "ESLint over the original six files completed in 14.09s (no stall) but exited 1: 2 react-hooks/exhaustive-deps WARNINGS at HtmlJobControls.tsx 127:6 and 152:6 (read-only file outside the worker exact4, present at the released HEAD) and 2 react-hooks/rules-of-hooks ERRORS in the worker spec (helper named useLang); --max-warnings=0 makes exit 0 impossible inside the exact4 scope",
+    "The work order requires tsc and ESLint both exit 0 BEFORE the single browser run and states that a failure returns one consolidated blocker without consuming the browser run; the browser run was therefore NOT consumed",
+    "The required worker-return gate excludes any docs/reviews path containing _COMPLETION_ and the work order fixes the return path as CVF_NCR_R1_UX_FOCUSED_COMPLETION_WORKER_RETURN_2026-10-18.md, so the gate classifies the return as not an eligible worker-return artifact; run 1 failed on that one check only (probe: mandated path eligible False, same text without the marker eligible True)",
+    "No actual keyboard pass, no full Source notes visibility observation and none of the 9 required images exist for the new source leaf; mobile3/tablet3 remain unproved"
+  ],
+  "REQ-FOCUS": {
+    "status": "BLOCKED",
+    "detail": "Source leaf implemented (ArtifactExportPanel Source notes textarea onFocus: capture currentTarget, one requestAnimationFrame, native scrollIntoView block center / inline nearest when the field plus a 4px ring margin fits the viewport; no focus(), no state or selection change). Focused spec rewritten (6 real-keyboard passes, 9 required images, full-visibility, focused-versus-blurred and traffic assertions) and collected statically. Neither has run in a browser.",
+    "sourceLeafDiffNumstat": "8 insertions, 0 deletions (CRLF preserved)",
+    "browserPassesExecuted": 0,
+    "requiredImages": 0,
+    "requiredImagesExpected": 9
+  },
+  "REQ-QUALITY": {
+    "status": "BLOCKED",
+    "detail": "tsc completed exit 0; ESLint completed exit 1 (see blockedReasons). The spec lint errors were mine; the rename to switchLang was applied after the single ESLint invocation without a re-lint (budget one). The three-occurrence rename is verified byte-reversible to the linted bytes.",
+    "testedSpecSha256": "b3f2dc0f305c9105f16449eb9ed6331743366deb8f4099f1f5a850fce77720dd",
+    "finalSpecSha256": "a12da41b5879e69b0e452d0a27ed5cfa736f8c282cea6fb172cb7ffc1b57db70",
+    "renameOnlyVerified": true,
+    "renameDescription": "helper function useLang -> switchLang, 3 occurrences (1 definition, 2 calls); no other byte changed",
+    "eslintFindings": [
+      {
+        "file": "src/components/HtmlJobControls.tsx",
+        "line": "127:6",
+        "severity": "warning",
+        "rule": "react-hooks/exhaustive-deps",
+        "scope": "read-only, present at released HEAD"
+      },
+      {
+        "file": "src/components/HtmlJobControls.tsx",
+        "line": "152:6",
+        "severity": "warning",
+        "rule": "react-hooks/exhaustive-deps",
+        "scope": "read-only, present at released HEAD"
+      },
+      {
+        "file": "tests/e2e/ncr-r1-ux-readonly-browser.spec.ts",
+        "line": "221:13",
+        "severity": "error",
+        "rule": "react-hooks/rules-of-hooks",
+        "scope": "worker spec, fixed by rename after the invocation"
+      },
+      {
+        "file": "tests/e2e/ncr-r1-ux-readonly-browser.spec.ts",
+        "line": "224:13",
+        "severity": "error",
+        "rule": "react-hooks/rules-of-hooks",
+        "scope": "worker spec, fixed by rename after the invocation"
+      }
+    ],
+    "toolRuns": {
+      "tsc": {
+        "argv": [
+          "node",
+          "node_modules/typescript/bin/tsc",
+          "--noEmit",
+          "--incremental",
+          "false",
+          "--pretty",
+          "false"
+        ],
+        "exit": 0,
+        "durationMs": 33594,
+        "startedAt": "2026-10-18T14:43:54.214Z",
+        "envKeys": [
+          "SystemRoot",
+          "WINDIR",
+          "PATH",
+          "TEMP",
+          "TMP",
+          "CI"
+        ],
+        "metaSha256": "6268a0bd4f1c7262d534cb4ccc6ffa591a591b2b9a8c4f5462ec40e30cbb1048",
+        "specTested": "b3f2dc0f305c9105f16449eb9ed6331743366deb8f4099f1f5a850fce77720dd"
+      },
+      "eslint": {
+        "argv": [
+          "node",
+          "node_modules/eslint/bin/eslint.js",
+          "--max-warnings=0",
+          "src/components/HtmlJobControls.tsx",
+          "src/components/ArtifactExportPanel.tsx",
+          "src/lib/i18n.tsx",
+          "src/app/(dashboard)/work-transfer/page.tsx",
+          "src/app/(dashboard)/layout.tsx",
+          "tests/e2e/ncr-r1-ux-readonly-browser.spec.ts"
+        ],
+        "exit": 1,
+        "durationMs": 14090,
+        "startedAt": "2026-10-18T14:43:54.244Z",
+        "envKeys": [
+          "SystemRoot",
+          "WINDIR",
+          "PATH",
+          "TEMP",
+          "TMP",
+          "CI"
+        ],
+        "metaSha256": "78b9691aef448893369ae199d50df6ea2016368b0207eec71a246e625958eca5",
+        "stdoutSha256": "db7fd7311300fa7e0e38540441dbe8b6827274f0f60f5859735bcd299f286f27",
+        "specTested": "b3f2dc0f305c9105f16449eb9ed6331743366deb8f4099f1f5a850fce77720dd"
+      },
+      "staticList1": {
+        "exit": 0,
+        "durationMs": 29635,
+        "metaSha256": "24c60df312d1535bc2de3bb459692096ba00b61b14eb2a75528b1835a3dc296c",
+        "specCopyTested": "b3f2dc0f305c9105f16449eb9ed6331743366deb8f4099f1f5a850fce77720dd",
+        "tests": 1
+      },
+      "staticList2": {
+        "exit": 0,
+        "durationMs": 1771,
+        "metaSha256": "78a93f07589bde01e5edaee0a2f7c29b0d80ecfa1144abf85fbed1f54399d57c",
+        "specCopyTested": "a12da41b5879e69b0e452d0a27ed5cfa736f8c282cea6fb172cb7ffc1b57db70",
+        "tests": 1,
+        "reason": "before-run syntax correction (rename) of the owned spec"
+      },
+      "helperSyntaxFailure": "My first quality.cjs helper had a JavaScript string-escape syntax error; tsc and ESLint never started on that attempt (two helper processes exited immediately; logs kept as helper-syntax-failure-tsc.log and helper-syntax-failure-eslint.log). The helper was rewritten and the single tsc and single ESLint invocations ran afterwards. Disclosed as a procedure variance, not as a consumed tool run."
+    }
+  },
+  "REQ-BOUNDARY": {
+    "status": "BLOCKED",
+    "detail": "No browser, login, Next server, runner or network activity was started by the worker, so the effect, auth-callback, drift and teardown criteria were not exercised. The read-only preflight below is informational for the next dispatch.",
+    "runnerInvoked": false,
+    "runRootCreated": false,
+    "port3033Touched": false,
+    "chromiumLaunched": false,
+    "domainWriteAttempts": 0,
+    "browserAuthWriteAttempts": 0,
+    "buildActivations": 0,
+    "evaluateExecute": 0,
+    "preflight": {
+      "recordedAt": "2026-10-18T14:48:11.966Z",
+      "nodeExecutable": "C:\\nvm4w\\nodejs\\node.exe",
+      "nodeVersion": "v22.17.0",
+      "allowlistedPath": "C:\\nvm4w\\nodejs;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\System32",
+      "gitExit": 0,
+      "gitHead": "e3ce4a8cb28cd6ee4314a4d855f7836b033a65eb",
+      "gitError": null,
+      "port3033Free": true,
+      "portError": null,
+      "runnerInvoked": false
+    },
+    "preflightSha256": "4836909fd74d02b29c88e6b07fb66302522b26152c7801c4163a9e9cf97424b9",
+    "transientPreimages": {
+      "tsconfig.json": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "next-env.d.ts": "91933472d42a307909e5f8f187db0ccad72559bedc766ab20a25c6169ac79498"
+    }
+  },
+  "REQ-RETURN": {
+    "status": "BLOCKED",
+    "detail": "Pending full-gate confirmation and first-read gaps. The reads listed under lateReadsAfterFirstEdit happened after the first source edit and do not heal the omission.",
+    "returnGateRun1": {
+      "exit": 1,
+      "seconds": 7.51,
+      "failingCheck": "worker-return quality gate: mandated return path is not an eligible worker-return artifact",
+      "stdoutSha256": "f04d750aeec0c2a806558c32e230513832bbb4cba7cffb073b1c91de0bfa0787",
+      "eligibilityProbeSha256": "b89a6ca7e94290376b6ba0067cadd3aca1e1029e5f8b5babe7a0fb24c8a96798"
+    },
+    "preImplementationGate": {
+      "exit": 0,
+      "seconds": 10.35,
+      "logSha256": "97a7b0bec23d0a12482008baa02aa70924becca0e4a90311b8839f24cffc1c74",
+      "receiptSha256": "763dfd2e7d4ab8618d62aae4b53fe4effb824a0d868380e4613e78bd34fdd2f1"
+    },
+    "firstReadsBeforeFirstEdit": [
+      {
+        "file": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_FOCUSED_COMPLETION_2026-10-18.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/baselines/CVF_GC018_NCR_R1_UX_FOCUSED_COMPLETION_2026-10-18.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "CVF_SESSION_MEMORY.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "AGENT_HANDOFF_V63_2026-09-18.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/reviews/CVF_NCR_R1_UX_FINDINGS_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-18.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/reference/guard_orientation/README.md",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "docs/reference/CVF_AGENT_EXECUTION_WORKFLOW_SOP_2026-05-19.md",
+        "depth": "PARTIAL_READ",
+        "lines": "206-258 Implementer and Worker Preparation Reminder; Requirement 13 temporary-resource text not read"
+      },
+      {
+        "file": "docs/reference/CVF_GOVERNED_WORK_LIFECYCLE_AND_DESIGN_CONTROL_STANDARD_2026-06-11.md",
+        "depth": "PARTIAL_READ",
+        "lines": "97-104 and 321-370; Action Readiness subsections 104-320 not read"
+      },
+      {
+        "file": "docs/reference/CVF_AGENT_WORK_ORDER_TEMPLATE_2026-05-19.md",
+        "depth": "PARTIAL_READ",
+        "lines": "300-312, 573-611, 887-1020"
+      },
+      {
+        "file": "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_EVIDENCE_RELAY_METHOD.md",
+        "depth": "PARTIAL_READ",
+        "lines": "101-135 plus section map"
+      },
+      {
+        "file": "docs/reference/external_agent_review/CVF_CROSS_WORKSPACE_DOMAIN_FUNNEL_ABSORPTION_METHOD.md",
+        "depth": "PARTIAL_READ",
+        "lines": "24-48 plus section map"
+      },
+      {
+        "file": "DESIGN.md",
+        "depth": "PARTIAL_READ",
+        "lines": "196-252 (sections 7-9) and 504-522 (14.5-14.6); section 6 read late"
+      },
+      {
+        "file": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+        "depth": "PARTIAL_READ",
+        "lines": "13-35 checkpoint and 621-630 R1; A10 and Q003 located by search only"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+        "depth": "PARTIAL_READ",
+        "lines": "370-399 and 560-720 plus search before the edit"
+      },
+      {
+        "file": "scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs",
+        "depth": "PARTIAL_READ",
+        "lines": "1-80"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts",
+        "depth": "FULL_READ"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/CompactHeader.tsx",
+        "depth": "PARTIAL_READ",
+        "lines": "20-115"
+      },
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/eslint.config.mjs",
+        "depth": "FULL_READ"
+      }
+    ],
+    "lateReadsAfterFirstEdit": [
+      {
+        "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+        "depth": "PARTIAL_READ",
+        "lines": "1-370 and 399-560; lines 720-911 never read"
+      },
+      {
+        "file": "DESIGN.md",
+        "depth": "PARTIAL_READ",
+        "lines": "180-195 section 6"
+      },
+      {
+        "file": "governance/compat/check_semantic_convergence_control.py",
+        "depth": "PARTIAL_READ",
+        "lines": "440-560 successor validation"
+      },
+      {
+        "file": "governance/compat/check_finding_to_governance_learning.py",
+        "depth": "PARTIAL_READ",
+        "lines": "440-575 recurring blocked-return logic"
+      }
+    ],
+    "notRead": [
+      "raw Root lint debug stderr and result JSON (only the Local review summary of them was read)"
+    ]
+  },
+  "sourcePins": {
+    "preimages": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "66c637de1f8aae19e8ea7870d55b7a98e63eab22294b01f59d064ec837301ef3",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts": "2d68cbd034c1b84ba2a7d607f01b5c399821394162d2afcd770145dacff0cf50"
+    },
+    "finalSha256": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "a4ebd478aae36c2976a01db489e8023aca4100cfd64e5f942c92fe1878f2c5a4",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts": "a12da41b5879e69b0e452d0a27ed5cfa736f8c282cea6fb172cb7ffc1b57db70"
+    },
+    "pairSha256": {
+      "baseline": "f312f9732991210b1f296c060631dc6183bb7ab75b068206b974cf86a1b8982f",
+      "workOrder": "cae2c067525bf03de8d4e50ea5d057f46f644037c9f09c7717b07f2165ff7018"
+    },
+    "readOnlyHtmlJobControlsSha256": "8d6d2c35c919524e500fb18b6c08283d4678307c23bed4d8f84073278f6de751"
+  },
+  "claimBoundary": "Static type, lint and collection results plus a source diff only. No browser, keyboard, visibility, image, auth, effect or teardown observation was made. No UI readiness, accessibility, governance, human-comprehension, R1/R2 exit, provider, real-data, production, public or deploy claim."
+}

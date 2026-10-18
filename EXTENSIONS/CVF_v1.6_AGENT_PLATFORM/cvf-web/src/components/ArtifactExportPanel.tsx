@@ -684,6 +684,14 @@ export function ArtifactExportPanel({
                 aria-label={labels.contentLabel}
                 value={request.sourceContent}
                 onChange={event => updateRequest('sourceContent', event.target.value)}
+                onFocus={event => {
+                  const field = event.currentTarget;
+                  requestAnimationFrame(() => {
+                    if (field.isConnected && field.getBoundingClientRect().height + 8 <= window.innerHeight) {
+                      field.scrollIntoView({ block: 'center', inline: 'nearest' });
+                    }
+                  });
+                }}
                 rows={12}
                 className={`${FIELD_CLASS} resize-y font-mono text-xs leading-5`}
               />

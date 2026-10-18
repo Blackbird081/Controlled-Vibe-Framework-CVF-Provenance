@@ -9239,7 +9239,8 @@
       "scopePaths": [
         "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts",
         "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
-        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs"
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/eslint.config.mjs"
       ],
       "fileCount": null,
       "status": "NOT_STARTED",
@@ -9258,7 +9259,7 @@
         "gc050": "NOT_RUN"
       },
       "semanticRegions": [],
-      "priorAbsorption": "Registration of a bounded read-only browser UI assessment test only; no semantic corpus scan and no UI result. Root independent review and Local disposition remain separately owned.",
+      "priorAbsorption": "Registration of a bounded read-only browser UI assessment test only; no semantic corpus scan and no UI result. Root independent review and Local disposition remain separately owned. Existing ESLint configuration registered for focused static evidence only; configuration bytes/rules unchanged.",
       "findings": [],
       "negativeSearchTerms": [],
       "nextScanRecommendation": "Targeted registration only; semantic scan remains NOT_STARTED. Consume worker and Local assessment evidence at recorded source pins."
