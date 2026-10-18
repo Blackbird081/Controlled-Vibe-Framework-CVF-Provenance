@@ -1,0 +1,432 @@
+{
+  "schemaVersion": "cvf.ncrR1UxComponentProofWorkerEvidence.v1",
+  "batchId": "CVF-NCR-R1-UX-COMPONENT-PROOF-20261018",
+  "executionBaseHead": "306c67c9c323bf8c9acf77870879eebb16fb5eb4",
+  "workerStartUtc": "2026-10-18T11:13:35Z",
+  "status": "BLOCKED_WITH_REASON",
+  "claimBoundary": "UI structure and agent-simulated DOM only; no browser, keyboard, small-screen, human, governance, auth/writer, cancellation, cost or provider claim.",
+  "blocker": "Focused-run budget (2) is spent. Run 1 passed 12/21; its 9 failures were test-fixture defects. Run 2 regressed to 3/21 because of a worker edit typo in the switchTo helper. The corrected final test bytes were not executed.",
+  "productionDefectsObserved": [],
+  "productionSourceEdited": false,
+  "preImplementationGate": {
+    "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_COMPONENT_PROOF_2026-10-18.md",
+    "exit": 0,
+    "stdoutSha256": "c29791f9116aa96368090861a16654dc4bbc65acb9974d5de2cbff7c0034aeae",
+    "receiptPath": ".cvf/runtime/autorun-receipts/pre-implementation.json",
+    "receiptSha256": "a82683a0517886323ed1bac4f7006a6ae1f431a979cf8d6bf4838cb046f826d8",
+    "receiptKeys": [
+      "schema",
+      "status",
+      "phase",
+      "base",
+      "head",
+      "baseSha",
+      "headSha",
+      "commandManifestHash",
+      "worktreeFingerprint",
+      "verifierIdentityProfile",
+      "verifierIdentityDigest",
+      "machineVerification",
+      "receiptDigest",
+      "totalDurationSeconds",
+      "checks"
+    ]
+  },
+  "isolatedTooling": {
+    "configPath": ".cvf/runtime/ncr-r1-ux-component-20261018/worker/vitest.ux.config.mjs",
+    "configSha256": "2143b6f963b56951b529edc1b69a2b42bb4c8e2b99afa00aa1ca256bdcf42f63",
+    "setupPath": ".cvf/runtime/ncr-r1-ux-component-20261018/worker/ux-setup.mjs",
+    "setupSha256": "be52d3fbba645a44275505f6f7317393470975250b8a43040933c07d43524133",
+    "launcherPath": ".cvf/runtime/ncr-r1-ux-component-20261018/worker/launch.mjs",
+    "launcherSha256": "578dcfc4a0623385164d83fd697b76ef41a014ce89744c02bd535b0fdc04ce79",
+    "envDir": false,
+    "defaultSetupUsed": false,
+    "envLoaderUsed": false,
+    "childEnvKeys": [
+      "CI",
+      "COMSPEC",
+      "NODE_ENV",
+      "PATH",
+      "PATHEXT",
+      "SYSTEMROOT",
+      "TEMP",
+      "TMP",
+      "WINDIR"
+    ],
+    "note": "Vite 8 printed a non-fatal warning that esbuild.jsx was ignored in favor of oxc options; JSX still compiled and rendered."
+  },
+  "testFile": {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.ux-profile.test.tsx",
+    "executedRun1Sha256": "a0fc19459bf270b6a73e391cf2540175f825b32648721ff7516eae6ed7a01330",
+    "executedRun2Sha256": "41d15eaef320527e82444209e50fb0ac68c56e7abcde499ccb36301d2c53987a",
+    "finalSha256": "b84eab189c45d822ddeb5ac7f6ec0495481f73f77d3e9bf2202d6cf6af015724",
+    "finalBytesExecuted": false,
+    "lines": 378,
+    "bytes": 29786,
+    "executedRun2CopyPath": ".cvf/runtime/ncr-r1-ux-component-20261018/worker/test-as-executed-run2.tsx",
+    "run1ToRun2Repairs": [
+      "standalone-panel tests rebuilt the element via a factory so a language rerender is not skipped by identical-element bailout",
+      "spy-order expectation uses SAVE_DRAFT, the action actually posted by the disclosed Save stub"
+    ],
+    "run2Defect": "broad text replacement of render(ui); also rewrote view.rerender(ui); in the switchTo helper to view.rerender(ui());, so every language switch threw ui is not a function",
+    "postRun2Correction": "line 60 restored to view.rerender(ui); not executed (third focused run is outside the budget)"
+  },
+  "sourcePins": {
+    "expected": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx": "3d2e446f08f9ae0670d96339aa4e583a5d04778f80ee04ce34fbda635c7d1d56",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "01614f81dc5a48bfbaf04ee4141b9319efe71cd35d591b5dc794829d3038c337"
+    },
+    "actualAtReturn": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx": "3d2e446f08f9ae0670d96339aa4e583a5d04778f80ee04ce34fbda635c7d1d56",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "01614f81dc5a48bfbaf04ee4141b9319efe71cd35d591b5dc794829d3038c337"
+    },
+    "equal": true
+  },
+  "runs": [
+    {
+      "tag": "run1",
+      "startedUtc": "2026-10-18T11:19:22.638Z",
+      "finishedUtc": "2026-10-18T11:20:08.418Z",
+      "elapsedMs": 45772,
+      "exitCode": 1,
+      "timedOut": false,
+      "pid": 8300,
+      "total": 21,
+      "passed": 12,
+      "failed": 9,
+      "resultJsonSha256": "49a555321d9d39ab09925a92080349947df28b1e7a5e2ea0e5e1d78d17f175b7",
+      "stdoutSha256": "badbfcb17af6a4d20260571a05dc55bcf56ffad2e4fbf8c00f9e4affe80569e6",
+      "stderrSha256": "9efa8b8260791a805f7b8279376aa919080f64a2a49aafa8650ff00c2e64a310",
+      "metaSha256": "edc4eb03a359810ca11ee62c47f5a0dfc6579616e028bdacb0253bf54aaff58c",
+      "cases": [
+        {
+          "title": "shows owned EN/VI labels and accessible names; user text and wire values stay literal across a language rerender",
+          "status": "failed",
+          "failure": "TestingLibraryElementError: Unable to find an accessible element with the role \"heading\" and name \"Xu\u1ea5t g\u00f3i r\u00e0 so\u00e1t\""
+        },
+        {
+          "title": "keeps the standalone disclosure generic in EN and VI",
+          "status": "failed",
+          "failure": "AssertionError: expected 'Building this packet may send a short\u2026' to contain 'c\u00f3 th\u1ec3 g\u1eedi m\u1ed9t \u0111o\u1ea1n ng\u1eafn'"
+        },
+        {
+          "title": "translates an already-created error while the raw backend text stays literal under collapsed technical detail",
+          "status": "failed",
+          "failure": "AssertionError: expected 'Some required fields are empty. Check\u2026' to contain 'M\u1ed9t s\u1ed1 tr\u01b0\u1eddng b\u1eaft bu\u1ed9c c\u00f2n tr\u1ed1ng'"
+        },
+        {
+          "title": "gives localized primary guidance for backend message \"Potential secret-like value detected in artifact export fields.\" and keeps raw text under technical detail",
+          "status": "failed",
+          "failure": "AssertionError: expected 'This text looks like it may contain a\u2026' to contain 'kh\u00f3a ri\u00eang t\u01b0 ho\u1eb7c m\u00e3 token'"
+        },
+        {
+          "title": "gives localized primary guidance for backend message \"Potential secret-like value detected in source content.\" and keeps raw text under technical detail",
+          "status": "failed",
+          "failure": "AssertionError: expected 'This text looks like it may contain a\u2026' to contain 'kh\u00f3a ri\u00eang t\u01b0 ho\u1eb7c m\u00e3 token'"
+        },
+        {
+          "title": "gives localized primary guidance for backend message \"Upstream exploded: ncr-synthetic-trace-42\" and keeps raw text under technical detail",
+          "status": "failed",
+          "failure": "AssertionError: expected 'This build could not be confirmed. Ch\u2026' to contain 'Ch\u01b0a x\u00e1c nh\u1eadn \u0111\u01b0\u1ee3c k\u1ebft qu\u1ea3 t\u1ea1o'"
+        },
+        {
+          "title": "shows actionable EN/VI guidance for owned pre-Build message \"Complete the goal and criteria first.\" with no export call",
+          "status": "failed",
+          "failure": "AssertionError: expected 'Enter the goal and all criteria befor\u2026' to be 'H\u00e3y nh\u1eadp m\u1ee5c ti\u00eau v\u00e0 \u0111\u1ea7y \u0111\u1ee7 ti\u00eau ch\u00ed \u2026' // Object.is equality"
+        },
+        {
+          "title": "shows actionable EN/VI guidance for owned pre-Build message \"Resolve the pending operation before another write.\" with no export call",
+          "status": "failed",
+          "failure": "AssertionError: expected 'A pending operation could not be reco\u2026' to be 'Ch\u01b0a ghi nh\u1eadn \u0111\u01b0\u1ee3c thao t\u00e1c \u0111ang ch\u1edd.\u2026' // Object.is equality"
+        },
+        {
+          "title": "discloses the observed local-test profile before Build in EN and VI, in DOM order, and switches owned labels by rerender",
+          "status": "passed"
+        },
+        {
+          "title": "keeps the generic disclosure for missing boundary and preserves job controls only when jobDecisions is true",
+          "status": "passed"
+        },
+        {
+          "title": "keeps the generic disclosure for lowercase boundary and preserves job controls only when jobDecisions is true",
+          "status": "passed"
+        },
+        {
+          "title": "keeps the generic disclosure for numeric boundary and preserves job controls only when jobDecisions is true",
+          "status": "passed"
+        },
+        {
+          "title": "keeps the generic disclosure for other string boundary and preserves job controls only when jobDecisions is true",
+          "status": "passed"
+        },
+        {
+          "title": "keeps the generic disclosure for jobDecisions false with exact boundary and preserves job controls only when jobDecisions is true",
+          "status": "passed"
+        },
+        {
+          "title": "keeps the generic disclosure for jobDecisions non-boolean with exact boundary and preserves job controls only when jobDecisions is true",
+          "status": "passed"
+        },
+        {
+          "title": "ignores a late exact-boundary capability reply after the owner changed (UI negative only)",
+          "status": "passed"
+        },
+        {
+          "title": "ignores a late exact-boundary capability reply after the sourceRecordId changed (UI negative only)",
+          "status": "passed"
+        },
+        {
+          "title": "lets the reader read the disclosure and decline: zero mocked write invocations without a Build click",
+          "status": "passed"
+        },
+        {
+          "title": "localizes pending-operation presentation and owned pre-Build guidance; operation values stay literal in the journal; no write is sent",
+          "status": "passed"
+        },
+        {
+          "title": "shows Stop and status while an export is in flight, suppresses the late result after a local stop, and sends no stop request",
+          "status": "passed"
+        },
+        {
+          "title": "records separate simulated Build, Save, link and review spy calls; notices and the review record translate on rerender",
+          "status": "failed",
+          "failure": "AssertionError: expected [ 'CREATE_JOB', 'export', \u2026(2) ] to deeply equal [ Array(4) ]"
+        }
+      ],
+      "walkthrough": [
+        {
+          "role": "simulated non-coder reviewer (agent)",
+          "fixture": "caps {jobDecisions:true, effectBoundary:\"LOCAL_SYNTHETIC\"}; invented session u1/o1/t1",
+          "language": "en then vi by rerender",
+          "visibleEvidence": "Ph\u1ea3n h\u1ed3i m\u00e1y ch\u1ee7 cho bi\u1ebft phi\u00ean n\u00e0y d\u00f9ng ch\u1ebf \u0111\u1ed9 th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9: HTML \u0111\u01b0\u1ee3c t\u1ea1o tr\u00ean m\u00e1y n\u00e0y. B\u1ea3n nh\u00e1p ch\u1ec9 \u0111\u01b0\u1ee3c l\u01b0u v\u00e0o kho th\u1eed nghi\u1ec7m c\u1ee5c b\u1ed9 khi b\u1ea1n ch\u1ecdn L\u01b0u; kh\u00f4ng c\u00f3 y\u00eau c\u1ea7u l\u1ea5y bi\u00ean nh\u1eadn ki\u1ec3m tra",
+          "action": "read disclosure before Build; switch language",
+          "observed": "all 7 profile fragments present in both languages; disclosure precedes the Build button in DOM order; typed goal literal; zero POST",
+          "uncertainty": "DOM order is not visual order; wording comprehension unevaluated",
+          "testTitle": "discloses the observed local-test profile before Build in EN and VI, in DOM orde",
+          "testStatus": "passed"
+        },
+        {
+          "role": "simulated non-coder reviewer (agent)",
+          "fixture": "selected profile; goal and criterion typed",
+          "language": "en",
+          "visibleEvidence": "The server response reports a local test profile for this session: HTML is rendered on this device. A draft is saved to local test storage when you ch",
+          "action": "read disclosure, do not click Build, unmount",
+          "observed": "only the capabilities GET was recorded; 0 POST; no pending journal",
+          "uncertainty": "proves wiring/UI availability, not informed consent",
+          "testTitle": "lets the reader read the disclosure and decline: zero mocked write invocations w",
+          "testStatus": "passed"
+        },
+        {
+          "role": "simulated non-coder reviewer (agent)",
+          "fixture": "pre-seeded invented pending CREATE_JOB journal for the same owner and record",
+          "language": "en, vi, en by rerender",
+          "visibleEvidence": "Reconcile job creation 123e4567-e89b-42d3-a456-426614174001",
+          "action": "click Build with empty goal, then with goal filled",
+          "observed": "reconcile label \"job creation\"/\"t\u1ea1o t\u00e1c v\u1ee5\" with literal job ID; both owned messages localized; journal still holds CREATE_JOB; 0 POST",
+          "uncertainty": "no reconciliation was exercised here; Reconcile button not clicked",
+          "testTitle": "localizes pending-operation presentation and owned pre-Build guidance; operation",
+          "testStatus": "passed"
+        },
+        {
+          "role": "simulated non-coder reviewer (agent)",
+          "fixture": "export POST held open by a deferred mock; selected profile",
+          "language": "en, vi, en by rerender",
+          "visibleEvidence": "Stopped locally. Remote completion and cost are unknown. This exact request cannot be sent again in this sessi",
+          "action": "Build, read Stop/status, click Stop, release the late mocked response, click Build again",
+          "observed": "Stop and aria-busy Build shown in both languages; after Stop the late success is not displayed (no draft state), preview stays empty; spy ledger CREATE_JOB, export only; same request not re-sent",
+          "uncertainty": "client-side fence only; no abort-signal, remote-stop or cost behavior is claimed",
+          "testTitle": "shows Stop and status while an export is in flight, suppresses the late result a",
+          "testStatus": "passed"
+        }
+      ]
+    },
+    {
+      "tag": "run2",
+      "startedUtc": "2026-10-18T11:20:40.570Z",
+      "finishedUtc": "2026-10-18T11:20:43.477Z",
+      "elapsedMs": 2906,
+      "exitCode": 1,
+      "timedOut": false,
+      "pid": 15180,
+      "total": 21,
+      "passed": 3,
+      "failed": 18,
+      "resultJsonSha256": "7d3a2b77eb44efb21e320db8a1e2bba47a4b6e1238909fe8e14440c993099197",
+      "stdoutSha256": "b0aa7039e0711dcf1af4bfca5afd7d042440101e1c3063402e7688d7d7de5cce",
+      "stderrSha256": "9efa8b8260791a805f7b8279376aa919080f64a2a49aafa8650ff00c2e64a310",
+      "metaSha256": "87fbfd395cc52d363a337cb2417cc88234a28022b5becdb894dd479ccb23f4fd",
+      "cases": [
+        {
+          "title": "shows owned EN/VI labels and accessible names; user text and wire values stay literal across a language rerender",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "keeps the standalone disclosure generic in EN and VI",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "translates an already-created error while the raw backend text stays literal under collapsed technical detail",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "gives localized primary guidance for backend message \"Potential secret-like value detected in artifact export fields.\" and keeps raw text under technical detail",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "gives localized primary guidance for backend message \"Potential secret-like value detected in source content.\" and keeps raw text under technical detail",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "gives localized primary guidance for backend message \"Upstream exploded: ncr-synthetic-trace-42\" and keeps raw text under technical detail",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "shows actionable EN/VI guidance for owned pre-Build message \"Complete the goal and criteria first.\" with no export call",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "shows actionable EN/VI guidance for owned pre-Build message \"Resolve the pending operation before another write.\" with no export call",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "discloses the observed local-test profile before Build in EN and VI, in DOM order, and switches owned labels by rerender",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "keeps the generic disclosure for missing boundary and preserves job controls only when jobDecisions is true",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "keeps the generic disclosure for lowercase boundary and preserves job controls only when jobDecisions is true",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "keeps the generic disclosure for numeric boundary and preserves job controls only when jobDecisions is true",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "keeps the generic disclosure for other string boundary and preserves job controls only when jobDecisions is true",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "keeps the generic disclosure for jobDecisions false with exact boundary and preserves job controls only when jobDecisions is true",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "keeps the generic disclosure for jobDecisions non-boolean with exact boundary and preserves job controls only when jobDecisions is true",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "ignores a late exact-boundary capability reply after the owner changed (UI negative only)",
+          "status": "passed"
+        },
+        {
+          "title": "ignores a late exact-boundary capability reply after the sourceRecordId changed (UI negative only)",
+          "status": "passed"
+        },
+        {
+          "title": "lets the reader read the disclosure and decline: zero mocked write invocations without a Build click",
+          "status": "passed"
+        },
+        {
+          "title": "localizes pending-operation presentation and owned pre-Build guidance; operation values stay literal in the journal; no write is sent",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "shows Stop and status while an export is in flight, suppresses the late result after a local stop, and sends no stop request",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        },
+        {
+          "title": "records separate simulated Build, Save, link and review spy calls; notices and the review record translate on rerender",
+          "status": "failed",
+          "failure": "TypeError: ui is not a function"
+        }
+      ],
+      "walkthrough": [
+        {
+          "role": "simulated non-coder reviewer (agent)",
+          "fixture": "selected profile; goal and criterion typed",
+          "language": "en",
+          "visibleEvidence": "The server response reports a local test profile for this session: HTML is rendered on this device. A draft is saved to local test storage when you ch",
+          "action": "read disclosure, do not click Build, unmount",
+          "observed": "only the capabilities GET was recorded; 0 POST; no pending journal",
+          "uncertainty": "proves wiring/UI availability, not informed consent",
+          "testTitle": "lets the reader read the disclosure and decline: zero mocked write invocations w",
+          "testStatus": "passed"
+        }
+      ]
+    }
+  ],
+  "REQ-LANGUAGE": {
+    "status": "BLOCKED",
+    "reason": "Composition label/switch assertions passed in run 1; the standalone-panel EN/VI, translated-error and notice/review cases did not pass at any executed bytes."
+  },
+  "REQ-PROFILE": {
+    "status": "BLOCKED",
+    "reason": "Selected profile, six generic-fallback variants and two late-capability UI negatives passed in run 1 (test bytes a0fc...); the final bytes were not executed."
+  },
+  "REQ-GUIDANCE": {
+    "status": "BLOCKED",
+    "reason": "Pending-operation, Stop/late-result and refusal cases passed in run 1; the owned/unknown error guidance and Save/review cases did not pass at any executed bytes."
+  },
+  "REQ-WALKTHROUGH": {
+    "status": "BLOCKED",
+    "reason": "Four simulated DOM rows are backed by run 1 passing tests; rows for the standalone panel, error translation and review flow have no executed result."
+  },
+  "REQ-RETURN": {
+    "status": "BLOCKED",
+    "reason": "No focused pass exists for the final bytes; terminal state is BLOCKED_WITH_REASON."
+  },
+  "notEvaluated": [
+    "browser layout and visual focus",
+    "actual keyboard and small-screen behavior",
+    "full authenticated user-role walkthrough",
+    "real novice comprehension",
+    "real writer/auth/cancellation/cost behavior",
+    "R2/W05 effects"
+  ],
+  "fullReturnGate": {
+    "requiredGate": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_UX_COMPONENT_PROOF_2026-10-18.md --max-return-lines 450 --max-return-bytes 64000",
+    "attempt1": {
+      "exit": 1,
+      "elapsedSeconds": 6.26,
+      "utcStart": "2026-10-18T11:26:26Z",
+      "utcEnd": "2026-10-18T11:26:33Z",
+      "stdoutSha256": "116a7f1a70e2b671f86a8ec65777ad1bdfa47594060c22454efad9d17cfe4cb0",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "returnSha256Gated": "0af28fc4281b7704c94355fadc31e8138e94a270dfd3c60a4740b52e04200fc2",
+      "failedStep": "reviewer-fast governance gate -> agent packet authority and encoding (non-ASCII text without a Text Encoding Exception, in the return and in this JSON)",
+      "passedSteps": [
+        "corpus scan registry aggregate drift",
+        "epistemic process packet",
+        "work-order acceptance ledger",
+        "worker-return quality gate",
+        "independent review probe admission",
+        "git diff whitespace check"
+      ]
+    },
+    "attempt2": "run on the final package after the encoding-only repair; result is logged outside the return and this JSON in the detached receipt .cvf/runtime/ncr-r1-ux-component-20261018/worker/gate2-receipt.json"
+  },
+  "tempResources": {
+    "ownedRoot": ".cvf/runtime/ncr-r1-ux-component-20261018/worker",
+    "processes": "two short-lived node launcher/vitest children, both exited (exit codes in runs); no daemon, port, browser or app",
+    "cleanup": "no deletion; all raw logs retained"
+  }
+}
