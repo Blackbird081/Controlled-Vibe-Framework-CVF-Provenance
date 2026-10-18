@@ -1,0 +1,1074 @@
+{
+  "schema": "cvf.ncrR1PreEffectWalkthroughEvidence.v1",
+  "batchId": "CVF-NCR-R1-PRE-EFFECT-WALKTHROUGH-20261018",
+  "executionBaseHead": "fe58c3aac6bfefcf56d79ce0ad10e235c8ee243c",
+  "workOrderSha256": "6c450f1a5582b2d7913eeb54182169ceab9c3b18ccffb1f4aac93d648902b719",
+  "baselineSha256": "dca6b5b89f82d0e60db55edaf8dc348b0dba2d10a3e33faa24ac3086623fd0d4",
+  "textEncodingException": "Text Encoding Exception: Vietnamese UI copy is an intentional task literal.",
+  "gateHistory": [
+    {
+      "gate": 1,
+      "command": "python -B governance/compat/run_worker_return_fast_gate.py --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_PRE_EFFECT_WALKTHROUGH_2026-10-18.md --max-return-lines 450 --max-return-bytes 64000",
+      "exit": 1,
+      "durationSeconds": 14.15,
+      "result": "FAIL",
+      "failedSubChecks": [
+        "agent packet authority and encoding: this evidence file carried Vietnamese text without a Text Encoding Exception marker",
+        "finding-to-governance learning quality: no allowed disposition token, no explicit N/A_WITH_REASON for runtime terms, and no recurrence fields for a BLOCKED return"
+      ],
+      "passedSubChecks": [
+        "epistemic process packet",
+        "work-order acceptance ledger",
+        "worker-return quality gate",
+        "independent review probe admission",
+        "git diff whitespace check"
+      ],
+      "rawStdout": ".cvf/runtime/ncr-r1-pre-effect-walkthrough-20261018/worker/gate1.stdout.txt",
+      "rawStdoutSha256": "ddc7f1fd71ef9a1a27857baf8d9434b42efc7583429f1940f368a14968a8a001",
+      "firstVersionReturnSha256": "d19db90cc5258b7eb4937ea078a2c0c1b20455d435195b498266379c48d0aa4a",
+      "firstVersionEvidenceSha256": "89533f3976033bd42d26c5636e04af1471acbd2406ad77c261c61a627ef5846d",
+      "repairs": "both defects were worker packet-format defects inside exact2; no assessment data changed"
+    }
+  ],
+  "actor": "TASK_BRIEF_ASSISTED_AGENT_SIMULATION",
+  "claimBoundary": "Assisted agent UI assessment only; not a blind novice, not a human result, not governance behavior, not business acceptance, not R1/R2 exit.",
+  "clocks": {
+    "workerStartLocal": "2026-10-18T23:12:23+07:00",
+    "runnerLaunchLocal": "2026-10-18T23:21:21+07:00",
+    "runnerExitLocal": "2026-10-18T23:22:46+07:00",
+    "personaFrozenLocal": "2026-10-18T23:25:23+07:00"
+  },
+  "REQ-WALKTHROUGH": {
+    "assessmentCompleteMarker": "PRE_EFFECT_UI_ASSESSMENT_COMPLETE",
+    "runner": {
+      "argv": [
+        "node",
+        "scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs",
+        "--probe-spec",
+        ".cvf/runtime/ncr-r1-pre-effect-walkthrough-20261018/worker/walkthrough.spec.ts"
+      ],
+      "cwd": "D:\\UNG DUNG AI\\TOOL AI 2026\\Controlled-Vibe-Framework-CVF",
+      "outerExit": 0,
+      "signal": null,
+      "durationMs": 83390,
+      "rawRoot": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-yAPlO4",
+      "runnerStatusLine": "PASS",
+      "playwrightExit": 0,
+      "retries": 0,
+      "runnerInvocations": 1
+    },
+    "viewport": "1280x900",
+    "theme": "dark-indigo",
+    "language": "vi (reached through the visible language control; app started in vi so the control was toggled to en then vi)",
+    "browser": "145.0.7632.6",
+    "scenarios": {
+      "W1": "ATTEMPTED_COMPLETED",
+      "W2": "ATTEMPTED_COMPLETED",
+      "W3": "ATTEMPTED_COMPLETED",
+      "W4": "ATTEMPTED_COMPLETED"
+    },
+    "checkpoints": {
+      "selected-context": {
+        "outcome": "CAPTURED",
+        "shot": "cp1-selected-context",
+        "wheelSteps": 1,
+        "visibility": "PARTLY_ON_SCREEN"
+      },
+      "selected-disclosure": {
+        "outcome": "CAPTURED",
+        "shot": "cp2-selected-disclosure",
+        "wheelSteps": 3,
+        "visibility": "ON_SCREEN"
+      },
+      "generic-disclosure": {
+        "outcome": "CAPTURED",
+        "shot": "cp3-generic-disclosure",
+        "wheelSteps": 3,
+        "visibility": "ON_SCREEN"
+      },
+      "unbuilt-after-decline": {
+        "outcome": "CAPTURED",
+        "shot": "cp4-unbuilt-after-decline",
+        "wheelSteps": 0,
+        "visibility": "PARTLY_ON_SCREEN"
+      }
+    },
+    "checkpointTexts": {
+      "selected-context": {
+        "shot": "cp1-selected-context",
+        "visibility": "PARTLY_ON_SCREEN",
+        "innerText": "Tác vụ HTML thử nghiệm cục bộ\n\nMục tiêu\nTiêu chí 1\nThêm tiêu chí\nHTML\nBản nháp chờ rà soát\nXuất gói rà soát\n\nTạo gói HTML tự chứa, có receipt rõ ràng để người xem biết nguồn và ranh giới.\n\nChỉ HTML. PDF, PNG, PPTX và bằng chứng cuối cùng được xử lý riêng.\nNguồn rà soát\nTIÊU ĐỀ\nNGUỒN THAM CHIẾU\nLOẠI BẢN GHI\nBản đầy đủ\nBản tham chiếu\nTRẠNG THÁI RÀ SOÁT\nMÃ RECEIPT\nRANH GIỚI RÀ SOÁT\nGHI CHÚ NGUỒN\nDán nội dung đã được duyệt. Gói này giúp review dễ hơn mà không đổi ý nghĩa.\n\nPhản hồi máy chủ cho biết phiên này dùng chế độ thử nghiệm cục bộ: HTML được tạo trên máy này. Bản nháp chỉ được lưu vào kho thử nghiệm cục bộ khi bạn chọn Lưu; không có yêu cầu lấy biên nhận kiểm tra. Bản nháp vẫn chưa được xác minh và chưa được chấp nhận, kể cả sau một lượt rà soát thử nghiệm cục bộ riêng của cùng người dùng; lượt rà soát này không phải bằng chứng đáng tin cậy hay sự chấp nhận trong nghiệp vụ. Cấu hình tạo HTML được xác định riêng; lần tạo sau có thể dùng chế độ khác. Dừng chỉ tác động trên trang này; không xác nhận thao tác từ xa đã dừng và chi phí vẫn chưa rõ.\n\nTạo HTML\nGói HTML\n\nTạo gói HTML để xem trước tại đây.\n\nSao chép HTML\nTải HTML\nXem bản in\nXem trước\nTạo gói HTML để xem trước tại đây.\nBản nháp HTML đã lưu\n\nBản nháp do trình duyệt gửi · chưa xác minh · chưa chấp nhận\n\nLưu bản nháp đang xem\nXem các bản đã lưu\nKiểm tra sẵn sàng\n\nCác kiểm tra sẵn sàng sẽ hiện sau khi tạo."
+      },
+      "selected-disclosure": {
+        "shot": "cp2-selected-disclosure",
+        "visibility": "ON_SCREEN",
+        "innerText": "Phản hồi máy chủ cho biết phiên này dùng chế độ thử nghiệm cục bộ: HTML được tạo trên máy này. Bản nháp chỉ được lưu vào kho thử nghiệm cục bộ khi bạn chọn Lưu; không có yêu cầu lấy biên nhận kiểm tra. Bản nháp vẫn chưa được xác minh và chưa được chấp nhận, kể cả sau một lượt rà soát thử nghiệm cục bộ riêng của cùng người dùng; lượt rà soát này không phải bằng chứng đáng tin cậy hay sự chấp nhận trong nghiệp vụ. Cấu hình tạo HTML được xác định riêng; lần tạo sau có thể dùng chế độ khác. Dừng chỉ tác động trên trang này; không xác nhận thao tác từ xa đã dừng và chi phí vẫn chưa rõ."
+      },
+      "generic-disclosure": {
+        "shot": "cp3-generic-disclosure",
+        "visibility": "ON_SCREEN",
+        "innerText": "Việc tạo gói này có thể gửi một đoạn ngắn nội dung của bạn đến một dịch vụ kiểm tra rà soát. Việc này có xảy ra hay không, và dữ liệu đi đâu, phụ thuộc vào cấu hình triển khai và không hiển thị ở đây."
+      },
+      "unbuilt-after-decline": {
+        "shot": "cp4-unbuilt-after-decline",
+        "visibility": "PARTLY_ON_SCREEN",
+        "innerText": "Tác vụ HTML thử nghiệm cục bộ\n\nMục tiêu\nTiêu chí 1\nThêm tiêu chí\nHTML\nBản nháp chờ rà soát\nXuất gói rà soát\n\nTạo gói HTML tự chứa, có receipt rõ ràng để người xem biết nguồn và ranh giới.\n\nChỉ HTML. PDF, PNG, PPTX và bằng chứng cuối cùng được xử lý riêng.\nNguồn rà soát\nTIÊU ĐỀ\nNGUỒN THAM CHIẾU\nLOẠI BẢN GHI\nBản đầy đủ\nBản tham chiếu\nTRẠNG THÁI RÀ SOÁT\nMÃ RECEIPT\nRANH GIỚI RÀ SOÁT\nGHI CHÚ NGUỒN\nDán nội dung đã được duyệt. Gói này giúp review dễ hơn mà không đổi ý nghĩa.\n\nPhản hồi máy chủ cho biết phiên này dùng chế độ thử nghiệm cục bộ: HTML được tạo trên máy này. Bản nháp chỉ được lưu vào kho thử nghiệm cục bộ khi bạn chọn Lưu; không có yêu cầu lấy biên nhận kiểm tra. Bản nháp vẫn chưa được xác minh và chưa được chấp nhận, kể cả sau một lượt rà soát thử nghiệm cục bộ riêng của cùng người dùng; lượt rà soát này không phải bằng chứng đáng tin cậy hay sự chấp nhận trong nghiệp vụ. Cấu hình tạo HTML được xác định riêng; lần tạo sau có thể dùng chế độ khác. Dừng chỉ tác động trên trang này; không xác nhận thao tác từ xa đã dừng và chi phí vẫn chưa rõ.\n\nTạo HTML\nGói HTML\n\nTạo gói HTML để xem trước tại đây.\n\nSao chép HTML\nTải HTML\nXem bản in\nXem trước\nTạo gói HTML để xem trước tại đây.\nBản nháp HTML đã lưu\n\nBản nháp do trình duyệt gửi · chưa xác minh · chưa chấp nhận\n\nLưu bản nháp đang xem\nXem các bản đã lưu\nKiểm tra sẵn sàng\n\nCác kiểm tra sẵn sàng sẽ hiện sau khi tạo."
+      }
+    },
+    "rows": [
+      {
+        "seq": 1,
+        "at": "2026-10-18T16:22:37.419Z",
+        "scenario": "W1",
+        "action": "navigate",
+        "locator": "/work-transfer",
+        "label": "Work Transfer page",
+        "outcome": "LOADED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 2,
+        "at": "2026-10-18T16:22:37.538Z",
+        "scenario": "W1",
+        "action": "click",
+        "locator": "#tour-lang-switch button:visible",
+        "label": "🌐 EN",
+        "outcome": "CLICKED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 3,
+        "at": "2026-10-18T16:22:37.640Z",
+        "scenario": "W1",
+        "action": "click",
+        "locator": "#tour-lang-switch button:visible",
+        "label": "🌐 VI",
+        "outcome": "CLICKED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 4,
+        "at": "2026-10-18T16:22:37.661Z",
+        "scenario": "W1",
+        "action": "language",
+        "locator": "html[lang]",
+        "label": "vi",
+        "outcome": "LANGUAGE_VI_ACTIVE",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 5,
+        "at": "2026-10-18T16:22:37.680Z",
+        "scenario": "W1",
+        "action": "read-list",
+        "locator": "[data-testid=\"history-list\"]",
+        "label": "record list",
+        "outcome": "CAPTURED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 6,
+        "at": "2026-10-18T16:22:37.761Z",
+        "scenario": "W1",
+        "action": "click",
+        "locator": "[data-testid=\"export-record-ncr-synthetic-ux-job-001\"]",
+        "label": "Xuất HTML",
+        "outcome": "CLICKED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 7,
+        "at": "2026-10-18T16:22:39.109Z",
+        "scenario": "W1",
+        "action": "read-rendered",
+        "locator": "[data-testid=\"inline-export-panel\"]",
+        "label": "selected-context",
+        "outcome": "CAPTURED",
+        "visibility": "PARTLY_ON_SCREEN",
+        "shot": "cp1-selected-context"
+      },
+      {
+        "seq": 8,
+        "at": "2026-10-18T16:22:39.785Z",
+        "scenario": "W1",
+        "action": "read-rendered",
+        "locator": "[data-testid=\"pre-generate-disclosure\"]",
+        "label": "selected-disclosure",
+        "outcome": "CAPTURED",
+        "visibility": "ON_SCREEN",
+        "shot": "cp2-selected-disclosure"
+      },
+      {
+        "seq": 9,
+        "at": "2026-10-18T16:22:39.795Z",
+        "scenario": "W1",
+        "action": "read-panel-full",
+        "locator": "[data-testid=\"inline-export-panel\"]",
+        "label": "selected panel rendered text",
+        "outcome": "CAPTURED",
+        "visibility": "MIXED",
+        "shot": null
+      },
+      {
+        "seq": 10,
+        "at": "2026-10-18T16:22:40.382Z",
+        "scenario": "W2",
+        "action": "enumerate-textboxes",
+        "locator": "[data-testid=\"inline-export-panel\"]",
+        "label": "panel textboxes",
+        "outcome": "CAPTURED",
+        "visibility": "MIXED",
+        "shot": null
+      },
+      {
+        "seq": 11,
+        "at": "2026-10-18T16:22:40.451Z",
+        "scenario": "W2",
+        "action": "fill",
+        "locator": "textbox#0",
+        "label": "Mục tiêu",
+        "outcome": "FILLED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 12,
+        "at": "2026-10-18T16:22:40.496Z",
+        "scenario": "W2",
+        "action": "fill",
+        "locator": "textbox#1",
+        "label": "Tiêu chí 1",
+        "outcome": "FILLED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 13,
+        "at": "2026-10-18T16:22:40.544Z",
+        "scenario": "W2",
+        "action": "fill",
+        "locator": "textbox#2",
+        "label": "Tiêu đề",
+        "outcome": "FILLED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 14,
+        "at": "2026-10-18T16:22:41.093Z",
+        "scenario": "W2",
+        "action": "read-pending-state",
+        "locator": "[data-testid=\"inline-export-panel\"]",
+        "label": "state after edit, unbuilt",
+        "outcome": "CAPTURED",
+        "visibility": "MIXED",
+        "shot": "s1-selected-after-edit"
+      },
+      {
+        "seq": 15,
+        "at": "2026-10-18T16:22:41.163Z",
+        "scenario": "W2",
+        "action": "click",
+        "locator": "[data-testid=\"export-record-ncr-synthetic-ux-job-001\"]",
+        "label": "Xuất HTML",
+        "outcome": "CLICKED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 16,
+        "at": "2026-10-18T16:22:41.269Z",
+        "scenario": "W2",
+        "action": "decline-close",
+        "locator": "[data-testid=\"inline-export-panel\"]",
+        "label": "panel closed without Build",
+        "outcome": "PANEL_CLOSED",
+        "visibility": "ON_SCREEN",
+        "shot": "s2-selected-closed"
+      },
+      {
+        "seq": 17,
+        "at": "2026-10-18T16:22:41.319Z",
+        "scenario": "W3",
+        "action": "click",
+        "locator": "[data-testid=\"export-record-ux-generic-audit-001\"]",
+        "label": "Xuất HTML",
+        "outcome": "CLICKED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 18,
+        "at": "2026-10-18T16:22:41.333Z",
+        "scenario": "W3",
+        "action": "branch-observation",
+        "locator": "[data-testid=\"inline-export-panel\"]",
+        "label": "generic panel",
+        "outcome": "CAPTURED",
+        "visibility": "MIXED",
+        "shot": null
+      },
+      {
+        "seq": 19,
+        "at": "2026-10-18T16:22:41.985Z",
+        "scenario": "W3",
+        "action": "read-rendered",
+        "locator": "[data-testid=\"pre-generate-disclosure\"]",
+        "label": "generic-disclosure",
+        "outcome": "CAPTURED",
+        "visibility": "ON_SCREEN",
+        "shot": "cp3-generic-disclosure"
+      },
+      {
+        "seq": 20,
+        "at": "2026-10-18T16:22:41.994Z",
+        "scenario": "W3",
+        "action": "read-panel-full",
+        "locator": "[data-testid=\"inline-export-panel\"]",
+        "label": "generic panel rendered text",
+        "outcome": "CAPTURED",
+        "visibility": "MIXED",
+        "shot": null
+      },
+      {
+        "seq": 21,
+        "at": "2026-10-18T16:22:42.037Z",
+        "scenario": "W3",
+        "action": "click",
+        "locator": "[data-testid=\"export-record-ux-generic-audit-001\"]",
+        "label": "Xuất HTML",
+        "outcome": "CLICKED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 22,
+        "at": "2026-10-18T16:22:42.128Z",
+        "scenario": "W3",
+        "action": "decline-close",
+        "locator": "[data-testid=\"inline-export-panel\"]",
+        "label": "generic panel closed without Build",
+        "outcome": "PANEL_CLOSED",
+        "visibility": "ON_SCREEN",
+        "shot": "s3-generic-closed"
+      },
+      {
+        "seq": 23,
+        "at": "2026-10-18T16:22:42.199Z",
+        "scenario": "W4",
+        "action": "click",
+        "locator": "[data-testid=\"export-record-ncr-synthetic-ux-job-001\"]",
+        "label": "Xuất HTML",
+        "outcome": "CLICKED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      },
+      {
+        "seq": 24,
+        "at": "2026-10-18T16:22:42.416Z",
+        "scenario": "W4",
+        "action": "read-rendered",
+        "locator": "[data-testid=\"inline-export-panel\"]",
+        "label": "unbuilt-after-decline",
+        "outcome": "CAPTURED",
+        "visibility": "PARTLY_ON_SCREEN",
+        "shot": "cp4-unbuilt-after-decline"
+      },
+      {
+        "seq": 25,
+        "at": "2026-10-18T16:22:42.434Z",
+        "scenario": "W4",
+        "action": "read-revisit-state",
+        "locator": "[data-testid=\"inline-export-panel\"]",
+        "label": "revisit rendered state",
+        "outcome": "CAPTURED",
+        "visibility": "MIXED",
+        "shot": null
+      },
+      {
+        "seq": 26,
+        "at": "2026-10-18T16:22:42.491Z",
+        "scenario": "W4",
+        "action": "click",
+        "locator": "[data-testid=\"export-record-ncr-synthetic-ux-job-001\"]",
+        "label": "Xuất HTML",
+        "outcome": "CLICKED",
+        "visibility": "ON_SCREEN",
+        "shot": null
+      }
+    ],
+    "actionCount": 26,
+    "screenshots": [
+      {
+        "id": "cp1-selected-context",
+        "file": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-yAPlO4/walkthrough-screens/cp1-selected-context.png",
+        "bytes": 92908,
+        "sha256": "3d41eaae3a399e958b04662245587c7d502c0b3bf7e2b1d8d38d26ce6c57f6b6",
+        "role": "PLANNED_CHECKPOINT",
+        "inspectedByWorker": true
+      },
+      {
+        "id": "cp2-selected-disclosure",
+        "file": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-yAPlO4/walkthrough-screens/cp2-selected-disclosure.png",
+        "bytes": 115726,
+        "sha256": "355c9034323260a5576f586531897141fbc7b7a97aaa574be30eb22a5dbd8eee",
+        "role": "PLANNED_CHECKPOINT",
+        "inspectedByWorker": true
+      },
+      {
+        "id": "s1-selected-after-edit",
+        "file": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-yAPlO4/walkthrough-screens/s1-selected-after-edit.png",
+        "bytes": 98341,
+        "sha256": "95e8f68f1dd186115e413651d27f39e02104ff50d5c1862620c98d2469adcadb",
+        "role": "SUPPLEMENTARY",
+        "inspectedByWorker": true
+      },
+      {
+        "id": "s2-selected-closed",
+        "file": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-yAPlO4/walkthrough-screens/s2-selected-closed.png",
+        "bytes": 90658,
+        "sha256": "04bff2de79e56c00c9511b9f258ce1b4c44a1fd2eaa980ef1504b6d0afb8d5cf",
+        "role": "SUPPLEMENTARY",
+        "inspectedByWorker": true
+      },
+      {
+        "id": "cp3-generic-disclosure",
+        "file": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-yAPlO4/walkthrough-screens/cp3-generic-disclosure.png",
+        "bytes": 101331,
+        "sha256": "412c850347aecfa56e0681cde083877711796c96f87d316a41913f9a23548c30",
+        "role": "PLANNED_CHECKPOINT",
+        "inspectedByWorker": true
+      },
+      {
+        "id": "s3-generic-closed",
+        "file": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-yAPlO4/walkthrough-screens/s3-generic-closed.png",
+        "bytes": 90602,
+        "sha256": "38a3b87dd17061adf5d421373280fb171e31962e66707347fea4aef7ee21f6dd",
+        "role": "SUPPLEMENTARY",
+        "inspectedByWorker": true
+      },
+      {
+        "id": "cp4-unbuilt-after-decline",
+        "file": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-yAPlO4/walkthrough-screens/cp4-unbuilt-after-decline.png",
+        "bytes": 87395,
+        "sha256": "07cd0503e7a18109d6b8f4f5c723fb20d41c3c683f66af19de67542e97c80de2",
+        "role": "PLANNED_CHECKPOINT",
+        "inspectedByWorker": true
+      }
+    ],
+    "screenshotCount": 7,
+    "screenshotBytes": 676961,
+    "screenshotCaps": {
+      "maxPng": 8,
+      "maxBytes": 8388608
+    },
+    "rawCapture": {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-yAPlO4/walkthrough-capture.json",
+      "sha256": "ed552d26bd7e883388150fbe4316982f74e97828ecbced57448f0de8f4b800ce",
+      "bytes": 112508
+    },
+    "visibilityNotes": [
+      "cp1 selected-context PARTLY_ON_SCREEN: Goal, Criterion 1 and top of the review-source card on screen; disclosure and Build below the fold at open.",
+      "cp2 and cp3 disclosure ON_SCREEN after 3 native wheel steps.",
+      "cp4 PARTLY_ON_SCREEN: panel top only; revisit read of the full panel is in row 25."
+    ],
+    "startedInVietnamese": true,
+    "seedDisclosure": "Infrastructure init script set defaultLanguage en and dark/indigo theme once per tab; the app nevertheless started with html lang vi, so the persona toggled en then vi through the visible control."
+  },
+  "REQ-ASSESSMENT": {
+    "personaFrozen": {
+      "file": ".cvf/runtime/ncr-r1-pre-effect-walkthrough-20261018/worker/persona-answers.frozen.json",
+      "sha256": "ed18b1a116940d47b00cb03f84055b2b2b8cb86721a90beaac74d8801f5e073a",
+      "frozenAtLocal": "2026-10-18T23:25:23+07:00",
+      "technicalCrossCheckStartedAfterFreeze": true
+    },
+    "answers": [
+      {
+        "id": "Q1",
+        "topic": "Đầu ra sẽ tạo",
+        "selected": {
+          "answerVI": "Sẽ tạo một 'gói HTML' để xem trước. Màn hình nói: 'Tạo gói HTML tự chứa, có receipt rõ ràng để người xem biết nguồn và ranh giới.' Khu 'Gói HTML' có 'Xem trước', các nút 'Sao chép HTML', 'Tải HTML', 'Xem bản in' đang bị vô hiệu và dòng 'Tạo gói HTML để xem trước tại đây.' Nhãn 'Bản nháp chờ rà soát' và 'Chỉ HTML. PDF, PNG, PPTX và bằng chứng cuối cùng được xử lý riêng.' cho biết đây chỉ là bản nháp HTML.",
+          "quotes": [
+            "Tạo gói HTML tự chứa, có receipt rõ ràng để người xem biết nguồn và ranh giới.",
+            "Tạo gói HTML để xem trước tại đây.",
+            "Chỉ HTML. PDF, PNG, PPTX và bằng chứng cuối cùng được xử lý riêng.",
+            "Bản nháp chờ rà soát"
+          ],
+          "checkpoints": [
+            "selected-context",
+            "selected-disclosure",
+            "unbuilt-after-decline"
+          ],
+          "classification": "PARTLY_SUPPORTED",
+          "reason": "Biết được loại đầu ra (gói HTML nháp, xem trước/sao chép/tải/in). Không thấy mô tả nội dung trang sẽ ra sao từ Mục tiêu/Tiêu chí, và 'receipt' là thuật ngữ không được giải thích.",
+          "uncertainty": "Không rõ Mục tiêu và Tiêu chí 1 có ảnh hưởng đến nội dung HTML hay không (UI không nói). 'receipt' có thể không rõ với người không kỹ thuật.",
+          "suggestedUserNextAction": "Nhập Mục tiêu/Tiêu chí bằng tiếng Việt, chỉ bấm 'Tạo HTML' khi sẵn sàng, rồi xem phần 'Xem trước' để kiểm tra nội dung."
+        },
+        "generic": {
+          "answerVI": "Cũng là một gói HTML để xem trước (cùng tiêu đề 'Xuất gói rà soát', cùng khu 'Gói HTML'). Khác bản selected: không có ô Mục tiêu và Tiêu chí nên không thấy chỗ mô tả kết quả mong muốn.",
+          "quotes": [
+            "Tạo gói HTML tự chứa, có receipt rõ ràng để người xem biết nguồn và ranh giới.",
+            "Tạo gói HTML để xem trước tại đây."
+          ],
+          "checkpoints": [
+            "generic-disclosure"
+          ],
+          "classification": "PARTLY_SUPPORTED",
+          "reason": "Loại đầu ra thấy được, nhưng không có chỗ nói kết quả mong muốn.",
+          "uncertainty": "Không biết khác biệt giữa hai loại bản ghi là chủ ý hay chỉ là khác chế độ.",
+          "suggestedUserNextAction": "Sửa 'Ghi chú nguồn' và 'Tiêu đề' trước khi bấm 'Tạo HTML'."
+        }
+      },
+      {
+        "id": "Q2",
+        "topic": "Đầu vào sẽ dùng",
+        "selected": {
+          "answerVI": "Thấy các ô 'Tiêu đề', 'Nguồn tham chiếu', 'Loại bản ghi', 'Trạng thái rà soát', 'Mã receipt', 'Ranh giới rà soát' và 'Ghi chú nguồn' (nội dung dán vào, bắt đầu '# Audit Record Draft'). Đây là dữ liệu nguồn cho gói HTML. Còn 'Mục tiêu' và 'Tiêu chí 1' đang trống; màn hình không nói chúng được dùng vào đâu.",
+          "quotes": [
+            "Dán nội dung đã được duyệt. Gói này giúp review dễ hơn mà không đổi ý nghĩa.",
+            "TIÊU ĐỀ",
+            "GHI CHÚ NGUỒN",
+            "Mục tiêu",
+            "Tiêu chí 1"
+          ],
+          "checkpoints": [
+            "selected-context",
+            "selected-disclosure"
+          ],
+          "classification": "PARTLY_SUPPORTED",
+          "reason": "Các ô nguồn có nhãn và giá trị hiển thị. Vai trò của Mục tiêu/Tiêu chí với việc tạo HTML không được giải thích. Sau khi đóng và mở lại (W4) các ô Mục tiêu/Tiêu chí trở về trống, không có thông báo.",
+          "uncertainty": "Không khẳng định việc lưu/không lưu bản nháp đầu vào; chỉ quan sát các ô trống sau khi mở lại.",
+          "suggestedUserNextAction": "Chỉ sửa Tiêu đề và Ghi chú nguồn nếu muốn chắc về nội dung đầu vào; chỉ dùng Mục tiêu/Tiêu chí khi UI giải thích tác dụng."
+        },
+        "generic": {
+          "answerVI": "Đầu vào là các ô nguồn tương tự (Tiêu đề, Nguồn tham chiếu, Ghi chú nguồn ...). Không có Mục tiêu/Tiêu chí.",
+          "quotes": [
+            "Audit Record - generic audit event",
+            "GHI CHÚ NGUỒN"
+          ],
+          "checkpoints": [
+            "generic-disclosure"
+          ],
+          "classification": "SUPPORTED_BY_VISIBLE_UI",
+          "reason": "Đầu vào là các ô có thể thấy và sửa; không có thành phần phụ nào khác được hứa.",
+          "uncertainty": "Nội dung nguồn và ranh giới hiển thị bằng tiếng Anh trong giao diện tiếng Việt.",
+          "suggestedUserNextAction": "Đọc lại Ghi chú nguồn (tiếng Anh) trước khi tạo."
+        }
+      },
+      {
+        "id": "Q3",
+        "topic": "Dữ liệu đi đâu và cần quyền gì",
+        "selected": {
+          "answerVI": "Màn hình nói HTML được tạo trên máy này và bản nháp chỉ được lưu vào kho thử nghiệm cục bộ khi bấm Lưu; không có yêu cầu lấy biên nhận kiểm tra. Không thấy thông tin về quyền/tài khoản cần có. Các câu 'Phản hồi máy chủ cho biết ...' và 'lần tạo sau có thể dùng chế độ khác' khiến tôi không chắc kết luận này áp dụng cho lần tạo thật.",
+          "quotes": [
+            "Phản hồi máy chủ cho biết phiên này dùng chế độ thử nghiệm cục bộ: HTML được tạo trên máy này.",
+            "Bản nháp chỉ được lưu vào kho thử nghiệm cục bộ khi bạn chọn Lưu; không có yêu cầu lấy biên nhận kiểm tra.",
+            "Cấu hình tạo HTML được xác định riêng; lần tạo sau có thể dùng chế độ khác."
+          ],
+          "checkpoints": [
+            "selected-disclosure"
+          ],
+          "classification": "PARTLY_SUPPORTED",
+          "reason": "Nói rõ địa điểm tạo và lưu (cục bộ) và không gửi biên nhận. Quyền/tài khoản cần có: không hiển thị.",
+          "uncertainty": "Không biết 'phiên này' áp dụng đến đâu và có thay đổi giữa các lần tạo hay không.",
+          "suggestedUserNextAction": "Nếu cần quyền/đích đến rõ hơn, hỏi người quản trị trước khi tạo bản thật."
+        },
+        "generic": {
+          "answerVI": "Màn hình nói việc tạo gói này CÓ THỂ gửi một đoạn ngắn nội dung đến dịch vụ kiểm tra rà soát; việc đó có xảy ra không và dữ liệu đi đâu phụ thuộc cấu hình triển khai và 'không hiển thị ở đây'. Không biết đích đến, không biết cần quyền gì.",
+          "quotes": [
+            "Việc tạo gói này có thể gửi một đoạn ngắn nội dung của bạn đến một dịch vụ kiểm tra rà soát. Việc này có xảy ra hay không, và dữ liệu đi đâu, phụ thuộc vào cấu hình triển khai và không hiển thị ở đây."
+          ],
+          "checkpoints": [
+            "generic-disclosure"
+          ],
+          "classification": "NOT_SHOWN",
+          "reason": "UI nói thẳng rằng đích đến và việc có gửi hay không không được hiển thị; không có thông tin quyền.",
+          "uncertainty": "Không biết 'dịch vụ kiểm tra rà soát' là gì và ai vận hành.",
+          "suggestedUserNextAction": "Không dán nội dung nhạy cảm; hỏi người quản trị đích đến trước khi bấm 'Tạo HTML'."
+        }
+      },
+      {
+        "id": "Q4",
+        "topic": "Chi phí",
+        "selected": {
+          "answerVI": "Chỉ có một cụm ở cuối: 'chi phí vẫn chưa rõ'. Không có con số, không nói việc tạo có mất phí hay không.",
+          "quotes": [
+            "Dừng chỉ tác động trên trang này; không xác nhận thao tác từ xa đã dừng và chi phí vẫn chưa rõ."
+          ],
+          "checkpoints": [
+            "selected-disclosure"
+          ],
+          "classification": "PARTLY_SUPPORTED",
+          "reason": "Có thừa nhận chi phí chưa rõ, nhưng nằm trong câu nói về nút Dừng nên khó biết chi phí của việc tạo hay của việc dừng.",
+          "uncertainty": "Không rõ 'chi phí' áp dụng cho Tạo HTML, Dừng hay cả hai.",
+          "suggestedUserNextAction": "Coi chi phí là chưa biết; nếu chi phí quan trọng, hỏi trước khi tạo."
+        },
+        "generic": {
+          "answerVI": "Không thấy nói gì về chi phí.",
+          "quotes": [],
+          "checkpoints": [
+            "generic-disclosure"
+          ],
+          "classification": "NOT_SHOWN",
+          "reason": "Không có từ nào về chi phí trong thông báo hay quanh nút Tạo HTML.",
+          "uncertainty": "Không thể phân biệt 'không tốn phí' và 'không được nói'.",
+          "suggestedUserNextAction": "Hỏi người quản trị về chi phí trước khi tạo."
+        }
+      },
+      {
+        "id": "Q5",
+        "topic": "Hành động chưa xảy ra; Lưu/rà soát có phải chấp nhận không",
+        "selected": {
+          "answerVI": "Chưa tạo gì: Xem trước còn trống, 'Sao chép/Tải/Xem bản in' bị vô hiệu, 'Lưu bản nháp đang xem' bị vô hiệu, 'Các kiểm tra sẵn sàng sẽ hiện sau khi tạo.' Lưu và rà soát KHÔNG phải chấp nhận: bản nháp 'chưa xác minh · chưa chấp nhận', và thông báo nói kể cả sau lượt rà soát thử nghiệm cục bộ thì vẫn chưa được chấp nhận và không phải bằng chứng đáng tin hay chấp nhận trong nghiệp vụ.",
+          "quotes": [
+            "Bản nháp do trình duyệt gửi · chưa xác minh · chưa chấp nhận",
+            "Bản nháp vẫn chưa được xác minh và chưa được chấp nhận, kể cả sau một lượt rà soát thử nghiệm cục bộ riêng của cùng người dùng",
+            "Các kiểm tra sẵn sàng sẽ hiện sau khi tạo.",
+            "Tạo gói HTML để xem trước tại đây."
+          ],
+          "checkpoints": [
+            "selected-context",
+            "selected-disclosure",
+            "unbuilt-after-decline"
+          ],
+          "classification": "SUPPORTED_BY_VISIBLE_UI",
+          "reason": "Trạng thái chưa tạo và chưa chấp nhận được nói rõ nhiều chỗ; Lưu và rà soát được nói không phải chấp nhận.",
+          "uncertainty": "Tiêu đề 'Bản nháp HTML đã lưu' hiện trước khi có bản nào được lưu có thể gây hiểu nhầm. Đoạn thông báo rất dài và dày.",
+          "suggestedUserNextAction": "Đọc dòng 'chưa xác minh · chưa chấp nhận' trước khi coi một bản nháp là xong."
+        },
+        "generic": {
+          "answerVI": "Cũng thấy Xem trước trống, nút Lưu bị vô hiệu và dòng 'chưa xác minh · chưa chấp nhận'. Thông báo trước khi tạo của bản generic không nói gì về Lưu hay rà soát; không có nút rà soát nào hiện.",
+          "quotes": [
+            "Bản nháp do trình duyệt gửi · chưa xác minh · chưa chấp nhận"
+          ],
+          "checkpoints": [
+            "generic-disclosure"
+          ],
+          "classification": "PARTLY_SUPPORTED",
+          "reason": "Trạng thái chưa chấp nhận thấy được, nhưng không có giải thích về Lưu/rà soát.",
+          "uncertainty": "Không biết generic có bước rà soát hay không.",
+          "suggestedUserNextAction": "Coi mọi bản nháp là chưa chấp nhận cho đến khi có bước rõ ràng."
+        }
+      },
+      {
+        "id": "Q6",
+        "topic": "Từ chối / không tạo sẽ làm gì",
+        "selected": {
+          "answerVI": "Màn hình không có nút hay câu nói về từ chối. Tôi chỉ đóng bằng cách bấm lại chính nút 'Xuất HTML' trên dòng bản ghi; panel biến mất, không có thông báo nào nói đã không tạo/lưu/gửi gì. Mở lại thì Mục tiêu/Tiêu chí trống và không có kết quả. Nhãn 'Xuất HTML' trên dòng bản ghi chỉ mở/đóng panel, không xuất; nút tạo thật là 'Tạo HTML'.",
+          "quotes": [
+            "Xuất HTML",
+            "Tạo HTML"
+          ],
+          "checkpoints": [
+            "unbuilt-after-decline"
+          ],
+          "classification": "NOT_SHOWN",
+          "reason": "Không có lời giải thích về việc từ chối; chỉ suy ra từ hành vi quan sát.",
+          "uncertainty": "Nhãn 'Xuất HTML' có thể khiến nghĩ bấm là xuất ngay. Không khẳng định bản nháp đầu vào bị mất hay được giữ, chỉ quan sát ô trống.",
+          "suggestedUserNextAction": "Đóng panel bằng nút trên dòng bản ghi nếu không muốn tạo; không có bước xác nhận hủy."
+        },
+        "generic": {
+          "answerVI": "Giống bản selected: đóng bằng cùng nút 'Xuất HTML', không có lời nói từ chối.",
+          "quotes": [
+            "Xuất HTML"
+          ],
+          "checkpoints": [
+            "generic-disclosure"
+          ],
+          "classification": "NOT_SHOWN",
+          "reason": "Không có nội dung về từ chối.",
+          "uncertainty": "Như trên.",
+          "suggestedUserNextAction": "Như trên."
+        }
+      },
+      {
+        "id": "Q7",
+        "topic": "Dừng có thể / không thể xác lập điều gì",
+        "selected": {
+          "answerVI": "Thông báo nói 'Dừng' chỉ tác động trên trang này; không xác nhận thao tác từ xa đã dừng; chi phí vẫn chưa rõ. Trước khi tạo không có nút Dừng nào trên màn hình, nên không thể xem thử.",
+          "quotes": [
+            "Dừng chỉ tác động trên trang này; không xác nhận thao tác từ xa đã dừng và chi phí vẫn chưa rõ."
+          ],
+          "checkpoints": [
+            "selected-disclosure"
+          ],
+          "classification": "PARTLY_SUPPORTED",
+          "reason": "Giới hạn của Dừng được nói rõ, nhưng không thấy nút Dừng trước khi tạo, nên không rõ người dùng sẽ tìm nó ở đâu.",
+          "uncertainty": "Không quan sát trạng thái đang tạo vì không bấm Tạo HTML.",
+          "suggestedUserNextAction": "Nếu cần dừng, coi đó chỉ là dừng hiển thị trên trang, không phải hủy ở phía xa."
+        },
+        "generic": {
+          "answerVI": "Không thấy chữ nào về Dừng.",
+          "quotes": [],
+          "checkpoints": [
+            "generic-disclosure"
+          ],
+          "classification": "NOT_SHOWN",
+          "reason": "Thông báo generic không nhắc Dừng.",
+          "uncertainty": "Không biết generic có nút Dừng khi đang tạo hay không.",
+          "suggestedUserNextAction": "Không giả định có thể dừng kết quả phía xa."
+        }
+      }
+    ],
+    "uiFindingsObserved": [
+      "F1: nhãn 'Xuất HTML' trên dòng bản ghi chỉ mở/đóng panel, không xuất; nút tạo thật là 'Tạo HTML' (Q6).",
+      "F2: không có chữ nào về từ chối/hủy trong cả hai panel (Q6).",
+      "F3: thông báo trước khi tạo của panel generic không nói đích đến, quyền, chi phí, Dừng (Q3,Q4,Q7).",
+      "F4: thông báo selected là một đoạn dài, dày; chi phí chỉ xuất hiện ở cuối câu về Dừng (Q4).",
+      "F5: 'Bản nháp HTML đã lưu' hiện trước khi có bản nào được lưu (Q5).",
+      "F6: giao diện tiếng Việt còn tiếng Anh: 'Switch to EN' ở sidebar, Ranh giới rà soát/Ghi chú nguồn bằng tiếng Anh, 'receipt', giá trị thô như SYNTHETIC_READY_FOR_REVIEW và FULL_RECORD (Q1,Q2).",
+      "F7: Mục tiêu/Tiêu chí 1 không giải thích tác dụng, và trở về trống sau khi đóng/mở lại (Q2)."
+    ],
+    "assistanceDisclosure": "Worker đã đọc work order/baseline, page.tsx, runner, spec đã đăng ký, và chỉ đọc phần export/props/testid của hai thành phần (chưa đọc nội dung chữ hiển thị của thành phần) trước khi chụp. Roadmap đã đọc trước đó có nói thông báo của panel chung nêu đích đến phụ thuộc cấu hình. Đây KHÔNG phải người mới và không phải thông tin bị che.",
+    "evidenceBasis": "Chỉ dùng văn bản hiển thị và ảnh chụp trong walkthrough-capture.json (run-yAPlO4); không dùng mã nguồn thành phần, log hay phản hồi API để trả lời.",
+    "classificationCounts": {
+      "PARTLY_SUPPORTED": 7,
+      "SUPPORTED_BY_VISIBLE_UI": 2,
+      "NOT_SHOWN": 5
+    },
+    "technicalCrossCheck": {
+      "performedAfterFreeze": true,
+      "changedClassifications": 0,
+      "sourceReadAfterFreeze": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx (full)",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx (grep of copy and labels only)"
+      ],
+      "sourceOnlyFacts": [
+        "Build for the selected record requires a non-empty Goal and non-empty criteria; otherwise prepareJob throws an English internal message. The pre-Build screen never says Goal and Criterion are required (Q2 PARTLY_SUPPORTED consistent).",
+        "Goal and criteria are component-local state, reset when the record panel remounts; this explains the empty fields at W4 but durability is not claimed.",
+        "Goal and criteria are sent in the CREATE_JOB request at Build together with the seven-field export request; the screen does not say how they relate to the HTML content.",
+        "The Stop control is rendered only while a build is running, so it cannot be seen before Build (Q7 PARTLY_SUPPORTED consistent).",
+        "Selected branch shows the local-profile disclosure only when the capabilities read reports a local synthetic boundary; the generic branch always shows the generic disclosure (matches cp2 versus cp3).",
+        "The record-row button toggles selection of the record, so the same button opens and closes the panel; it does not export (matches F1)."
+      ],
+      "visibleVersusSourceOnly": "Everything cited in the seven answers is rendered text or geometry in the capture; the five facts above are source-only and were not used to fill any answer."
+    }
+  },
+  "REQ-BOUNDARY": {
+    "boundary": {
+      "domainWriteAttempts": 0,
+      "browserAuthWriteAttempts": 0,
+      "effectBlocked": 0,
+      "externalBlockedCount": 2,
+      "externalBlockedHosts": [
+        "fonts.googleapis.com"
+      ],
+      "loginFormFallback": false,
+      "apiRequestContext": [
+        {
+          "method": "GET",
+          "path": "/api/auth/csrf",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/auth/callback/credentials",
+          "status": 200
+        },
+        {
+          "method": "GET",
+          "path": "/api/auth/session",
+          "status": 200
+        }
+      ],
+      "callbackOnlyBootstrap": true,
+      "clickAudit": {
+        "allowed": 8,
+        "forbidden": 0
+      },
+      "fills": [
+        "goal",
+        "criterion1",
+        "title"
+      ],
+      "trafficCounts": {
+        "allowed": 33,
+        "blocked-external": 2,
+        "fixture": 1
+      }
+    },
+    "domainWriteAttempts": 0,
+    "browserAuthWriteAttempts": 0,
+    "evaluateExecuteAttempts": 0,
+    "buildSaveStopLinkReviewDownloadCopyPrintActivations": 0,
+    "clickAudit": {
+      "allowed": 8,
+      "forbidden": 0
+    },
+    "fills": [
+      "goal",
+      "criterion1",
+      "title"
+    ],
+    "callbackOnlyBootstrap": true,
+    "externalAttempts": {
+      "blocked": 2,
+      "hosts": [
+        "fonts.googleapis.com"
+      ],
+      "note": "Attempted browser requests to a non-loopback font host were aborted by the route; none succeeded. Server-side preload also blocked one network attempt."
+    },
+    "traffic": [
+      {
+        "method": "GET",
+        "path": "/api/auth/session",
+        "decision": "allowed"
+      },
+      {
+        "method": "GET",
+        "path": "/api/providers",
+        "decision": "allowed",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/me",
+        "decision": "allowed"
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/session",
+        "decision": "allowed",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/admin/audit",
+        "decision": "fixture",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/me",
+        "decision": "allowed",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/auth/session",
+        "decision": "allowed",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/artifacts/jobs",
+        "decision": "allowed",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/artifacts/jobs",
+        "decision": "allowed",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/artifacts/jobs",
+        "decision": "allowed",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/artifacts/jobs",
+        "decision": "allowed",
+        "status": 200
+      }
+    ],
+    "preflight": {
+      "startedAt": "2026-10-18T16:21:22.445Z",
+      "node": {
+        "exe": "C:\\nvm4w\\nodejs\\node.exe",
+        "version": "v22.17.0",
+        "status": 0
+      },
+      "git": {
+        "version": "git version 2.55.0.windows.3",
+        "status": 0
+      },
+      "head": {
+        "value": "fe58c3aac6bfefcf56d79ce0ad10e235c8ee243c",
+        "status": 0
+      },
+      "stagedPaths": "",
+      "portFree": true,
+      "envKeys": [
+        "SystemRoot",
+        "WINDIR",
+        "PATH",
+        "TEMP",
+        "TMP",
+        "CI"
+      ],
+      "path": "C:\\nvm4w\\nodejs;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\System32",
+      "ok": true
+    },
+    "parentEnvAllowlist": [
+      "SystemRoot",
+      "WINDIR",
+      "PATH",
+      "TEMP",
+      "TMP",
+      "CI"
+    ],
+    "parentPath": "C:\\nvm4w\\nodejs;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\System32",
+    "teardown": {
+      "attempted": true,
+      "pid": 35428,
+      "status": 0,
+      "portFree": true,
+      "processGone": true,
+      "ownedStopped": true,
+      "transientExact": true
+    },
+    "isolation": {
+      "preloadContexts": 13,
+      "envBlocked": 12,
+      "networkBlocked": 1,
+      "evaluateBlocked": 0
+    },
+    "outputBudget": {
+      "run": {
+        "bytes": 1004329,
+        "files": 20
+      },
+      "build": {
+        "bytes": 188154475,
+        "files": 202
+      },
+      "snapshots": {
+        "bytes": 117,
+        "files": 1
+      },
+      "withinCaps": true
+    },
+    "runnerSourceDrift": {
+      "pins": 26,
+      "changed": 0
+    },
+    "workerPins": {
+      "before": 21,
+      "after": 21,
+      "identical": true,
+      "list": [
+        {
+          "path": "scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs",
+          "sha256": "82468c072e85eb5c0e5a444c94eb50d51036a6c2ad77af5ff537b3fe94c99983"
+        },
+        {
+          "path": "docs/baselines/CVF_GC018_NCR_R1_PRE_EFFECT_WALKTHROUGH_2026-10-18.md",
+          "sha256": "dca6b5b89f82d0e60db55edaf8dc348b0dba2d10a3e33faa24ac3086623fd0d4"
+        },
+        {
+          "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_PRE_EFFECT_WALKTHROUGH_2026-10-18.md",
+          "sha256": "6c450f1a5582b2d7913eeb54182169ceab9c3b18ccffb1f4aac93d648902b719"
+        },
+        {
+          "path": "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+          "sha256": "2447fc55cc1ec7a58ee006496f589af89a17e8114e6776c25aca6cad2055c1dc"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs",
+          "sha256": "037e3ecda32cadd25d487207fceec23418bb2cbb4f6b287701bb7fdd3833e7db"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+          "sha256": "d8deae5ada9687f242eece64cdcd3f916be51bff0575e8a251b018715f39a6a9"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/utils.ts",
+          "sha256": "6a27d4aa18f22a4c869189caaf32925121ebf77282629b8e374f3762ca77a6fb"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-ux-readonly-browser.spec.ts",
+          "sha256": "a12da41b5879e69b0e452d0a27ed5cfa736f8c282cea6fb172cb7ffc1b57db70"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+          "sha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/(dashboard)/work-transfer/page.tsx",
+          "sha256": "d7fb54a9c55f6e786511020dac3d91fc51202ab57efa47dd3228143726792a82"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+          "sha256": "a4ebd478aae36c2976a01db489e8023aca4100cfd64e5f942c92fe1878f2c5a4"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+          "sha256": "8d6d2c35c919524e500fb18b6c08283d4678307c23bed4d8f84073278f6de751"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/CompactHeader.tsx",
+          "sha256": "93c9cf720bce1bfddbccd141654366cf314da50c16cc7d14c1e1fd669ea07493"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/i18n.tsx",
+          "sha256": "aa63102edb14434dcf8e8643cbd48ac0f1cc0e99d11301cc3fceb65654202f8d"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/@playwright/test/cli.js",
+          "sha256": "79e23e6a249176295b8490567daa7717448a75866d6ea6f6b296ff3d23305c69"
+        },
+        {
+          "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/node_modules/next/dist/bin/next",
+          "sha256": "19337d5e1b3b82ff72a6cd28b06cc47a3e18979da4282b074321c5ba4085b385"
+        },
+        {
+          "path": ".cvf/runtime/ncr-r1-pre-effect-walkthrough-20261018/worker/walkthrough.spec.ts",
+          "sha256": "a34efbdb91ed3453e30f3f3778fcd0a7ee52725ed328505bc66aa159fdecf217"
+        },
+        {
+          "path": ".cvf/runtime/ncr-r1-pre-effect-walkthrough-20261018/worker/list.config.cjs",
+          "sha256": "45e76bdf9ceda435a5f62589eb7dffbba71d5299a4fd335672011be59730f210"
+        },
+        {
+          "path": "C:/nvm4w/nodejs/node.exe",
+          "sha256": "39d45b5933f339d3ebdebd76474893dab5d7da1038920f65cf5bbcf0f20f3636"
+        },
+        {
+          "path": "C:/Program Files/Git/cmd/git.exe",
+          "sha256": "7b7971dd13f0c3a284e538601f2f9770b3a87dfaccb5fb52d68141c67ed22364"
+        },
+        {
+          "path": "C:/Users/DELL/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe",
+          "sha256": "ff0c99fc5bb2301cad77930aa76e5354cf2a5fefb7efdcf3b3bc10ba0550c015"
+        }
+      ]
+    },
+    "probe": {
+      "path": ".cvf/runtime/ncr-r1-pre-effect-walkthrough-20261018/worker/walkthrough.spec.ts",
+      "sha256": "a34efbdb91ed3453e30f3f3778fcd0a7ee52725ed328505bc66aa159fdecf217",
+      "lines": 206,
+      "limit": 240
+    },
+    "staticList": {
+      "collections": 1,
+      "ceiling": 2,
+      "exit": 0,
+      "tests": 1,
+      "files": 1
+    },
+    "gitStatusAfterRun": "only the return file untracked; tracked files unchanged (transient Next files restored exactly)",
+    "rawRunnerResult": {
+      "path": ".cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-yAPlO4/result.json",
+      "sha256": "410613526814df88161488132ae8d8282b2df55dfc010f7de179e4da0c3265b8"
+    }
+  },
+  "REQ-RETURN": {
+    "returnPath": "docs/reviews/CVF_NCR_R1_PRE_EFFECT_WALKTHROUGH_WORKER_RETURN_2026-10-18.md",
+    "note": "Final return bytes and full requiredGate results are bound by the detached receipt in owned custody, not inside this file."
+  },
+  "disclosedDiscrepancies": [
+    "Baseline Allowed existing mutation table names two source/spec paths with preimage hashes; the work order and Required Artifact Manifest say source and tests are read-only. Worker followed the work order and changed neither.",
+    "Baseline quotes a freshness-record hash e32a06ba...; the actual file and the work order quote 454f2c3a....",
+    "The scaffold command in the work order carries the title text of the earlier focused task; worker used the correct title for this task. No checker reads the title.",
+    "The work order maps the template dispatch-envelope span and the probe-admission and closeability checkers as first reads; the worker read the template envelope span only after the capture, and read only grep-selected worker-return predicates of the probe-admission and closeability checkers (not their full bodies). Recorded as PARTIAL_READ procedure limits in the return Source Inventory."
+  ]
+}
