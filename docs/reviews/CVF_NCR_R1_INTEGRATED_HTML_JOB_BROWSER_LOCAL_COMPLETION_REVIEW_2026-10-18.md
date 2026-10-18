@@ -5,7 +5,7 @@ docType: completion_review
 Status: ACCEPTED_BOUNDED_BROWSER_WITH_PROCEDURE_LIMITS
 Date: 2026-10-18
 Batch ID: CVF-NCR-R1-INTEGRATED-HTML-JOB-BROWSER-20261018
-reviewBaseHead: 32414c311e92a7f087259b805c43b38719336969
+reviewBaseHead: 76bdd76ede2ea34a537a6988c8a5461693c4a119
 dispatchWorkOrder: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_2026-10-18.md`
 independentProbeDisposition: PASS_INDEPENDENT_PROBE
 rawMemoryReleased=false
@@ -55,7 +55,8 @@ probeExecutorActor: NCR_R1_ROOT_LOCAL_REVIEWER
 workerInvocationId: ncr-r1-integrated-html-job-browser-worker-20261018
 probeInvocationId: ncr-r1-root-auth-join-and-readonly-completion-20261018
 workerOracleSha256: 9cfc0f6ee390b5168bff45afdf21a9e1dfe9bc8c715f83dadf80f1f031ad36af
-probeOracleSha256: 66d9d7e01462ab58234e3ab9f866ec2e35347a18caff4a3c59f155c1220d6b93
+probeOracleSha256: d4c0952c2a430c0a834bb7c1c3e297cd4b67f5d2e03599677b52d82ad67cd3c4
+probeCodeSha256: 66d9d7e01462ab58234e3ab9f866ec2e35347a18caff4a3c59f155c1220d6b93
 workerEvidenceRef: docs/reviews/evidence/ncr-r1-integrated-html-job-browser-worker-20261018.json
 probeEvidenceRef: .cvf/runtime/ncr-r1-integrated-html-job-browser-20261018/run-3FklC8/root-readonly-completion-proof.json
 probeCommandOrMethod: node scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs --probe-spec owned ignored Root spec; separately admitted read-only completion after diagnosed query-oracle error
@@ -85,15 +86,15 @@ reviewRoundCount: 1
 workerRepairTurnCount: 0
 newRootCauseCountThisRound: 2
 dependentFindingCountThisRound: 4
-elapsedReviewMinutes: 20
+elapsedReviewMinutes: 32
 providerCallCount: 0
 tokenOrQuotaUsage: NOT_AVAILABLE_WITH_REASON: native usage meter unavailable; no zero model-cost claim
-materialCommitCount: 1
-continuityCommitCount: 1
+materialCommitCount: 2
+continuityCommitCount: 2
 valueDelta: actual current-source browser composition plus distinct identity/session oracle; no product source change
 stopDisposition: COMPLETE_REVIEW
 preRepairAuditDisposition: COMPLETE_BEFORE_FIRST_REPAIR
-commitPlanDisposition: EXCEPTION_WITH_REASON: one same-mode Root marker correction committed separately after shared-worktree gate conflict; then one exact9 material and one exact7 current6/roadmap continuity; dispatch correction commits and original outcomes retained
+commitPlanDisposition: EXCEPTION_WITH_REASON: original material9/current7, separate Root handoff repair1, corrective review-digest material1 and separate current6 sync; all original commits/refusals retained; no source/runtime replay
 latencyDisposition: LATENCY_BUDGET_EXCEEDED_WITH_REASON: Root metadata/ledger isolation and diagnosed query-oracle read-only completion exceeded10min; no broad suite replay
 avoidableDelayClass: MULTIPLE_AVOIDABLE_DELAYS
 
@@ -106,18 +107,18 @@ avoidableDelayClass: MULTIPLE_AVOIDABLE_DELAYS
 | Session or invocation | ncr-r1-integrated-html-job-browser-local-completion-20261018 |
 | Working directory | repository root |
 | Command or tool surface | consumed worker evidence; distinct Root probe/read-only completion; metadata conversion and normal gates |
-| Target paths | `scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs`; `scripts/test_cvf_ncr_r1_integrated_html_job_browser.cjs`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-integrated-html-job-browser.spec.ts`; `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-r1-integrated-html-job-browser-worker-20261018.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-r1-integrated-html-job-browser-test.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md` |
+| Target paths | `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md` |
 | Allowed scope source | fresh Local synthetic pair and standing reviewer/continuity authority |
-| Before status evidence | Root marker correction 32414c311e92a7f087259b805c43b38719336969; worker8 sealed; original blocked return preserved |
-| After status evidence | worker8 plus Local review1, exact9; no product mutation or source successor |
+| Before status evidence | Original browser material8ab06322b/current7 and dedicated head sync 76bdd76ede2ea34a537a6988c8a5461693c4a119; original failed receipt retained |
+| After status evidence | Exact1 proof-reference digest correction; executed proof/source/effect counts unchanged |
 | Diff evidence | git diff --name-status; git diff --check; raw-byte exact9 audit |
 | Approval boundary | synthetic loopback only; all provider/real-data/production/public/deploy OFF |
 | Claim boundary | bounded mechanical proof with original failures; no whole-R1 exit |
 | Agent type | INTERNAL_AGENT |
 | Invocation ID | ncr-r1-integrated-html-job-browser-local-completion-20261018 |
-| Expected manifest | `scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs`; `scripts/test_cvf_ncr_r1_integrated_html_job_browser.cjs`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-integrated-html-job-browser.spec.ts`; `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-r1-integrated-html-job-browser-worker-20261018.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-r1-integrated-html-job-browser-test.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md` |
-| Actual changed set | `scripts/run_cvf_ncr_r1_integrated_html_job_browser.cjs`; `scripts/test_cvf_ncr_r1_integrated_html_job_browser.cjs`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-r1-integrated-html-job-browser.spec.ts`; `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-r1-integrated-html-job-browser-worker-20261018.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-r1-integrated-html-job-browser-test.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`; `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md` |
-| Manifest delta | MATCH exact9 |
+| Expected manifest | `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md` |
+| Actual changed set | `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md` |
+| Manifest delta | MATCH exact1 corrective review metadata; original browser material9 unchanged except this review binding |
 | Deletion or rename disposition | none; exact8 temporary custody restored byte-identically before conversion |
 
 ## Machine Closure Package
@@ -261,3 +262,9 @@ Returned38; truncated=false. Defect IDs: ADIF-0019, ADIF-0020, ADIF-0021, ADIF-0
 ## Claim Boundary
 
 Current-source synthetic UI/HTTP/file composition only. Same-person review leaves original draft provenance unchanged. Original Root overall FAIL retained; read-only completion supports joined controls only. No provider/live, AI governance efficacy, real data, production, public/deploy, four-eyes, remote cancellation, billing, durable whole-job or whole-R1 exit claim.
+
+## Post-Material Receipt Binding Repair
+
+The original material9 at8ab06322b and metadata7 atc30101493 passed normal91. Automatic pre-closure receipt failed GC-020 because metadata7 included roadmap, and failed the probe digest binding because probeOracleSha256 named code while probeEvidenceRef named result JSON. Original safety marker SHA256 4078abec951b6626d599a3f093ffded8bcc73f6d94a3e6105df12bf3aa7f82b7 is retained in `.cvf/runtime/mfrp-p4-shadow-canary/adjudications/ncr-browser-receipt-generation-repair-1-20261018.json`; exact-marker removal admitted metadata repair only. Dedicated handoff sync 76bdd76ede2ea34a537a6988c8a5461693c4a119 passed normal91; actual P4 RETRY_REJECTED_CURRENT_GATE is retained, with no manual collector or new proof run.
+
+This exact1 review correction binds the unchanged result JSON digest; code digest is a separate field. Existing worker/Root proof, source11, original failures and counters are untouched. The corrective material inspection base is 76bdd76ede2ea34a537a6988c8a5461693c4a119; original implementation material/worker base remain as stated above. Current6 follows separately to refresh this review hash and actual corrective material SHA. The original historical9 receipt failure is not relabeled PASS; final correction/current6 receipts are recorded in the owned finality ledger. No whole-R1 or P4-success promotion.
