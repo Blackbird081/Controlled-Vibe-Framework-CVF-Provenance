@@ -31,22 +31,22 @@ artifact.
 | Prior handoff (archive-qualified) | `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V62_2026-09-17.md` |
 | Latest front-door archive | `CVF_SESSION/handoffs/archive/CVF_SESSION_MEMORY_COMPACTION_ARCHIVE_2026-08-11.md` |
 | Current authority evidence | `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json` `currentAuthority` |
-| Parent maintenance | R1F accepted; R2C conditional fresh cap1 dispatch, actual outcome pending; parent unchanged |
+| Parent maintenance | Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded; R2C paired actor spent; gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged; no automatic successor |
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=cvf_ncr_html_be_r2c_runtime_dispatched; active handoff=AGENT_HANDOFF_V63_2026-09-18.md; next allowed move=conditional R2C paired cap1 after committed bound release; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=CONTINUITY; decision owner=LOCAL; parked checkpoint=provider/real-data/deletion/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_html_r2c_current_source_pair_accepted_bounded`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN bounded paired review only; no automatic successor; role=INTERNAL_AGENT Local reviewer/closer/steward; phase=MATERIAL; decision owner=LOCAL; parked checkpoint=successor3/retry/provider/deletion/public/deploy.
 
 ## Current Mode
 
-Current mode marker: cvf_ncr_html_be_r2c_runtime_dispatched
-Current mode: cvf_ncr_html_be_r2c_runtime_dispatched; previous mode marker: cvf_ncr_html_r1f_current_source_cap2_accepted_bounded
+Current mode marker: `cvf_ncr_html_r2c_current_source_pair_accepted_bounded`
+Current mode: `cvf_ncr_html_r2c_current_source_pair_accepted_bounded`; previous mode marker: `cvf_ncr_html_r2c_runtime_documentary_repair`
 
 ## Next Allowed Move
 
-Mode: cvf_ncr_html_be_r2c_runtime_dispatched
+Mode: `cvf_ncr_html_r2c_current_source_pair_accepted_bounded`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE; BATCH_ID=CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018. Under docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md and docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md, release eligible distinct /root/r2c_execute only after committed exact9/6, bound pre-dispatch PASS, reviewed initial external pins/control envelope and clean source. One fresh ordinal2 LOCAL_REVIEWER cap1 runId ncr-be-local-20261018-r2c, exactly two programs under one authority: program1 actual9/26 then Root independent PURE10 barrier/stage2 freeze before one original D.execute v1 program2. No stage2 after failed/ambiguous program1, retry0, provider0, stageDeletion0; work900/cleanup120, starts56/8, readiness4/6/2. Preparation 2026-10-18T00:50:14.167024+00:00, latest launch 2026-10-18T02:12:00+00:00, worker hard 2026-10-18T02:30:00+00:00, Local hard 2026-10-18T03:00:00+00:00; old R2B clocks/custody/grants spent. R1F material862957c7930d79ba01b7241f0ccf6caf29a8b8df/continuityd08f88760761738efe588572e97f1b294bef5a5f accepted bounded; source18/Q05 proof reused, new cap1 control must be actual. Worker exact2/no commit; Root separate PURE11 and exact13/6 closure after actual terminal. Parentgen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged, never successor3. R1/R2partial,R3/R4open,R5/R6deferred; provider/real-data/deletion/public/deploy parked. Actual R2C material anchor f7cfe173c518e95e395cc741054f737189e24c6e.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN; BATCH_ID=CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018. Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Plan only a separately admitted future stage decision; no automatic effect or successor3. S14/Q05/R1F accepted bounded sources unchanged; historical R1E BE-R01 and R2B BE-R02 spent blocked remain immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged.
 
 ## Parked Checkpoints
 

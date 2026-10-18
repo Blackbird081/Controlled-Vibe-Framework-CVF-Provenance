@@ -1,0 +1,328 @@
+{
+  "schemaVersion": "cvf.ncrHtmlBER2cWorkerReturnEvidence@1.0.0",
+  "role": "INTERNAL_AGENT",
+  "principal": "/root/r2c_execute",
+  "effectActor": {
+    "class": "LOCAL_REVIEWER",
+    "cap": 1,
+    "ordinal": 2,
+    "distinctFrom": [
+      "Local Root",
+      "R1F executor"
+    ]
+  },
+  "phase": "worker-return",
+  "decisionOwner": "LOCAL_ROOT_REVIEWER_CLOSER",
+  "invocationId": "ncr-be-r2c-runtime-20261018",
+  "executionBaseHead": "2afbaf3b32e63ff75c3f5a83932ab27cd38e972c",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "authority": {
+    "baseline": {
+      "path": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
+      "sha256": "a59a48830d14962ace3763f0178d16be93c4fcc47365c9ee5019ca27a3f623e8"
+    },
+    "workOrder": {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
+      "sha256": "a8b48535fb2e8be1c88085bf4fc0109654d24f49d7e1dcf3ddcdd071a600a855"
+    },
+    "initialPairedEnvelope": {
+      "path": ".cvf/runtime/ncr-be-r2c-runtime-20261018/paired-invocation-envelope.json",
+      "sha256": "b5bf5630b152b2b8c7e2e74eb0f6f311ce4cd694022dbfdd3f633fc66a569988"
+    },
+    "controlPins": {
+      "path": ".cvf/runtime/ncr-be-r2c-runtime-20261018/control-pins.json",
+      "sha256": "c2978633535eb6eb9249da7c404cd3d2655fb678d40ee29a8bb4e12904422bbc"
+    },
+    "stage2Envelope": {
+      "path": ".cvf/runtime/ncr-be-r2c-runtime-20261018/stage2-invocation-envelope.json",
+      "sha256": "a6cab80426b386b4da088b14f5803e9f371ffe40ea073527560c1765aa7c8ad5"
+    },
+    "stage2Barrier": {
+      "path": ".cvf/runtime/ncr-be-r2c-runtime-20261018/stage2-barrier-receipt.json",
+      "sha256": "6eee06a9c785fc848e650b1a5695cfad2ebb5e1ceff3f18c8c2f5aea800281f7"
+    },
+    "stage2Admission": {
+      "path": ".cvf/runtime/ncr-be-r2c-runtime-20261018/worker-admission.json",
+      "sha256": "99e83b043f078fff197c9cbb6cdba763cbcdb0645ea40366cf579e235ee4c7a3"
+    },
+    "stage2Grant": {
+      "sha256": "9e3f1186369e2c78589d259df832b59435fbc0d8f70bb819f0f1542b294c2475"
+    },
+    "input": {
+      "path": ".cvf/runtime/ncr-be-r2c-runtime-20261018/inputs-local.json",
+      "sha256": "fbed322ea248c6ec2701bca5ad96004010abd6b1a695403695bb76c7713c3f97"
+    },
+    "stage2Freeze": {
+      "path": ".cvf/runtime/ncr-be-r2c-runtime-20261018/stage2-freeze-result.json",
+      "sha256": "a3e3d172e898f61b71a52de3a510f1371928cda1cabca73e875aabfadd6c4875"
+    }
+  },
+  "procedure": {
+    "disposition": "PARTIAL_WITH_REASON",
+    "preImplementation": {
+      "outerAttempts": [
+        {
+          "exitCode": 2,
+          "stdoutBytes": 0,
+          "stderrBytes": 294,
+          "stderrSha256": "a264760e72efc368d7632b7e6b5bf24304b2b66e1287f97a15404af04a741e31",
+          "note": "malformed Start-Process quoting; gate body not entered"
+        },
+        {
+          "exitCode": 2,
+          "stdoutBytes": 0,
+          "stderrBytes": 294,
+          "stderrSha256": "a264760e72efc368d7632b7e6b5bf24304b2b66e1287f97a15404af04a741e31",
+          "note": "malformed Start-Process quoting; gate body not entered"
+        }
+      ],
+      "unboundPreparation": {
+        "exitCode": 0,
+        "checks": "86/86",
+        "activeWorkOrderBound": false,
+        "argvSidecarSha256": "b1dfed03ce1bed12b00ff43c6f05a252c6b6066b5e0e8124ce5897aa09d7457d",
+        "stdoutBytes": 4700,
+        "stdoutSha256": "e084391aae44219046e1848809fa907ac01c09b8c3ec55b97c03c25943dbb25c",
+        "stderrBytes": 0
+      },
+      "compensatingRevalidation": {
+        "owner": "Local Root",
+        "exitCode": 0,
+        "occurredAfterProgram1BeforeProductImport": true,
+        "path": ".cvf/runtime/ncr-r2c-root-20261018/bound-barrier-revalidation.json",
+        "sha256": "1ca4ca10b6ccbe9a49bdb5134f0ce4e6d83c84c3ba240ad3574cb15bf554822a",
+        "stdoutSha256": "e80994600047a592d194e35f10823dfe14d10341bab1b5aa4e7c247fe5aadc1e",
+        "retroactive": false
+      }
+    },
+    "dateCoercion": {
+      "path": ".cvf/runtime/ncr-be-r2c-runtime-20261018/return-preparation/stage2-preflight-date-coercion-error.record.json",
+      "sha256": "c71253a4267a647c21be904673362d533e24edc0ca7111efdfb2b45bf24a5fc8",
+      "kind": "RETROSPECTIVE_METADATA_NOT_ORIGINAL_RAW",
+      "originalRawPath": null,
+      "originalRawSha256": null
+    }
+  },
+  "program1": {
+    "result": "PASS",
+    "cases": 9,
+    "inertChildren": 26,
+    "fakeCalls": 0,
+    "runtimeEffects": 0,
+    "argvSha256": "d1ed2a9765b562621cbd0dfe4d5912b866aa1d30fa0f26682cea47e01e116697",
+    "stdout": {
+      "bytes": 2474,
+      "sha256": "181137a24c3cee2006fe354ae36f38973ee2f924731360fd696ae570c435f374"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "stage2": {
+    "result": "PASS",
+    "runId": "ncr-be-local-20261018-r2c",
+    "processSession": 58200,
+    "exitCode": 0,
+    "workerElapsedSeconds": 72.687,
+    "outerElapsedSeconds": 72.904,
+    "argvSha256": "0612f7852d1ea16e0fbd59d51b6bc184c253dcb571d06f84cc86d9dc74d301bc",
+    "stdout": {
+      "bytes": 118,
+      "sha256": "df73416008636670dfff3e08600385f3cd70fb59bcb64e10591a1a35ae3d2204"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "journey": {
+      "exports": 1,
+      "evaluations": 1,
+      "downloads": 1,
+      "associatedSqlEvents": 1,
+      "workItems": 19,
+      "cleanupItems": 5,
+      "attempts": 24,
+      "uncertainty": 0,
+      "providerStarts": 0,
+      "stageDeletions": 0,
+      "readinessEngineStarts": 4,
+      "routeStarts": 2,
+      "webStarts": 1
+    },
+    "retryablePrerequisites": [
+      {
+        "ids": [
+          11,
+          12,
+          13
+        ],
+        "kind": "engine GET",
+        "outcome": "NONZERO_EXIT"
+      },
+      {
+        "ids": [
+          18,
+          19
+        ],
+        "kind": "route compile",
+        "outcome": "HTTPError"
+      }
+    ],
+    "terminal": {
+      "path": "D:/CVF_NCR_RUNTIME/ncr-be-local-20261018-r2c/custody/terminal-evidence.json",
+      "bytes": 9811,
+      "sha256": "233e94a27b08b6f23da29a8cc11c200e79e1e7e19ddcc5679afecb8f440ddbd2",
+      "accepted": true,
+      "separateAck": "MATCH",
+      "requiredAbsenceQueries": [
+        "process: ABSENT",
+        "container: ABSENT",
+        "descendant: ABSENT",
+        "listener: ABSENT"
+      ],
+      "child": {
+        "status": "SUCCESS",
+        "claimMatch": true,
+        "bytes": 7820,
+        "sha256": "de922ba8879934ddcc70e4b5929b78fb1645b9b01a9f9b88816f6fc2d0ca83f3"
+      },
+      "browserTeardown": "OK"
+    }
+  },
+  "reviewerOwned": {
+    "pure10": {
+      "reportedResult": "PASS",
+      "checks": "10/10",
+      "bodyReadByWorker": false
+    },
+    "pure11": {
+      "reportedResult": "PASS",
+      "checks": "11/11",
+      "bodyReadByWorker": false
+    },
+    "independentProbe": "REVIEWER_OWNED"
+  },
+  "parentProjection": {
+    "schemaVersion": "cvf.semanticConvergenceControl.v1",
+    "problemKey": "ncr-html-configured-receipt-browser-composition",
+    "chainMode": "SUCCESSOR",
+    "chainOrdinal": 2,
+    "predecessor": {
+      "path": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_RETURN_2026-10-14.md",
+      "sha256": "ec8a0418af0db8aacde0df54b73a583758dbf33959556c965c328b4604d85254"
+    },
+    "blockerDelta": {
+      "prior": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION",
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "resolved": [
+        "HCR-CONTROL-EGRESS",
+        "HCR-CONTROL-ADMISSION"
+      ],
+      "retained": [
+        "HCR-CONTROL-LEGACY-CLEANUP"
+      ],
+      "new": [
+        "HCR-CONTROL-FRESH-PROFILE-BINDING"
+      ],
+      "reopened": [],
+      "current": [
+        "HCR-CONTROL-LEGACY-CLEANUP",
+        "HCR-CONTROL-FRESH-PROFILE-BINDING"
+      ]
+    },
+    "resolutionEvidence": {
+      "HCR-CONTROL-EGRESS": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+        "locator": "HCR-CONTROL-EGRESS: RESOLVED_BOUNDED"
+      },
+      "HCR-CONTROL-ADMISSION": {
+        "evidenceClass": "ACCEPTED_REVIEW",
+        "evidencePath": "docs/reviews/CVF_NCR_HTML_CONFIGURED_RECEIPT_CONDITIONAL_COMPLETION_2026-10-14.md",
+        "sha256": "36c9b8513fdd614d9e798b4ef88960f68887fa43ec43b67811d6560d736805bd",
+        "locator": "HCR-CONTROL-ADMISSION: RESOLVED_BOUNDED"
+      }
+    },
+    "counters": {
+      "partialReadyClosures": 2,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 2,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "claims": [
+      {
+        "claimId": "NCR-HTML-INTEGRATED-ROOT-DESIGN",
+        "claimClass": "DOCUMENTATION_ONLY",
+        "proofClass": "PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+        "evidenceRef": "docs/reviews/CVF_NCR_HTML_INTEGRATED_ROOT_CONTRACT_2026-10-14.md"
+      }
+    ],
+    "requiredDisposition": "ROOT_CONTRACT_REQUIRED",
+    "successorScope": "INTEGRATED_ROOT_CONTRACT"
+  },
+  "returnArtifacts": {
+    "workerReturn": {
+      "path": "docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md",
+      "sha256": "fea4349ec37ed27a0bb348a8f09d242f6de4a7bfa7e2f98aff0ea17c03054420",
+      "bytes": 38459
+    },
+    "workerEvidence": {
+      "path": "docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json",
+      "selfHashExcluded": true
+    }
+  },
+  "fastGate": {
+    "status": "FIRST_REQUIRED_RUN_FAILED_ROOT_DOCUMENTARY_REPAIR_PENDING",
+    "command": [
+      "python",
+      "governance/compat/run_worker_return_fast_gate.py",
+      "--active-work-order",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md"
+    ],
+    "receipt": ".cvf/runtime/ncr-be-r2c-runtime-20261018/return-preparation/worker-return-fast-gate.receipt.json",
+    "rootRepairReceipt": ".cvf/runtime/ncr-be-r2c-runtime-20261018/root-documentary-full-gate-v2.json",
+    "firstRun": {
+      "receipt": ".cvf/runtime/ncr-be-r2c-runtime-20261018/return-preparation/worker-return-fast-gate.receipt.json",
+      "exitCode": 1,
+      "stdoutSha256": "b907f9b143f091f0efe82e11775ac71d2eead5f63f3d1226ae5bb2eef9e89f1f",
+      "originalExact2Unchanged": true
+    }
+  },
+  "privateOracleBoundary": "Root-private oracle source/configuration/output bodies were not read by the worker; reviewer result is reported only as metadata.",
+  "commit": "WORKER_MUST_NOT_COMMIT",
+  "documentaryDerivativeCustody": {
+    "originalWorkerReturnSha256": "89c003c74a769ec6ba69bbc67018af2611767f75eb1a4402c8d2f7dfb213cafd",
+    "originalWorkerReturnBytes": 34771,
+    "originalWorkerEvidenceSha256": "2c7ef897f6a784f6f411a6df9789be84f48a80a28c9e7807b6a3638e04325593",
+    "originalWorkerEvidenceBytes": 8834,
+    "originalFirstFastGateStdoutSha256": "b907f9b143f091f0efe82e11775ac71d2eead5f63f3d1226ae5bb2eef9e89f1f",
+    "originalEffectActor": "/root/r2c_execute",
+    "derivativeActor": "Local Root reviewer/closer",
+    "procedureDisposition": "PARTIAL_WITH_REASON",
+    "runtimeReplay": false,
+    "privateOracleRerun": false,
+    "documentaryChangedPaths": [
+      "docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md",
+      "docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json",
+      "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
+      "AGENT_HANDOFF_V63_2026-09-18.md",
+      "CVF_SESSION_MEMORY.md",
+      "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+      "CVF_SESSION/state/entries/nextAllowedMove.json",
+      "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+      "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+    ],
+    "rootSupplementalRequirement": "REQ-ROOT-DOCUMENTARY",
+    "originalExecutedWorkOrderSha256": "a8b48535fb2e8be1c88085bf4fc0109654d24f49d7e1dcf3ddcdd071a600a855"
+  },
+  "documentaryReviewAuthority": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
+    "sha256": "6832d2ced1c0d005d243de3a0ba22b7220723bcf9bfaf06b5072ecb083aedea3",
+    "scope": "Root-only documentary metadata supplement; original executed authority and budgets unchanged"
+  }
+}

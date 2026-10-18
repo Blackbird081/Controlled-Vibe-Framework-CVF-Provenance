@@ -19,12 +19,12 @@
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
     "baselinePath": "docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
-    "baselineSha256": "a59a48830d14962ace3763f0178d16be93c4fcc47365c9ee5019ca27a3f623e8",
+    "baselineSha256": "0f9de80c7aa2d3f6ed02bd15153623c3168ea42818664397c1f5642e85864236",
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md",
-    "workOrderSha256": "a8b48535fb2e8be1c88085bf4fc0109654d24f49d7e1dcf3ddcdd071a600a855"
+    "workOrderSha256": "9bd3158e7fd556160b17e320fe489e01697fa656f6950c93c44bfbf0a234b6fd"
   },
-  "currentAuthoritySyncReason": "R2C fresh paired cap1 conditional continuity; accepted S14/Q05/R1F immutable",
-  "currentMode": "cvf_ncr_html_be_r2c_runtime_dispatched",
+  "currentAuthoritySyncReason": "R2C material paired first result; Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded",
+  "currentMode": "cvf_ncr_html_r2c_current_source_pair_accepted_bounded",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_html_r1f_current_source_cap2_accepted_bounded",
+  "previousMode": "cvf_ncr_html_r2c_runtime_documentary_repair",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [

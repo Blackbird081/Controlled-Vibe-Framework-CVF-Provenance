@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: REVIEWER_ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS
 Date: 2026-10-18
 Batch ID: CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018
 Inspection base: 9cf7c8fbe8fd6e2ecf4c20494ebeaa459320fbe4
@@ -179,7 +179,7 @@ No root Local completion review, source file or generated state is in the worker
 The `cvf.workOrderAcceptanceLedger@1.0.0` exact two-artifact shape applies; both artifacts belong to every mandatory row. Worker `COMPLETE_PENDING_REVIEW` requires all mandatory PASS and proof references; otherwise BLOCKED_WITH_REASON. This prospective ledger makes no outcome claim:
 
 ```acceptance-ledger-json
-{"schemaVersion":"cvf.workOrderAcceptanceLedger@1.0.0","requirements":[{"requirementId":"REQ-RUNTIME","mandatory":true,"expectedArtifacts":["docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md","docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json"],"requiredProofIds":["PROOF-ADMISSION","PROOF-JOURNEY"]},{"requirementId":"REQ-TERMINAL","mandatory":true,"expectedArtifacts":["docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md","docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json"],"requiredProofIds":["PROOF-TERMINAL"]},{"requirementId":"REQ-RETURN","mandatory":true,"expectedArtifacts":["docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md","docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json"],"requiredProofIds":["PROOF-RETURN"]}],"proofCatalog":[{"proofId":"PROOF-ADMISSION","kind":"COMMAND","locator":"new frozen current-source pins/admission/inputs/controls and before-effect release"},{"proofId":"PROOF-JOURNEY","kind":"COMMAND","locator":"one actual cap1 canonical v1 export/evaluate/recipient/download/SQLite association"},{"proofId":"PROOF-TERMINAL","kind":"COMMAND","locator":"raw terminal hash/size separate ACK four positive ABSENT child confirmed browser launch/teardown"},{"proofId":"PROOF-RETURN","kind":"COMMAND","locator":"exact2 final full worker-return fast gate and no-commit result"}]}
+{"schemaVersion":"cvf.workOrderAcceptanceLedger@1.0.0","requirements":[{"requirementId":"REQ-RUNTIME","mandatory":true,"expectedArtifacts":["docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md","docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json"],"requiredProofIds":["PROOF-ADMISSION","PROOF-JOURNEY"]},{"requirementId":"REQ-TERMINAL","mandatory":true,"expectedArtifacts":["docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md","docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json"],"requiredProofIds":["PROOF-TERMINAL"]},{"requirementId":"REQ-RETURN","mandatory":true,"expectedArtifacts":["docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md","docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json"],"requiredProofIds":["PROOF-RETURN"]},{"requirementId":"REQ-ROOT-DOCUMENTARY","mandatory":true,"expectedArtifacts":["docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md","AGENT_HANDOFF_V63_2026-09-18.md","CVF_SESSION_MEMORY.md","CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json","CVF_SESSION/state/entries/nextAllowedMove.json","CVF_SESSION/ACTIVE_SESSION_STATE.json","CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"],"requiredProofIds":["PROOF-ROOT-DOCUMENTARY"]}],"proofCatalog":[{"proofId":"PROOF-ADMISSION","kind":"COMMAND","locator":"new frozen current-source pins/admission/inputs/controls and before-effect release"},{"proofId":"PROOF-JOURNEY","kind":"COMMAND","locator":"one actual cap1 canonical v1 export/evaluate/recipient/download/SQLite association"},{"proofId":"PROOF-TERMINAL","kind":"COMMAND","locator":"raw terminal hash/size separate ACK four positive ABSENT child confirmed browser launch/teardown"},{"proofId":"PROOF-RETURN","kind":"COMMAND","locator":"exact2 final full worker-return fast gate and no-commit result"},{"proofId":"PROOF-ROOT-DOCUMENTARY","kind":"COMMAND","locator":"Root-owned current authority/continuity documentary addendum only; exact nine-path full active-work-order metadata gate; original executed W bytes retained; effects0"}]}
 ```
 
 ## Acceptance Receipt Assertion Matrix
@@ -456,10 +456,13 @@ Fresh Root file-only preparation .cvf/runtime/ncr-be-r2c-runtime-20261018/file-p
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: one conditional R2C B/W, roadmap and source/generated continuity must align in the same exact9 material; actual-material-SHA exact6 follows separately.
+Atomicity reason: one spent R2C paired actor, actual first-result disposition, closed authority and session projection align in material; following actual-material-SHA continuity is exact6.
 
 Exact changed manifest:
-
+- `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md`
+- `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json`
+- `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`
+- `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
@@ -469,8 +472,7 @@ Exact changed manifest:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-
-Rollback boundary: listed metadata only; accepted source18 and old actors remain immutable.
+Rollback boundary: exact listed paths, no runtime replay or deletion.
 
 ## Source Verification Block
 
@@ -491,19 +493,23 @@ Fresh Root file-only preparation: .cvf/runtime/ncr-be-r2c-runtime-20261018/file-
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: exact9 R2C authority/source-continuity metadata paths only; S14/Q05/R1F proof and source18 unchanged.
+Authorized guard-maintenance scope: close fresh R2C paired first result, roadmap and current6 only.
 Protected paths:
-- docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md
-- docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md
-- docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md
-- AGENT_HANDOFF_V63_2026-09-18.md
-- CVF_SESSION_MEMORY.md
-- CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json
-- CVF_SESSION/state/entries/nextAllowedMove.json
-- CVF_SESSION/ACTIVE_SESSION_STATE.json
-- CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json
-Operator authorization: standing CVF-NCR continuation and Local conditional finite cap1 technical admission.
-Rollback boundary: listed metadata only; old actor/parent and private oracles unchanged.
+- `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md`
+- `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json`
+- `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`
+- `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`
+- `docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md`
+- `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md`
+- `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
+- `AGENT_HANDOFF_V63_2026-09-18.md`
+- `CVF_SESSION_MEMORY.md`
+- `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`
+- `CVF_SESSION/state/entries/nextAllowedMove.json`
+- `CVF_SESSION/ACTIVE_SESSION_STATE.json`
+- `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
+Operator authorization: R2C current work order and standing Local first-result closure.
+Rollback boundary: exact manifest; source18/S14/Q05/R1F/R1E/R02 and original custody immutable. gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred unchanged.
 
 ## ADIF Defect Registry Disclosure
 
@@ -534,24 +540,24 @@ Resolver query: taskClass=`Work-order authoring / dispatch`, role=`dispatcher`, 
 
 | Field | Evidence |
 |---|---|
-| Actor | INTERNAL_AGENT Local root dispatcher/reviewer |
+| Actor | LOCAL INTERNAL_AGENT reviewer/closer/steward |
 | Provider or surface | private shared workspace |
-| Session or invocation | CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018:material |
-| Working directory | D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF |
-| Command or tool surface | accepted R1F finality; fresh R2C file preparation/scaffold/ADIF; conditional authority and generated continuity |
-| Target paths | docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md; docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
-| Allowed scope source | operator explicit continuation; existing finite Local technical disposition |
-| Before status evidence | HEAD 9cf7c8fbe8fd6e2ecf4c20494ebeaa459320fbe4; clean worktree/stage; S14/Q05/R1F accepted immutable; R2C zero programs |
-| After status evidence | exact9 conditional metadata; R2C actual outcome pending |
-| Diff evidence | changed set equals exact manifest |
-| Approval boundary | one fresh paired cap1 actor after committed bound release and initial external freeze |
-| Claim boundary | conditional synthetic mechanical runtime only; no cap1 outcome/provider/public/deploy claim |
+| Session or invocation | ncr-be-r2c-r02-material-20261018 |
+| Working directory | repository root |
+| Command or tool surface | consume frozen worker exact2 and distinct Root PURE10/PURE11; metadata closure only |
+| Target paths | `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json`; `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Allowed scope source | R2C paired cap1 first-result and standing Local closure/steward authority |
+| Before status evidence | actual clean worktree at committed dispatch HEAD 2afbaf3b32e63ff75c3f5a83932ab27cd38e972c; frozen exact2 worker return pending at Local review |
+| After status evidence | Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded; R2C paired grant spent |
+| Diff evidence | exact13 material manifest |
+| Approval boundary | metadata only; no effect retry, successor actor, provider or deletion |
+| Claim boundary | bounded R1F cap2 plus R2C cap1 mechanical pair; no stage-exit or AI governance efficacy |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | CVF-NCR-HTML-B-E-R2C-RUNTIME-20261018:material |
-| Expected manifest | docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md; docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
-| Actual changed set | docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md; docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md; docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md; AGENT_HANDOFF_V63_2026-09-18.md; CVF_SESSION_MEMORY.md; CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json; CVF_SESSION/state/entries/nextAllowedMove.json; CVF_SESSION/ACTIVE_SESSION_STATE.json; CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json |
-| Manifest delta | MATCH exact9 |
-| Deletion or rename disposition | none; R1F and old R2B proof/custody retained |
+| Invocation ID | ncr-be-r2c-r02-material-20261018 |
+| Expected manifest | `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json`; `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Actual changed set | `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-worker-20261018.json`; `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`; `docs/baselines/CVF_GC018_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_B_E_R2C_RUNTIME_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
+| Manifest delta | MATCH exact13 |
+| Deletion or rename disposition | none; preserve actual custody |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -673,3 +679,11 @@ Original normal exact9/6 pair 8f305e4111c30f52b42ad452fd5d2a1298dde33d / d807577
 ## Root ADIF Range Confirmation
 
 The prior corrective pair ab6d7ea5d73fd590f6417a4ddf17f110a1aca370 / 9cf7c8fbe8fd6e2ecf4c20494ebeaa459320fbe4 is retained unreleased:83/84 range guards passed; ADIF disclosure refused plain query values. Root corrected the existing backtick literal only; the actual fresh27-ID resolver receipt and dispositions are unchanged. This current corrective exact9/6 replaces that release candidate; no effects or deadline reset.
+
+## Root Post-Return Documentary Addendum - 2026-10-18
+
+Original executed work-order raw SHA256: `a8b48535fb2e8be1c88085bf4fc0109654d24f49d7e1dcf3ddcdd071a600a855`; immutable HEAD preimage: `.cvf/runtime/ncr-r2c-root-20261018/before-documentary-addendum/0.head.bytes`. Original three worker requirements remain unchanged. The first worker full gate FAILED and remains preserved. This supplemental REQ-ROOT-DOCUMENTARY belongs only to Local Root correction of current authority/session metadata after worker lane release; it claims the seven listed Root files so Git can reconcile all nine current documentary paths. The first Root correction gate failed on this ownership join and a missing diff literal; its exact bytes/receipt remain preserved. This addendum grants zero effects, zero runtime/control/oracle retries, no replenished clock/start/provider budget, and no successor3. Original execution/preparation sections above describe the earlier frozen grant; they do not authorize a new launch. Final closure remains exact13 material and exact6 continuity.
+
+## Local First-Result Grant Disposition
+
+Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. One R2C paired grant spent; original control/runtime programs, terminal and first outcomes preserved. No retry, successor3, provider, deletion or release repin. docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md; docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json.
