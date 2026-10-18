@@ -283,3 +283,7 @@ The checker fails when the aggregate drifts from the per-entry sources.
 ## NCR Request Cancellation Bounded Evidence
 
 Eight named new source/test paths; finite worker16 evidence and Root six cancellation assertions. Completion `docs/reviews/CVF_NCR_REQUEST_CANCELLATION_COMPLETION_2026-10-14.md`. Source-wide processing NOT_STARTED; no extra corpus verdict.
+
+## NCR HTML Draft Recovery Browser Registration - 2026-10-18
+
+The new synthetic browser spec/config are registered at `docs/corpus-intelligence/registry/entries/cvf-ncr-html-draft-recovery-browser-test.json`; status NOT_STARTED, no semantic scan or full-corpus claim. Local bounded joined proof and original failed tests: `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md`. Source entry and generated machine registry are synchronized in the same material batch.

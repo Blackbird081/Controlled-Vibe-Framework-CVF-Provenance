@@ -1,0 +1,253 @@
+{
+  "schemaVersion": "cvf.ncrHtmlDraftRecoveryBrowserWorkerEvidence.v1",
+  "batchId": "CVF-NCR-HTML-DRAFT-RECOVERY-BROWSER-20261018",
+  "executionBaseHead": "cbc1909fd7426305ae48d7bf328fb7ef49f33b43",
+  "workerStatus": "BLOCKED_WITH_REASON",
+  "role": "INTERNAL_AGENT",
+  "phase": "IMPLEMENTATION",
+  "decisionOwner": "LOCAL",
+  "preImplementation": {
+    "status": "PASS",
+    "commands": 88,
+    "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json"
+  },
+  "unitProof": {
+    "profileAndRoute": {
+      "passed": 6,
+      "total": 6,
+      "testFiles": 2
+    },
+    "isolation": {
+      "passedAssertions": 16,
+      "childPreloadActuallyBlockedEnvRead": true,
+      "childPreloadActuallyBlockedExternalConnect": true
+    },
+    "typescript": {
+      "first": "FAIL_TEST_ENV_TYPE",
+      "second": "PASS"
+    },
+    "scopedLint": "PASS"
+  },
+  "browserRuns": [
+    {
+      "ordinal": 1,
+      "root": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-trwu2g",
+      "result": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-trwu2g/result.json",
+      "status": "FAIL_PRE_BROWSER",
+      "durationMs": 56330,
+      "nextStartupHttpStatus": 200,
+      "originalFailure": "ISOLATION_FENCE_NOT_ACTIVE: runner treated one successfully blocked registry.npmjs.org attempt as failure",
+      "blockedExternalAttempts": 1,
+      "successfulExternalConnectionsObserved": 0,
+      "evaluateDispatchAttempts": 0,
+      "teardown": {
+        "ownedPidTaskkillStatus": 0,
+        "portFree": true,
+        "transientExact": true
+      }
+    },
+    {
+      "ordinal": 2,
+      "root": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-Npjbgy",
+      "result": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-Npjbgy/result.json",
+      "status": "FAIL_PRE_BROWSER",
+      "durationMs": 121656,
+      "nextStartupHttpStatus": 200,
+      "postInitFence": "ACTIVE",
+      "originalFailure": "PLAYWRIGHT_EXIT_1: No tests found for absolute Windows spec argument",
+      "blockedExternalAttempts": 1,
+      "successfulExternalConnectionsObserved": 0,
+      "evaluateDispatchAttempts": 0,
+      "teardown": {
+        "ownedPidTaskkillStatus": 0,
+        "processGone": true,
+        "portFree": true,
+        "transientExact": true
+      },
+      "outputBudget": {
+        "runBytes": 10933,
+        "buildBytes": 39143016,
+        "snapshotBytes": 113,
+        "snapshotFiles": 1,
+        "withinCaps": true
+      },
+      "sourcePinDrift": 0
+    }
+  ],
+  "discoveryAfterRepair": {
+    "workerSpec": "PASS_1_TEST_READ_ONLY_LIST",
+    "localProbeSpec": "PASS_1_TEST_READ_ONLY_LIST",
+    "runnerInterface": "node scripts/run_cvf_ncr_html_draft_recovery_browser.cjs --probe-spec .cvf/runtime/ncr-html-draft-recovery-browser-20261018/root-independent.spec.ts"
+  },
+  "requirements": {
+    "REQ-PROFILE": "BLOCKED_BROWSER_NOT_EXECUTED; source and focused unit green",
+    "REQ-ISOLATION": "BLOCKED_BROWSER_NOT_EXECUTED; child fence, startup, owned teardown green",
+    "REQ-JOURNEY": "BLOCKED_BROWSER_NOT_EXECUTED",
+    "REQ-NOREPLAY": "BLOCKED_BROWSER_NOT_EXECUTED; evaluate attempts zero in startup",
+    "REQ-RETURN": "BLOCKED_OUT_OF_MANIFEST_LAST_RUN_DRIFT"
+  },
+  "currentTrackedDriftOutsideManifest": {
+    "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/.last-run.json",
+    "currentBytes": 45,
+    "currentSha256": "e22df5d0991eb28c09093b1e678b3fa8cd1fab48185d38e67cf79fb6e63ad5ea",
+    "headBytes": 45,
+    "headSha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+    "currentEvidence": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/last-run-current-before-root.json",
+    "headEvidence": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/last-run-head-preimage.json",
+    "workerRestoration": "NONE_OUTSIDE_EXACT2"
+  },
+  "browserBuildCount": 0,
+  "browserSaveCount": 0,
+  "rootIndependentProbeDisposition": "PENDING_REVIEWER_EXECUTION",
+  "claimBoundary": "Source and pre-browser isolation qualification only; no Chromium journey, recovery byte comparison, R1/R2 stage exit, governance efficacy, provider, production, or public claim.",
+  "exact12ActualPaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-html-draft-recovery-browser.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs",
+    "scripts/run_cvf_ncr_html_draft_recovery_browser.cjs",
+    "scripts/test_cvf_ncr_html_draft_recovery_browser.cjs",
+    "docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_WORKER_RETURN_2026-10-18.md",
+    "docs/reviews/evidence/ncr-html-draft-recovery-browser-worker-20261018.json"
+  ],
+  "final10ImplementationPins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts",
+      "bytes": 5533,
+      "sha256": "c5399e838b6c195423912f7ae33da4f352f94c66958c8aeccb29fe3bdeaf4d88"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts",
+      "bytes": 488,
+      "sha256": "2453278bb49e41b06330c17f320213e190851aadd05c9b9e33ba65a70471cfc9"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts",
+      "bytes": 4364,
+      "sha256": "656307499a07509fffbd72188a906a5c34d56a375093ed65ee6203459f4cc55d"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts",
+      "bytes": 1920,
+      "sha256": "dcb8cdd8a98f49f345b53c9ea9d824b11785f0a12854023b545cc34cdfe3a23b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.test.ts",
+      "bytes": 1693,
+      "sha256": "9954f950a09df37aadbe5dcdcb4644b2c7192578d9ec3a3210fda75ab84834a8"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-html-draft-recovery-browser.spec.ts",
+      "bytes": 9989,
+      "sha256": "a3b9701254ae190c07b829f30fe1379a3764ee53c589fa0fe767f31a7955967b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+      "bytes": 776,
+      "sha256": "d8deae5ada9687f242eece64cdcd3f916be51bff0575e8a251b018715f39a6a9"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs",
+      "bytes": 3356,
+      "sha256": "037e3ecda32cadd25d487207fceec23418bb2cbb4f6b287701bb7fdd3833e7db"
+    },
+    {
+      "path": "scripts/run_cvf_ncr_html_draft_recovery_browser.cjs",
+      "bytes": 14410,
+      "sha256": "b7e5cc833e03e3a79529234b4430835afd2c3363d94e3d284e1502f76ed4a500"
+    },
+    {
+      "path": "scripts/test_cvf_ncr_html_draft_recovery_browser.cjs",
+      "bytes": 3072,
+      "sha256": "b4e5a11c2ecab571e29c92280b3abe27f661b75d157e138fbefcf283b0513102"
+    }
+  ],
+  "commandCustody": {
+    "focusedUnitStarts": 8,
+    "focusedUnitCeiling": 4,
+    "unitCeilingDisposition": "EXCEEDED; original correction attempts retained in tool stream",
+    "typeStarts": 2,
+    "lintStarts": 1,
+    "browserRunnerStarts": 2,
+    "fullReturnGateAttempts": 3,
+    "rawUnitTypeLintLog": "NOT_RETAINED_ORIGINAL_TOOL_STREAM; no reconstructed log",
+    "commands": [
+      {
+        "argv": [
+          "node",
+          "node_modules/vitest/vitest.mjs",
+          "run",
+          "src/lib/server/html-draft-synthetic-profile.test.ts",
+          "src/app/api/artifacts/drafts/route.test.ts",
+          "--reporter=dot"
+        ],
+        "exit": 0,
+        "durationMs": 65030,
+        "rawLog": "NOT_RETAINED_TOOL_STREAM"
+      },
+      {
+        "argv": [
+          "node",
+          "scripts/test_cvf_ncr_html_draft_recovery_browser.cjs"
+        ],
+        "exit": 0,
+        "durationMs": null,
+        "rawLog": "NOT_RETAINED_TOOL_STREAM",
+        "assertions": 16
+      },
+      {
+        "argv": [
+          "node",
+          "node_modules/typescript/bin/tsc",
+          "--noEmit"
+        ],
+        "firstExit": 1,
+        "secondExit": 0,
+        "durationMs": null,
+        "rawLog": "NOT_RETAINED_TOOL_STREAM"
+      },
+      {
+        "argv": [
+          "node",
+          "node_modules/eslint/bin/eslint.js",
+          "src/lib/server/html-draft-recovery-api.ts",
+          "src/lib/server/html-draft-synthetic-profile.ts",
+          "src/lib/server/html-draft-synthetic-profile.test.ts",
+          "src/app/api/artifacts/drafts/route.ts",
+          "src/app/api/artifacts/drafts/route.test.ts",
+          "tests/e2e/ncr-html-draft-recovery-browser.spec.ts",
+          "playwright.config.ncr-recovery.ts"
+        ],
+        "exit": 0,
+        "durationMs": null,
+        "rawLog": "NOT_RETAINED_TOOL_STREAM"
+      }
+    ],
+    "browserArgvNote": "Run 1 started installed Next CLI; failed before Playwright. Run 2 used installed Next and Playwright binaries; manifest argv is repo-relative display, actual Playwright selector was absolute Windows path; exact original error in playwright.log.",
+    "browserOriginalLogs": [
+      {
+        "run": 1,
+        "manifest": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-trwu2g/manifest.json",
+        "result": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-trwu2g/result.json",
+        "nextLog": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-trwu2g/next.log"
+      },
+      {
+        "run": 2,
+        "manifest": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-Npjbgy/manifest.json",
+        "result": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-Npjbgy/result.json",
+        "nextLog": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-Npjbgy/next.log",
+        "playwrightLog": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-Npjbgy/playwright.log"
+      }
+    ]
+  },
+  "finalGate": {
+    "status": "FAIL_KNOWN_OUT_OF_MANIFEST_AND_REGISTRY",
+    "log": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/worker-return-fast-gate.log",
+    "note": "Gate ran before final command custody addition; three worker attempts exhausted. Local must rerun after corrections."
+  },
+  "gitStatusShortAtCustody": " M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts\n M EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/.last-run.json\n?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts\n?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.test.ts\n?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts\n?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-html-draft-recovery-browser.spec.ts\n?? EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs\n?? docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_WORKER_RETURN_2026-10-18.md\n?? docs/reviews/evidence/ncr-html-draft-recovery-browser-worker-20261018.json\n?? scripts/run_cvf_ncr_html_draft_recovery_browser.cjs\n?? scripts/test_cvf_ncr_html_draft_recovery_browser.cjs\n"
+}

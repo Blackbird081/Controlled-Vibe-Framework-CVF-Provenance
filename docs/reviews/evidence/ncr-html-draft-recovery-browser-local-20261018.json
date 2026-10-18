@@ -1,0 +1,511 @@
+{
+  "schemaVersion": "cvf.ncrHtmlDraftRecoveryBrowserLocalEvidence.v1",
+  "batchId": "CVF-NCR-HTML-DRAFT-RECOVERY-BROWSER-20261018",
+  "reviewBaseHead": "cbc1909fd7426305ae48d7bf328fb7ef49f33b43",
+  "disposition": "ACCEPTED_BOUNDED_BROWSER_WITH_PROCEDURE_LIMITS",
+  "role": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+  "decisionOwner": "LOCAL",
+  "workerOriginal": {
+    "status": "BLOCKED_WITH_REASON",
+    "sealPath": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\worker-seal.json",
+    "sealSha256": "5b532f59e025549f179a8d07dca9a8336ce6fb833fe5fe90dad7ff32e0589d81",
+    "returnPath": "docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_WORKER_RETURN_2026-10-18.md",
+    "returnSha256": "ae818e38cb525f752e63e7eedd5e796a5b2f9b4a476e172c6e9365b688f4db14",
+    "proofPath": "docs/reviews/evidence/ncr-html-draft-recovery-browser-worker-20261018.json",
+    "proofSha256": "c64a0eece46d8d1a00bdf24e9d6e0fda6bb66b0838e3e737c349d375dedf8a36",
+    "failedRunnerStarts": 2,
+    "unitStarts": 8,
+    "unitCeiling": 4,
+    "originalRawUnitTypeLintCustody": "MISSING"
+  },
+  "localFreshChecks": [
+    {
+      "path": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\root-focused.log",
+      "sha256": "08b8ea8971e7b468c1a0618c32e567df74258a5a6f92e1d54d1d8ae06ac6fcad",
+      "exit": 0
+    },
+    {
+      "path": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\root-isolation.log",
+      "sha256": "4056d3c11fd592684e8de87e203743f64616ff6fcc79f1c78463fac3ed54d53b",
+      "exit": 0
+    },
+    {
+      "path": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\root-type.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit": 0
+    },
+    {
+      "path": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\root-lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit": 0
+    },
+    {
+      "path": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\root-discovery.log",
+      "sha256": "739623795f39064dfcf32e51d78bb333c920220105e11057971b8a30e56d76a8",
+      "exit": 0
+    },
+    {
+      "path": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\root-session-discovery.log",
+      "sha256": "0391a80a10a05acb284f7b4f4a9a11041dc64dbf86cc1eab563b98185d82d43c",
+      "exit": 0
+    },
+    {
+      "path": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\root-reconciliation.log",
+      "sha256": "f74a5075a29444d8659cfd24ed1c22b3c7959a00911d9d74000b7971e81f3567",
+      "exit": 0
+    }
+  ],
+  "firstProbe": {
+    "status": "ORIGINAL_FAIL_NOT_RELABELLED",
+    "result": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\run-ytkFGW\\result.json",
+    "resultSha256": "38d9c5ef14aef8100155d5989837a00f3fd3aa13d72998c29efc0a07303139c9",
+    "oracle": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\root-independent.spec.ts",
+    "oracleSha256": "c823bf5a90c2c2fd88afe42e018428bcb12ca0a5a43dfed194c97f1e06293441",
+    "byteProof": {
+      "status": "PARTIAL_EXECUTED_BYTE_PROOF_PASS_FINAL_TEST_FAIL",
+      "runResult": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\run-ytkFGW\\result.json",
+      "runResultSha256": "38d9c5ef14aef8100155d5989837a00f3fd3aa13d72998c29efc0a07303139c9",
+      "snapshotPath": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\run-ytkFGW\\drafts\\f9785448e8cf926667c2f770d9dab0d76a7c2efed4da898a0bc2272a2450a38e\\338f4c14-7794-4cd9-957f-3d840b95502f.json",
+      "snapshotSha256": "a8f2bcd712fc4c79615ef9b8c0547e6d521ef2e759f427361c6f27e452112e19",
+      "versionId": "338f4c14-7794-4cd9-957f-3d840b95502f",
+      "sourceRecordId": "ncr-synthetic-root-independent-001",
+      "htmlSha256": "90d38a85e13808867ee39ac8b612b3119827cfe3ce5134d5996cac538a1b270d",
+      "downloadSha256": "90d38a85e13808867ee39ac8b612b3119827cfe3ce5134d5996cac538a1b270d",
+      "originalFailure": "Root expected307, actual401 anonymous denial; assertions after that line unexecuted",
+      "notReclassifiedAsPass": true
+    },
+    "serverLogSha256": "968d2d3cb7cbce152fae6b7d7c7b5ed982a080f11d74fc395297a3366edc2623",
+    "observedExportRequests": [
+      [
+        "POST",
+        "/api/artifacts/export",
+        "200"
+      ]
+    ],
+    "observedSaveRequests": [
+      [
+        "POST",
+        "/api/artifacts/drafts",
+        "201"
+      ]
+    ],
+    "limit": "changed-owner assertions after wrong307 expectation were not executed"
+  },
+  "readOnlyCompletion": {
+    "result": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\run-9XdAqo\\result.json",
+    "resultSha256": "65b758aaa8696228274ed222c30450a561073e226cc7cc1bf0c0791b2240e0e4",
+    "evidence": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\root-evidence-reconciliation.json",
+    "evidenceSha256": "165fbf33184a5fbd2dc0a9d8b552ab39b6a7129eb6c9bda0c0f20530de86872a",
+    "oracle": ".cvf\\runtime\\ncr-html-draft-recovery-browser-20261018\\root-session-completion.spec.ts",
+    "oracleSha256": "57ac4f93cfee04d7714119f49b9b2546e4ba1f25e43d43f683ad269cc1076376",
+    "observed": {
+      "status": "PASS_BOUNDED_EVIDENCE_RECONCILIATION",
+      "overallPlaywrightStatuses": [
+        "FAIL",
+        "FAIL"
+      ],
+      "originalFailuresRetained": true,
+      "casesPassed": 3,
+      "runs": [
+        {
+          "root": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-ytkFGW",
+          "resultSha256": "38d9c5ef14aef8100155d5989837a00f3fd3aa13d72998c29efc0a07303139c9",
+          "originalStatus": "FAIL",
+          "requests": [
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/csrf",
+              "200"
+            ],
+            [
+              "POST",
+              "/api/auth/callback/credentials?redirect=false",
+              "302"
+            ],
+            [
+              "GET",
+              "/work-transfer",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/work-transfer",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/me",
+              "200"
+            ],
+            [
+              "POST",
+              "/api/artifacts/export",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "POST",
+              "/api/artifacts/drafts",
+              "201"
+            ],
+            [
+              "GET",
+              "/api/artifacts/drafts?sourceRecordId=ncr-synthetic-root-independent-001&id=338f4c14-7794-4cd9-957f-3d840b95502f",
+              "200"
+            ],
+            [
+              "GET",
+              "/work-transfer",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/me",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/artifacts/drafts?sourceRecordId=ncr-synthetic-root-independent-001&list=1",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/artifacts/drafts?sourceRecordId=ncr-synthetic-root-independent-001&id=338f4c14-7794-4cd9-957f-3d840b95502f",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/artifacts/drafts?sourceRecordId=ncr-synthetic-root-independent-002&id=338f4c14-7794-4cd9-957f-3d840b95502f",
+              "404"
+            ],
+            [
+              "GET",
+              "/api/artifacts/drafts?sourceRecordId=ncr-synthetic-root-independent-001&id=338f4c14-7794-4cd9-957f-3d840b95502f",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/csrf",
+              "200"
+            ],
+            [
+              "POST",
+              "/api/auth/signout",
+              "302"
+            ],
+            [
+              "GET",
+              "/login",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/artifacts/drafts?sourceRecordId=ncr-synthetic-root-independent-001&id=338f4c14-7794-4cd9-957f-3d840b95502f",
+              "401"
+            ]
+          ],
+          "exportCount": 1,
+          "saveCount": 1
+        },
+        {
+          "root": ".cvf/runtime/ncr-html-draft-recovery-browser-20261018/run-9XdAqo",
+          "resultSha256": "65b758aaa8696228274ed222c30450a561073e226cc7cc1bf0c0791b2240e0e4",
+          "originalStatus": "FAIL",
+          "requests": [
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/csrf",
+              "200"
+            ],
+            [
+              "POST",
+              "/api/auth/callback/credentials?redirect=false",
+              "302"
+            ],
+            [
+              "GET",
+              "/work-transfer",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/work-transfer",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/me",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/artifacts/drafts?sourceRecordId=ncr-synthetic-root-independent-001&list=1",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/artifacts/drafts?sourceRecordId=ncr-synthetic-root-independent-001&id=338f4c14-7794-4cd9-957f-3d840b95502f",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/artifacts/drafts?sourceRecordId=ncr-synthetic-root-independent-001&id=338f4c14-7794-4cd9-957f-3d840b95502f",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/csrf",
+              "200"
+            ],
+            [
+              "POST",
+              "/api/auth/signout",
+              "302"
+            ],
+            [
+              "GET",
+              "/login",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/artifacts/drafts?sourceRecordId=ncr-synthetic-root-independent-001&id=338f4c14-7794-4cd9-957f-3d840b95502f",
+              "401"
+            ],
+            [
+              "GET",
+              "/api/auth/csrf",
+              "200"
+            ],
+            [
+              "POST",
+              "/api/auth/callback/credentials?redirect=false",
+              "302"
+            ],
+            [
+              "GET",
+              "/work-transfer",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/work-transfer",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/me",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/auth/session",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/artifacts/drafts?sourceRecordId=ncr-synthetic-root-independent-001&list=1",
+              "200"
+            ],
+            [
+              "GET",
+              "/api/artifacts/drafts?sourceRecordId=ncr-synthetic-root-independent-001&id=338f4c14-7794-4cd9-957f-3d840b95502f",
+              "404"
+            ]
+          ],
+          "exportCount": 0,
+          "saveCount": 0
+        }
+      ],
+      "snapshotSha256": "a8f2bcd712fc4c79615ef9b8c0547e6d521ef2e759f427361c6f27e452112e19",
+      "htmlSha256": "90d38a85e13808867ee39ac8b612b3119827cfe3ce5134d5996cac538a1b270d",
+      "requestSha256": "46501ca6bba4c7ba8c42927ce888f7f65f84bc30c6aad62c0ebb1a37576e2abc",
+      "byteIdentity": "PASS_REAL_EXPORT_STORED_SNAPSHOT_DOWNLOAD_EXACT",
+      "sessionAssertions": "PASSED_BEFORE_SECOND_TEST_FINAL_BLOCKED_CSS_ORACLE_FAILURE",
+      "anonymousStatus": 401,
+      "changedOwnerStatus": 404,
+      "lateRead": "nonpending disposition and empty new-session UI assertions passed; exact terminal disposition string not retained",
+      "completionFixture": "exact-byte copy of first run synthetic snapshot, no additional export/Save",
+      "blockedBrowserAttempts": [
+        "/css2",
+        "/css2"
+      ],
+      "successfulExternalNetworkClaim": "none observed; context route aborts all nonloopback, Node deny fence active; no universal OS assertion",
+      "noReplay": {
+        "exportTotal": 1,
+        "saveTotal": 1,
+        "secondExport": 0,
+        "secondSave": 0
+      },
+      "limitations": [
+        "Both overall tests remain FAIL; this is a bounded evidence join, not a clean test-suite PASS",
+        "End-of-test JSON/traffic assertion in second test did not execute; actual server log supplies no-replay counts",
+        "Root first307 expectation and second zero-blocked-attempt expectation were wrong; no product error found in selected executed assertions"
+      ]
+    }
+  },
+  "requirements": {
+    "REQ-PROFILE": "PASS focused6 and real synthetic route; default/prodOFF",
+    "REQ-ISOLATION": "PASS fresh16 assertions, allowlisted real child, all owned teardown/caps/source pins",
+    "REQ-JOURNEY": "PASS joined executed byte proof and independently completed read-only session boundary; both overall tests remainFAIL",
+    "REQ-NOREPLAY": "PASS first actual server log1export/1Save, completion0/0; evaluate0 on all runs",
+    "REQ-RETURN": "PASS Local integration exact26; worker blocked seal and original failures retained"
+  },
+  "sourcePins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts",
+      "sha256": "c5399e838b6c195423912f7ae33da4f352f94c66958c8aeccb29fe3bdeaf4d88"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts",
+      "sha256": "2453278bb49e41b06330c17f320213e190851aadd05c9b9e33ba65a70471cfc9"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts",
+      "sha256": "656307499a07509fffbd72188a906a5c34d56a375093ed65ee6203459f4cc55d"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts",
+      "sha256": "dcb8cdd8a98f49f345b53c9ea9d824b11785f0a12854023b545cc34cdfe3a23b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.test.ts",
+      "sha256": "9954f950a09df37aadbe5dcdcb4644b2c7192578d9ec3a3210fda75ab84834a8"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-html-draft-recovery-browser.spec.ts",
+      "sha256": "a3b9701254ae190c07b829f30fe1379a3764ee53c589fa0fe767f31a7955967b"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+      "sha256": "d8deae5ada9687f242eece64cdcd3f916be51bff0575e8a251b018715f39a6a9"
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs",
+      "sha256": "037e3ecda32cadd25d487207fceec23418bb2cbb4f6b287701bb7fdd3833e7db"
+    },
+    {
+      "path": "scripts/run_cvf_ncr_html_draft_recovery_browser.cjs",
+      "sha256": "b7e5cc833e03e3a79529234b4430835afd2c3363d94e3d284e1502f76ed4a500"
+    },
+    {
+      "path": "scripts/test_cvf_ncr_html_draft_recovery_browser.cjs",
+      "sha256": "b4e5a11c2ecab571e29c92280b3abe27f661b75d157e138fbefcf283b0513102"
+    }
+  ],
+  "materialManifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-html-draft-recovery-browser.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs",
+    "scripts/run_cvf_ncr_html_draft_recovery_browser.cjs",
+    "scripts/test_cvf_ncr_html_draft_recovery_browser.cjs",
+    "docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_WORKER_RETURN_2026-10-18.md",
+    "docs/reviews/evidence/ncr-html-draft-recovery-browser-worker-20261018.json",
+    "docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md",
+    "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json",
+    "docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md",
+    "docs/reviews/evidence/ncr-html-draft-recovery-browser-local-20261018.json",
+    "docs/corpus-intelligence/registry/entries/cvf-ncr-html-draft-recovery-browser-test.json",
+    "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json",
+    "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md"
+  ],
+  "continuityManifest": [
+    "AGENT_HANDOFF_V63_2026-09-18.md",
+    "CVF_SESSION_MEMORY.md",
+    "CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json",
+    "CVF_SESSION/state/entries/nextAllowedMove.json",
+    "CVF_SESSION/ACTIVE_SESSION_STATE.json",
+    "CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json"
+  ],
+  "reviewMinutesAtPackaging": 21,
+  "providerCalls": 0,
+  "parent": "gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24; R1/R2partial,R3/R4open,R5/R6deferred",
+  "limits": [
+    "No one clean end-to-end test PASS; independent proof joins actual successful byte assertions in failed first test with read-only assertions before the second final oracle failure and pure reconciliation3/3",
+    "Worker unit ceiling exceeded; first-return literal failures and missing original raw logs retained",
+    "Local307 oracle error and UTF8 collector setup failure retained",
+    "No production, real-data retention, full job acceptance, provider/AI governance, stage exit or public/deploy claim",
+    "Second Local overall test FAIL: blocked passive CSS attempts were incorrectly expected absent; all selected session assertions executed before that final assertion. Source/harness unchanged; pure evidence reconciliation3/3, no third browser run."
+  ]
+}

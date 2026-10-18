@@ -51,4 +51,14 @@ describe('draft route synthetic profile', () => {
     auth.mockImplementation(async () => ({ ...session, userId: 'u2' }));
     expect((await get('evt_1', input.versionId)).status).toBe(404);
   });
+  it('limits the enabled app profile to its declared synthetic record prefix', async () => {
+    const root = await fs.mkdtemp(path.join(os.tmpdir(), 'cvf-draft-prefix-'));
+    const auth = vi.fn(async () => session);
+    const route = draftRouteHandlers({ profile: { kind: 'local-synthetic', root, production: false }, recordPrefix: 'ncr-synthetic-', auth, clock: () => now });
+    expect((await route.POST(post(input))).status).toBe(404);
+    expect((await route.GET(new NextRequest(`${url}?sourceRecordId=evt_1&list=1`))).status).toBe(404);
+    const selected = { ...input, sourceRecordId: 'ncr-synthetic-alpha' };
+    expect((await route.POST(post(selected))).status).toBe(201);
+    expect((await route.GET(new NextRequest(`${url}?sourceRecordId=ncr-synthetic-alpha&id=${selected.versionId}`))).status).toBe(200);
+  });
 });

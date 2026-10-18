@@ -24,6 +24,7 @@ export function normalPrincipal(session: AdminSession, now: number): DraftPrinci
 }
 type Dependencies = {
   profile?: SyntheticDraftProfile;
+  recordPrefix?: string;
   auth?: typeof requireAdminApiSession;
   clock?: () => number;
 };
@@ -67,6 +68,7 @@ export function draftRouteHandlers(deps: Dependencies = {}) {
       } catch { return fail(400, 'INVALID_BODY'); }
       const input = parseDraftInput(body);
       if (!input) return fail(422, 'INVALID_DRAFT');
+      if (deps.recordPrefix && !input.sourceRecordId.startsWith(deps.recordPrefix)) return fail(404, 'NOT_FOUND');
       const outcome = await store.save(input, owner);
       if (outcome === 'SAVED') return reply(201, { success: true, state: 'SAVED', versionId: input.versionId });
       return fail(outcome === 'COLLISION' ? 409 : 503, outcome === 'COLLISION' ? 'VERSION_UNAVAILABLE' : 'SAVE_UNCONFIRMED');
@@ -78,6 +80,7 @@ export function draftRouteHandlers(deps: Dependencies = {}) {
       const query = new URL(request.url).searchParams;
       if (query.size !== 2 || query.getAll('sourceRecordId').length !== 1 || !SOURCE_ID.test(query.get('sourceRecordId') ?? '')) return fail(400, 'INVALID_QUERY');
       const sourceRecordId = query.get('sourceRecordId')!;
+      if (deps.recordPrefix && !sourceRecordId.startsWith(deps.recordPrefix)) return fail(404, 'NOT_FOUND');
       if (query.has('id')) {
         if (query.getAll('id').length !== 1 || !VERSION_ID.test(query.get('id') ?? '')) return fail(404, 'NOT_FOUND');
         const snapshot = await store.get(query.get('id')!, sourceRecordId, owner);

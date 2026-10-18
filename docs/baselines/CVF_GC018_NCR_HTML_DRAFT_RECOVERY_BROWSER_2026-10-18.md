@@ -2,7 +2,7 @@
 
 Memory class: governed-baseline
 docType: baseline
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-18
 Batch ID: CVF-NCR-HTML-DRAFT-RECOVERY-BROWSER-20261018
 Inspection base: 74d355684ac141b3142811aeaab0dc452d0dd5a4
@@ -48,7 +48,7 @@ Reuse the accepted HTML artifact payload owner and current real Work Transfer/ex
 
 ## Decision / Baseline
 
-DESIGN_ACCEPTED_BOUNDED. One source implementation plus isolated synthetic app/browser proof is admitted only after this pair is committed, current continuity is bound and pre-dispatch passes. This grants no provider/live, real-data, deletion, production, R2C replay or public/deploy effect.
+ACCEPTED_BOUNDED_BROWSER_WITH_PROCEDURE_LIMITS. Local proof `docs/reviews/evidence/ncr-html-draft-recovery-browser-local-20261018.json`; original worker and first Root failures retained. Local registry2/bookkeeping repair and read-only completion are recorded in the work order. No stage exit or production/provider enablement.
 
 ## Epistemic Process Block
 
@@ -157,5 +157,28 @@ Reason: private source implementation and synthetic proof; public sync is separa
 
 ## Claim Boundary
 
-Accepted design only until actual proof. Mechanical app/browser transport and synthetic file identity do not prove AI governance efficacy, deployed real-data security, R1/R2 stage exit or R3/R4 durability.
+Mechanical synthetic app/browser contribution qualified only by joined executed evidence; both overall Playwright tests remain FAIL due to Root oracle errors. No real data, full job, AI-governance efficacy, production or stage-exit proof.
 
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md | Local bounded browser contribution; worker remains blocked original | PASS with procedure limits |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md; docs/reviews/evidence/ncr-html-draft-recovery-browser-local-20261018.json | independent partial byte proof plus read-only session assertions before final blocked-CSS oracle failure | PASS bounded joined proof |
+| Roadmap state | docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md | recovery contribution; R1/R2partial,R3/R4open | PASS bounded |
+| Registry JSON | docs/corpus-intelligence/registry/entries/cvf-ncr-html-draft-recovery-browser-test.json; docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json | source entry + regenerated aggregate, NOT_STARTED | PASS registration only |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | named test/config registration only, semantic scan NOT_STARTED | PASS registration only |
+| External evidence digest | docs/reviews/evidence/ncr-html-draft-recovery-browser-local-20261018.json | internal source pins and raw outcomes; SHA256 39dd2b4520d3eee4ac9ba5c07e2bb9deb5a099aa40558f675978a52f8eeadc06 | PASS internal only |
+| System loop interlock | parent gen9/SCEC2/counters2,0,2,0 | freeze/prior7/LHW24 unchanged | N/A with reason: no parent transition |
+| Session continuity | canonical current6 | source/generated projection; actual material sync follows | N/A with reason: actual commits recorded after material |
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-PROFILE | selected bounded mechanical contract | PASS focused6 and real synthetic route; default/prodOFF | PASS with original test failures retained |
+| REQ-ISOLATION | selected bounded mechanical contract | PASS fresh16 assertions, allowlisted real child, all owned teardown/caps/source pins | PASS with original test failures retained |
+| REQ-JOURNEY | selected bounded mechanical contract | PASS joined executed byte proof and independently completed read-only session boundary; both overall tests remainFAIL | PASS with original test failures retained |
+| REQ-NOREPLAY | selected bounded mechanical contract | PASS first actual server log1export/1Save, completion0/0; evaluate0 on all runs | PASS with original test failures retained |
+| REQ-RETURN | selected bounded mechanical contract | PASS Local integration exact26; worker blocked seal and original failures retained | PASS with original test failures retained |

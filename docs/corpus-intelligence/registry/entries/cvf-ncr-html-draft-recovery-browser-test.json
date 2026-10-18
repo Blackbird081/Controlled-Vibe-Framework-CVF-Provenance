@@ -1,0 +1,32 @@
+{
+  "registryOrder": 222,
+  "id": "cvf-ncr-html-draft-recovery-browser-test",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "NCR HTML draft recovery synthetic browser test and configuration",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-html-draft-recovery-browser.spec.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs"
+  ],
+  "fileCount": null,
+  "status": "NOT_STARTED",
+  "scanWave": null,
+  "scanDate": null,
+  "manifestHash": null,
+  "hashAlgorithm": null,
+  "hashInput": null,
+  "manifestPath": null,
+  "packetPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md",
+  "completionReviewPath": null,
+  "gcBaselineRef": "docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md",
+  "verdicts": {
+    "gc047": "NOT_RUN",
+    "gc048": "NOT_RUN",
+    "gc050": "NOT_RUN"
+  },
+  "semanticRegions": [],
+  "priorAbsorption": "Exact new browser test/config registration only; no semantic corpus scan. Original worker browser attempts failed before Chromium; Local qualification remains separately evidenced.",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "Targeted bounded source registration; semantic scan remains NOT_STARTED. Consume Local review at its recorded scope without replay."
+}

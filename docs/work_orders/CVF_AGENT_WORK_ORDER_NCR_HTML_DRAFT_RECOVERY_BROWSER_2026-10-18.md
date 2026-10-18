@@ -2,7 +2,7 @@
 
 Memory class: governed-worker-dispatch
 docType: work_order
-Status: DISPATCH_READY
+Status: CLOSED_PASS_BOUNDED
 Date: 2026-10-18
 Batch ID: CVF-NCR-HTML-DRAFT-RECOVERY-BROWSER-20261018
 Dispatch base head: 74d355684ac141b3142811aeaab0dc452d0dd5a4
@@ -209,13 +209,13 @@ Standard: `docs/reference/semantic_convergence_control/CVF_SEMANTIC_CONVERGENCE_
   "resolutionEvidence": {},
   "counters": {
     "partialReadyClosures": 0,
-    "reviewerScopeExpansions": 0,
+    "reviewerScopeExpansions": 1,
     "sameClaimCorrections": 0,
     "nonDecreasingBlockerTransitions": 1
   },
   "claims": [],
-  "requiredDisposition": "CONTINUE_BOUNDED",
-  "successorScope": "INITIAL_BOUNDED"
+  "requiredDisposition": "ROOT_CONTRACT_REQUIRED",
+  "successorScope": "NO_SUCCESSOR"
 }
 ```
 
@@ -301,7 +301,7 @@ individualCheckerSubstitution: FORBIDDEN
 workerReturnSkeleton: CHECKER_SAFE_SKELETON_REQUIRED
 scaffoldPreparationCommand: `python -B governance/compat/run_worker_return_scaffold.py --write docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_WORKER_RETURN_2026-10-18.md --title "NCR HTML Draft Recovery Browser Worker Return" --check-shape`
 
-Work-Order Fulfillment Manifest: map every required artifact to its exact path and bare action in Source Inventory; reconcile expected and actual14.
+Work-Order Fulfillment Manifest: map every required artifact to its exact path and bare action in Source Inventory; reconcile expected and actual12.
 
 Generate/count before prose. Include Source Inventory with bare action tokens, Target / Source, Scope / Methodology, Findings / Position, Risk / Corrective Action, Decision / Disposition, External Knowledge Intake Routing, Epistemic Process Block, Return-Time Closeability Recheck, original command evidence and exact trace. Return evidence JSON holds per-requirement assertions and original failures; it must not expose raw private data. Capture actual final status including both new returns. Verify final bytes with the full bound gate; no post-gate prose append.
 
@@ -472,7 +472,8 @@ Reason: private source implementation and synthetic proof; public sync is separa
 
 ## Core Guard Self-Protection Authorization
 
-Authorized guard-maintenance scope: admit operator-directed recovery app/browser pair and synchronize exact6 current continuity only; no checker/hook change.
+Authorized guard-maintenance scope: accept bounded recovery browser integration, exact registry2 registration and current6 synchronization; no checker/hook change.
+
 Protected paths:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
 - `CVF_SESSION_MEMORY.md`
@@ -480,14 +481,29 @@ Protected paths:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Operator authorization: explicit continue and standing autonomous orchestration/reviewer authority; new synthetic local effect is bounded by this baseline.
-Rollback boundary: exact9 metadata release then exact6; no old actor or real-data effect.
+
+Operator authorization: standing autonomous roadmap/orchestrator direction and explicit continue.
+Rollback boundary: exact26 then exact6; all original outcomes and parent counters retained.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
-Atomicity reason: pair/roadmap/current6 identify one bounded app/browser scope together; separate actual-material-SHA continuity follows.
+
+Atomicity reason: reviewed source, Local joined proof, registry source/aggregate and current authority must agree; separate actual-material continuity follows.
+
 Exact changed manifest:
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.test.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-html-draft-recovery-browser.spec.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts`
+- `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs`
+- `scripts/run_cvf_ncr_html_draft_recovery_browser.cjs`
+- `scripts/test_cvf_ncr_html_draft_recovery_browser.cjs`
+- `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_WORKER_RETURN_2026-10-18.md`
+- `docs/reviews/evidence/ncr-html-draft-recovery-browser-worker-20261018.json`
 - `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`
 - `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`
 - `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`
@@ -497,30 +513,37 @@ Exact changed manifest:
 - `CVF_SESSION/state/entries/nextAllowedMove.json`
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
-Rollback boundary: exact listed metadata paths; no source/effect replay.
+- `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md`
+- `docs/reviews/evidence/ncr-html-draft-recovery-browser-local-20261018.json`
+- `docs/corpus-intelligence/registry/entries/cvf-ncr-html-draft-recovery-browser-test.json`
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`
+
+- `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md`
+
+Rollback boundary: exact listed paths; no runtime replay or deletion.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | Local INTERNAL_AGENT dispatcher; decision owner=LOCAL |
+| Actor | Local INTERNAL_AGENT reviewer/closer/steward; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-html-draft-recovery-browser-dispatch-20261018 |
+| Session or invocation | ncr-html-draft-recovery-browser-local-20261018 |
 | Working directory | repository root |
-| Command or tool surface | named source reads, bounded read-only adviser, scaffold/ADIF and packet release |
-| Target paths | `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator continuation and paired locked design |
-| Before status evidence | clean worktree at HEAD 74d355684ac141b3142811aeaab0dc452d0dd5a4; accepted source proof, PLAN only |
-| After status evidence | exact9 app/browser dispatch candidate; no app/browser started |
-| Diff evidence | git diff/status exact9 and whitespace check |
-| Approval boundary | source plus owned synthetic app/browser only after bound release |
-| Claim boundary | no current runtime outcome or AI efficacy claim |
+| Command or tool surface | consume sealed worker; fresh custody checks; independent actual Chromium byte proof and read-only session completion; normal gates/commits |
+| Target paths | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-html-draft-recovery-browser.spec.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs`; `scripts/run_cvf_ncr_html_draft_recovery_browser.cjs`; `scripts/test_cvf_ncr_html_draft_recovery_browser.cjs`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-browser-worker-20261018.json`; `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-browser-local-20261018.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-html-draft-recovery-browser-test.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` |
+| Allowed scope source | operator standing authority; current pair and Local consolidated repair/diagnostic amendment |
+| Before status evidence | HEAD cbc1909fd7426305ae48d7bf328fb7ef49f33b43; original worker blocked; stage empty |
+| After status evidence | exact26 reviewed integration; default/production OFF |
+| Diff evidence | git diff --name-status; git diff --check; tracked/untracked union reconciled |
+| Approval boundary | owned synthetic roots only; no provider or real data |
+| Claim boundary | bounded mechanical browser recovery, no AI governance efficacy or R1/R2 stage exit |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-html-draft-recovery-browser-dispatch-20261018 |
-| Expected manifest | `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact9 |
-| Deletion or rename disposition | none; previous evidence immutable |
+| Invocation ID | ncr-html-draft-recovery-browser-local-20261018 |
+| Expected manifest | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-html-draft-recovery-browser.spec.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs`; `scripts/run_cvf_ncr_html_draft_recovery_browser.cjs`; `scripts/test_cvf_ncr_html_draft_recovery_browser.cjs`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-browser-worker-20261018.json`; `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-browser-local-20261018.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-html-draft-recovery-browser-test.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` |
+| Actual changed set | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/drafts/route.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.test.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/ncr-html-draft-recovery-browser.spec.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/playwright.config.ncr-recovery.ts`; `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tests/e2e/support/ncr-draft-recovery-isolation.cjs`; `scripts/run_cvf_ncr_html_draft_recovery_browser.cjs`; `scripts/test_cvf_ncr_html_draft_recovery_browser.cjs`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_WORKER_RETURN_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-browser-worker-20261018.json`; `docs/baselines/CVF_GC018_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`; `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`; `docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-draft-recovery-browser-local-20261018.json`; `docs/corpus-intelligence/registry/entries/cvf-ncr-html-draft-recovery-browser-test.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json`; `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md` |
+| Manifest delta | MATCH exact26 |
+| Deletion or rename disposition | none; original roots and worker bytes retained; known bookkeeping preimage restored only |
 
 ## Delta Execution Claim Boundary Control Block
 
@@ -543,3 +566,44 @@ Expected Result / Prediction: explicit profile wiring should compose accepted sn
 
 Bounded real Chromium/Next/synthetic persistence qualification only. Real data, provider/live/evaluate dispatch, governance efficacy, production, deletion and public/deploy remain forbidden. R1/R2partial,R3/R4open,R5/R6deferred; parent gen9/SCECordinal2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
 
+
+## Local Consolidated Review Repair Admission - 2026-10-18
+
+Original worker exact12 is sealed in `.cvf/runtime/ncr-html-draft-recovery-browser-20261018/worker-seal.json`. Both worker starts failed before Chromium; eight focused starts exceeded cap4; original unit/type/lint raw streams are absent; full-return attempts failed. None becomes PASS retroactively. Local admits the existing one independent browser probe, still one fresh root/context and at most one Build/Save, to cover ambiguous real Save acknowledgement, GET reconciliation, refresh/list/restore exact bytes, failed read and changed-session late-response/owner denial. This is the same receiving outcome, with no worker redispatch or additional worker run.
+
+Root may restore only `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/test-results/.last-run.json` after matching both its exact worker-captured changed hash and HEAD preimage; retain both originals, stop on mismatch. This is test bookkeeping reconciliation, no product or evidence fabrication. Final path must equal HEAD. Root adds only `docs/corpus-intelligence/registry/entries/cvf-ncr-html-draft-recovery-browser-test.json` and regenerates `docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json` for the actual new test/config coverage; status NOT_STARTED; semantic scanning is not selected. Root performs fresh focused6/6, isolation, type and scoped lint because original raw custody is missing; one pure discovery check precedes the single browser probe. No broad suite or provider execution. Root owns final metadata correction and normal commits.
+
+## Local Diagnostic Amendment - Read-Only Session Completion
+
+The first Local probe completed real Build/ambiguous Save/GET reconciliation/refresh/list/restore, exact snapshot/download comparison and failed-read handling, then failed because Root expected307 instead of the actual401 logout denial. Raw `run-ytkFGW/result.json` remains FAIL; owned teardown, config restoration, source drift and caps passed. Local admits exactly one additional fresh runner/context for the missing changed-session/late-read/owner-denial assertions, using an exact-byte copy of that already-created synthetic snapshot as a declared fixture. Zero additional Build/export/Save POST, no product/harness source change and no worker retry. Preserve original hashes and compare the copied fixture; Root browser starts become2, total Build/Save remains1/1. Information gain is the previously unexecuted session boundary, not a replay of passed generation. This is an explicit Local same-outcome test-infrastructure amendment under standing authority; no provider, real data or new product outcome. Original target/cap deviations remain disclosed.
+
+## Local Browser Disposition
+
+ACCEPTED_BOUNDED_BROWSER_WITH_PROCEDURE_LIMITS. Worker original remains BLOCKED. Local consumes passing byte assertions before the first probe error and actual raw byte reconciliation, then a separate executed read-only session assertions and pure reconciliation3/3; both overall tests FAIL; no original FAIL is relabeled. Actual provider/evaluate0, total Local Build/Save1/1; Root starts2 under explicit diagnostic amendment. Local proof `docs/reviews/evidence/ncr-html-draft-recovery-browser-local-20261018.json` SHA256 `39dd2b4520d3eee4ac9ba5c07e2bb9deb5a099aa40558f675978a52f8eeadc06`.
+
+## Machine Closure Package
+
+| Closure item | Required artifact/path | Machine-readable evidence | Final status |
+|---|---|---|---|
+| Work order status | docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_HTML_DRAFT_RECOVERY_BROWSER_2026-10-18.md | Local bounded browser contribution; worker remains blocked original | PASS with procedure limits |
+| Completion or reviewer artifact | docs/reviews/CVF_NCR_HTML_DRAFT_RECOVERY_BROWSER_COMPLETION_2026-10-18.md; docs/reviews/evidence/ncr-html-draft-recovery-browser-local-20261018.json | independent partial byte proof plus read-only session assertions before final blocked-CSS oracle failure | PASS bounded joined proof |
+| Roadmap state | docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md | recovery contribution; R1/R2partial,R3/R4open | PASS bounded |
+| Registry JSON | docs/corpus-intelligence/registry/entries/cvf-ncr-html-draft-recovery-browser-test.json; docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json | source entry + regenerated aggregate, NOT_STARTED | PASS registration only |
+| Registry Markdown | docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.md | named test/config registration only, semantic scan NOT_STARTED | PASS registration only |
+| External evidence digest | docs/reviews/evidence/ncr-html-draft-recovery-browser-local-20261018.json | internal source pins and raw outcomes; SHA256 39dd2b4520d3eee4ac9ba5c07e2bb9deb5a099aa40558f675978a52f8eeadc06 | PASS internal only |
+| System loop interlock | parent gen9/SCEC2/counters2,0,2,0 | freeze/prior7/LHW24 unchanged | N/A with reason: no parent transition |
+| Session continuity | canonical current6 | source/generated projection; actual material sync follows | N/A with reason: actual commits recorded after material |
+
+## Current Runtime Freshness Verification
+
+Current frozen profile/API and real Next/Chromium synthetic I/O are qualified only by the joined evidence. Old R2C/provider proofs retain their recorded source. Default/production OFF. No AI-governance efficacy or stage-exit claim.
+
+## Acceptance Receipt Assertion Matrix
+
+| Requirement | Required value | Observed value | Status |
+|---|---|---|---|
+| REQ-PROFILE | selected bounded mechanical contract | PASS focused6 and real synthetic route; default/prodOFF | PASS with original test failures retained |
+| REQ-ISOLATION | selected bounded mechanical contract | PASS fresh16 assertions, allowlisted real child, all owned teardown/caps/source pins | PASS with original test failures retained |
+| REQ-JOURNEY | selected bounded mechanical contract | PASS joined executed byte proof and independently completed read-only session boundary; both overall tests remainFAIL | PASS with original test failures retained |
+| REQ-NOREPLAY | selected bounded mechanical contract | PASS first actual server log1export/1Save, completion0/0; evaluate0 on all runs | PASS with original test failures retained |
+| REQ-RETURN | selected bounded mechanical contract | PASS Local integration exact26; worker blocked seal and original failures retained | PASS with original test failures retained |
