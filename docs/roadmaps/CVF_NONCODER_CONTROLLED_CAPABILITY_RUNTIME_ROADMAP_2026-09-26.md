@@ -5,7 +5,7 @@ docType: roadmap
 Status: ACCEPTED_UNIFIED_ROADMAP_LOCAL_CONSUMER_BOUNDED_FULL_PILOT_OPEN
 Date: 2026-09-26
 Program ID: CVF-NCR
-Version: 2.67
+Version: 2.68
 Updated: 2026-10-18
 Revision disposition: LOCAL_CONSUMER_MAINTENANCE_ACCEPTED_BOUNDED; END_TO_END_PILOT_OPEN; Q001_AND_P11_CHECKPOINTS_RETAINED
 Decision owner: operator về định hướng/phạm vi; Local reviewer về đối chiếu kỹ thuật và nghiệm thu.
@@ -24,12 +24,32 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** Đối chiếu exit R1/R2 với source và browser proof đã có, ghi rõ phần đủ bằng chứng và gap thực sự trước pilot; không replay recovery đã chứng minh hoặc mở actor kế tiếp tự động. App/browser mới cần admission riêng; dữ liệu thật/provider/production/public vẫn OFF.
+**Bước kế tiếp:** Chuẩn bị một admission source-only cho delta R1 về tiếng Việt và mô tả đúng profile ngay trên Work Transfer hiện có, theo quyết định bên dưới. Chưa release worker hoặc mở app/browser mới. Sau delta này mới xét walkthrough R1 riêng và R2/W05 pre-live; dữ liệu thật/provider/production/public vẫn OFF.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.
 
 Historical detail and governed evidence remain in the ledger below; this checkpoint reports accepted R1 source and its bounded current-source browser contribution.
+
+### R1/R2 Exit And Gap Disposition - 2026-10-18
+
+Disposition: LOCAL_GAP_DISPOSITION_COMPLETE; R1/R2 PARTIAL. Consumer=Work Transfer HTML; decision owner=LOCAL; phase=LOCAL_DISPOSITION. Basis: source material `bae47f9c745886694242c9f2acab5ce01b7e4cc0`, browser material `8ab06322b43c561cce442e3869de9d82f51d812b`, and their Local completion reviews named below. This is a criterion-to-evidence decision, not another execution grant.
+
+| Exit concern | Accepted evidence / current source | Gap and disposition |
+|---|---|---|
+| R1 job, frozen input, version and person decision | `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-18.md`: fixture29/29 and distinct Root3/3; `docs/reviews/CVF_NCR_R1_INTEGRATED_HTML_JOB_BROWSER_LOCAL_COMPLETION_REVIEW_2026-10-18.md`: Chromium1/1, exact2720-byte download and joined Root controls | SATISFIED_BOUNDED for the selected synthetic composition. Draft remains unverified/unaccepted; same-principal attestation is not actual business acceptance. No replay needed. |
+| R1 Stop, stale target and unknown writes | Source review STOP/SAVE/DECISION rows; current browser covers lost Save acknowledgement, reload GET and explicit same-pair link | SOURCE_AND_FOCUSED_FIXTURE evidence for Stop/late result and stale/foreign decisions; browser evidence covers only its named journey. Do not relabel every fixture as browser proof or require broad reruns. |
+| R1 Vietnamese/progressive disclosure and A10 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx` renders Goal/Criterion/reconcile/review in English; `ArtifactExportPanel.tsx` renders English Stop/status outside its existing language labels | SOURCE_GAP: complete these user-visible states through the existing language mechanism. Keyboard, small-screen and non-coder explanation remain NOT_EVALUATED at this revision; aria labels and scripted clicks alone do not establish those outcomes. |
+| R1 capability/profile/effect explanation | `ArtifactExportPanel.tsx` preGenerateDisclosure says destination depends on deployment and is not shown; `HtmlJobControls.tsx` says selected local synthetic Build stays local | SOURCE_GAP: the integrated selected profile still presents the generic possible-send disclosure. Explain selected local rendering, synthetic storage, absence of receipt request and local Stop/unknown limits consistently before Build. For this slice Q008 selects no external worker runtime; do not add a provider/account chooser that controls nothing. General receipt-enabled deployment still needs its own concrete destination/data/cost decision. |
+| R2 selected isolation and storage | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts` resolveHtmlJobSyntheticProfile; `html-job-api.ts` jobRouteHandlers; `html-draft-snapshot-store.ts` writeSidecar/createJob/linkVersion/acceptVersion | SATISFIED_BOUNDED for server opt-in, production denial, owner checks, exclusive local writes and readback. These do not establish durable whole-job recovery or R2 admission/operation claim before a provider effect. |
+| R2 receipt/effect boundary and W05 | `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts` POST skips receipt/token branch for selectedPrincipal; `proof.ts` fetchGovernanceReceipt resolves NEXTAUTH_URL and can POST first500 source characters on the general branch | PRE_LIVE_GAP: map the actual chosen route/profile through validation→binding→claim→transform→attempt→invoke→receipt/recovery; resolve destination, data, secret references, cost/retention, denials, rollback/revoke and unknown-outcome non-replay. Synthetic no-egress proof and historical Alibaba live proof do not close this current-route gate. No call admitted here. |
+| R3/R4 and A01–A12 applicability | Roadmap R3/R4 and Acceptance Criteria remain the owners | R3/R4 OPEN: actual provider-bound result/business acceptance, full applicable negative/fault checks, current secret/revoke scope and pilot timing/cost baseline are unproved. Two connections and clean restore/RPO/RTO belong to R4; genuine-user usability remains NOT_EVALUATED, not a recruitment gate for internal R1–R3. |
+
+**Selected finite follow-through:** one source-only R1 UX/profile package, not a new recovery engine. Receiving owners are `HtmlJobControls.tsx`, `ArtifactExportPanel.tsx` and their existing language/recovery dependencies; admission preparation must enumerate actual tests/generated dependencies before release. Locked delta: localize job/criteria/link/reconcile/person-review/Stop/status using the current language selection; supply a server-derived selected-profile description rather than trusting a client flag; retain generic receipt warnings for other profiles; preserve every job/version/owner/hash/unknown-state invariant. Copy must describe a local synthetic person review without claiming trusted evidence or business acceptance. No new chooser, writer, schema, provider, guard or runtime. Required future evidence is focused source/component proof plus one separately admitted user-role walkthrough for language, keyboard, small screen, refusal and pre-effect explanation. Neither is executed by this disposition.
+
+Order and stop: prepare the action-specific source admission, then implement/review only if that fresh admission is feasible; no automatic old actor replay or budget refill. R2/W05 pre-live design follows on the exact chosen effect profile, before any provider/live request. Real-data writer/custody/retention, provider/model/cost/stop, production/public/deploy remain their existing action-specific checkpoints. Source RETURN3/counters0,1,0,3; browser RETURN1/counters0,0,0,0; parent gen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 retained.
+
+Expected Result / Prediction: accepted mechanical evidence should remove duplicate recovery work while exposing user-facing and pre-live gaps. Evidence Comparison: current source/browser supports the joined synthetic journey; direct UI/helper reads expose mixed language and generic destination disclosure. Contradiction Or Gap Disposition: retain original Root FAIL, worker gate failures, joined read-only completion and procedure limits; choose the bounded R1 delta and hold dependent live effects. Claim Update: exit/gap disposition complete; no R1/R2 stage exit, runtime freshness promotion or new effect authority.
 
 ### Recovery Source Stage Admission - 2026-10-18
 
@@ -1085,32 +1105,32 @@ orientation packets are not refreshed by this private local edit.
 | Field | Evidence |
 |---|---|
 | applicableCheckersRead | governance/compat/check_roadmap_closure_freshness.py; governance/compat/check_markdown_structural_completeness.py; governance/compat/check_governed_artifact_checker_read_ahead.py; governance/compat/check_agent_operation_trace.py; governance/compat/check_governed_file_size.py; governance/compat/check_public_export_disposition.py |
-| literalTokensReviewed | unchanged top Status; integrated source design; exact8 trace; protected current6; DEFERRED_PRIVATE_ONLY; stable SCEC child and source-only gaps; active Markdown size budget |
-| gateRunPurpose | confirmation of documentary routing repair and initial R1 support matrix against accepted evidence; not first discovery or new behavior proof |
-| claimBoundary | named source interfaces and recorded completion scopes only; no corpus, runtime freshness, stage-exit or durable-owner implementation claim |
+| literalTokensReviewed | top Status retained; LOCAL_GAP_DISPOSITION_COMPLETE; exact1 material; separate current6; DEFERRED_PRIVATE_ONLY; stage exits and spent chains retained; active Markdown size budget |
+| gateRunPurpose | confirmation of source-derived R1/R2 exit/gap disposition; no product proof replay |
+| claimBoundary | targeted source and accepted revision-bound evidence only; no new source/runtime/effect grant or stage exit |
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
-| --- | --- |
+|---|---|
 | Actor | Local INTERNAL_AGENT orchestrator/reviewer; decision owner=LOCAL |
 | Provider or surface | private shared workspace |
-| Session or invocation | ncr-r1-integrated-design-20261018 |
+| Session or invocation | ncr-r1-r2-exit-gap-disposition-20261018 |
 | Working directory | repository root |
-| Command or tool surface | targeted source reads, two internal read-only advice tasks, design edits and canonical declaration checks |
-| Target paths | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | operator next and current PLAN under the R1 root contract |
-| Before status evidence | 1e1e004c7db9acce879341ec5acbaf6269885be2; clean before design |
-| After status evidence | exact8 documentary design; source release held; old source/proof untouched |
-| Diff evidence | git diff --name-status; git diff --check; exact8 manifest reconciliation |
-| Approval boundary | documentary design and current6 only |
-| Claim boundary | no source execution or readiness proof |
-| Agent type | INTERNAL_AGENT Local dispatcher/reviewer |
-| Invocation ID | ncr-r1-integrated-design-20261018 |
-| Expected manifest | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Actual changed set | `docs/baselines/CVF_NCR_R1_INTEGRATED_HTML_JOB_DESIGN_2026-10-18.md`; `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md`; `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Manifest delta | MATCH exact8 |
-| Deletion or rename disposition | none; original child artifacts and failures retained |
+| Command or tool surface | targeted source/criteria reads; one read-only internal source aide; roadmap disposition and governance checks |
+| Target paths | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Allowed scope source | operator next; bootstrap LOCAL_DISPOSITION_ONLY; lifecycle Outcome-Bound Work Selection And Terminal Review |
+| Before status evidence | 2c5a193a5945c5081d90ca17ccd800ddbf36e9df; clean before disposition |
+| After status evidence | exact1 roadmap; next source admission preparation selected; no worker released or effect executed |
+| Diff evidence | git diff --name-status; git diff --check; exact1 manifest reconciliation |
+| Approval boundary | source-derived disposition only; source/run admission remains separate; current6 follows separately |
+| Claim boundary | no R1/R2 exit or pilot acceptance; original failures and counters retained |
+| Agent type | INTERNAL_AGENT |
+| Invocation ID | ncr-r1-r2-exit-gap-disposition-20261018 |
+| Expected manifest | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Actual changed set | `docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md` |
+| Manifest delta | MATCH exact1 material |
+| Deletion or rename disposition | none; historical source/browser artifacts retained |
 
 ## Public Export Disposition
 
