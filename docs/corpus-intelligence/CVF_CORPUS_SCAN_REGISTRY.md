@@ -300,3 +300,5 @@ The read-only browser UX assessment spec and its existing ESLint configuration d
 ## NCR R2 W05 TypeScript Config Dependency Registration - 2026-10-19
 
 Entry `ncr-r2-w05-typescript-config-dependency` at `docs/corpus-intelligence/registry/entries/ncr-r2-w05-typescript-config-dependency.json` covers only `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json` as a read-only implementation dependency. Status NOT_STARTED is formal scan status, not a denial that the worker read the file; no corpus scan/completeness or runtime claim is added. Local source review `docs/reviews/CVF_NCR_R2_W05_OFFLINE_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-19.md` records the missing dispatch-time coverage prerequisite. Aggregate regenerated from source; existing worker return/EP are byte-preserved.
+
+NCR R2 W05 bound receipt source: `docs/corpus-intelligence/registry/entries/ncr-r2-w05-bound-source.json` registers planned exact34 paths as NOT_STARTED; source packet `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BOUND_SOURCE_2026-10-19.md`, no scan/runtime/public claim.
