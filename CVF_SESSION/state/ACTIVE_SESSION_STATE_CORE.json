@@ -23,7 +23,7 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md",
     "workOrderSha256": "5b182fb937bf4cdf0349c363c984f725e5d0e34729708ebcbfbdddfa4de0a7b6"
   },
-  "currentAuthoritySyncReason": "Material3 0b65e55af88ceacd12ec192660662c023e937a07 defines exact13 integrated offline source/verification proposal for manualtransfer; normal91PASS; no Root producttest/source/worker/effect. Prior audit/HQ frozen; Local independent probe afterworker.",
+  "currentAuthoritySyncReason": "Material3 0b65e55af88ceacd12ec192660662c023e937a07 defines exact13 integrated offline source/verification proposal for manualtransfer; normal91PASS; no Root producttest/source/worker/effect. Prior audit/HQ frozen; Local independent probe afterworker. Corrected declared next action to EXECUTE_OFFLINE_SOURCE_VIA_OPERATOR_MANUAL_TRANSFER for DR-06; unchanged exact13/proposed checks/effect limits and operator manual assignment.",
   "currentMode": "cvf_ncr_r2_w05_offline_source_manual_handoff_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",

@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `0b65e55af88ceacd12ec192660662c023e937a07`. Material `0b65e55af88ceacd12ec192660662c023e937a07`; batch CVF-NCR-R2-W05-OFFLINE-SOURCE-20261019; immediate continuity parent 0b65e55af88ceacd12ec192660662c023e937a07.
+Current HEAD recorded for this handoff: `0b65e55af88ceacd12ec192660662c023e937a07`. Material `0b65e55af88ceacd12ec192660662c023e937a07`; batch CVF-NCR-R2-W05-OFFLINE-SOURCE-20261019; immediate continuity parent cc5d724c7ad408cc50de756613574e7a300503fa.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,7 +13,7 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Dedicatedcurrent6 after material3 0b65e55af88ceacd12ec192660662c023e937a07 baseline/workorder/roadmap. Workerexact13 proposed offline implementation/verification; Localreview+roadmap => exact15 and current6 later. Operator manualtransfer retained; Root source/test/worker0.
+Corrected dedicatedcurrent6 action class after prior continuity cc5d724c7ad408cc50de756613574e7a300503fa; material3 0b65e55af88ceacd12ec192660662c023e937a07 baseline/workorder/roadmap. Workerexact13 proposed offline implementation/verification; Localreview+roadmap => exact15 and current6 later. Operator manualtransfer retained; Root source/test/worker0.
 
 ## Startup Acknowledgment
 
@@ -52,7 +52,7 @@ Focus Local material2f72bbf29/current6d06719b8a accepted6keyboard9required+2opti
 
 Mode: `cvf_ncr_r2_w05_offline_source_manual_handoff_ready`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=MANUAL_TRANSFER_OFFLINE_SOURCE_PACKET; BATCH_ID=CVF-NCR-R2-W05-OFFLINE-SOURCE-20261019. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md including proposed focused offline verification scope after actual clean boundrelease PASS; Root does not invoke worker or create/run producttests. One INTERNAL_AGENT180min/exact13:contract/store/injectedproof/profile/branch/actualPOST/hook plus returnEP; Vitest<=4,tsc<=2,targetedESLint<=2,requiredGate<=3; no install/app/browser/network/provider/active-data/runtime/public/deploy. Seven-field body/two selectors, ownergetJob/requesthash beforeBuild;getVersion onlyafterSave; separateINJECTED_SYNTHETIC_RECEIPT notJOB_EFFECTS. Fixedkey excludesjobId; immutabletarget/config,0sendexactreuse or409referenceonly/no oldreceipt-newHTML; declared-unattestedfixtureidentity; reconcileBpresence cannot releaseUNKNOWN. Disabled/invalid/profilemissing selectorsdeny/no fallback.256monotonicreservations-owner/16KiBrecords/noexpiry/noGC;R1/REVIEW. Local independentprobe pending afterworker. New implementationINITIAL0/docplan/INTEGRATED_ROOT_CONTRACT distinctfrom closed AuditS1/current0/counters0,0,0,1/docNO_SUCCESSOR; all prior source/Goal/Clarity/runtimecounters frozen. R1prelive/R2partial,R3R4open,R5R6deferred; M14-M16deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged. Endpoint/auth/store/attestation/cost/businessacceptance remains held for dependent real effects.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_OFFLINE_SOURCE_VIA_OPERATOR_MANUAL_TRANSFER; BATCH_ID=CVF-NCR-R2-W05-OFFLINE-SOURCE-20261019. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md including proposed focused offline verification scope after actual clean boundrelease PASS; Root does not invoke worker or create/run producttests. One INTERNAL_AGENT180min/exact13:contract/store/injectedproof/profile/branch/actualPOST/hook plus returnEP; Vitest<=4,tsc<=2,targetedESLint<=2,requiredGate<=3; no install/app/browser/network/provider/active-data/runtime/public/deploy. Seven-field body/two selectors, ownergetJob/requesthash beforeBuild;getVersion onlyafterSave; separateINJECTED_SYNTHETIC_RECEIPT notJOB_EFFECTS. Fixedkey excludesjobId; immutabletarget/config,0sendexactreuse or409referenceonly/no oldreceipt-newHTML; declared-unattestedfixtureidentity; reconcileBpresence cannot releaseUNKNOWN. Disabled/invalid/profilemissing selectorsdeny/no fallback.256monotonicreservations-owner/16KiBrecords/noexpiry/noGC;R1/REVIEW. Local independentprobe pending afterworker. New implementationINITIAL0/docplan/INTEGRATED_ROOT_CONTRACT distinctfrom closed AuditS1/current0/counters0,0,0,1/docNO_SUCCESSOR; all prior source/Goal/Clarity/runtimecounters frozen. R1prelive/R2partial,R3R4open,R5R6deferred; M14-M16deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged. Endpoint/auth/store/attestation/cost/businessacceptance remains held for dependent real effects.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -126,7 +126,7 @@ Rollback boundary: exact6 only.
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Allowed scope source | standingroadmap source-packet planning and necessary synchronization |
 | Before status evidence | 0b65e55af88ceacd12ec192660662c023e937a07; clean worktree; empty stage; normal91PASS |
-| After status evidence | dedicatedcurrent6 only; Root source/test/worker0 |
+| After status evidence | dedicatedcurrent6 action-class correction only; Root source/test/worker0 |
 | Diff evidence | git diff --name-status; git diff --check; exact6 |
 | Approval boundary | operator manualtransfer; real effects held |
 | Claim boundary | offline source proposal admission only |
