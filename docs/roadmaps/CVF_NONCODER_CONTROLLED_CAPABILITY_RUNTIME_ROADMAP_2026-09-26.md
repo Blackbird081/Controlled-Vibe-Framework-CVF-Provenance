@@ -12,7 +12,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 
 ## Current Delivery Checkpoint - 2026-10-19
 
-**Đang ở đâu:** Local đã nhận audit12criteria (8supported/3gap/1contradicted) với giới hạn thủ tục và khóa HQ1-HQ7 tại `docs/reviews/CVF_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_LOCAL_COMPLETION_REVIEW_2026-10-19.md`: bỏ jobId khỏi dedupkey, verifiedreuse0send/không gắn receipt sang target mới; declared-unattested fixtureidentity; reconcileBpresence-only; disabledprofiledeny/no fallback;2selectorheaders;256operations/owner/16KiBrecord/no expiry; controlledR1/REVIEW. WorkerS1/current0/counters0,0,0,1/documentaryNO_SUCCESSOR giữ nguyên; chưa có source/effect release.
+**Current action:** HQ1-HQ7 locked; integrated offline source packet `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md` (exact13 worker paths) prepared for operator manual transfer after clean bound release. Contract/store/injected proof/profile/branch/actual POST/hook compose one assignment; focused offline verification scope proposed, no Root source/test/worker/effect. AuditS1 and parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged. R1 prelive/R2partial; R3R4open; R5R6deferred.
 
 | Item | Current disposition | Evidence / remaining step |
 |---|---|---|
@@ -1166,3 +1166,7 @@ BE-S11 accepted bounded source support. Actual renderer/jsdom RED16/18 -> GREEN1
 |---|---|---|---|---|---|
 | INTERNAL_AGENT | selected NCR HTML driver/fence/owned profile and Local review owners | Q05 and current-source R1F cap2 accepted bounded; R2C cap1 ACCEPTED_BOUNDED_RUNTIME_WITH_PROCEDURE_LIMITS; historical R1E retained | docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md; docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json | existing private Local interface; current paired grants spent; future effects require separate authority | IMPLEMENTED |
 | EXTERNAL_AGENT_CLI_MCP | no external adapter selected by current qualification tranche | no remote/provider/CLI/MCP effect granted | current internal proof only; no external adapter evidence | external adapter deferred because this tranche only qualifies Local-owned source and tools | DEFERRED_WITH_REASON |
+
+## R2 W05 Integrated Offline Source Packet - 2026-10-19
+
+HQ1-HQ7 source assignment: `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md`; baseline `docs/baselines/CVF_GC018_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md`. Eleven implementation/test/hook paths plus return/EP; M11/M12 existing oracles read-only. Registry source coverage verified; no new package/generated/catalog path, M14-M16 deferred. Monotonic fixed-slot/exclusive-create records; no releaseable lock/rollback/ACL change. Fixture invoker only, no real network activation. Proposal includes targeted tests/type/lint and distinct Local independent probe, all unexecuted during packet preparation. New implementation evidence task is distinct from closed audit; frozen chains and limits retained. Operator transfers packet; Root does not start worker.
