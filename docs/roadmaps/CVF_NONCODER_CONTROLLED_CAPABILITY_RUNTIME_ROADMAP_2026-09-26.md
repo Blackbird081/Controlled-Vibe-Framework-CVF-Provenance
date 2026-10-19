@@ -12,7 +12,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 
 ## Current Delivery Checkpoint - 2026-10-19
 
-**Current action:** R2/W05 binding repair accepted bounded with procedure limits: `docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md`; worker199/199, tsc0, changed7lint0 and distinct Local10/10. Original blocked provenance, panel4/hook1 exceptions and read deviations retained. Production export intentionally DENY; legacy explicit nonproduction only. Next Local consolidates real-endpoint/auth/store/effects admission design; no worker or real effects granted. LHW24/parent counters fixed.
+**Current action:** binding repair accepted offline (worker199/199, Local10/10); integrated activation design `docs/baselines/CVF_NCR_R2_W05_ACTIVATION_DESIGN_2026-10-19.md` fixes D01-D12/P01-P07 for schema, both auth hops, actual instance/store, policy/request, consumer disclosure and no-retry/UNKNOWN. Next Local prepares one exact offline source work order for manual transfer. No dispatch or actual-effect grant; productionDENY/R2partial/LHW24 retained.
 
 | Item | Current disposition | Evidence / remaining step |
 |---|---|---|
@@ -24,7 +24,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** Local đối chiếu các gap R2/W05 còn lại và chuẩn bị một design/admission packet tích hợp cho endpoint/auth/store attestation, request mapping, giới hạn effect/cost/Stop/UNKNOWN và acceptance. Chưa chạy provider, dữ liệu thật hoặc production; chưa giao worker kế tiếp. R1prelive/R2partial; R3R4open/R5R6deferred.
+**Bước kế tiếp:** Lập một work order source-only tích hợp theo activation design; khóa manifest/dependency/size và proof trước manual transfer. Không giao thêm audit rộng. Quyền chạy thật chỉ xét bằng một checkpoint gộp sau khi có cấu hình cụ thể; R1prelive/R2partial, effectsOFF.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.
@@ -1169,4 +1169,4 @@ BE-S11 accepted bounded source support. Actual renderer/jsdom RED16/18 -> GREEN1
 
 ## R2 W05 Local Binding Review And Consolidated Repair - 2026-10-19
 
-Integrated exact9 repair is accepted bounded with procedure limits by `docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md` and `docs/reviews/evidence/ncr-r2-w05-binding-repair-local-20261019.json`. Worker199/199, tsc0, changed7lint0; distinct Local10/10 repairs prior red authority/posture cases and challenges opaque outcome forgery. Production export denies by locked R04; explicit legacy is nonproduction only. route.ts/operation-branch unchanged. Panel4/old hook1 exceptions, original blocked return/probe and late-read history remain; LF-normalized finalgate log hash is qualified with raw CRLF digest. LocalS5 current0/counters0,1,0,1; no INITIAL reset or automatic successor. Next Local consolidates remaining actual endpoint/auth/store/effect admission design, no execution grant. FullR1prelive/R2partial/R3R4open/R5R6deferred; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 frozen.
+Integrated exact9 repair is accepted bounded with procedure limits by `docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md` and `docs/reviews/evidence/ncr-r2-w05-binding-repair-local-20261019.json`. Worker199/199, tsc0, changed7lint0; distinct Local10/10 repairs prior red authority/posture cases and challenges opaque outcome forgery. Production export denies by locked R04; explicit legacy is nonproduction only. route.ts/operation-branch unchanged. Panel4/old hook1 exceptions, original blocked return/probe and late-read history remain; LF-normalized finalgate log hash is qualified with raw CRLF digest. LocalS5 current0/counters0,1,0,1; no INITIAL reset or automatic successor. Next Local consolidates remaining actual endpoint/auth/store/effect admission design, no execution grant. FullR1prelive/R2partial/R3R4open/R5R6deferred; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 frozen. Activation design `docs/baselines/CVF_NCR_R2_W05_ACTIVATION_DESIGN_2026-10-19.md` owns the next source proposal D01-D12/P01-P07 and grouped later effects checkpoint; no SCEC reset or new worker run.
