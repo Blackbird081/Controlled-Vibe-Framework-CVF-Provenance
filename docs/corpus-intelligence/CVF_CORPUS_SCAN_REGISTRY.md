@@ -296,3 +296,7 @@ The current-source synthetic browser spec is registered at `docs/corpus-intellig
 ## NCR R1 Read-Only Browser UX Assessment Registration - 2026-10-18
 
 The read-only browser UX assessment spec and its existing ESLint configuration dependency are registered at `docs/corpus-intelligence/registry/entries/cvf-ncr-r1-ux-readonly-browser-test.json`; status NOT_STARTED. Registration is not a scan or a UI result; the assessment evidence is recorded in the worker return `docs/reviews/CVF_NCR_R1_UX_READONLY_BROWSER_WORKER_RETURN_2026-10-18.md`. No semantic scan or corpus-completeness claim is made.
+
+## NCR R2 W05 TypeScript Config Dependency Registration - 2026-10-19
+
+Entry `ncr-r2-w05-typescript-config-dependency` at `docs/corpus-intelligence/registry/entries/ncr-r2-w05-typescript-config-dependency.json` covers only `EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json` as a read-only implementation dependency. Status NOT_STARTED is formal scan status, not a denial that the worker read the file; no corpus scan/completeness or runtime claim is added. Local source review `docs/reviews/CVF_NCR_R2_W05_OFFLINE_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-19.md` records the missing dispatch-time coverage prerequisite. Aggregate regenerated from source; existing worker return/EP are byte-preserved.

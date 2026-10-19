@@ -1,0 +1,796 @@
+{
+ "schema": "cvf.ncrReceiptOperationOfflineSource.v1",
+ "batchId": "CVF-NCR-R2-W05-OFFLINE-SOURCE-20261019",
+ "status": "BLOCKED_WITH_REASON",
+ "blockedDigest": "Offline source chain and 115 new named cases are complete and pass; the packet cannot be certified complete because (1) the retained ArtifactExportPanel.test.tsx oracle has 4 failures that exist at the clean base and cannot be repaired inside the exact13 write scope, (2) the targeted ESLint envelope of two runs was exhausted before the final revision could be linted, and (3) the owned scratch exceeds the 256-file cap because the capacity and scan-bound fixtures create thousands of small records that the monotonic rule forbids deleting.",
+ "claimBoundary": "Offline synthetic protocol and structure evidence only. No live governance, remote approval, attestation, billing, human acceptance, browser, provider, network, active store or full R2 readiness is claimed. The Local independent probe is pending.",
+ "textEncodingNote": "All worker-authored files are ASCII.",
+ "executionBase": {
+  "executionBaseHead": "754fe3dfc00e91a750c9984d5086bd283f649f5d",
+  "dispatchInspectionBase": "de63f6707a913af902b21b4958ff5ea31736bfe3",
+  "headUnchangedAtBuild": true,
+  "stageEmptyAtBuild": true,
+  "baselineSha256": "9c1e2430b2a546fa843234e03764c1b3ec0e7b263b8a61e46494c01ff6e9061c",
+  "workOrderSha256": "5b182fb937bf4cdf0349c363c984f725e5d0e34729708ebcbfbdddfa4de0a7b6",
+  "bootstrapPinsMatched": true,
+  "firstCommandUtc": "2026-10-19T01:15:36Z",
+  "preImplementationGateUtc": "2026-10-19T01:17:21Z",
+  "envelopeMinutes": 180
+ },
+ "source13": [
+  {
+   "id": "M01",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.ts",
+   "action": "CREATE",
+   "baselineSha256": null,
+   "sha256": "7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094",
+   "lines": 260,
+   "maxLines": 400,
+   "bytes": 19474,
+   "eol": "LF",
+   "withinBudget": true,
+   "nonAscii": false
+  },
+  {
+   "id": "M02",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+   "action": "MODIFY",
+   "baselineSha256": "138ebb622321e5114e4f742eb83df271ad9da3ffdf5245b0aa68569c6ef6d752",
+   "sha256": "084c1368c8c9543ce9dc409c8f6d27ab179164877b88bada2d99a19881e3d77e",
+   "lines": 418,
+   "maxLines": 650,
+   "bytes": 28369,
+   "eol": "LF",
+   "withinBudget": true,
+   "nonAscii": false
+  },
+  {
+   "id": "M03",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.test.ts",
+   "action": "CREATE",
+   "baselineSha256": null,
+   "sha256": "1ba44d1f5e68bc0d72aa6668d6680c3918d5c50dc2369c66013031288bd82713",
+   "lines": 262,
+   "maxLines": 450,
+   "bytes": 18804,
+   "eol": "LF",
+   "withinBudget": true,
+   "nonAscii": false
+  },
+  {
+   "id": "M04",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.operation.test.ts",
+   "action": "CREATE",
+   "baselineSha256": null,
+   "sha256": "4a2ec4ecb7e6d4ff37fe36586a579d36d56bdd861e3444e56f1478958caa115c",
+   "lines": 644,
+   "maxLines": 650,
+   "bytes": 43338,
+   "eol": "LF",
+   "withinBudget": true,
+   "nonAscii": false
+  },
+  {
+   "id": "M05",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+   "action": "MODIFY",
+   "baselineSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+   "sha256": "fab772f525fcaf6b69bf2ea27e64dd3c6ddb26d0f5f18d9ee999ab6deb49eac2",
+   "lines": 302,
+   "maxLines": 400,
+   "bytes": 15514,
+   "eol": "LF",
+   "withinBudget": true,
+   "nonAscii": false
+  },
+  {
+   "id": "M06",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.operation.test.ts",
+   "action": "CREATE",
+   "baselineSha256": null,
+   "sha256": "483bc0c4672f9708f7c40021b5a42c309952deb4b29acdc3c2f021ba495ef794",
+   "lines": 345,
+   "maxLines": 500,
+   "bytes": 23842,
+   "eol": "LF",
+   "withinBudget": true,
+   "nonAscii": false
+  },
+  {
+   "id": "M07",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts",
+   "action": "CREATE",
+   "baselineSha256": null,
+   "sha256": "ebf73ea63024e86b32a02b9e9a5d57b3c3e972bcc48a5d1ee14588645fa98903",
+   "lines": 90,
+   "maxLines": 350,
+   "bytes": 5411,
+   "eol": "LF",
+   "withinBudget": true,
+   "nonAscii": false
+  },
+  {
+   "id": "M08",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts",
+   "action": "CREATE",
+   "baselineSha256": null,
+   "sha256": "8478e8673a2c95ebea0b7b6155fab33101d703d62c0d5737824b8fb3b6692bb7",
+   "lines": 97,
+   "maxLines": 500,
+   "bytes": 6685,
+   "eol": "LF",
+   "withinBudget": true,
+   "nonAscii": false
+  },
+  {
+   "id": "M09",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+   "action": "MODIFY",
+   "baselineSha256": "2f09a7dc52a9c8c4383ecd6905459bfb9ea9d2a67ec520c0a31d022de460dd43",
+   "sha256": "e9266d4ecd7f3c46dcda7a53eca4a576838af18bf9fc7663a5e8196c1e944fbb",
+   "lines": 419,
+   "maxLines": 650,
+   "bytes": 17839,
+   "eol": "CRLF",
+   "withinBudget": true,
+   "nonAscii": false
+  },
+  {
+   "id": "M10",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation.test.ts",
+   "action": "CREATE",
+   "baselineSha256": null,
+   "sha256": "812a28d23dd03fe308fb4e73900df7ae5531b7f6c606898c23994459a5bd53e2",
+   "lines": 406,
+   "maxLines": 650,
+   "bytes": 27853,
+   "eol": "LF",
+   "withinBudget": true,
+   "nonAscii": false
+  },
+  {
+   "id": "M13",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+   "action": "MODIFY",
+   "baselineSha256": "8a20cc04ebcb3662a7078c34ab12f3a2c8f141fb0646abf0756ada3cb3f0bb88",
+   "sha256": "00cb76dc36ae8efacaafffe3c1ec5086b1707baa8412afd4760ec1c9eb70fcfd",
+   "lines": 128,
+   "maxLines": 220,
+   "bytes": 8716,
+   "eol": "LF",
+   "withinBudget": true,
+   "nonAscii": false
+  },
+  {
+   "id": "W01",
+   "path": "docs/reviews/CVF_NCR_R2_W05_OFFLINE_SOURCE_WORKER_RETURN_2026-10-19.md",
+   "action": "CREATE",
+   "sha256": "BOUND_ONLY_BY_DETACHED_RECEIPT",
+   "maxLines": 450
+  },
+  {
+   "id": "W02",
+   "path": "docs/reviews/evidence/ncr-r2-w05-offline-source-worker-20261019.json",
+   "action": "CREATE",
+   "sha256": "BOUND_ONLY_BY_DETACHED_RECEIPT",
+   "maxLines": 900
+  }
+ ],
+ "readOnlyOracles": {
+  "count": 16,
+  "unchangedStartToEnd": true,
+  "startPins": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/worker/readonly-pins-start.txt",
+  "endPins": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/worker/readonly-pins-end.txt",
+  "note": "route.test.ts, job-profile.test.ts, html-job-contract.ts, html-draft-recovery-contract.ts, both synthetic profile resolvers, html-job-api.ts, html-draft-recovery-api.ts, both store test files, ArtifactExportPanel.test.tsx, setup.ts, package.json, vitest.config.ts, tsconfig.json and eslint.config.mjs"
+ },
+ "REQ-IDENTITY": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-offline-source-worker-20261019.json#REQ-IDENTITY",
+  "covers": "C01 fixed-order key without job/version/config/html; strict immutable envelope with copy semantics; canonical serialization; secret and non-synthetic rejection",
+  "sources": ["M01","M03"],
+  "cases": [
+   {"id":"C01","status":"PASS","title":"fixed-order logical key serializes exactly [schema,userId,orgId,teamId,sourceRecordId,requestSha256,effectKind] and hashes that text"},
+   {"id":"C02","status":"PASS","title":"fixed-order logical key excludes jobId, versionId, config, endpoint and html identity from the key but binds them in the envelope"},
+   {"id":"C03","status":"PASS","title":"fixed-order logical key rejects an invalid owner, a non-synthetic source record and a non-hash request digest"},
+   {"id":"C04","status":"PASS","title":"fixed-order logical key derives a deterministic attempt id from the key only"},
+   {"id":"C05","status":"PASS","title":"canonical serialization sorts keys and refuses non-canonical values"},
+   {"id":"C06","status":"PASS","title":"canonical serialization serializes the same envelope to the same bytes regardless of property order"},
+   {"id":"C07","status":"PASS","title":"strict envelope and config copies input and never aliases the caller object"},
+   {"id":"C08","status":"PASS","title":"strict envelope and config binds every declared identity, phase, risk, call limit, disclosure and posture"},
+   {"id":"C09","status":"PASS","title":"strict envelope and config rejects extra, missing, retyped and tampered envelope fields"},
+   {"id":"C10","status":"PASS","title":"strict envelope and config accepts a saved version id only as an explicit later binding"},
+   {"id":"C11","status":"PASS","title":"strict envelope and config requires synthetic endpoint and store ids and a self-consistent digest; production and attested trust are not representable"},
+   {"id":"C12","status":"PASS","title":"strict envelope and config rejects secret-like values in config and output text"}
+  ]
+ },
+ "REQ-STORE": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-offline-source-worker-20261019.json#REQ-STORE",
+  "covers": "C02-C05 real files and real OS processes: 256 monotonic reservations, immutable intent/start/outcome, no recycle, no TTL, missing vs corrupt vs unconfirmed vs unsupported, single-use grant, restart without replay",
+  "sources": ["M02","M04"],
+  "cases": [
+   {"id":"C13","status":"PASS","title":"lifecycle records and bytes round trips reservation, intent, start and outcome through strict parsers"},
+   {"id":"C14","status":"PASS","title":"lifecycle records and bytes rejects a slot outside 0..255, a mismatched intent digest and a non-hex nonce"},
+   {"id":"C15","status":"PASS","title":"lifecycle records and bytes enforces outcome/receipt/reason invariants"},
+   {"id":"C16","status":"PASS","title":"lifecycle records and bytes refuses to serialize a record over the 16384-byte bound"},
+   {"id":"C17","status":"PASS","title":"lifecycle records and bytes distinguishes corrupt, unsupported and canonical bytes"},
+   {"id":"S01","status":"PASS","title":"immutable operation records writes reservation, intent, start and outcome once each as exact canonical bytes under the operations child directory"},
+   {"id":"S02","status":"PASS","title":"immutable operation records keeps existing draft and job files outside the operations scan"},
+   {"id":"S03","status":"PASS","title":"immutable operation records denies every operation call when the profile does not enable receipt operations"},
+   {"id":"S04","status":"PASS","title":"immutable operation records looks up an existing key before reserving, so a repeat consumes no new slot"},
+   {"id":"S05","status":"PASS","title":"immutable operation records rejects an envelope for another owner and keeps owner namespaces apart"},
+   {"id":"S06","status":"PASS","title":"missing, corrupt, unconfirmed and unsupported are distinct reports empty record as without admitting a replacement"},
+   {"id":"S07","status":"PASS","title":"missing, corrupt, unconfirmed and unsupported are distinct reports not json as {not json without admitting a replacement"},
+   {"id":"S08","status":"PASS","title":"missing, corrupt, unconfirmed and unsupported are distinct reports oversize record as without admitting a replacement"},
+   {"id":"S09","status":"PASS","title":"missing, corrupt, unconfirmed and unsupported are distinct reports unsupported revision as {\"schema\":\"cvf.artifactsReceiptOperation.v2\"} without admit"},
+   {"id":"S10","status":"PASS","title":"missing, corrupt, unconfirmed and unsupported are distinct reports wrong shape as {\"schema\":\"cvf.artifactsReceiptOperation.v1\",\"kind\":\"INTENT\"} withou"},
+   {"id":"S11","status":"PASS","title":"missing, corrupt, unconfirmed and unsupported are distinct treats an orphan start or a missing reservation as corrupt and an unusable root as unconfir"},
+   {"id":"S12","status":"PASS","title":"missing, corrupt, unconfirmed and unsupported are distinct rejects a key mismatch planted under another key name"},
+   {"id":"S13","status":"PASS","title":"missing, corrupt, unconfirmed and unsupported are distinct denies through a junction operations directory and a junction root without writing through "},
+   {"id":"S14","status":"PASS","title":"missing, corrupt, unconfirmed and unsupported are distinct denies an unknown entry and an over-bound scan instead of ignoring them"},
+   {"id":"S15","status":"PASS","title":"write and readback faults consume, never recycle a torn reservation consumes its slot, denies, and the next admit uses a later slot"},
+   {"id":"S16","status":"PASS","title":"write and readback faults consume, never recycle a torn intent keeps the key consumed: lookup is corrupt, no replacement intent or slot"},
+   {"id":"S17","status":"PASS","title":"write and readback faults consume, never recycle a torn start denies before any grant exists and later callers never mint one"},
+   {"id":"S18","status":"PASS","title":"write and readback faults consume, never recycle a torn outcome leaves the operation corrupt and a healthy writer cannot replace it"},
+   {"id":"S19","status":"PASS","title":"write and readback faults consume, never recycle an abandoned empty reservation file consumes capacity and is never recycled"},
+   {"id":"S20","status":"PASS","title":"injected open failure and readback mismatch deny before any send denies when the reservation open fails and creates no marker"},
+   {"id":"S21","status":"PASS","title":"injected open failure and readback mismatch deny before any send denies when the intent open fails: the reservation marker stays consumed and a later "},
+   {"id":"S22","status":"PASS","title":"injected open failure and readback mismatch deny before any send denies when the start open fails and mints no grant"},
+   {"id":"S23","status":"PASS","title":"injected open failure and readback mismatch deny before any send denies on a reservation readback mismatch and keeps the written record consumed"},
+   {"id":"S24","status":"PASS","title":"injected open failure and readback mismatch deny before any send denies on a intent readback mismatch and keeps the written record consumed"},
+   {"id":"S25","status":"PASS","title":"injected open failure and readback mismatch deny before any send a start readback mismatch leaves STARTED with no grant, so nothing can be sent"},
+   {"id":"S26","status":"PASS","title":"capacity of 256 monotonic reservations per owner admits exactly 256 operations, denies the 257th, and an existing key still resolves at capacity"},
+   {"id":"S27","status":"PASS","title":"capacity of 256 monotonic reservations per owner counts 255 abandoned slots as consumed so exactly one more admission fits"},
+   {"id":"S28","status":"PASS","title":"capacity of 256 monotonic reservations per owner keeps the cap under in-process racing and wastes slots conservatively for duplicate keys"},
+   {"id":"S29","status":"PASS","title":"single-use grant and unknown without retry mints one opaque grant from the winning start and rejects copies, forgeries, spent grants and foreign store"},
+   {"id":"S30","status":"PASS","title":"single-use grant and unknown without retry never mints a second grant after STARTED, a restart, or a terminal outcome"},
+   {"id":"S31","status":"PASS","title":"single-use grant and unknown without retry writes one immutable outcome: a second writer collides and a wrong nonce or early write is refused"},
+   {"id":"S32","status":"PASS","title":"no expiry, retained facts and separate draft TTL keeps unknown and verified facts beyond 24 hours with no reuse, while the draft snapshot expires"},
+   {"id":"S33","status":"PASS","title":"no expiry, retained facts and separate draft TTL retains every record byte-for-byte when the profile is disabled and readable again when re-enabled"},
+   {"id":"S34","status":"PASS","title":"no expiry, retained facts and separate draft TTL rejects secret-like and non-synthetic input at the contract boundary before any file exists"},
+   {"id":"S35","status":"PASS","title":"eight real OS contenders, boundary reservation 256/257 and restart lets at most one process start and invoke, caps reservations at 256, and never repl"}
+  ]
+ },
+ "REQ-PROOF": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-offline-source-worker-20261019.json#REQ-PROOF",
+  "covers": "C07/C09-C10 injected-only callback, R1/REVIEW payload, exact joined receipt, one send, unknown on every post-invoke failure, presence diagnostic cannot release or replay, legacy helper retained",
+  "sources": ["M05","M06"],
+  "cases": [
+   {"id":"P01","status":"PASS","title":"one injected send and exact joined outcome invokes the injected callback once with the exact R1/REVIEW payload and stores the joined verified receipt"},
+   {"id":"P02","status":"PASS","title":"one injected send and exact joined outcome slices the evaluated content to 500 characters and keeps fixed R1/REVIEW fields"},
+   {"id":"P03","status":"PASS","title":"one injected send and exact joined outcome reuses an identical verified target with zero sends and never attaches the receipt to a different target"},
+   {"id":"P04","status":"PASS","title":"one injected send and exact joined outcome maps a remote DENY to DENIED and never reuses it; review decisions stay verified receipts"},
+   {"id":"P05","status":"PASS","title":"one injected send and exact joined outcome records an invalid current-engine response (request-id) as OUTCOME_UNKNOWN with no receipt and no replay"},
+   {"id":"P06","status":"PASS","title":"one injected send and exact joined outcome records an invalid current-engine response (artifact-id) as OUTCOME_UNKNOWN with no receipt and no replay"},
+   {"id":"P07","status":"PASS","title":"one injected send and exact joined outcome records an invalid current-engine response (decision) as OUTCOME_UNKNOWN with no receipt and no replay"},
+   {"id":"P08","status":"PASS","title":"one injected send and exact joined outcome records an invalid current-engine response (ledger) as OUTCOME_UNKNOWN with no receipt and no replay"},
+   {"id":"P09","status":"PASS","title":"one injected send and exact joined outcome records an invalid current-engine response (ledger-ref) as OUTCOME_UNKNOWN with no receipt and no replay"},
+   {"id":"P10","status":"PASS","title":"one injected send and exact joined outcome records an invalid current-engine response (enforcement) as OUTCOME_UNKNOWN with no receipt and no replay"},
+   {"id":"P11","status":"PASS","title":"one injected send and exact joined outcome records an invalid current-engine response (risk-r0) as OUTCOME_UNKNOWN with no receipt and no replay"},
+   {"id":"P12","status":"PASS","title":"one injected send and exact joined outcome records an invalid current-engine response (string-success) as OUTCOME_UNKNOWN with no receipt and no repla"},
+   {"id":"P13","status":"PASS","title":"one injected send and exact joined outcome records an invalid current-engine response (no-data) as OUTCOME_UNKNOWN with no receipt and no replay"},
+   {"id":"P14","status":"PASS","title":"one injected send and exact joined outcome does not accept the older explicit approval envelope on the controlled path"},
+   {"id":"P15","status":"PASS","title":"failure, timeout, abort and late response keep unknown records rejecting invoker as OUTCOME_UNKNOWN and denies replay"},
+   {"id":"P16","status":"PASS","title":"failure, timeout, abort and late response keep unknown records synchronously throwing invoker as OUTCOME_UNKNOWN and denies replay"},
+   {"id":"P17","status":"PASS","title":"failure, timeout, abort and late response keep unknown treats an invoker that throws synchronously as an unknown outcome after one call"},
+   {"id":"P18","status":"PASS","title":"failure, timeout, abort and late response keep unknown marks a timeout unknown, aborts the signal, and a late success cannot publish or release the op"},
+   {"id":"P19","status":"PASS","title":"failure, timeout, abort and late response keep unknown marks an external abort during flight unknown and records FAILED_BEFORE_SEND for a pre-aborted "},
+   {"id":"P20","status":"PASS","title":"failure, timeout, abort and late response keep unknown yields unknown, not a verified receipt, when the outcome write fails, hangs or throws"},
+   {"id":"P21","status":"PASS","title":"failure, timeout, abort and late response keep unknown denies before invoking when admission or start errors or hangs"},
+   {"id":"P22","status":"PASS","title":"grant and input denial with zero sends rejects fabricated, copied, wrong-invoker and spent grants before invoking"},
+   {"id":"P23","status":"PASS","title":"grant and input denial with zero sends denies invalid proof input, a disabled profile, a full namespace and a corrupt existing record with zero sends"},
+   {"id":"P24","status":"PASS","title":"Reconcile B is a presence diagnostic only observes presence only for the exact attempt, actor, config and store and never releases or invokes"},
+   {"id":"P25","status":"PASS","title":"Reconcile B is a presence diagnostic only leaves an UNKNOWN operation unchanged and unreplayable even when the lookup reports presence"},
+   {"id":"P26","status":"PASS","title":"legacy helper is retained separately still sends the legacy R0 REVIEW request through global fetch and parses the same response shape"}
+  ]
+ },
+ "REQ-INTEGRATION": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-offline-source-worker-20261019.json#REQ-INTEGRATION",
+  "covers": "C06/C08-C09 actual POST composition, selector posture with no fallback, authenticated owner-scoped job and hash before admission, first Build without saved version, hook selector transport, import graph",
+  "sources": ["M07","M08","M09","M10","M13"],
+  "cases": [
+   {"id":"C18","status":"PASS","title":"import graph and no ambient authority limits imports to Node builtins and current artifacts modules"},
+   {"id":"C19","status":"PASS","title":"import graph and no ambient authority has no default fetch, credential, engine, provider or network use in the new fixture owners"},
+   {"id":"C20","status":"PASS","title":"import graph and no ambient authority has no unlink, rename, truncate, append, chmod, chown or lock in the operations code and opens files only with w"},
+   {"id":"C21","status":"PASS","title":"import graph and no ambient authority reads the environment in one default parameter only and never for activation"},
+   {"id":"O01","status":"PASS","title":"actual POST with the controlled injected branch runs the first Build with owner-scoped job and hash, no saved version, one injected send and no legacy"},
+   {"id":"O02","status":"PASS","title":"actual POST with the controlled injected branch answers a repeated or re-minted Build for a different render with reference-only ALREADY_PROCESSED and"},
+   {"id":"O03","status":"PASS","title":"actual POST with the controlled injected branch reuses an exact identical immutable target through the branch with zero sends and refuses any changed "},
+   {"id":"O04","status":"PASS","title":"actual POST with the controlled injected branch records a timed-out injected send as unknown, never as a receipt, and refuses the repeat"},
+   {"id":"O05","status":"PASS","title":"selectors, session and forged input deny with zero sends denies partial job only before reading a job or sending"},
+   {"id":"O06","status":"PASS","title":"selectors, session and forged input deny with zero sends denies partial source only before reading a job or sending"},
+   {"id":"O07","status":"PASS","title":"selectors, session and forged input deny with zero sends denies malformed job id before reading a job or sending"},
+   {"id":"O08","status":"PASS","title":"selectors, session and forged input deny with zero sends denies non-synthetic source before reading a job or sending"},
+   {"id":"O09","status":"PASS","title":"selectors, session and forged input deny with zero sends denies comma-conflicting job ids before reading a job or sending"},
+   {"id":"O10","status":"PASS","title":"selectors, session and forged input deny with zero sends denies comma-conflicting source ids before reading a job or sending"},
+   {"id":"O11","status":"PASS","title":"selectors, session and forged input deny with zero sends denies empty values before reading a job or sending"},
+   {"id":"O12","status":"PASS","title":"selectors, session and forged input deny with zero sends denies no selectors before reading a job or sending"},
+   {"id":"O13","status":"PASS","title":"selectors, session and forged input deny with zero sends denies a missing job, a mismatching request hash and a foreign owner before admission"},
+   {"id":"O14","status":"PASS","title":"selectors, session and forged input deny with zero sends denies a break-glass, non-session, unauthenticated, expired or cross-origin request and a for"},
+   {"id":"O15","status":"PASS","title":"selectors, session and forged input deny with zero sends denies an expired job before admission and maps changed content or another actor to different"},
+   {"id":"O16","status":"PASS","title":"selectors, session and forged input deny with zero sends denies a declared disabled posture through the real resolver with no legacy fallback"},
+   {"id":"O17","status":"PASS","title":"selectors, session and forged input deny with zero sends denies a declared disabled beside enabling variables posture through the real resolver with n"},
+   {"id":"O18","status":"PASS","title":"selectors, session and forged input deny with zero sends denies a declared invalid posture through the real resolver with no legacy fallback"},
+   {"id":"O19","status":"PASS","title":"selectors, session and forged input deny with zero sends denies a declared empty posture through the real resolver with no legacy fallback"},
+   {"id":"O20","status":"PASS","title":"selectors, session and forged input deny with zero sends denies a declared comma conflict posture through the real resolver with no legacy fallback"},
+   {"id":"O21","status":"PASS","title":"selectors, session and forged input deny with zero sends denies a declared held activation posture through the real resolver with no legacy fallback"},
+   {"id":"O22","status":"PASS","title":"selectors, session and forged input deny with zero sends denies a declared production posture through the real resolver with no legacy fallback"},
+   {"id":"O23","status":"PASS","title":"selectors, session and forged input deny with zero sends denies selectors with no valid profile and a declared local posture without a local job profi"},
+   {"id":"O24","status":"PASS","title":"posture resolver and route decision maps every environment value to a deny or a non-receipt posture and never to a controlled receipt profile"},
+   {"id":"O25","status":"PASS","title":"posture resolver and route decision decides routes without ever falling back from a deny to legacy"},
+   {"id":"O26","status":"PASS","title":"posture resolver and route decision builds the controlled profile only through the typed factory and rejects non-synthetic or unsafe input"},
+   {"id":"O27","status":"PASS","title":"local-only profile keeps no receipt and binds the local job only returns NOT_CONFIGURED without an injected send, and denies a missing job under selec"},
+   {"id":"O28","status":"PASS","title":"hook selector transport sends both selectors with the unchanged seven-field body only for a valid job reference"},
+   {"id":"O29","status":"PASS","title":"hook selector transport keeps the legacy no-header request for no prepareJob"},
+   {"id":"O30","status":"PASS","title":"hook selector transport keeps the legacy no-header request for malformed job id"},
+   {"id":"O31","status":"PASS","title":"hook selector transport keeps the legacy no-header request for malformed source"},
+   {"id":"O32","status":"PASS","title":"hook selector transport keeps the legacy no-header request for partial reference"},
+   {"id":"O33","status":"PASS","title":"hook selector transport keeps the Stop fence: a stopped attempt never reaches fetch even when the job resolves later"}
+  ]
+ },
+ "REQ-RETURN": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-offline-source-worker-20261019.json#REQ-RETURN",
+  "covers": "exact13 pins, read history with late reads, tool attempts, deviations, and the detached final gate receipt",
+  "status": "BLOCKED",
+  "reason": "required focused checks are not all green on the final revision (baseline red oracle; final-revision lint not executed)",
+  "gateAttemptsRecordedIn": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/worker/final-gate-receipt.json (detached, ignored)"
+ },
+ "newCaseCounts": {
+  "artifacts-receipt-operation-contract.test.ts": 21,
+  "html-draft-snapshot-store.operation.test.ts": 35,
+  "proof.operation.test.ts": 26,
+  "export/operation.test.ts": 33,
+  "totalNew": 115,
+  "allPass": true,
+  "titleNote": "Five store cases built with it.each print the planted bytes where the title template shows the expected state; assertions use the expected state correctly"
+ },
+ "retainedOracleResults": [
+  {"file":"src/components/ArtifactExportPanel.test.tsx","counts":{"passed":66,"failed":4},"status":"failed"},
+  {"file":"src/lib/server/html-draft-snapshot-store.test.ts","counts":{"passed":2},"status":"passed"},
+  {"file":"src/app/api/artifacts/export/job-profile.test.ts","counts":{"passed":1},"status":"passed"},
+  {"file":"src/app/api/artifacts/export/route.test.ts","counts":{"passed":37},"status":"passed"}
+ ],
+ "panelBaselineRed": {
+  "file": "src/components/ArtifactExportPanel.test.tsx",
+  "failing": [
+   "ArtifactExportPanel keeps an unrelated or network error generic, without a secondary detail line",
+   "ArtifactExportPanel F-01 secret refusal recovery SR-05 leaves an unrelated error that only mentions secrets as the raw fallback",
+   "ArtifactExportPanel B1 version binding does not erase a valid earlier result when a newer attempt fails, and attaches the error to the newer attempt",
+   "ArtifactExportPanel B1 version binding labels a newer failure with its build number apart from the older preview that stays visible"
+  ],
+  "cause": "the panel renders the generic failure copy added by the earlier Clarity change while these four tests still expect the raw thrown message; earlier committed evidence shows the same tests asserted raw text and passed before that change",
+  "proof": "V2 ran the file with the HEAD copy of the hook: the same four fail, 66 pass; the panel and its test were not edited by the worker",
+  "ownerAction": "Local decides: repair the oracle or the copy, or waive for this packet"
+ },
+ "caseGroupToPlan": [
+  {
+   "id": "PA1",
+   "disposition": "COVERED",
+   "tests": ["O22","O24"],
+   "note": "declared production posture denies; resolver matrix maps production to PRODUCTION_DENIED; no record or store write (O13 pattern: no operations directory on denial)"
+  },
+  {
+   "id": "PA2",
+   "disposition": "COVERED",
+   "tests": ["O25"],
+   "note": "undeclared and no selectors keeps LEGACY; retained route.test.ts 37 of 37 and job-profile.test.ts 1 of 1 pass unchanged"
+  },
+  {
+   "id": "PA3",
+   "disposition": "COVERED_WITH_VARIANT",
+   "tests": ["O16","O17","O18","O19","O20","O21","O22"],
+   "note": "no fall-through shown by the distinct deny body and zero calls to global fetch; the planned receipt-helper spy is replaced by that observable because the helper is a module function"
+  },
+  {
+   "id": "PA4",
+   "disposition": "COVERED",
+   "tests": ["O14","O13"],
+   "note": "break-glass, impersonation, non-session, unauthenticated, expired and cross-origin deny; foreign owner resolves to NOT_FOUND in its own namespace"
+  },
+  {
+   "id": "PA5",
+   "disposition": "COVERED",
+   "tests": ["O14","O13"],
+   "note": "unknown body field permit rejected 400; permit header ignored; selector of another owner is NOT_FOUND"
+  },
+  {
+   "id": "PA6",
+   "disposition": "COVERED",
+   "tests": ["O13","O15","O08"],
+   "note": "request hash mismatch 409, expired job 404, non-synthetic selector 400, all before admission with no operations directory"
+  },
+  {"id":"PB1","disposition":"COVERED","tests":["S04","S06","S07","S28"],"note":"existing key never gets a second intent; planted bytes unchanged"},
+  {
+   "id": "PB2",
+   "disposition": "COVERED_WITH_VARIANT",
+   "tests": ["S20","S21","S22"],
+   "note": "open failure injected at the create boundary, not a real EACCES or ENOSPC"
+  },
+  {"id":"PB3","disposition":"COVERED","tests":["S16","S06","S07"],"note":"torn intent keeps the key consumed and lookup corrupt"},
+  {"id":"PB4","disposition":"COVERED","tests":["S23","S24","S25"],"note":"readback bytes differ from written bytes"},
+  {"id":"PB5","disposition":"COVERED","tests":["S35","S29","S30"],"note":"one winner among eight real OS processes"},
+  {"id":"PB6","disposition":"COVERED","tests":["S17","S22","S25"],"note":"no grant and no send"},
+  {
+   "id": "PB7",
+   "disposition": "COVERED_WITH_VARIANT",
+   "tests": ["S26","S27","P23"],
+   "note": "cap 256 plus 257th denied; ENOSPC covered only through open-failure doubles"
+  },
+  {"id":"PC1","disposition":"COVERED","tests":["P01","O01"],"note":"one send, joined verified outcome, operation reference in the response"},
+  {
+   "id": "PC2",
+   "disposition": "SUPERSEDED_BY_C04",
+   "tests": ["P19"],
+   "note": "a typed NOT_CONFIGURED return from the invoker is not implemented: C04 makes every error after invoke OUTCOME_UNKNOWN; FAILED_BEFORE_SEND is produced only by the pre-aborted signal check"
+  },
+  {
+   "id": "PC3",
+   "disposition": "COVERED",
+   "tests": ["P05","P06","P07","P08","P09","P10","P11","P12","P13","P15","P16","P17","P18"],
+   "note": "timeout, throw, reject and invalid response all stay unknown with no replay"
+  },
+  {"id":"PC4","disposition":"COVERED","tests":["P20","S18"],"note":"outcome write failure yields unknown, not a verified receipt"},
+  {"id":"PC5","disposition":"COVERED","tests":["S35","S28"],"note":"eight real OS contenders and eight in-process contenders"},
+  {"id":"PC6","disposition":"COVERED","tests":["S30","S35"],"note":"restart process receives EXISTING:STARTED and no grant"},
+  {"id":"PC7","disposition":"COVERED","tests":["S29","P22"],"note":"fabricated, copied, wrong-invoker and foreign-store grants rejected"},
+  {"id":"PC8","disposition":"COVERED","tests":["S29","P22"],"note":"spent grant rejected"},
+  {
+   "id": "PC9",
+   "disposition": "COVERED",
+   "tests": ["P03","P05","O02","O03"],
+   "note": "new job, version, config and html after VERIFIED or UNKNOWN are reference-only"
+  },
+  {"id":"PC10","disposition":"COVERED","tests":["O15"],"note":"changed content and a different actor map to different keys and each send once"},
+  {
+   "id": "PD1",
+   "disposition": "COVERED_WITH_VARIANT",
+   "tests": ["P24"],
+   "note": "diagnostic is a pure function over an injected lookup; it has no Build, Save or evaluate hop, so those counters do not exist and the invoker and global fetch stay at zero"
+  },
+  {"id":"PD2","disposition":"COVERED","tests":["P24"],"note":"wrong attempt, actor, config digest and store stay UNKNOWN"},
+  {"id":"PD3","disposition":"COVERED_WITH_VARIANT","tests":["P24"],"note":"lookup throw and hang stay UNKNOWN; the diagnostic does not read the store"},
+  {
+   "id": "PD4",
+   "disposition": "COVERED_WITH_VARIANT",
+   "tests": ["P24","P25"],
+   "note": "injected PresenceLookup stands for the ledger window; no governanceLedger fake exists in this packet"
+  },
+  {
+   "id": "PE1",
+   "disposition": "COVERED_WITH_VARIANT",
+   "tests": ["S32","C20"],
+   "note": "records and hashes persist beyond 24 h and 400 days; absence of unlink is shown by a static source check rather than an fs spy"
+  },
+  {
+   "id": "PE2",
+   "disposition": "PARTIAL_NOT_APPLICABLE",
+   "tests": ["S33"],
+   "note": "disable retains facts byte for byte; safe-copy migration is not implemented and not applicable"
+  },
+  {
+   "id": "PE3",
+   "disposition": "COVERED",
+   "tests": ["C12","C16","S34"],
+   "note": "oversize record bytes refused; secret-like and non-synthetic input rejected before any file"
+  },
+  {
+   "id": "PF1",
+   "disposition": "COVERED_WITH_DISCLOSED_BASELINE_RED",
+   "tests": ["P26"],
+   "note": "legacy helper still sends R0/REVIEW with a 500-character slice; retained oracles route.test 37/37, job-profile 1/1, store.test 2/2 pass; panel oracle 66 of 70 with 4 pre-existing failures"
+  },
+  {
+   "id": "PG1",
+   "disposition": "COVERED",
+   "tests": ["C18","C19","C20","C21"],
+   "note": "imports limited to Node builtins and current artifacts modules; no fetch, credential, engine, provider, gateway or approval-store token"
+  }
+ ],
+ "processEvidence": {
+  "totalChildProcessStarts": 30,
+  "cap": 32,
+  "perFullSuiteRun": 10,
+  "fullSuiteRuns": 3,
+  "byMode": {"race":24,"crash":3,"restart":3},
+  "uniquePids": 30,
+  "simultaneousPeers": 8,
+  "barrier": "children write ready files and wait for a go file, so all eight contend on the same key and the same boundary root together",
+  "spawnLog": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/worker/spawn-log.jsonl",
+  "spawnLogSha256": "ea283b62d691b7534499c53df7dd3badfc621a7335dc9e24818f929c925dc5cc",
+  "harness": {
+   "dir": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/worker/child",
+   "productionSourceRun": "the four production TypeScript sources the store imports, transpiled by the repository TypeScript transpiler, no handwritten duplicate",
+   "manifestSha256": "a39595d66e25f90f0016fd41e1d7a7605ee73c863e05f6df76416207e26bfc49",
+   "childScriptSha256": "849f7629e8d701c77e18c1842a91ddb48e1ae661356e1996535539a5751b8f08",
+   "sourcePinsInManifest": {"src/lib/server/html-draft-snapshot-store.ts":"084c1368c8c9543ce9dc409c8f6d27ab179164877b88bada2d99a19881e3d77e","src/lib/artifacts-receipt-operation-contract.ts":"7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094","src/lib/html-draft-recovery-contract.ts":"89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0","src/lib/html-job-contract.ts":"ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550"}
+  },
+  "asserted": [
+   "exactly one process reports STARTED and exactly one invoke marker exists among eight racers on one key",
+   "the key ends OUTCOME_UNKNOWN with reason FIXTURE_NO_RESPONSE",
+   "the same eight processes race eight distinct keys against 255 pre-consumed slots: exactly one ADMITTED at slot 255, seven CAPACITY_FULL, 256 slot files, no slot-256",
+   "a child exits after its invoke marker and before any outcome; the restart child gets EXISTING:STARTED for admit and start, mints no grant, and the invoke marker count stays 1"
+  ],
+  "observedBy": "vitest-4.json case S35 passed; per-child stdout is asserted in memory and not persisted"
+ },
+ "unknownReplayDispositions": [
+  {
+   "state": "INTENT or STARTED with no outcome",
+   "replay": "none",
+   "note": "admit returns EXISTING; start returns EXISTING; no grant is minted from durable existence"
+  },
+  {
+   "state": "OUTCOME_UNKNOWN / FAILED_BEFORE_SEND / DENIED",
+   "replay": "none",
+   "note": "terminal and consumed; same-target repeat is reference-only ALREADY_PROCESSED"
+  },
+  {"state":"RECEIPT_VERIFIED same envelope","replay":"none, zero sends","note":"returns the stored outcome joined to the same immutable target"},
+  {
+   "state": "RECEIPT_VERIFIED different render/job/version/config",
+   "replay": "none",
+   "note": "reference-only ALREADY_PROCESSED 409 with no html and no receipt"
+  },
+  {"state":"CORRUPT / UNCONFIRMED / UNSUPPORTED","replay":"none","note":"denied with OPERATION_<STATE>; nothing repaired or recycled"},
+  {
+   "state": "presence diagnostic observed",
+   "replay": "none",
+   "note": "REMOTE_PRESENCE_OBSERVED never releases UNKNOWN; releasesUnknown and grantsReplay are false constants"
+  }
+ ],
+ "sizeImportRegistryEvidence": {
+  "lineBudgetsAllMet": true,
+  "largestSource": "M04",
+  "importGraph": "cases C18-C21 pass: new owners import only Node builtins and current artifacts modules; no fetch, credential, engine, provider, gateway or approval-store token; one process.env default parameter in the profile resolver",
+  "dependencies": "no package, lockfile, config or build file touched; typescript was used only as the existing transpiler inside the child harness",
+  "registry": "registry-coverage.json (dispatcher, base de63f6707) names all new paths as covered by the current GC-051 scopePaths; the worker did not re-derive this and relies on the fast-gate registry drift check",
+  "newNonAscii": false
+ },
+ "toolAttempts": [
+  {
+   "tool": "autorun",
+   "label": "pre-implementation",
+   "command": "python -B governance/compat/run_agent_autorun_workflow_gate.py --phase pre-implementation --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md",
+   "startUtc": "2026-10-19T01:17:21Z",
+   "endUtc": null,
+   "exit": 0,
+   "sourceRevision": "clean base 754fe3dfc, no worker edit yet",
+   "rawLog": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/worker/pre-implementation.log",
+   "rawLogSha256": "6779d1cf6b324bc6b841b93a4c15f48604d27a21851f20f1d49c0ff2010c447d",
+   "result": "PASS",
+   "note": "COMPLIANT 13.95 s; single run before the first edit"
+  },
+  {
+   "tool": "vitest",
+   "label": "V1",
+   "command": "node node_modules/vitest/vitest.mjs run <8 named files> (CVF_NCR_R1_FIXTURE_ROOT set to owned scratch roots)",
+   "startUtc": "2026-10-19T01:41:37Z",
+   "endUtc": "2026-10-19T01:42:40Z",
+   "exit": 1,
+   "sourceRevision": "first full source and test set (before any tsc/lint repair)",
+   "rawLog": "logs/vitest-1.log",
+   "rawLogSha256": "940eb0704965137644240d24bd706709918a4e178ea365db1ff16eba483b6703",
+   "result": "FAIL",
+   "note": "7 files passed, ArtifactExportPanel.test.tsx 4 failed; 212 of 216 tests passed; 10 child processes"
+  },
+  {
+   "tool": "vitest",
+   "label": "V2-baseline",
+   "command": "node node_modules/vitest/vitest.mjs run src/components/ArtifactExportPanel.test.tsx with the HEAD copy of useHtmlBuildAttempts.ts swapped in",
+   "startUtc": "2026-10-19T01:43:38Z",
+   "endUtc": null,
+   "exit": 1,
+   "sourceRevision": "pristine hook (sha 8a20cc04...), worker hook restored afterwards (sha 217ce082...)",
+   "rawLog": "logs/vitest-2-baseline.log",
+   "rawLogSha256": "41a6a347c04b105cb9959e9682c270ed9b0b52293b30164cc82647f8a8ab4cb8",
+   "result": "FAIL",
+   "note": "same 4 tests fail, 66 of 70 pass: baseline red independent of the worker hook change; end time not recorded in a file, run took under 25 s"
+  },
+  {
+   "tool": "tsc",
+   "label": "T1",
+   "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+   "startUtc": "2026-10-19T01:44:09Z",
+   "endUtc": "2026-10-19T01:45:06Z",
+   "exit": 2,
+   "sourceRevision": "V1 revision",
+   "rawLog": "logs/tsc-1.log",
+   "rawLogSha256": "355e61e7e2e596fb331a4daff7ce6cf5d72d0b302eea2e0e87cd3e043e693f3c",
+   "result": "FAIL",
+   "note": "3 errors (existing-operation narrowing in proof.ts, header typing in the hook, regex flag in the contract test) repaired"
+  },
+  {
+   "tool": "eslint",
+   "label": "L1",
+   "command": "node node_modules/eslint/bin/eslint.js <exact 11 targets> --max-warnings=0",
+   "startUtc": "2026-10-19T01:45:40Z",
+   "endUtc": "2026-10-19T01:48:35Z",
+   "exit": 124,
+   "sourceRevision": "T1-repaired revision",
+   "rawLog": "logs/eslint-1.log",
+   "rawLogSha256": "d761ef4f906d2ea9bb84212b741cbabd90587d506bd35ec999d8b4f103d288a3",
+   "result": "TIMEOUT",
+   "note": "killed by the 175 s wrapper with no diagnostics; cold start; counts as one of two permitted runs"
+  },
+  {
+   "tool": "eslint",
+   "label": "L2",
+   "command": "node node_modules/eslint/bin/eslint.js --debug <exact 11 targets> --max-warnings=0",
+   "startUtc": "2026-10-19T01:49:44Z",
+   "endUtc": "2026-10-19T01:50:23Z",
+   "exit": 1,
+   "sourceRevision": "pre-fix revision: final minus (proof.ts prefer-const fix; additions to M03, M04, M06, M10)",
+   "rawLog": "logs/eslint-2.log",
+   "rawLogSha256": "843cf373b75df1dd47eb65205666b38b5f4330678d7b79241c00a7bbb79dc3ca",
+   "result": "FAIL",
+   "note": "1 error (prefer-const on the timer in invokeOnce, fixed afterwards) and 1 warning (react-hooks/exhaustive-deps at useHtmlBuildAttempts.ts line 76, existing HEAD code not edited by the worker); --debug added for diagnosis only, no rule or target change; completed in 39 s"
+  },
+  {
+   "tool": "vitest",
+   "label": "V3",
+   "command": "node node_modules/vitest/vitest.mjs run <8 named files> (CVF_NCR_R1_FIXTURE_ROOT set to owned scratch roots)",
+   "startUtc": "2026-10-19T01:54:04Z",
+   "endUtc": "2026-10-19T01:55:01Z",
+   "exit": 1,
+   "sourceRevision": "final bytes (identical to V4 and T2)",
+   "rawLog": "logs/vitest-3.log",
+   "rawLogSha256": "6e5c208cbcacdb745736e4ce16693fd443b43947f067c489597bbda3ae578a24",
+   "result": "FAIL",
+   "note": "7 files passed, panel oracle 4 baseline failures; 221 of 225 tests passed; 10 child processes"
+  },
+  {
+   "tool": "tsc",
+   "label": "T2",
+   "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+   "startUtc": "2026-10-19T01:55:07Z",
+   "endUtc": "2026-10-19T01:55:31Z",
+   "exit": 0,
+   "sourceRevision": "final bytes",
+   "rawLog": "logs/tsc-2.log",
+   "rawLogSha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+   "result": "PASS",
+   "note": "no diagnostics"
+  },
+  {
+   "tool": "vitest",
+   "label": "V4",
+   "command": "node node_modules/vitest/vitest.mjs run --reporter=default --reporter=json <8 named files>",
+   "startUtc": "2026-10-19T01:58:22Z",
+   "endUtc": "2026-10-19T01:58:42Z",
+   "exit": 1,
+   "sourceRevision": "final bytes (source pins taken before the run equal the final pins)",
+   "rawLog": "logs/vitest-4.log",
+   "rawLogSha256": "f3ce95f39fec2b35fb8e5ea90edb8f7371db18c4ce4e00dd230c0188a668eaf1",
+   "result": "FAIL",
+   "note": "same result as V3 plus the JSON report that names every case; 10 child processes"
+  }
+ ],
+ "preparatoryChecks": [
+  {
+   "check": "worker-return quality gate (standalone)",
+   "command": "python -B governance/compat/check_worker_return_quality_gate.py --enforce --active-work-order docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md",
+   "startUtc": "2026-10-19T02:08:54Z",
+   "exit": 0,
+   "result": "COMPLIANT, 0 violations",
+   "countsAsRequiredGate": false
+  },
+  {
+   "check": "work-order acceptance ledger (standalone)",
+   "command": "python -B governance/compat/check_work_order_acceptance_ledger.py --work-order <wo> --return <return> --enforce",
+   "startUtc": "2026-10-19T02:08:55Z",
+   "exit": 0,
+   "result": "COMPLIANT",
+   "countsAsRequiredGate": false
+  },
+  {
+   "check": "epistemic process packet (standalone)",
+   "command": "python -B governance/compat/check_epistemic_process_packet.py --enforce",
+   "startUtc": "2026-10-19T02:08:59Z",
+   "exit": 0,
+   "result": "COMPLIANT, 13 changed paths observed",
+   "countsAsRequiredGate": false
+  },
+  {
+   "check": "independent review probe admission (standalone)",
+   "command": "python -B governance/compat/check_independent_review_probe_admission.py --enforce --changed-lane-only --active-work-order <wo>",
+   "startUtc": "2026-10-19T02:08:59Z",
+   "exit": 0,
+   "result": "PASS",
+   "countsAsRequiredGate": false
+  },
+  {
+   "check": "corpus scan registry aggregate drift (standalone)",
+   "command": "python -B governance/compat/generate_corpus_scan_registry.py --check",
+   "startUtc": "2026-10-19T02:09:00Z",
+   "exit": 0,
+   "result": "aggregate matches per-entry sources",
+   "countsAsRequiredGate": false
+  },
+  {
+   "check": "git diff whitespace check (standalone)",
+   "command": "git diff --check",
+   "startUtc": "2026-10-19T02:09:00Z",
+   "exit": 0,
+   "result": "no whitespace error; only the CRLF working-copy notice for route.ts",
+   "countsAsRequiredGate": false
+  },
+  {
+   "check": "reviewer-fast governance hook chain (standalone)",
+   "command": "python -B governance/compat/run_local_governance_hook_chain.py --hook reviewer-fast",
+   "startUtc": "2026-10-19T02:09:06Z",
+   "exit": 0,
+   "result": "70 of 70 checks passed",
+   "countsAsRequiredGate": false
+  }
+ ],
+ "lintDisposition": {
+  "finalRevisionLintExecuted": false,
+  "lastCompletedRun": "L2",
+  "lastCompletedRunRevision": "pre-fix revision: final minus (proof.ts prefer-const fix; additions to M03, M04, M06, M10)",
+  "findings": [
+   "proof.ts prefer-const (error) - fixed after L2",
+   "useHtmlBuildAttempts.ts:76 react-hooks/exhaustive-deps (warning) - existing HEAD code at the same line, not changed; earlier Local handling admitted such hook baseline fingerprints rather than changing hook logic"
+  ],
+  "changedAfterLastLint": ["M05 proof.ts: const timer reorder in invokeOnce","M03, M04, M06, M10: added cases from the 32-case mapping"],
+  "envelopeRemaining": "ESLint 0 of 2",
+  "ownerAction": "Local runs the targeted ESLint command once on the final bytes"
+ },
+ "scratch": {
+  "root": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/worker",
+  "files": 7847,
+  "filesCap": 256,
+  "bytes": 2891904,
+  "bytesCap": 67108864,
+  "rootsFiles": 7789,
+  "limitExceeded": true,
+  "cause": "case S14 writes 1030 junk entries, S26 admits 256 operations, and S27, P23 and the boundary process case pre-create 255-256 empty slot files; each full run repeats them in fresh roots and monotonic fixtures are retained",
+  "cleanup": "none: recursive deletion and move are forbidden; Local may remove the ignored scratch after review"
+ },
+ "deviations": [
+  "CVF_NCR_R1_FIXTURE_ROOT was unset in the shell; the retained oracle tests read it, so it was set to an owned scratch directory for each Vitest command (the variable name only was inspected; no other environment or secret was read)",
+  "V2 temporarily replaced useHtmlBuildAttempts.ts with the HEAD blob to prove the panel baseline, then restored the worker version; sha before and after the swap are equal (217ce082...)",
+  "ESLint run L2 added --debug for diagnosis after L1 produced nothing; no rule, target or threshold changed",
+  "the typed NOT_CONFIGURED invoker return in audit case PC2 was not implemented because locked C04 makes errors after invoke unknown",
+  "M09 route.ts is CRLF and was patched through an owned scratch script that preserves CRLF; git diff shows 53 insertions and 23 deletions, no whole-file churn",
+  "ADIF resolver for the worker role was not run; the dispatcher disclosure in the work order was relied on"
+ ],
+ "notExecuted": [
+  "targeted ESLint on the final revision",
+  "real EACCES or ENOSPC",
+  "power loss and directory durability",
+  "Windows ACL or mode semantics",
+  "malicious same-user filesystem races",
+  "safe-copy migration (not implemented)",
+  "typed NOT_CONFIGURED invoker path (superseded)",
+  "browser, app, Next server, provider, network, active store, secrets",
+  "Local independent probe (PENDING_REVIEWER_EXECUTION)"
+ ],
+ "logHashes": {
+  "eslint-1.log": "d761ef4f906d2ea9bb84212b741cbabd90587d506bd35ec999d8b4f103d288a3",
+  "eslint-2.log": "843cf373b75df1dd47eb65205666b38b5f4330678d7b79241c00a7bbb79dc3ca",
+  "prep-diffcheck.log": "a2e1bde9c9e3d1f77cafd1a007e2d0716fc121bc524d8126d6c260187cc8d6cf",
+  "prep-epistemic.log": "380d0a1cf7bfee4c2f105c13793acfdd0d0c4ccc740c0b6a8c8d39164e21da38",
+  "prep-ledger.log": "620c70124818a5ae2f49b30d24166d7e7d070cefe325f904db6583974fe586c8",
+  "prep-probe.log": "e28060f28112bca341a7e0b21694396bfe4a448716945b1aebaa3abb45c09e3c",
+  "prep-quality.log": "5a83ff2cad085435b48f0856283d8a2980383c5a22b51757f7e59c518c9fc2c4",
+  "prep-registry.log": "01fb6eb1993d39d2a54b413d3fb01a020ce8c3297a1f132b6ceba230aa5cd5ec",
+  "prep-reviewer-fast.log": "cca1993ccd02bd9f94a104912e9a60523b404ad0417f7a9320456a82bd97be7f",
+  "tsc-1.log": "355e61e7e2e596fb331a4daff7ce6cf5d72d0b302eea2e0e87cd3e043e693f3c",
+  "tsc-2.log": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+  "vitest-1.log": "940eb0704965137644240d24bd706709918a4e178ea365db1ff16eba483b6703",
+  "vitest-2-baseline.log": "41a6a347c04b105cb9959e9682c270ed9b0b52293b30164cc82647f8a8ab4cb8",
+  "vitest-3.log": "6e5c208cbcacdb745736e4ce16693fd443b43947f067c489597bbda3ae578a24",
+  "vitest-4.json": "845e3c3ea0c762e3d7956ef5d0a7e8f1d350930a5d89f86c6f7ff1593ec8ddb4",
+  "vitest-4.log": "f3ce95f39fec2b35fb8e5ea90edb8f7371db18c4ce4e00dd230c0188a668eaf1",
+  "pre-implementation.log": "6779d1cf6b324bc6b841b93a4c15f48604d27a21851f20f1d49c0ff2010c447d"
+ },
+ "finality": {
+  "detachedReceipt": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/worker/final-gate-receipt.json",
+  "selfHashesEmbedded": false,
+  "independentProbeDisposition": "PENDING_REVIEWER_EXECUTION"
+ },
+ "scecDeclaration": {
+  "problemKey": "ncr-r2-w05-locked-protocol-offline-implementation",
+  "chainMode": "SUCCESSOR",
+  "chainOrdinal": 1,
+  "predecessor": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md",
+  "counters": [0,0,0,1],
+  "successorScope": "NO_SUCCESSOR"
+ }
+}

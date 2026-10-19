@@ -1,0 +1,668 @@
+{
+  "schemaVersion": "cvf.ncrR2W05OfflineSourceLocalReview.v1",
+  "decisionOwner": "LOCAL",
+  "status": "BLOCKED_WITH_REASON",
+  "executionBaseHead": "754fe3dfc00e91a750c9984d5086bd283f649f5d",
+  "workerReturn": {
+    "path": "docs/reviews/CVF_NCR_R2_W05_OFFLINE_SOURCE_WORKER_RETURN_2026-10-19.md",
+    "sha256": "d1cbd2401cc8d8a63eda20e4ff62d8254fa656c1c237dfa79e65d3c0d0476525"
+  },
+  "workerEvidence": {
+    "path": "docs/reviews/evidence/ncr-r2-w05-offline-source-worker-20261019.json",
+    "sha256": "c1427adb89f56e1b22c20178e007ebaea177feb29cc364fd2c204e28a8184b59"
+  },
+  "workerFinalGateReceipt": {
+    "path": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/worker/final-gate-receipt.json",
+    "sha256": "849a27fdd7ec826e6310d7e1a0e44bb982033623ac57df39d631642044610c13",
+    "latestExit": 0,
+    "finalExactBytes": "MATCH"
+  },
+  "acceptedLocalDecisions": [
+    {
+      "resolutionLocator": "LOCAL_PANEL_BASELINE_FOUR_ONLY",
+      "blocker": "PANEL_ORACLE_BASELINE_RED",
+      "decision": "ACCEPTED_REVIEW_EXCEPTION",
+      "scope": "only four exact named baseline panel expectations; retain all66 passes, assertions, logs and original4fail; no panel/source/test edits or broad green claim",
+      "basis": {
+        "file": "src/components/ArtifactExportPanel.test.tsx",
+        "failing": [
+          "ArtifactExportPanel keeps an unrelated or network error generic, without a secondary detail line",
+          "ArtifactExportPanel F-01 secret refusal recovery SR-05 leaves an unrelated error that only mentions secrets as the raw fallback",
+          "ArtifactExportPanel B1 version binding does not erase a valid earlier result when a newer attempt fails, and attaches the error to the newer attempt",
+          "ArtifactExportPanel B1 version binding labels a newer failure with its build number apart from the older preview that stays visible"
+        ],
+        "cause": "the panel renders the generic failure copy added by the earlier Clarity change while these four tests still expect the raw thrown message; earlier committed evidence shows the same tests asserted raw text and passed before that change",
+        "proof": "V2 ran the file with the HEAD copy of the hook: the same four fail, 66 pass; the panel and its test were not edited by the worker",
+        "ownerAction": "Local decides: repair the oracle or the copy, or waive for this packet"
+      }
+    },
+    {
+      "resolutionLocator": "LOCAL_FINAL_LINT_ONE_BASELINE_WARNING",
+      "blocker": "LINT_ENVELOPE_EXHAUSTED_FINAL_REVISION_UNVERIFIED",
+      "decision": "ACCEPTED_REVIEW_EXCEPTION",
+      "scope": "one completed Local lint on final11/source equality;0errors and only controllers.current exhaustive-deps line76 same as HEAD; original exit1/maxwarnings0 remains FAIL, not waived generally",
+      "evidence": {
+        "receipt": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/root-review/final-eslint-receipt.json",
+        "sha256": "6b241643cfd08fed8f412e9e86abfb23571e7ab35ea740756c781e9a414b1348"
+      }
+    },
+    {
+      "resolutionLocator": "LOCAL_SCRATCH_RETAIN_16384_FILES",
+      "blocker": "SCRATCH_FILE_CAP_EXCEEDED",
+      "decision": "ACCEPTED_REVIEW_RETENTION_BOUND",
+      "scope": "retain original worker scratch up to16384files/64MiB; do not delete monotonic fixtures or remove required capacity cases. Original256file overshoot remains a procedure/dispatcher feasibility deviation, not retroactively compliant",
+      "observedByWorker": {
+        "root": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/worker",
+        "files": 7847,
+        "filesCap": 256,
+        "bytes": 2891904,
+        "bytesCap": 67108864,
+        "rootsFiles": 7789,
+        "limitExceeded": true,
+        "cause": "case S14 writes 1030 junk entries, S26 admits 256 operations, and S27, P23 and the boundary process case pre-create 255-256 empty slot files; each full run repeats them in fresh roots and monotonic fixtures are retained",
+        "cleanup": "none: recursive deletion and move are forbidden; Local may remove the ignored scratch after review"
+      },
+      "observedByLocal": {
+        "files": 7845,
+        "bytes": 2925100
+      }
+    }
+  ],
+  "consolidatedFindings": [
+    {
+      "id": "LR1",
+      "blocking": true,
+      "class": "OPERATION_AUTHORITY_GRAPH",
+      "source": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts"
+      ],
+      "oracleIds": [
+        "REQUEST_SNAPSHOT_AFTER_ADMISSION",
+        "GRANT_ENVELOPE_REQUEST_JOIN",
+        "DURABLE_INTENT_NOT_START_AUTHORITY"
+      ],
+      "finding": "request and grant are not joined immutably; existing durable intent can mint a first start in another store instance",
+      "required": "snapshot and strict-validate before await; in-memory admission authority only its original winner; single-use consumed authority bound to exact envelope/request/invoker; reject structural outcome forgery"
+    },
+    {
+      "id": "LR2",
+      "blocking": true,
+      "class": "DEFAULT_ROUTE_POSTURE",
+      "source": [
+        "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts"
+      ],
+      "oracleIds": [
+        "PERSISTENT_DISABLE_AFTER_SELECTOR_REMOVAL"
+      ],
+      "finding": "missing selector returns legacy after DISABLED is removed",
+      "required": "absence must deny without a valid local profile; legacy compatibility requires explicit non-production server LEGACY_COMPATIBILITY_ONLY and no job selectors; update existing route test setup without weakening assertions"
+    }
+  ],
+  "independentProbe": {
+    "schemaVersion": "cvf.ncrW05LocalIndependentProbe.v1",
+    "executorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "workerInvocationId": "ncr-r2-w05-offline-source-worker-20261019",
+    "probeInvocationId": "ncr-r2-w05-offline-source-local-review-20261019",
+    "observedAtUtc": "2026-10-19T04:23:03.410Z",
+    "sourcePins": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.ts",
+        "sha256": "7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts",
+        "sha256": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+        "sha256": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+        "sha256": "084c1368c8c9543ce9dc409c8f6d27ab179164877b88bada2d99a19881e3d77e"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+        "sha256": "fab772f525fcaf6b69bf2ea27e64dd3c6ddb26d0f5f18d9ee999ab6deb49eac2"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts",
+        "sha256": "ebf73ea63024e86b32a02b9e9a5d57b3c3e972bcc48a5d1ee14588645fa98903"
+      }
+    ],
+    "rows": [
+      {
+        "id": "POSITIVE_ONE_SEND_EXACT_REUSE",
+        "result": "PASS",
+        "observed": {
+          "first": "EXECUTED",
+          "second": "REUSED",
+          "sends": 1
+        }
+      },
+      {
+        "id": "REQUEST_SNAPSHOT_AFTER_ADMISSION",
+        "result": "FAIL",
+        "observed": {
+          "sends": 1,
+          "content": "MUTATED_AFTER_VALIDATION",
+          "result": "EXECUTED",
+          "outcome": "RECEIPT_VERIFIED",
+          "durableState": "OUTCOME",
+          "durableOutcome": "RECEIPT_VERIFIED",
+          "admittedPayloadSha256": "ef4c4aa9afccf57159682d735f5040571129facb695f3abf2ed3e368b14dcb68",
+          "sentPayloadSha256": "d484ad244922aa4928875145d5081306f402d0a4d22386ffbed985bc86bfd2f6"
+        }
+      },
+      {
+        "id": "GRANT_ENVELOPE_REQUEST_JOIN",
+        "result": "FAIL",
+        "observed": {
+          "sends": 1,
+          "result": "EXECUTED",
+          "outcome": "RECEIPT_VERIFIED",
+          "content": "GRANT_BOUND_TO_DIFFERENT_PAYLOAD"
+        }
+      },
+      {
+        "id": "SPENT_AND_FABRICATED_ZERO_SEND",
+        "result": "PASS",
+        "observed": {
+          "spent": "DENIED",
+          "totalSends": 1
+        }
+      },
+      {
+        "id": "EXISTING_INTENT_CONSUMER_ZERO_SEND",
+        "result": "PASS",
+        "observed": {
+          "consumer": "ALREADY_PROCESSED",
+          "sends": 0
+        }
+      },
+      {
+        "id": "DURABLE_INTENT_NOT_START_AUTHORITY",
+        "result": "FAIL",
+        "observed": {
+          "freshStoreStart": "STARTED",
+          "grantMinted": true
+        }
+      },
+      {
+        "id": "PERSISTENT_DISABLE_AFTER_SELECTOR_REMOVAL",
+        "result": "FAIL",
+        "observed": {
+          "before": {
+            "posture": "DENY",
+            "reason": "DISABLED"
+          },
+          "afterMissingConfig": {
+            "posture": "UNDECLARED"
+          },
+          "afterRoute": {
+            "route": "LEGACY"
+          }
+        }
+      },
+      {
+        "id": "PRESENCE_NO_RELEASE_OR_REPLAY",
+        "result": "PASS",
+        "observed": {
+          "status": "REMOTE_PRESENCE_OBSERVED",
+          "releasesUnknown": false,
+          "grantsReplay": false
+        }
+      }
+    ],
+    "result": "FAIL_INDEPENDENT_PROBE",
+    "networkCalls": 0,
+    "productRuntimeStarts": 0,
+    "providerCalls": 0,
+    "fixtureOnly": true
+  },
+  "independentOracle": {
+    "path": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/root-review/independent-probe.cjs",
+    "sha256": "f88ec370e8fdd6774d72f530b516c6677a3a9049806c00516f29f03f884f5cab"
+  },
+  "localLint": {
+    "command": [
+      "node",
+      "node_modules/eslint/bin/eslint.js",
+      "src/lib/artifacts-receipt-operation-contract.ts",
+      "src/lib/server/html-draft-snapshot-store.ts",
+      "src/lib/artifacts-receipt-operation-contract.test.ts",
+      "src/lib/server/html-draft-snapshot-store.operation.test.ts",
+      "src/app/api/artifacts/export/proof.ts",
+      "src/app/api/artifacts/export/proof.operation.test.ts",
+      "src/lib/server/receipt-operation-profile.ts",
+      "src/app/api/artifacts/export/operation-branch.ts",
+      "src/app/api/artifacts/export/route.ts",
+      "src/app/api/artifacts/export/operation.test.ts",
+      "src/components/useHtmlBuildAttempts.ts",
+      "--format",
+      "json",
+      "--max-warnings=0"
+    ],
+    "cwd": "EXTENSIONS\\CVF_v1.6_AGENT_PLATFORM\\cvf-web",
+    "runs": 1,
+    "exit": 1,
+    "timedOut": false,
+    "seconds": 150.812,
+    "exactSourcePinsBefore": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.ts": "7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts": "084c1368c8c9543ce9dc409c8f6d27ab179164877b88bada2d99a19881e3d77e",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.test.ts": "1ba44d1f5e68bc0d72aa6668d6680c3918d5c50dc2369c66013031288bd82713",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.operation.test.ts": "4a2ec4ecb7e6d4ff37fe36586a579d36d56bdd861e3444e56f1478958caa115c",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts": "fab772f525fcaf6b69bf2ea27e64dd3c6ddb26d0f5f18d9ee999ab6deb49eac2",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.operation.test.ts": "483bc0c4672f9708f7c40021b5a42c309952deb4b29acdc3c2f021ba495ef794",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts": "ebf73ea63024e86b32a02b9e9a5d57b3c3e972bcc48a5d1ee14588645fa98903",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts": "8478e8673a2c95ebea0b7b6155fab33101d703d62c0d5737824b8fb3b6692bb7",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "e9266d4ecd7f3c46dcda7a53eca4a576838af18bf9fc7663a5e8196c1e944fbb",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation.test.ts": "812a28d23dd03fe308fb4e73900df7ae5531b7f6c606898c23994459a5bd53e2",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts": "00cb76dc36ae8efacaafffe3c1ec5086b1707baa8412afd4760ec1c9eb70fcfd"
+    },
+    "exactSourcePinsAfter": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.ts": "7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts": "084c1368c8c9543ce9dc409c8f6d27ab179164877b88bada2d99a19881e3d77e",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.test.ts": "1ba44d1f5e68bc0d72aa6668d6680c3918d5c50dc2369c66013031288bd82713",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.operation.test.ts": "4a2ec4ecb7e6d4ff37fe36586a579d36d56bdd861e3444e56f1478958caa115c",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts": "fab772f525fcaf6b69bf2ea27e64dd3c6ddb26d0f5f18d9ee999ab6deb49eac2",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.operation.test.ts": "483bc0c4672f9708f7c40021b5a42c309952deb4b29acdc3c2f021ba495ef794",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts": "ebf73ea63024e86b32a02b9e9a5d57b3c3e972bcc48a5d1ee14588645fa98903",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts": "8478e8673a2c95ebea0b7b6155fab33101d703d62c0d5737824b8fb3b6692bb7",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "e9266d4ecd7f3c46dcda7a53eca4a576838af18bf9fc7663a5e8196c1e944fbb",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation.test.ts": "812a28d23dd03fe308fb4e73900df7ae5531b7f6c606898c23994459a5bd53e2",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts": "00cb76dc36ae8efacaafffe3c1ec5086b1707baa8412afd4760ec1c9eb70fcfd"
+    },
+    "sourceEquality": "MATCH",
+    "findings": [
+      {
+        "path": "D:/UNG DUNG AI/TOOL AI 2026/Controlled-Vibe-Framework-CVF/EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+        "message": {
+          "ruleId": "react-hooks/exhaustive-deps",
+          "severity": 1,
+          "message": "The ref value 'controllers.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'controllers.current' to a variable inside the effect, and use that variable in the cleanup function.",
+          "line": 76,
+          "column": 44,
+          "nodeType": "Identifier",
+          "endLine": 76,
+          "endColumn": 51
+        }
+      }
+    ],
+    "qualifiedBaselineDisposition": "ONLY_ONE_EXISTING_WARNING_NO_ERRORS",
+    "originalMaxWarningsZeroPassed": false,
+    "rawJson": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/root-review/final-eslint.json",
+    "stderr": ".cvf/runtime/ncr-r2-w05-offline-source-20261019/root-review/final-eslint.stderr.log"
+  },
+  "workerProcedureLimits": [
+    "CVF_NCR_R1_FIXTURE_ROOT was unset in the shell; the retained oracle tests read it, so it was set to an owned scratch directory for each Vitest command (the variable name only was inspected; no other environment or secret was read)",
+    "V2 temporarily replaced useHtmlBuildAttempts.ts with the HEAD blob to prove the panel baseline, then restored the worker version; sha before and after the swap are equal (217ce082...)",
+    "ESLint run L2 added --debug for diagnosis after L1 produced nothing; no rule, target or threshold changed",
+    "the typed NOT_CONFIGURED invoker return in audit case PC2 was not implemented because locked C04 makes errors after invoke unknown",
+    "M09 route.ts is CRLF and was patched through an owned scratch script that preserves CRLF; git diff shows 53 insertions and 23 deletions, no whole-file churn",
+    "ADIF resolver for the worker role was not run; the dispatcher disclosure in the work order was relied on"
+  ],
+  "workerNewCases": {
+    "artifacts-receipt-operation-contract.test.ts": 21,
+    "html-draft-snapshot-store.operation.test.ts": 35,
+    "proof.operation.test.ts": 26,
+    "export/operation.test.ts": 33,
+    "totalNew": 115,
+    "allPass": true,
+    "titleNote": "Five store cases built with it.each print the planted bytes where the title template shows the expected state; assertions use the expected state correctly"
+  },
+  "worker32Plan": [
+    {
+      "id": "PA1",
+      "disposition": "COVERED",
+      "tests": [
+        "O22",
+        "O24"
+      ],
+      "note": "declared production posture denies; resolver matrix maps production to PRODUCTION_DENIED; no record or store write (O13 pattern: no operations directory on denial)"
+    },
+    {
+      "id": "PA2",
+      "disposition": "COVERED",
+      "tests": [
+        "O25"
+      ],
+      "note": "undeclared and no selectors keeps LEGACY; retained route.test.ts 37 of 37 and job-profile.test.ts 1 of 1 pass unchanged"
+    },
+    {
+      "id": "PA3",
+      "disposition": "COVERED_WITH_VARIANT",
+      "tests": [
+        "O16",
+        "O17",
+        "O18",
+        "O19",
+        "O20",
+        "O21",
+        "O22"
+      ],
+      "note": "no fall-through shown by the distinct deny body and zero calls to global fetch; the planned receipt-helper spy is replaced by that observable because the helper is a module function"
+    },
+    {
+      "id": "PA4",
+      "disposition": "COVERED",
+      "tests": [
+        "O14",
+        "O13"
+      ],
+      "note": "break-glass, impersonation, non-session, unauthenticated, expired and cross-origin deny; foreign owner resolves to NOT_FOUND in its own namespace"
+    },
+    {
+      "id": "PA5",
+      "disposition": "COVERED",
+      "tests": [
+        "O14",
+        "O13"
+      ],
+      "note": "unknown body field permit rejected 400; permit header ignored; selector of another owner is NOT_FOUND"
+    },
+    {
+      "id": "PA6",
+      "disposition": "COVERED",
+      "tests": [
+        "O13",
+        "O15",
+        "O08"
+      ],
+      "note": "request hash mismatch 409, expired job 404, non-synthetic selector 400, all before admission with no operations directory"
+    },
+    {
+      "id": "PB1",
+      "disposition": "COVERED",
+      "tests": [
+        "S04",
+        "S06",
+        "S07",
+        "S28"
+      ],
+      "note": "existing key never gets a second intent; planted bytes unchanged"
+    },
+    {
+      "id": "PB2",
+      "disposition": "COVERED_WITH_VARIANT",
+      "tests": [
+        "S20",
+        "S21",
+        "S22"
+      ],
+      "note": "open failure injected at the create boundary, not a real EACCES or ENOSPC"
+    },
+    {
+      "id": "PB3",
+      "disposition": "COVERED",
+      "tests": [
+        "S16",
+        "S06",
+        "S07"
+      ],
+      "note": "torn intent keeps the key consumed and lookup corrupt"
+    },
+    {
+      "id": "PB4",
+      "disposition": "COVERED",
+      "tests": [
+        "S23",
+        "S24",
+        "S25"
+      ],
+      "note": "readback bytes differ from written bytes"
+    },
+    {
+      "id": "PB5",
+      "disposition": "COVERED",
+      "tests": [
+        "S35",
+        "S29",
+        "S30"
+      ],
+      "note": "one winner among eight real OS processes"
+    },
+    {
+      "id": "PB6",
+      "disposition": "COVERED",
+      "tests": [
+        "S17",
+        "S22",
+        "S25"
+      ],
+      "note": "no grant and no send"
+    },
+    {
+      "id": "PB7",
+      "disposition": "COVERED_WITH_VARIANT",
+      "tests": [
+        "S26",
+        "S27",
+        "P23"
+      ],
+      "note": "cap 256 plus 257th denied; ENOSPC covered only through open-failure doubles"
+    },
+    {
+      "id": "PC1",
+      "disposition": "COVERED",
+      "tests": [
+        "P01",
+        "O01"
+      ],
+      "note": "one send, joined verified outcome, operation reference in the response"
+    },
+    {
+      "id": "PC2",
+      "disposition": "SUPERSEDED_BY_C04",
+      "tests": [
+        "P19"
+      ],
+      "note": "a typed NOT_CONFIGURED return from the invoker is not implemented: C04 makes every error after invoke OUTCOME_UNKNOWN; FAILED_BEFORE_SEND is produced only by the pre-aborted signal check"
+    },
+    {
+      "id": "PC3",
+      "disposition": "COVERED",
+      "tests": [
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P15",
+        "P16",
+        "P17",
+        "P18"
+      ],
+      "note": "timeout, throw, reject and invalid response all stay unknown with no replay"
+    },
+    {
+      "id": "PC4",
+      "disposition": "COVERED",
+      "tests": [
+        "P20",
+        "S18"
+      ],
+      "note": "outcome write failure yields unknown, not a verified receipt"
+    },
+    {
+      "id": "PC5",
+      "disposition": "COVERED",
+      "tests": [
+        "S35",
+        "S28"
+      ],
+      "note": "eight real OS contenders and eight in-process contenders"
+    },
+    {
+      "id": "PC6",
+      "disposition": "COVERED",
+      "tests": [
+        "S30",
+        "S35"
+      ],
+      "note": "restart process receives EXISTING:STARTED and no grant"
+    },
+    {
+      "id": "PC7",
+      "disposition": "COVERED",
+      "tests": [
+        "S29",
+        "P22"
+      ],
+      "note": "fabricated, copied, wrong-invoker and foreign-store grants rejected"
+    },
+    {
+      "id": "PC8",
+      "disposition": "COVERED",
+      "tests": [
+        "S29",
+        "P22"
+      ],
+      "note": "spent grant rejected"
+    },
+    {
+      "id": "PC9",
+      "disposition": "COVERED",
+      "tests": [
+        "P03",
+        "P05",
+        "O02",
+        "O03"
+      ],
+      "note": "new job, version, config and html after VERIFIED or UNKNOWN are reference-only"
+    },
+    {
+      "id": "PC10",
+      "disposition": "COVERED",
+      "tests": [
+        "O15"
+      ],
+      "note": "changed content and a different actor map to different keys and each send once"
+    },
+    {
+      "id": "PD1",
+      "disposition": "COVERED_WITH_VARIANT",
+      "tests": [
+        "P24"
+      ],
+      "note": "diagnostic is a pure function over an injected lookup; it has no Build, Save or evaluate hop, so those counters do not exist and the invoker and global fetch stay at zero"
+    },
+    {
+      "id": "PD2",
+      "disposition": "COVERED",
+      "tests": [
+        "P24"
+      ],
+      "note": "wrong attempt, actor, config digest and store stay UNKNOWN"
+    },
+    {
+      "id": "PD3",
+      "disposition": "COVERED_WITH_VARIANT",
+      "tests": [
+        "P24"
+      ],
+      "note": "lookup throw and hang stay UNKNOWN; the diagnostic does not read the store"
+    },
+    {
+      "id": "PD4",
+      "disposition": "COVERED_WITH_VARIANT",
+      "tests": [
+        "P24",
+        "P25"
+      ],
+      "note": "injected PresenceLookup stands for the ledger window; no governanceLedger fake exists in this packet"
+    },
+    {
+      "id": "PE1",
+      "disposition": "COVERED_WITH_VARIANT",
+      "tests": [
+        "S32",
+        "C20"
+      ],
+      "note": "records and hashes persist beyond 24 h and 400 days; absence of unlink is shown by a static source check rather than an fs spy"
+    },
+    {
+      "id": "PE2",
+      "disposition": "PARTIAL_NOT_APPLICABLE",
+      "tests": [
+        "S33"
+      ],
+      "note": "disable retains facts byte for byte; safe-copy migration is not implemented and not applicable"
+    },
+    {
+      "id": "PE3",
+      "disposition": "COVERED",
+      "tests": [
+        "C12",
+        "C16",
+        "S34"
+      ],
+      "note": "oversize record bytes refused; secret-like and non-synthetic input rejected before any file"
+    },
+    {
+      "id": "PF1",
+      "disposition": "COVERED_WITH_DISCLOSED_BASELINE_RED",
+      "tests": [
+        "P26"
+      ],
+      "note": "legacy helper still sends R0/REVIEW with a 500-character slice; retained oracles route.test 37/37, job-profile 1/1, store.test 2/2 pass; panel oracle 66 of 70 with 4 pre-existing failures"
+    },
+    {
+      "id": "PG1",
+      "disposition": "COVERED",
+      "tests": [
+        "C18",
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "note": "imports limited to Node builtins and current artifacts modules; no fetch, credential, engine, provider, gateway or approval-store token"
+    }
+  ],
+  "judgmentCalls": [
+    {
+      "item": "DENIED/UNKNOWN/PC2",
+      "disposition": "ACCEPTED_WITH_LIMITS",
+      "rule": "verified remote DENY is DENIED; any ambiguous/error after invocation is OUTCOME_UNKNOWN; abort mechanically before invocation may be FAILED_BEFORE_SEND, still no retry; NOT_CONFIGURED after invocation must be UNKNOWN, never before-send authorization",
+      "coverageNote": "do not call PC2 executed; add explicit thrown/typed NOT_CONFIGURED unknown case in repair scope"
+    },
+    {
+      "item": "INTENT/start failure with no file",
+      "disposition": "REJECTED_AS_DURABLE_AUTHORITY",
+      "rule": "original admission winner only; another store/restart cannot derive authority from INTENT even if no start file was created"
+    },
+    {
+      "item": "late store writes after bounded timeout",
+      "disposition": "ACCEPTED_WITH_LIMITS",
+      "rule": "unknown local response; late durable write may exist but cannot trigger invoke or grant replay; no remote cancellation claim"
+    },
+    {
+      "item": "UNSAFE_NAMESPACE versus unconfirmed existing",
+      "disposition": "ACCEPTED_WITH_LIMITS",
+      "rule": "both must deny sends; error category never grants retry"
+    },
+    {
+      "item": "exact reuse versus new HTTP target",
+      "disposition": "ACCEPTED_WITH_LIMITS",
+      "rule": "equality includes generatedAt and HTML digest; new timestamp/target remains409reference-only; no oldreceipt/newHTML mix"
+    }
+  ],
+  "newBlocker": "SOURCE_BINDING_DEFECTS_FROM_LOCAL_PROBE",
+  "rootSourceEdits": 0,
+  "rootWorkerInvocations": 0,
+  "rootProductChecks": {
+    "independentNodeProcesses": 1,
+    "eslintRuns": 1,
+    "broadVitestReruns": 0,
+    "tscRuns": 0,
+    "providerCalls": 0,
+    "networkCalls": 0
+  },
+  "claimBoundary": "useful blocked source provenance and decisions; no semantic acceptance or live readiness; original worker records remain frozen"
+}

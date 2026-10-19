@@ -104,7 +104,10 @@ export function useHtmlBuildAttempts({ initialResult, exportEndpoint, prepareJob
     try {
       const job = prepareJob ? await prepareJob(submitted) : undefined;
       if (!isLatest()) return;
-      const response = await fetch(exportEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      // Two bounded, untrusted selectors only when prepareJob returned a valid reference; the seven-field body is unchanged and carries no permit.
+      const selectors: Record<string, string> = job && typeof job.jobId === 'string' && typeof job.sourceRecordId === 'string' && UUID.test(job.jobId) && SOURCE.test(job.sourceRecordId)
+        ? { 'X-CVF-Job-Id': job.jobId, 'X-CVF-Source-Record-Id': job.sourceRecordId } : {};
+      const response = await fetch(exportEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', ...selectors },
         body: JSON.stringify(submitted), signal: controller.signal });
       const payload = await response.json() as ApiResponse;
       if (!response.ok || !payload.success || !payload.data) throw new Error(payload.error || `HTTP ${response.status}`);

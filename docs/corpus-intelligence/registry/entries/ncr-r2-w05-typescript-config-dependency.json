@@ -1,0 +1,15 @@
+{
+  "registryOrder": 225,
+  "id": "ncr-r2-w05-typescript-config-dependency",
+  "corpusType": "CVF_EXTENSION",
+  "displayName": "NCR R2 W05 read-only TypeScript configuration dependency",
+  "scopePaths": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json"
+  ],
+  "status": "NOT_STARTED",
+  "findings": [],
+  "negativeSearchTerms": [],
+  "nextScanRecommendation": "No broad scan selected. Revisit only if this named compiler configuration changes a future source/proof contract.",
+  "packetPath": "docs/reviews/CVF_NCR_R2_W05_OFFLINE_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-19.md",
+  "notes": "Registration coverage only for the worker-declared read-only tsconfig path. Worker source reading and Local direct config read do not constitute a formal corpus scan, complete inventory or public/runtime acceptance. Existing source/test path scopes remain separate."
+}
