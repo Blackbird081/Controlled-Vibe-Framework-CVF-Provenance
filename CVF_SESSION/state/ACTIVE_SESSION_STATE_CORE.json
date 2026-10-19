@@ -18,13 +18,13 @@
   "corpusToKnowledgeMapReconciliationGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md",
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md",
-    "baselineSha256": "9c16125c01aa00bb1ce4558977bc9e622471ab2e723db866747b8e73c0413018",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md",
-    "workOrderSha256": "2b8ab7fe667a395a0dcfb986c8d8880e474b9167754c334c6565e768c948a6c3"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md",
+    "baselineSha256": "9c1e2430b2a546fa843234e03764c1b3ec0e7b263b8a61e46494c01ff6e9061c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md",
+    "workOrderSha256": "5b182fb937bf4cdf0349c363c984f725e5d0e34729708ebcbfbdddfa4de0a7b6"
   },
-  "currentAuthoritySyncReason": "Material4 4f9cfa355ba4179b78073e42178ed0fe90d6801b Localreview docs/reviews/CVF_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_LOCAL_COMPLETION_REVIEW_2026-10-19.md SHA25620857b6837988e95c36b7dc0ea580f04277b886964e5ee261b2eda031f65779a accepts documentary audit/procedurelimits and locks seven HQ decisions. Frozen spent auditpair retained; no source/effect release. WorkerS1current0/counters0,0,0,1/NO_SUCCESSOR fixed. Next PLAN_ONLY sourcepacket. Normal91PASS/P4 SKIPPED_NO_ELIGIBLE_CANDIDATE.",
-  "currentMode": "cvf_ncr_r2_w05_hq_decisions_locked",
+  "currentAuthoritySyncReason": "Material3 0b65e55af88ceacd12ec192660662c023e937a07 defines exact13 integrated offline source/verification proposal for manualtransfer; normal91PASS; no Root producttest/source/worker/effect. Prior audit/HQ frozen; Local independent probe afterworker.",
+  "currentMode": "cvf_ncr_r2_w05_offline_source_manual_handoff_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r2_w05_operation_audit_handoff_ready",
+  "previousMode": "cvf_ncr_r2_w05_hq_decisions_locked",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [

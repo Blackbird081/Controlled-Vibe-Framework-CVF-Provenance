@@ -1,17 +1,17 @@
 {
   "schemaVersion": "0.1.0",
-  "currentMode": "cvf_ncr_r2_w05_hq_decisions_locked",
+  "currentMode": "cvf_ncr_r2_w05_offline_source_manual_handoff_ready",
   "activeHandoff": "AGENT_HANDOFF_V63_2026-09-18.md",
-  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN_ONLY; BATCH_ID=CVF-NCR-R2-W05-OPERATION-AUDIT-20261019. Prepare one integrated offline source work order from docs/reviews/CVF_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_LOCAL_COMPLETION_REVIEW_2026-10-19.md HQ1-HQ7 and amended M01-M13manifest, actual dependencies/registry/size/architecture and proposed verification scope before release. Contract/store/helper/profile/branch/route/hook; owner-scoped getJob/requesthash beforeBuild, conditionalgetVersion afterSave, separate serveroperationeffect admission. No keyjobId, no stale-receipt/newtarget mixing; declaredidentity only fixture, reconcileBpresence cannot releaseUNKNOWN; controlleddisabledinvalid/profilemissingselectors denieswithoutlegacyfallback;256operations-owner/noexpiry;R1/REVIEW. No source/test creation/execution or network/runtime/provider/data effect yet; source packet must be separately concrete/released and manually transferred, Root does not invoke worker. WorkerS1current0/counters0,0,0,1/docNO_SUCCESSOR and all previoussource/Goal/Clarity/parentcountersfrozen. R1UXbounded/fullR1preliveR2partial,R3R4open,R5R6deferred. M15/M16engineReadById deferred; actualendpoint/data/store/auth/cost/retention/businessacceptance proof gates dependent effects only. Provider/private-data/production/public/deployOFF. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.",
+  "nextAllowedMove": "PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=MANUAL_TRANSFER_OFFLINE_SOURCE_PACKET; BATCH_ID=CVF-NCR-R2-W05-OFFLINE-SOURCE-20261019. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md including proposed focused offline verification scope after actual clean boundrelease PASS; Root does not invoke worker or create/run producttests. One INTERNAL_AGENT180min/exact13:contract/store/injectedproof/profile/branch/actualPOST/hook plus returnEP; Vitest<=4,tsc<=2,targetedESLint<=2,requiredGate<=3; no install/app/browser/network/provider/active-data/runtime/public/deploy. Seven-field body/two selectors, ownergetJob/requesthash beforeBuild;getVersion onlyafterSave; separateINJECTED_SYNTHETIC_RECEIPT notJOB_EFFECTS. Fixedkey excludesjobId; immutabletarget/config,0sendexactreuse or409referenceonly/no oldreceipt-newHTML; declared-unattestedfixtureidentity; reconcileBpresence cannot releaseUNKNOWN. Disabled/invalid/profilemissing selectorsdeny/no fallback.256monotonicreservations-owner/16KiBrecords/noexpiry/noGC;R1/REVIEW. Local independentprobe pending afterworker. New implementationINITIAL0/docplan/INTEGRATED_ROOT_CONTRACT distinctfrom closed AuditS1/current0/counters0,0,0,1/docNO_SUCCESSOR; all prior source/Goal/Clarity/runtimecounters frozen. R1prelive/R2partial,R3R4open,R5R6deferred; M14-M16deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged. Endpoint/auth/store/attestation/cost/businessacceptance remains held for dependent real effects.",
   "activeStateRegistry": "CVF_SESSION/ACTIVE_SESSION_STATE.json",
   "activeSessionFrontDoor": "CVF_SESSION_MEMORY.md",
   "freezePosture": "governance_kernel_freeze_recommended",
   "activeReviewQueue": "CVF_SESSION/ACTIVE_REVIEW_QUEUE.json",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md",
-    "baselineSha256": "9c16125c01aa00bb1ce4558977bc9e622471ab2e723db866747b8e73c0413018",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md",
-    "workOrderSha256": "2b8ab7fe667a395a0dcfb986c8d8880e474b9167754c334c6565e768c948a6c3"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md",
+    "baselineSha256": "9c1e2430b2a546fa843234e03764c1b3ec0e7b263b8a61e46494c01ff6e9061c",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md",
+    "workOrderSha256": "5b182fb937bf4cdf0349c363c984f725e5d0e34729708ebcbfbdddfa4de0a7b6"
   },
   "claimBoundary": "Compact bootstrap read model for startup facts only. For complete canonical state, read activeStateRegistry."
 }
