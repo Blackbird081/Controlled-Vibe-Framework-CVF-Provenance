@@ -35,20 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r2_w05_activation_design_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one integrated offline bound-receipt source packet from completed design; role=INTERNAL_AGENT Local orchestrator; phase=DESIGN_COMPLETE_SOURCE_DISPATCH_PENDING; decision owner=LOCAL; parked checkpoint=actual endpoint/key/data/store/writer/cost/acceptance and production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r2_w05_bound_source_manual_handoff_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=operator manual transfer of exact36 integrated offline bound-receipt source packet after actual boundrelease; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=BOUND_SOURCE_DISPATCH_READY_EFFECTS_HELD; decision owner=LOCAL; parked checkpoint=actual endpoint/key/data/storewriter/cost/business acceptance and production/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r2_w05_activation_design_ready`
-Current mode: `cvf_ncr_r2_w05_activation_design_ready`
+Current mode marker: `cvf_ncr_r2_w05_bound_source_manual_handoff_ready`
+Current mode: `cvf_ncr_r2_w05_bound_source_manual_handoff_ready`
 
-Integrated activation design complete; next exact offline source packet, no source dispatch or actual effects granted. Production export DENY retained.
+One integrated exact36 source packet prepared for manual transfer after actual release; source implementation/acceptance not executed. All real effects held; production DENY.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r2_w05_activation_design_ready`
+Mode: `cvf_ncr_r2_w05_bound_source_manual_handoff_ready`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_INTEGRATED_BOUND_RECEIPT_OFFLINE_SOURCE_PACKET; BATCH_ID=CVF-NCR-R2-W05-ACTIVATION-DESIGN-20261019. Design docs/baselines/CVF_NCR_R2_W05_ACTIVATION_DESIGN_2026-10-19.md in material2 c1f99e91c3ef1a8d2770a12f45301b1374d5140f reconciles G01-G08/D01-D12/P01-P07: preserve fixturev1 and productionDENY; distinctboundeffect/schema; export->dedicatedWebproxy->dedicatedengine endpoint; exact rawsigned owner/request/config joins; authenticated actualinstance/openedstore binding and fresh isolated SQLite proposal; phaseR1 policy mapping; truthful current ENVI disclosure; Stop/UNKNOWN/no replay. Next Local locks actual source/test manifest, serialization/mechanism, source/dependency/size/budget and independentLocal proof in one integrated source-only workorder; operator manually transfers only after actual boundrelease. No extra audit, no worker invocation or implementation/runtime permit from design. Group later actual origins/keyrefs/data/access/storewriter/retention/finitecalls/timeout/cost/acceptance checkpoint once concrete; paid/provider/production/public/deploy held. Accepted prior repair worker199of199/tsc0/changed7lint0/Local10of10 reused, not rerun; procedure/baseline exceptions/history preserved. Frozen implementationLocalS5current0/counters0,1,0,1, no reset/successor. R1prelive/R2partial/R3R4open/R5R6deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 frozen. All real effectsOFF.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BOUND_RECEIPT_OFFLINE_SOURCE_VIA_OPERATOR_MANUAL_TRANSFER; BATCH_ID=CVF-NCR-R2-W05-BOUND-SOURCE-20261019. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BOUND_SOURCE_2026-10-19.md with paired docs/baselines/CVF_GC018_NCR_R2_W05_BOUND_SOURCE_2026-10-19.md after actual clean boundrelease PASS. Exact36:8existingmodifications/26newproduct-test-vector paths+returnEP;7requirements;300min,Vitest<=2x600s,pytest<=2x300s,tsc<=2x240s,changedWeblint<=2x300s,fullgate<=3x180s; worker32768files/128MiB,Pythonchildren<=24/PSACL<=12/total<=40. BC01-BC12 and crosslanguage/key-lifetime clauses freeze neweffect schema+v1codec isolation, measured pinned SQLite subclass, signed dedicated Web/engine hops, actual export/jobs/ENVI consumer, strict counters/risk/UNKNOWN and full transaction proof. Runtime defaults/productionDENY; no network/provider/browser/active-data/OSsecuritymutation/install. Exactcontrols2existinglintfingerprints only, original exits/read history preserved. Root does not invoke worker or execute product checks. NewboundeffectINITIAL0, workerSUCCESSOR1againstactualWOhash; fixtureLocalS5current0/counters0,1,0,1 frozen, no reset/refill. Local independently probes <=12min after returned proof, then acceptance/material38or39/current6. R1prelive/R2partial/R3R4open/R5R6deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 fixed. Later actual origins/keyrefs/storewriter/data/retention/cost/acceptance groupedcheckpoint; real provider/production/public/deployOFF.
 
 ## Parked Checkpoints
 

@@ -18,13 +18,13 @@
   "corpusToKnowledgeMapReconciliationGuard": "governance/toolkit/05_OPERATION/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_GUARD.md",
   "corpusToKnowledgeMapReconciliationStandard": "docs/reference/CVF_CORPUS_TO_KNOWLEDGE_MAP_RECONCILIATION_STANDARD_2026-06-01.md",
   "currentAuthority": {
-    "baselinePath": "docs/baselines/CVF_GC018_NCR_R2_W05_BINDING_REPAIR_2026-10-19.md",
-    "baselineSha256": "7f605ef26c9f078a1d9e66b5e2552a4a2e06892a7980d3b6141aadb1da00554a",
-    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BINDING_REPAIR_2026-10-19.md",
-    "workOrderSha256": "296000b92ac667e3b46008c27627cf86d753c80b8184275a4bdf2c2e07ab6b3d"
+    "baselinePath": "docs/baselines/CVF_GC018_NCR_R2_W05_BOUND_SOURCE_2026-10-19.md",
+    "baselineSha256": "8ececd634c7eb8649ed8398492623634ccd4bf2d6a9079d18cd5631115ff4170",
+    "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BOUND_SOURCE_2026-10-19.md",
+    "workOrderSha256": "1658341bd5b719badde16a04123cee77de673beb35284cde0122e2714fc29579"
   },
-  "currentAuthoritySyncReason": "Design material2 c1f99e91c3ef1a8d2770a12f45301b1374d5140f; docs/baselines/CVF_NCR_R2_W05_ACTIVATION_DESIGN_2026-10-19.md SHA256 b38bd2345432e5c0ebacb85e652c9af45ae6854314b797eb4dc5369be8bf40de. Accepted source pair remains currentAuthority evidence; new design is PLAN_ONLY, not a dispatch pair. Next exact integrated offline source packet; no runtime/worker/effect grant.",
-  "currentMode": "cvf_ncr_r2_w05_activation_design_ready",
+  "currentAuthoritySyncReason": "Material6 9d35b37093dfeb4ce333e30a54e174cc158c32bc exact36 integrated offline source packet,7requirements/BC01-BC12; normal91PASS/P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Actualsource/instance/store/cost effects held; manualtransfer only after boundrelease.",
+  "currentMode": "cvf_ncr_r2_w05_bound_source_manual_handoff_ready",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r2_w05_binding_repair_accepted_offline",
+  "previousMode": "cvf_ncr_r2_w05_activation_design_ready",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [
