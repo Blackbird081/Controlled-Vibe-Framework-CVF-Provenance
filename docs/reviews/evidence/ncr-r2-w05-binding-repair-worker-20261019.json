@@ -1,0 +1,839 @@
+{
+  "schemaVersion": "cvf.ncrW05BindingRepairWorker.v1",
+  "batchId": "CVF-NCR-R2-W05-BINDING-REPAIR-20261019",
+  "workOrder": {
+    "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BINDING_REPAIR_2026-10-19.md",
+    "sha256": "296000b92ac667e3b46008c27627cf86d753c80b8184275a4bdf2c2e07ab6b3d"
+  },
+  "executionBaseHead": "b31a1276f621a05cb4d46960e6f285ef7bae4994",
+  "executionBaseStatus": "clean worktree, empty stage, HEAD b31a1276f at 2026-10-19T11:51:42+07:00",
+  "status": "COMPLETE_PENDING_REVIEW",
+  "decisionOwner": "LOCAL",
+  "localIndependentProbe": "PENDING_REVIEWER_EXECUTION",
+  "workerSelfProbes": "worker-authored red/green and behavior probes below are NOT the Local independent probe and certify nothing",
+  "sources": [
+    {
+      "id": "S1",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+      "action": "MODIFY",
+      "lineEnding": "LF",
+      "preimageSha256": "084c1368c8c9543ce9dc409c8f6d27ab179164877b88bada2d99a19881e3d77e",
+      "preimageLines": 418,
+      "finalSha256": "828afbd9d7b8f4d75156e8b7414349fbc6492afb54e4b35563547851d5d44f88",
+      "finalLines": 472,
+      "maxLines": 650
+    },
+    {
+      "id": "S2",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+      "action": "MODIFY",
+      "lineEnding": "LF",
+      "preimageSha256": "fab772f525fcaf6b69bf2ea27e64dd3c6ddb26d0f5f18d9ee999ab6deb49eac2",
+      "preimageLines": 302,
+      "finalSha256": "34d98083c66accd4cb6b29d507a45ac719c9a5f411da9372b0ac5002ba99fd5a",
+      "finalLines": 345,
+      "maxLines": 550
+    },
+    {
+      "id": "S3",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts",
+      "action": "MODIFY",
+      "lineEnding": "LF",
+      "preimageSha256": "ebf73ea63024e86b32a02b9e9a5d57b3c3e972bcc48a5d1ee14588645fa98903",
+      "preimageLines": 90,
+      "finalSha256": "bdddaeadb77dd7e9e1560243cbe3c87bc2ea920e65ab597753df28aba85fca58",
+      "finalLines": 104,
+      "maxLines": 350
+    },
+    {
+      "id": "T1",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.operation.test.ts",
+      "action": "MODIFY",
+      "lineEnding": "LF",
+      "preimageSha256": "4a2ec4ecb7e6d4ff37fe36586a579d36d56bdd861e3444e56f1478958caa115c",
+      "preimageLines": 644,
+      "finalSha256": "c47120d2aef92b894f79ead379822cddacde1e8b5a41804d4433d7a5305af708",
+      "finalLines": 684,
+      "maxLines": 690
+    },
+    {
+      "id": "T2",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.operation.test.ts",
+      "action": "MODIFY",
+      "lineEnding": "LF",
+      "preimageSha256": "483bc0c4672f9708f7c40021b5a42c309952deb4b29acdc3c2f021ba495ef794",
+      "preimageLines": 345,
+      "finalSha256": "87f85ad8281cdb6cdd65ba49a16a4dd991e8b98906ff17b8f8f6c726e82c1e5f",
+      "finalLines": 476,
+      "maxLines": 650
+    },
+    {
+      "id": "T3",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation.test.ts",
+      "action": "MODIFY",
+      "lineEnding": "LF",
+      "preimageSha256": "812a28d23dd03fe308fb4e73900df7ae5531b7f6c606898c23994459a5bd53e2",
+      "preimageLines": 406,
+      "finalSha256": "6186a54156b82fda401ef709f9d5859a2c9a954e2cd939b5271a779f5524cb59",
+      "finalLines": 466,
+      "maxLines": 690
+    },
+    {
+      "id": "T4",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts",
+      "action": "MODIFY",
+      "lineEnding": "CRLF",
+      "preimageSha256": "f65705564060daa9d913d3afd38237eaf6d6b408939f59605ea5053b52b7d47f",
+      "preimageLines": 402,
+      "finalSha256": "bfd233611f9c935e718887abfa5119b38dc9af141d560d98c6c52b3040d32a1b",
+      "finalLines": 436,
+      "maxLines": 690
+    }
+  ],
+  "readOnlyPins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.ts",
+      "sha256": "7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.test.ts",
+      "sha256": "1ba44d1f5e68bc0d72aa6668d6680c3918d5c50dc2369c66013031288bd82713",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts",
+      "sha256": "8478e8673a2c95ebea0b7b6155fab33101d703d62c0d5737824b8fb3b6692bb7",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "sha256": "e9266d4ecd7f3c46dcda7a53eca4a576838af18bf9fc7663a5e8196c1e944fbb",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+      "sha256": "00cb76dc36ae8efacaafffe3c1ec5086b1707baa8412afd4760ec1c9eb70fcfd",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+      "sha256": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts",
+      "sha256": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts",
+      "sha256": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/job-profile.test.ts",
+      "sha256": "e1cb12922e29471dc960a9a3a809ef6eb666a19d8452d19c66ead1fa3ff3ca87",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts",
+      "sha256": "07ba622fb72225bc68a0fee604804a561ec6551755431523bc61c6b8b1625a09",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_R2_W05_OFFLINE_SOURCE_WORKER_RETURN_2026-10-19.md",
+      "sha256": "d1cbd2401cc8d8a63eda20e4ff62d8254fa656c1c237dfa79e65d3c0d0476525",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-r2-w05-offline-source-worker-20261019.json",
+      "sha256": "c1427adb89f56e1b22c20178e007ebaea177feb29cc364fd2c204e28a8184b59",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_R2_W05_OFFLINE_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-19.md",
+      "sha256": "43b423615488a3cff0667a7719101296e32662cdf6e15ff0f5926c4dd2607be5",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-r2-w05-offline-source-local-20261019.json",
+      "sha256": "eea454bf607fcf3149cf481077dbd3c82df494a8f2da9466d4097fa1b0e7ef70",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BINDING_REPAIR_2026-10-19.md",
+      "sha256": "296000b92ac667e3b46008c27627cf86d753c80b8184275a4bdf2c2e07ab6b3d",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_NCR_R2_W05_BINDING_REPAIR_2026-10-19.md",
+      "sha256": "7f605ef26c9f078a1d9e66b5e2552a4a2e06892a7980d3b6141aadb1da00554a",
+      "unchangedFromHead": true
+    }
+  ],
+  "REQ-AUTHORITY": {
+    "cases": [
+      "A01",
+      "A02",
+      "A03",
+      "A04",
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A10",
+      "A11",
+      "A12",
+      "A13",
+      "A14",
+      "A15"
+    ],
+    "locator": "docs/reviews/evidence/ncr-r2-w05-binding-repair-worker-20261019.json#REQ-AUTHORITY",
+    "status": "PASS",
+    "finalSourceJoin": [
+      "828afbd9d7b8f4d75156e8b7414349fbc6492afb54e4b35563547851d5d44f88",
+      "34d98083c66accd4cb6b29d507a45ac719c9a5f411da9372b0ac5002ba99fd5a",
+      "c47120d2aef92b894f79ead379822cddacde1e8b5a41804d4433d7a5305af708",
+      "87f85ad8281cdb6cdd65ba49a16a4dd991e8b98906ff17b8f8f6c726e82c1e5f"
+    ]
+  },
+  "REQ-POSTURE": {
+    "cases": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08"
+    ],
+    "locator": "docs/reviews/evidence/ncr-r2-w05-binding-repair-worker-20261019.json#REQ-POSTURE",
+    "status": "PASS",
+    "finalSourceJoin": [
+      "bdddaeadb77dd7e9e1560243cbe3c87bc2ea920e65ab597753df28aba85fca58",
+      "6186a54156b82fda401ef709f9d5859a2c9a954e2cd939b5271a779f5524cb59",
+      "bfd233611f9c935e718887abfa5119b38dc9af141d560d98c6c52b3040d32a1b"
+    ]
+  },
+  "REQ-REGRESSION": {
+    "vitest": "run 2 of 2, final bytes, 7 files, 199 of 199 passed",
+    "tsc": "run 1 of 2, final bytes, exit 0",
+    "eslintChanged7": "run 1 of 2, final bytes, exit 0, no output (0 errors, 0 warnings)",
+    "retained": [
+      {
+        "label": "positive one send and joined verified outcome",
+        "file": "proof.operation.test.ts",
+        "status": "passed"
+      },
+      {
+        "label": "exact reuse zero sends, changed target reference only",
+        "file": "proof.operation.test.ts",
+        "status": "passed"
+      },
+      {
+        "label": "branch exact reuse, changed target 409 without HTML",
+        "file": "operation.test.ts",
+        "status": "passed"
+      },
+      {
+        "label": "actual POST ALREADY_PROCESSED 409 no second send",
+        "file": "operation.test.ts",
+        "status": "passed"
+      },
+      {
+        "label": "capacity 256 and 257",
+        "file": "html-draft-snapshot-store.operation.test.ts",
+        "status": "passed"
+      },
+      {
+        "label": "near-full capacity",
+        "file": "html-draft-snapshot-store.operation.test.ts",
+        "status": "passed"
+      },
+      {
+        "label": "in-process racing keeps the cap",
+        "file": "html-draft-snapshot-store.operation.test.ts",
+        "status": "passed"
+      },
+      {
+        "label": "presence observed never releases or replays",
+        "file": "proof.operation.test.ts",
+        "status": "passed"
+      },
+      {
+        "label": "presence-no-release",
+        "file": "proof.operation.test.ts",
+        "status": "passed"
+      },
+      {
+        "label": "legacy helper unchanged",
+        "file": "proof.operation.test.ts",
+        "status": "passed"
+      },
+      {
+        "label": "route.test.ts retained behavioral cases, unchanged assertions",
+        "file": "route.test.ts",
+        "count": 37,
+        "status": "passed"
+      }
+    ],
+    "locator": "docs/reviews/evidence/ncr-r2-w05-binding-repair-worker-20261019.json#REQ-REGRESSION",
+    "status": "PASS"
+  },
+  "REQ-RETURN": {
+    "locator": "docs/reviews/evidence/ncr-r2-w05-binding-repair-worker-20261019.json#REQ-RETURN",
+    "status": "PASS",
+    "finalGate": "attempts, exit codes, timings, raw output and the before/after SHA256 of the return and of this file are in the detached ignored receipt final-gate-receipt.json under the worker scratch root; no tracked byte is appended after the last gate"
+  },
+  "cases": [
+    {"id": "A01", "requirement": "REQ-AUTHORITY", "file": "proof.operation.test.ts", "rows": 1, "expectedSends": 1, "expected": "REQUEST_SNAPSHOT_AFTER_ADMISSION: sent payload equals the approved payload after mutation during admit, start and write waits", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A01", "titles": ["LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay keeps the approved bytes when the caller mutates request, envelope and owner aliases during the admit, start and write waits"]},
+    {"id": "A02", "requirement": "REQ-AUTHORITY", "file": "proof.operation.test.ts", "rows": 1, "expectedSends": "0 then 1", "expected": "GRANT_ENVELOPE_REQUEST_JOIN: replaced payload or envelope sends nothing; the unspent grant still joins the genuine pair once", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A02", "titles": ["LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay sends nothing when a genuine grant is presented with another request or envelope, and the grant stays usable for the genuine join"]},
+    {"id": "A03", "requirement": "REQ-AUTHORITY", "file": "html-draft-snapshot-store.operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "DURABLE_INTENT_NOT_START_AUTHORITY: fresh store, restart and 400 days later all get no grant and no start file", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A03", "titles": ["LR1/REQ-AUTHORITY opaque admission, start and outcome authority lets no restart, fresh store or later caller turn a durable INTENT into a start, even long after and when the winner never started"]},
+    {"id": "A04", "requirement": "REQ-AUTHORITY", "file": "html-draft-snapshot-store.operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "forged, copied, readOperation-derived, fabricated, foreign-store, cross-owner and cross-key admission use gets no start; the original winner starts once", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A04", "titles": ["LR1/REQ-AUTHORITY opaque admission, start and outcome authority issues an admission only to the caller whose new intent was written; forged, copied, foreign-store and cross-owner use gets no start"]},
+    {"id": "A05", "requirement": "REQ-AUTHORITY", "file": "html-draft-snapshot-store.operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "eight in-process starters with one admission: one STARTED, one start file", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A05", "titles": ["LR1/REQ-AUTHORITY opaque admission, start and outcome authority lets one admission authorize exactly one start under in-process racing"]},
+    {"id": "A06", "requirement": "REQ-AUTHORITY", "file": "html-draft-snapshot-store.operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "store level: spent admission, restart and later callers get no grant after an unavailable start open", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A06", "titles": ["LR1/REQ-AUTHORITY opaque admission, start and outcome authority gives no retry after a failed start with no start file: the spent admission, a restart and every later caller get no grant"]},
+    {"id": "A07", "requirement": "REQ-AUTHORITY", "file": "proof.operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "proof level: START_UNCONFIRMED, then three later callers ALREADY_PROCESSED INTENT with zero sends", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A07", "titles": ["LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay gives no retry after a failed start with no start file: the winner, a restart and a later caller all get zero sends"]},
+    {"id": "A08", "requirement": "REQ-AUTHORITY", "file": "html-draft-snapshot-store.operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "other envelope, other payload digest, null, other invoker and foreign store rejected; a mismatch does not spend the grant", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A08", "titles": ["LR1/REQ-AUTHORITY opaque admission, start and outcome authority binds a grant to its full envelope and invoker: another envelope, payload or invoker is rejected and a mismatch does not spend it"]},
+    {"id": "A09", "requirement": "REQ-AUTHORITY", "file": "html-draft-snapshot-store.operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "STRUCTURAL_OUTCOME_HANDLE_FORGERY: no outcome file, authentic handle works once, second write collides", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A09", "titles": ["LR1/REQ-AUTHORITY opaque admission, start and outcome authority rejects a structural, copied, foreign-store or fabricated outcome handle before any write, then accepts the authentic handle once"]},
+    {"id": "A10", "requirement": "REQ-AUTHORITY", "file": "html-draft-snapshot-store.operation.test.ts", "rows": 3, "expectedSends": 0, "expected": "receipt id, risk and decision must join the start attempt, R1 and the accepted set; the used handle is no replay channel", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A10", "titles": ["LR1/REQ-AUTHORITY opaque admission, start and outcome authority refuses a verified receipt with another receipt id: no outcome file and the used handle is no replay channel", "LR1/REQ-AUTHORITY opaque admission, start and outcome authority refuses a verified receipt with risk R0: no outcome file and the used handle is no replay channel", "LR1/REQ-AUTHORITY opaque admission, start and outcome authority refuses a verified receipt with an unaccepted decision: no outcome file and the used handle is no replay channel"]},
+    {"id": "A11", "requirement": "REQ-AUTHORITY", "file": "proof.operation.test.ts", "rows": 17, "expectedSends": 0, "expected": "malformed request, owner, envelope or signal: INVALID_PROOF_INPUT, no throw, no send, no write", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A11", "titles": ["LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed null request without throwing and without any send or write", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed string request without throwing and without any send or write", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed array request without throwing and without any send or write"]},
+    {"id": "A12", "requirement": "REQ-AUTHORITY", "file": "proof.operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "structural stand-in and prototype-forged stores are denied and never called", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A12", "titles": ["LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay trusts only a store built by the artifacts store module: a structural stand-in is denied and never called"]},
+    {"id": "A13", "requirement": "REQ-AUTHORITY", "file": "proof.operation.test.ts", "rows": 3, "expectedSends": 1, "expected": "typed, thrown and rejected NOT_CONFIGURED after the invocation: one send, OUTCOME_UNKNOWN, no retry", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A13", "titles": ["LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay records a typed NOT_CONFIGURED return after the invocation as OUTCOME_UNKNOWN with no receipt and never retries it", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay records a thrown NOT_CONFIGURED after the invocation as OUTCOME_UNKNOWN with no receipt and never retries it", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay records a rejected NOT_CONFIGURED after the invocation as OUTCOME_UNKNOWN with no receipt and never retries it"]},
+    {"id": "A14", "requirement": "REQ-AUTHORITY", "file": "proof.operation.test.ts", "rows": 1, "expectedSends": 1, "expected": "late store write after the bounded wait: unknown local response, no second invoke, no grant", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A14", "titles": ["LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay lets a late durable outcome write exist after the bounded timeout without triggering another invoke or grant"]},
+    {"id": "A15", "requirement": "REQ-AUTHORITY", "file": "html-draft-snapshot-store.operation.test.ts", "rows": 1, "expectedSends": 1, "expected": "eight real OS processes: only the ADMITTED winner starts, EXISTING contenders never start, 256/257 boundary, crash then restart without replay", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-AUTHORITY#A15", "titles": ["PC/REQ-STORE eight real OS contenders, boundary reservation 256/257 and restart lets at most one process start and invoke, caps reservations at 256, and never replays after a crash"]},
+    {"id": "P01", "requirement": "REQ-POSTURE", "file": "operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "PERSISTENT_DISABLE_AFTER_SELECTOR_REMOVAL through the actual POST and a fresh resolver", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-POSTURE#P01", "titles": ["LR2/REQ-POSTURE absence denies and the explicit server value is the only way to the retained legacy helper denies DISABLED, then keeps denying after the selector or any enabling variable is removed, also through a fresh resolver, with zero sends"]},
+    {"id": "P02", "requirement": "REQ-POSTURE", "file": "operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "explicit LEGACY_COMPATIBILITY_ONLY is the sole legacy path; selectors, local profile, malformed values and production deny", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-POSTURE#P02", "titles": ["LR2/REQ-POSTURE absence denies and the explicit server value is the only way to the retained legacy helper reaches the retained legacy helper only through the explicit value, and denies it with job selectors, a local profile, malformed values or production"]},
+    {"id": "P03", "requirement": "REQ-POSTURE", "file": "operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "resolver output carries no profile, invoker or root for any declared value", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-POSTURE#P03", "titles": ["LR2/REQ-POSTURE absence denies and the explicit server value is the only way to the retained legacy helper never lets the runtime resolver build a controlled profile or invoker from any declared value"]},
+    {"id": "P04", "requirement": "REQ-POSTURE", "file": "operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "pure route matrix including explicit legacy, absence, unknown and null posture", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-POSTURE#P04", "titles": ["PA/REQ-INTEGRATION posture resolver and route decision decides routes without ever falling back from a deny to legacy"]},
+    {"id": "P05", "requirement": "REQ-POSTURE", "file": "operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "environment value matrix including legacy variants and production", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-POSTURE#P05", "titles": ["PA/REQ-INTEGRATION posture resolver and route decision maps every environment value to a deny or a non-receipt posture and never to a controlled receipt profile"]},
+    {"id": "P06", "requirement": "REQ-POSTURE", "file": "operation.test.ts", "rows": 1, "expectedSends": 0, "expected": "undeclared with and without selectors and no local profile denies", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-POSTURE#P06", "titles": ["PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies selectors with no valid profile and a declared local posture without a local job profile"]},
+    {"id": "P07", "requirement": "REQ-POSTURE", "file": "route.test.ts", "rows": 6, "expectedSends": 0, "expected": "missing, DISABLED, empty, lowercase, doubled and held values deny before auth and fetch on the retained legacy route", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-POSTURE#P07", "titles": ["/api/artifacts/export denies a missing receipt-operation posture before auth, body parsing or any receipt fetch", "/api/artifacts/export denies a DISABLED receipt-operation posture before auth, body parsing or any receipt fetch", "/api/artifacts/export denies a empty receipt-operation posture before auth, body parsing or any receipt fetch"]},
+    {"id": "P08", "requirement": "REQ-POSTURE", "file": "route.test.ts", "rows": 1, "expectedSends": 0, "expected": "explicit legacy plus job selectors or production denies without auth or fetch", "observed": "ALL_ROWS_PASSED", "requirementLocator": "REQ-POSTURE#P08", "titles": ["/api/artifacts/export denies the explicit legacy value in production, and with any job selector, without reaching auth or the receipt fetch"]}
+  ],
+  "originalRedVersusRepaired": {
+    "probe": ".cvf/runtime/ncr-r2-w05-binding-repair-20261019/worker/patch/redgreen.cjs",
+    "probeSha256": "93468d1e29194fd1191ee01d6f1af425ef7dd571deb307f97b4094ea3fd58c5a",
+    "note": "worker-authored, synthetic fixtures, zero network; old = HEAD blobs of S1 S2 S3 (pins equal the Local probe pins), new = final bytes",
+    "old": {
+      "mode": "old",
+      "sourceSha256": {
+        "lib/server/html-draft-snapshot-store": "084c1368c8c9543ce9dc409c8f6d27ab179164877b88bada2d99a19881e3d77e",
+        "app/api/artifacts/export/proof": "fab772f525fcaf6b69bf2ea27e64dd3c6ddb26d0f5f18d9ee999ab6deb49eac2",
+        "lib/server/receipt-operation-profile": "ebf73ea63024e86b32a02b9e9a5d57b3c3e972bcc48a5d1ee14588645fa98903"
+      },
+      "rows": [
+        {
+          "id": "REQUEST_SNAPSHOT_AFTER_ADMISSION",
+          "sends": 1,
+          "sentPayloadSha256": "b5e851df2d1cff9a920298079186df3a17255429f23528afeee657f09e2ab4a0",
+          "admittedPayloadSha256": "c470932772f4465e7155777cbee6e7af8da396d0ae5999502adf2d3eefa49d76",
+          "result": "EXECUTED",
+          "outcome": "RECEIPT_VERIFIED",
+          "durable": "RECEIPT_VERIFIED"
+        },
+        {
+          "id": "GRANT_ENVELOPE_REQUEST_JOIN",
+          "sends": 1,
+          "result": "EXECUTED",
+          "outcome": "RECEIPT_VERIFIED",
+          "sentPayloadSha256": "8177950ae7c27a132d7193b45968d11d4b53d03ce3755e8a5b6b831a946e1065",
+          "admittedPayloadSha256": "c470932772f4465e7155777cbee6e7af8da396d0ae5999502adf2d3eefa49d76"
+        },
+        {
+          "id": "DURABLE_INTENT_NOT_START_AUTHORITY",
+          "freshStoreStart": "STARTED",
+          "grantMinted": true
+        },
+        {
+          "id": "PERSISTENT_DISABLE_AFTER_SELECTOR_REMOVAL",
+          "before": "DENY",
+          "afterMissingConfig": "UNDECLARED",
+          "afterRoute": "LEGACY",
+          "afterReason": null
+        },
+        {
+          "id": "STRUCTURAL_OUTCOME_HANDLE_FORGERY",
+          "grantMinted": true,
+          "forgedWrite": "SAVED",
+          "durable": "RECEIPT_VERIFIED"
+        }
+      ]
+    },
+    "new": {
+      "mode": "new",
+      "sourceSha256": {
+        "lib/server/html-draft-snapshot-store": "828afbd9d7b8f4d75156e8b7414349fbc6492afb54e4b35563547851d5d44f88",
+        "app/api/artifacts/export/proof": "34d98083c66accd4cb6b29d507a45ac719c9a5f411da9372b0ac5002ba99fd5a",
+        "lib/server/receipt-operation-profile": "bdddaeadb77dd7e9e1560243cbe3c87bc2ea920e65ab597753df28aba85fca58"
+      },
+      "rows": [
+        {
+          "id": "REQUEST_SNAPSHOT_AFTER_ADMISSION",
+          "sends": 1,
+          "sentPayloadSha256": "c470932772f4465e7155777cbee6e7af8da396d0ae5999502adf2d3eefa49d76",
+          "admittedPayloadSha256": "c470932772f4465e7155777cbee6e7af8da396d0ae5999502adf2d3eefa49d76",
+          "result": "EXECUTED",
+          "outcome": "RECEIPT_VERIFIED",
+          "durable": "RECEIPT_VERIFIED"
+        },
+        {
+          "id": "GRANT_ENVELOPE_REQUEST_JOIN",
+          "sends": 0,
+          "result": "DENIED",
+          "outcome": "INVALID_PROOF_INPUT",
+          "sentPayloadSha256": null,
+          "admittedPayloadSha256": "c470932772f4465e7155777cbee6e7af8da396d0ae5999502adf2d3eefa49d76"
+        },
+        {
+          "id": "DURABLE_INTENT_NOT_START_AUTHORITY",
+          "freshStoreStart": "DENIED:ADMISSION_REQUIRED",
+          "grantMinted": false
+        },
+        {
+          "id": "PERSISTENT_DISABLE_AFTER_SELECTOR_REMOVAL",
+          "before": "DENY",
+          "afterMissingConfig": "UNDECLARED",
+          "afterRoute": "DENY",
+          "afterReason": "POSTURE_UNDECLARED"
+        },
+        {
+          "id": "STRUCTURAL_OUTCOME_HANDLE_FORGERY",
+          "grantMinted": true,
+          "forgedWrite": "UNAVAILABLE",
+          "durable": "STARTED"
+        }
+      ]
+    },
+    "oldLog": "logs/redgreen-old.json",
+    "newLog": "logs/redgreen-new.json"
+  },
+  "finalVitestCasesByFile": {
+    "artifacts-receipt-operation-contract.test.ts": {
+      "passed": 21,
+      "other": 0
+    },
+    "html-draft-snapshot-store.operation.test.ts": {
+      "passed": 44,
+      "other": 0
+    },
+    "html-draft-snapshot-store.test.ts": {
+      "passed": 2,
+      "other": 0
+    },
+    "job-profile.test.ts": {
+      "passed": 1,
+      "other": 0
+    },
+    "operation.test.ts": {
+      "passed": 36,
+      "other": 0
+    },
+    "proof.operation.test.ts": {
+      "passed": 51,
+      "other": 0
+    },
+    "route.test.ts": {
+      "passed": 44,
+      "other": 0
+    }
+  },
+  "finalVitestCases": [
+    ["artifacts-receipt-operation-contract.test.ts", "PA/REQ-IDENTITY fixed-order logical key serializes exactly [schema,userId,orgId,teamId,sourceRecordId,requestSha256,effectKind] and hashes that text", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PA/REQ-IDENTITY fixed-order logical key excludes jobId, versionId, config, endpoint and html identity from the key but binds them in the envelope", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PA/REQ-IDENTITY fixed-order logical key rejects an invalid owner, a non-synthetic source record and a non-hash request digest", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PA/REQ-IDENTITY fixed-order logical key derives a deterministic attempt id from the key only", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PA/REQ-IDENTITY canonical serialization sorts keys and refuses non-canonical values", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PA/REQ-IDENTITY canonical serialization serializes the same envelope to the same bytes regardless of property order", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PA/REQ-IDENTITY strict envelope and config copies input and never aliases the caller object", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PA/REQ-IDENTITY strict envelope and config binds every declared identity, phase, risk, call limit, disclosure and posture", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PA/REQ-IDENTITY strict envelope and config rejects extra, missing, retyped and tampered envelope fields", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PA/REQ-IDENTITY strict envelope and config accepts a saved version id only as an explicit later binding", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PA/REQ-IDENTITY strict envelope and config requires synthetic endpoint and store ids and a self-consistent digest; production and attested trust are not representable", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PA/REQ-IDENTITY strict envelope and config rejects secret-like values in config and output text", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PB/REQ-STORE lifecycle records and bytes round trips reservation, intent, start and outcome through strict parsers", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PB/REQ-STORE lifecycle records and bytes rejects a slot outside 0..255, a mismatched intent digest and a non-hex nonce", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PB/REQ-STORE lifecycle records and bytes enforces outcome/receipt/reason invariants", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PB/REQ-STORE lifecycle records and bytes refuses to serialize a record over the 16384-byte bound", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PB/REQ-STORE lifecycle records and bytes distinguishes corrupt, unsupported and canonical bytes", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PG/REQ-INTEGRATION import graph and no ambient authority limits imports to Node builtins and current artifacts modules", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PG/REQ-INTEGRATION import graph and no ambient authority has no default fetch, credential, engine, provider or network use in the new fixture owners", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PG/REQ-INTEGRATION import graph and no ambient authority has no unlink, rename, truncate, append, chmod, chown or lock in the operations code and opens files only with wx", "passed"],
+    ["artifacts-receipt-operation-contract.test.ts", "PG/REQ-INTEGRATION import graph and no ambient authority reads the environment in one default parameter only and never for activation", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE immutable operation records writes reservation, intent, start and outcome once each as exact canonical bytes under the operations child directory", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE immutable operation records keeps existing draft and job files outside the operations scan", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE immutable operation records denies every operation call when the profile does not enable receipt operations", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE immutable operation records looks up an existing key before reserving, so a repeat consumes no new slot", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE immutable operation records rejects an envelope for another owner and keeps owner namespaces apart", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinct reports empty record as  without admitting a replacement", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinct reports not json as {not json without admitting a replacement", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinct reports oversize record as                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   without admitting a replacement", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinct reports unsupported revision as {\"schema\":\"cvf.artifactsReceiptOperation.v2\"} without admitting a replacement", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinct reports wrong shape as {\"schema\":\"cvf.artifactsReceiptOperation.v1\",\"kind\":\"INTENT\"} without admitting a replacement", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinct treats an orphan start or a missing reservation as corrupt and an unusable root as unconfirmed", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinct rejects a key mismatch planted under another key name", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinct denies through a junction operations directory and a junction root without writing through the link", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinct denies an unknown entry and an over-bound scan instead of ignoring them", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE write and readback faults consume, never recycle a torn reservation consumes its slot, denies, and the next admit uses a later slot", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE write and readback faults consume, never recycle a torn intent keeps the key consumed: lookup is corrupt, no replacement intent or slot", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE write and readback faults consume, never recycle a torn start denies before any grant exists and later callers never mint one", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE write and readback faults consume, never recycle a torn outcome leaves the operation corrupt and a healthy writer cannot replace it", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE write and readback faults consume, never recycle an abandoned empty reservation file consumes capacity and is never recycled", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE injected open failure and readback mismatch deny before any send denies when the reservation open fails and creates no marker", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE injected open failure and readback mismatch deny before any send denies when the intent open fails: the reservation marker stays consumed and a later admit uses a later slot", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE injected open failure and readback mismatch deny before any send denies when the start open fails and mints no grant", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE injected open failure and readback mismatch deny before any send denies on a reservation readback mismatch and keeps the written record consumed", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE injected open failure and readback mismatch deny before any send denies on a intent readback mismatch and keeps the written record consumed", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE injected open failure and readback mismatch deny before any send a start readback mismatch leaves STARTED with no grant, so nothing can be sent", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE capacity of 256 monotonic reservations per owner admits exactly 256 operations, denies the 257th, and an existing key still resolves at capacity", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE capacity of 256 monotonic reservations per owner counts 255 abandoned slots as consumed so exactly one more admission fits", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PB/REQ-STORE capacity of 256 monotonic reservations per owner keeps the cap under in-process racing and wastes slots conservatively for duplicate keys", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PC/REQ-STORE single-use grant and unknown without retry mints one opaque grant from the winning start and rejects copies, forgeries, spent grants and foreign stores", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PC/REQ-STORE single-use grant and unknown without retry never mints a second grant after STARTED, a restart, or a terminal outcome", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PC/REQ-STORE single-use grant and unknown without retry writes one immutable outcome: a second writer collides and a wrong nonce or early write is refused", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "LR1/REQ-AUTHORITY opaque admission, start and outcome authority issues an admission only to the caller whose new intent was written; forged, copied, foreign-store and cross-owner use gets no start", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "LR1/REQ-AUTHORITY opaque admission, start and outcome authority lets no restart, fresh store or later caller turn a durable INTENT into a start, even long after and when the winner never started", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "LR1/REQ-AUTHORITY opaque admission, start and outcome authority gives no retry after a failed start with no start file: the spent admission, a restart and every later caller get no grant", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "LR1/REQ-AUTHORITY opaque admission, start and outcome authority lets one admission authorize exactly one start under in-process racing", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "LR1/REQ-AUTHORITY opaque admission, start and outcome authority binds a grant to its full envelope and invoker: another envelope, payload or invoker is rejected and a mismatch does not spend it", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "LR1/REQ-AUTHORITY opaque admission, start and outcome authority rejects a structural, copied, foreign-store or fabricated outcome handle before any write, then accepts the authentic handle once", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "LR1/REQ-AUTHORITY opaque admission, start and outcome authority refuses a verified receipt with another receipt id: no outcome file and the used handle is no replay channel", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "LR1/REQ-AUTHORITY opaque admission, start and outcome authority refuses a verified receipt with risk R0: no outcome file and the used handle is no replay channel", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "LR1/REQ-AUTHORITY opaque admission, start and outcome authority refuses a verified receipt with an unaccepted decision: no outcome file and the used handle is no replay channel", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PE/REQ-STORE no expiry, retained facts and separate draft TTL keeps unknown and verified facts beyond 24 hours with no reuse, while the draft snapshot expires", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PE/REQ-STORE no expiry, retained facts and separate draft TTL retains every record byte-for-byte when the profile is disabled and readable again when re-enabled", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PE/REQ-STORE no expiry, retained facts and separate draft TTL rejects secret-like and non-synthetic input at the contract boundary before any file exists", "passed"],
+    ["html-draft-snapshot-store.operation.test.ts", "PC/REQ-STORE eight real OS contenders, boundary reservation 256/257 and restart lets at most one process start and invoke, caps reservations at 256, and never replays after a crash", "passed"],
+    ["html-draft-snapshot-store.test.ts", "synthetic snapshot files writes exact bytes, refuses collision and joins principal and record", "passed"],
+    ["html-draft-snapshot-store.test.ts", "synthetic snapshot files rejects expired and unconfigured roots without deletion or fallback", "passed"],
+    ["job-profile.test.ts", "selected synthetic job export requires normal same-origin session and never reads service token or fetches receipt", "passed"],
+    ["operation.test.ts", "PH/REQ-INTEGRATION actual POST with the controlled injected branch runs the first Build with owner-scoped job and hash, no saved version, one injected send and no legacy fetch or token read", "passed"],
+    ["operation.test.ts", "PH/REQ-INTEGRATION actual POST with the controlled injected branch answers a repeated or re-minted Build for a different render with reference-only ALREADY_PROCESSED and no second send", "passed"],
+    ["operation.test.ts", "PH/REQ-INTEGRATION actual POST with the controlled injected branch reuses an exact identical immutable target through the branch with zero sends and refuses any changed target, job or config", "passed"],
+    ["operation.test.ts", "PH/REQ-INTEGRATION actual POST with the controlled injected branch records a timed-out injected send as unknown, never as a receipt, and refuses the repeat", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies partial job only before reading a job or sending", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies partial source only before reading a job or sending", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies malformed job id before reading a job or sending", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies non-synthetic source before reading a job or sending", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies comma-conflicting job ids before reading a job or sending", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies comma-conflicting source ids before reading a job or sending", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies empty values before reading a job or sending", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies no selectors before reading a job or sending", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies a missing job, a mismatching request hash and a foreign owner before admission", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies a break-glass, non-session, unauthenticated, expired or cross-origin request and a forged permit field", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies an expired job before admission and maps changed content or another actor to different keys sent once each", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies a declared disabled posture through the real resolver with no legacy fallback", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies a declared disabled beside enabling variables posture through the real resolver with no legacy fallback", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies a declared invalid posture through the real resolver with no legacy fallback", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies a declared empty posture through the real resolver with no legacy fallback", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies a declared comma conflict posture through the real resolver with no legacy fallback", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies a declared held activation posture through the real resolver with no legacy fallback", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies a declared production posture through the real resolver with no legacy fallback", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends denies selectors with no valid profile and a declared local posture without a local job profile", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION posture resolver and route decision maps every environment value to a deny or a non-receipt posture and never to a controlled receipt profile", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION posture resolver and route decision decides routes without ever falling back from a deny to legacy", "passed"],
+    ["operation.test.ts", "PA/REQ-INTEGRATION posture resolver and route decision builds the controlled profile only through the typed factory and rejects non-synthetic or unsafe input", "passed"],
+    ["operation.test.ts", "LR2/REQ-POSTURE absence denies and the explicit server value is the only way to the retained legacy helper denies DISABLED, then keeps denying after the selector or any enabling variable is removed, also through a fresh resolver, with zero sends", "passed"],
+    ["operation.test.ts", "LR2/REQ-POSTURE absence denies and the explicit server value is the only way to the retained legacy helper reaches the retained legacy helper only through the explicit value, and denies it with job selectors, a local profile, malformed values or production", "passed"],
+    ["operation.test.ts", "LR2/REQ-POSTURE absence denies and the explicit server value is the only way to the retained legacy helper never lets the runtime resolver build a controlled profile or invoker from any declared value", "passed"],
+    ["operation.test.ts", "PH/REQ-INTEGRATION local-only profile keeps no receipt and binds the local job only returns NOT_CONFIGURED without an injected send, and denies a missing job under selectors", "passed"],
+    ["operation.test.ts", "PH/REQ-INTEGRATION hook selector transport sends both selectors with the unchanged seven-field body only for a valid job reference", "passed"],
+    ["operation.test.ts", "PH/REQ-INTEGRATION hook selector transport keeps the legacy no-header request for no prepareJob", "passed"],
+    ["operation.test.ts", "PH/REQ-INTEGRATION hook selector transport keeps the legacy no-header request for malformed job id", "passed"],
+    ["operation.test.ts", "PH/REQ-INTEGRATION hook selector transport keeps the legacy no-header request for malformed source", "passed"],
+    ["operation.test.ts", "PH/REQ-INTEGRATION hook selector transport keeps the legacy no-header request for partial reference", "passed"],
+    ["operation.test.ts", "PH/REQ-INTEGRATION hook selector transport keeps the Stop fence: a stopped attempt never reaches fetch even when the job resolves later", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome invokes the injected callback once with the exact R1/REVIEW payload and stores the joined verified receipt", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome slices the evaluated content to 500 characters and keeps fixed R1/REVIEW fields", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome reuses an identical verified target with zero sends and never attaches the receipt to a different target", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome maps a remote DENY to DENIED and never reuses it; review decisions stay verified receipts", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome records an invalid current-engine response (request-id) as OUTCOME_UNKNOWN with no receipt and no replay", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome records an invalid current-engine response (artifact-id) as OUTCOME_UNKNOWN with no receipt and no replay", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome records an invalid current-engine response (decision) as OUTCOME_UNKNOWN with no receipt and no replay", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome records an invalid current-engine response (ledger) as OUTCOME_UNKNOWN with no receipt and no replay", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome records an invalid current-engine response (ledger-ref) as OUTCOME_UNKNOWN with no receipt and no replay", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome records an invalid current-engine response (enforcement) as OUTCOME_UNKNOWN with no receipt and no replay", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome records an invalid current-engine response (risk-r0) as OUTCOME_UNKNOWN with no receipt and no replay", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome records an invalid current-engine response (string-success) as OUTCOME_UNKNOWN with no receipt and no replay", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome records an invalid current-engine response (no-data) as OUTCOME_UNKNOWN with no receipt and no replay", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF one injected send and exact joined outcome does not accept the older explicit approval envelope on the controlled path", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF failure, timeout, abort and late response keep unknown records rejecting invoker as OUTCOME_UNKNOWN and denies replay", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF failure, timeout, abort and late response keep unknown records synchronously throwing invoker as OUTCOME_UNKNOWN and denies replay", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF failure, timeout, abort and late response keep unknown treats an invoker that throws synchronously as an unknown outcome after one call", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF failure, timeout, abort and late response keep unknown marks a timeout unknown, aborts the signal, and a late success cannot publish or release the operation", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF failure, timeout, abort and late response keep unknown marks an external abort during flight unknown and records FAILED_BEFORE_SEND for a pre-aborted signal with zero sends", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF failure, timeout, abort and late response keep unknown yields unknown, not a verified receipt, when the outcome write fails, hangs or throws", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF failure, timeout, abort and late response keep unknown denies before invoking when admission or start errors or hangs", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF grant and input denial with zero sends rejects fabricated, copied, wrong-invoker and spent grants before invoking", "passed"],
+    ["proof.operation.test.ts", "PC/REQ-PROOF grant and input denial with zero sends denies invalid proof input, a disabled profile, a full namespace and a corrupt existing record with zero sends", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay keeps the approved bytes when the caller mutates request, envelope and owner aliases during the admit, start and write waits", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay sends nothing when a genuine grant is presented with another request or envelope, and the grant stays usable for the genuine join", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed null request without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed string request without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed array request without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed unknown request key without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed missing request key without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed non-string request id without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed payload with an extra key without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed non-string content without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed content over 500 characters without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed BigInt content without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed throwing getter without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed revoked proxy without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed circular request without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed owner of another user without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed null owner without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed envelope with an unknown key without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay denies a malformed signal that is not a signal without throwing and without any send or write", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay trusts only a store built by the artifacts store module: a structural stand-in is denied and never called", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay gives no retry after a failed start with no start file: the winner, a restart and a later caller all get zero sends", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay records a typed NOT_CONFIGURED return after the invocation as OUTCOME_UNKNOWN with no receipt and never retries it", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay records a thrown NOT_CONFIGURED after the invocation as OUTCOME_UNKNOWN with no receipt and never retries it", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay records a rejected NOT_CONFIGURED after the invocation as OUTCOME_UNKNOWN with no receipt and never retries it", "passed"],
+    ["proof.operation.test.ts", "LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay lets a late durable outcome write exist after the bounded timeout without triggering another invoke or grant", "passed"],
+    ["proof.operation.test.ts", "PD/REQ-PROOF Reconcile B is a presence diagnostic only observes presence only for the exact attempt, actor, config and store and never releases or invokes", "passed"],
+    ["proof.operation.test.ts", "PD/REQ-PROOF Reconcile B is a presence diagnostic only leaves an UNKNOWN operation unchanged and unreplayable even when the lookup reports presence", "passed"],
+    ["proof.operation.test.ts", "PF/REQ-PROOF legacy helper is retained separately still sends the legacy R0 REVIEW request through global fetch and parses the same response shape", "passed"],
+    ["route.test.ts", "/api/artifacts/export denies a missing receipt-operation posture before auth, body parsing or any receipt fetch", "passed"],
+    ["route.test.ts", "/api/artifacts/export denies a DISABLED receipt-operation posture before auth, body parsing or any receipt fetch", "passed"],
+    ["route.test.ts", "/api/artifacts/export denies a empty receipt-operation posture before auth, body parsing or any receipt fetch", "passed"],
+    ["route.test.ts", "/api/artifacts/export denies a lowercase legacy receipt-operation posture before auth, body parsing or any receipt fetch", "passed"],
+    ["route.test.ts", "/api/artifacts/export denies a legacy plus a second value receipt-operation posture before auth, body parsing or any receipt fetch", "passed"],
+    ["route.test.ts", "/api/artifacts/export denies a held controlled activation receipt-operation posture before auth, body parsing or any receipt fetch", "passed"],
+    ["route.test.ts", "/api/artifacts/export denies the explicit legacy value in production, and with any job selector, without reaching auth or the receipt fetch", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects malformed UTF-8 before auth or receipt fetch", "passed"],
+    ["route.test.ts", "/api/artifacts/export returns a self-contained HTML presentation candidate with visible boundaries", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects missing required fields", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects secret-like source content before rendering HTML", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects a common secret pattern in rendered title before the receipt hop", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects a common secret pattern in rendered sourcePath before the receipt hop", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects a common secret pattern in rendered status before the receipt hop", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects a common secret pattern in rendered claimBoundary before the receipt hop", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects a common secret pattern in rendered receiptAnchor before the receipt hop", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects another common credential shape in source before the receipt hop", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects another common credential shape in source before the receipt hop", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects another common credential shape in source before the receipt hop", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects another common credential shape in source before the receipt hop", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects invalid type, record class, and oversized fields before the receipt hop", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects an oversized request body before the receipt hop", "passed"],
+    ["route.test.ts", "/api/artifacts/export stops reading an oversized stream with Content-Length undefined", "passed"],
+    ["route.test.ts", "/api/artifacts/export stops reading an oversized stream with Content-Length 1", "passed"],
+    ["route.test.ts", "/api/artifacts/export counts streamed UTF-8 bytes rather than characters", "passed"],
+    ["route.test.ts", "/api/artifacts/export preserves signed raw text when a Vietnamese UTF-8 sequence spans chunks", "passed"],
+    ["route.test.ts", "/api/artifacts/export accepts a signed body exactly at the 128000-byte boundary", "passed"],
+    ["route.test.ts", "/api/artifacts/export still returns 413 when the oversized producer rejects cancellation", "passed"],
+    ["route.test.ts", "/api/artifacts/export returns 413 without waiting for unfinished producer cancellation", "passed"],
+    ["route.test.ts", "/api/artifacts/export does not turn an incomplete evaluate response into an ALLOW receipt", "passed"],
+    ["route.test.ts", "/api/artifacts/export joins the current Governance Engine response to an evaluated, unaccepted receipt", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects a current-engine receipt with mismatched request-id", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects a current-engine receipt with mismatched artifact-id", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects a current-engine receipt with mismatched decision", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects a current-engine receipt with mismatched ledger", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects a current-engine receipt with mismatched enforcement", "passed"],
+    ["route.test.ts", "/api/artifacts/export reports a timed-out check without promoting the HTML or losing its attempt ID", "passed"],
+    ["route.test.ts", "/api/artifacts/export interprets the older explicit APPROVED approval envelope without inventing acceptance", "passed"],
+    ["route.test.ts", "/api/artifacts/export interprets the older explicit MANUAL_REVIEW approval envelope without inventing acceptance", "passed"],
+    ["route.test.ts", "/api/artifacts/export interprets the older explicit REJECTED approval envelope without inventing acceptance", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects malformed governance receipt case string-success", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects malformed governance receipt case request-id-mismatch", "passed"],
+    ["route.test.ts", "/api/artifacts/export rejects malformed governance receipt case approved-without-allow", "passed"],
+    ["route.test.ts", "/api/artifacts/export keeps an APPROVED receipt while presentation verification leaves the artifact draft", "passed"]
+  ],
+  "toolAttempts": [
+    {
+      "name": "pre-implementation autorun gate",
+      "tool": "python run_agent_autorun_workflow_gate.py --phase pre-implementation",
+      "start": "2026-10-19T11:54:08+07:00",
+      "exit": 0,
+      "result": "COMPLIANT 13.69 s, single run before the first write",
+      "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json"
+    },
+    {
+      "name": "vitest-1",
+      "tool": "vitest",
+      "start": "2026-10-19T12:09:32+07:00",
+      "end": "2026-10-19T12:10:38+07:00",
+      "exit": 0,
+      "result": "7 files, 199 of 199 passed, 61.98 s",
+      "log": ".cvf/runtime/ncr-r2-w05-binding-repair-20261019/worker/logs/vitest-1.log",
+      "logSha256": "6e118d2e1b3d3ad250dbf3aeb8b5c20609d20d7de24089261b6c4aac2da7d312"
+    },
+    {
+      "name": "vitest-2",
+      "tool": "vitest json reporter",
+      "start": "2026-10-19T12:16:12+07:00",
+      "end": "2026-10-19T12:16:42+07:00",
+      "exit": 0,
+      "result": "7 files, 199 of 199 passed, 29.03 s, final bytes",
+      "log": ".cvf/runtime/ncr-r2-w05-binding-repair-20261019/worker/logs/vitest-2.log",
+      "logSha256": "57172113a4176ba2aaf8c5d0050cf0491d9ffe04c5e81dc97746a05629846900"
+    },
+    {
+      "name": "tsc-1",
+      "tool": "tsc --noEmit --incremental false",
+      "start": "2026-10-19T12:13:41+07:00",
+      "end": "2026-10-19T12:15:44+07:00",
+      "exit": 0,
+      "result": "no diagnostics, final bytes",
+      "log": ".cvf/runtime/ncr-r2-w05-binding-repair-20261019/worker/logs/tsc-1.log",
+      "logSha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061"
+    },
+    {
+      "name": "eslint-1",
+      "tool": "eslint changed7 --max-warnings=0",
+      "start": "2026-10-19T12:11:04+07:00",
+      "end": "2026-10-19T12:13:36+07:00",
+      "exit": 0,
+      "result": "0 errors 0 warnings, final bytes, 152 s",
+      "log": ".cvf/runtime/ncr-r2-w05-binding-repair-20261019/worker/logs/eslint-1.log",
+      "logSha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061"
+    }
+  ],
+  "toolBudget": {
+    "vitest": {
+      "used": 2,
+      "max": 2
+    },
+    "tsc": {
+      "used": 1,
+      "max": 2
+    },
+    "eslintChanged7": {
+      "used": 1,
+      "max": 2
+    },
+    "eslintWhole11": {
+      "used": 0,
+      "max": 1,
+      "note": "NOT_EXECUTED: optional, not needed for the changed7 claim"
+    },
+    "requiredGate": "counted in the detached receipt (max 3)",
+    "productRuntimeBrowserNetworkProvider": 0
+  },
+  "adHocDiagnostics": {
+    "note": "not in the counted budget and not a substitute for it; disclosed for transparency",
+    "typescriptApiDiagnostics": {
+      "runs": 2,
+      "script": "patch/tsdiag.cjs",
+      "result": "run 1 found TS2339 in T1 (fixed), run 2 zero diagnostics"
+    },
+    "behaviorProbe": {
+      "runs": 1,
+      "script": "patch/probe.cjs",
+      "result": "8 of 8 checks passed on transpiled real sources"
+    },
+    "redGreenProbe": {
+      "runs": 2,
+      "script": "patch/redgreen.cjs",
+      "result": "old shows the 4 Local rows plus structural outcome forgery red; new closes all"
+    },
+    "individualCheckerDiagnostics": {
+      "runs": 5,
+      "note": "run once on the draft return before the first required gate attempt to avoid burning attempts; diagnostic only, never a substitute for the required gate",
+      "checkers": [
+        "check_semantic_convergence_control.py",
+        "check_work_order_acceptance_ledger.py",
+        "check_worker_return_quality_gate.py",
+        "check_epistemic_process_packet.py",
+        "check_independent_review_probe_admission.py"
+      ],
+      "result": "all five passed"
+    },
+    "gitDiffCheck": {
+      "runs": 1,
+      "result": "exit 0"
+    },
+    "adifWorkerResolver": {
+      "runs": 8,
+      "finalQuery": {
+        "taskClass": "Worker execution (`WORKER_MUST_NOT_COMMIT`)",
+        "role": "worker",
+        "phase": "pre-implementation",
+        "items": 14,
+        "ids": [
+          "ADIF-0028",
+          "ADIF-0029",
+          "ADIF-0030",
+          "ADIF-0033",
+          "ADIF-0034",
+          "ADIF-0040",
+          "ADIF-0041",
+          "ADIF-0042",
+          "ADIF-0044",
+          "ADIF-0045",
+          "ADIF-0031",
+          "ADIF-0032",
+          "ADIF-0039",
+          "ADIF-0043"
+        ],
+        "rawSha256": "1dcf003abd08f2e3080a610a6c03706c9759bb993ac66e236f4d34d6b261a3e0",
+        "timing": "ran after the edits, late"
+      }
+    }
+  },
+  "processEvidence": {
+    "childStartsTotal": 20,
+    "cap": 24,
+    "perFullStoreSuite": 10,
+    "fullStoreSuites": 2,
+    "maxConcurrent": 8,
+    "spawnLog": ".cvf/runtime/ncr-r2-w05-binding-repair-20261019/worker/spawn-log.jsonl",
+    "realSourceHarness": "child processes transpile S1 and the unchanged contract sources with the repository TypeScript transpiler and verify pins; no handwritten store copy",
+    "startPolicy": "only the actual ADMITTED winner starts; EXISTING contenders record start null"
+  },
+  "scratch": {
+    "root": ".cvf/runtime/ncr-r2-w05-binding-repair-20261019/worker",
+    "files": 5453,
+    "bytes": 2370473,
+    "cap": {
+      "files": 16384,
+      "bytes": 67108864
+    },
+    "withinCap": true,
+    "deletionOrMove": "none",
+    "retentionOwner": "LOCAL reviewer",
+    "retentionReason": "immutable fixtures, patch scripts, probe outputs and logs are evidence custody; recursive deletion and move are forbidden by the work order"
+  },
+  "knownBaselineExceptions": {
+    "panelOracle": "ArtifactExportPanel.test.tsx four named cases fail at the clean base (66 pass, 4 fail); Local scoped exception; NOT run in this assignment, no panel or assertion edit",
+    "hookWarning": "useHtmlBuildAttempts.ts controllers.current exhaustive-deps warning is an existing single-fingerprint exception; the file is outside changed7 and was not edited; whole-11 lint NOT_EXECUTED"
+  },
+  "designConsequences": [
+    "Absent posture denies with no undeclared legacy fallback; in production the export route therefore denies unless a valid local-only profile exists, which cannot exist in production. The retained legacy helper is reachable only with the explicit non-production server value.",
+    "consumeGrant now takes the full envelope as a third argument and startOperation takes the admission as a fourth; writeOutcome takes an opaque handle. These signatures are internal to the artifacts store and proof; operation-branch and route.ts needed no change."
+  ],
+  "workerProcedureLimits": [
+    "Mapped first reads were not all finished before the first write. Read before the first write: front door, bootstrap, the work order and Local review in full, the Local evidence file, the baseline lines 1-200, guard orientation index, SOP lines 190-300, lifecycle lines 90-180, the seven owned files, contract, operation branch, route, html-job-contract, synthetic profile, package, vitest, tsconfig and eslint config. Read after the edits began and before the return prose: html-draft-recovery-contract (requestIdentity), src/test/setup.ts, relay termination and funnel two-step sections, template worker-return and source-verification sections, literal gotchas in full, lifecycle 171-376, SOP requirement 13, the four named panel cases, DESIGN.md lines 1-30 plus outline, the prior blocked worker return as a shape reference, the output checkers. Not read: baseline lines 201 to the end, DESIGN.md claim and workflow sections beyond line 30, the other panel attempt and Stop cases. None of this is cured by any hash or gate.",
+    "The worker-role ADIF resolver ran after the edits; the first label and phase combination returned zero items and the working combination was found by trying phases.",
+    "EOL error: a shell grep for carriage returns matched every line, so three source files and one test file that are LF at the base were briefly written as CRLF by the first patch scripts; detected through the pinned hash mismatch, converted back, and the store test was rebuilt from its base blob before any check ran. Final EOL per file equals the base EOL (route.test.ts CRLF, the rest LF).",
+    "The first compaction of the store test was needed because the first draft was 739 lines against the 690 maximum; helpers were folded without removing any retained assertion.",
+    "Vitest run 1 (non-JSON) and run 2 (JSON) used the same final bytes; no edit followed run 2, tsc run 1 or ESLint run 1."
+  ],
+  "priorHistoryPreserved": {
+    "originalWorker13": "BLOCKED_WITH_REASON preserved; return and evidence byte-identical (readOnlyPins)",
+    "original115Cases": "prior evidence, not relabeled current",
+    "oldLintCounts": "not refilled"
+  },
+  "scec": {
+    "workerOrdinal": 4,
+    "predecessor": "this work order and its raw SHA-256",
+    "priorBlockers": [
+      "SOURCE_BINDING_DEFECTS_FROM_LOCAL_PROBE"
+    ],
+    "resolved": [
+      "SOURCE_BINDING_DEFECTS_FROM_LOCAL_PROBE"
+    ],
+    "current": [],
+    "counters": {
+      "partialReadyClosures": 0,
+      "reviewerScopeExpansions": 1,
+      "sameClaimCorrections": 0,
+      "nonDecreasingBlockerTransitions": 0
+    },
+    "arithmetic": "predecessor current 1, successor current 0: blockers decrease, so the non-decreasing streak resets from 1 to 0; reviewer scope expansions stay 1 (cumulative, may not decrease)",
+    "resolutionLocator": "SCEC4_SOURCE_BINDING_DEFECTS_RESOLVED_BY_LR1_LR2_EXECUTABLE_REGRESSIONS"
+  },
+  "claimBoundary": "offline synthetic source and fixture evidence only; the Local independent acceptance gate is separate and pending; no live, endpoint, provider, data, production, public or deploy effect; parent gen9, SCEC2, counters 2,0,2,0, blockers 2, freeze, prior7 and LHW24 unchanged"
+}

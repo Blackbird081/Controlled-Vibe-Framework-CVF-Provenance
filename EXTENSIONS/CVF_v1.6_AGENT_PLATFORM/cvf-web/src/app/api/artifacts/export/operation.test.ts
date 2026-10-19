@@ -23,7 +23,7 @@ vi.mock('@/lib/server/receipt-operation-profile', async importOriginal => {
 });
 const actualProfile = vi.importActual<typeof import('@/lib/server/receipt-operation-profile')>('@/lib/server/receipt-operation-profile');
 
-const ROOTS = path.resolve(process.cwd(), '..', '..', '..', '.cvf', 'runtime', 'ncr-r2-w05-offline-source-20261019', 'worker', 'roots');
+const ROOTS = path.resolve(process.cwd(), '..', '..', '..', '.cvf', 'runtime', 'ncr-r2-w05-binding-repair-20261019', 'worker', 'roots');
 const hex = (text: string) => createHash('sha256').update(text).digest('hex');
 const owner = { userId: 'u1', orgId: 'o1', teamId: 't1' };
 const BODY = { title: 'Review', sourcePath: 'docs/p.md', sourceContent: '# Source\n\nSynthetic fixture content.', memoryClass: 'FULL_RECORD' as const,
@@ -169,13 +169,15 @@ describe('PH/REQ-INTEGRATION actual POST with the controlled injected branch', (
   });
 });
 
+async function controlledFixture(label: string) {
+  const root = await newRoot(label);
+  const made = fixture(root);
+  state.operation = { posture: 'CONTROLLED', profile: made.profile };
+  return { ...made, root };
+}
+
 describe('PA/REQ-INTEGRATION selectors, session and forged input deny with zero sends', () => {
-  async function controlled(label: string) {
-    const root = await newRoot(label);
-    const made = fixture(root);
-    state.operation = { posture: 'CONTROLLED', profile: made.profile };
-    return { ...made, root };
-  }
+  const controlled = controlledFixture;
   it.each([
     ['partial job only', { 'X-CVF-Job-Id': JOB }, 400, 'SELECTOR_INVALID'],
     ['partial source only', { 'X-CVF-Source-Record-Id': SOURCE }, 400, 'SELECTOR_INVALID'],
@@ -277,6 +279,10 @@ describe('PA/REQ-INTEGRATION selectors, session and forged input deny with zero 
     const local = await post(BODY);
     expect(local.status).toBe(403);
     expect(await local.json()).toMatchObject({ reason: 'LOCAL_PROFILE_UNAVAILABLE' });
+    state.operation = { posture: 'UNDECLARED' };
+    const bare = await post(BODY);
+    expect(bare.status).toBe(403);
+    expect(await bare.json()).toMatchObject({ reason: 'POSTURE_UNDECLARED' });
     expect(fetchMock).not.toHaveBeenCalled();
   });
 });
@@ -289,12 +295,15 @@ describe('PA/REQ-INTEGRATION posture resolver and route decision', () => {
     expect(label({})).toBe('UNDECLARED');
     expect(label({ NODE_ENV: 'production' })).toBe('UNDECLARED');
     expect(label({ [key]: 'LOCAL_SYNTHETIC' })).toBe('LOCAL_SYNTHETIC');
+    expect(label({ [key]: 'LEGACY_COMPATIBILITY_ONLY' })).toBe('LEGACY_COMPATIBILITY_ONLY');
+    expect(label({ [key]: 'LEGACY_COMPATIBILITY_ONLY', NODE_ENV: 'production' })).toBe('DENY:PRODUCTION_DENIED');
     expect(label({ [key]: 'DISABLED' })).toBe('DENY:DISABLED');
     expect(label({ [key]: 'DISABLED', NODE_ENV: 'production' })).toBe('DENY:PRODUCTION_DENIED');
-    for (const value of ['', 'local_synthetic', ' LOCAL_SYNTHETIC', 'LOCAL_SYNTHETIC,DISABLED', 'true', '1', 'CONTROLLED', 'INJECTED_SYNTHETIC_RECEIPT ']) {
+    for (const value of ['', 'local_synthetic', ' LOCAL_SYNTHETIC', 'LOCAL_SYNTHETIC,DISABLED', 'true', '1', 'CONTROLLED', 'INJECTED_SYNTHETIC_RECEIPT ',
+      'legacy_compatibility_only', ' LEGACY_COMPATIBILITY_ONLY', 'LEGACY_COMPATIBILITY_ONLY ', 'LEGACY_COMPATIBILITY_ONLY,DISABLED', 'LEGACY']) {
       expect(label({ [key]: value }), value).toMatch(/^DENY:/);
     }
-    for (const value of [undefined, '', 'LOCAL_SYNTHETIC', 'DISABLED', 'INJECTED_SYNTHETIC_RECEIPT', 'CONTROLLED_RECEIPT']) {
+    for (const value of [undefined, '', 'LOCAL_SYNTHETIC', 'DISABLED', 'INJECTED_SYNTHETIC_RECEIPT', 'CONTROLLED_RECEIPT', 'LEGACY_COMPATIBILITY_ONLY']) {
       expect(actual.resolveReceiptOperation({ [key]: value, CVF_NCR_HTML_JOB_PROFILE: 'LOCAL_SYNTHETIC', CVF_NCR_DRAFT_PROFILE: 'LOCAL_SYNTHETIC' }).posture).not.toBe('CONTROLLED');
     }
   });
@@ -302,14 +311,23 @@ describe('PA/REQ-INTEGRATION posture resolver and route decision', () => {
     const actual = await actualProfile;
     const decide = (posture: Parameters<typeof actual.decideReceiptOperationRoute>[0]['posture'], selectorsKind: 'NONE' | 'VALID' | 'INVALID', local: boolean) =>
       actual.decideReceiptOperationRoute({ posture, selectors: selectorsKind, localProfilePresent: local });
-    expect(decide({ posture: 'UNDECLARED' }, 'NONE', false)).toEqual({ route: 'LEGACY' });
+    expect(decide({ posture: 'UNDECLARED' }, 'NONE', false)).toEqual({ route: 'DENY', reason: 'POSTURE_UNDECLARED', status: 403 });
     expect(decide({ posture: 'UNDECLARED' }, 'NONE', true)).toEqual({ route: 'LOCAL_ONLY' });
     expect(decide({ posture: 'UNDECLARED' }, 'VALID', true)).toEqual({ route: 'LOCAL_ONLY' });
-    expect(decide({ posture: 'UNDECLARED' }, 'VALID', false)).toMatchObject({ route: 'DENY', status: 403 });
+    expect(decide({ posture: 'UNDECLARED' }, 'VALID', false)).toMatchObject({ route: 'DENY', status: 403, reason: 'SELECTORS_WITHOUT_PROFILE' });
     expect(decide({ posture: 'UNDECLARED' }, 'INVALID', false)).toMatchObject({ route: 'DENY', status: 400 });
     expect(decide({ posture: 'UNDECLARED' }, 'INVALID', true)).toMatchObject({ route: 'DENY', status: 400 });
     expect(decide({ posture: 'LOCAL_SYNTHETIC' }, 'NONE', true)).toEqual({ route: 'LOCAL_ONLY' });
     expect(decide({ posture: 'LOCAL_SYNTHETIC' }, 'NONE', false)).toMatchObject({ route: 'DENY' });
+    const legacy = { posture: 'LEGACY_COMPATIBILITY_ONLY' } as const;
+    expect(decide(legacy, 'NONE', false)).toEqual({ route: 'LEGACY' });
+    expect(decide(legacy, 'NONE', true)).toEqual({ route: 'DENY', reason: 'LEGACY_PROFILE_CONFLICT', status: 403 });
+    expect(decide(legacy, 'VALID', false)).toEqual({ route: 'DENY', reason: 'LEGACY_SELECTORS_CONFLICT', status: 403 });
+    expect(decide(legacy, 'VALID', true)).toMatchObject({ route: 'DENY', status: 403 });
+    for (const local of [true, false]) expect(decide(legacy, 'INVALID', local)).toMatchObject({ route: 'DENY', status: 400, reason: 'SELECTOR_INVALID' });
+    for (const unknown of [{ posture: 'MYSTERY' }, { posture: 'legacy_compatibility_only' }, {}, null]) {
+      for (const local of [true, false]) expect(decide(unknown as never, 'NONE', local), JSON.stringify(unknown)).toMatchObject({ route: 'DENY' });
+    }
     for (const selectorKind of ['NONE', 'VALID', 'INVALID'] as const) {
       for (const local of [true, false]) expect(decide({ posture: 'DENY', reason: 'DISABLED' }, selectorKind, local)).toMatchObject({ route: 'DENY', reason: 'DISABLED' });
     }
@@ -328,6 +346,48 @@ describe('PA/REQ-INTEGRATION posture resolver and route decision', () => {
       { timeoutMs: 0 }, { timeoutMs: 30_001 }, { invoker: 'fetch' as never }, { lookup: 'x' as never },
     ]) {
       expect(() => createReceiptOperationFixtureProfile({ root, endpointId: 'synthetic-endpoint-1', storeId: 'synthetic-store-1', invoker, ...bad })).toThrow('FIXTURE_PROFILE_INVALID');
+    }
+  });
+});
+
+describe('LR2/REQ-POSTURE absence denies and the explicit server value is the only way to the retained legacy helper', () => {
+  const key = 'CVF_NCR_RECEIPT_OPERATION_PROFILE';
+  const outcome = async (headers: Record<string, string> = {}) => { const response = await post(BODY, headers); return [response.status, (await response.json()).reason]; };
+  it('denies DISABLED, then keeps denying after the selector or any enabling variable is removed, also through a fresh resolver, with zero sends', async () => {
+    const actual = await actualProfile;
+    const { calls, root } = await controlledFixture('post-absence');
+    state.operation = actual.resolveReceiptOperation({ [key]: 'DISABLED' });
+    expect([await outcome(), await outcome(selectors())]).toEqual([[403, 'DISABLED'], [403, 'DISABLED']]);
+    for (const env of [{}, { NODE_ENV: 'development' }, { CVF_NCR_HTML_JOB_PROFILE: 'LOCAL_SYNTHETIC', CVF_NCR_DRAFT_PROFILE: 'LOCAL_SYNTHETIC', CVF_NCR_DRAFT_ROOT: root }]) {
+      state.operation = actual.resolveReceiptOperation(env);
+      expect([await outcome(), await outcome(selectors())], JSON.stringify(env)).toEqual([[403, 'POSTURE_UNDECLARED'], [403, 'SELECTORS_WITHOUT_PROFILE']]);
+    }
+    expect([calls.length, fetchMock.mock.calls.length, await fs.readdir(root)]).toEqual([0, 0, []]);
+  });
+  it('reaches the retained legacy helper only through the explicit value, and denies it with job selectors, a local profile, malformed values or production', async () => {
+    const actual = await actualProfile;
+    state.operation = actual.resolveReceiptOperation({ [key]: 'LEGACY_COMPATIBILITY_ONLY' });
+    expect(state.operation).toEqual({ posture: 'LEGACY_COMPATIBILITY_ONLY' });
+    expect(await (await post(BODY)).json()).not.toMatchObject({ error: 'RECEIPT_OPERATION_DENIED' });
+    expect(await outcome(selectors())).toEqual([403, 'LEGACY_SELECTORS_CONFLICT']);
+    expect(await outcome({ 'X-CVF-Job-Id': JOB })).toEqual([400, 'SELECTOR_INVALID']);
+    const root = await newRoot('post-legacy-conflict');
+    await fs.writeFile(path.join(root, '.cvf-html-draft-synthetic.json'), JSON.stringify({ schemaVersion: 1, kind: 'CVF_HTML_DRAFT_SYNTHETIC', syntheticOnly: true, runId: 'synthetic_run_op_1234' }));
+    Object.assign(process.env, { CVF_NCR_DRAFT_PROFILE: 'LOCAL_SYNTHETIC', CVF_NCR_HTML_JOB_PROFILE: 'LOCAL_SYNTHETIC', CVF_NCR_DRAFT_ROOT: root, CVF_NCR_DRAFT_RUN_ID: 'synthetic_run_op_1234' });
+    expect(await outcome()).toEqual([403, 'LEGACY_PROFILE_CONFLICT']);
+    for (const [env, reason] of [[{ [key]: 'LEGACY_COMPATIBILITY_ONLY', NODE_ENV: 'production' }, 'PRODUCTION_DENIED'], [{ [key]: 'legacy_compatibility_only' }, 'INVALID_SELECTOR'],
+      [{ [key]: 'LEGACY_COMPATIBILITY_ONLY,DISABLED' }, 'INVALID_SELECTOR'], [{ [key]: '' }, 'INVALID_SELECTOR']] as const) {
+      state.operation = actual.resolveReceiptOperation(env);
+      expect(await outcome(), reason).toEqual([403, reason]);
+    }
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+  it('never lets the runtime resolver build a controlled profile or invoker from any declared value', async () => {
+    const actual = await actualProfile;
+    for (const value of [undefined, 'LOCAL_SYNTHETIC', 'LEGACY_COMPATIBILITY_ONLY', 'DISABLED', 'INJECTED_SYNTHETIC_RECEIPT']) {
+      const posture = actual.resolveReceiptOperation({ [key]: value });
+      expect(posture).not.toHaveProperty('profile');
+      expect(JSON.stringify(posture)).not.toMatch(/invoker|profile|root/i);
     }
   });
 });

@@ -5,6 +5,8 @@ import { OPERATION_EFFECT, SYNTHETIC_SOURCE_PREFIX, makeOperationConfig,
 import type { SyntheticDraftProfile } from './html-draft-snapshot-store';
 
 export const RECEIPT_OPERATION_SELECTOR = 'CVF_NCR_RECEIPT_OPERATION_PROFILE';
+/** The sole explicit non-production server value that reaches the retained R0 legacy helper. Trusted server configuration, not a client permit or a controlled receipt permission. */
+export const LEGACY_COMPATIBILITY_VALUE = 'LEGACY_COMPATIBILITY_ONLY';
 export const FIXTURE_TIMEOUT_MS = 4000;
 const MAX_FIXTURE_TIMEOUT_MS = 30_000;
 
@@ -53,18 +55,21 @@ export function createReceiptOperationFixtureProfile(input: FixtureProfileInput)
 export type ReceiptOperationPosture =
   | { posture: 'UNDECLARED' }
   | { posture: 'LOCAL_SYNTHETIC' }
+  | { posture: 'LEGACY_COMPATIBILITY_ONLY' }
   | { posture: 'DENY'; reason: string }
   | { posture: 'CONTROLLED'; profile: ReceiptOperationFixtureProfile };
 
 /**
  * Runtime resolver. Recognized before any legacy resolution. A declared value is never ignored: disabled, invalid, held-activation and
- * production-denied values deny. The CONTROLLED posture is never returned here; tests inject it by mocking this function.
+ * production-denied values deny. Absence is UNDECLARED, which routes only to a valid local-only profile and otherwise denies; it is never legacy.
+ * The CONTROLLED posture is never returned here; tests inject it by mocking this function.
  */
 export function resolveReceiptOperation(env: Record<string, string | undefined> = process.env): ReceiptOperationPosture {
   const declared = env[RECEIPT_OPERATION_SELECTOR];
   if (declared === undefined) return { posture: 'UNDECLARED' };
   if (env.NODE_ENV === 'production') return { posture: 'DENY', reason: 'PRODUCTION_DENIED' };
   if (declared === 'LOCAL_SYNTHETIC') return { posture: 'LOCAL_SYNTHETIC' };
+  if (declared === LEGACY_COMPATIBILITY_VALUE) return { posture: 'LEGACY_COMPATIBILITY_ONLY' };
   if (declared === 'DISABLED') return { posture: 'DENY', reason: 'DISABLED' };
   if (declared === OPERATION_EFFECT) return { posture: 'DENY', reason: 'ACTIVATION_HELD_UNSUPPORTED' };
   return { posture: 'DENY', reason: 'INVALID_SELECTOR' };
@@ -78,13 +83,22 @@ export type ReceiptOperationRoute =
   | { route: 'DENY'; reason: string; status: 400 | 403 };
 const deny = (reason: string, status: 400 | 403): ReceiptOperationRoute => ({ route: 'DENY', reason, status });
 
-/** Pure route decision. A deny never falls back to legacy; selectors without a valid local or controlled profile deny. */
+/**
+ * Pure route decision. A deny never falls back to legacy. Legacy needs the explicit server value, no job selectors and no local profile;
+ * absence reaches only a valid local profile; unknown or malformed posture, selectors or profile combinations deny.
+ */
 export function decideReceiptOperationRoute(input: { posture: ReceiptOperationPosture; selectors: SelectorKind; localProfilePresent: boolean }): ReceiptOperationRoute {
   const { posture, selectors, localProfilePresent } = input;
+  if (posture === null || typeof posture !== 'object') return deny('POSTURE_INVALID', 403);
   if (posture.posture === 'DENY') return deny(posture.reason, 403);
   if (selectors === 'INVALID') return deny('SELECTOR_INVALID', 400);
   if (posture.posture === 'CONTROLLED') return selectors === 'VALID' ? { route: 'CONTROLLED', profile: posture.profile } : deny('SELECTOR_REQUIRED', 400);
   if (posture.posture === 'LOCAL_SYNTHETIC') return localProfilePresent ? { route: 'LOCAL_ONLY' } : deny('LOCAL_PROFILE_UNAVAILABLE', 403);
+  if (posture.posture === 'LEGACY_COMPATIBILITY_ONLY') {
+    if (selectors !== 'NONE') return deny('LEGACY_SELECTORS_CONFLICT', 403);
+    return localProfilePresent ? deny('LEGACY_PROFILE_CONFLICT', 403) : { route: 'LEGACY' };
+  }
+  if (posture.posture !== 'UNDECLARED') return deny('POSTURE_INVALID', 403);
   if (localProfilePresent) return { route: 'LOCAL_ONLY' };
-  return selectors === 'VALID' ? deny('SELECTORS_WITHOUT_PROFILE', 403) : { route: 'LEGACY' };
+  return deny(selectors === 'VALID' ? 'SELECTORS_WITHOUT_PROFILE' : 'POSTURE_UNDECLARED', 403);
 }

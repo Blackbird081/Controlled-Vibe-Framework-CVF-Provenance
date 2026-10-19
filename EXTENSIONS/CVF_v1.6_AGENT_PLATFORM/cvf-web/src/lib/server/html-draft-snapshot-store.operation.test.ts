@@ -10,7 +10,7 @@ import {
 } from '../artifacts-receipt-operation-contract';
 import type { DraftInput } from '../html-draft-recovery-contract';
 
-const WORKER = path.resolve(process.cwd(), '..', '..', '..', '.cvf', 'runtime', 'ncr-r2-w05-offline-source-20261019', 'worker');
+const WORKER = path.resolve(process.cwd(), '..', '..', '..', '.cvf', 'runtime', 'ncr-r2-w05-binding-repair-20261019', 'worker');
 const ROOTS = path.join(WORKER, 'roots');
 const HOUR = 3_600_000;
 const T0 = Date.parse('2026-10-19T01:00:00.000Z');
@@ -40,31 +40,42 @@ const slots = async (root: string) => (await list(root)).filter(name => name.sta
 const noop = async () => ({});
 const sha = async (file: string) => hex((await fs.readFile(file)).toString('binary'));
 
-type Internals = { createOnce(dir: string, name: string, bytes: Buffer): Promise<'CREATED' | 'EXISTS' | 'UNCONFIRMED' | 'UNAVAILABLE'> };
-/** Fault double: leaves a real torn file on disk, as a crash or short write would, then reports an unconfirmed write. */
-function tear(store: HtmlDraftSnapshotStore, pattern: RegExp) {
+type Internals = { createOnce(dir: string, name: string, bytes: Buffer): Promise<string>; readFileExact(dir: string, name: string): Promise<{ kind: string; bytes?: Buffer }> };
+/** Fault doubles on a real store. tear: a real torn file stays on disk, then the write is unconfirmed. unavailable: the open fails and nothing is created. mismatched: the readback differs. */
+function fault(store: HtmlDraftSnapshotStore, kind: 'tear' | 'unavailable' | 'mismatched', pattern: RegExp) {
   const internals = store as unknown as Internals;
-  const original = internals.createOnce.bind(store);
+  const create = internals.createOnce.bind(store);
+  const read = internals.readFileExact.bind(store);
   internals.createOnce = async (dir, name, bytes) => {
-    if (!pattern.test(name)) return original(dir, name, bytes);
+    if (!pattern.test(name) || kind === 'mismatched') return create(dir, name, bytes);
+    if (kind === 'unavailable') return 'UNAVAILABLE';
     await fs.writeFile(path.join(dir, name), bytes.subarray(0, Math.max(1, Math.floor(bytes.byteLength / 2))), { flag: 'wx' });
     return 'UNCONFIRMED';
   };
+  internals.readFileExact = async (dir, name) => {
+    const back = await read(dir, name);
+    return kind === 'mismatched' && pattern.test(name) && back.kind === 'OK' && back.bytes ? { kind: 'OK', bytes: Buffer.alloc(back.bytes.byteLength, 0x20) } : back;
+  };
 }
-async function fullFlow(store: HtmlDraftSnapshotStore, envelope: OperationEnvelope, invoker: unknown = noop) {
+const tear = (store: HtmlDraftSnapshotStore, pattern: RegExp) => fault(store, 'tear', pattern);
+const unavailable = (store: HtmlDraftSnapshotStore, pattern: RegExp) => fault(store, 'unavailable', pattern);
+const mismatched = (store: HtmlDraftSnapshotStore, pattern: RegExp) => fault(store, 'mismatched', pattern);
+async function admit(store: HtmlDraftSnapshotStore, envelope: OperationEnvelope) {
   const admitted = await store.admitOperation(envelope, owner);
   if (admitted.kind !== 'ADMITTED') throw new Error(`admit ${admitted.kind}`);
-  const started = await store.startOperation(owner, envelope.operationKey, invoker);
-  if (started.kind !== 'STARTED') throw new Error(`start ${started.kind}`);
-  const consumed = store.consumeGrant(started.grant, invoker)!;
-  return { admitted, started, consumed };
+  return admitted;
 }
+async function fullFlow(store: HtmlDraftSnapshotStore, envelope: OperationEnvelope, invoker: unknown = noop) {
+  const admitted = await admit(store, envelope);
+  const started = await store.startOperation(owner, envelope.operationKey, invoker, admitted.admission);
+  if (started.kind !== 'STARTED') throw new Error(`start ${started.kind}`);
+  return { admitted, started, consumed: store.consumeGrant(started.grant, invoker, envelope)! };
+}
+const fresh = async (label: string) => { const root = await newRoot(label); return { root, store: makeStore(root), envelope: envelopeFor(1) }; };
 
 describe('PB/REQ-STORE immutable operation records', () => {
   it('writes reservation, intent, start and outcome once each as exact canonical bytes under the operations child directory', async () => {
-    const root = await newRoot('ops-lifecycle');
-    const store = makeStore(root);
-    const envelope = envelopeFor(1);
+    const { root, store, envelope } = await fresh('ops-lifecycle');
     expect(await store.readOperation(envelope.operationKey, owner)).toEqual({ state: 'ABSENT' });
     const { admitted, consumed } = await fullFlow(store, envelope);
     expect(admitted.intent.slot).toBe(0);
@@ -88,8 +99,7 @@ describe('PB/REQ-STORE immutable operation records', () => {
     expect((await fs.readdir(ownerDir(root))).sort()).toEqual(['operations']);
   });
   it('keeps existing draft and job files outside the operations scan', async () => {
-    const root = await newRoot('ops-coexist');
-    const store = makeStore(root);
+    const { root, store } = await fresh('ops-coexist');
     const draft: DraftInput = { versionId: '123e4567-e89b-42d3-a456-426614174009', sourceRecordId: 'ncr-synthetic-1',
       request: { title: 't', sourcePath: 'p', sourceContent: 's', memoryClass: 'FULL_RECORD', status: 'DRAFT', claimBoundary: 'local', receiptAnchor: 'r' },
       html: '<p>x</p>', filename: 'x.html', generatedAt: new Date(T0).toISOString(), buildNumber: 1 };
@@ -108,9 +118,7 @@ describe('PB/REQ-STORE immutable operation records', () => {
     expect(await fs.readdir(root)).toEqual([]);
   });
   it('looks up an existing key before reserving, so a repeat consumes no new slot', async () => {
-    const root = await newRoot('ops-existing');
-    const store = makeStore(root);
-    const envelope = envelopeFor(1);
+    const { root, store, envelope } = await fresh('ops-existing');
     expect((await store.admitOperation(envelope, owner)).kind).toBe('ADMITTED');
     const again = await store.admitOperation(envelope, owner);
     expect(again.kind).toBe('EXISTING');
@@ -119,8 +127,7 @@ describe('PB/REQ-STORE immutable operation records', () => {
     expect((await slots(root))).toEqual(['slot-000.json', 'slot-001.json']);
   });
   it('rejects an envelope for another owner and keeps owner namespaces apart', async () => {
-    const root = await newRoot('ops-owner');
-    const store = makeStore(root);
+    const { store } = await fresh('ops-owner');
     const other = { ...owner, teamId: 't2' };
     expect(await store.admitOperation(envelopeFor(1, other), owner)).toEqual({ kind: 'DENIED', reason: 'INVALID_INPUT' });
     expect((await store.admitOperation(envelopeFor(1), owner)).kind).toBe('ADMITTED');
@@ -140,9 +147,7 @@ describe('PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinc
     ['unsupported revision', Buffer.from(JSON.stringify({ schema: 'cvf.artifactsReceiptOperation.v2' })), 'UNSUPPORTED'],
     ['wrong shape', Buffer.from('{"schema":"cvf.artifactsReceiptOperation.v1","kind":"INTENT"}'), 'CORRUPT'],
   ])('reports %s as %s without admitting a replacement', async (_label, bytes, expected) => {
-    const root = await newRoot('ops-bad');
-    const store = makeStore(root);
-    const envelope = envelopeFor(1);
+    const { root, store, envelope } = await fresh('ops-bad');
     expect((await store.admitOperation(envelope, owner)).kind).toBe('ADMITTED');
     await fs.writeFile(intentFile(root, envelope), bytes);
     const planted = await fs.readFile(intentFile(root, envelope));
@@ -154,9 +159,7 @@ describe('PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinc
     expect(Buffer.compare(await fs.readFile(intentFile(root, envelope)), planted)).toBe(0);
   });
   it('treats an orphan start or a missing reservation as corrupt and an unusable root as unconfirmed', async () => {
-    const root = await newRoot('ops-orphan');
-    const store = makeStore(root);
-    const envelope = envelopeFor(1);
+    const { root, store, envelope } = await fresh('ops-orphan');
     const { started } = await fullFlow(store, envelope);
     expect(started.kind).toBe('STARTED');
     await fs.rename(intentFile(root, envelope), path.join(opsDir(root), 'moved-intent.bin'));
@@ -171,8 +174,7 @@ describe('PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinc
     expect(await missingRoot.admitOperation(envelope, owner)).toMatchObject({ kind: 'DENIED' });
   });
   it('rejects a key mismatch planted under another key name', async () => {
-    const root = await newRoot('ops-swap');
-    const store = makeStore(root);
+    const { root, store } = await fresh('ops-swap');
     const first = envelopeFor(1);
     const second = envelopeFor(2);
     await store.admitOperation(first, owner);
@@ -193,8 +195,7 @@ describe('PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinc
     expect(await makeStore(rootLink).admitOperation(envelopeFor(1), owner)).toEqual({ kind: 'DENIED', reason: 'UNSAFE_NAMESPACE' });
   });
   it('denies an unknown entry and an over-bound scan instead of ignoring them', async () => {
-    const root = await newRoot('ops-unknown');
-    const store = makeStore(root);
+    const { root, store } = await fresh('ops-unknown');
     expect((await store.admitOperation(envelopeFor(1), owner)).kind).toBe('ADMITTED');
     await fs.writeFile(path.join(opsDir(root), 'stray.txt'), 'x');
     expect(await store.admitOperation(envelopeFor(2), owner)).toEqual({ kind: 'DENIED', reason: 'UNKNOWN_ENTRY' });
@@ -214,10 +215,8 @@ describe('PB/REQ-STORE missing, corrupt, unconfirmed and unsupported are distinc
 
 describe('PB/REQ-STORE write and readback faults consume, never recycle', () => {
   it('a torn reservation consumes its slot, denies, and the next admit uses a later slot', async () => {
-    const root = await newRoot('ops-torn-slot');
-    const faulty = makeStore(root);
+    const { root, store: faulty, envelope } = await fresh('ops-torn-slot');
     tear(faulty, /^slot-/);
-    const envelope = envelopeFor(1);
     expect(await faulty.admitOperation(envelope, owner)).toEqual({ kind: 'DENIED', reason: 'RESERVATION_UNCONFIRMED' });
     expect(await list(root)).toEqual(['slot-000.json']);
     const healthy = makeStore(root);
@@ -227,10 +226,8 @@ describe('PB/REQ-STORE write and readback faults consume, never recycle', () => 
     expect(await slots(root)).toEqual(['slot-000.json', 'slot-001.json']);
   });
   it('a torn intent keeps the key consumed: lookup is corrupt, no replacement intent or slot', async () => {
-    const root = await newRoot('ops-torn-intent');
-    const faulty = makeStore(root);
+    const { root, store: faulty, envelope } = await fresh('ops-torn-intent');
     tear(faulty, /\.intent\.json$/);
-    const envelope = envelopeFor(1);
     expect(await faulty.admitOperation(envelope, owner)).toEqual({ kind: 'DENIED', reason: 'INTENT_UNCONFIRMED' });
     const healthy = makeStore(root);
     expect((await healthy.readOperation(envelope.operationKey, owner)).state).toBe('CORRUPT');
@@ -238,24 +235,22 @@ describe('PB/REQ-STORE write and readback faults consume, never recycle', () => 
     expect(await slots(root)).toEqual(['slot-000.json']);
   });
   it('a torn start denies before any grant exists and later callers never mint one', async () => {
-    const root = await newRoot('ops-torn-start');
-    const store = makeStore(root);
-    const envelope = envelopeFor(1);
-    await store.admitOperation(envelope, owner);
+    const { root, store, envelope } = await fresh('ops-torn-start');
+    const admitted = await admit(store, envelope);
     tear(store, /\.start\.json$/);
-    expect(await store.startOperation(owner, envelope.operationKey, noop)).toEqual({ kind: 'DENIED', reason: 'START_UNCONFIRMED' });
+    expect(await store.startOperation(owner, envelope.operationKey, noop, admitted.admission)).toEqual({ kind: 'DENIED', reason: 'START_UNCONFIRMED' });
     const healthy = makeStore(root);
     expect(await healthy.startOperation(owner, envelope.operationKey, noop)).toMatchObject({ kind: 'EXISTING', operation: { state: 'CORRUPT' } });
   });
   it('a torn outcome leaves the operation corrupt and a healthy writer cannot replace it', async () => {
-    const root = await newRoot('ops-torn-outcome');
-    const store = makeStore(root);
-    const { consumed } = await fullFlow(store, envelopeFor(1));
+    const { root, store, envelope } = await fresh('ops-torn-outcome');
+    const { consumed } = await fullFlow(store, envelope);
     tear(store, /\.outcome\.json$/);
     const input = { outcome: 'OUTCOME_UNKNOWN' as const, receipt: null, reason: 'TIMED_OUT' };
     expect((await store.writeOutcome(consumed, input)).kind).toBe('UNCONFIRMED');
+    expect((await store.writeOutcome(consumed, input)).kind).toBe('UNAVAILABLE');
     const healthy = makeStore(root);
-    expect((await healthy.readOperation(consumed.operationKey, owner)).state).toBe('CORRUPT');
+    expect((await healthy.readOperation(envelope.operationKey, owner)).state).toBe('CORRUPT');
     expect((await healthy.writeOutcome(consumed, input)).kind).toBe('UNAVAILABLE');
   });
   it('an abandoned empty reservation file consumes capacity and is never recycled', async () => {
@@ -269,34 +264,15 @@ describe('PB/REQ-STORE write and readback faults consume, never recycle', () => 
   });
 });
 
-type ReadInternals = { readFileExact(dir: string, name: string): Promise<{ kind: string; bytes?: Buffer }> };
-/** Fault double: the open fails (EACCES/ENOSPC class) and nothing is created. */
-function unavailable(store: HtmlDraftSnapshotStore, pattern: RegExp) {
-  const internals = store as unknown as Internals;
-  const original = internals.createOnce.bind(store);
-  internals.createOnce = async (dir, name, bytes) => (pattern.test(name) ? 'UNAVAILABLE' : original(dir, name, bytes));
-}
-/** Fault double: the file is written, but the readback bytes differ from what was written. */
-function mismatched(store: HtmlDraftSnapshotStore, pattern: RegExp) {
-  const internals = store as unknown as ReadInternals;
-  const original = internals.readFileExact.bind(store);
-  internals.readFileExact = async (dir, name) => {
-    const read = await original(dir, name);
-    return pattern.test(name) && read.kind === 'OK' && read.bytes ? { kind: 'OK', bytes: Buffer.alloc(read.bytes.byteLength, 0x20) } : read;
-  };
-}
-
 describe('PB/REQ-STORE injected open failure and readback mismatch deny before any send', () => {
   it('denies when the reservation open fails and creates no marker', async () => {
-    const root = await newRoot('ops-open-slot');
-    const faulty = makeStore(root);
+    const { root, store: faulty } = await fresh('ops-open-slot');
     unavailable(faulty, /^slot-/);
     expect(await faulty.admitOperation(envelopeFor(1), owner)).toEqual({ kind: 'DENIED', reason: 'RESERVATION_UNCONFIRMED' });
     expect(await list(root)).toEqual([]);
   });
   it('denies when the intent open fails: the reservation marker stays consumed and a later admit uses a later slot', async () => {
-    const root = await newRoot('ops-open-intent');
-    const faulty = makeStore(root);
+    const { root, store: faulty } = await fresh('ops-open-intent');
     unavailable(faulty, /\.intent\.json$/);
     expect(await faulty.admitOperation(envelopeFor(1), owner)).toEqual({ kind: 'DENIED', reason: 'INTENT_UNCONFIRMED' });
     expect(await list(root)).toEqual(['slot-000.json']);
@@ -304,33 +280,27 @@ describe('PB/REQ-STORE injected open failure and readback mismatch deny before a
     expect(later.kind === 'ADMITTED' && later.intent.slot).toBe(1);
   });
   it('denies when the start open fails and mints no grant', async () => {
-    const root = await newRoot('ops-open-start');
-    const store = makeStore(root);
-    const envelope = envelopeFor(1);
-    await store.admitOperation(envelope, owner);
+    const { root, store, envelope } = await fresh('ops-open-start');
+    const admitted = await admit(store, envelope);
     unavailable(store, /\.start\.json$/);
-    expect(await store.startOperation(owner, envelope.operationKey, noop)).toEqual({ kind: 'DENIED', reason: 'START_UNCONFIRMED' });
+    expect(await store.startOperation(owner, envelope.operationKey, noop, admitted.admission)).toEqual({ kind: 'DENIED', reason: 'START_UNCONFIRMED' });
     expect((await list(root)).filter(name => name.includes('.start.'))).toEqual([]);
   });
   it.each<[string, RegExp, string, string]>([
     ['reservation', /^slot-/, 'RESERVATION_UNCONFIRMED', 'slot-000.json'],
     ['intent', /\.intent\.json$/, 'INTENT_UNCONFIRMED', 'intent.json'],
   ])('denies on a %s readback mismatch and keeps the written record consumed', async (_label, pattern, reason, fileSuffix) => {
-    const root = await newRoot('ops-mismatch');
-    const faulty = makeStore(root);
+    const { root, store: faulty, envelope } = await fresh('ops-mismatch');
     mismatched(faulty, pattern);
-    const envelope = envelopeFor(1);
     expect(await faulty.admitOperation(envelope, owner)).toEqual({ kind: 'DENIED', reason });
     expect((await list(root)).some(name => name.endsWith(fileSuffix))).toBe(true);
     expect((await makeStore(root).admitOperation(envelope, owner)).kind).toBe(reason === 'INTENT_UNCONFIRMED' ? 'EXISTING' : 'ADMITTED');
   });
   it('a start readback mismatch leaves STARTED with no grant, so nothing can be sent', async () => {
-    const root = await newRoot('ops-mismatch-start');
-    const store = makeStore(root);
-    const envelope = envelopeFor(1);
-    await store.admitOperation(envelope, owner);
+    const { root, store, envelope } = await fresh('ops-mismatch-start');
+    const admitted = await admit(store, envelope);
     mismatched(store, /\.start\.json$/);
-    expect(await store.startOperation(owner, envelope.operationKey, noop)).toEqual({ kind: 'DENIED', reason: 'START_UNCONFIRMED' });
+    expect(await store.startOperation(owner, envelope.operationKey, noop, admitted.admission)).toEqual({ kind: 'DENIED', reason: 'START_UNCONFIRMED' });
     const healthy = makeStore(root);
     expect((await healthy.readOperation(envelope.operationKey, owner)).state).toBe('STARTED');
     expect(await healthy.startOperation(owner, envelope.operationKey, noop)).toMatchObject({ kind: 'EXISTING', operation: { state: 'STARTED' } });
@@ -339,14 +309,15 @@ describe('PB/REQ-STORE injected open failure and readback mismatch deny before a
 
 describe('PB/REQ-STORE capacity of 256 monotonic reservations per owner', () => {
   it('admits exactly 256 operations, denies the 257th, and an existing key still resolves at capacity', async () => {
-    const root = await newRoot('ops-cap');
-    const store = makeStore(root);
-    for (let i = 0; i < 256; i++) expect((await store.admitOperation(envelopeFor(i), owner)).kind).toBe('ADMITTED');
+    const { root, store } = await fresh('ops-cap');
+    const admissions: unknown[] = [];
+    for (let i = 0; i < 256; i++) admissions.push((await admit(store, envelopeFor(i))).admission);
     expect(await slots(root)).toHaveLength(256);
     expect(await store.admitOperation(envelopeFor(256), owner)).toEqual({ kind: 'DENIED', reason: 'CAPACITY_FULL' });
     expect(await slots(root)).toHaveLength(256);
     expect((await store.admitOperation(envelopeFor(7), owner)).kind).toBe('EXISTING');
-    expect((await store.startOperation(owner, envelopeFor(7).operationKey, noop)).kind).toBe('STARTED');
+    expect(await store.startOperation(owner, envelopeFor(7).operationKey, noop)).toEqual({ kind: 'DENIED', reason: 'ADMISSION_REQUIRED' });
+    expect((await store.startOperation(owner, envelopeFor(7).operationKey, noop, admissions[7])).kind).toBe('STARTED');
     const other = { ...owner, teamId: 't2' };
     expect((await store.admitOperation(envelopeFor(256, other), other)).kind).toBe('ADMITTED');
   }, 120_000);
@@ -361,8 +332,7 @@ describe('PB/REQ-STORE capacity of 256 monotonic reservations per owner', () => 
     expect(await slots(root)).toHaveLength(256);
   });
   it('keeps the cap under in-process racing and wastes slots conservatively for duplicate keys', async () => {
-    const root = await newRoot('ops-race');
-    const store = makeStore(root);
+    const { root, store } = await fresh('ops-race');
     const distinct = await Promise.all(Array.from({ length: 8 }, (_v, i) => store.admitOperation(envelopeFor(i), owner)));
     expect(distinct.every(result => result.kind === 'ADMITTED')).toBe(true);
     expect(new Set(distinct.map(result => (result as Extract<AdmitResult, { kind: 'ADMITTED' }>).intent.slot)).size).toBe(8);
@@ -376,29 +346,21 @@ describe('PB/REQ-STORE capacity of 256 monotonic reservations per owner', () => 
 
 describe('PC/REQ-STORE single-use grant and unknown without retry', () => {
   it('mints one opaque grant from the winning start and rejects copies, forgeries, spent grants and foreign stores', async () => {
-    const root = await newRoot('ops-grant');
-    const store = makeStore(root);
-    const envelope = envelopeFor(1);
-    await store.admitOperation(envelope, owner);
+    const { root, store, envelope } = await fresh('ops-grant');
+    const admitted = await admit(store, envelope);
     const invoker = async () => ({});
-    const started = await store.startOperation(owner, envelope.operationKey, invoker);
+    const started = await store.startOperation(owner, envelope.operationKey, invoker, admitted.admission);
     expect(started.kind).toBe('STARTED');
     if (started.kind !== 'STARTED') return;
-    expect(store.consumeGrant({ ...started.grant }, invoker)).toBeNull();
-    expect(store.consumeGrant(JSON.parse(JSON.stringify(started.grant)), invoker)).toBeNull();
-    expect(store.consumeGrant({ kind: 'OPERATION_GRANT' }, invoker)).toBeNull();
-    expect(store.consumeGrant(null, invoker)).toBeNull();
-    expect(store.consumeGrant('grant', invoker)).toBeNull();
-    expect(store.consumeGrant(started.grant, async () => ({}))).toBeNull();
-    expect(makeStore(root).consumeGrant(started.grant, invoker)).toBeNull();
-    const consumed = store.consumeGrant(started.grant, invoker);
-    expect(consumed).toMatchObject({ operationKey: envelope.operationKey, attemptId: envelope.attemptId });
-    expect(store.consumeGrant(started.grant, invoker)).toBeNull();
+    for (const bad of [{ ...started.grant }, JSON.parse(JSON.stringify(started.grant)), { kind: 'OPERATION_GRANT' }, null, 'grant']) expect(store.consumeGrant(bad, invoker, envelope)).toBeNull();
+    expect(store.consumeGrant(started.grant, async () => ({}), envelope)).toBeNull();
+    expect(makeStore(root).consumeGrant(started.grant, invoker, envelope)).toBeNull();
+    const consumed = store.consumeGrant(started.grant, invoker, envelope);
+    expect(consumed).toEqual({ kind: 'CONSUMED_START' });
+    expect(store.consumeGrant(started.grant, invoker, envelope)).toBeNull();
   });
   it('never mints a second grant after STARTED, a restart, or a terminal outcome', async () => {
-    const root = await newRoot('ops-restart');
-    const store = makeStore(root);
-    const envelope = envelopeFor(1);
+    const { root, store, envelope } = await fresh('ops-restart');
     const { consumed } = await fullFlow(store, envelope);
     expect(await store.startOperation(owner, envelope.operationKey, noop)).toMatchObject({ kind: 'EXISTING', operation: { state: 'STARTED' } });
     const restarted = makeStore(root);
@@ -409,17 +371,15 @@ describe('PC/REQ-STORE single-use grant and unknown without retry', () => {
     expect(await restarted.startOperation(owner, envelope.operationKey, noop)).toMatchObject({ kind: 'EXISTING', operation: { state: 'OUTCOME' } });
   });
   it('writes one immutable outcome: a second writer collides and a wrong nonce or early write is refused', async () => {
-    const root = await newRoot('ops-outcome');
-    const store = makeStore(root);
-    const envelope = envelopeFor(1);
+    const { root, store, envelope } = await fresh('ops-outcome');
     const early = await store.admitOperation(envelope, owner);
     expect(early.kind).toBe('ADMITTED');
     const fake = { owner, operationKey: envelope.operationKey, envelopeSha256: '0'.repeat(64), attemptId: envelope.attemptId, startNonce: 'ab'.repeat(16) };
     const unknown = { outcome: 'OUTCOME_UNKNOWN' as const, receipt: null, reason: 'TIMED_OUT' };
     expect((await store.writeOutcome(fake, unknown)).kind).toBe('UNAVAILABLE');
-    const started = await store.startOperation(owner, envelope.operationKey, noop);
+    const started = await store.startOperation(owner, envelope.operationKey, noop, early.kind === 'ADMITTED' ? early.admission : null);
     if (started.kind !== 'STARTED') throw new Error('start');
-    const consumed = store.consumeGrant(started.grant, noop)!;
+    const consumed = store.consumeGrant(started.grant, noop, envelope)!;
     expect((await store.writeOutcome({ ...consumed, startNonce: 'cd'.repeat(16) }, unknown)).kind).toBe('UNAVAILABLE');
     expect((await store.writeOutcome({ ...consumed, owner: { ...owner, userId: '../x' } }, unknown)).kind).toBe('UNAVAILABLE');
     expect((await store.writeOutcome(consumed, unknown)).kind).toBe('SAVED');
@@ -430,6 +390,88 @@ describe('PC/REQ-STORE single-use grant and unknown without retry', () => {
     expect(await sha(file)).toBe(before);
     expect((await store.readOperation(envelope.operationKey, owner)).state).toBe('OUTCOME');
   });
+});
+
+describe('LR1/REQ-AUTHORITY opaque admission, start and outcome authority', () => {
+  const needsAdmission = { kind: 'DENIED', reason: 'ADMISSION_REQUIRED' };
+  const verified = (envelope: OperationEnvelope, patch: Record<string, string> = {}) => ({ outcome: 'RECEIPT_VERIFIED' as const, reason: null,
+    receipt: { receiptId: envelope.attemptId, decision: 'ALLOW', evaluatedAt: '2026-10-19T01:00:01.000Z', riskLevel: 'R1', ...patch } });
+  const files = async (root: string, part: string) => (await list(root)).filter(name => name.includes(part));
+  it('issues an admission only to the caller whose new intent was written; forged, copied, foreign-store and cross-owner use gets no start', async () => {
+    const { root, store, envelope } = await fresh('auth-admission');
+    const first = await admit(store, envelope);
+    const second = await store.admitOperation(envelope, owner);
+    expect(second).toMatchObject({ kind: 'EXISTING', operation: { state: 'INTENT' } });
+    expect('admission' in second).toBe(false);
+    const forged = [{ kind: 'OPERATION_ADMISSION' }, { ...first.admission }, JSON.parse(JSON.stringify(first.admission)), await store.readOperation(envelope.operationKey, owner), first.intent, second, null, 'x'];
+    for (const bad of forged) expect(await store.startOperation(owner, envelope.operationKey, noop, bad)).toEqual(needsAdmission);
+    expect(await makeStore(root).startOperation(owner, envelope.operationKey, noop, first.admission)).toEqual(needsAdmission);
+    expect((await store.startOperation({ ...owner, teamId: 't2' }, envelope.operationKey, noop, first.admission)).kind).toBe('DENIED');
+    expect((await store.startOperation(owner, envelopeFor(2).operationKey, noop, first.admission)).kind).toBe('DENIED');
+    expect(await files(root, '.start.')).toEqual([]);
+    expect((await store.startOperation(owner, envelope.operationKey, noop, first.admission)).kind).toBe('STARTED');
+    expect(await store.startOperation(owner, envelope.operationKey, noop, first.admission)).toMatchObject({ kind: 'EXISTING', operation: { state: 'STARTED' } });
+  });
+  it('lets no restart, fresh store or later caller turn a durable INTENT into a start, even long after and when the winner never started', async () => {
+    const { root, envelope } = await fresh('auth-restart');
+    await admit(makeStore(root), envelope);
+    for (const later of [makeStore(root), makeStore(root, () => T0 + 400 * 24 * HOUR)]) {
+      expect(await later.admitOperation(envelope, owner)).toMatchObject({ kind: 'EXISTING', operation: { state: 'INTENT' } });
+      expect(await later.startOperation(owner, envelope.operationKey, noop)).toEqual(needsAdmission);
+    }
+    expect([await files(root, '.start.'), (await makeStore(root).readOperation(envelope.operationKey, owner)).state, await slots(root)]).toEqual([[], 'INTENT', ['slot-000.json']]);
+  });
+  it('gives no retry after a failed start with no start file: the spent admission, a restart and every later caller get no grant', async () => {
+    const { root, store, envelope } = await fresh('auth-failed-start');
+    const { admission } = await admit(store, envelope);
+    unavailable(store, /\.start\.json$/);
+    expect(await store.startOperation(owner, envelope.operationKey, noop, admission)).toEqual({ kind: 'DENIED', reason: 'START_UNCONFIRMED' });
+    const healthy = makeStore(root);
+    for (const attempt of [store.startOperation(owner, envelope.operationKey, noop, admission), healthy.startOperation(owner, envelope.operationKey, noop, admission),
+      healthy.startOperation(owner, envelope.operationKey, noop)]) expect(await attempt).toEqual(needsAdmission);
+    expect([await files(root, '.start.'), (await healthy.readOperation(envelope.operationKey, owner)).state]).toEqual([[], 'INTENT']);
+  });
+  it('lets one admission authorize exactly one start under in-process racing', async () => {
+    const { root, store, envelope } = await fresh('auth-race');
+    const { admission } = await admit(store, envelope);
+    const results = await Promise.all(Array.from({ length: 8 }, () => store.startOperation(owner, envelope.operationKey, noop, admission)));
+    expect(results.filter(result => result.kind === 'STARTED')).toHaveLength(1);
+    expect(results.filter(result => result.kind === 'DENIED').every(result => result.kind === 'DENIED' && result.reason === 'ADMISSION_REQUIRED')).toBe(true);
+    expect(await files(root, '.start.')).toHaveLength(1);
+  });
+  it('binds a grant to its full envelope and invoker: another envelope, payload or invoker is rejected and a mismatch does not spend it', async () => {
+    const { store, envelope } = await fresh('auth-envelope');
+    const started = await store.startOperation(owner, envelope.operationKey, noop, (await admit(store, envelope)).admission);
+    if (started.kind !== 'STARTED') throw new Error('start');
+    const retargeted = envelopeFor(1, owner, { html: hex('other rendered html') });
+    expect(retargeted.operationKey).toBe(envelope.operationKey);
+    for (const other of [retargeted, envelopeFor(2), { ...envelope, payloadSha256: hex('another payload') }, null, 'x']) expect(store.consumeGrant(started.grant, noop, other)).toBeNull();
+    expect(store.consumeGrant(started.grant, async () => ({}), envelope)).toBeNull();
+    expect(store.consumeGrant(started.grant, noop, envelope)).not.toBeNull();
+    expect(store.consumeGrant(started.grant, noop, envelope)).toBeNull();
+  });
+  it('rejects a structural, copied, foreign-store or fabricated outcome handle before any write, then accepts the authentic handle once', async () => {
+    const { root, store, envelope } = await fresh('auth-outcome');
+    const { consumed } = await fullFlow(store, envelope);
+    const state = await store.readOperation(envelope.operationKey, owner);
+    if (state.state !== 'STARTED') throw new Error('state');
+    const structural = { owner, operationKey: envelope.operationKey, envelopeSha256: state.start.envelopeSha256, attemptId: state.start.attemptId, startNonce: state.start.startNonce };
+    for (const forged of [structural, { ...structural, kind: 'CONSUMED_START' }, { ...consumed }, JSON.parse(JSON.stringify(consumed)), null, 'x']) {
+      expect((await store.writeOutcome(forged, verified(envelope))).kind).toBe('UNAVAILABLE');
+    }
+    expect((await makeStore(root).writeOutcome(consumed, verified(envelope))).kind).toBe('UNAVAILABLE');
+    expect(await files(root, '.outcome.')).toEqual([]);
+    expect((await store.writeOutcome(consumed, verified(envelope))).kind).toBe('SAVED');
+    expect((await store.writeOutcome(consumed, { outcome: 'OUTCOME_UNKNOWN', receipt: null, reason: 'TIMED_OUT' })).kind).toBe('COLLISION');
+  });
+  it.each([['another receipt id', { receiptId: 'ncr-op-someoneelse' }], ['risk R0', { riskLevel: 'R0' }], ['an unaccepted decision', { decision: 'APPROVED' }]])(
+    'refuses a verified receipt with %s: no outcome file and the used handle is no replay channel', async (_label, patch) => {
+      const { root, store, envelope } = await fresh('auth-receipt-join');
+      const { consumed } = await fullFlow(store, envelope);
+      expect((await store.writeOutcome(consumed, verified(envelope, patch))).kind).toBe('UNAVAILABLE');
+      expect((await store.writeOutcome(consumed, verified(envelope))).kind).toBe('UNAVAILABLE');
+      expect([await files(root, '.outcome.'), (await store.readOperation(envelope.operationKey, owner)).state]).toEqual([[], 'STARTED']);
+    });
 });
 
 describe('PE/REQ-STORE no expiry, retained facts and separate draft TTL', () => {
@@ -454,9 +496,7 @@ describe('PE/REQ-STORE no expiry, retained facts and separate draft TTL', () => 
     expect(await slots(root)).toEqual(['slot-000.json']);
   });
   it('retains every record byte-for-byte when the profile is disabled and readable again when re-enabled', async () => {
-    const root = await newRoot('ops-revoke');
-    const store = makeStore(root);
-    const envelope = envelopeFor(1);
+    const { root, store, envelope } = await fresh('ops-revoke');
     const { consumed } = await fullFlow(store, envelope);
     await store.writeOutcome(consumed, { outcome: 'OUTCOME_UNKNOWN', receipt: null, reason: 'TIMED_OUT' });
     const before = await Promise.all((await list(root)).map(name => sha(path.join(opsDir(root), name))));
@@ -467,8 +507,7 @@ describe('PE/REQ-STORE no expiry, retained facts and separate draft TTL', () => 
     expect((await makeStore(root).readOperation(envelope.operationKey, owner)).state).toBe('OUTCOME');
   });
   it('rejects secret-like and non-synthetic input at the contract boundary before any file exists', async () => {
-    const root = await newRoot('ops-secret');
-    const store = makeStore(root);
+    const { root, store } = await fresh('ops-secret');
     const bad = { ...envelopeFor(1), output: { ...envelopeFor(1).output, filename: 'OPENAI_API_KEY=hidden-value.html' } };
     expect(await store.admitOperation(bad, owner)).toEqual({ kind: 'DENIED', reason: 'INVALID_INPUT' });
     const live = { ...envelopeFor(1), sourceRecordId: 'evt_1' };
@@ -515,12 +554,12 @@ async function sameKey() {
   const result = { admit: null, start: null, invoked: false };
   const admitted = await s.admitOperation(env, owner);
   result.admit = admitted.kind + (admitted.kind === 'EXISTING' ? ':' + admitted.operation.state : admitted.kind === 'DENIED' ? ':' + admitted.reason : '');
-  if (admitted.kind === 'ADMITTED' || (admitted.kind === 'EXISTING' && admitted.operation.state === 'INTENT')) {
+  if (admitted.kind === 'ADMITTED') {
     const invoker = async () => ({});
-    const started = await s.startOperation(owner, env.operationKey, invoker);
+    const started = await s.startOperation(owner, env.operationKey, invoker, admitted.admission);
     result.start = started.kind;
     if (started.kind === 'STARTED') {
-      const consumed = s.consumeGrant(started.grant, invoker);
+      const consumed = s.consumeGrant(started.grant, invoker, env);
       if (consumed) { await invokeOnce(cfg.invokeDir); result.invoked = true; await s.writeOutcome(consumed, { outcome: 'OUTCOME_UNKNOWN', receipt: null, reason: 'FIXTURE_NO_RESPONSE' }); }
     }
   }
@@ -533,10 +572,10 @@ async function boundary() {
 async function crashAfterInvoke() {
   const s = store(cfg.rootC);
   const env = envelope(5);
-  await s.admitOperation(env, owner);
+  const admitted = await s.admitOperation(env, owner);
   const invoker = async () => ({});
-  const started = await s.startOperation(owner, env.operationKey, invoker);
-  const consumed = started.kind === 'STARTED' ? s.consumeGrant(started.grant, invoker) : null;
+  const started = admitted.kind === 'ADMITTED' ? await s.startOperation(owner, env.operationKey, invoker, admitted.admission) : { kind: 'NONE' };
+  const consumed = started.kind === 'STARTED' ? s.consumeGrant(started.grant, invoker, env) : null;
   if (consumed) { await invokeOnce(cfg.invokeDirC); }
   process.exit(0);
 }
@@ -614,6 +653,7 @@ describe.skipIf(SKIP_PROCESSES)('PC/REQ-STORE eight real OS contenders, boundary
     expect(rows.every(row => row.pins)).toBe(true);
     expect(rows.filter(row => row.same.start === 'STARTED')).toHaveLength(1);
     expect(rows.filter(row => row.same.invoked)).toHaveLength(1);
+    expect(rows.filter(row => row.same.admit !== 'ADMITTED').every(row => row.same.start === null && !row.same.invoked)).toBe(true);
     expect((await fs.readdir(invokeDir)).filter(name => name.startsWith('invoke-'))).toHaveLength(1);
     expect(rows.filter(row => row.same.admit === 'ADMITTED').length).toBeLessThanOrEqual(1);
     const stateStore = makeStore(rootA);

@@ -1,0 +1,426 @@
+{
+  "schemaVersion": "cvf.ncrW05BindingRepairLocal.v1",
+  "status": "ACCEPTED_BOUNDED_WITH_PROCEDURE_LIMITS",
+  "reviewBaseHead": "b31a1276f621a05cb4d46960e6f285ef7bae4994",
+  "workerReturn": {
+    "path": "docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_WORKER_RETURN_2026-10-19.md",
+    "sha256": "0ef278c8926e11cc6eddef9fd029aa0e0d8c4bcd0e84149d92d39202d89a976a"
+  },
+  "workerEvidence": {
+    "path": "docs/reviews/evidence/ncr-r2-w05-binding-repair-worker-20261019.json",
+    "sha256": "634cd3e4be5c78af87ce2028e151ab703fa42249095afdaebb6c212c667893a3"
+  },
+  "sourcePins": [
+    {
+      "id": "S1",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+      "action": "MODIFY",
+      "lineEnding": "LF",
+      "preimageSha256": "084c1368c8c9543ce9dc409c8f6d27ab179164877b88bada2d99a19881e3d77e",
+      "preimageLines": 418,
+      "finalSha256": "828afbd9d7b8f4d75156e8b7414349fbc6492afb54e4b35563547851d5d44f88",
+      "finalLines": 472,
+      "maxLines": 650
+    },
+    {
+      "id": "S2",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+      "action": "MODIFY",
+      "lineEnding": "LF",
+      "preimageSha256": "fab772f525fcaf6b69bf2ea27e64dd3c6ddb26d0f5f18d9ee999ab6deb49eac2",
+      "preimageLines": 302,
+      "finalSha256": "34d98083c66accd4cb6b29d507a45ac719c9a5f411da9372b0ac5002ba99fd5a",
+      "finalLines": 345,
+      "maxLines": 550
+    },
+    {
+      "id": "S3",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts",
+      "action": "MODIFY",
+      "lineEnding": "LF",
+      "preimageSha256": "ebf73ea63024e86b32a02b9e9a5d57b3c3e972bcc48a5d1ee14588645fa98903",
+      "preimageLines": 90,
+      "finalSha256": "bdddaeadb77dd7e9e1560243cbe3c87bc2ea920e65ab597753df28aba85fca58",
+      "finalLines": 104,
+      "maxLines": 350
+    },
+    {
+      "id": "T1",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.operation.test.ts",
+      "action": "MODIFY",
+      "lineEnding": "LF",
+      "preimageSha256": "4a2ec4ecb7e6d4ff37fe36586a579d36d56bdd861e3444e56f1478958caa115c",
+      "preimageLines": 644,
+      "finalSha256": "c47120d2aef92b894f79ead379822cddacde1e8b5a41804d4433d7a5305af708",
+      "finalLines": 684,
+      "maxLines": 690
+    },
+    {
+      "id": "T2",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.operation.test.ts",
+      "action": "MODIFY",
+      "lineEnding": "LF",
+      "preimageSha256": "483bc0c4672f9708f7c40021b5a42c309952deb4b29acdc3c2f021ba495ef794",
+      "preimageLines": 345,
+      "finalSha256": "87f85ad8281cdb6cdd65ba49a16a4dd991e8b98906ff17b8f8f6c726e82c1e5f",
+      "finalLines": 476,
+      "maxLines": 650
+    },
+    {
+      "id": "T3",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation.test.ts",
+      "action": "MODIFY",
+      "lineEnding": "LF",
+      "preimageSha256": "812a28d23dd03fe308fb4e73900df7ae5531b7f6c606898c23994459a5bd53e2",
+      "preimageLines": 406,
+      "finalSha256": "6186a54156b82fda401ef709f9d5859a2c9a954e2cd939b5271a779f5524cb59",
+      "finalLines": 466,
+      "maxLines": 690
+    },
+    {
+      "id": "T4",
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts",
+      "action": "MODIFY",
+      "lineEnding": "CRLF",
+      "preimageSha256": "f65705564060daa9d913d3afd38237eaf6d6b408939f59605ea5053b52b7d47f",
+      "preimageLines": 402,
+      "finalSha256": "bfd233611f9c935e718887abfa5119b38dc9af141d560d98c6c52b3040d32a1b",
+      "finalLines": 436,
+      "maxLines": 690
+    }
+  ],
+  "readOnlyPins": [
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.ts",
+      "sha256": "7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.test.ts",
+      "sha256": "1ba44d1f5e68bc0d72aa6668d6680c3918d5c50dc2369c66013031288bd82713",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts",
+      "sha256": "8478e8673a2c95ebea0b7b6155fab33101d703d62c0d5737824b8fb3b6692bb7",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "sha256": "e9266d4ecd7f3c46dcda7a53eca4a576838af18bf9fc7663a5e8196c1e944fbb",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+      "sha256": "00cb76dc36ae8efacaafffe3c1ec5086b1707baa8412afd4760ec1c9eb70fcfd",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+      "sha256": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts",
+      "sha256": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts",
+      "sha256": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/job-profile.test.ts",
+      "sha256": "e1cb12922e29471dc960a9a3a809ef6eb666a19d8452d19c66ead1fa3ff3ca87",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.test.ts",
+      "sha256": "07ba622fb72225bc68a0fee604804a561ec6551755431523bc61c6b8b1625a09",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_R2_W05_OFFLINE_SOURCE_WORKER_RETURN_2026-10-19.md",
+      "sha256": "d1cbd2401cc8d8a63eda20e4ff62d8254fa656c1c237dfa79e65d3c0d0476525",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-r2-w05-offline-source-worker-20261019.json",
+      "sha256": "c1427adb89f56e1b22c20178e007ebaea177feb29cc364fd2c204e28a8184b59",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "docs/reviews/CVF_NCR_R2_W05_OFFLINE_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-19.md",
+      "sha256": "43b423615488a3cff0667a7719101296e32662cdf6e15ff0f5926c4dd2607be5",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "docs/reviews/evidence/ncr-r2-w05-offline-source-local-20261019.json",
+      "sha256": "eea454bf607fcf3149cf481077dbd3c82df494a8f2da9466d4097fa1b0e7ef70",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BINDING_REPAIR_2026-10-19.md",
+      "sha256": "296000b92ac667e3b46008c27627cf86d753c80b8184275a4bdf2c2e07ab6b3d",
+      "unchangedFromHead": true
+    },
+    {
+      "path": "docs/baselines/CVF_GC018_NCR_R2_W05_BINDING_REPAIR_2026-10-19.md",
+      "sha256": "7f605ef26c9f078a1d9e66b5e2552a4a2e06892a7980d3b6141aadb1da00554a",
+      "unchangedFromHead": true
+    }
+  ],
+  "custody": "MATCH_ALL_DECLARED_SOURCE_AND_LOG_PINS",
+  "workerToolEvidence": [
+    {
+      "name": "pre-implementation autorun gate",
+      "tool": "python run_agent_autorun_workflow_gate.py --phase pre-implementation",
+      "start": "2026-10-19T11:54:08+07:00",
+      "exit": 0,
+      "result": "COMPLIANT 13.69 s, single run before the first write",
+      "receipt": ".cvf/runtime/autorun-receipts/pre-implementation.json"
+    },
+    {
+      "name": "vitest-1",
+      "tool": "vitest",
+      "start": "2026-10-19T12:09:32+07:00",
+      "end": "2026-10-19T12:10:38+07:00",
+      "exit": 0,
+      "result": "7 files, 199 of 199 passed, 61.98 s",
+      "log": ".cvf/runtime/ncr-r2-w05-binding-repair-20261019/worker/logs/vitest-1.log",
+      "logSha256": "6e118d2e1b3d3ad250dbf3aeb8b5c20609d20d7de24089261b6c4aac2da7d312"
+    },
+    {
+      "name": "vitest-2",
+      "tool": "vitest json reporter",
+      "start": "2026-10-19T12:16:12+07:00",
+      "end": "2026-10-19T12:16:42+07:00",
+      "exit": 0,
+      "result": "7 files, 199 of 199 passed, 29.03 s, final bytes",
+      "log": ".cvf/runtime/ncr-r2-w05-binding-repair-20261019/worker/logs/vitest-2.log",
+      "logSha256": "57172113a4176ba2aaf8c5d0050cf0491d9ffe04c5e81dc97746a05629846900"
+    },
+    {
+      "name": "tsc-1",
+      "tool": "tsc --noEmit --incremental false",
+      "start": "2026-10-19T12:13:41+07:00",
+      "end": "2026-10-19T12:15:44+07:00",
+      "exit": 0,
+      "result": "no diagnostics, final bytes",
+      "log": ".cvf/runtime/ncr-r2-w05-binding-repair-20261019/worker/logs/tsc-1.log",
+      "logSha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061"
+    },
+    {
+      "name": "eslint-1",
+      "tool": "eslint changed7 --max-warnings=0",
+      "start": "2026-10-19T12:11:04+07:00",
+      "end": "2026-10-19T12:13:36+07:00",
+      "exit": 0,
+      "result": "0 errors 0 warnings, final bytes, 152 s",
+      "log": ".cvf/runtime/ncr-r2-w05-binding-repair-20261019/worker/logs/eslint-1.log",
+      "logSha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061"
+    }
+  ],
+  "independentProbe": {
+    "schemaVersion": "cvf.ncrW05LocalIndependentProbe.v1",
+    "executorRole": "LOCAL_REVIEWER_NOT_IMPLEMENTATION_WORKER",
+    "workerInvocationId": "ncr-r2-w05-binding-repair-worker-20261019",
+    "probeInvocationId": "ncr-r2-w05-binding-repair-local-review-20261019",
+    "observedAtUtc": "2026-10-19T05:41:19.166Z",
+    "sourcePins": [
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.ts",
+        "sha256": "7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts",
+        "sha256": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+        "sha256": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+        "sha256": "828afbd9d7b8f4d75156e8b7414349fbc6492afb54e4b35563547851d5d44f88"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+        "sha256": "34d98083c66accd4cb6b29d507a45ac719c9a5f411da9372b0ac5002ba99fd5a"
+      },
+      {
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts",
+        "sha256": "bdddaeadb77dd7e9e1560243cbe3c87bc2ea920e65ab597753df28aba85fca58"
+      }
+    ],
+    "rows": [
+      {
+        "id": "POSITIVE_ONE_SEND_EXACT_REUSE",
+        "result": "PASS",
+        "observed": {
+          "first": "EXECUTED",
+          "second": "REUSED",
+          "sends": 1
+        }
+      },
+      {
+        "id": "REQUEST_SNAPSHOT_AFTER_ADMISSION",
+        "result": "PASS",
+        "observed": {
+          "sends": 1,
+          "content": "ORIGINAL",
+          "result": "EXECUTED",
+          "outcome": "RECEIPT_VERIFIED",
+          "durableState": "OUTCOME",
+          "durableOutcome": "RECEIPT_VERIFIED",
+          "admittedPayloadSha256": "ef4c4aa9afccf57159682d735f5040571129facb695f3abf2ed3e368b14dcb68",
+          "sentPayloadSha256": "ef4c4aa9afccf57159682d735f5040571129facb695f3abf2ed3e368b14dcb68"
+        }
+      },
+      {
+        "id": "GRANT_ENVELOPE_REQUEST_JOIN",
+        "result": "PASS",
+        "observed": {
+          "sends": 0,
+          "result": "DENIED"
+        }
+      },
+      {
+        "id": "SPENT_AND_FABRICATED_ZERO_SEND",
+        "result": "PASS",
+        "observed": {
+          "validAfterReject": "EXECUTED",
+          "spent": "DENIED",
+          "fake": "DENIED",
+          "totalSends": 1
+        }
+      },
+      {
+        "id": "OPAQUE_ADMISSION_AND_OUTCOME_AUTHORITY",
+        "result": "PASS",
+        "observed": {
+          "copiedAdmission": "DENIED",
+          "forgedWrite": "UNAVAILABLE",
+          "copiedWrite": "UNAVAILABLE",
+          "genuineWrite": "SAVED",
+          "repeatWrite": "COLLISION"
+        }
+      },
+      {
+        "id": "EXISTING_INTENT_CONSUMER_ZERO_SEND",
+        "result": "PASS",
+        "observed": {
+          "consumer": "ALREADY_PROCESSED",
+          "sends": 0
+        }
+      },
+      {
+        "id": "DURABLE_INTENT_NOT_START_AUTHORITY",
+        "result": "PASS",
+        "observed": {
+          "freshStoreStart": "DENIED",
+          "grantMinted": false
+        }
+      },
+      {
+        "id": "PERSISTENT_DISABLE_AFTER_SELECTOR_REMOVAL",
+        "result": "PASS",
+        "observed": {
+          "before": {
+            "posture": "DENY",
+            "reason": "DISABLED"
+          },
+          "afterMissingConfig": {
+            "posture": "UNDECLARED"
+          },
+          "afterRoute": {
+            "route": "DENY",
+            "reason": "POSTURE_UNDECLARED",
+            "status": 403
+          }
+        }
+      },
+      {
+        "id": "PRODUCTION_DENY_EXPLICIT_NONPRODUCTION_LEGACY",
+        "result": "PASS",
+        "observed": {
+          "production": [
+            {
+              "route": "DENY",
+              "reason": "POSTURE_UNDECLARED",
+              "status": 403
+            },
+            {
+              "route": "DENY",
+              "reason": "PRODUCTION_DENIED",
+              "status": 403
+            },
+            {
+              "route": "DENY",
+              "reason": "PRODUCTION_DENIED",
+              "status": 403
+            },
+            {
+              "route": "DENY",
+              "reason": "PRODUCTION_DENIED",
+              "status": 403
+            },
+            {
+              "route": "DENY",
+              "reason": "PRODUCTION_DENIED",
+              "status": 403
+            }
+          ],
+          "explicitLegacy": {
+            "route": "LEGACY"
+          }
+        }
+      },
+      {
+        "id": "PRESENCE_NO_RELEASE_OR_REPLAY",
+        "result": "PASS",
+        "observed": {
+          "status": "REMOTE_PRESENCE_OBSERVED",
+          "releasesUnknown": false,
+          "grantsReplay": false
+        }
+      }
+    ],
+    "result": "PASS_INDEPENDENT_PROBE",
+    "networkCalls": 0,
+    "productRuntimeStarts": 0,
+    "providerCalls": 0,
+    "fixtureOnly": true
+  },
+  "independentOracle": {
+    "path": ".cvf/runtime/ncr-r2-w05-binding-repair-20261019/root-review/independent-probe.cjs",
+    "sha256": "41e638b9aba5784121eb9e1737474ef250d17dfeb4dda99c2e624f6d3fb44fdd",
+    "command": "node .cvf/runtime/ncr-r2-w05-binding-repair-20261019/root-review/independent-probe.cjs",
+    "result": "PASS_INDEPENDENT_PROBE",
+    "invocations": 1,
+    "workerOracleReused": false
+  },
+  "finalGateLogEncoding": {
+    "declaredSha256": "6714089ba9e5154f8c7dcd7bfae3082fd4bfb4e2da3856cc651a08ff11b0a22e",
+    "actualRawSha256": "430b08f47459cdb44f558e69f421f77cba19ac5f20d1e35b2ba4d7bb5591b4f4",
+    "LFNormalizedSha256": "6714089ba9e5154f8c7dcd7bfae3082fd4bfb4e2da3856cc651a08ff11b0a22e",
+    "disposition": "ACCEPTED_CONTENT_WITH_RAW_HASH_QUALIFICATION",
+    "gateExit": 0,
+    "returnAndEvidenceFinalBytesMatch": true
+  },
+  "decisions": {
+    "production": "All export branches deny in production under current locked posture; no local-only production profile and no undeclared legacy fallback. Confirmed intentional R04 consequence; activation requires a separate governed admission.",
+    "internalSignatures": "startOperation admission / consumeGrant envelope / writeOutcome opaque handle are internal; operation-branch and route unchanged; tsc and focused route tests consumed.",
+    "exceptions": "Panel four baseline cases and one old hook warning remain exact prior exceptions. Panel and whole11 ESLint NOT_EXECUTED in this repair/review; changed7 lint exit0. No full-suite green claim.",
+    "procedure": "Worker late/partial first reads and late ADIF remain deviations, not cured by gates. No new source defect observed."
+  },
+  "workerProcedureLimits": [
+    "Mapped first reads were not all finished before the first write. Read before the first write: front door, bootstrap, the work order and Local review in full, the Local evidence file, the baseline lines 1-200, guard orientation index, SOP lines 190-300, lifecycle lines 90-180, the seven owned files, contract, operation branch, route, html-job-contract, synthetic profile, package, vitest, tsconfig and eslint config. Read after the edits began and before the return prose: html-draft-recovery-contract (requestIdentity), src/test/setup.ts, relay termination and funnel two-step sections, template worker-return and source-verification sections, literal gotchas in full, lifecycle 171-376, SOP requirement 13, the four named panel cases, DESIGN.md lines 1-30 plus outline, the prior blocked worker return as a shape reference, the output checkers. Not read: baseline lines 201 to the end, DESIGN.md claim and workflow sections beyond line 30, the other panel attempt and Stop cases. None of this is cured by any hash or gate.",
+    "The worker-role ADIF resolver ran after the edits; the first label and phase combination returned zero items and the working combination was found by trying phases.",
+    "EOL error: a shell grep for carriage returns matched every line, so three source files and one test file that are LF at the base were briefly written as CRLF by the first patch scripts; detected through the pinned hash mismatch, converted back, and the store test was rebuilt from its base blob before any check ran. Final EOL per file equals the base EOL (route.test.ts CRLF, the rest LF).",
+    "The first compaction of the store test was needed because the first draft was 739 lines against the 690 maximum; helpers were folded without removing any retained assertion.",
+    "Vitest run 1 (non-JSON) and run 2 (JSON) used the same final bytes; no edit followed run 2, tsc run 1 or ESLint run 1."
+  ],
+  "claimBoundary": "Offline source/protocol fixtures only. FullR1prelive/R2partial/R3R4open/R5R6deferred; all real effects OFF; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 frozen."
+}

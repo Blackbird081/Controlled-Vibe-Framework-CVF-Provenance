@@ -2,7 +2,7 @@
 import { randomBytes } from 'node:crypto';
 import * as fs from 'node:fs/promises';
 import path from 'node:path';
-import { MAX_OPERATIONS_PER_OWNER, MAX_OPERATION_RECORD_BYTES, decodeRecord, makeIntent, makeOutcome, makeReservation, makeStart, ownerSha256,
+import { MAX_OPERATIONS_PER_OWNER, MAX_OPERATION_RECORD_BYTES, OPERATION_RISK, decodeRecord, envelopeSha256, makeIntent, makeOutcome, makeReservation, makeStart, ownerSha256,
   parseEnvelope, parseIntent, parseOutcome, parseReservation, parseStart, recordBytes,
   type IntentRecord, type OutcomeInput, type OutcomeRecord, type OperationEnvelope, type StartRecord } from '../artifacts-receipt-operation-contract';
 import { DRAFT_TTL_MS, MAX_SNAPSHOT_BYTES, SOURCE_ID, VERSION_ID, makeSnapshot, sha256, validateSnapshot,
@@ -31,15 +31,32 @@ export type OperationState =
   | { state: 'CORRUPT' | 'UNCONFIRMED' | 'UNSUPPORTED'; reason: string };
 export type ExistingOperation = Exclude<OperationState, { state: 'ABSENT' }>;
 export type OperationDenial = 'DISABLED' | 'INVALID_INPUT' | 'UNSAFE_NAMESPACE' | 'CAPACITY_FULL' | 'UNKNOWN_ENTRY' | 'SCAN_BOUND_EXCEEDED'
-  | 'RESERVATION_UNCONFIRMED' | 'INTENT_UNCONFIRMED' | 'NO_INTENT' | 'START_UNCONFIRMED' | 'LOOKUP_FAILED';
-export type AdmitResult = { kind: 'ADMITTED'; intent: IntentRecord } | { kind: 'EXISTING'; operation: ExistingOperation } | { kind: 'DENIED'; reason: OperationDenial };
+  | 'RESERVATION_UNCONFIRMED' | 'INTENT_UNCONFIRMED' | 'NO_INTENT' | 'START_UNCONFIRMED' | 'LOOKUP_FAILED' | 'ADMISSION_REQUIRED';
+export type AdmitResult = { kind: 'ADMITTED'; intent: IntentRecord; admission: OperationAdmission } | { kind: 'EXISTING'; operation: ExistingOperation } | { kind: 'DENIED'; reason: OperationDenial };
 export type StartResult = { kind: 'STARTED'; grant: OperationGrant } | { kind: 'EXISTING'; operation: ExistingOperation } | { kind: 'DENIED'; reason: OperationDenial };
 export type OutcomeWrite = { kind: 'SAVED'; outcome: OutcomeRecord } | { kind: 'COLLISION' | 'UNCONFIRMED' | 'UNAVAILABLE' };
-/** Opaque in-memory single-use grant. Only a verified exclusive STARTED create mints one; copies and fabrications are not recognized. */
+/**
+ * Opaque in-memory single-use authorities. Each is minted only by a verified exclusive create made by THIS caller in THIS store instance:
+ * admission by the new intent, grant by the new STARTED record, consumed start by consuming that grant. A copy, a fabrication, a restart,
+ * a durable record or a readOperation result can never recreate or reconstruct one.
+ */
+export interface OperationAdmission { readonly kind: 'OPERATION_ADMISSION' }
 export interface OperationGrant { readonly kind: 'OPERATION_GRANT' }
-export interface ConsumedGrant { owner: DraftPrincipal; operationKey: string; envelopeSha256: string; attemptId: string; startNonce: string }
-interface GrantState extends ConsumedGrant { store: object; invoker: unknown; spent: boolean }
+export interface ConsumedGrant { readonly kind: 'CONSUMED_START' }
+interface Authority { store: object; owner: DraftPrincipal; operationKey: string; envelopeSha256: string; attemptId: string }
+interface AdmissionState extends Authority { spent: boolean }
+interface GrantState extends Authority { startNonce: string; invoker: unknown; spent: boolean }
+interface ConsumedState extends Authority { startNonce: string; result: 'PENDING' | OutcomeWrite['kind'] | null }
+const admissions = new WeakMap<object, AdmissionState>();
 const grants = new WeakMap<object, GrantState>();
+const consumedStarts = new WeakMap<object, ConsumedState>();
+const trustedStores = new WeakSet<object>();
+/** Only a store constructed by this module is a trusted source of admissions, grants and outcome handles. */
+export const isReceiptOperationStore = (value: unknown): value is HtmlDraftSnapshotStore => typeof value === 'object' && value !== null && trustedStores.has(value);
+const ACCEPTED_DECISIONS: readonly string[] = ['ALLOW', 'DENY', 'REVIEW', 'ESCALATE', 'SANDBOX'];
+/** A persisted receipt must be the evaluation of this start's attempt at the declared R1 with an accepted decision. */
+const receiptJoins = (state: Authority, input: OutcomeInput) => input.receipt === null
+  || (input.receipt.receiptId === state.attemptId && input.receipt.riskLevel === OPERATION_RISK && ACCEPTED_DECISIONS.includes(input.receipt.decision));
 const OPERATIONS_DIR = 'operations';
 const SLOT_FILE = /^slot-(\d{3})\.json$/;
 const LIFECYCLE_FILE = /^op-[a-f0-9]{64}\.(?:intent|start|outcome)\.json$/;
@@ -62,6 +79,7 @@ export class HtmlDraftSnapshotStore {
     this.root = path.resolve(profile.root);
     this.jobDecisions = profile.jobDecisions === true;
     this.receiptOperations = profile.receiptOperations === true;
+    trustedStores.add(this);
   }
   private async directory(owner: DraftPrincipal, create: boolean): Promise<string | null> {
     if (!safePrincipal(owner)) throw new Error('INVALID_PRINCIPAL');
@@ -354,7 +372,12 @@ export class HtmlDraftSnapshotStore {
     const bytes = recordBytes(intent);
     if (!bytes) return { kind: 'DENIED', reason: 'INVALID_INPUT' };
     const created = await this.createOnce(dir, lifecycleName(envelope.operationKey, 'intent'), bytes);
-    if (created === 'CREATED') return { kind: 'ADMITTED', intent };
+    if (created === 'CREATED') {
+      const admission: OperationAdmission = Object.freeze({ kind: 'OPERATION_ADMISSION' as const });
+      admissions.set(admission, { store: this, owner: { ...owner }, operationKey: envelope.operationKey, envelopeSha256: intent.envelopeSha256,
+        attemptId: envelope.attemptId, spent: false });
+      return { kind: 'ADMITTED', intent, admission };
+    }
     if (created === 'EXISTS') {
       const raced = await this.readOperation(envelope.operationKey, owner);
       return raced.state === 'ABSENT' ? { kind: 'DENIED', reason: 'LOOKUP_FAILED' } : { kind: 'EXISTING', operation: raced };
@@ -362,13 +385,26 @@ export class HtmlDraftSnapshotStore {
     return { kind: 'DENIED', reason: 'INTENT_UNCONFIRMED' };
   }
 
-  /** The caller that wins the exclusive STARTED create mints the only grant. Durable start existence never mints one. */
-  async startOperation(owner: DraftPrincipal, key: string, invoker: unknown): Promise<StartResult> {
+  private spendAdmission(admission: unknown, owner: DraftPrincipal, key: string): AdmissionState | null {
+    if (admission === null || typeof admission !== 'object') return null;
+    const state = admissions.get(admission);
+    if (!state || state.spent || state.store !== this || state.operationKey !== key || owner === null || typeof owner !== 'object' || !sameOwner(state.owner, owner)) return null;
+    state.spent = true;
+    return state;
+  }
+
+  /**
+   * Only the original ADMITTED caller can start, once. The admission is spent before the first await, so a failed, timed-out or lost start
+   * never gives anyone a retry; a durable INTENT, a restart or another store instance cannot mint a grant. Durable start existence never does.
+   */
+  async startOperation(owner: DraftPrincipal, key: string, invoker: unknown, admission?: unknown): Promise<StartResult> {
     if (!this.receiptOperations) return { kind: 'DENIED', reason: 'DISABLED' };
     if (typeof invoker !== 'function') return { kind: 'DENIED', reason: 'INVALID_INPUT' };
+    const authority = this.spendAdmission(admission, owner, key);
     const state = await this.readOperation(key, owner);
     if (state.state === 'ABSENT') return { kind: 'DENIED', reason: 'NO_INTENT' };
     if (state.state !== 'INTENT') return { kind: 'EXISTING', operation: state };
+    if (!authority || authority.envelopeSha256 !== state.intent.envelopeSha256) return { kind: 'DENIED', reason: 'ADMISSION_REQUIRED' };
     let dir: string | null;
     try { dir = await this.operationDirectory(owner, false); }
     catch { return { kind: 'DENIED', reason: 'UNSAFE_NAMESPACE' }; }
@@ -383,23 +419,41 @@ export class HtmlDraftSnapshotStore {
     }
     if (created !== 'CREATED') return { kind: 'DENIED', reason: 'START_UNCONFIRMED' };
     const grant: OperationGrant = Object.freeze({ kind: 'OPERATION_GRANT' as const });
-    grants.set(grant, { owner: { ...owner }, operationKey: key, envelopeSha256: start.envelopeSha256, attemptId: start.attemptId,
-      startNonce: start.startNonce, store: this, invoker, spent: false });
+    grants.set(grant, { store: this, owner: { ...authority.owner }, operationKey: key, envelopeSha256: start.envelopeSha256, attemptId: start.attemptId,
+      startNonce: start.startNonce, invoker, spent: false });
     return { kind: 'STARTED', grant };
   }
 
-  /** Consume before invoke. Fabricated, copied, spent, foreign-store or different-invoker grants return null. */
-  consumeGrant(grant: unknown, invoker: unknown): ConsumedGrant | null {
+  /** Consume before invoke. A fabricated, copied, spent, foreign-store, other-invoker or other-envelope grant returns null; a mismatch does not spend it. */
+  consumeGrant(grant: unknown, invoker: unknown, envelope: unknown): ConsumedGrant | null {
     if (grant === null || typeof grant !== 'object') return null;
     const state = grants.get(grant);
     if (!state || state.spent || state.store !== this || state.invoker !== invoker) return null;
+    let expected;
+    try { expected = parseEnvelope(envelope); } catch { return null; }
+    if (!expected || envelopeSha256(expected) !== state.envelopeSha256 || expected.operationKey !== state.operationKey
+      || expected.attemptId !== state.attemptId || !sameOwner(expected.owner, state.owner)) return null;
     state.spent = true;
-    return { owner: { ...state.owner }, operationKey: state.operationKey, envelopeSha256: state.envelopeSha256, attemptId: state.attemptId, startNonce: state.startNonce };
+    const handle: ConsumedGrant = Object.freeze({ kind: 'CONSUMED_START' as const });
+    consumedStarts.set(handle, { store: this, owner: { ...state.owner }, operationKey: state.operationKey, envelopeSha256: state.envelopeSha256,
+      attemptId: state.attemptId, startNonce: state.startNonce, result: null });
+    return handle;
   }
 
-  /** The single immutable terminal record for a consumed start. A second writer collides and cannot change the outcome. */
-  async writeOutcome(consumed: ConsumedGrant, input: OutcomeInput): Promise<OutcomeWrite> {
-    if (!this.receiptOperations || !safePrincipal(consumed.owner)) return { kind: 'UNAVAILABLE' };
+  /** The single immutable terminal record for a consumed start. The handle works once: a failed or unconfirmed write is never retried through it. */
+  async writeOutcome(handle: unknown, input: OutcomeInput): Promise<OutcomeWrite> {
+    const consumed = this.receiptOperations && handle !== null && typeof handle === 'object' ? consumedStarts.get(handle) : undefined;
+    if (!consumed || consumed.store !== this) return { kind: 'UNAVAILABLE' };
+    if (consumed.result !== null) return { kind: consumed.result === 'SAVED' || consumed.result === 'COLLISION' ? 'COLLISION' : 'UNAVAILABLE' };
+    consumed.result = 'PENDING';
+    let write: OutcomeWrite;
+    try { write = await this.writeConsumedOutcome(consumed, input); } catch { write = { kind: 'UNAVAILABLE' }; }
+    consumed.result = write.kind;
+    return write;
+  }
+
+  private async writeConsumedOutcome(consumed: ConsumedState, input: OutcomeInput): Promise<OutcomeWrite> {
+    if (!safePrincipal(consumed.owner) || !receiptJoins(consumed, input)) return { kind: 'UNAVAILABLE' };
     const state = await this.readOperation(consumed.operationKey, consumed.owner);
     if (state.state === 'OUTCOME') return { kind: 'COLLISION' };
     if (state.state !== 'STARTED' || state.start.startNonce !== consumed.startNonce || state.start.attemptId !== consumed.attemptId

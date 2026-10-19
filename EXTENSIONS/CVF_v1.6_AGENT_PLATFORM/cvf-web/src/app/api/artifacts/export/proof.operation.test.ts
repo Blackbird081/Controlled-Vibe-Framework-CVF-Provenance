@@ -11,7 +11,7 @@ import {
   runControlledReceipt, type ControlledReceiptOptions, type ReceiptOperationStore,
 } from './proof';
 
-const ROOTS = path.resolve(process.cwd(), '..', '..', '..', '.cvf', 'runtime', 'ncr-r2-w05-offline-source-20261019', 'worker', 'roots');
+const ROOTS = path.resolve(process.cwd(), '..', '..', '..', '.cvf', 'runtime', 'ncr-r2-w05-binding-repair-20261019', 'worker', 'roots');
 const owner = { userId: 'u1', orgId: 'o1', teamId: 't1' };
 const hex = (text: string) => createHash('sha256').update(text).digest('hex');
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -58,10 +58,18 @@ function counting(respond: (request: ControlledEvaluateRequest, signal: AbortSig
 }
 const run = (store: ReceiptOperationStore, p: Prepared, invoker: ControlledInvoker, extra: Partial<ControlledReceiptOptions> = {}) =>
   runControlledReceipt({ store, owner, envelope: p.envelope, request: p.request, invoker, timeoutMs: 2000, ...extra });
-function wrapped(real: HtmlDraftSnapshotStore, overrides: Partial<ReceiptOperationStore>): ReceiptOperationStore {
-  return { admitOperation: (e, o) => real.admitOperation(e, o), startOperation: (o, k, i) => real.startOperation(o, k, i),
-    consumeGrant: (g, i) => real.consumeGrant(g, i), writeOutcome: (c, i) => real.writeOutcome(c, i), ...overrides };
+/** A real store instance with selected methods replaced: the proof trusts only stores built by the artifacts store module, never a structural stand-in. */
+function patched(root: string, make: (real: HtmlDraftSnapshotStore) => Partial<ReceiptOperationStore> = () => ({})): ReceiptOperationStore {
+  const real = makeStore(root);
+  return Object.assign(real, make(real));
 }
+type CreateInternals = { createOnce(dir: string, name: string, bytes: Buffer): Promise<string> };
+const failStart = (store: ReceiptOperationStore) => {
+  const internals = store as unknown as CreateInternals;
+  const original = internals.createOnce.bind(store);
+  internals.createOnce = async (dir, name, bytes) => (/\.start\.json$/.test(name) ? 'UNAVAILABLE' : original(dir, name, bytes));
+  return store;
+};
 const hang = () => new Promise<never>(() => undefined);
 const snapshot = async (root: string) => Promise.all((await fs.readdir(opsDir(root))).sort().map(async name => `${name}:${hex((await fs.readFile(path.join(opsDir(root), name))).toString('binary'))}`));
 
@@ -219,7 +227,7 @@ describe('PC/REQ-PROOF failure, timeout, abort and late response keep unknown', 
       const p = prepared(1);
       const { invoker, calls } = counting(request => engine(request));
       const started = Date.now();
-      const result = await run(wrapped(real, { writeOutcome }), p, invoker, { timeoutMs: 400 });
+      const result = await run(patched(root, () => ({ writeOutcome })), p, invoker, { timeoutMs: 400 });
       expect(Date.now() - started, label).toBeLessThan(1500);
       expect(result, label).toMatchObject({ kind: 'EXECUTED', outcome: 'OUTCOME_UNKNOWN', receipt: null, persisted: false, reason: 'OUTCOME_WRITE_UNCONFIRMED', sends: 1 });
       expect((await real.readOperation(p.key, owner)).state, label).toBe('STARTED');
@@ -229,7 +237,6 @@ describe('PC/REQ-PROOF failure, timeout, abort and late response keep unknown', 
   });
   it('denies before invoking when admission or start errors or hangs', async () => {
     const root = await newRoot('proof-pre-faults');
-    const real = makeStore(root);
     const { invoker, calls } = counting(request => engine(request));
     const cases: Array<[string, Partial<ReceiptOperationStore>]> = [
       ['admit throws', { admitOperation: async () => { throw new Error('x'); } }],
@@ -238,7 +245,7 @@ describe('PC/REQ-PROOF failure, timeout, abort and late response keep unknown', 
       ['start throws', { startOperation: async () => { throw new Error('x'); } }],
     ];
     for (const [index, [label, override]] of cases.entries()) {
-      expect(await run(wrapped(real, override), prepared(10 + index), invoker, { timeoutMs: 40 }), label).toEqual({ kind: 'DENIED', reason: 'STORE_UNAVAILABLE', sends: 0 });
+      expect(await run(patched(root, () => override), prepared(10 + index), invoker, { timeoutMs: 40 }), label).toEqual({ kind: 'DENIED', reason: 'STORE_UNAVAILABLE', sends: 0 });
     }
     expect(calls).toHaveLength(0);
   });
@@ -250,8 +257,9 @@ describe('PC/REQ-PROOF grant and input denial with zero sends', () => {
     const store = makeStore(root);
     const p = prepared(1);
     const { invoker, calls } = counting(request => engine(request));
-    expect((await store.admitOperation(p.envelope, owner)).kind).toBe('ADMITTED');
-    const started = await store.startOperation(owner, p.key, invoker);
+    const admitted = await store.admitOperation(p.envelope, owner);
+    if (admitted.kind !== 'ADMITTED') throw new Error('admit');
+    const started = await store.startOperation(owner, p.key, invoker, admitted.admission);
     if (started.kind !== 'STARTED') throw new Error('start');
     const options: ControlledReceiptOptions = { store, owner, envelope: p.envelope, request: p.request, invoker, timeoutMs: 2000 };
     const denied = { kind: 'DENIED', reason: 'GRANT_REJECTED', sends: 0 };
@@ -292,6 +300,129 @@ describe('PC/REQ-PROOF grant and input denial with zero sends', () => {
     expect(await run(corrupt, p, invoker)).toEqual({ kind: 'DENIED', reason: 'OPERATION_CORRUPT', sends: 0 });
     expect(calls).toHaveLength(0);
     expect(fetchMock).not.toHaveBeenCalled();
+  });
+});
+
+describe('LR1/REQ-AUTHORITY immutable invocation, no-bypass joins and no replay', () => {
+  async function granted(label: string) {
+    const root = await newRoot(label);
+    const store = makeStore(root);
+    const p = prepared(1);
+    const { invoker, calls } = counting(request => engine(request));
+    const admitted = await store.admitOperation(p.envelope, owner);
+    if (admitted.kind !== 'ADMITTED') throw new Error('admit');
+    const started = await store.startOperation(owner, p.key, invoker, admitted.admission);
+    if (started.kind !== 'STARTED') throw new Error('start');
+    const options: ControlledReceiptOptions = { store, owner, envelope: p.envelope, request: p.request, invoker, timeoutMs: 2000 };
+    return { root, p, calls, grant: started.grant, options };
+  }
+  it('keeps the approved bytes when the caller mutates request, envelope and owner aliases during the admit, start and write waits', async () => {
+    const root = await newRoot('proof-toctou');
+    const p = prepared(1);
+    const pristine = prepared(1);
+    const mine = { ...owner };
+    const { invoker, calls } = counting(request => engine(request));
+    const mutate = () => {
+      p.request.payload.content = 'MUTATED AFTER VALIDATION';
+      p.request.artifact_id = 'other-anchor';
+      p.envelope.payloadSha256 = hex('mutated');
+      p.envelope.output.artifactId = 'other-anchor';
+      mine.userId = 'u2';
+    };
+    const store = patched(root, real => {
+      const [admit, start, write] = [real.admitOperation.bind(real), real.startOperation.bind(real), real.writeOutcome.bind(real)];
+      return { admitOperation: async (e, o) => { mutate(); return admit(e, o); }, startOperation: async (o, k, i, a) => { mutate(); return start(o, k, i, a); },
+        writeOutcome: async (c, i) => { mutate(); return write(c, i); } };
+    });
+    const result = await runControlledReceipt({ store, owner: mine, envelope: p.envelope, request: p.request, invoker, timeoutMs: 2000 });
+    expect(result).toMatchObject({ kind: 'EXECUTED', outcome: 'RECEIPT_VERIFIED', persisted: true, sends: 1 });
+    expect(calls).toHaveLength(1);
+    expect(calls[0].request).toEqual(pristine.request);
+    expect(controlledRequestSha256(calls[0].request)).toBe(pristine.envelope.payloadSha256);
+    const state = await makeStore(root).readOperation(pristine.key, owner);
+    expect(state.state === 'OUTCOME' && [state.intent.envelope, state.outcome.receipt?.receiptId]).toEqual([pristine.envelope, pristine.attemptId]);
+  });
+  it('sends nothing when a genuine grant is presented with another request or envelope, and the grant stays usable for the genuine join', async () => {
+    const { p, calls, grant, options } = await granted('proof-join');
+    const swapped = buildControlledEvaluateRequest(p.attemptId, 'receipt-anchor', 'a replacement payload');
+    const rejected = { kind: 'DENIED', reason: 'GRANT_REJECTED', sends: 0 };
+    expect(await invokeWithGrant({ ...options, request: swapped }, grant)).toEqual({ kind: 'DENIED', reason: 'INVALID_PROOF_INPUT', sends: 0 });
+    expect(await invokeWithGrant({ ...options, request: swapped, envelope: { ...p.envelope, payloadSha256: controlledRequestSha256(swapped) } }, grant)).toEqual(rejected);
+    expect(await invokeWithGrant({ ...options, envelope: prepared(1, { html: hex('another rendered html') }).envelope }, grant)).toEqual(rejected);
+    expect(calls).toHaveLength(0);
+    expect(await invokeWithGrant(options, grant)).toMatchObject({ kind: 'EXECUTED', outcome: 'RECEIPT_VERIFIED', sends: 1 });
+    expect(calls.map(call => call.request.payload.content)).toEqual(['# source 1']);
+  });
+  const bad = (patch: Record<string, unknown>) => (p: Prepared) => ({ request: { ...p.request, ...patch } as never });
+  it.each<[string, (p: Prepared) => Partial<ControlledReceiptOptions>]>([
+    ['null request', () => ({ request: null as never })], ['string request', () => ({ request: 'x' as never })], ['array request', () => ({ request: [] as never })],
+    ['unknown request key', bad({ extra: 1 })], ['missing request key', p => ({ request: { request_id: p.request.request_id } as never })],
+    ['non-string request id', bad({ request_id: 7 })], ['payload with an extra key', bad({ payload: { content: 'x', more: 1 } })], ['non-string content', bad({ payload: { content: 5 } })],
+    ['content over 500 characters', bad({ payload: { content: 'x'.repeat(501) } })], ['BigInt content', bad({ payload: { content: BigInt(1) } })],
+    ['throwing getter', p => ({ request: Object.defineProperty({ ...p.request }, 'artifact_id', { get() { throw new Error('getter'); }, enumerable: true }) })],
+    ['revoked proxy', () => { const { proxy, revoke } = Proxy.revocable({}, {}); revoke(); return { request: proxy as never }; }],
+    ['circular request', p => { const loop: Record<string, unknown> = { ...p.request }; loop.self = loop; return { request: loop as never }; }],
+    ['owner of another user', () => ({ owner: { ...owner, userId: 'u2' } })], ['null owner', () => ({ owner: null as never })],
+    ['envelope with an unknown key', p => ({ envelope: { ...p.envelope, extra: 1 } })], ['signal that is not a signal', () => ({ signal: {} as AbortSignal })],
+  ])('denies a malformed %s without throwing and without any send or write', async (_label, patch) => {
+    const root = await newRoot('proof-malformed');
+    const p = prepared(1);
+    const { invoker, calls } = counting(request => engine(request));
+    const options = { store: makeStore(root), owner, envelope: p.envelope, request: p.request, invoker, timeoutMs: 2000, ...patch(p) };
+    const denied = { kind: 'DENIED', reason: 'INVALID_PROOF_INPUT', sends: 0 };
+    expect(await runControlledReceipt(options)).toEqual(denied);
+    expect(await invokeWithGrant(options, { kind: 'OPERATION_GRANT' })).toEqual(denied);
+    expect([calls.length, await fs.readdir(root)]).toEqual([0, []]);
+  });
+  it('trusts only a store built by the artifacts store module: a structural stand-in is denied and never called', async () => {
+    const p = prepared(1);
+    const { invoker, calls } = counting(request => engine(request));
+    const calledWith: string[] = [];
+    const standIn = { admitOperation: async () => { calledWith.push('admit'); return { kind: 'ADMITTED' }; }, startOperation: async () => { calledWith.push('start'); return { kind: 'STARTED', grant: {} }; },
+      consumeGrant: () => { calledWith.push('consume'); return {}; }, writeOutcome: async () => { calledWith.push('write'); return { kind: 'SAVED' }; } };
+    const forgedProto = Object.create(HtmlDraftSnapshotStore.prototype) as ReceiptOperationStore;
+    for (const store of [standIn as never, forgedProto]) {
+      const options = { store, owner, envelope: p.envelope, request: p.request, invoker, timeoutMs: 2000 };
+      expect(await runControlledReceipt(options)).toEqual({ kind: 'DENIED', reason: 'INVALID_PROOF_INPUT', sends: 0 });
+      expect(await invokeWithGrant(options, {})).toEqual({ kind: 'DENIED', reason: 'INVALID_PROOF_INPUT', sends: 0 });
+    }
+    expect(await runControlledReceipt(null as never)).toEqual({ kind: 'DENIED', reason: 'INVALID_PROOF_INPUT', sends: 0 });
+    expect(await invokeWithGrant('options' as never, {})).toEqual({ kind: 'DENIED', reason: 'INVALID_PROOF_INPUT', sends: 0 });
+    expect([calls.length, calledWith]).toEqual([0, []]);
+  });
+  it('gives no retry after a failed start with no start file: the winner, a restart and a later caller all get zero sends', async () => {
+    const root = await newRoot('proof-failed-start');
+    const p = prepared(1);
+    const { invoker, calls } = counting(request => engine(request));
+    expect(await run(failStart(makeStore(root)), p, invoker)).toEqual({ kind: 'DENIED', reason: 'START_UNCONFIRMED', sends: 0 });
+    for (const store of [makeStore(root), makeStore(root), failStart(makeStore(root))]) {
+      expect(await run(store, p, invoker)).toEqual({ kind: 'ALREADY_PROCESSED', operationKey: p.key, state: 'INTENT', outcome: null, sends: 0 });
+    }
+    expect([calls.length, (await fs.readdir(opsDir(root))).filter(name => name.includes('.start.'))]).toEqual([0, []]);
+  });
+  it.each([
+    ['typed NOT_CONFIGURED return', () => ({ status: 'NOT_CONFIGURED', receipt: null }), 'INVALID_RESPONSE'],
+    ['thrown NOT_CONFIGURED', () => { throw new Error('NOT_CONFIGURED'); }, 'INVOKER_ERROR'],
+    ['rejected NOT_CONFIGURED', () => Promise.reject(Object.assign(new Error('NOT_CONFIGURED'), { code: 'NOT_CONFIGURED' })), 'INVOKER_ERROR'],
+  ])('records a %s after the invocation as OUTCOME_UNKNOWN with no receipt and never retries it', async (_label, respond, reason) => {
+    const root = await newRoot('proof-not-configured');
+    const store = makeStore(root);
+    const p = prepared(1);
+    const { invoker, calls } = counting(respond);
+    expect(await run(store, p, invoker)).toMatchObject({ kind: 'EXECUTED', outcome: 'OUTCOME_UNKNOWN', receipt: null, reason, persisted: true, sends: 1 });
+    expect(await run(makeStore(root), p, invoker)).toMatchObject({ kind: 'ALREADY_PROCESSED', outcome: 'OUTCOME_UNKNOWN', sends: 0 });
+    expect(calls).toHaveLength(1);
+  });
+  it('lets a late durable outcome write exist after the bounded timeout without triggering another invoke or grant', async () => {
+    const root = await newRoot('proof-late-write');
+    const p = prepared(1);
+    const { invoker, calls } = counting(request => engine(request));
+    const store = patched(root, real => { const write = real.writeOutcome.bind(real); return { writeOutcome: async (c, i) => { await sleep(500); return write(c, i); } }; });
+    expect(await run(store, p, invoker, { timeoutMs: 100 })).toMatchObject({ kind: 'EXECUTED', outcome: 'OUTCOME_UNKNOWN', receipt: null, persisted: false, reason: 'OUTCOME_WRITE_UNCONFIRMED', sends: 1 });
+    await sleep(900);
+    expect((await makeStore(root).readOperation(p.key, owner)).state).toBe('OUTCOME');
+    expect(await run(makeStore(root), p, invoker)).toMatchObject({ sends: 0 });
+    expect(calls).toHaveLength(1);
   });
 });
 

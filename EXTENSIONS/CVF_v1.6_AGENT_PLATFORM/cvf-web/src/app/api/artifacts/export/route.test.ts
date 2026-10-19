@@ -1,5 +1,5 @@
 // Text Encoding Exception: Vietnamese data fixtures verify UTF-8 fidelity and accepted user input.
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { NextRequest } from 'next/server';
 
 import { POST } from './route';
@@ -36,12 +36,13 @@ let requestSequence = 0;
 
 // The route authorizes through authorizeRouteGovernanceProof, which requires a
 // signed service token over the exact body; a bare token is rejected with 401.
-function makeRequest(body: Record<string, unknown>) {
+function makeRequest(body: Record<string, unknown>, extraHeaders: Record<string, string> = {}) {
   const bodyText = JSON.stringify(body);
   const timestamp = String(Date.now() + requestSequence++);
   return new NextRequest('http://localhost/api/artifacts/export', {
     method: 'POST',
     headers: {
+      ...extraHeaders,
       'Content-Type': 'application/json',
       'x-cvf-service-token': SERVICE_TOKEN,
       'x-cvf-service-timestamp': timestamp,
@@ -72,13 +73,46 @@ function makeStreamRequest(bodyText: string, chunks: Uint8Array[], contentLength
 }
 
 describe('/api/artifacts/export', () => {
+  // The retained legacy helper is reachable only through the explicit non-production server value; absence of any value denies.
   beforeEach(() => {
     process.env.CVF_SERVICE_TOKEN = SERVICE_TOKEN;
+    process.env.CVF_NCR_RECEIPT_OPERATION_PROFILE = 'LEGACY_COMPATIBILITY_ONLY';
     delete process.env.NEXTAUTH_URL;
     delete process.env.CVF_GOVERNANCE_RECEIPT_TIMEOUT_MS;
     vi.unstubAllGlobals();
     verifySessionCookieMock.mockReset();
     verifySessionCookieMock.mockResolvedValue(null);
+  });
+  afterEach(() => {
+    delete process.env.CVF_NCR_RECEIPT_OPERATION_PROFILE;
+    vi.unstubAllEnvs();
+  });
+
+  it.each([
+    ['missing', undefined, 'POSTURE_UNDECLARED'], ['DISABLED', 'DISABLED', 'DISABLED'], ['empty', '', 'INVALID_SELECTOR'],
+    ['lowercase legacy', 'legacy_compatibility_only', 'INVALID_SELECTOR'], ['legacy plus a second value', 'LEGACY_COMPATIBILITY_ONLY,DISABLED', 'INVALID_SELECTOR'],
+    ['held controlled activation', 'INJECTED_SYNTHETIC_RECEIPT', 'ACTIVATION_HELD_UNSUPPORTED'],
+  ])('denies a %s receipt-operation posture before auth, body parsing or any receipt fetch', async (_label, value, reason) => {
+    const fetchMock = vi.fn(); vi.stubGlobal('fetch', fetchMock);
+    process.env.NEXTAUTH_URL = 'http://localhost:3000';
+    if (value === undefined) delete process.env.CVF_NCR_RECEIPT_OPERATION_PROFILE; else process.env.CVF_NCR_RECEIPT_OPERATION_PROFILE = value;
+    const response = await POST(makeRequest(BASE_REQUEST));
+    expect(response.status).toBe(403);
+    expect(await response.json()).toEqual({ success: false, error: 'RECEIPT_OPERATION_DENIED', reason });
+    expect(verifySessionCookieMock).not.toHaveBeenCalled();
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+  it('denies the explicit legacy value in production, and with any job selector, without reaching auth or the receipt fetch', async () => {
+    const fetchMock = vi.fn(); vi.stubGlobal('fetch', fetchMock);
+    process.env.NEXTAUTH_URL = 'http://localhost:3000';
+    const selector = { 'x-cvf-job-id': '123e4567-e89b-42d3-a456-426614174001', 'x-cvf-source-record-id': 'ncr-synthetic-route-1' };
+    const denied = async (headers: Record<string, string>) => { const response = await POST(makeRequest(BASE_REQUEST, headers)); return [response.status, (await response.json()).reason]; };
+    expect(await denied(selector)).toEqual([403, 'LEGACY_SELECTORS_CONFLICT']);
+    expect(await denied({ 'x-cvf-job-id': selector['x-cvf-job-id'] })).toEqual([400, 'SELECTOR_INVALID']);
+    vi.stubEnv('NODE_ENV', 'production');
+    expect(await denied({})).toEqual([403, 'PRODUCTION_DENIED']);
+    expect(verifySessionCookieMock).not.toHaveBeenCalled();
+    expect(fetchMock).not.toHaveBeenCalled();
   });
 
   it('rejects malformed UTF-8 before auth or receipt fetch', async () => {

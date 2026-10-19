@@ -1,7 +1,7 @@
 import { canonicalJson, envelopeSha256, parseEnvelope, type ControlledEvaluateRequest, type ControlledInvoker, type OperationEnvelope,
   type OperationOutcomeKind, type OperationReceipt, type OutcomeInput, type PresenceLookup } from '@/lib/artifacts-receipt-operation-contract';
 import { sha256, type DraftPrincipal } from '@/lib/html-draft-recovery-contract';
-import type { ExistingOperation, HtmlDraftSnapshotStore } from '@/lib/server/html-draft-snapshot-store';
+import { isReceiptOperationStore, type ExistingOperation, type HtmlDraftSnapshotStore } from '@/lib/server/html-draft-snapshot-store';
 
 const GOVERNANCE_EVALUATE_URL = '/api/governance/evaluate';
 const PROOF_TIMEOUT_MS = 4000;
@@ -193,7 +193,8 @@ export type ControlledReceiptResult =
   | { kind: 'ALREADY_PROCESSED'; operationKey: string; state: string; outcome: OperationOutcomeKind | null; sends: 0 }
   | { kind: 'REUSED'; operationKey: string; receipt: OperationReceipt; sends: 0 }
   | { kind: 'EXECUTED'; operationKey: string; outcome: OperationOutcomeKind; receipt: OperationReceipt | null; reason: string | null; persisted: boolean; sends: 1 };
-export type ReceiptOperationStore = Pick<HtmlDraftSnapshotStore, 'admitOperation' | 'startOperation' | 'consumeGrant' | 'writeOutcome'>;
+/** The production path accepts only a store constructed by the artifacts store module; a structural stand-in is never a trusted grant source. */
+export type ReceiptOperationStore = HtmlDraftSnapshotStore;
 export interface ControlledReceiptOptions {
   store: ReceiptOperationStore;
   owner: DraftPrincipal;
@@ -205,11 +206,46 @@ export interface ControlledReceiptOptions {
 }
 
 /** Bounded wait for local store work. A timeout or error yields null; it never proves the work did not happen. */
-function bounded<T>(work: Promise<T>, ms: number): Promise<T | null> {
+function bounded<T>(work: () => Promise<T>, ms: number): Promise<T | null> {
   return new Promise<T | null>(resolve => {
     const timer = setTimeout(() => resolve(null), ms);
-    work.then(value => { clearTimeout(timer); resolve(value); }, () => { clearTimeout(timer); resolve(null); });
+    Promise.resolve().then(work).then(value => { clearTimeout(timer); resolve(value); }, () => { clearTimeout(timer); resolve(null); });
   });
+}
+
+/** Everything the proof reads from its caller, copied once and synchronously before the first await. Later caller mutation cannot change it. */
+interface Prepared { store: ReceiptOperationStore; owner: DraftPrincipal; envelope: OperationEnvelope; request: ControlledEvaluateRequest;
+  invoker: ControlledInvoker; timeoutMs: number; signal: AbortSignal | undefined }
+const isRecord = (v: unknown): v is Record<string, unknown> => Object.prototype.toString.call(v) === '[object Object]';
+const hasKeys = (v: Record<string, unknown>, keys: readonly string[]) => Object.keys(v).length === keys.length && keys.every(k => Object.hasOwn(v, k));
+const isSignal = (v: unknown): v is AbortSignal => typeof v === 'object' && v !== null && typeof (v as AbortSignal).aborted === 'boolean'
+  && typeof (v as AbortSignal).addEventListener === 'function' && typeof (v as AbortSignal).removeEventListener === 'function';
+
+/** Strict exact-shape copy through a serialization round trip: accessors, proxies and aliases do not survive. Returns null, never throws. */
+function snapshotRequest(value: unknown): ControlledEvaluateRequest | null {
+  let copy: unknown;
+  try { copy = JSON.parse(JSON.stringify(value)); } catch { return null; }
+  if (!isRecord(copy) || !hasKeys(copy, ['request_id', 'artifact_id', 'payload', 'cvf_phase', 'cvf_risk_level'])) return null;
+  const { request_id: id, artifact_id: artifact, payload, cvf_phase: phase, cvf_risk_level: risk } = copy;
+  if (typeof id !== 'string' || typeof artifact !== 'string' || !isRecord(payload) || !hasKeys(payload, ['content']) || typeof payload.content !== 'string'
+    || payload.content.length > 500 || phase !== 'REVIEW' || risk !== 'R1') return null;
+  return Object.freeze({ request_id: id, artifact_id: artifact, payload: Object.freeze({ content: payload.content }), cvf_phase: phase, cvf_risk_level: risk });
+}
+
+/** Validates the whole invocation join: exact envelope, exact request, owner, attempt, artifact, payload digest, trusted store and bounded timeout. */
+function prepare(options: unknown): Prepared | null {
+  try {
+    if (!isRecord(options)) return null;
+    const { store, owner, envelope: rawEnvelope, request: rawRequest, invoker, timeoutMs, signal } = options;
+    const envelope = parseEnvelope(rawEnvelope);
+    const request = snapshotRequest(rawRequest);
+    if (!envelope || !request || !isReceiptOperationStore(store) || typeof invoker !== 'function' || typeof timeoutMs !== 'number'
+      || !Number.isInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > MAX_PROOF_TIMEOUT_MS || !(signal === undefined || isSignal(signal))
+      || !isRecord(owner) || owner.userId !== envelope.owner.userId || owner.orgId !== envelope.owner.orgId || owner.teamId !== envelope.owner.teamId
+      || request.request_id !== envelope.attemptId || request.artifact_id !== envelope.output.artifactId
+      || controlledRequestSha256(request) !== envelope.payloadSha256) return null;
+    return { store, owner: { ...envelope.owner }, envelope, request, invoker: invoker as ControlledInvoker, timeoutMs, signal };
+  } catch { return null; }
 }
 
 function settleExisting(envelope: OperationEnvelope, existing: ExistingOperation): ControlledReceiptResult {
@@ -245,13 +281,15 @@ function invokeOnce(invoker: ControlledInvoker, request: ControlledEvaluateReque
   });
 }
 
-/** Consume the grant before invoking. A fabricated, copied or spent grant denies with zero sends. */
-export async function invokeWithGrant(options: ControlledReceiptOptions, grant: unknown): Promise<ControlledReceiptResult> {
-  const { store, invoker, request, timeoutMs, signal } = options;
-  const consumed = store.consumeGrant(grant, invoker);
+async function invokePrepared(prepared: Prepared, grant: unknown): Promise<ControlledReceiptResult> {
+  const { store, invoker, request, timeoutMs, signal, envelope } = prepared;
+  // Immediately before the invoke the trusted grant must join this exact store, invoker, owner, key, attempt and full envelope, and the
+  // isolated payload must still hash to the approved digest. A mismatch sends nothing and records nothing.
+  if (controlledRequestSha256(request) !== envelope.payloadSha256) return { kind: 'DENIED', reason: 'INVALID_PROOF_INPUT', sends: 0 };
+  const consumed = store.consumeGrant(grant, invoker, envelope);
   if (!consumed) return { kind: 'DENIED', reason: 'GRANT_REJECTED', sends: 0 };
   if (signal?.aborted) {
-    await bounded(store.writeOutcome(consumed, { outcome: 'FAILED_BEFORE_SEND', receipt: null, reason: 'ABORTED_BEFORE_SEND' }), timeoutMs);
+    await bounded(() => store.writeOutcome(consumed, { outcome: 'FAILED_BEFORE_SEND', receipt: null, reason: 'ABORTED_BEFORE_SEND' }), timeoutMs);
     return { kind: 'DENIED', reason: 'FAILED_BEFORE_SEND', sends: 0 };
   }
   const settled = await invokeOnce(invoker, request, timeoutMs, signal);
@@ -264,38 +302,43 @@ export async function invokeWithGrant(options: ControlledReceiptOptions, grant: 
   } else {
     input = { outcome: 'OUTCOME_UNKNOWN', receipt: null, reason: settled.reason };
   }
-  const saved = await bounded(store.writeOutcome(consumed, input), timeoutMs);
+  const saved = await bounded(() => store.writeOutcome(consumed, input), timeoutMs);
   if (saved?.kind === 'SAVED') {
-    return { kind: 'EXECUTED', operationKey: consumed.operationKey, outcome: saved.outcome.outcome, receipt: saved.outcome.receipt,
+    return { kind: 'EXECUTED', operationKey: envelope.operationKey, outcome: saved.outcome.outcome, receipt: saved.outcome.receipt,
       reason: saved.outcome.reason, persisted: true, sends: 1 };
   }
-  return { kind: 'EXECUTED', operationKey: consumed.operationKey, outcome: 'OUTCOME_UNKNOWN', receipt: null,
+  return { kind: 'EXECUTED', operationKey: envelope.operationKey, outcome: 'OUTCOME_UNKNOWN', receipt: null,
     reason: `OUTCOME_WRITE_${saved ? saved.kind : 'UNCONFIRMED'}`, persisted: false, sends: 1 };
 }
 
-/** Admit, start and invoke the injected callback at most once for one immutable logical operation. */
+/** Consume the grant before invoking. A fabricated, copied, spent or mismatched grant, or any invalid input, denies with zero sends. */
+export async function invokeWithGrant(options: ControlledReceiptOptions, grant: unknown): Promise<ControlledReceiptResult> {
+  const prepared = prepare(options);
+  return prepared ? invokePrepared(prepared, grant) : { kind: 'DENIED', reason: 'INVALID_PROOF_INPUT', sends: 0 };
+}
+
+/** Admit, start and invoke the injected callback at most once for one immutable logical operation. Never throws. */
 export async function runControlledReceipt(options: ControlledReceiptOptions): Promise<ControlledReceiptResult> {
-  const { store, owner, request, invoker, timeoutMs } = options;
+  const prepared = prepare(options);
   const denied = (reason: string): ControlledReceiptResult => ({ kind: 'DENIED', reason, sends: 0 });
-  const envelope = parseEnvelope(options.envelope);
-  if (!envelope || !request || typeof invoker !== 'function' || !Number.isInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > MAX_PROOF_TIMEOUT_MS
-    || request.cvf_phase !== 'REVIEW' || request.cvf_risk_level !== 'R1' || request.request_id !== envelope.attemptId
-    || request.artifact_id !== envelope.output.artifactId || controlledRequestSha256(request) !== envelope.payloadSha256) return denied('INVALID_PROOF_INPUT');
-  const admitted = await bounded(store.admitOperation(envelope, owner), timeoutMs);
+  if (!prepared) return denied('INVALID_PROOF_INPUT');
+  const { store, owner, envelope, invoker, timeoutMs } = prepared;
+  const admitted = await bounded(() => store.admitOperation(envelope, owner), timeoutMs);
   if (!admitted) return denied('STORE_UNAVAILABLE');
   if (admitted.kind === 'DENIED') return denied(admitted.reason);
   if (admitted.kind === 'EXISTING') return settleExisting(envelope, admitted.operation);
-  const started = await bounded(store.startOperation(owner, envelope.operationKey, invoker), timeoutMs);
+  const admission = admitted.admission;
+  const started = await bounded(() => store.startOperation(owner, envelope.operationKey, invoker, admission), timeoutMs);
   if (!started) return denied('STORE_UNAVAILABLE');
   if (started.kind === 'DENIED') return denied(started.reason);
   if (started.kind === 'EXISTING') return settleExisting(envelope, started.operation);
-  return invokeWithGrant(options, started.grant);
+  return invokePrepared(prepared, started.grant);
 }
 
 export interface PresenceDiagnostic { status: 'REMOTE_PRESENCE_OBSERVED' | 'UNKNOWN'; releasesUnknown: false; grantsReplay: false }
 /** Reconcile B: optional pure diagnostic over an injected lookup. It never writes, releases UNKNOWN or grants a replay. */
 export async function diagnoseRemotePresence(lookup: PresenceLookup, envelope: OperationEnvelope, timeoutMs = PROOF_TIMEOUT_MS): Promise<PresenceDiagnostic> {
-  const entry = await bounded(Promise.resolve().then(() => lookup({ requestId: envelope.attemptId })), timeoutMs);
+  const entry = await bounded(() => lookup({ requestId: envelope.attemptId }), timeoutMs);
   const present = !!entry && entry.requestId === envelope.attemptId && entry.actor === envelope.owner.userId
     && entry.configDigest === envelope.config.configDigest && entry.storeId === envelope.config.storeId;
   return { status: present ? 'REMOTE_PRESENCE_OBSERVED' : 'UNKNOWN', releasesUnknown: false, grantsReplay: false };
