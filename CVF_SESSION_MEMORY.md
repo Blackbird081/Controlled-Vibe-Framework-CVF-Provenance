@@ -35,20 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r2_w05_operation_audit_handoff_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=boundrelease then operator manual transfer of exact2 source/design audit; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=R2_W05_AUDIT_MANUAL_HANDOFF_READY; decision owner=LOCAL; parked checkpoint=source BUILD, provider/data/store effects, production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r2_w05_hq_decisions_locked`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=PLAN_ONLY integrated offline source packet under Local HQ1-HQ7 decisions; role=INTERNAL_AGENT Local reviewer/planner; phase=AUDIT_ACCEPTED_HQ_LOCKED; decision owner=LOCAL; parked checkpoint=source/runtime/provider/data/store effects, production/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r2_w05_operation_audit_handoff_ready`
-Current mode: `cvf_ncr_r2_w05_operation_audit_handoff_ready`
+Current mode marker: `cvf_ncr_r2_w05_hq_decisions_locked`
+Current mode: `cvf_ncr_r2_w05_hq_decisions_locked`
 
-Docs-only operation protocol audit ready for manualtransfer after actualboundrelease; no source BUILD or runtime effect.
+Audit accepted with procedurelimits; seven Local decisions locked for firstoffline design. Next sourcepacket planning only, no BUILD/effect release.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r2_w05_operation_audit_handoff_ready`
+Mode: `cvf_ncr_r2_w05_hq_decisions_locked`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_R2_W05_OPERATION_AUDIT; BATCH_ID=CVF-NCR-R2-W05-OPERATION-AUDIT-20261019. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md after actual boundrelease PASS. One INTERNAL_AGENT75min, exact2return/EP, trackedsource/contracts readonly, full requiredGate<=3, actualreads/pins/finalgates. Source-validate12D01-D12 design criteria, compare artifactsstore/pendingSQLite/attemptquota/gateway/downstreamledger, choose concrete authenticated server producer/lookup/transport or precise held alternative; exactfutureimplementation manifest/dependencies/size and offline proofplan. Adverse complete audit may be pendingreview; Local decides semantics before any BUILD. No test creation/execution, app/browser/provider/network, env/secret/active-store access, source/policy/registry/session edits, workerstage/commit/subagents. Root does not invoke worker. Sourcefacts/designchoices/assumptions separate; late/partialreads cannot be cured by hashes/gate. SCECINITIAL0/current0/docclaim/NO_SUCCESSOR; returnS1 actualWO, canonical0to0streak1 absentnewtaskblockers, no executableproofclaim. R1UXbounded/fullR1preliveR2partial,R3R4open,R5R6deferred; GoalS3current0/counters0,0,0,0/originalfork; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 fixed. Provider/private-data/production/public/deployOFF.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PLAN_ONLY; BATCH_ID=CVF-NCR-R2-W05-OPERATION-AUDIT-20261019. Prepare one integrated offline source work order from docs/reviews/CVF_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_LOCAL_COMPLETION_REVIEW_2026-10-19.md HQ1-HQ7 and amended M01-M13manifest, actual dependencies/registry/size/architecture and proposed verification scope before release. Contract/store/helper/profile/branch/route/hook; owner-scoped getJob/requesthash beforeBuild, conditionalgetVersion afterSave, separate serveroperationeffect admission. No keyjobId, no stale-receipt/newtarget mixing; declaredidentity only fixture, reconcileBpresence cannot releaseUNKNOWN; controlleddisabledinvalid/profilemissingselectors denieswithoutlegacyfallback;256operations-owner/noexpiry;R1/REVIEW. No source/test creation/execution or network/runtime/provider/data effect yet; source packet must be separately concrete/released and manually transferred, Root does not invoke worker. WorkerS1current0/counters0,0,0,1/docNO_SUCCESSOR and all previoussource/Goal/Clarity/parentcountersfrozen. R1UXbounded/fullR1preliveR2partial,R3R4open,R5R6deferred. M15/M16engineReadById deferred; actualendpoint/data/store/auth/cost/retention/businessacceptance proof gates dependent effects only. Provider/private-data/production/public/deployOFF. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged.
 
 ## Parked Checkpoints
 
