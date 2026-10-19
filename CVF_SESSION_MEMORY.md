@@ -35,20 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r2_w05_offline_source_manual_handoff_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=bound release then operator manual transfer of integrated offline source/verification packet; role=INTERNAL_AGENT Local dispatcher/reviewer; phase=OFFLINE_SOURCE_PACKET_READY; decision owner=LOCAL; parked checkpoint=real endpoint/provider/data/store/production/public/deploy effects.
+Startup acknowledged: current mode=`cvf_ncr_r2_w05_binding_repair_manual_handoff_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=boundrelease then operator manual transfer of one exact9 integrated binding repair; role=INTERNAL_AGENT Local reviewer/dispatcher; phase=SOURCE_BLOCKED_INTEGRATED_ROOT_REPAIR; decision owner=LOCAL; parked checkpoint=source acceptance until repaired proof and distinct Local probe, all real endpoint/provider/data/production/public/deploy effects.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r2_w05_offline_source_manual_handoff_ready`
-Current mode: `cvf_ncr_r2_w05_offline_source_manual_handoff_ready`
+Current mode marker: `cvf_ncr_r2_w05_binding_repair_manual_handoff_ready`
+Current mode: `cvf_ncr_r2_w05_binding_repair_manual_handoff_ready`
 
-Integrated offline source packet prepared for operator manual transfer after actual bound release; Root has not invoked worker or created/run product tests.
+Original source remains BLOCKED after independent Local probe; one integrated exact9 repair packet prepared for operator manual transfer after actual release. Local decisions are recorded; no source acceptance or real effect.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r2_w05_offline_source_manual_handoff_ready`
+Mode: `cvf_ncr_r2_w05_binding_repair_manual_handoff_ready`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_OFFLINE_SOURCE_VIA_OPERATOR_MANUAL_TRANSFER; BATCH_ID=CVF-NCR-R2-W05-OFFLINE-SOURCE-20261019. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OFFLINE_SOURCE_2026-10-19.md including proposed focused offline verification scope after actual clean boundrelease PASS; Root does not invoke worker or create/run producttests. One INTERNAL_AGENT180min/exact13:contract/store/injectedproof/profile/branch/actualPOST/hook plus returnEP; Vitest<=4,tsc<=2,targetedESLint<=2,requiredGate<=3; no install/app/browser/network/provider/active-data/runtime/public/deploy. Seven-field body/two selectors, ownergetJob/requesthash beforeBuild;getVersion onlyafterSave; separateINJECTED_SYNTHETIC_RECEIPT notJOB_EFFECTS. Fixedkey excludesjobId; immutabletarget/config,0sendexactreuse or409referenceonly/no oldreceipt-newHTML; declared-unattestedfixtureidentity; reconcileBpresence cannot releaseUNKNOWN. Disabled/invalid/profilemissing selectorsdeny/no fallback.256monotonicreservations-owner/16KiBrecords/noexpiry/noGC;R1/REVIEW. Local independentprobe pending afterworker. New implementationINITIAL0/docplan/INTEGRATED_ROOT_CONTRACT distinctfrom closed AuditS1/current0/counters0,0,0,1/docNO_SUCCESSOR; all prior source/Goal/Clarity/runtimecounters frozen. R1prelive/R2partial,R3R4open,R5R6deferred; M14-M16deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 unchanged. Endpoint/auth/store/attestation/cost/businessacceptance remains held for dependent real effects.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BINDING_REPAIR_VIA_OPERATOR_MANUAL_TRANSFER; BATCH_ID=CVF-NCR-R2-W05-BINDING-REPAIR-20261019. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BINDING_REPAIR_2026-10-19.md including exact9 offline source/verification after actual clean boundrelease PASS; Root does not invoke worker or repeat current product checks. Originalworker13BLOCKED preserved,115newpass/panel66pass4fail/tsc0; Local one ESLint150.812s exit1/0errors/1oldhookwarning/source11unchanged, originalmaxwarnings0notPASS; panel4baseline scopedexception; oldscratchretention16384files/64MiB/historynotcured. Local independent8checks4FAIL exposesrequestTOCTOU/genuinegrantpayloadswap/durableINTENTnewstart/missingmodetolegacy. One integrated repair:opaqueadmission/consumedoutcome authorities, immutable exactrequest/grant join, absentposturedeny and explicitnonproductionLEGACY_COMPATIBILITY_ONLY/nojobselectors. Exact7modifications+returnEP;180min,Vitest<=2,tsc<=2,changed7lint<=2,fullgate<=3;newworkerruntime16384files/64MiB,childstarts<=24. No old budget refill. LocalS2current1/counters0,1,0,0;dispatchS3current1/counters0,1,0,1/ROOT_CONTRACT_REQUIRED/INTEGRATED_ROOT_CONTRACT, workerS4actualWOhash; source defect regression proof distinctfrompendingLocalindependentacceptance. Sameimplementationchain,noINITIALreset. R1prelive/R2partial,R3R4open,R5R6deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 frozen. Network/provider/app/browser/active-data/production/public/deployOFF.
 
 ## Parked Checkpoints
 
