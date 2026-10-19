@@ -2,6 +2,8 @@
 import path from 'node:path';
 import { OPERATION_EFFECT, SYNTHETIC_SOURCE_PREFIX, makeOperationConfig,
   type ControlledInvoker, type OperationConfig, type PresenceLookup } from '../artifacts-receipt-operation-contract';
+import { BOUND_EFFECT } from '../artifacts-bound-receipt-contract';
+import type { BoundReceiptFixtureProfile } from './bound-receipt-profile';
 import type { SyntheticDraftProfile } from './html-draft-snapshot-store';
 
 export const RECEIPT_OPERATION_SELECTOR = 'CVF_NCR_RECEIPT_OPERATION_PROFILE';
@@ -57,12 +59,14 @@ export type ReceiptOperationPosture =
   | { posture: 'LOCAL_SYNTHETIC' }
   | { posture: 'LEGACY_COMPATIBILITY_ONLY' }
   | { posture: 'DENY'; reason: string }
-  | { posture: 'CONTROLLED'; profile: ReceiptOperationFixtureProfile };
+  | { posture: 'CONTROLLED'; profile: ReceiptOperationFixtureProfile }
+  | { posture: 'BOUND_CONTROLLED'; profile: BoundReceiptFixtureProfile };
 
 /**
  * Runtime resolver. Recognized before any legacy resolution. A declared value is never ignored: disabled, invalid, held-activation and
  * production-denied values deny. Absence is UNDECLARED, which routes only to a valid local-only profile and otherwise denies; it is never legacy.
- * The CONTROLLED posture is never returned here; tests inject it by mocking this function.
+ * The CONTROLLED and BOUND_CONTROLLED postures are never returned here; tests inject them by mocking this function. Declaring either effect name
+ * through the environment is an unsupported held activation, never a profile.
  */
 export function resolveReceiptOperation(env: Record<string, string | undefined> = process.env): ReceiptOperationPosture {
   const declared = env[RECEIPT_OPERATION_SELECTOR];
@@ -71,7 +75,7 @@ export function resolveReceiptOperation(env: Record<string, string | undefined> 
   if (declared === 'LOCAL_SYNTHETIC') return { posture: 'LOCAL_SYNTHETIC' };
   if (declared === LEGACY_COMPATIBILITY_VALUE) return { posture: 'LEGACY_COMPATIBILITY_ONLY' };
   if (declared === 'DISABLED') return { posture: 'DENY', reason: 'DISABLED' };
-  if (declared === OPERATION_EFFECT) return { posture: 'DENY', reason: 'ACTIVATION_HELD_UNSUPPORTED' };
+  if (declared === OPERATION_EFFECT || declared === BOUND_EFFECT) return { posture: 'DENY', reason: 'ACTIVATION_HELD_UNSUPPORTED' };
   return { posture: 'DENY', reason: 'INVALID_SELECTOR' };
 }
 
@@ -80,6 +84,7 @@ export type ReceiptOperationRoute =
   | { route: 'LEGACY' }
   | { route: 'LOCAL_ONLY' }
   | { route: 'CONTROLLED'; profile: ReceiptOperationFixtureProfile }
+  | { route: 'BOUND'; profile: BoundReceiptFixtureProfile }
   | { route: 'DENY'; reason: string; status: 400 | 403 };
 const deny = (reason: string, status: 400 | 403): ReceiptOperationRoute => ({ route: 'DENY', reason, status });
 
@@ -93,6 +98,7 @@ export function decideReceiptOperationRoute(input: { posture: ReceiptOperationPo
   if (posture.posture === 'DENY') return deny(posture.reason, 403);
   if (selectors === 'INVALID') return deny('SELECTOR_INVALID', 400);
   if (posture.posture === 'CONTROLLED') return selectors === 'VALID' ? { route: 'CONTROLLED', profile: posture.profile } : deny('SELECTOR_REQUIRED', 400);
+  if (posture.posture === 'BOUND_CONTROLLED') return selectors === 'VALID' ? { route: 'BOUND', profile: posture.profile } : deny('SELECTOR_REQUIRED', 400);
   if (posture.posture === 'LOCAL_SYNTHETIC') return localProfilePresent ? { route: 'LOCAL_ONLY' } : deny('LOCAL_PROFILE_UNAVAILABLE', 403);
   if (posture.posture === 'LEGACY_COMPATIBILITY_ONLY') {
     if (selectors !== 'NONE') return deny('LEGACY_SELECTORS_CONFLICT', 403);

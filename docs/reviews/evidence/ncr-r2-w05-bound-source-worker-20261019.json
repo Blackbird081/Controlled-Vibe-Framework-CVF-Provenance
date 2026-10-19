@@ -1,0 +1,1815 @@
+{
+ "schemaVersion": "cvf.ncrW05BoundSourceWorker.v1",
+ "batchId": "CVF-NCR-R2-W05-BOUND-SOURCE-20261019",
+ "workOrder": {
+  "path": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BOUND_SOURCE_2026-10-19.md",
+  "sha256": "1658341bd5b719badde16a04123cee77de673beb35284cde0122e2714fc29579"
+ },
+ "baseline": {
+  "path": "docs/baselines/CVF_GC018_NCR_R2_W05_BOUND_SOURCE_2026-10-19.md",
+  "sha256": "8ececd634c7eb8649ed8398492623634ccd4bf2d6a9079d18cd5631115ff4170"
+ },
+ "executionBaseHead": "2b4b3bc2ac922ba14b3c6e47999377c503801e66",
+ "executionBaseStatus": "clean worktree, empty stage; HEAD unchanged at return",
+ "status": "COMPLETE_PENDING_REVIEW",
+ "decisionOwner": "LOCAL",
+ "localIndependentProbe": "PENDING_REVIEWER_EXECUTION",
+ "workerSelfProbes": "the new test files are worker-authored and share an author with the source; they are not the independent Local probe",
+ "sources": [
+  {
+   "id": "C1",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "37e3df2f7c24501e2b98dd48c11334eb954d7b2c7a5d3c9c6b349047cffe615f",
+   "finalLines": 412,
+   "maxLines": 550,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-CONTRACT"
+   ]
+  },
+  {
+   "id": "C2",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "3b9286ce158a608c72b32f19f52eecf433f8fa105664ca26431120b9ad360764",
+   "finalLines": 271,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-CONTRACT"
+   ]
+  },
+  {
+   "id": "C3",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "280f02190e47fb7274eaefaf49c158acf69805d85c7d3089a9e43c7d41a41a80",
+   "finalLines": 114,
+   "maxLines": 450,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-STORE"
+   ]
+  },
+  {
+   "id": "C4",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "3e21b1e2e3205fdf7db19d890a507c6f87ca6ffd716242d3e02b8f2ea18e872c",
+   "finalLines": 105,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-STORE"
+   ]
+  },
+  {
+   "id": "C5",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/fixtures/artifact-bound-receipt-v1.json",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "f0744ee16c03235483260ed02a5e6fc4ded19645ab58168496cd29ced2443d24",
+   "finalLines": 41,
+   "maxLines": 350,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-CONTRACT"
+   ]
+  },
+  {
+   "id": "S1",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+   "action": "MODIFY",
+   "lineEnding": "LF",
+   "finalSha256": "82b179b91e5d5447537d8ddc6b98ce2789ef51911a473fd352895cf19889c6ea",
+   "finalLines": 531,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageNote": "raw working-tree preimage pinned in the baseline Source Preimage And Dependency Pins table",
+   "preimageSha256": "828afbd9d7b8f4d75156e8b7414349fbc6492afb54e4b35563547851d5d44f88",
+   "preimageLines": 472,
+   "requirements": [
+    "REQ-STORE"
+   ]
+  },
+  {
+   "id": "S2",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "f83e3e90acee759cc3441df4509358e01b8299c5d704ebbbba41d089da00bcef",
+   "finalLines": 226,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-STORE"
+   ]
+  },
+  {
+   "id": "S3",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "7936d8b62014d50e5bc1db8831be163353dd32aacf5e10779269132d9ce34cbe",
+   "finalLines": 74,
+   "maxLines": 350,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-WEB"
+   ]
+  },
+  {
+   "id": "S4",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "062f2dde2bd813f79a37b474a73d93e2c2ea4e6b80804be7b429327ef9f454ed",
+   "finalLines": 105,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-WEB"
+   ]
+  },
+  {
+   "id": "S5",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "dd2cd496860388880548c1ec1584c6d8527a293e118f4a7323d7bc83cc3829f6",
+   "finalLines": 224,
+   "maxLines": 450,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-WEB"
+   ]
+  },
+  {
+   "id": "S6",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "13cc205e7705d945dec2d8a24656a6eb5b2e8844d479303880c48a0b6b96a5b8",
+   "finalLines": 302,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-WEB"
+   ]
+  },
+  {
+   "id": "S7",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-api.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "7b2433d4a6c0b4a0a5315a81ba37a816c011286c388d31f71ccf4f0893b6994b",
+   "finalLines": 93,
+   "maxLines": 450,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-WEB"
+   ]
+  },
+  {
+   "id": "S8",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "8c14c1b60bb833f102d38dd99741a43eedb880c5ec108d27103e85638432a307",
+   "finalLines": 10,
+   "maxLines": 120,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-WEB"
+   ]
+  },
+  {
+   "id": "S9",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "efbb48f54d4a723c4e13bab298e37a8b21932d2606f6b089fcb5080c276eda75",
+   "finalLines": 195,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-WEB"
+   ]
+  },
+  {
+   "id": "S10",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts",
+   "action": "MODIFY",
+   "lineEnding": "LF",
+   "finalSha256": "27ab9b408f0e1b4c73365147b457dd2b839093332f956b858eebe5d42948de4b",
+   "finalLines": 110,
+   "maxLines": 350,
+   "withinCap": true,
+   "preimageNote": "raw working-tree preimage pinned in the baseline Source Preimage And Dependency Pins table",
+   "preimageSha256": "bdddaeadb77dd7e9e1560243cbe3c87bc2ea920e65ab597753df28aba85fca58",
+   "preimageLines": 104,
+   "requirements": [
+    "REQ-WEB"
+   ]
+  },
+  {
+   "id": "P1",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+   "action": "MODIFY",
+   "lineEnding": "LF",
+   "finalSha256": "6fc3be618bf70af5f77526ec2d26b79ef317447cca1804f510ee46aeeab267bd",
+   "finalLines": 455,
+   "maxLines": 600,
+   "withinCap": true,
+   "preimageNote": "raw working-tree preimage pinned in the baseline Source Preimage And Dependency Pins table",
+   "preimageSha256": "34d98083c66accd4cb6b29d507a45ac719c9a5f411da9372b0ac5002ba99fd5a",
+   "preimageLines": 345,
+   "requirements": [
+    "REQ-STORE"
+   ]
+  },
+  {
+   "id": "P2",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "a307463427e487343e693194fa129c9c8057dfaebd88aee8f2e2f47985ff71e5",
+   "finalLines": 232,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-STORE"
+   ]
+  },
+  {
+   "id": "P3",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts",
+   "action": "MODIFY",
+   "lineEnding": "LF",
+   "finalSha256": "d3fb61577fca5566b34a98503293c1c7ef20af8f6339b678b24685090f2c8577",
+   "finalLines": 156,
+   "maxLines": 350,
+   "withinCap": true,
+   "preimageNote": "raw working-tree preimage pinned in the baseline Source Preimage And Dependency Pins table",
+   "preimageSha256": "8478e8673a2c95ebea0b7b6155fab33101d703d62c0d5737824b8fb3b6692bb7",
+   "preimageLines": 97,
+   "requirements": [
+    "REQ-CONSUMER"
+   ]
+  },
+  {
+   "id": "P4",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+   "action": "MODIFY",
+   "lineEnding": "CRLF",
+   "finalSha256": "24ebcbff9180b341e4a077e2422549e60242b87b3e6aa6d54b479311e85425b2",
+   "finalLines": 426,
+   "maxLines": 550,
+   "withinCap": true,
+   "preimageNote": "raw working-tree preimage pinned in the baseline Source Preimage And Dependency Pins table",
+   "preimageSha256": "e9266d4ecd7f3c46dcda7a53eca4a576838af18bf9fc7663a5e8196c1e944fbb",
+   "preimageLines": 419,
+   "requirements": [
+    "REQ-CONSUMER"
+   ]
+  },
+  {
+   "id": "P5",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "b9e2cb5f0a482311b453cdc970e2c472132ac4cbb752d36d61d40de64be7a8a8",
+   "finalLines": 285,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-CONSUMER"
+   ]
+  },
+  {
+   "id": "J1",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+   "action": "MODIFY",
+   "lineEnding": "LF",
+   "finalSha256": "f72a27e30b83f38a2b15c54bc04094104b3017d94145182258fb64c8a9fb7f86",
+   "finalLines": 117,
+   "maxLines": 250,
+   "withinCap": true,
+   "preimageNote": "raw working-tree preimage pinned in the baseline Source Preimage And Dependency Pins table",
+   "preimageSha256": "bfb68c9d15afe0083d5c4d28e4ffdaf1835ae9bcb9ac11b4d77d5b2312cae9a2",
+   "preimageLines": 111,
+   "requirements": [
+    "REQ-CONSUMER"
+   ]
+  },
+  {
+   "id": "J2",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "77d7dbdbce9a48d18c1505101411c48b5d081f030fbad6a7e51f567c03d6b3d0",
+   "finalLines": 99,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-CONSUMER"
+   ]
+  },
+  {
+   "id": "U1",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+   "action": "MODIFY",
+   "lineEnding": "LF",
+   "finalSha256": "aa27a83534879cb20037c9e584b264b2f3fecc76f019195456756f5c9d2ccd4a",
+   "finalLines": 303,
+   "maxLines": 450,
+   "withinCap": true,
+   "preimageNote": "raw working-tree preimage pinned in the baseline Source Preimage And Dependency Pins table",
+   "preimageSha256": "36a03380619cc5bbca540cabfbe2b7a96b9ff4f656265a2f3ea8390c1cb30b45",
+   "preimageLines": 301,
+   "requirements": [
+    "REQ-CONSUMER"
+   ]
+  },
+  {
+   "id": "U2",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.tsx",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "aff21e2e72b7cc699c3f9169d9958ba0fce829b6a51f1af7bb346e4bceb3d044",
+   "finalLines": 92,
+   "maxLines": 220,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-CONSUMER"
+   ]
+  },
+  {
+   "id": "U3",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "9c2eb63259312a762b6188cd9232fce1988ffe8adca17b765c9c1f5e0aa86048",
+   "finalLines": 93,
+   "maxLines": 450,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-CONSUMER"
+   ]
+  },
+  {
+   "id": "U4",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "7aa9b0eb116d3d4b3072976a7d606eb266098511d7acce62766849f4bba34ac5",
+   "finalLines": 123,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-CONSUMER"
+   ]
+  },
+  {
+   "id": "E1",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipt_contract.py",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "4880e9d6d9bced1e25286081e992f0502f5ed9b612c4bfea72e6345a2c89515d",
+   "finalLines": 318,
+   "maxLines": 500,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-ENGINE"
+   ]
+  },
+  {
+   "id": "E2",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipts.py",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "272b16e8fbb5ffb521c53205f4934ac451a00c2daa02414f8590a7557cb11a93",
+   "finalLines": 232,
+   "maxLines": 500,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-ENGINE"
+   ]
+  },
+  {
+   "id": "E3",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/artifact_receipt_binding.py",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "e9a45fc013d2f75bdb41423466e627dcafbb9a07335c8e1140e822b75f6d5c22",
+   "finalLines": 214,
+   "maxLines": 400,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-ENGINE",
+    "REQ-TRANSACTION"
+   ]
+  },
+  {
+   "id": "E4",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py",
+   "action": "MODIFY",
+   "lineEnding": "MIXED crlf=280 lf=19",
+   "finalSha256": "dd4ac83ceba4a227321fd30cc214d647e9cb585d9644895f71d482b219a24be5",
+   "finalLines": 299,
+   "maxLines": 400,
+   "withinCap": true,
+   "preimageNote": "raw working-tree preimage pinned in the baseline Source Preimage And Dependency Pins table",
+   "preimageSha256": "b557d28703c22353c74de170e5eb9151e73fa216a44fb3af39935b92da055bd6",
+   "preimageLines": 295,
+   "requirements": [
+    "REQ-ENGINE"
+   ]
+  },
+  {
+   "id": "E5",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "c375369483da3e19527241b4fb716ee7c4ad28c0eaff695333474fdb6a94c76a",
+   "finalLines": 201,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-ENGINE"
+   ]
+  },
+  {
+   "id": "E6",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "710a3c84d3c66dbdddaab0e5d0e12ae2a7b93327dfcbfd14b2999c3da11236fe",
+   "finalLines": 363,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-ENGINE"
+   ]
+  },
+  {
+   "id": "E7",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "3999e4a7258089101f93f2f702dd03bba8131a758612d921cf62da6a22e18d8b",
+   "finalLines": 359,
+   "maxLines": 650,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-TRANSACTION"
+   ]
+  },
+  {
+   "id": "E8",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/artifact_receipt_peer.py",
+   "action": "ADD",
+   "lineEnding": "LF",
+   "finalSha256": "f6805a89a029751c73846dea8718d6094c77f8cd581a47dd8bb7e6b29da5d92c",
+   "finalLines": 185,
+   "maxLines": 250,
+   "withinCap": true,
+   "preimageSha256": "ABSENT_NEW_FILE",
+   "requirements": [
+    "REQ-TRANSACTION"
+   ]
+  }
+ ],
+ "readOnlyPins": [
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.ts",
+   "sha256": "7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.test.ts",
+   "sha256": "1ba44d1f5e68bc0d72aa6668d6680c3918d5c50dc2369c66013031288bd82713",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+   "sha256": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts",
+   "sha256": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts",
+   "sha256": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts",
+   "sha256": "c5399e838b6c195423912f7ae33da4f352f94c66958c8aeccb29fe3bdeaf4d88",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+   "sha256": "d4f2c2d8ec50de9aeb31e2c850ba311f7facbabf02bec9a667d12daf10caaa8c",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+   "sha256": "00cb76dc36ae8efacaafffe3c1ec5086b1707baa8412afd4760ec1c9eb70fcfd",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+   "sha256": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+   "sha256": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json",
+   "sha256": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+   "sha256": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/eslint.config.mjs",
+   "sha256": "d0ccd1757c31535cdd7762fcfbfa1677a97fef2543b61e2e09322ade86797ffb",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py",
+   "sha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py",
+   "sha256": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/requirements.txt",
+   "sha256": "7adfeccb5eef259406a1a64993b4b205f1f3c2d153bb3c1d21d27993edaaa0f5",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/__init__.py",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "docs/baselines/CVF_NCR_R2_W05_ACTIVATION_DESIGN_2026-10-19.md",
+   "sha256": "b38bd2345432e5c0ebacb85e652c9af45ae6854314b797eb4dc5369be8bf40de",
+   "unchangedFromHead": true
+  },
+  {
+   "path": "docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md",
+   "sha256": "a48dec3bc0ff8f30c45bb17c41a2267fc9bbc1ce38e3a2ca959d466a9f47d8b8",
+   "unchangedFromHead": true
+  }
+ ],
+ "REQ-CONTRACT": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json#REQ-CONTRACT",
+  "status": "PASS",
+  "declaredTestTitlesInFinalFiles": 20,
+  "cases": [
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "$id has exact canonical text, hex, digest and a strict round trip",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "keeps the JS slice(0,500) UTF-16 boundary, including a lone surrogate",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "refuses malformed input $id before any effect",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "reports the specific refusal class and enforces the byte cap",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "refuses non-canonical values and sorts keys by ordinal ASCII",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "derives the vector config digest and rejects every drifted field",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "derives the vector operation key from fixed-order identity and excludes job, version, config and HTML",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "builds, round-trips and strictly rejects the bound envelope",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "binds the receipt to envelope, config, instance, store, owner and payload",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "shapes the nonsecret disclosure without secrets or private paths",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "round-trips each record in canonical ASCII bytes within the cap",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "distinguishes corrupt, unsupported and non-canonical record bytes",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "accepts only the exact outcome and receipt combinations",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "parses the shared vector bodies and their digests",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "refuses every join, shape and excerpt mutation",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "parses exact challenge and evaluate results only",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "$id signs the exact shared preimage",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "compares only well-formed lowercase hex signatures",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "reads each auth header exactly once as a bounded ASCII scalar",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "title": "accepts timestamps only inside [now-30000, now+1000]",
+    "expected": "PASS",
+    "observed": "PASS"
+   }
+  ],
+  "finalSourceJoin": {
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.ts": "37e3df2f7c24501e2b98dd48c11334eb954d7b2c7a5d3c9c6b349047cffe615f",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts": "3b9286ce158a608c72b32f19f52eecf433f8fa105664ca26431120b9ad360764",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/fixtures/artifact-bound-receipt-v1.json": "f0744ee16c03235483260ed02a5e6fc4ded19645ab58168496cd29ced2443d24"
+  }
+ },
+ "REQ-STORE": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json#REQ-STORE",
+  "status": "PASS",
+  "declaredTestTitlesInFinalFiles": 26,
+  "cases": [
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts",
+    "title": "selects a codec only from the exact schema and effect pair",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts",
+    "title": "parses each envelope with its own parser and denies a cross-schema or mixed envelope",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts",
+    "title": "keeps the two keys, namespaces and digests apart for the same identity",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts",
+    "title": "chooses the request digest from the validated schema, never one serializer for both",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts",
+    "title": "round-trips intent, start and outcome per codec and refuses the other codec parsers",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts",
+    "title": "joins a persisted receipt to the attempt, the declared risk and an accepted decision for either schema",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+    "title": "admits, starts, consumes and writes one immutable canonical-ASCII outcome",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+    "title": "enables each schema only by its own flag and keeps both namespaces separate",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+    "title": "never lets a v1 authority act on a bound operation or the reverse, and a mismatch spends nothing",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+    "title": "denies a fabricated, copied, spent, restarted or foreign-store authority",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+    "title": "writes a receipt only when it joins the attempt, declared risk and an accepted decision, and never retries through the handle",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+    "title": "consumes the operation when the intent write is torn: no second admission and no replay",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+    "title": "reports corrupt, unsupported and foreign-schema records instead of repairing or ignoring them",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+    "title": "keeps 256 monotonic reservations per owner and denies the 257th without recycling",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "title": "records a verified receipt with the engine risk kept separate from the requested R1, then reuses it with zero sends",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "title": "maps a verified DENY to DENIED and never reuses it",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "title": "verifies a %s decision as a receipt with explicit separate engine risk",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "title": "records OUTCOME_UNKNOWN for %s and never sends again",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "title": "turns a timeout into one UNKNOWN record and drops a late response",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "title": "fences an already-aborted caller: one FAILED_BEFORE_SEND record, zero invoker entries, no retry",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "title": "reports an unconfirmed outcome write as UNKNOWN not persisted and leaves the operation started",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "title": "snapshots request, envelope and owner before the first await",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "title": "denies hostile input with zero invoker entries and no durable write",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "title": "never lets a v1, copied, spent, fabricated or foreign grant invoke a bound operation",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "title": "gives a changed job, version, config or HTML a reference-only answer, never the prior receipt with new HTML",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "title": "rebuilds the receipt from the verified result and rejects any join drift",
+    "expected": "PASS",
+    "observed": "PASS"
+   }
+  ],
+  "finalSourceJoin": {
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.ts": "280f02190e47fb7274eaefaf49c158acf69805d85c7d3089a9e43c7d41a41a80",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts": "3e21b1e2e3205fdf7db19d890a507c6f87ca6ffd716242d3e02b8f2ea18e872c",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts": "82b179b91e5d5447537d8ddc6b98ce2789ef51911a473fd352895cf19889c6ea",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts": "f83e3e90acee759cc3441df4509358e01b8299c5d704ebbbba41d089da00bcef",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts": "6fc3be618bf70af5f77526ec2d26b79ef317447cca1804f510ee46aeeab267bd",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts": "a307463427e487343e693194fa129c9c8057dfaebd88aee8f2e2f47985ff71e5"
+  }
+ },
+ "REQ-WEB": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json#REQ-WEB",
+  "status": "PASS",
+  "declaredTestTitlesInFinalFiles": 28,
+  "cases": [
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts",
+    "title": "issues a frozen non-production fixture profile whose config and store are server-owned",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts",
+    "title": "refuses every invalid root, sender, config or key bundle and constructs nothing",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts",
+    "title": "clones key bytes at capture, keeps them private and never exports secrets or private paths",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts",
+    "title": "creates one distinct invoker per operation envelope",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts",
+    "title": "never resolves a bound posture from the environment: absent, declared and production values all deny or stay undeclared",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts",
+    "title": "routes the injected bound posture only with a valid selector and never falls back to legacy",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "verifies a signed message exactly once and rejects a replay",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "refuses a tampered body, path, hop, kind, config, key, stale or future timestamp and missing or duplicate headers",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "bounds replay memory at 1024 entries and denies when full",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "creates a keyring only from a matching two-hop bundle",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "accepts one in-limit 200 response and refuses redirect, status, empty, oversize and sender failure",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "never calls the sender after an abort or an expired deadline, and a hung sender hits the single deadline",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "performs exactly one signed challenge and one signed evaluate and returns the joined result",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "%s is refused at the proxy with no further send",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "refuses a request that no longer joins its envelope before any send",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "does not call the sender when the abort signal is already set",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "%s becomes a transport failure with no replay or second evaluate",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "rejects a replayed response, a response signed for another hop and a stale challenge",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "a validly signed but wrongly joined %s response is refused by the invoker itself",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "turns a hung sender into the single TIMED_OUT outcome without a second evaluate",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "title": "rejects every drifted challenge and evaluate result field",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts",
+    "title": "exports only POST and denies every request without an injected context, whatever the environment says",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts",
+    "title": "serves a valid challenge with one engine send and a response signed for the export hop only",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts",
+    "title": "serves a valid evaluate with one engine send and forwards no browser credential",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts",
+    "title": "refuses %s before any engine send",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts",
+    "title": "refuses a body-less request without a send and refuses a replayed signed request",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts",
+    "title": "%s",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts",
+    "title": "rejects a replayed engine reply",
+    "expected": "PASS",
+    "observed": "PASS"
+   }
+  ],
+  "finalSourceJoin": {
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.ts": "7936d8b62014d50e5bc1db8831be163353dd32aacf5e10779269132d9ce34cbe",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts": "062f2dde2bd813f79a37b474a73d93e2c2ea4e6b80804be7b429327ef9f454ed",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.ts": "dd2cd496860388880548c1ec1584c6d8527a293e118f4a7323d7bc83cc3829f6",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts": "13cc205e7705d945dec2d8a24656a6eb5b2e8844d479303880c48a0b6b96a5b8",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-api.ts": "7b2433d4a6c0b4a0a5315a81ba37a816c011286c388d31f71ccf4f0893b6994b",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.ts": "8c14c1b60bb833f102d38dd99741a43eedb880c5ec108d27103e85638432a307",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts": "efbb48f54d4a723c4e13bab298e37a8b21932d2606f6b089fcb5080c276eda75",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts": "27ab9b408f0e1b4c73365147b457dd2b839093332f956b858eebe5d42948de4b"
+  }
+ },
+ "REQ-CONSUMER": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json#REQ-CONSUMER",
+  "status": "PASS",
+  "declaredTestTitlesInFinalFiles": 29,
+  "cases": [
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+    "title": "commits one block and returns a joined receipt whose engine risk is not overwritten by the requested R1; a repeat reuses it with zero sends",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+    "title": "gives a second job with the same identity a reference-only answer: no HTML, no receipt and no second effect",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+    "title": "records OUTCOME_UNKNOWN when the response is lost after the engine committed, and never sends again",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+    "title": "refuses %s at the engine with no ledger effect",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+    "title": "refuses a replayed proxy->engine message at the real engine without a second effect",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+    "title": "denies before any traffic for an absent posture, a bad origin, a missing session and an unknown body field",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+    "title": "ignores browser-supplied permits, config, URLs and destination headers",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+    "title": "keeps a wrong-owner job unreachable: 404 before any traffic",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts",
+    "title": "keeps the local synthetic capability exactly as before when nothing is injected",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts",
+    "title": "emits a nonsecret bound disclosure only for the injected, exactly labelled case",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts",
+    "title": "falls back to the local label when the injected object is not the exact bound disclosure",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts",
+    "title": "never reads a disclosure from a query, a header or a body",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts",
+    "title": "snapshots the injected disclosure at construction so later mutation cannot change what is disclosed",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts",
+    "title": "adds no capability without the job profile, without a session and without the exact query",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts",
+    "title": "leaves the existing job operations and their strict validation untouched when a disclosure is injected",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx",
+    "title": "accepts exactly the nonsecret shape and returns a rebuilt copy",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx",
+    "title": "refuses every extra, missing, altered or unsafe field",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx",
+    "title": "keeps the existing behaviours for absent, local and unrecognised boundaries",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx",
+    "title": "selects the bound case only with a valid disclosure and otherwise disables the controls",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx",
+    "title": "names destination, data sent, access, retention, attempts, cost, Stop, unknown handling and the risk distinction in English",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx",
+    "title": "shows the same fields in Vietnamese and never leaks the configuration digest or a secret",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx",
+    "title": "treats an unrecognised language as English",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx",
+    "title": "renders the exact disclosure before the Build control and keeps the generic panel label",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx",
+    "title": "shows the Vietnamese disclosure when the interface language is Vietnamese",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx",
+    "title": "keeps the local synthetic label and no bound disclosure for the local capability",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx",
+    "title": "gives a missing boundary neither the local label nor a disclosure",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx",
+    "title": "disables the job controls for a %s capability and never labels it local synthetic",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx",
+    "title": "shows nothing from a capability that resolves late for a different owner scope",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx",
+    "title": "does not change the job write path: only job calls, an unchanged body, and the disclosure grants nothing",
+    "expected": "PASS",
+    "observed": "PASS"
+   }
+  ],
+  "finalSourceJoin": {
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts": "d3fb61577fca5566b34a98503293c1c7ef20af8f6339b678b24685090f2c8577",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "24ebcbff9180b341e4a077e2422549e60242b87b3e6aa6d54b479311e85425b2",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts": "b9e2cb5f0a482311b453cdc970e2c472132ac4cbb752d36d61d40de64be7a8a8",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts": "f72a27e30b83f38a2b15c54bc04094104b3017d94145182258fb64c8a9fb7f86",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts": "77d7dbdbce9a48d18c1505101411c48b5d081f030fbad6a7e51f567c03d6b3d0",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx": "aa27a83534879cb20037c9e584b264b2f3fecc76f019195456756f5c9d2ccd4a",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.tsx": "aff21e2e72b7cc699c3f9169d9958ba0fce829b6a51f1af7bb346e4bceb3d044",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx": "9c2eb63259312a762b6188cd9232fce1988ffe8adca17b765c9c1f5e0aa86048",
+   "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx": "7aa9b0eb116d3d4b3072976a7d606eb266098511d7acce62766849f4bba34ac5"
+  }
+ },
+ "REQ-ENGINE": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json#REQ-ENGINE",
+  "status": "PASS",
+  "declaredTestTitlesInFinalFiles": 23,
+  "cases": [
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+    "title": "test_canonical_vectors_match_exact_text_hex_digest_and_strict_round_trip",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+    "title": "test_excerpt_boundary_counts_utf16_units_including_a_lone_surrogate",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+    "title": "test_malformed_input_is_refused_before_any_effect",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+    "title": "test_refusal_classes_and_byte_cap_are_specific",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+    "title": "test_non_canonical_values_and_keys_are_refused_and_sorting_is_ordinal",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+    "title": "test_config_vector_digest_and_drift_refusals",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+    "title": "test_operation_key_serialization_and_wire_bodies_match_the_shared_vectors",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+    "title": "test_wire_mutations_are_refused",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+    "title": "test_hmac_vectors_sign_the_exact_shared_preimage_and_cannot_cross_hops",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+    "title": "test_auth_headers_must_be_present_once_and_well_formed",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+    "title": "test_verification_order_replay_memory_and_capacity",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "title": "test_every_request_is_denied_without_an_injected_context",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "title": "test_context_is_built_only_from_a_measured_ledger_with_a_matching_config_and_key",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "title": "test_challenge_issues_a_signed_measured_challenge_without_touching_the_ledger",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "title": "test_evaluate_commits_one_block_whose_metadata_joins_the_signed_result",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "title": "test_an_owner_change_changes_the_server_derived_actor",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "title": "test_refusals_run_nothing_and_commit_nothing",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "title": "test_a_challenge_is_single_use_expiring_and_bounded",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "title": "test_an_expired_challenge_is_refused_and_still_consumed",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "title": "test_a_replayed_signed_request_is_refused_with_no_second_effect",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "title": "test_a_closed_or_changed_binding_denies_and_a_commit_without_a_response_is_visible_as_unknown",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "title": "test_asgi_router_serves_both_endpoints_and_refuses_wrong_methods_and_oversize_declarations",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "title": "test_default_server_denies_both_routes_and_never_initializes_active_data",
+    "expected": "PASS",
+    "observed": "PASS"
+   }
+  ],
+  "finalSourceJoin": {
+   "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipt_contract.py": "4880e9d6d9bced1e25286081e992f0502f5ed9b612c4bfea72e6345a2c89515d",
+   "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipts.py": "272b16e8fbb5ffb521c53205f4934ac451a00c2daa02414f8590a7557cb11a93",
+   "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/artifact_receipt_binding.py": "e9a45fc013d2f75bdb41423466e627dcafbb9a07335c8e1140e822b75f6d5c22",
+   "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py": "dd4ac83ceba4a227321fd30cc214d647e9cb585d9644895f71d482b219a24be5",
+   "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py": "c375369483da3e19527241b4fb716ee7c4ad28c0eaff695333474fdb6a94c76a",
+   "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py": "710a3c84d3c66dbdddaab0e5d0e12ae2a7b93327dfcbfd14b2999c3da11236fe"
+  }
+ },
+ "REQ-TRANSACTION": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json#REQ-TRANSACTION",
+  "status": "PASS",
+  "declaredTestTitlesInFinalFiles": 10,
+  "cases": [
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+    "title": "test_only_the_factory_constructs_and_the_measurement_is_recomputable",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+    "title": "test_the_factory_refuses_unowned_roots_and_names",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+    "title": "test_one_physical_connection_serves_every_call_and_close_binding_releases_it",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+    "title": "test_append_needs_an_active_context_and_stamps_exact_metadata",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+    "title": "test_a_foreign_thread_or_process_cannot_use_the_binding",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+    "title": "test_a_changed_path_object_or_reparse_state_is_detected_before_any_effect",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+    "title": "test_real_second_process_serializes_on_the_production_mutation_path",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+    "title": "test_failed_append_rolls_back_content_existence_and_observed_security_exactly",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+    "title": "test_a_post_acquire_failure_through_the_handler_leaves_state_unchanged_and_later_work_proceeds",
+    "expected": "PASS",
+    "observed": "PASS"
+   },
+   {
+    "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+    "title": "test_pure_tuple_adversaries_are_never_semantically_equal_to_the_observation",
+    "expected": "PASS",
+    "observed": "PASS"
+   }
+  ],
+  "finalSourceJoin": {
+   "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py": "3999e4a7258089101f93f2f702dd03bba8131a758612d921cf62da6a22e18d8b",
+   "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/artifact_receipt_peer.py": "f6805a89a029751c73846dea8718d6094c77f8cd581a47dd8bb7e6b29da5d92c",
+   "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/artifact_receipt_binding.py": "e9a45fc013d2f75bdb41423466e627dcafbb9a07335c8e1140e822b75f6d5c22"
+  }
+ },
+ "REQ-RETURN": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json#REQ-RETURN",
+  "status": "PASS",
+  "finalGate": "attempts, exit codes, timings, raw output and the before/after SHA256 of the return and of this file are in the detached ignored receipt final-gate-receipt.json under the worker scratch root"
+ },
+ "headlineCases": [
+  {
+   "id": "H01",
+   "requirement": "REQ-CONSUMER",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+   "title": "actual export POST -> Web handler -> Python handler -> bound SQLite: one block, engine risk R0 separate from requested R1, repeat reuses with zero sends",
+   "expected": "invokerCalls 1, challengeSent 1, evaluateSent 1, proxyRequests 2, engineChallengeSends 1, engineEvaluateSends 1, ledger append 1, outcome RECEIPT_VERIFIED persisted; repeat sends 0 and ledger append unchanged",
+   "observed": "PASS"
+  },
+  {
+   "id": "H02",
+   "requirement": "REQ-CONSUMER",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+   "title": "response lost after the engine committed",
+   "expected": "ledger append +1 (effect exists), outcome OUTCOME_UNKNOWN reason STATUS persisted, no governanceReceipt; retry returns 409 ALREADY_PROCESSED with invokerCalls still 1, engineEvaluateSends still 1 and ledger append unchanged",
+   "observed": "PASS"
+  },
+  {
+   "id": "H03",
+   "requirement": "REQ-CONSUMER",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+   "title": "tampered body / wrong engine key / stale proxy clock / different config digest refused by the real engine",
+   "expected": "engine status 401 with SIGNATURE, SIGNATURE, EXPIRED, CONFIG; engineEvaluateSends 0; ledger append unchanged",
+   "observed": "PASS"
+  },
+  {
+   "id": "H04",
+   "requirement": "REQ-CONSUMER",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+   "title": "replayed proxy->engine message",
+   "expected": "second identical message 409 REPLAY at the real engine; one challenge effect; outcome RECEIPT_VERIFIED",
+   "observed": "PASS"
+  },
+  {
+   "id": "H05",
+   "requirement": "REQ-STORE",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+   "title": "cross-schema authority",
+   "expected": "v1 admission/grant/handle never act on a bound operation and the reverse; mismatch spends nothing; fabricated/copy/spent/restart/foreign-store authority denies with 0 effects",
+   "observed": "PASS"
+  },
+  {
+   "id": "H06",
+   "requirement": "REQ-STORE",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+   "title": "unknown matrix",
+   "expected": "nine failure classes each record OUTCOME_UNKNOWN with one invoker entry; the second run sends 0 and the invoker count stays 1",
+   "observed": "PASS"
+  },
+  {
+   "id": "H07",
+   "requirement": "REQ-ENGINE",
+   "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+   "title": "evaluate commits one block whose metadata joins the signed result",
+   "expected": "ledger append 1, orchestrator executions 1, actor derived from owner digest, declaredRisk R1, engineRiskLevel R0",
+   "observed": "PASS"
+  },
+  {
+   "id": "H08",
+   "requirement": "REQ-ENGINE",
+   "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+   "title": "refusals run nothing and commit nothing (22 cases)",
+   "expected": "orchestrator executions 0 and ledger append 0 for each",
+   "observed": "PASS"
+  },
+  {
+   "id": "H09",
+   "requirement": "REQ-TRANSACTION",
+   "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+   "title": "failed append rolls back content, existence and observed security exactly",
+   "expected": "committed chain bytes, request-id set, root listing and the actual owner/protection/inheritance/ACE tuple equal before and after two injected failures; next real peer acquires and commits",
+   "observed": "PASS"
+  },
+  {
+   "id": "H10",
+   "requirement": "REQ-TRANSACTION",
+   "file": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+   "title": "real second process on the production mutation path",
+   "expected": "READY < START_ATTEMPT < ATTEMPTING; PARENT_RELEASE < ENTERED < COMPLETE; early-ENTERED mutant rejected with REJECT_ENTRY_BEFORE_PARENT_RELEASE",
+   "observed": "PASS"
+  },
+  {
+   "id": "H11",
+   "requirement": "REQ-WEB",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+   "title": "invoker through the real Web handler and a fake engine",
+   "expected": "one signed challenge plus one signed evaluate; every drifted join refused with no further send (counters per stage asserted)",
+   "observed": "PASS"
+  },
+  {
+   "id": "H12",
+   "requirement": "REQ-CONTRACT",
+   "file": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+   "title": "shared vectors",
+   "expected": "canonical text, hex, sha256 and HMAC signatures equal the stdlib-derived vector file; the same file is asserted independently in Python (E5)",
+   "observed": "PASS"
+  }
+ ],
+ "toolAttempts": [
+  {
+   "name": "pytest-collect-only",
+   "tool": "pytest --collect-only",
+   "start": "2026-10-19T10:41:59Z",
+   "exit": 0,
+   "result": "77 tests collected",
+   "log": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/pytest-collect.out.log",
+   "logSha256": "e0985c538e3603a4410da3a6437cc8ec94c2a672d6fe91aa73839406cb46dc01"
+  },
+  {
+   "name": "vitest-list",
+   "tool": "vitest list",
+   "exit": 1,
+   "result": "unhandled EnvironmentTeardownError raised by the retained operation.test.ts module-level vi.importActual in list mode; no error attributable to a new file",
+   "log": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/vitest-list.out.log",
+   "logSha256": "947d9b503eb30734e2618155f604534b0255131291121e237b61a292e455d4cb"
+  },
+  {
+   "name": "tsc-1",
+   "tool": "tsc",
+   "exit": 2,
+   "result": "4 type errors, all in new test files; repaired",
+   "seconds": 51.1,
+   "log": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/tsc1.out.log",
+   "logSha256": "7fe4d7929c7df7f893b8c53ef62cc2c58c7460cb8e822778f12a81ceb3186a46"
+  },
+  {
+   "name": "eslint-1",
+   "tool": "eslint changed25",
+   "exit": 1,
+   "result": "2 baseline hook warnings at 134 and 159 plus 4 prefer-const errors in new tests; repaired",
+   "seconds": 133.7,
+   "log": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/eslint1.out.log",
+   "logSha256": "d5710e0b8f9ca51b0d9648fd3b007478d41b5e36a1055e412551914019f56f06"
+  },
+  {
+   "name": "vitest-1",
+   "tool": "vitest run 18 files",
+   "start": "2026-10-19T10:47:58Z",
+   "exit": 1,
+   "result": "6 files failed, 9 tests failed, 348 passed of 357",
+   "seconds": 105.3,
+   "log": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/vitest1.out.log",
+   "logSha256": "009a706fa11151b10da089de67ed323685b41aead8d3a86dcff7fe0d71038e29"
+  },
+  {
+   "name": "pytest-1",
+   "tool": "pytest 3 files",
+   "start": "2026-10-19T10:55:34Z",
+   "exit": 1,
+   "result": "1 failed, 76 passed (PowerShell template brace bug in a new test)",
+   "seconds": 4.9,
+   "log": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/pytest1.out.log",
+   "logSha256": "5b51d817eb81735cb10108a82b57f74b5142a612f09fb2d26b5478c2427589d3"
+  },
+  {
+   "name": "tsc-2",
+   "tool": "tsc",
+   "exit": 0,
+   "result": "no diagnostics, final bytes",
+   "seconds": 91.3,
+   "log": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/tsc2.out.log",
+   "logSha256": "6700c1946b1511799dd3980e86b15e5cb0aef6d298c4728d70c6e72efe1d68d9"
+  },
+  {
+   "name": "eslint-2",
+   "tool": "eslint changed25",
+   "exit": 1,
+   "result": "0 errors, exactly the 2 baseline react-hooks/exhaustive-deps fingerprints at HtmlJobControls.tsx lines 134 and 159, final bytes",
+   "seconds": 70.5,
+   "log": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/eslint2.out.log",
+   "logSha256": "b0da2178a6709131328f48846c2585fc34e1e1c8e6a326148b8042ef9682df02"
+  },
+  {
+   "name": "vitest-2",
+   "tool": "vitest run 18 files",
+   "start": "2026-10-19T11:00:00Z",
+   "exit": 0,
+   "result": "18 of 18 files, 400 of 400 tests, final bytes, CVF_NCR_R1_FIXTURE_ROOT set to an owned scratch directory",
+   "seconds": 44.7,
+   "log": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/vitest2.out.log",
+   "logSha256": "3fa956e5fb01169d7eb95ae369959e51673673002cdb95e8ac128f5f1a3605a7"
+  },
+  {
+   "name": "pytest-2",
+   "tool": "pytest 3 files",
+   "start": "2026-10-19T11:00:55Z",
+   "exit": 0,
+   "result": "77 of 77, final bytes",
+   "seconds": 11.1,
+   "log": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/pytest2.out.log",
+   "logSha256": "5a2e2f9dca1ca31bad16425d2b9331716a82a7b122c4bec56f27edc0bdca9fea"
+  },
+  {
+   "name": "fast-gate-1",
+   "tool": "run_worker_return_fast_gate.py",
+   "start": "2026-10-19T11:08:55Z",
+   "exit": 1,
+   "result": "FAIL: SCEC NON_DECREASING_STREAK_MISMATCH (empty-to-empty counts as non-decreasing, streak 1) and trace Expected manifest without backticked repo paths; both repaired in the return prose only",
+   "seconds": 6.56,
+   "log": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/gate1.out.log",
+   "logSha256": "5478767b433b5bf7c5bf67efc4e50b2db9bc96b1122190cc67caf73f3a3d28be"
+  }
+ ],
+ "toolBudget": {
+  "vitest": {
+   "used": 2,
+   "cap": 2,
+   "perRunSecondsCap": 600
+  },
+  "pytest": {
+   "used": 2,
+   "cap": 2,
+   "perRunSecondsCap": 300
+  },
+  "tsc": {
+   "used": 2,
+   "cap": 2,
+   "perRunSecondsCap": 240
+  },
+  "eslintChanged25": {
+   "used": 2,
+   "cap": 2,
+   "perRunSecondsCap": 300
+  },
+  "collectOnly": {
+   "pytest": 1,
+   "vitestList": 1
+  },
+  "productRuntimeBrowserNetworkProvider": 0,
+  "requiredGate": "attempt 1 failed and is recorded in toolAttempts; later attempts in the detached receipt"
+ },
+ "processEvidence": {
+  "pythonProductChildren": 10,
+  "detail": "per pytest run 4 (3 real barrier peers in test_artifact_receipt_binding.py and 1 server-default child), 2 runs = 8, plus 1 pipe-bridge child per Vitest run, 2 runs = 2; cap 24; maxConcurrent 1 Python child at a time",
+  "powerShellReadOnlyAclStarts": 5,
+  "powerShellDetail": "1 template validation capture outside a test run plus 4 inside the final pytest run (pytest run 1 failed before its first capture); cap 12",
+  "retainedNodeChildren": "the retained store operation test starts 8 race children in a failing run and 10 in a passing run (18 across the two runs), counted toward the total-subprocess cap of 40",
+  "totalProductSubprocesses": 33,
+  "listener": 0,
+  "tcpHttpDnsBrowser": 0
+ },
+ "scratch": {
+  "root": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker",
+  "files": 1480,
+  "bytes": 2894247,
+  "cap": {
+   "files": 32768,
+   "bytes": 134217728
+  },
+  "deletionOrMove": "none",
+  "retentionOwner": "LOCAL"
+ },
+ "adHocDiagnostics": {
+  "note": "not counted against the test, tsc or ESLint budgets; disclosed",
+  "vectorGeneration": "one Python run of a scratch generator that derives the vectors with only stdlib json/hashlib/hmac, and two Node runs of a scratch cross-check (the first failed on shell backslash handling, the second matched 0 mismatches)",
+  "staticReplay": "one scratch regex replay of the retained import-graph and forbidden-token assertions of artifacts-receipt-operation-contract.test.ts against the final sources; no test runner involved",
+  "syntaxParse": "ast.parse of the new Python files before the first pytest run",
+  "aclTemplate": "one read-only Get-Acl capture of a scratch database to validate the PowerShell template",
+  "patchScripts": "many scratch Python patch scripts written with the Write tool; none read product state",
+  "adifWorkerResolver": "run before the first edit: 14 items, raw log in worker/adif.json"
+ },
+ "knownBaselineExceptions": {
+  "hookWarning": "react-hooks/exhaustive-deps at HtmlJobControls.tsx useEffect [scope] (line 134) and useCallback (line 159) with the exact baseline messages; line numbers unchanged because the edits before line 159 keep the line count",
+  "vitestListMode": "retained operation.test.ts raises an EnvironmentTeardownError under vitest list",
+  "fixtureRootEnvironment": "retained job-profile.test.ts reads CVF_NCR_R1_FIXTURE_ROOT, which this checkout does not define; run 1 failed on it, run 2 set it to worker/fixture-root"
+ },
+ "designConsequences": [
+  "The store loads the bound codec on first bound use because the retained real-process harness transpiles only the store and three v1 contract files; a static import of the bound codec would break those children.",
+  "proof.ts and operation-branch.ts import the bound modules by relative path because a retained import-graph test only allows five alias specifiers.",
+  "The challenge expiry bound is receipt time plus the 5000 ms TTL plus the 1000 ms accepted skew; a bound relative to the send time can never hold against a real engine clock.",
+  "The engine result carries an integer-only projection of the report and execution record because the canonical form forbids the float risk score; decision, action, ids, ledger attachment and risk level are carried.",
+  "The wrong-store adversary against the real engine is realised as a configuration-digest mismatch (the engine refuses before any effect); store-binding mismatch with a signed valid reply is covered against fake engines and pure engine handlers, not with a second Python bridge."
+ ],
+ "workerProcedureLimits": [
+  "The active handoff was read for lines 1-82 of 186; the SOP, lifecycle and template mandatory spans were read as listed in the Source Inventory notes.",
+  "Several return-side checker bodies were only partially read before the return prose; see the Source Inventory notes.",
+  "Vitest run 1 failed nine tests on the first complete combination and Vitest run 2 passed; the retained operation tests for the real-process harness, the import graph and job-profile fixture root were only discovered by running them.",
+  "The return scaffold was generated after the implementation and test work, before any return prose."
+ ],
+ "scec": {
+  "workerOrdinal": 1,
+  "predecessor": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BOUND_SOURCE_2026-10-19.md",
+  "predecessorSha256": "1658341bd5b719badde16a04123cee77de673beb35284cde0122e2714fc29579",
+  "priorBlockers": [],
+  "resolved": [],
+  "current": [],
+  "counters": {
+   "partialReadyClosures": 0,
+   "reviewerScopeExpansions": 0,
+   "sameClaimCorrections": 0,
+   "nonDecreasingBlockerTransitions": 1
+  },
+  "note": "new bound-effect problem key; the fixture S5 chain and the parent generation 9 chain are not touched or reset"
+ },
+ "claimBoundary": "Offline synthetic protocol, store, transport, engine and disclosure evidence only. No real endpoint, key reference, provider, active data, store writer, cost, acceptance, production, public or deploy claim; no ACL restoration claim; the Local independent probe is pending."
+}

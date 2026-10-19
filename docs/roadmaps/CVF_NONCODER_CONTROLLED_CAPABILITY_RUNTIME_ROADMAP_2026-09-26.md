@@ -12,7 +12,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 
 ## Current Delivery Checkpoint - 2026-10-19
 
-**Current action:** integrated bound-receipt offline source packet `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BOUND_SOURCE_2026-10-19.md` / `docs/baselines/CVF_GC018_NCR_R2_W05_BOUND_SOURCE_2026-10-19.md` exact36 prepared from activation design BC01-BC12/P01-P07. New schema+codec, measured pinned SQLite context, two signed dedicated hops, actual export/job/ENVI consumer and unknown/peer/finality proof included; no worker invocation until manual transfer and actual boundrelease. ProductionDENY/R2partial/LHW24 and old fixtureS5 frozen.
+**Current action:** exact36 bound-source review `docs/reviews/CVF_NCR_R2_W05_BOUND_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-19.md` is BLOCKED_WITH_REASON. Worker400/400 Vitest,77/77 pytest and tsc0 retained; independent Local7PASS/4FAIL exposes foreign-origin forward, unissued/mutable profile and actual wrong-store write. SCEC2current3/counters0,0,0,2 STOP_REASSESS_ARCHITECTURE/NO_SUCCESSOR. ProductionDENY/R2partial/LHW24 and old fixtureS5 frozen.
 
 | Item | Current disposition | Evidence / remaining step |
 |---|---|---|
@@ -24,7 +24,7 @@ Decision owner: operator về định hướng/phạm vi; Local reviewer về đ
 | R3 / R4 | Open | Pilot and durable local operation remain unproved |
 | R5 / R6 | Deferred | Separate future scope |
 
-**Bước kế tiếp:** Sau actual boundrelease, operator chuyển một packet exact36 cho INTERNAL_AGENT triển khai offline; Local review bằng chứng và probe riêng. Không mở runtime/provider/dữ liệu thật/production/public/deploy; không reset budget/counters cũ.
+**Bước kế tiếp:** Local lập một hợp đồng đánh giá lại kiến trúc tích hợp cho destination, factory identity/config, actual ledger owner, deadline và namespace; tuân thủ canonical SCEC admission trước executable dispatch mới. Không tự gọi worker, reset chain/budget hay mở runtime/provider/dữ liệu thật/production/public/deploy.
 
 - [x] BE-R1F accepted bounded on current source; original cap2 actor spent.
 - [x] BE-R02 / R2C Fresh S14-source R1F cap2 plus R2C cap1 synthetic mechanical pair accepted bounded. Evidence: `docs/reviews/CVF_NCR_HTML_B_E_R2C_RUNTIME_LOCAL_COMPLETION_2026-10-18.md`; `docs/reviews/evidence/ncr-html-b-e-r2c-runtime-local-20261018.json`. Historical R2B blocked-spent retained; no automatic successor3.

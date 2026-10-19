@@ -1,6 +1,7 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import { requireAdminApiSession } from '@/lib/admin-session';
+import { BOUND_DISCLOSURE, BOUND_EFFECT, type BoundDisclosure } from '@/lib/artifacts-bound-receipt-contract';
 import { SOURCE_ID, VERSION_ID, type DraftPrincipal } from '@/lib/html-draft-recovery-contract';
 import { MAX_JOB_BODY_BYTES, parseAcceptVersion, parseCreateJob, parseLinkVersion } from '@/lib/html-job-contract';
 import { HtmlDraftSnapshotStore } from './html-draft-snapshot-store';
@@ -18,13 +19,17 @@ const sameOrigin = (request: Request) => {
 };
 const object = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v);
 const scoped = (source: string, prefix: string) => SOURCE_ID.test(source) && source.startsWith(prefix);
-type Dependencies = { profile?: ResolvedHtmlJobProfile | null; auth?: typeof requireAdminApiSession; clock?: () => number };
+/** `bound` is an explicitly injected nonsecret disclosure. It is never read from a query, body, header or the environment. */
+type Dependencies = { profile?: ResolvedHtmlJobProfile | null; auth?: typeof requireAdminApiSession; clock?: () => number; bound?: BoundDisclosure | null };
 
 export function jobRouteHandlers(deps: Dependencies = {}) {
   const clock = deps.clock ?? Date.now;
   const auth = deps.auth ?? requireAdminApiSession;
   const profile = deps.profile?.jobDecisions === true ? deps.profile : null;
   const store = profile ? new HtmlDraftSnapshotStore(profile.profile, clock) : null;
+  // Snapshot once so a later mutation of the injected object cannot change what the capability response discloses.
+  const bound: BoundDisclosure | null = deps.bound && deps.bound.effectBoundary === BOUND_EFFECT && deps.bound.mode === BOUND_DISCLOSURE
+    ? JSON.parse(JSON.stringify(deps.bound)) as BoundDisclosure : null;
   async function principal(request: NextRequest): Promise<DraftPrincipal | NextResponse> {
     const session = await auth(request, '/api/artifacts/jobs', { allowBreakGlass: false });
     if (session instanceof NextResponse) {
@@ -85,7 +90,8 @@ export function jobRouteHandlers(deps: Dependencies = {}) {
       const q = new URL(request.url).searchParams;
       const kind = q.get('kind');
       if (kind === 'capabilities') return q.size === 1 && q.getAll('kind').length === 1
-        ? reply(200, { success: true, data: { jobDecisions: true, effectBoundary: 'LOCAL_SYNTHETIC' } }) : fail(422, 'INVALID_QUERY');
+        ? reply(200, { success: true, data: bound ? { jobDecisions: true, effectBoundary: BOUND_EFFECT, boundDisclosure: bound }
+          : { jobDecisions: true, effectBoundary: 'LOCAL_SYNTHETIC' } }) : fail(422, 'INVALID_QUERY');
       const source = q.get('sourceRecordId') ?? '';
       const jobId = q.get('jobId') ?? '';
       if (!['job', 'version', 'decision'].includes(kind ?? '') || !scoped(source, profile.recordPrefix) || !VERSION_ID.test(jobId)

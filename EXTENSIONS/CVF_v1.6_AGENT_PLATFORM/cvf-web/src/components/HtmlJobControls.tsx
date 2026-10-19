@@ -4,7 +4,7 @@ import { useSession } from 'next-auth/react';
 import { useLanguage } from '@/lib/i18n';
 import type { DraftSnapshot } from '@/lib/html-draft-recovery-contract';
 import type { HtmlJob, HtmlJobDecision, HtmlJobVersion, JobCriterion } from '@/lib/html-job-contract';
-import { ArtifactExportPanel, type ArtifactExportRequest, type DisplayedResult } from './ArtifactExportPanel';
+import { ArtifactExportPanel, type ArtifactExportRequest, type DisplayedResult } from './ArtifactExportPanel'; import { ReceiptEffectDisclosure, jobCapabilityOf, type EffectBoundary } from './ReceiptEffectDisclosure';
 import { HtmlDraftRecovery } from './HtmlDraftRecovery';
 import { clearPendingJobJournal, readPendingJobJournal, writePendingJobJournal, type PendingJobJournal } from './useHtmlBuildAttempts';
 
@@ -95,7 +95,7 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
   const epoch = useRef(0);
   const busy = useRef(false);
   const [capability, setCapability] = useState<'loading' | 'enabled' | 'disabled'>('loading');
-  const [effectBoundary, setEffectBoundary] = useState<'LOCAL_SYNTHETIC' | null>(null);
+  const [effectBoundary, setEffectBoundary] = useState<EffectBoundary | null>(null);
   const enabled = capability === 'enabled';
   const [goal, setGoal] = useState('');
   const [criteria, setCriteria] = useState<JobCriterion[]>([{ criterionId: 'c1', text: '' }]);
@@ -125,9 +125,9 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
     setPending(readPendingJobJournal({ owner, sourceRecordId }));
     void fetch(url({ kind: 'capabilities' }), { cache: 'no-store' }).then(data<{ jobDecisions?: unknown; effectBoundary?: unknown }>)
       .then(value => { if (still(token, key)) {
-        const decisionsEnabled = value.jobDecisions === true;
-        setCapability(decisionsEnabled ? 'enabled' : 'disabled');
-        setEffectBoundary(decisionsEnabled && value.effectBoundary === 'LOCAL_SYNTHETIC' ? 'LOCAL_SYNTHETIC' : null);
+        const next = jobCapabilityOf(value);
+        setCapability(next.enabled ? 'enabled' : 'disabled');
+        setEffectBoundary(next.boundary);
       } })
       .catch(() => { if (still(token, key)) setCapability('disabled'); });
     return () => { epoch.current += 1; };
@@ -243,7 +243,8 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
 
   const canReview = !!job && !!link && !!snapshot && joined(job, snapshot, link) && jobSignature === signature
     && (reopened || versionState === 'current');
-  const profileDisclosure = enabled && effectBoundary === 'LOCAL_SYNTHETIC' ? effectBoundary : undefined;
+  const profileDisclosure = enabled && effectBoundary?.kind === 'LOCAL_SYNTHETIC' ? 'LOCAL_SYNTHETIC' as const : undefined;
+  const boundDisclosure = enabled && effectBoundary?.kind === 'BOUND_ENGINE_RECEIPT' ? effectBoundary.disclosure : null;
   const recovery = (displayed: DisplayedResult | null, current: VersionState) => <>
     <VersionStateObserver value={current} update={setVersionState} />
     <HtmlDraftRecovery key={scope} sourceRecordId={sourceRecordId} displayed={displayed} versionState={current}
@@ -276,6 +277,7 @@ export function HtmlJobControls({ sourceRecordId, initialRequest }: Props) {
         className={`mt-2 inline-flex min-h-11 items-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-800 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 ${FOCUS_RING}`}>{copy.addCriterion}</button>
       {job && <p data-testid="current-job-id" className="text-xs">{copy.job} {job.jobId}</p>}
     </section>
+    {boundDisclosure && <ReceiptEffectDisclosure disclosure={boundDisclosure} language={language === 'vi' ? 'vi' : 'en'} />}
     <ArtifactExportPanel key={scope} initialRequest={initialRequest} prepareJob={prepareJob} renderRecovery={recovery} profileDisclosure={profileDisclosure} />
     {pending && <button type="button" onClick={() => void reconcile()} data-testid="reconcile-job-operation">
       {copy.reconcile} {copy.operation[pending.operation]} {pending.jobId} {pending.versionId ?? ''} {pending.decisionId ?? ''}</button>}

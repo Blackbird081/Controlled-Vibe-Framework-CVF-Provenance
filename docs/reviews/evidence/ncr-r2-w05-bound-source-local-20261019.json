@@ -1,0 +1,951 @@
+{
+  "schemaVersion": "cvf.ncrW05BoundSourceLocalReview.v1",
+  "batchId": "CVF-NCR-R2-W05-BOUND-SOURCE-20261019",
+  "status": "BLOCKED_WITH_REASON",
+  "decisionOwner": "LOCAL",
+  "reviewBaseHead": "2b4b3bc2ac922ba14b3c6e47999377c503801e66",
+  "workerReturn": {
+    "path": "docs/reviews/CVF_NCR_R2_W05_BOUND_SOURCE_WORKER_RETURN_2026-10-19.md",
+    "sha256": "49c581e5b5d73aa134a93e9cd2423f301d61a004556b10021f3bfa917f334f49"
+  },
+  "workerEvidence": {
+    "path": "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json",
+    "sha256": "fd3b0c1a201ed6a12bf6d40b4205d65610c3ab526ff2a397c4a3894651a4fa3b"
+  },
+  "intake": {
+    "base": "2b4b3bc2ac922ba14b3c6e47999377c503801e66",
+    "workerReturnSha256": "49c581e5b5d73aa134a93e9cd2423f301d61a004556b10021f3bfa917f334f49",
+    "workerEvidenceSha256": "fd3b0c1a201ed6a12bf6d40b4205d65610c3ab526ff2a397c4a3894651a4fa3b",
+    "exact36": true,
+    "actual": [
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipt_contract.py",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipts.py",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/artifact_receipt_binding.py",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/artifact_receipt_peer.py",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.tsx",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-api.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/fixtures/artifact-bound-receipt-v1.json",
+      "docs/reviews/CVF_NCR_R2_W05_BOUND_SOURCE_WORKER_RETURN_2026-10-19.md",
+      "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json"
+    ],
+    "unexpected": [],
+    "missing": [],
+    "checks": [
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.ts",
+        "expected": "37e3df2f7c24501e2b98dd48c11334eb954d7b2c7a5d3c9c6b349047cffe615f",
+        "actual": "37e3df2f7c24501e2b98dd48c11334eb954d7b2c7a5d3c9c6b349047cffe615f"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+        "expected": "3b9286ce158a608c72b32f19f52eecf433f8fa105664ca26431120b9ad360764",
+        "actual": "3b9286ce158a608c72b32f19f52eecf433f8fa105664ca26431120b9ad360764"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.ts",
+        "expected": "280f02190e47fb7274eaefaf49c158acf69805d85c7d3089a9e43c7d41a41a80",
+        "actual": "280f02190e47fb7274eaefaf49c158acf69805d85c7d3089a9e43c7d41a41a80"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts",
+        "expected": "3e21b1e2e3205fdf7db19d890a507c6f87ca6ffd716242d3e02b8f2ea18e872c",
+        "actual": "3e21b1e2e3205fdf7db19d890a507c6f87ca6ffd716242d3e02b8f2ea18e872c"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/fixtures/artifact-bound-receipt-v1.json",
+        "expected": "f0744ee16c03235483260ed02a5e6fc4ded19645ab58168496cd29ced2443d24",
+        "actual": "f0744ee16c03235483260ed02a5e6fc4ded19645ab58168496cd29ced2443d24"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+        "expected": "82b179b91e5d5447537d8ddc6b98ce2789ef51911a473fd352895cf19889c6ea",
+        "actual": "82b179b91e5d5447537d8ddc6b98ce2789ef51911a473fd352895cf19889c6ea"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+        "expected": "f83e3e90acee759cc3441df4509358e01b8299c5d704ebbbba41d089da00bcef",
+        "actual": "f83e3e90acee759cc3441df4509358e01b8299c5d704ebbbba41d089da00bcef"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.ts",
+        "expected": "7936d8b62014d50e5bc1db8831be163353dd32aacf5e10779269132d9ce34cbe",
+        "actual": "7936d8b62014d50e5bc1db8831be163353dd32aacf5e10779269132d9ce34cbe"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts",
+        "expected": "062f2dde2bd813f79a37b474a73d93e2c2ea4e6b80804be7b429327ef9f454ed",
+        "actual": "062f2dde2bd813f79a37b474a73d93e2c2ea4e6b80804be7b429327ef9f454ed"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.ts",
+        "expected": "dd2cd496860388880548c1ec1584c6d8527a293e118f4a7323d7bc83cc3829f6",
+        "actual": "dd2cd496860388880548c1ec1584c6d8527a293e118f4a7323d7bc83cc3829f6"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+        "expected": "13cc205e7705d945dec2d8a24656a6eb5b2e8844d479303880c48a0b6b96a5b8",
+        "actual": "13cc205e7705d945dec2d8a24656a6eb5b2e8844d479303880c48a0b6b96a5b8"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-api.ts",
+        "expected": "7b2433d4a6c0b4a0a5315a81ba37a816c011286c388d31f71ccf4f0893b6994b",
+        "actual": "7b2433d4a6c0b4a0a5315a81ba37a816c011286c388d31f71ccf4f0893b6994b"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.ts",
+        "expected": "8c14c1b60bb833f102d38dd99741a43eedb880c5ec108d27103e85638432a307",
+        "actual": "8c14c1b60bb833f102d38dd99741a43eedb880c5ec108d27103e85638432a307"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts",
+        "expected": "efbb48f54d4a723c4e13bab298e37a8b21932d2606f6b089fcb5080c276eda75",
+        "actual": "efbb48f54d4a723c4e13bab298e37a8b21932d2606f6b089fcb5080c276eda75"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts",
+        "expected": "27ab9b408f0e1b4c73365147b457dd2b839093332f956b858eebe5d42948de4b",
+        "actual": "27ab9b408f0e1b4c73365147b457dd2b839093332f956b858eebe5d42948de4b"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+        "expected": "6fc3be618bf70af5f77526ec2d26b79ef317447cca1804f510ee46aeeab267bd",
+        "actual": "6fc3be618bf70af5f77526ec2d26b79ef317447cca1804f510ee46aeeab267bd"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+        "expected": "a307463427e487343e693194fa129c9c8057dfaebd88aee8f2e2f47985ff71e5",
+        "actual": "a307463427e487343e693194fa129c9c8057dfaebd88aee8f2e2f47985ff71e5"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts",
+        "expected": "d3fb61577fca5566b34a98503293c1c7ef20af8f6339b678b24685090f2c8577",
+        "actual": "d3fb61577fca5566b34a98503293c1c7ef20af8f6339b678b24685090f2c8577"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+        "expected": "24ebcbff9180b341e4a077e2422549e60242b87b3e6aa6d54b479311e85425b2",
+        "actual": "24ebcbff9180b341e4a077e2422549e60242b87b3e6aa6d54b479311e85425b2"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+        "expected": "b9e2cb5f0a482311b453cdc970e2c472132ac4cbb752d36d61d40de64be7a8a8",
+        "actual": "b9e2cb5f0a482311b453cdc970e2c472132ac4cbb752d36d61d40de64be7a8a8"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+        "expected": "f72a27e30b83f38a2b15c54bc04094104b3017d94145182258fb64c8a9fb7f86",
+        "actual": "f72a27e30b83f38a2b15c54bc04094104b3017d94145182258fb64c8a9fb7f86"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts",
+        "expected": "77d7dbdbce9a48d18c1505101411c48b5d081f030fbad6a7e51f567c03d6b3d0",
+        "actual": "77d7dbdbce9a48d18c1505101411c48b5d081f030fbad6a7e51f567c03d6b3d0"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+        "expected": "aa27a83534879cb20037c9e584b264b2f3fecc76f019195456756f5c9d2ccd4a",
+        "actual": "aa27a83534879cb20037c9e584b264b2f3fecc76f019195456756f5c9d2ccd4a"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.tsx",
+        "expected": "aff21e2e72b7cc699c3f9169d9958ba0fce829b6a51f1af7bb346e4bceb3d044",
+        "actual": "aff21e2e72b7cc699c3f9169d9958ba0fce829b6a51f1af7bb346e4bceb3d044"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx",
+        "expected": "9c2eb63259312a762b6188cd9232fce1988ffe8adca17b765c9c1f5e0aa86048",
+        "actual": "9c2eb63259312a762b6188cd9232fce1988ffe8adca17b765c9c1f5e0aa86048"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx",
+        "expected": "7aa9b0eb116d3d4b3072976a7d606eb266098511d7acce62766849f4bba34ac5",
+        "actual": "7aa9b0eb116d3d4b3072976a7d606eb266098511d7acce62766849f4bba34ac5"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipt_contract.py",
+        "expected": "4880e9d6d9bced1e25286081e992f0502f5ed9b612c4bfea72e6345a2c89515d",
+        "actual": "4880e9d6d9bced1e25286081e992f0502f5ed9b612c4bfea72e6345a2c89515d"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipts.py",
+        "expected": "272b16e8fbb5ffb521c53205f4934ac451a00c2daa02414f8590a7557cb11a93",
+        "actual": "272b16e8fbb5ffb521c53205f4934ac451a00c2daa02414f8590a7557cb11a93"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/artifact_receipt_binding.py",
+        "expected": "e9a45fc013d2f75bdb41423466e627dcafbb9a07335c8e1140e822b75f6d5c22",
+        "actual": "e9a45fc013d2f75bdb41423466e627dcafbb9a07335c8e1140e822b75f6d5c22"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py",
+        "expected": "dd4ac83ceba4a227321fd30cc214d647e9cb585d9644895f71d482b219a24be5",
+        "actual": "dd4ac83ceba4a227321fd30cc214d647e9cb585d9644895f71d482b219a24be5"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+        "expected": "c375369483da3e19527241b4fb716ee7c4ad28c0eaff695333474fdb6a94c76a",
+        "actual": "c375369483da3e19527241b4fb716ee7c4ad28c0eaff695333474fdb6a94c76a"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+        "expected": "710a3c84d3c66dbdddaab0e5d0e12ae2a7b93327dfcbfd14b2999c3da11236fe",
+        "actual": "710a3c84d3c66dbdddaab0e5d0e12ae2a7b93327dfcbfd14b2999c3da11236fe"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+        "expected": "3999e4a7258089101f93f2f702dd03bba8131a758612d921cf62da6a22e18d8b",
+        "actual": "3999e4a7258089101f93f2f702dd03bba8131a758612d921cf62da6a22e18d8b"
+      },
+      {
+        "kind": "source",
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/artifact_receipt_peer.py",
+        "expected": "f6805a89a029751c73846dea8718d6094c77f8cd581a47dd8bb7e6b29da5d92c",
+        "actual": "f6805a89a029751c73846dea8718d6094c77f8cd581a47dd8bb7e6b29da5d92c"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.ts",
+        "expected": "7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094",
+        "actual": "7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.test.ts",
+        "expected": "1ba44d1f5e68bc0d72aa6668d6680c3918d5c50dc2369c66013031288bd82713",
+        "actual": "1ba44d1f5e68bc0d72aa6668d6680c3918d5c50dc2369c66013031288bd82713"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+        "expected": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550",
+        "actual": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts",
+        "expected": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0",
+        "actual": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts",
+        "expected": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8",
+        "actual": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts",
+        "expected": "c5399e838b6c195423912f7ae33da4f352f94c66958c8aeccb29fe3bdeaf4d88",
+        "actual": "c5399e838b6c195423912f7ae33da4f352f94c66958c8aeccb29fe3bdeaf4d88"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+        "expected": "d4f2c2d8ec50de9aeb31e2c850ba311f7facbabf02bec9a667d12daf10caaa8c",
+        "actual": "d4f2c2d8ec50de9aeb31e2c850ba311f7facbabf02bec9a667d12daf10caaa8c"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+        "expected": "00cb76dc36ae8efacaafffe3c1ec5086b1707baa8412afd4760ec1c9eb70fcfd",
+        "actual": "00cb76dc36ae8efacaafffe3c1ec5086b1707baa8412afd4760ec1c9eb70fcfd"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts",
+        "expected": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+        "actual": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json",
+        "expected": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+        "actual": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json",
+        "expected": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+        "actual": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts",
+        "expected": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+        "actual": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/eslint.config.mjs",
+        "expected": "d0ccd1757c31535cdd7762fcfbfa1677a97fef2543b61e2e09322ade86797ffb",
+        "actual": "d0ccd1757c31535cdd7762fcfbfa1677a97fef2543b61e2e09322ade86797ffb"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py",
+        "expected": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+        "actual": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py",
+        "expected": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+        "actual": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/requirements.txt",
+        "expected": "7adfeccb5eef259406a1a64993b4b205f1f3c2d153bb3c1d21d27993edaaa0f5",
+        "actual": "7adfeccb5eef259406a1a64993b4b205f1f3c2d153bb3c1d21d27993edaaa0f5"
+      },
+      {
+        "kind": "readOnly",
+        "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/__init__.py",
+        "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "kind": "readOnly",
+        "path": "docs/baselines/CVF_NCR_R2_W05_ACTIVATION_DESIGN_2026-10-19.md",
+        "expected": "b38bd2345432e5c0ebacb85e652c9af45ae6854314b797eb4dc5369be8bf40de",
+        "actual": "b38bd2345432e5c0ebacb85e652c9af45ae6854314b797eb4dc5369be8bf40de"
+      },
+      {
+        "kind": "readOnly",
+        "path": "docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md",
+        "expected": "a48dec3bc0ff8f30c45bb17c41a2267fc9bbc1ce38e3a2ca959d466a9f47d8b8",
+        "actual": "a48dec3bc0ff8f30c45bb17c41a2267fc9bbc1ce38e3a2ca959d466a9f47d8b8"
+      },
+      {
+        "kind": "gateLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/gate1.out.log",
+        "expected": "5478767b433b5bf7c5bf67efc4e50b2db9bc96b1122190cc67caf73f3a3d28be",
+        "actual": "5478767b433b5bf7c5bf67efc4e50b2db9bc96b1122190cc67caf73f3a3d28be"
+      },
+      {
+        "kind": "gateLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/gate2.out.log",
+        "expected": "90fd454ffe37cc7ce15a36623bc795cd541052da0a30846041a996c893dfc9ed",
+        "actual": "90fd454ffe37cc7ce15a36623bc795cd541052da0a30846041a996c893dfc9ed"
+      },
+      {
+        "kind": "finalGateCustody",
+        "path": "docs/reviews/CVF_NCR_R2_W05_BOUND_SOURCE_WORKER_RETURN_2026-10-19.md",
+        "expected": "49c581e5b5d73aa134a93e9cd2423f301d61a004556b10021f3bfa917f334f49",
+        "actual": "49c581e5b5d73aa134a93e9cd2423f301d61a004556b10021f3bfa917f334f49"
+      },
+      {
+        "kind": "finalGateCustody",
+        "path": "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json",
+        "expected": "fd3b0c1a201ed6a12bf6d40b4205d65610c3ab526ff2a397c4a3894651a4fa3b",
+        "actual": "fd3b0c1a201ed6a12bf6d40b4205d65610c3ab526ff2a397c4a3894651a4fa3b"
+      },
+      {
+        "kind": "toolLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/pytest-collect.out.log",
+        "expected": "e0985c538e3603a4410da3a6437cc8ec94c2a672d6fe91aa73839406cb46dc01",
+        "actual": "e0985c538e3603a4410da3a6437cc8ec94c2a672d6fe91aa73839406cb46dc01"
+      },
+      {
+        "kind": "toolLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/vitest-list.out.log",
+        "expected": "947d9b503eb30734e2618155f604534b0255131291121e237b61a292e455d4cb",
+        "actual": "947d9b503eb30734e2618155f604534b0255131291121e237b61a292e455d4cb"
+      },
+      {
+        "kind": "toolLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/tsc1.out.log",
+        "expected": "7fe4d7929c7df7f893b8c53ef62cc2c58c7460cb8e822778f12a81ceb3186a46",
+        "actual": "7fe4d7929c7df7f893b8c53ef62cc2c58c7460cb8e822778f12a81ceb3186a46"
+      },
+      {
+        "kind": "toolLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/eslint1.out.log",
+        "expected": "d5710e0b8f9ca51b0d9648fd3b007478d41b5e36a1055e412551914019f56f06",
+        "actual": "d5710e0b8f9ca51b0d9648fd3b007478d41b5e36a1055e412551914019f56f06"
+      },
+      {
+        "kind": "toolLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/vitest1.out.log",
+        "expected": "009a706fa11151b10da089de67ed323685b41aead8d3a86dcff7fe0d71038e29",
+        "actual": "009a706fa11151b10da089de67ed323685b41aead8d3a86dcff7fe0d71038e29"
+      },
+      {
+        "kind": "toolLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/pytest1.out.log",
+        "expected": "5b51d817eb81735cb10108a82b57f74b5142a612f09fb2d26b5478c2427589d3",
+        "actual": "5b51d817eb81735cb10108a82b57f74b5142a612f09fb2d26b5478c2427589d3"
+      },
+      {
+        "kind": "toolLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/tsc2.out.log",
+        "expected": "6700c1946b1511799dd3980e86b15e5cb0aef6d298c4728d70c6e72efe1d68d9",
+        "actual": "6700c1946b1511799dd3980e86b15e5cb0aef6d298c4728d70c6e72efe1d68d9"
+      },
+      {
+        "kind": "toolLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/eslint2.out.log",
+        "expected": "b0da2178a6709131328f48846c2585fc34e1e1c8e6a326148b8042ef9682df02",
+        "actual": "b0da2178a6709131328f48846c2585fc34e1e1c8e6a326148b8042ef9682df02"
+      },
+      {
+        "kind": "toolLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/vitest2.out.log",
+        "expected": "3fa956e5fb01169d7eb95ae369959e51673673002cdb95e8ac128f5f1a3605a7",
+        "actual": "3fa956e5fb01169d7eb95ae369959e51673673002cdb95e8ac128f5f1a3605a7"
+      },
+      {
+        "kind": "toolLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/logs/pytest2.out.log",
+        "expected": "5a2e2f9dca1ca31bad16425d2b9331716a82a7b122c4bec56f27edc0bdca9fea",
+        "actual": "5a2e2f9dca1ca31bad16425d2b9331716a82a7b122c4bec56f27edc0bdca9fea"
+      },
+      {
+        "kind": "toolLog",
+        "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/worker/gate1.out.log",
+        "expected": "5478767b433b5bf7c5bf67efc4e50b2db9bc96b1122190cc67caf73f3a3d28be",
+        "actual": "5478767b433b5bf7c5bf67efc4e50b2db9bc96b1122190cc67caf73f3a3d28be"
+      }
+    ],
+    "allHashesMatch": true,
+    "stageEmpty": true
+  },
+  "workerEvidenceConsumed": {
+    "vitest": "400/400 PASS; second run",
+    "pytest": "77/77 PASS; second run",
+    "tsc": "exit0 second run",
+    "eslint": "exit1; exact2 admitted baseline hook warnings; 0 errors",
+    "fullGate": "COMPLIANT gate2; exact raw hashes and return/EP bytes match",
+    "broadReruns": 0
+  },
+  "independentProbe": {
+    "command": "node .cvf/runtime/ncr-r2-w05-bound-source-20261019/root-review/independent-probe.cjs",
+    "rawPath": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/root-review/independent-probe.json",
+    "rawSha256": "e3f026b6c5b5e25b951b56a2f1c9a2103fcd69ed7c6a65826242321930dc8c51",
+    "schema": "cvf.localBoundSourceIndependentProbe.v1",
+    "actor": "ncr-r2-w05-bound-source-local-reviewer",
+    "invocationId": "ncr-r2-w05-bound-source-local-review-20261019",
+    "started": "2026-10-19T11:27:13.466Z",
+    "ended": "2026-10-19T11:27:14.513Z",
+    "scriptSha256": "8298cf88e0ac7f6350e779747ec158050889ceeed3b2ebda6af64bcb0d342bdb",
+    "driverSha256": "e6281c74c869cbbbf5f6f19cfcac52d3fcedec3edf82ac8227943b13e99f7fbf",
+    "rows": [
+      {
+        "id": "CONTROL_REAL_TS_WEB_PYTHON_LEDGER",
+        "result": "PASS",
+        "observed": {
+          "first": {
+            "kind": "EXECUTED",
+            "operationKey": "a32b9c838ff2a238ce554b96ff6d6834c527d60a363166acf6dbcf1e7f115462",
+            "outcome": "RECEIPT_VERIFIED",
+            "receipt": {
+              "receiptId": "ncr-bound-a32b9c838ff2a238ce554b96ff6d6834c527d60a363166ac",
+              "decision": "ALLOW",
+              "evaluatedAt": "2026-10-19T11:27:14.150274",
+              "riskLevel": "R1",
+              "engineRiskLevel": "R0",
+              "bindingDigest": "4d2f098bad63f0d71fed5da2665c65342cc0ef53bdeb2b7e17843f8e48a44d93",
+              "ledgerReference": {
+                "requestId": "ncr-bound-a32b9c838ff2a238ce554b96ff6d6834c527d60a363166ac",
+                "blockHash": "e3900ec8701581c232cff5244b210a752dfe49bbe8e285643cde7effca60dfc2"
+              }
+            },
+            "reason": null,
+            "persisted": true,
+            "sends": 1
+          },
+          "count1": {
+            "kind": "COUNTS",
+            "entries": [
+              "ncr-bound-a32b9c838ff2a238ce554b96ff6d6834c527d60a363166ac"
+            ],
+            "boundCount": 1,
+            "foreignCount": 0,
+            "counters": {
+              "challenges": 1,
+              "evaluates": 1
+            }
+          }
+        }
+      },
+      {
+        "id": "CONTROL_VERIFIED_REUSE_ZERO_SEND",
+        "result": "PASS",
+        "observed": {
+          "reused": {
+            "kind": "REUSED",
+            "operationKey": "a32b9c838ff2a238ce554b96ff6d6834c527d60a363166acf6dbcf1e7f115462",
+            "receipt": {
+              "receiptId": "ncr-bound-a32b9c838ff2a238ce554b96ff6d6834c527d60a363166ac",
+              "decision": "ALLOW",
+              "evaluatedAt": "2026-10-19T11:27:14.150274",
+              "riskLevel": "R1",
+              "engineRiskLevel": "R0",
+              "bindingDigest": "4d2f098bad63f0d71fed5da2665c65342cc0ef53bdeb2b7e17843f8e48a44d93",
+              "ledgerReference": {
+                "requestId": "ncr-bound-a32b9c838ff2a238ce554b96ff6d6834c527d60a363166ac",
+                "blockHash": "e3900ec8701581c232cff5244b210a752dfe49bbe8e285643cde7effca60dfc2"
+              }
+            },
+            "sends": 0
+          },
+          "count2": {
+            "kind": "COUNTS",
+            "entries": [
+              "ncr-bound-a32b9c838ff2a238ce554b96ff6d6834c527d60a363166ac"
+            ],
+            "boundCount": 1,
+            "foreignCount": 0,
+            "counters": {
+              "challenges": 1,
+              "evaluates": 1
+            }
+          }
+        }
+      },
+      {
+        "id": "CONTROL_DEFAULT_DENY",
+        "result": "PASS",
+        "observed": {
+          "status": 503
+        }
+      },
+      {
+        "id": "CONTROL_PRODUCTION_DENY",
+        "result": "PASS",
+        "observed": {
+          "p": {
+            "posture": "DENY",
+            "reason": "PRODUCTION_DENIED"
+          }
+        }
+      },
+      {
+        "id": "CONTROL_MATCHING_ORIGIN_FORWARD",
+        "result": "PASS",
+        "observed": {
+          "forwards": 1
+        }
+      },
+      {
+        "id": "BOUND_PROXY_ORIGIN_DENY_ZERO_FORWARD",
+        "result": "FAIL",
+        "observed": {
+          "forwards": 1,
+          "status": 502,
+          "body": "{\"error\":\"SEND_FAILED\",\"kind\":\"ERROR\",\"schema\":\"cvf.boundReceiptWire.v1\"}"
+        }
+      },
+      {
+        "id": "UNISSUED_PROFILE_DENY_ZERO_INVOKE",
+        "result": "FAIL",
+        "observed": {
+          "fakeCalls": 1,
+          "fakeResult": {
+            "status": 200,
+            "body": {
+              "success": true,
+              "data": {},
+              "operation": {
+                "operationKey": "423c106b292ad376082c5dba62358790c4021e45b8ea1d5c4dac762f7d3c9792",
+                "outcome": "OUTCOME_UNKNOWN",
+                "reused": false,
+                "sends": 1,
+                "persisted": true,
+                "reason": "INVOKER_ERROR"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "ISSUED_CONFIG_IMMUTABLE",
+        "result": "FAIL",
+        "observed": {
+          "mutationRejected": false,
+          "origin": "http://changed-engine.invalid:8100",
+          "expected": "http://review-engine.invalid:8100"
+        }
+      },
+      {
+        "id": "ORCHESTRATOR_LEDGER_SWAP_DENY_BEFORE_ENTRY",
+        "result": "FAIL",
+        "observed": {
+          "swapResult": {
+            "kind": "EXECUTED",
+            "operationKey": "f68e446077d47ac75946aa7b832956929cadc532d0490b313c969f21e55a5b9c",
+            "outcome": "OUTCOME_UNKNOWN",
+            "receipt": null,
+            "reason": "STATUS",
+            "persisted": true,
+            "sends": 1
+          },
+          "afterSwap": {
+            "kind": "COUNTS",
+            "entries": [
+              "ncr-bound-a32b9c838ff2a238ce554b96ff6d6834c527d60a363166ac",
+              "ncr-bound-f68e446077d47ac75946aa7b832956929cadc532d0490b31"
+            ],
+            "boundCount": 1,
+            "foreignCount": 1,
+            "counters": {
+              "challenges": 2,
+              "evaluates": 2
+            }
+          }
+        }
+      },
+      {
+        "id": "CONTROL_CHILD_HANDLE_CLEANUP",
+        "result": "PASS",
+        "observed": {
+          "closed": {
+            "kind": "CLOSED",
+            "closed": true
+          },
+          "exit": 0,
+          "stderr": ""
+        }
+      },
+      {
+        "id": "CONTROL_SOURCE_CUSTODY_UNCHANGED",
+        "result": "PASS",
+        "observed": {
+          "count": 55
+        }
+      }
+    ],
+    "passed": 7,
+    "failed": 4,
+    "sourceBefore": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.ts": "37e3df2f7c24501e2b98dd48c11334eb954d7b2c7a5d3c9c6b349047cffe615f",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts": "3b9286ce158a608c72b32f19f52eecf433f8fa105664ca26431120b9ad360764",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.ts": "280f02190e47fb7274eaefaf49c158acf69805d85c7d3089a9e43c7d41a41a80",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts": "3e21b1e2e3205fdf7db19d890a507c6f87ca6ffd716242d3e02b8f2ea18e872c",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/fixtures/artifact-bound-receipt-v1.json": "f0744ee16c03235483260ed02a5e6fc4ded19645ab58168496cd29ced2443d24",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts": "82b179b91e5d5447537d8ddc6b98ce2789ef51911a473fd352895cf19889c6ea",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts": "f83e3e90acee759cc3441df4509358e01b8299c5d704ebbbba41d089da00bcef",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.ts": "7936d8b62014d50e5bc1db8831be163353dd32aacf5e10779269132d9ce34cbe",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts": "062f2dde2bd813f79a37b474a73d93e2c2ea4e6b80804be7b429327ef9f454ed",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.ts": "dd2cd496860388880548c1ec1584c6d8527a293e118f4a7323d7bc83cc3829f6",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts": "13cc205e7705d945dec2d8a24656a6eb5b2e8844d479303880c48a0b6b96a5b8",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-api.ts": "7b2433d4a6c0b4a0a5315a81ba37a816c011286c388d31f71ccf4f0893b6994b",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.ts": "8c14c1b60bb833f102d38dd99741a43eedb880c5ec108d27103e85638432a307",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts": "efbb48f54d4a723c4e13bab298e37a8b21932d2606f6b089fcb5080c276eda75",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts": "27ab9b408f0e1b4c73365147b457dd2b839093332f956b858eebe5d42948de4b",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts": "6fc3be618bf70af5f77526ec2d26b79ef317447cca1804f510ee46aeeab267bd",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts": "a307463427e487343e693194fa129c9c8057dfaebd88aee8f2e2f47985ff71e5",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts": "d3fb61577fca5566b34a98503293c1c7ef20af8f6339b678b24685090f2c8577",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "24ebcbff9180b341e4a077e2422549e60242b87b3e6aa6d54b479311e85425b2",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts": "b9e2cb5f0a482311b453cdc970e2c472132ac4cbb752d36d61d40de64be7a8a8",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts": "f72a27e30b83f38a2b15c54bc04094104b3017d94145182258fb64c8a9fb7f86",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts": "77d7dbdbce9a48d18c1505101411c48b5d081f030fbad6a7e51f567c03d6b3d0",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx": "aa27a83534879cb20037c9e584b264b2f3fecc76f019195456756f5c9d2ccd4a",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.tsx": "aff21e2e72b7cc699c3f9169d9958ba0fce829b6a51f1af7bb346e4bceb3d044",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx": "9c2eb63259312a762b6188cd9232fce1988ffe8adca17b765c9c1f5e0aa86048",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx": "7aa9b0eb116d3d4b3072976a7d606eb266098511d7acce62766849f4bba34ac5",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipt_contract.py": "4880e9d6d9bced1e25286081e992f0502f5ed9b612c4bfea72e6345a2c89515d",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipts.py": "272b16e8fbb5ffb521c53205f4934ac451a00c2daa02414f8590a7557cb11a93",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/artifact_receipt_binding.py": "e9a45fc013d2f75bdb41423466e627dcafbb9a07335c8e1140e822b75f6d5c22",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py": "dd4ac83ceba4a227321fd30cc214d647e9cb585d9644895f71d482b219a24be5",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py": "c375369483da3e19527241b4fb716ee7c4ad28c0eaff695333474fdb6a94c76a",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py": "710a3c84d3c66dbdddaab0e5d0e12ae2a7b93327dfcbfd14b2999c3da11236fe",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py": "3999e4a7258089101f93f2f702dd03bba8131a758612d921cf62da6a22e18d8b",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/artifact_receipt_peer.py": "f6805a89a029751c73846dea8718d6094c77f8cd581a47dd8bb7e6b29da5d92c",
+      "docs/reviews/CVF_NCR_R2_W05_BOUND_SOURCE_WORKER_RETURN_2026-10-19.md": "49c581e5b5d73aa134a93e9cd2423f301d61a004556b10021f3bfa917f334f49",
+      "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json": "fd3b0c1a201ed6a12bf6d40b4205d65610c3ab526ff2a397c4a3894651a4fa3b",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.ts": "7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.test.ts": "1ba44d1f5e68bc0d72aa6668d6680c3918d5c50dc2369c66013031288bd82713",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts": "c5399e838b6c195423912f7ae33da4f352f94c66958c8aeccb29fe3bdeaf4d88",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "d4f2c2d8ec50de9aeb31e2c850ba311f7facbabf02bec9a667d12daf10caaa8c",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts": "00cb76dc36ae8efacaafffe3c1ec5086b1707baa8412afd4760ec1c9eb70fcfd",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/eslint.config.mjs": "d0ccd1757c31535cdd7762fcfbfa1677a97fef2543b61e2e09322ade86797ffb",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/requirements.txt": "7adfeccb5eef259406a1a64993b4b205f1f3c2d153bb3c1d21d27993edaaa0f5",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "docs/baselines/CVF_NCR_R2_W05_ACTIVATION_DESIGN_2026-10-19.md": "b38bd2345432e5c0ebacb85e652c9af45ae6854314b797eb4dc5369be8bf40de",
+      "docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md": "a48dec3bc0ff8f30c45bb17c41a2267fc9bbc1ce38e3a2ca959d466a9f47d8b8"
+    },
+    "sourceAfter": {
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.ts": "37e3df2f7c24501e2b98dd48c11334eb954d7b2c7a5d3c9c6b349047cffe615f",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts": "3b9286ce158a608c72b32f19f52eecf433f8fa105664ca26431120b9ad360764",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.ts": "280f02190e47fb7274eaefaf49c158acf69805d85c7d3089a9e43c7d41a41a80",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts": "3e21b1e2e3205fdf7db19d890a507c6f87ca6ffd716242d3e02b8f2ea18e872c",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/fixtures/artifact-bound-receipt-v1.json": "f0744ee16c03235483260ed02a5e6fc4ded19645ab58168496cd29ced2443d24",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts": "82b179b91e5d5447537d8ddc6b98ce2789ef51911a473fd352895cf19889c6ea",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts": "f83e3e90acee759cc3441df4509358e01b8299c5d704ebbbba41d089da00bcef",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.ts": "7936d8b62014d50e5bc1db8831be163353dd32aacf5e10779269132d9ce34cbe",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts": "062f2dde2bd813f79a37b474a73d93e2c2ea4e6b80804be7b429327ef9f454ed",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.ts": "dd2cd496860388880548c1ec1584c6d8527a293e118f4a7323d7bc83cc3829f6",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts": "13cc205e7705d945dec2d8a24656a6eb5b2e8844d479303880c48a0b6b96a5b8",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-api.ts": "7b2433d4a6c0b4a0a5315a81ba37a816c011286c388d31f71ccf4f0893b6994b",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.ts": "8c14c1b60bb833f102d38dd99741a43eedb880c5ec108d27103e85638432a307",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts": "efbb48f54d4a723c4e13bab298e37a8b21932d2606f6b089fcb5080c276eda75",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts": "27ab9b408f0e1b4c73365147b457dd2b839093332f956b858eebe5d42948de4b",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts": "6fc3be618bf70af5f77526ec2d26b79ef317447cca1804f510ee46aeeab267bd",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts": "a307463427e487343e693194fa129c9c8057dfaebd88aee8f2e2f47985ff71e5",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts": "d3fb61577fca5566b34a98503293c1c7ef20af8f6339b678b24685090f2c8577",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts": "24ebcbff9180b341e4a077e2422549e60242b87b3e6aa6d54b479311e85425b2",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts": "b9e2cb5f0a482311b453cdc970e2c472132ac4cbb752d36d61d40de64be7a8a8",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts": "f72a27e30b83f38a2b15c54bc04094104b3017d94145182258fb64c8a9fb7f86",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts": "77d7dbdbce9a48d18c1505101411c48b5d081f030fbad6a7e51f567c03d6b3d0",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx": "aa27a83534879cb20037c9e584b264b2f3fecc76f019195456756f5c9d2ccd4a",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.tsx": "aff21e2e72b7cc699c3f9169d9958ba0fce829b6a51f1af7bb346e4bceb3d044",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx": "9c2eb63259312a762b6188cd9232fce1988ffe8adca17b765c9c1f5e0aa86048",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx": "7aa9b0eb116d3d4b3072976a7d606eb266098511d7acce62766849f4bba34ac5",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipt_contract.py": "4880e9d6d9bced1e25286081e992f0502f5ed9b612c4bfea72e6345a2c89515d",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipts.py": "272b16e8fbb5ffb521c53205f4934ac451a00c2daa02414f8590a7557cb11a93",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/artifact_receipt_binding.py": "e9a45fc013d2f75bdb41423466e627dcafbb9a07335c8e1140e822b75f6d5c22",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py": "dd4ac83ceba4a227321fd30cc214d647e9cb585d9644895f71d482b219a24be5",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py": "c375369483da3e19527241b4fb716ee7c4ad28c0eaff695333474fdb6a94c76a",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py": "710a3c84d3c66dbdddaab0e5d0e12ae2a7b93327dfcbfd14b2999c3da11236fe",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py": "3999e4a7258089101f93f2f702dd03bba8131a758612d921cf62da6a22e18d8b",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/artifact_receipt_peer.py": "f6805a89a029751c73846dea8718d6094c77f8cd581a47dd8bb7e6b29da5d92c",
+      "docs/reviews/CVF_NCR_R2_W05_BOUND_SOURCE_WORKER_RETURN_2026-10-19.md": "49c581e5b5d73aa134a93e9cd2423f301d61a004556b10021f3bfa917f334f49",
+      "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json": "fd3b0c1a201ed6a12bf6d40b4205d65610c3ab526ff2a397c4a3894651a4fa3b",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.ts": "7cc84663af56bbf682afc2aadac13ccabd6d45777f5a2ff9229d26ce12a05094",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.test.ts": "1ba44d1f5e68bc0d72aa6668d6680c3918d5c50dc2369c66013031288bd82713",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts": "c5399e838b6c195423912f7ae33da4f352f94c66958c8aeccb29fe3bdeaf4d88",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx": "d4f2c2d8ec50de9aeb31e2c850ba311f7facbabf02bec9a667d12daf10caaa8c",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts": "00cb76dc36ae8efacaafffe3c1ec5086b1707baa8412afd4760ec1c9eb70fcfd",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/setup.ts": "bc573b2a6133b07404c42f797bce43fe73464711e0281f29da8234bf2fed6b27",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/package.json": "f03fc2c2700e904dc88e10395d0856983b9b0f9e6f27150713fa402f9e9fe24b",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/tsconfig.json": "d4af4823c8a2919796c5faa29805cd152217fbc25d6021c2da57541a685ea0f6",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/vitest.config.ts": "9a4a65976b5b7a5d038f9cb412a90d417f804108cf1dd33bae4421989a863420",
+      "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/eslint.config.mjs": "d0ccd1757c31535cdd7762fcfbfa1677a97fef2543b61e2e09322ade86797ffb",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/requirements.txt": "7adfeccb5eef259406a1a64993b4b205f1f3c2d153bb3c1d21d27993edaaa0f5",
+      "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "docs/baselines/CVF_NCR_R2_W05_ACTIVATION_DESIGN_2026-10-19.md": "b38bd2345432e5c0ebacb85e652c9af45ae6854314b797eb4dc5369be8bf40de",
+      "docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md": "a48dec3bc0ff8f30c45bb17c41a2267fc9bbc1ce38e3a2ca959d466a9f47d8b8"
+    },
+    "network": "FORBIDDEN",
+    "provider": "OFF",
+    "testImports": "NONE"
+  },
+  "findings": [
+    {
+      "id": "LR1",
+      "blocker": "BOUND_DESTINATION_NOT_ENFORCED",
+      "severity": "HIGH",
+      "rows": [
+        "BOUND_PROXY_ORIGIN_DENY_ZERO_FORWARD"
+      ],
+      "contract": "BC03/BC04/BC05",
+      "observed": "A valid signed challenge on foreign-web.invalid reaches engineSend once; status502 is subsequent send failure, not a pre-forward denial. WireRequest has no origin destination field."
+    },
+    {
+      "id": "LR2",
+      "blocker": "BOUND_ISSUED_AUTHORITY_NOT_IMMUTABLE",
+      "severity": "HIGH",
+      "rows": [
+        "UNISSUED_PROFILE_DENY_ZERO_INVOKE",
+        "ISSUED_CONFIG_IMMUTABLE"
+      ],
+      "contract": "BC03/BC08/BC09 and immutable two-hop key/config clause",
+      "observed": "An unissued structural profile invokes once and persists UNKNOWN. Issued profile.config.engineOrigin can be changed despite unchanged configDigest. Only the outer profile/context are frozen; config and store are shared mutable objects."
+    },
+    {
+      "id": "LR3",
+      "blocker": "BOUND_ACTUAL_LEDGER_OWNER_JOIN_MISSING",
+      "severity": "CRITICAL",
+      "rows": [
+        "ORCHESTRATOR_LEDGER_SWAP_DENY_BEFORE_ENTRY"
+      ],
+      "contract": "BC06",
+      "observed": "After challenge, swapping real CoreOrchestrator.ledger to a fresh ordinary SqliteLedger enters the actual core and commits one block in foreign.sqlite. The original ledger remains at one control block. Only the later lookup notices the missing block; UNKNOWN does not undo the foreign effect."
+    }
+  ],
+  "additionalSourceReview": {
+    "deadline": "createDeadline elapsed check uses Date.now; a fresh full timeout is created in each handler. Require explicit monotonic remaining budget across both hops and stages. No clock-jump or cumulative timeout execution in this Local probe.",
+    "namespace": "Review target/root reparses before opening and ancestor changes before effects, not only after connection setup. No hostile OS-root or ACL claim."
+  },
+  "procedureLimits": "Worker mandatory reads partially/late completed and some checker bodies unread; all failed attempts preserved. Technical pass/gates do not cure chronology. Local source review is targeted, not all-files/corpus completeness.",
+  "scec": {
+    "problemKey": "ncr-r2-w05-bound-receipt-offline-source",
+    "chainOrdinal": 2,
+    "current": [
+      "BOUND_DESTINATION_NOT_ENFORCED",
+      "BOUND_ISSUED_AUTHORITY_NOT_IMMUTABLE",
+      "BOUND_ACTUAL_LEDGER_OWNER_JOIN_MISSING"
+    ],
+    "counters": {
+      "partialReadyClosures": 0,
+      "reviewerScopeExpansions": 0,
+      "sameClaimCorrections": 0,
+      "nonDecreasingBlockerTransitions": 2
+    },
+    "requiredDisposition": "STOP_REASSESS_ARCHITECTURE",
+    "successorScope": "NO_SUCCESSOR"
+  },
+  "manifest": [
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-bound-receipt-contract.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/receipt-operation-schema.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/test/fixtures/artifact-bound-receipt-v1.json",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.bound.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-profile.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-transport.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/bound-receipt-api.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/artifact-receipts/route.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.bound.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/bound.operation.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.bound.test.ts",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ReceiptEffectDisclosure.test.tsx",
+    "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.bound.test.tsx",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipt_contract.py",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/artifact_receipts.py",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/artifact_receipt_binding.py",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_contract.py",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipts.py",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/test_artifact_receipt_binding.py",
+    "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/tests/artifact_receipt_peer.py",
+    "docs/reviews/CVF_NCR_R2_W05_BOUND_SOURCE_WORKER_RETURN_2026-10-19.md",
+    "docs/reviews/evidence/ncr-r2-w05-bound-source-worker-20261019.json",
+    "docs/reviews/CVF_NCR_R2_W05_BOUND_SOURCE_LOCAL_COMPLETION_REVIEW_2026-10-19.md",
+    "docs/reviews/evidence/ncr-r2-w05-bound-source-local-20261019.json",
+    "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md"
+  ],
+  "resources": {
+    "localProductProcesses": {
+      "node": 1,
+      "python": 1
+    },
+    "freshRootsOnly": true,
+    "network": false,
+    "provider": false,
+    "browser": false,
+    "sourceEdits": 0,
+    "workerInvocations": 0
+  },
+  "adif": {
+    "path": ".cvf/runtime/ncr-r2-w05-bound-source-20261019/root-review/reviewer-adif.json",
+    "sha256": "b7951e0060092f001467976c61cf93eb32c70b7f5bb86daf476c3a79908f89d2",
+    "defectIds": [
+      "ADIF-0007",
+      "ADIF-0018",
+      "ADIF-0019",
+      "ADIF-0020",
+      "ADIF-0021",
+      "ADIF-0022",
+      "ADIF-0023",
+      "ADIF-0024",
+      "ADIF-0026",
+      "ADIF-0027",
+      "ADIF-0028",
+      "ADIF-0029",
+      "ADIF-0030",
+      "ADIF-0031",
+      "ADIF-0032",
+      "ADIF-0034",
+      "ADIF-0035",
+      "ADIF-0036",
+      "ADIF-0037",
+      "ADIF-0038",
+      "ADIF-0039",
+      "ADIF-0040",
+      "ADIF-0042",
+      "ADIF-0043",
+      "ADIF-0044",
+      "ADIF-0045",
+      "ADIF-0046",
+      "ADIF-0047",
+      "ADIF-0048",
+      "ADIF-0049",
+      "ADIF-0050",
+      "ADIF-0051",
+      "ADIF-0054",
+      "ADIF-0055",
+      "ADIF-0056",
+      "ADIF-0057",
+      "ADIF-0059",
+      "ADIF-0062"
+    ]
+  },
+  "claimBoundary": "Offline source/protocol fixture evidence; no governance behavior/live/production/public or business acceptance proof."
+}

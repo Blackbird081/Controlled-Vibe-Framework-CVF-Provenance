@@ -8,7 +8,7 @@ import { requireAdminApiSession } from '@/lib/admin-session';
 import { normalPrincipal } from '@/lib/server/html-draft-recovery-api';
 import { resolveHtmlJobSyntheticProfile } from '@/lib/server/html-job-synthetic-profile';
 import { fetchGovernanceReceipt, type GovernanceReceipt } from './proof';
-import { bindJobSelectors, parseJobSelectors, runControlledBranch, type RenderedExport } from './operation-branch';
+import { bindJobSelectors, parseJobSelectors, runBoundBranch, runControlledBranch, type RenderedExport } from './operation-branch';
 import type { DraftPrincipal } from '@/lib/html-draft-recovery-contract';
 import { HtmlDraftSnapshotStore } from '@/lib/server/html-draft-snapshot-store';
 import { decideReceiptOperationRoute, resolveReceiptOperation } from '@/lib/server/receipt-operation-profile';
@@ -272,6 +272,7 @@ export async function POST(request: NextRequest) {
   }
   const selectedJobProfile = route.route === 'LOCAL_ONLY' ? localProfile : null;
   const controlledProfile = route.route === 'CONTROLLED' ? route.profile : null;
+  const boundProfile = route.route === 'BOUND' ? route.profile : null;
   const declaredLength = Number(request.headers.get('content-length'));
   if (Number.isFinite(declaredLength) && declaredLength > MAX_BODY_BYTES) {
     return NextResponse.json({ success: false, error: 'Artifact export body exceeds size limit.' }, { status: 413 });
@@ -289,7 +290,7 @@ export async function POST(request: NextRequest) {
   // reads CVF_SERVICE_TOKEN before its session branch, even when no token is sent.
   let selectedPrincipal = false;
   let principal: DraftPrincipal | null = null;
-  if (selectedJobProfile || controlledProfile) {
+  if (selectedJobProfile || controlledProfile || boundProfile) {
     const origin = request.headers.get('origin');
     const site = request.headers.get('sec-fetch-site');
     if (!origin || origin !== new URL(request.url).origin || (site && site !== 'same-origin')) {
@@ -397,6 +398,12 @@ export async function POST(request: NextRequest) {
 
   if (controlledProfile && principal) {
     const outcome = await runControlledBranch({ headers: request.headers, owner: principal, fields: { ...input }, profile: controlledProfile,
+      seams: { render, compose: composeData }, signal: request.signal });
+    return NextResponse.json(outcome.body, { status: outcome.status, headers: { 'Cache-Control': 'no-store' } });
+  }
+  if (boundProfile && principal) {
+    // The bound profile comes only from the injected typed resolver; the browser body and headers carry no permit, config or destination.
+    const outcome = await runBoundBranch({ headers: request.headers, owner: principal, fields: { ...input }, profile: boundProfile,
       seams: { render, compose: composeData }, signal: request.signal });
     return NextResponse.json(outcome.body, { status: outcome.status, headers: { 'Cache-Control': 'no-store' } });
   }

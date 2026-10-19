@@ -1,7 +1,10 @@
 import { canonicalJson, envelopeSha256, parseEnvelope, type ControlledEvaluateRequest, type ControlledInvoker, type OperationEnvelope,
   type OperationOutcomeKind, type OperationReceipt, type OutcomeInput, type PresenceLookup } from '@/lib/artifacts-receipt-operation-contract';
+import { boundBindingDigest, boundEnvelopeSha256, boundRequestSha256, parseBoundEnvelope, parseEvaluateResult,
+  type BoundEnvelope, type BoundOutcomeInput, type BoundReceipt } from '../../../../lib/artifacts-bound-receipt-contract';
 import { sha256, type DraftPrincipal } from '@/lib/html-draft-recovery-contract';
-import { isReceiptOperationStore, type ExistingOperation, type HtmlDraftSnapshotStore } from '@/lib/server/html-draft-snapshot-store';
+import { checkEvaluateResult, transportReason, type BoundInvoker } from '../../../../lib/server/bound-receipt-transport';
+import { isReceiptOperationStore, type ExistingBoundOperation, type ExistingOperation, type HtmlDraftSnapshotStore } from '@/lib/server/html-draft-snapshot-store';
 
 const GOVERNANCE_EVALUATE_URL = '/api/governance/evaluate';
 const PROOF_TIMEOUT_MS = 4000;
@@ -259,7 +262,8 @@ function settleExisting(envelope: OperationEnvelope, existing: ExistingOperation
 
 type Settled = { kind: 'RESPONSE'; value: unknown } | { kind: 'UNKNOWN'; reason: string };
 /** One invocation, bounded. A late response after settlement is dropped and cannot publish an outcome. */
-function invokeOnce(invoker: ControlledInvoker, request: ControlledEvaluateRequest, timeoutMs: number, external?: AbortSignal): Promise<Settled> {
+function invokeOnce(invoker: ControlledInvoker, request: ControlledEvaluateRequest, timeoutMs: number, external?: AbortSignal,
+  reasonOf: (error: unknown) => string = () => 'INVOKER_ERROR'): Promise<Settled> {
   return new Promise<Settled>(resolve => {
     const controller = new AbortController();
     let done = false;
@@ -276,7 +280,7 @@ function invokeOnce(invoker: ControlledInvoker, request: ControlledEvaluateReque
     const copy = JSON.parse(JSON.stringify(request)) as ControlledEvaluateRequest;
     Promise.resolve().then(() => invoker(copy, controller.signal)).then(
       value => finish({ kind: 'RESPONSE', value }),
-      () => finish({ kind: 'UNKNOWN', reason: controller.signal.aborted ? 'ABORTED' : 'INVOKER_ERROR' }),
+      error => finish({ kind: 'UNKNOWN', reason: controller.signal.aborted ? 'ABORTED' : reasonOf(error) }),
     );
   });
 }
@@ -342,4 +346,110 @@ export async function diagnoseRemotePresence(lookup: PresenceLookup, envelope: O
   const present = !!entry && entry.requestId === envelope.attemptId && entry.actor === envelope.owner.userId
     && entry.configDigest === envelope.config.configDigest && entry.storeId === envelope.config.storeId;
   return { status: present ? 'REMOTE_PRESENCE_OBSERVED' : 'UNKNOWN', releasesUnknown: false, grantsReplay: false };
+}
+
+// ---- Bound receipt operation: distinct schema, distinct store namespace, signed two-hop invoker. It never calls fetch or reads credentials. ----
+// One invocation performs one signed challenge plus one signed evaluate; those hop sends are counted by the profile, not by `sends`.
+
+export type BoundReceiptResult =
+  | { kind: 'DENIED'; reason: string; sends: 0 }
+  | { kind: 'ALREADY_PROCESSED'; operationKey: string; state: string; outcome: OperationOutcomeKind | null; sends: 0 }
+  | { kind: 'REUSED'; operationKey: string; receipt: BoundReceipt; sends: 0 }
+  | { kind: 'EXECUTED'; operationKey: string; outcome: OperationOutcomeKind; receipt: BoundReceipt | null; reason: string | null; persisted: boolean; sends: 1 };
+export interface BoundReceiptOptions {
+  store: ReceiptOperationStore;
+  owner: DraftPrincipal;
+  envelope: unknown;
+  request: ControlledEvaluateRequest;
+  invoker: BoundInvoker;
+  timeoutMs: number;
+  signal?: AbortSignal;
+}
+interface BoundPrepared { store: ReceiptOperationStore; owner: DraftPrincipal; envelope: BoundEnvelope; request: ControlledEvaluateRequest;
+  invoker: BoundInvoker; timeoutMs: number; signal: AbortSignal | undefined }
+
+/** Same isolation as prepare(), but the digest function is the bound canonicalAscii digest chosen from the validated bound envelope. */
+function prepareBound(options: unknown): BoundPrepared | null {
+  try {
+    if (!isRecord(options)) return null;
+    const { store, owner, envelope: rawEnvelope, request: rawRequest, invoker, timeoutMs, signal } = options;
+    const envelope = parseBoundEnvelope(rawEnvelope);
+    const request = snapshotRequest(rawRequest);
+    if (!envelope || !request || !isReceiptOperationStore(store) || typeof invoker !== 'function' || typeof timeoutMs !== 'number'
+      || !Number.isInteger(timeoutMs) || timeoutMs < 1 || timeoutMs > MAX_PROOF_TIMEOUT_MS || !(signal === undefined || isSignal(signal))
+      || !isRecord(owner) || owner.userId !== envelope.owner.userId || owner.orgId !== envelope.owner.orgId || owner.teamId !== envelope.owner.teamId
+      || request.request_id !== envelope.attemptId || request.artifact_id !== envelope.output.artifactId
+      || boundRequestSha256(request) !== envelope.payloadSha256) return null;
+    return { store, owner: { ...envelope.owner }, envelope, request, invoker: invoker as BoundInvoker, timeoutMs, signal };
+  } catch { return null; }
+}
+
+function settleExistingBound(envelope: BoundEnvelope, existing: ExistingBoundOperation): BoundReceiptResult {
+  if (!('intent' in existing)) return { kind: 'DENIED', reason: `OPERATION_${existing.state}`, sends: 0 };
+  const outcome = existing.state === 'OUTCOME' ? existing.outcome : null;
+  if (outcome?.outcome === 'RECEIPT_VERIFIED' && outcome.receipt && existing.intent.envelopeSha256 === boundEnvelopeSha256(envelope)) {
+    return { kind: 'REUSED', operationKey: envelope.operationKey, receipt: outcome.receipt, sends: 0 };
+  }
+  return { kind: 'ALREADY_PROCESSED', operationKey: envelope.operationKey, state: existing.state, outcome: outcome?.outcome ?? null, sends: 0 };
+}
+
+/** Joins the verified engine result to THIS envelope again (never trusting the transport alone) and builds the persisted receipt. */
+export function boundReceiptFromResult(value: unknown, envelope: BoundEnvelope): BoundReceipt | null {
+  const result = parseEvaluateResult(value);
+  if (!result || checkEvaluateResult(result, { operationKey: envelope.operationKey, attemptId: envelope.attemptId, artifactId: envelope.output.artifactId,
+    payloadSha256: envelope.payloadSha256, envelopeSha256: boundEnvelopeSha256(envelope), owner: envelope.owner }, envelope.config) !== null) return null;
+  return { receiptId: envelope.attemptId, decision: result.report.decision_analysis.final_decision, evaluatedAt: result.report.report_metadata.generated_at,
+    riskLevel: 'R1', engineRiskLevel: result.engineRiskLevel, bindingDigest: boundBindingDigest(envelope), ledgerReference: { ...result.ledgerReference } };
+}
+
+async function invokeBoundPrepared(prepared: BoundPrepared, grant: unknown): Promise<BoundReceiptResult> {
+  const { store, invoker, request, timeoutMs, signal, envelope } = prepared;
+  if (boundRequestSha256(request) !== envelope.payloadSha256) return { kind: 'DENIED', reason: 'INVALID_PROOF_INPUT', sends: 0 };
+  const consumed = store.consumeBoundGrant(grant, invoker, envelope);
+  if (!consumed) return { kind: 'DENIED', reason: 'GRANT_REJECTED', sends: 0 };
+  if (signal?.aborted) {
+    await bounded(() => store.writeBoundOutcome(consumed, { outcome: 'FAILED_BEFORE_SEND', receipt: null, reason: 'ABORTED_BEFORE_SEND' }), timeoutMs);
+    return { kind: 'DENIED', reason: 'FAILED_BEFORE_SEND', sends: 0 };
+  }
+  const settled = await invokeOnce(invoker, request, timeoutMs, signal, transportReason);
+  let input: BoundOutcomeInput;
+  if (settled.kind === 'RESPONSE') {
+    const receipt = boundReceiptFromResult(settled.value, envelope);
+    input = receipt
+      ? { outcome: receipt.decision === 'DENY' ? 'DENIED' : 'RECEIPT_VERIFIED', receipt, reason: null }
+      : { outcome: 'OUTCOME_UNKNOWN', receipt: null, reason: 'INVALID_RESPONSE' };
+  } else {
+    input = { outcome: 'OUTCOME_UNKNOWN', receipt: null, reason: settled.reason };
+  }
+  const saved = await bounded(() => store.writeBoundOutcome(consumed, input), timeoutMs);
+  if (saved?.kind === 'SAVED') {
+    return { kind: 'EXECUTED', operationKey: envelope.operationKey, outcome: saved.outcome.outcome, receipt: saved.outcome.receipt,
+      reason: saved.outcome.reason, persisted: true, sends: 1 };
+  }
+  return { kind: 'EXECUTED', operationKey: envelope.operationKey, outcome: 'OUTCOME_UNKNOWN', receipt: null,
+    reason: `OUTCOME_WRITE_${saved ? saved.kind : 'UNCONFIRMED'}`, persisted: false, sends: 1 };
+}
+
+/** Consume the grant before invoking. A fabricated, copied, spent, v1 or mismatched grant, or any invalid input, denies with zero sends. */
+export async function invokeBoundWithGrant(options: BoundReceiptOptions, grant: unknown): Promise<BoundReceiptResult> {
+  const prepared = prepareBound(options);
+  return prepared ? invokeBoundPrepared(prepared, grant) : { kind: 'DENIED', reason: 'INVALID_PROOF_INPUT', sends: 0 };
+}
+
+/** Admit, start and invoke the injected two-hop invoker at most once for one immutable logical operation. Never throws. */
+export async function runBoundReceipt(options: BoundReceiptOptions): Promise<BoundReceiptResult> {
+  const prepared = prepareBound(options);
+  const denied = (reason: string): BoundReceiptResult => ({ kind: 'DENIED', reason, sends: 0 });
+  if (!prepared) return denied('INVALID_PROOF_INPUT');
+  const { store, owner, envelope, invoker, timeoutMs } = prepared;
+  const admitted = await bounded(() => store.admitBoundOperation(envelope, owner), timeoutMs);
+  if (!admitted) return denied('STORE_UNAVAILABLE');
+  if (admitted.kind === 'DENIED') return denied(admitted.reason);
+  if (admitted.kind === 'EXISTING') return settleExistingBound(envelope, admitted.operation);
+  const admission = admitted.admission;
+  const started = await bounded(() => store.startBoundOperation(owner, envelope.operationKey, invoker, admission), timeoutMs);
+  if (!started) return denied('STORE_UNAVAILABLE');
+  if (started.kind === 'DENIED') return denied(started.reason);
+  if (started.kind === 'EXISTING') return settleExistingBound(envelope, started.operation);
+  return invokeBoundPrepared(prepared, started.grant);
 }
