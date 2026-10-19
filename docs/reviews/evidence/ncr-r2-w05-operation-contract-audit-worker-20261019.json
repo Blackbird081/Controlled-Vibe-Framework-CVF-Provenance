@@ -1,0 +1,1998 @@
+{
+ "schema": "cvf.ncrReceiptOperationDesignAudit.v1",
+ "batchId": "CVF-NCR-R2-W05-OPERATION-AUDIT-20261019",
+ "executionBaseHead": "373684b6a1ad9ee0c9948a109245c7b445447c3b",
+ "dispatchInspectionBase": "cc30ec12432251244d1f3de4ee2fe436e776cb3e",
+ "baselineSha256": "9c16125c01aa00bb1ce4558977bc9e622471ab2e723db866747b8e73c0413018",
+ "workOrderSha256": "2b8ab7fe667a395a0dcfb986c8d8880e474b9167754c334c6565e768c948a6c3",
+ "workerReturnPath": "docs/reviews/CVF_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_WORKER_RETURN_2026-10-19.md",
+ "claimBoundary": "Offline source and design audit only. No test, build, route call, process, network, environment, secret or active-store access. No source mutation. Findings are design inputs for Local; nothing here is runtime readiness.",
+ "textEncodingNote": "ASCII only.",
+ "sources": [
+  {
+   "id": "S01",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+   "sha256": "2f09a7dc52a9c8c4383ecd6905459bfb9ea9d2a67ec520c0a31d022de460dd43",
+   "lineCount": 389,
+   "readDepth": "FULL_READ",
+   "readRange": "1-389"
+  },
+  {
+   "id": "S02",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+   "sha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+   "lineCount": 160,
+   "readDepth": "FULL_READ",
+   "readRange": "1-160"
+  },
+  {
+   "id": "S03",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+   "sha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+   "lineCount": 262,
+   "readDepth": "FULL_READ",
+   "readRange": "1-262"
+  },
+  {
+   "id": "S04",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts",
+   "sha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+   "lineCount": 94,
+   "readDepth": "FULL_READ",
+   "readRange": "1-94"
+  },
+  {
+   "id": "S05",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts",
+   "sha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+   "lineCount": 233,
+   "readDepth": "FULL_READ",
+   "readRange": "1-233"
+  },
+  {
+   "id": "S06",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pending-agent-execution.ts",
+   "sha256": "c27e4f4a871f39b0ce77a86163077c29659a2e26ac16c1f6f8204db05ffe0d4a",
+   "lineCount": 999,
+   "readDepth": "FULL_READ",
+   "readRange": "1-999"
+  },
+  {
+   "id": "S07",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pending-agent-execution-sqlite-store.ts",
+   "sha256": "ac477e69b1bd1872748fc0c6592c702456f038362105b8403c3963d407ad6109",
+   "lineCount": 744,
+   "readDepth": "FULL_READ",
+   "readRange": "1-744"
+  },
+  {
+   "id": "S08",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pending-agent-execution-composition.ts",
+   "sha256": "d82f728d8c5b94c619fdbec3927cfee80dbf797732c78fd7f4ba01c455edd624",
+   "lineCount": 224,
+   "readDepth": "FULL_READ",
+   "readRange": "1-224"
+  },
+  {
+   "id": "S09",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts",
+   "sha256": "4e9640cc3f25fcaffbc916a9d8457e9c57867532fcd0a9e9022667900f0fae84",
+   "lineCount": 409,
+   "readDepth": "FULL_READ",
+   "readRange": "1-409"
+  },
+  {
+   "id": "S10",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/canonical-web-gateway-execution.ts",
+   "sha256": "be79bcd6346033b05a1de6e8b15459f2fa6b47e0b463f57a29b52bffcf60fb3d",
+   "lineCount": 149,
+   "readDepth": "FULL_READ",
+   "readRange": "1-149"
+  },
+  {
+   "id": "S11",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+   "sha256": "138ebb622321e5114e4f742eb83df271ad9da3ffdf5245b0aa68569c6ef6d752",
+   "lineCount": 181,
+   "readDepth": "FULL_READ",
+   "readRange": "1-181"
+  },
+  {
+   "id": "S12",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts",
+   "sha256": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8",
+   "lineCount": 10,
+   "readDepth": "FULL_READ",
+   "readRange": "1-10"
+  },
+  {
+   "id": "S13",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts",
+   "sha256": "dcb8cdd8a98f49f345b53c9ea9d824b11785f0a12854023b545cc34cdfe3a23b",
+   "lineCount": 30,
+   "readDepth": "FULL_READ",
+   "readRange": "1-30"
+  },
+  {
+   "id": "S14",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+   "sha256": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550",
+   "lineCount": 119,
+   "readDepth": "FULL_READ",
+   "readRange": "1-119"
+  },
+  {
+   "id": "S15",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts",
+   "sha256": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0",
+   "lineCount": 90,
+   "readDepth": "FULL_READ",
+   "readRange": "1-90"
+  },
+  {
+   "id": "S16",
+   "path": "docs/assessments/CVF_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
+   "sha256": "52ad4a24ea3f47f56d6f0dc1a2ff2dcd83c9a79073e9715da9e1270bd28637ae",
+   "lineCount": 631,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "17-436 before scaffold; 496-566 read late (after scaffold, before drafting); 1-16 and 437-495 and 567-631 not read"
+  },
+  {
+   "id": "S17",
+   "path": "docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md",
+   "sha256": "64def6e3bb923533a810e527dc67bbbfeeab0b7a5502f4133b4729de6adb331b",
+   "lineCount": 248,
+   "readDepth": "FULL_READ",
+   "readRange": "1-248"
+  },
+  {
+   "id": "S18",
+   "path": "docs/reviews/evidence/ncr-r1-exit-r2-w05-readonly-20261019.json",
+   "sha256": "62c81750c0569a4dea16b0fb46b04d027078d1bb9d3f28be2b9e9742e01d72e1",
+   "lineCount": 290,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "key paths enumerated by script only (sqlite ledger path, generalReceiptBranch stages); not read end to end"
+  },
+  {
+   "id": "S19",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-api.ts",
+   "sha256": "bfb68c9d15afe0083d5c4d28e4ffdaf1835ae9bcb9ac11b4d77d5b2312cae9a2",
+   "lineCount": 111,
+   "readDepth": "FULL_READ",
+   "readRange": "1-111"
+  },
+  {
+   "id": "S20",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-recovery-api.ts",
+   "sha256": "c5399e838b6c195423912f7ae33da4f352f94c66958c8aeccb29fe3bdeaf4d88",
+   "lineCount": 94,
+   "readDepth": "FULL_READ",
+   "readRange": "1-94"
+  },
+  {
+   "id": "S21",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/admin-session.ts",
+   "sha256": "69b33640ec525b486390f3e300215913a2c85fe0c6492d0c9a8efdc07ec304ae",
+   "lineCount": 268,
+   "readDepth": "FULL_READ",
+   "readRange": "1-268"
+  },
+  {
+   "id": "S22",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/middleware-auth.ts",
+   "sha256": "3877b34d112185040a331019e9cd9915c9152059ad42ee2c26e1a9833452b40e",
+   "lineCount": 176,
+   "readDepth": "FULL_READ",
+   "readRange": "1-176"
+  },
+  {
+   "id": "S23",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/service-token-auth.ts",
+   "sha256": "4f155277a0ce3f8b69e8f515830e4c93841e6a06a0b4cb2bac4e83148cd64279",
+   "lineCount": 147,
+   "readDepth": "FULL_READ",
+   "readRange": "1-147"
+  },
+  {
+   "id": "S24",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/bounded-request-body.ts",
+   "sha256": "5986f11e0b78403d9c3175f4ae11a861a4937f5358f2f24a28aff67a1697461f",
+   "lineCount": 39,
+   "readDepth": "FULL_READ",
+   "readRange": "1-39"
+  },
+  {
+   "id": "S25",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/ledger/route.ts",
+   "sha256": "8da8b4a12b89e6b645f6e22bca8aa5f836852a4b6a5afacaad7f5ae84533dbe3",
+   "lineCount": 54,
+   "readDepth": "FULL_READ",
+   "readRange": "1-52"
+  },
+  {
+   "id": "S26",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/sqlite_ledger.py",
+   "sha256": "df353a92b3adead1ed5cf00d7128ba9039c573e0441b819118094ec77c4c4ce5",
+   "lineCount": 435,
+   "readDepth": "FULL_READ",
+   "readRange": "1-435"
+  },
+  {
+   "id": "S27",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/ledger_layer/immutable_ledger.py",
+   "sha256": "7e1e8853492cbdacd8b388e7b3c62352e1b5847d82065086cdc06cf9f1c27d02",
+   "lineCount": 45,
+   "readDepth": "FULL_READ",
+   "readRange": "1-45"
+  },
+  {
+   "id": "S28",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py",
+   "sha256": "b557d28703c22353c74de170e5eb9151e73fa216a44fb3af39935b92da055bd6",
+   "lineCount": 295,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "60-255 read; 1-59 and 255-295 not read; auth grep returned no hits"
+  },
+  {
+   "id": "S29",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/core_orchestrator.py",
+   "sha256": "9d35ed87fafeb5a21814f94dbdd7db8e2e96ab430eb300f5f2a1ae77faa85a69",
+   "lineCount": 265,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "150-240 read; remainder not read"
+  },
+  {
+   "id": "S30",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/adapters/cvf_enforcement_adapter.py",
+   "sha256": "5890e1c79693a4070d5911349d650f1ebd74401044d57c14f1440d3cf4a77447",
+   "lineCount": 211,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "1-200 read; enrich_result remainder not read"
+  },
+  {
+   "id": "S31",
+   "path": "scripts/probe_cvf_q001_synthetic_system_chain.py",
+   "sha256": "b09924875254872611332baa11fdad4ec0b574d69c74e217ba0bb81a56cf2662",
+   "lineCount": 749,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "200-225 plus grep of lookup/ledger identifiers; remainder not read"
+  },
+  {
+   "id": "S32",
+   "path": "docs/reviews/CVF_NCR_W05_SELECTED_CHAIN_READINESS_2026-10-07.md",
+   "sha256": "f6f68f743129f442d971cc2efd18f6ab831597a197f4aed5eeaa95be656210d5",
+   "lineCount": 639,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "197-275 (Current Bounded Route Execution); remainder not read"
+  },
+  {
+   "id": "S33",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+   "sha256": "8a20cc04ebcb3662a7078c34ab12f3a2c8f141fb0646abf0756ada3cb3f0bb88",
+   "lineCount": 125,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "1-135"
+  },
+  {
+   "id": "S34",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/HtmlJobControls.tsx",
+   "sha256": "36a03380619cc5bbca540cabfbe2b7a96b9ff4f656265a2f3ea8390c1cb30b45",
+   "lineCount": 301,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "100-160 plus grep; remainder not read"
+  },
+  {
+   "id": "S35",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/ArtifactExportPanel.tsx",
+   "sha256": "d4f2c2d8ec50de9aeb31e2c850ba311f7facbabf02bec9a667d12daf10caaa8c",
+   "lineCount": 972,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "455-560 plus grep; remainder not read"
+  },
+  {
+   "id": "S36",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/job-profile.test.ts",
+   "sha256": "e1cb12922e29471dc960a9a3a809ef6eb666a19d8452d19c66ead1fa3ff3ca87",
+   "lineCount": 47,
+   "readDepth": "FULL_READ",
+   "readRange": "1-47 (route.test.ts: test names only via grep, bodies not read)"
+  },
+  {
+   "id": "S37",
+   "path": "governance/compat/check_governed_file_size.py",
+   "sha256": "ca6336fdf441e0efdf652468c2ec351ea54837a27842f07c804124eef6324531",
+   "lineCount": 544,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "1-200 and 300-362; thresholds read from the exception registry JSON"
+  },
+  {
+   "id": "S38",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/pending-agent-execution-local-harness.ts",
+   "sha256": "0205c771590d9975d06b5618522b3d25599df8ae74c1878df080c8ee60a544cb",
+   "lineCount": 136,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "1-40 plus importer grep"
+  },
+  {
+   "id": "S39",
+   "path": "docs/roadmaps/CVF_NONCODER_CONTROLLED_CAPABILITY_RUNTIME_ROADMAP_2026-09-26.md",
+   "sha256": "5e885ccb786f33a73171feeb7fd67102258665fffaf262190c65ae75f98b5d71",
+   "lineCount": 1168,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "13-56, 434-445, 621-646"
+  },
+  {
+   "id": "S41",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts",
+   "sha256": "f65705564060daa9d913d3afd38237eaf6d6b408939f59605ea5053b52b7d47f",
+   "lineCount": 402,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "1-92 and 262-402 read after gate attempt 1 (legacy consumer contract check); 93-261 not read"
+  },
+  {
+   "id": "S40",
+   "path": "governance/compat/CVF_GOVERNED_FILE_SIZE_EXCEPTION_REGISTRY.json",
+   "sha256": "4e2a7ed411aefd70d52f297133f9c948dd411d9b44f8c4ed3c34953fc44d56ad",
+   "lineCount": 176,
+   "readDepth": "PARTIAL_READ",
+   "readRange": "thresholds, proactiveOwnerSurfaces and exception count only"
+  }
+ ],
+ "preAuditPinsComparedAtEpBuild": [
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+   "expectedSha256": "2f09a7dc52a9c8c4383ecd6905459bfb9ea9d2a67ec520c0a31d022de460dd43",
+   "observedSha256": "2f09a7dc52a9c8c4383ecd6905459bfb9ea9d2a67ec520c0a31d022de460dd43",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+   "expectedSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+   "observedSha256": "fbdcc3a434eea13842c9f692d2b54cc9955e80d8c8777d9dfaa14cace9cdfcaf",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/route-governance-proof.ts",
+   "expectedSha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+   "observedSha256": "17c19ccc4e31d5e068b728304e4a0970ddc072a9711460dd62b859f3ade15b6e",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/evaluate/route.ts",
+   "expectedSha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+   "observedSha256": "b232dcbdfb1a5ec7982e2ed35caf1e9313dec553a3dcf5752576cc110955c1cb",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/governance-engine.ts",
+   "expectedSha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+   "observedSha256": "48d3252df6614866b3fe84904a0c0f4bd6528d42f1da76543a0db76947494dde",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pending-agent-execution.ts",
+   "expectedSha256": "c27e4f4a871f39b0ce77a86163077c29659a2e26ac16c1f6f8204db05ffe0d4a",
+   "observedSha256": "c27e4f4a871f39b0ce77a86163077c29659a2e26ac16c1f6f8204db05ffe0d4a",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pending-agent-execution-sqlite-store.ts",
+   "expectedSha256": "ac477e69b1bd1872748fc0c6592c702456f038362105b8403c3963d407ad6109",
+   "observedSha256": "ac477e69b1bd1872748fc0c6592c702456f038362105b8403c3963d407ad6109",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/pending-agent-execution-composition.ts",
+   "expectedSha256": "d82f728d8c5b94c619fdbec3927cfee80dbf797732c78fd7f4ba01c455edd624",
+   "observedSha256": "d82f728d8c5b94c619fdbec3927cfee80dbf797732c78fd7f4ba01c455edd624",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/provider-attempt-admission.ts",
+   "expectedSha256": "4e9640cc3f25fcaffbc916a9d8457e9c57867532fcd0a9e9022667900f0fae84",
+   "observedSha256": "4e9640cc3f25fcaffbc916a9d8457e9c57867532fcd0a9e9022667900f0fae84",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/canonical-web-gateway-execution.ts",
+   "expectedSha256": "be79bcd6346033b05a1de6e8b15459f2fa6b47e0b463f57a29b52bffcf60fb3d",
+   "observedSha256": "be79bcd6346033b05a1de6e8b15459f2fa6b47e0b463f57a29b52bffcf60fb3d",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+   "expectedSha256": "138ebb622321e5114e4f742eb83df271ad9da3ffdf5245b0aa68569c6ef6d752",
+   "observedSha256": "138ebb622321e5114e4f742eb83df271ad9da3ffdf5245b0aa68569c6ef6d752",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-job-synthetic-profile.ts",
+   "expectedSha256": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8",
+   "observedSha256": "9d87baee877031fb3839deb7caa2a0cfe431a273c166036c768e85c64da8aca8",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-synthetic-profile.ts",
+   "expectedSha256": "dcb8cdd8a98f49f345b53c9ea9d824b11785f0a12854023b545cc34cdfe3a23b",
+   "observedSha256": "dcb8cdd8a98f49f345b53c9ea9d824b11785f0a12854023b545cc34cdfe3a23b",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-job-contract.ts",
+   "expectedSha256": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550",
+   "observedSha256": "ceb0b7308c39d1a172ab47d86580039168ead52811f339ec2c9b8c9146d70550",
+   "match": true
+  },
+  {
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/html-draft-recovery-contract.ts",
+   "expectedSha256": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0",
+   "observedSha256": "89782c054e3e242b0d398ef37c1d4887f0763a97d730734cd45f05270c9185f0",
+   "match": true
+  },
+  {
+   "path": "docs/assessments/CVF_GC010_SCR_R2_T1B_PENDING_AGENT_EXECUTION_DURABLE_SINGLE_NODE_ADAPTER_COMPOSITION_OWNER_DECISION_2026-08-31.md",
+   "expectedSha256": "52ad4a24ea3f47f56d6f0dc1a2ff2dcd83c9a79073e9715da9e1270bd28637ae",
+   "observedSha256": "52ad4a24ea3f47f56d6f0dc1a2ff2dcd83c9a79073e9715da9e1270bd28637ae",
+   "match": true
+  },
+  {
+   "path": "docs/reviews/CVF_NCR_R1_EXIT_R2_W05_READONLY_DISPOSITION_2026-10-19.md",
+   "expectedSha256": "64def6e3bb923533a810e527dc67bbbfeeab0b7a5502f4133b4729de6adb331b",
+   "observedSha256": "64def6e3bb923533a810e527dc67bbbfeeab0b7a5502f4133b4729de6adb331b",
+   "match": true
+  },
+  {
+   "path": "docs/reviews/evidence/ncr-r1-exit-r2-w05-readonly-20261019.json",
+   "expectedSha256": "62c81750c0569a4dea16b0fb46b04d027078d1bb9d3f28be2b9e9742e01d72e1",
+   "observedSha256": "62c81750c0569a4dea16b0fb46b04d027078d1bb9d3f28be2b9e9742e01d72e1",
+   "match": true
+  }
+ ],
+ "firstReadOrder": [
+  {
+   "step": 1,
+   "time": "2026-10-19T06:07:21+07:00",
+   "item": "clock, HEAD 373684b6a, status 0 entries, stage 0; wc of startup files"
+  },
+  {
+   "step": 2,
+   "item": "work order FULL_READ 1-478 (operator pointer); front door 1-74; bootstrap JSON 1-17; active handoff V63 1-182; baseline 1-226 FULL_READ"
+  },
+  {
+   "step": 3,
+   "item": "baseline and work order SHA256 match bootstrap currentAuthority (9c16125c..., 2b8ab7fe...)"
+  },
+  {
+   "step": 4,
+   "item": "worker-seat memory notes (4 files) read for preparation traps"
+  },
+  {
+   "step": 5,
+   "item": "orientation: guard README 26-135; lifecycle 97-370; SOP 55-258; template 453-486 and 887-1031; relay 83-100; funnel 49-77; review-cost 693-735; gotchas checklist 38-507"
+  },
+  {
+   "step": 6,
+   "item": "current authority: R1-exit disposition FULL_READ 1-248; roadmap 13-56, 434-445, 621-646"
+  },
+  {
+   "step": 7,
+   "item": "source graph per S01-S40 (see sources); engine, probe and UI files partial as listed"
+  },
+  {
+   "step": 8,
+   "time": "2026-10-19T06:10:46+07:00 to 06:11:05+07:00",
+   "item": "pre-implementation autorun gate: exit 0, COMPLIANT in 15.27 s (single run)"
+  },
+  {
+   "step": 9,
+   "time": "2026-10-19T06:11:09+07:00",
+   "item": "FIRST WRITE: canonical worker-return scaffold (run_worker_return_scaffold.py)"
+  },
+  {
+   "step": 10,
+   "item": "after scaffold and before drafting: output-checker reads (fast-gate runner, acceptance ledger, quality gate full; SCEC, learning, retro, epistemic, trace, delta, external-intake, structural-completeness partial)"
+  },
+  {
+   "step": 11,
+   "time": "2026-10-19T06:17:53+07:00",
+   "item": "LATE READ after scaffold: T1B decision 496-566 (Independent Reviewer Contract Correction, Findings, Risk)"
+  },
+  {
+   "step": 12,
+   "time": "after gate attempt 1 (06:27 to 06:32)",
+   "item": "additional consumer read after the first full gate: export route.test.ts 1-92 and 262-402 (not a mapped read)"
+  }
+ ],
+ "readLimitsAndLateReads": [
+  "T1B decision lines 1-16, 437-495 and 567-631 were not read.",
+  "Template 'fulfillment' addendum: only a single mention (line 163) was found by grep; no separate section read.",
+  "Engine files (server.py, core_orchestrator.py, cvf_enforcement_adapter.py), probe script, W05 readiness review, ArtifactExportPanel.tsx, HtmlJobControls.tsx, useHtmlBuildAttempts.ts and route.test.ts bodies are partial reads (ranges in sources).",
+  "Output checkers not read in full: SCEC, learning, retrospective, epistemic, trace, delta, external routing, structural completeness (constants and decision functions only); review-cost, gate-to-role closeability, rescan, core-guard, probe-admission and packet encoding checkers were not opened; their scaffold-emitted blocks were filled from the work order.",
+  "The worker-role ADIF resolver was not run.",
+  "A late read cannot be cured by a hash or a gate; the late T1B read is disclosed here."
+ ],
+ "criteria": [
+  {
+   "id": "D01",
+   "title": "Selected profile versus prospective general receipt; no label/env/receipt grants effect",
+   "verdict": "SUPPORTED_WITH_LIMITS",
+   "sourceFacts": [
+    {
+     "src": "S12",
+     "loc": "L7",
+     "fact": "resolveHtmlJobSyntheticProfile returns null when NODE_ENV is production or CVF_NCR_HTML_JOB_PROFILE is not LOCAL_SYNTHETIC; it layers on the draft resolver."
+    },
+    {
+     "src": "S13",
+     "loc": "L9-L29",
+     "fact": "resolveHtmlDraftSyntheticProfile is server-only (comment L9: no request field can select it); needs CVF_NCR_DRAFT_PROFILE, an absolute canonical root, a run id and a marker file."
+    },
+    {
+     "src": "S01",
+     "loc": "L261,L277-L288,L367-L368",
+     "fact": "With the selected profile the route takes selectedPrincipal and returns receipt status NOT_CONFIGURED without calling fetchGovernanceReceipt."
+    },
+    {
+     "src": "S36",
+     "loc": "L1-L47",
+     "fact": "Existing focused test asserts the selected profile never reads CVF_SERVICE_TOKEN and never fetches a receipt."
+    },
+    {
+     "src": "S02",
+     "loc": "L56-L73",
+     "fact": "In the general branch the receipt hop fires whenever the env-derived URL resolves to an absolute URL; no profile opt-in and no operation record exist."
+    },
+    {
+     "src": "S01",
+     "loc": "L383-L385",
+     "fact": "governanceState is only a label; the HTML build and the hop are not gated on any receipt decision."
+    }
+   ],
+   "rootDesign": [
+    "Selected LOCAL_SYNTHETIC/no-receipt stays the profile; general receipt is a separately admitted branch; label/env/ALLOW/operator copy is not permission."
+   ],
+   "auditAssumptions": [
+    "A new server-only operation profile (name proposed: CVF_NCR_RECEIPT_OPERATION_PROFILE) gates the controlled branch in addition to the URL env; its exact name is a BUILD detail."
+   ],
+   "consequence": "Property holds for the selected branch and can hold for a new controlled branch. It does NOT hold for the legacy general branch today: an authenticated caller plus an absolute URL env is enough to emit the hop with no operation record (finding F-01). Deployment values are unread, so reachability in any real deployment is UNKNOWN.",
+   "heldBuild": "None for the synthetic proof. Legacy-branch disposition is held (HQ4)."
+  },
+  {
+   "id": "D02",
+   "title": "Immutable server-resolved operation envelope; concrete producer/lookup/transport or held",
+   "verdict": "DESIGN_GAP",
+   "sourceFacts": [
+    {
+     "src": "S01",
+     "loc": "L14-L32,L338-L344",
+     "fact": "Export DTO has exactly seven fields; unknown keys are rejected (400 Unknown artifact export field); no job or operation reference is accepted."
+    },
+    {
+     "src": "S33",
+     "loc": "L105-L108",
+     "fact": "The client holds the job reference from prepareJob when it calls fetch(exportEndpoint) but sends only the seven-field body; the reference is not transmitted."
+    },
+    {
+     "src": "S34",
+     "loc": "L145-L156",
+     "fact": "prepareJob mints a fresh crypto.randomUUID jobId on every call and creates a job with a goal, criteria and the request."
+    },
+    {
+     "src": "S19",
+     "loc": "L23-L110",
+     "fact": "Existing job owner: owner-scoped CREATE_JOB/LINK_VERSION/ACCEPT_VERSION and GET job/version/decision; principal comes from normalPrincipal(session)."
+    },
+    {
+     "src": "S11",
+     "loc": "L132-L155",
+     "fact": "Owner-scoped lookups getJob and getVersion join request/html hashes; only usable when jobDecisions is true."
+    },
+    {
+     "src": "S11",
+     "loc": "L127-L130",
+     "fact": "createJob requires jobDecisions and a sourceRecordId starting with ncr-synthetic-; no general or production job store exists."
+    },
+    {
+     "src": "S14",
+     "loc": "L9,L45-L52,L74-L82",
+     "fact": "JOB_EFFECTS is the closed list LOCAL_HTML_BUILD, LOCAL_DRAFT_SAVE, LOCAL_SYNTHETIC_REVIEW; the job schema uses exact keys, so a job can neither carry effectKind/endpoint/config nor authorise an outbound receipt effect."
+    },
+    {
+     "src": "S15",
+     "loc": "L64-L66",
+     "fact": "requestIdentity is the fixed-order seven-field identity; job.requestSha256 = sha256(requestIdentity(request)) (S14 L72), so the route can recompute the same value from its own validated body."
+    },
+    {
+     "src": "S03",
+     "loc": "L136-L179,L211-L231",
+     "fact": "General auth yields actorId only; a service-token caller has no user/org/team, a session caller exposes orgId/teamId only through the returned session object that route.ts does not use."
+    },
+    {
+     "src": "S28",
+     "loc": "L83",
+     "fact": "The engine ledger path is an engine-process env value (CVF_GOVERNANCE_LEDGER_PATH); nothing in the Web path can observe it."
+    }
+   ],
+   "rootDesign": [
+    "Envelope binds schema/config/policy/transform revisions, effectKind, actor, source/job/frozen input, output identity where available, endpoint/store identity, secret reference, payload digest, risk and limits; no untrusted field grants authority; the audit must choose a concrete existing-owner producer/lookup/transport or hold."
+   ],
+   "auditAssumptions": [
+    "Producer: inside the export route, after authentication, from server-resolved profile + normalPrincipal(session) + server-recomputed request identity + owner-scoped HtmlDraftSnapshotStore.getJob/getVersion (selectors are lookup keys only).",
+    "Transport: two selector headers (job id, source record id) set at the useHtmlBuildAttempts fetch site; body fields rejected because the seven-field DTO is mirrored by REQUEST_KEYS (S15 L8) and requestValid (S14 L23-L27).",
+    "Controlled branch requires a session principal; service-token-only callers are denied.",
+    "Endpoint and backend-store identity can only be declared configuration (unattested): the Web side cannot read the engine ledger path."
+   ],
+   "consequence": "A concrete existing-owner producer/lookup/transport exists for the FIRST SYNTHETIC PROOF only. Held: (a) a non-synthetic producer (no general job store), (b) attestation of endpoint/backend-store identity, (c) any service-token-only caller. The Root candidate manifest omits the client transport site (finding F-13).",
+   "heldBuild": "Held for any non-synthetic or production scope; open for the synthetic offline proof once HQ2 and HQ5 are decided."
+  },
+  {
+   "id": "D03",
+   "title": "Distinct logical effect identity, envelope digest, attempt ID, receipt ID; unresolved effect not escapable",
+   "verdict": "CONTRADICTED",
+   "sourceFacts": [
+    {
+     "src": "S34",
+     "loc": "L145",
+     "fact": "Each Build creates a new job with a client-generated random UUID."
+    },
+    {
+     "src": "S11",
+     "loc": "L127-L131",
+     "fact": "createJob accepts any new valid job id for the owner; a second job with the same frozen request is accepted."
+    },
+    {
+     "src": "S02",
+     "loc": "L77",
+     "fact": "Attempt id is built inside the helper as artifact-proof-<slug of client receiptAnchor>-<Date.now()>: not caller-injectable, millisecond granularity, client-influenced."
+    },
+    {
+     "src": "S02",
+     "loc": "L129,L147",
+     "fact": "receiptId is set equal to requestId, so attempt id and receipt id are the same string today."
+    },
+    {
+     "src": "S01",
+     "loc": "L369",
+     "fact": "The helper artifactId is slugify(receiptAnchor), a client-supplied field."
+    },
+    {
+     "src": "S02",
+     "loc": "L126-L134",
+     "fact": "The response carries no engine-issued receipt identifier separate from request_id."
+    },
+    {
+     "src": "S29",
+     "loc": "L196-L208",
+     "fact": "Engine ledger event holds request_id, decision, timestamp, cvf_phase, cvf_risk_level; no artifact_id and no payload digest."
+    },
+    {
+     "src": "S41",
+     "loc": "L295,L339,L37-L52",
+     "fact": "Existing route tests pin receiptId and governanceReceiptAttemptId to the artifact-proof-<slug>- pattern and authenticate the general branch with a signed service token (no user, org or team), so the default helper path must keep attempt id equal to receipt id for legacy callers."
+    }
+   ],
+   "rootDesign": [
+    "Logical key covers actor/source/job/frozen input/effectKind; envelope additionally binds version/output/config/endpoint; changed endpoint/config or regenerated version cannot escape an unresolved prior effect; new intent is separate authority."
+   ],
+   "auditAssumptions": [
+    "Smallest alternative: logical key = sha256 of fixed-order [schema, userId, orgId, teamId, sourceRecordId, requestSha256, effectKind]; jobId, versionId, configRevision, endpoint and htmlSha256 are bound in the envelope digest only.",
+    "attemptId is allocated by the controlled branch before the hop and injected into the helper; outcomeId is an artifacts-owned record id; no engine-issued receipt id exists to reuse.",
+    "Policy for an identical frozen request after RECEIPT_VERIFIED (return the existing record with zero sends, versus deny) is a Root decision; the audit recommends return-existing."
+   ],
+   "consequence": "As written, a key that includes the job id is unique per Build click, so duplicate protection would be vacuous and any user action could mint a fresh key. Dependent BUILD (key derivation) is held until Local ratifies the amended key; the envelope digest, attempt id and outcome id separation are feasible.",
+   "heldBuild": "Key derivation module content held for HQ1."
+  },
+  {
+   "id": "D04",
+   "title": "Single-host non-production synthetic storage; exclusive intent/start/outcome; readback; no delete-retry",
+   "verdict": "SUPPORTED_WITH_LIMITS",
+   "sourceFacts": [
+    {
+     "src": "S11",
+     "loc": "L30-L44",
+     "fact": "directory(): lstat/realpath checks of root and per-owner directory (name = sha256 of user/org/team), mkdir mode 0o700, symlink and namespace escape rejected."
+    },
+    {
+     "src": "S11",
+     "loc": "L45-L63,L112-L125",
+     "fact": "Exclusive create with flag wx and mode 0o600; EEXIST maps to COLLISION; write plus handle.sync; failures map to UNCONFIRMED/UNAVAILABLE; readback compares JSON before SAVED. Comment L53: even an incomplete prior file consumes the id."
+    },
+    {
+     "src": "S11",
+     "loc": "L57,L120",
+     "fact": "Only the file handle is synced; there is no directory fsync."
+    },
+    {
+     "src": "S11",
+     "loc": "L99-L110",
+     "fact": "readSidecar returns null for missing, empty, oversize, corrupt and symlink cases alike, so ABSENT and UNREADABLE are not distinguishable."
+    },
+    {
+     "src": "S14",
+     "loc": "L7",
+     "fact": "MAX_JOB_METADATA_BYTES is 16384 for sidecars."
+    },
+    {
+     "src": "S11",
+     "loc": "L1-L181",
+     "fact": "The class has no delete, unlink or cleanup method and no record-count cap."
+    },
+    {
+     "src": "S11",
+     "loc": "L87",
+     "fact": "list() only returns names that are a UUID plus .json, so operation files with another prefix are not listed as snapshots."
+    }
+   ],
+   "rootDesign": [
+    "Extend the existing artifacts payload owner; immutable intent, exclusive start, immutable outcome; bounded size; readback before grant; any write problem denies the attempt; incomplete marker consumes the key; no delete-and-retry; no durability or distributed-lock claim."
+   ],
+   "auditAssumptions": [
+    "New methods must expose a tri-state read (ABSENT / PRESENT / UNREADABLE) and must never use a validated read as the admission test; wx collision is the authority.",
+    "A per-owner record cap and a clear store-full denial are new design items (no cap exists).",
+    "Cross-process one-winner behaviour of wx is plausible on one local filesystem but unproven: needs its own two-process fixture. T1B rejected plain rename as CAS; wx creates a new name and never replaces, but T1B did not evaluate it.",
+    "Fallback if the two-process fixture fails: the accepted specialised single-host SQLite pattern (S07 L562-L602, L687-L708) in an artifacts-owned file, not a generic engine."
+   ],
+   "consequence": "Feasible with limits: no directory durability, no power-loss claim, POSIX modes cannot be asserted on this Windows host, TOCTOU between directory() and open remains within a single-user synthetic root.",
+   "heldBuild": "None beyond HQ6 (cap values)."
+  },
+  {
+   "id": "D05",
+   "title": "State proposal PREPARED -> STARTED -> terminal; exclusive start grants one injected invocation",
+   "verdict": "SUPPORTED_WITH_LIMITS",
+   "sourceFacts": [
+    {
+     "src": "S06",
+     "loc": "L332-L342,L511-L518",
+     "fact": "Existing lifecycle CREATED -> CLAIMED -> EXECUTING -> SUCCEEDED/FAILED/DENIED/UNKNOWN_TERMINAL plus EXPIRED/STALE/ABANDONED_BEFORE_START; terminal states are immutable."
+    },
+    {
+     "src": "S06",
+     "loc": "L939-L969",
+     "fact": "beginPendingExecution consumes a single-use in-process grant and performs a compare-and-swap CLAIMED -> EXECUTING."
+    },
+    {
+     "src": "S06",
+     "loc": "L773-L818,L794-L796",
+     "fact": "The grant is a process-local object tracked in WeakSet/WeakMap and is not serializable, so it cannot survive restart."
+    },
+    {
+     "src": "S06",
+     "loc": "L992-L994",
+     "fact": "resolveAmbiguousExecutingCrash maps an ambiguous execution to UNKNOWN_TERMINAL."
+    },
+    {
+     "src": "S02",
+     "loc": "L71-L73,L84,L97-L105,L153-L156",
+     "fact": "Only the NOT_CONFIGURED return occurs before the fetch call; every later failure (non-ok HTTP, bad JSON, abort, thrown fetch error) collapses into UNAVAILABLE/INVALID_RESPONSE/TIMED_OUT without telling pre-send from post-send."
+    },
+    {
+     "src": "S10",
+     "loc": "L94-L111",
+     "fact": "Reusable pattern: a mandatory boundary callback awaits one fallible admission and then accounts synchronously, so the invocation is only reachable through it."
+    },
+    {
+     "src": "S11",
+     "loc": "L55,L118",
+     "fact": "Exclusive create gives a single winner per record name."
+    }
+   ],
+   "rootDesign": [
+    "PREPARED -> exclusive STARTED -> RECEIPT_VERIFIED | DENIED | FAILED_BEFORE_SEND | OUTCOME_UNKNOWN; only the verified exclusive start reaches one injected invocation; restart/existing STARTED is unknown; outcome-write failure after send stays unknown; negative record is not proof of non-execution; FAILED_BEFORE_SEND needs a mechanically proven boundary."
+   ],
+   "auditAssumptions": [
+    "States are records: intent file = PREPARED, start file = STARTED, outcome file = terminal; a start without outcome is derived UNKNOWN.",
+    "A process-local single-use StartGrant (private-constructor token + WeakSet, same pattern as ResumeAuthorityGrant) is the only way into the injected invoker.",
+    "FAILED_BEFORE_SEND is limited to: wrapper failure before the invoker is entered, or the invoker returning the typed NOT_CONFIGURED; TIMED_OUT, UNAVAILABLE, INVALID_RESPONSE and any thrown error map to OUTCOME_UNKNOWN.",
+    "DENIED is persisted only after PREPARED; a denial before PREPARED writes nothing and consumes nothing because no send is possible."
+   ],
+   "consequence": "Mapping is implementable. The helper must gain an injected-invoker seam and a typed pre-send return; HTTP failures cannot be classified as pre-send.",
+   "heldBuild": "None."
+  },
+  {
+   "id": "D06",
+   "title": "Reconcile with same operation/config/store/actor and expected IDs; lookup does not Build/Save/invoke",
+   "verdict": "DESIGN_GAP",
+   "sourceFacts": [
+    {
+     "src": "S28",
+     "loc": "L154,L229-L247",
+     "fact": "Engine HTTP surface is health, evaluate, approve, ledger?limit (tail window) and risk-convert; there is no read-by-request-id endpoint."
+    },
+    {
+     "src": "S25",
+     "loc": "L26-L31",
+     "fact": "Web ledger route clamps the window to 1..500 and needs a session or the service token."
+    },
+    {
+     "src": "S26",
+     "loc": "L296-L299",
+     "fact": "SqliteLedger.lookup_request_id exists in Python only."
+    },
+    {
+     "src": "S31",
+     "loc": "L206-L221",
+     "fact": "The historical W05 exact-id check opened the SQLite store directly through SqliteLedger (file-level), not through HTTP."
+    },
+    {
+     "src": "S27",
+     "loc": "L32-L45",
+     "fact": "The default JSON ledger appends every event with no request_id uniqueness."
+    },
+    {
+     "src": "S26",
+     "loc": "L222,L312-L317",
+     "fact": "The SQLite ledger has a UNIQUE request_id and returns the existing block only for byte-identical event bytes; otherwise it raises."
+    },
+    {
+     "src": "S29",
+     "loc": "L196-L208",
+     "fact": "The event contains a wall-clock timestamp, so a same-id replay is not byte-identical."
+    },
+    {
+     "src": "S02",
+     "loc": "L2",
+     "fact": "Helper timeout defaults to 4000 ms."
+    },
+    {
+     "src": "S05",
+     "loc": "L32",
+     "fact": "Engine client timeout defaults to 5000 ms, so a commit after the helper has given up is structurally reachable."
+    },
+    {
+     "src": "S02",
+     "loc": "L97-L105,L153-L156",
+     "fact": "Lost response, malformed response and timeout all end as non-PRESENT statuses that keep the attempt id."
+    }
+   ],
+   "rootDesign": [
+    "Reconcile with the same operation/config/store/actor and expected receipt/attempt IDs; lookup never Builds, Saves or invokes; failures and mismatches preserve unknown/not-approved; a new attempt needs a separate contract."
+   ],
+   "auditAssumptions": [
+    "Option B (first proof): read local records plus the existing read-only governanceLedger tail window; presence of the expected request_id can be recorded, absence proves nothing.",
+    "Option A (held): add a read-by-id engine endpoint and a Web proxy route; adds Python and Web owners outside the Root candidate manifest.",
+    "Option C rejected: file-level reads of the engine store couple Web to a secret path and cannot be authenticated."
+   ],
+   "consequence": "No authenticated exact-id lookup exists over HTTP. Option B cannot detect a wrong store or bind artifact/payload (ledger event has neither). Local-record reconcile and fail-closed unknown handling are supportable now; durable remote reconcile is held.",
+   "heldBuild": "Remote reconcile held for HQ3; local-record reconcile is not held."
+  },
+  {
+   "id": "D07",
+   "title": "Authentication resolved per hop; export proof is not durable admission",
+   "verdict": "SUPPORTED_WITH_LIMITS",
+   "sourceFacts": [
+    {
+     "src": "S03",
+     "loc": "L136-L231",
+     "fact": "Export auth accepts a signed service token (HMAC over timestamp and body, 5 minute window) or a session; it reads CVF_SERVICE_TOKEN before the session branch."
+    },
+    {
+     "src": "S23",
+     "loc": "L47,L117-L144",
+     "fact": "The service-token replay ledger is an in-memory Map, bounded, process-local."
+    },
+    {
+     "src": "S01",
+     "loc": "L275-L288",
+     "fact": "Selected profile uses same-origin check, requireAdminApiSession without break-glass, and normalPrincipal."
+    },
+    {
+     "src": "S02",
+     "loc": "L81-L82",
+     "fact": "The receipt fetch sends only Content-Type and an optional x-cvf-service-token header; no cookies are forwarded."
+    },
+    {
+     "src": "S04",
+     "loc": "L21-L31",
+     "fact": "The evaluate route authorises a session or a plain equality of the presented token with the configured token (not the HMAC scheme)."
+    },
+    {
+     "src": "S05",
+     "loc": "L61-L66",
+     "fact": "The Web-to-engine fetch sends only Content-Type; no credential."
+    },
+    {
+     "src": "S28",
+     "loc": "whole-file grep",
+     "fact": "Grep over the whole file for Depends/Authorization/api_key/middleware/CORS/x-cvf/token returned no hit; lines 60-255 were read and show no authentication construct."
+    },
+    {
+     "src": "S20",
+     "loc": "L18-L24",
+     "fact": "normalPrincipal rejects break-glass, impersonation and expired sessions."
+    }
+   ],
+   "rootDesign": [
+    "Export proof is not durable admission; receipt fetch does not forward cookies; destination, secret reference, scope and receiving auth must be bound before the call; no env, secret or credential inspection."
+   ],
+   "auditAssumptions": [
+    "Envelope stores only the secret reference name and a coarse scope label (service token is not route-scoped); declared, not attested."
+   ],
+   "consequence": "Hop 1 (export to evaluate) needs a configured service token equal on both sides; hop 2 (evaluate to engine) is unauthenticated at source level, so confinement is an unproven deployment assumption. Actual URL, token and network values are UNKNOWN (not inspected).",
+   "heldBuild": "None for synthetic proof; real destination binding remains an action-specific checkpoint."
+  },
+  {
+   "id": "D08",
+   "title": "Route risk R1 versus receipt payload REVIEW/R0 needs explicit disposition",
+   "verdict": "SUPPORTED_WITH_LIMITS",
+   "sourceFacts": [
+    {
+     "src": "S03",
+     "loc": "L26-L32",
+     "fact": "Route registry declares /api/artifacts/export with riskLevel R1."
+    },
+    {
+     "src": "S02",
+     "loc": "L92-L93",
+     "fact": "The receipt payload hard-codes cvf_phase REVIEW and cvf_risk_level R0 with no stated rationale."
+    },
+    {
+     "src": "S02",
+     "loc": "L125",
+     "fact": "The helper validates the response risk only against ^R[0-4]$ and does not compare it with the declared request level."
+    },
+    {
+     "src": "S29",
+     "loc": "L196-L208",
+     "fact": "The engine ledger records the request-declared cvf_risk_level and cvf_phase as supplied; routing uses the evaluated risk_score."
+    },
+    {
+     "src": "S30",
+     "loc": "L41-L56",
+     "fact": "The engine phase authority table is keyed A to E; the literal REVIEW is not a key (effect on enrich_result not read)."
+    },
+    {
+     "src": "S01",
+     "loc": "L369",
+     "fact": "fetchGovernanceReceipt has a single call site, so a default-preserving parameter can leave legacy bytes unchanged."
+    }
+   ],
+   "rootDesign": [
+    "Controlled branch declares R1 unless a stronger source-owner rationale exists; preserve legacy; no policy mutation; no fake runtime approval."
+   ],
+   "auditAssumptions": [
+    "Add an optional declaredRisk parameter to the helper, default R0; controlled branch passes R1.",
+    "No stronger rationale for R0 was found in the files read."
+   ],
+   "consequence": "Supported. Behavioural effect of R1 on engine decisions is unverified beyond the ledger metadata (routing code read only in part); decision to confirm R1 is HQ7.",
+   "heldBuild": "None."
+  },
+  {
+   "id": "D09",
+   "title": "Stop/timeout are local observations; unknown cost stays unknown; excerpt is code units; labels separate",
+   "verdict": "SUPPORTED_WITH_LIMITS",
+   "sourceFacts": [
+    {
+     "src": "S33",
+     "loc": "L78-L88,L107-L108",
+     "fact": "Client Stop calls AbortController.abort on the browser fetch only."
+    },
+    {
+     "src": "S01",
+     "loc": "L260-L389",
+     "fact": "The route never reads request.signal; the hop is not tied to the incoming request."
+    },
+    {
+     "src": "S02",
+     "loc": "L75-L76,L20-L25",
+     "fact": "The hop has its own timer-driven AbortController; timeout is 4000 ms default, configurable 1000-30000 ms."
+    },
+    {
+     "src": "S02",
+     "loc": "L91",
+     "fact": "Excerpt is sourceContent.slice(0, 500): 500 UTF-16 code units, not bytes."
+    },
+    {
+     "src": "S01",
+     "loc": "L382-L385",
+     "fact": "governanceReceiptAttemptId is returned when present; governanceState keeps DRAFT_UNACCEPTED unless a legacy APPROVED decision and passing checks."
+    },
+    {
+     "src": "S01",
+     "loc": "L234",
+     "fact": "Rendered HTML states a receipt anchor and presentation do not establish approval or acceptance."
+    },
+    {
+     "src": "S09",
+     "loc": "L10-L48",
+     "fact": "The only call/quota accounting is for provider calls on /api/execute; the receipt hop has no cost or call meter."
+    }
+   ],
+   "rootDesign": [
+    "Local Stop/timeouts are local observations; distinguish requested cancel, confirmed remote cancel, credential revoke and past effects/billing; unknown cost is unknown; keep artifact/draft/person acceptance separate."
+   ],
+   "auditAssumptions": [
+    "Forwarding request.signal is not adopted: it would add a cancel claim without remote confirmation.",
+    "Revoke is prospective only (profile disable), never retroactive."
+   ],
+   "consequence": "Supported. Past remote effects, billing and remote cancellation are unobservable from this source; any text claiming otherwise would be unsupported.",
+   "heldBuild": "None."
+  },
+  {
+   "id": "D10",
+   "title": "Existing owners compared; none is a drop-in permit; reuse mechanisms; no fabricated approval or parallel engine",
+   "verdict": "SUPPORTED_WITH_LIMITS",
+   "sourceFacts": [
+    {
+     "src": "S06",
+     "loc": "L367-L376,L669-L671,L866-L884",
+     "fact": "Pending payload requires approvalId, approvalRequestHash and a snapshot that must hash-match; claim requires an approved ApprovalRequestRecord with actor and policy fingerprint checks."
+    },
+    {
+     "src": "S06",
+     "loc": "L224-L226",
+     "fact": "Environment identity must say single_process_non_production."
+    },
+    {
+     "src": "S07",
+     "loc": "L432-L503,L562-L602,L687-L708",
+     "fact": "SQLite store: WAL, synchronous FULL, busy timeout, unique create with readback, conditional UPDATE compare-and-swap; table is shaped for PendingAgentExecutionRecord only."
+    },
+    {
+     "src": "S08",
+     "loc": "L1-L28",
+     "fact": "Composition is declared unwired to any route, provider, audit or barrel."
+    },
+    {
+     "src": "S38",
+     "loc": "L1-L40",
+     "fact": "Only importers of the composition are the local harness and tests (grep): no route or artifacts caller."
+    },
+    {
+     "src": "S16",
+     "loc": "Q2,Q3,Q13",
+     "fact": "T1B decision: single host only, forbidden imports of execute route, approvals route and provider admission, route reopen gates required."
+    },
+    {
+     "src": "S09",
+     "loc": "L120-L174",
+     "fact": "Provider attempt admission reserves per-identity quota in a per-request in-memory ledger and counts call starts."
+    },
+    {
+     "src": "S10",
+     "loc": "L51",
+     "fact": "NON_VISION_EXECUTION_PATH_SELECTION is direct; the gateway port is for provider text execution."
+    },
+    {
+     "src": "S26",
+     "loc": "L296-L329",
+     "fact": "Engine ledger is written by the evaluate call itself, i.e. after the effect, as downstream evaluation evidence."
+    }
+   ],
+   "rootDesign": [
+    "Compare owners; none is a drop-in artifact permit; reuse compatible mechanisms; never fabricate an ApprovalRequestRecord, relax frozen guards, reuse quota as durable admission or build a parallel generic engine."
+   ],
+   "auditAssumptions": [
+    "Reusable by pattern only: compare-and-swap one-winner, UNKNOWN terminal semantics, single-use in-process grant, zero-grant failure containment, schema-version fail-closed read.",
+    "canonicalDigest is exported by the pending core, but importing it pulls approvals types into artifacts; a local fixed-order identity (as requestIdentity does) avoids the cross-owner dependency."
+   ],
+   "consequence": "Comparison supports the Root stance; no owner substitutes for an artifacts-domain record. The artifacts operation record is a new artifacts-owned record type, not a second generic engine.",
+   "heldBuild": "None."
+  },
+  {
+   "id": "D11",
+   "title": "Retention, tombstones, store-full behaviour, safe-copy migration, runtime disable",
+   "verdict": "DESIGN_GAP",
+   "sourceFacts": [
+    {
+     "src": "S15",
+     "loc": "L4,L87",
+     "fact": "Draft TTL is 24 hours and validateSnapshot rejects an expired record."
+    },
+    {
+     "src": "S14",
+     "loc": "L80,L94,L111",
+     "fact": "validateJob, validateVersion and validateDecision also reject expired records; the reads then return null (S11 L109), indistinguishable from absence."
+    },
+    {
+     "src": "S11",
+     "loc": "L1-L181",
+     "fact": "No deletion or expiry sweeper exists in the store; files persist."
+    },
+    {
+     "src": "S11",
+     "loc": "L56,L119",
+     "fact": "A write failure other than EEXIST returns UNAVAILABLE, so ENOSPC denies; no capacity count exists."
+    },
+    {
+     "src": "S01",
+     "loc": "L261,L289-L291",
+     "fact": "When the job profile resolves to null the route does not stop: it falls through to authorizeRouteGovernanceProof and the legacy receipt path."
+    },
+    {
+     "src": "S19",
+     "loc": "L40",
+     "fact": "Disabled job profile only changes the jobs route to 503 JOB_PROFILE_DISABLED."
+    }
+   ],
+   "rootDesign": [
+    "No retention expiry may silently recycle unknown keys; define denial/tombstone and bounded store-full; draft TTL is not dedupe retention; safe-copy migration/rollback and runtime disable are separate; disable new effects without deleting unresolved facts."
+   ],
+   "auditAssumptions": [
+    "Admission authority is wx existence only; expiry-bearing validators are never used for admission.",
+    "Records have no TTL and no deletion path; a tombstone is just the terminal DENIED/UNKNOWN record; per-owner cap with deny-on-full.",
+    "A declared-but-disabled or invalid operation profile must deny the hop and must not fall through to the legacy branch; legacy remains reachable only where the profile variable is undeclared.",
+    "Safe-copy migration proof: copy the store directory, change nothing in the original, verify record hashes, run disabled profile against the copy."
+   ],
+   "consequence": "Retention and fall-through rules are not present in source and must be ratified; without the fall-through rule, turning the profile off re-enables the legacy path (F-08).",
+   "heldBuild": "Held for HQ4 and HQ6."
+  },
+  {
+   "id": "D12",
+   "title": "Executable-development manifest and finite fault proof plan before any source work order",
+   "verdict": "SUPPORTED_WITH_LIMITS",
+   "sourceFacts": [
+    {
+     "src": "S40",
+     "loc": "thresholds",
+     "fact": "general_source soft 700 / hard 1000 lines; test_code soft 800 / hard 1200; export/route.ts is 389 lines and the snapshot store 181."
+    },
+    {
+     "src": "S37",
+     "loc": "L330-L362",
+     "fact": "The compressed-statement rule fires only for a changed file within near_hard_margin (25) lines of the hard threshold, so it does not apply to files of a few hundred lines."
+    },
+    {
+     "src": "S36",
+     "loc": "L1-L47",
+     "fact": "job-profile.test.ts is the regression oracle that the selected profile never fetches a receipt."
+    },
+    {
+     "src": "S33",
+     "loc": "L105-L108",
+     "fact": "Client fetch site that must carry the selectors is not in the Root candidate manifest."
+    }
+   ],
+   "rootDesign": [
+    "Manifest of every changed/new/read-only owner with action, reason, dependency, size, phase and effect boundary, plus an offline fixture proof plan; no test creation or execution now."
+   ],
+   "auditAssumptions": [
+    "Size figures are estimates from read line counts; nothing was built or measured.",
+    "Registry/generated needs (corpus scan registry aggregate, public catalog update at closure) are flagged for Local; not verified."
+   ],
+   "consequence": "Manifest and proof plan delivered in this evidence file (sections futureManifest and proofPlan). The Root candidate manifest needs amendments (F-13).",
+   "heldBuild": "None for the manifest itself."
+  }
+ ],
+ "verdictTally": {
+  "SUPPORTED_WITH_LIMITS": 8,
+  "DESIGN_GAP": 3,
+  "CONTRADICTED": 1
+ },
+ "ownerComparison": [
+  {
+   "owner": "Artifacts snapshot/job store (HtmlDraftSnapshotStore)",
+   "sources": [
+    "S11",
+    "S14",
+    "S15",
+    "S19"
+   ],
+   "provides": "owner-scoped namespace, exclusive wx create, readback, symlink/namespace checks, bounded sidecars, job/version lookup",
+   "doesNotProvide": "tri-state read, operation records, record cap, directory durability, non-synthetic profile, receipt effect in allowedEffects",
+   "disposition": "EXTEND (selected for the first synthetic proof; new methods, existing methods untouched)"
+  },
+  {
+   "owner": "Pending-agent core (pending-agent-execution.ts)",
+   "sources": [
+    "S06"
+   ],
+   "provides": "state machine incl. UNKNOWN_TERMINAL, single-use in-process grant, canonical digest, compare-and-swap helper",
+   "doesNotProvide": "artifact payload: requires approvalId/hash/snapshot and an approved ApprovalRequestRecord; environment fixed to single_process_non_production",
+   "disposition": "READ_ONLY; reuse patterns only; never fabricate an ApprovalRequestRecord"
+  },
+  {
+   "owner": "Pending-agent SQLite store + composition",
+   "sources": [
+    "S07",
+    "S08",
+    "S38",
+    "S16"
+   ],
+   "provides": "single-host multi-process CAS, unique create with readback, fail-closed decode, zero-grant containment",
+   "doesNotProvide": "route wiring (declared unwired), artifact schema; T1B forbids imports of execute/approval routes and provider admission",
+   "disposition": "READ_ONLY; its pattern is the documented fallback if the wx two-process fixture fails"
+  },
+  {
+   "owner": "Provider-attempt admission",
+   "sources": [
+    "S09"
+   ],
+   "provides": "per-request in-memory quota reservation and call-start counter for /api/execute",
+   "doesNotProvide": "durability, logical-key exclusivity, restart survival",
+   "disposition": "READ_ONLY; must not be used as durable admission"
+  },
+  {
+   "owner": "Canonical web gateway",
+   "sources": [
+    "S10"
+   ],
+   "provides": "mandatory attempt-boundary callback pattern for provider text execution",
+   "doesNotProvide": "HTTP receipt invocation; port path is not selected (direct)",
+   "disposition": "READ_ONLY; boundary-callback pattern reused conceptually"
+  },
+  {
+   "owner": "Engine SQLite ledger",
+   "sources": [
+    "S26",
+    "S27",
+    "S28",
+    "S29"
+   ],
+   "provides": "append-only hash chain; UNIQUE request_id in SQLite mode; Python-only lookup_request_id",
+   "doesNotProvide": "pre-send admission; HTTP read-by-id; artifact id or payload digest in events; request_id uniqueness in the default JSON ledger",
+   "disposition": "READ_ONLY downstream evidence; lookup option A would add owners"
+  },
+  {
+   "owner": "Export route + receipt helper",
+   "sources": [
+    "S01",
+    "S02",
+    "S03"
+   ],
+   "provides": "validation, auth, build, single receipt call site",
+   "doesNotProvide": "operation record, caller-supplied attempt id, distinct receipt id, injected invoker, declared risk parameter",
+   "disposition": "MODIFY in later phases (helper additions default-preserving)"
+  }
+ ],
+ "producerLookupTransportDecision": {
+  "scope": "first synthetic offline proof only",
+  "producer": "export route controlled branch assembles the envelope server-side from: server-resolved operation profile, normalPrincipal(session), sha256(requestIdentity(validated body)), owner-scoped store.getJob/getVersion selected by untrusted selectors",
+  "lookup": "HtmlDraftSnapshotStore.getJob(jobId, sourceRecordId, owner) and getVersion(...); join job.requestSha256 to the recomputed request identity; mismatch, expiry or absence denies with zero sends",
+  "transport": "two selector headers set at the useHtmlBuildAttempts fetch site (request body and its seven-field validator unchanged)",
+  "authorityRule": "selectors and headers grant nothing; authority = profile + authenticated principal + store records + exclusive start",
+  "rejectedAlternatives": [
+   "body fields: widens the seven-field DTO mirrored by REQUEST_KEYS and requestValid; blast radius on every export caller",
+   "server-side index of jobs by request hash: ambiguous because every Build mints a new job (S34 L145)",
+   "client-supplied permit or approval object: untrusted by definition",
+   "pending-agent approval records: would require a fabricated ApprovalRequestRecord"
+  ],
+  "heldParts": [
+   "non-synthetic producer: no general job store exists (createJob needs the ncr-synthetic- prefix)",
+   "endpoint/backend-store attestation: engine ledger path is invisible to the Web side",
+   "service-token-only callers: no org or team in the proof object"
+  ]
+ },
+ "futureManifest": [
+  {
+   "id": "M01",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.ts",
+   "action": "NEW",
+   "owner": "artifacts",
+   "reason": "pure contract: envelope/intent/start/outcome types, exact-key validators, logical key and envelope digest, state enum, single-use StartGrant, mapping from receipt status to terminal state",
+   "dependency": "html-draft-recovery-contract (sha256, SOURCE_ID, safeText); no approvals, pending-agent, provider or gateway imports",
+   "phase": 1,
+   "sizeEstimateLines": "250-350",
+   "split": "none; single file under soft 700",
+   "effectBoundary": "none (pure)",
+   "authority": "separate source work order"
+  },
+  {
+   "id": "M02",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.ts",
+   "action": "MODIFY",
+   "owner": "artifacts",
+   "reason": "add operation methods (prepare, exclusive start, outcome, tri-state read, per-owner cap) reusing private directory(); existing methods untouched",
+   "dependency": "M01",
+   "phase": 1,
+   "sizeEstimateLines": "181 -> about 260-300",
+   "split": "none; fallback is a sibling operation-store file if private helpers are exposed",
+   "effectBoundary": "local filesystem under the validated synthetic root only",
+   "authority": "separate source work order"
+  },
+  {
+   "id": "M03",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/artifacts-receipt-operation-contract.test.ts",
+   "action": "NEW",
+   "owner": "artifacts",
+   "reason": "pure-contract cases P-key, P-digest, P-grant, P-shape",
+   "dependency": "M01",
+   "phase": 1,
+   "sizeEstimateLines": "150-250",
+   "split": "none",
+   "effectBoundary": "none",
+   "authority": "separate source work order"
+  },
+  {
+   "id": "M04",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/html-draft-snapshot-store.operation.test.ts",
+   "action": "NEW",
+   "owner": "artifacts",
+   "reason": "store fixture cases with injected fs faults, duplicate and concurrent starters, restart, retention, cap; optional two-process child fixture",
+   "dependency": "M01, M02",
+   "phase": 1,
+   "sizeEstimateLines": "250-400",
+   "split": "may split into store and concurrency files",
+   "effectBoundary": "temp directory with synthetic marker only",
+   "authority": "separate source work order"
+  },
+  {
+   "id": "M05",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.ts",
+   "action": "MODIFY",
+   "owner": "artifacts",
+   "reason": "optional options argument: injected attemptId, declaredRisk, invoker, clock; typed pre-send return; return engineRequestId separately; default path byte-identical",
+   "dependency": "M01",
+   "phase": 2,
+   "sizeEstimateLines": "160 -> about 200",
+   "split": "none",
+   "effectBoundary": "no network in tests (injected invoker)",
+   "authority": "separate source work order"
+  },
+  {
+   "id": "M06",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/proof.operation.test.ts",
+   "action": "NEW",
+   "owner": "artifacts",
+   "reason": "legacy parity (body bytes R0/REVIEW/slice 0-500, receiptId behaviour) and injected-invoker cases; omitted from the Root candidate list",
+   "dependency": "M05",
+   "phase": 2,
+   "sizeEstimateLines": "100-180",
+   "split": "none",
+   "effectBoundary": "none",
+   "authority": "separate source work order"
+  },
+  {
+   "id": "M07",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/lib/server/receipt-operation-profile.ts",
+   "action": "NEW",
+   "owner": "artifacts",
+   "reason": "server-only resolver: production denied, requires synthetic job profile, returns config revision, endpoint id, secret reference name, limits; declared-but-invalid returns a DISABLED sentinel (no fall-through)",
+   "dependency": "html-job-synthetic-profile, html-draft-synthetic-profile",
+   "phase": 3,
+   "sizeEstimateLines": "60-100",
+   "split": "none",
+   "effectBoundary": "reads server env names only; no secret values",
+   "authority": "separate source work order"
+  },
+  {
+   "id": "M08",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation-branch.ts",
+   "action": "NEW",
+   "owner": "artifacts",
+   "reason": "testable orchestration of D05 with injected store, invoker, clock and ids; keeps route.ts diff small",
+   "dependency": "M01, M02, M05, M07",
+   "phase": 3,
+   "sizeEstimateLines": "180-260",
+   "split": "none",
+   "effectBoundary": "injected invoker in tests; real fetch only behind a later live work order",
+   "authority": "separate source work order"
+  },
+  {
+   "id": "M09",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.ts",
+   "action": "MODIFY",
+   "owner": "artifacts",
+   "reason": "add third branch: if operation profile declared -> session principal required, selector headers, call M08; never fall through to legacy when declared; legacy and selected branches unchanged",
+   "dependency": "M08",
+   "phase": 3,
+   "sizeEstimateLines": "389 -> about 430-470",
+   "split": "keep branch logic in M08",
+   "effectBoundary": "same as M08",
+   "authority": "separate source work order"
+  },
+  {
+   "id": "M10",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/operation.test.ts",
+   "action": "NEW",
+   "owner": "artifacts",
+   "reason": "route-level cases (auth, origin, profile disabled, forged headers, zero-send denials); preferred over growing route.test.ts",
+   "dependency": "M09",
+   "phase": 3,
+   "sizeEstimateLines": "250-400",
+   "split": "may split by group",
+   "effectBoundary": "mocked auth and receipt helper; temp synthetic root",
+   "authority": "separate source work order"
+  },
+  {
+   "id": "M11",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/route.test.ts",
+   "action": "READ_ONLY_ORACLE",
+   "owner": "artifacts",
+   "reason": "402-line legacy regression oracle; must pass unchanged",
+   "dependency": "none",
+   "phase": 3,
+   "sizeEstimateLines": "unchanged",
+   "split": "n/a",
+   "effectBoundary": "none",
+   "authority": "n/a"
+  },
+  {
+   "id": "M12",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/export/job-profile.test.ts",
+   "action": "READ_ONLY_ORACLE",
+   "owner": "artifacts",
+   "reason": "selected profile must keep NOT_CONFIGURED with zero receipt fetch and no service-token read",
+   "dependency": "none",
+   "phase": 3,
+   "sizeEstimateLines": "unchanged",
+   "split": "n/a",
+   "effectBoundary": "none",
+   "authority": "n/a"
+  },
+  {
+   "id": "M13",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/components/useHtmlBuildAttempts.ts",
+   "action": "MODIFY",
+   "owner": "artifacts UI",
+   "reason": "send the two selector headers at the export fetch (lines 107-108); omitted from the Root candidate list; no UI copy change",
+   "dependency": "M09 decision HQ5",
+   "phase": 3,
+   "sizeEstimateLines": "about +6",
+   "split": "none",
+   "effectBoundary": "browser fetch to same-origin route",
+   "authority": "separate source work order; no co-located test found by directory listing"
+  },
+  {
+   "id": "M14",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/artifacts/operations/route.ts",
+   "action": "NEW (optional, phase 4)",
+   "owner": "artifacts",
+   "reason": "read-only status/reconcile lookup of local records by selectors (principal-scoped); never builds, saves or invokes",
+   "dependency": "M02, M08",
+   "phase": 4,
+   "sizeEstimateLines": "80-140",
+   "split": "none",
+   "effectBoundary": "local reads; optional existing governanceLedger window read",
+   "authority": "separate source work order"
+  },
+  {
+   "id": "M15",
+   "path": "EXTENSIONS/CVF_v1.6.1_GOVERNANCE_ENGINE/ai_governance_core/api/server.py",
+   "action": "HELD (HQ3 option A only)",
+   "owner": "governance engine",
+   "reason": "add read-only GET by request id",
+   "dependency": "HQ3",
+   "phase": "held",
+   "sizeEstimateLines": "unknown",
+   "split": "n/a",
+   "effectBoundary": "Python service change",
+   "authority": "needs its own admission; not in first manifest"
+  },
+  {
+   "id": "M16",
+   "path": "EXTENSIONS/CVF_v1.6_AGENT_PLATFORM/cvf-web/src/app/api/governance/ledger/[requestId]/route.ts",
+   "action": "HELD (HQ3 option A only)",
+   "owner": "governance proxy",
+   "reason": "authenticated Web proxy for M15",
+   "dependency": "M15",
+   "phase": "held",
+   "sizeEstimateLines": "unknown",
+   "split": "n/a",
+   "effectBoundary": "network read",
+   "authority": "needs its own admission"
+  },
+  {
+   "id": "M17",
+   "path": "docs/corpus-intelligence/CVF_CORPUS_SCAN_REGISTRY.json and .md",
+   "action": "CONDITIONAL",
+   "owner": "registry",
+   "reason": "aggregate drift check may require registration of new source files; registry shows no entry for the existing snapshot store file, so need is unverified",
+   "dependency": "first source tranche dry check",
+   "phase": "closure",
+   "sizeEstimateLines": "n/a",
+   "split": "n/a",
+   "effectBoundary": "docs only",
+   "authority": "Local at closure"
+  },
+  {
+   "id": "M18",
+   "path": "public technical catalog (governed catalog surface)",
+   "action": "CONDITIONAL",
+   "owner": "docs",
+   "reason": "project rule requires a catalog update when a capability tranche is delivered; exact surface not resolved in this audit",
+   "dependency": "tranche closure",
+   "phase": "closure",
+   "sizeEstimateLines": "n/a",
+   "split": "n/a",
+   "effectBoundary": "docs only",
+   "authority": "Local at closure"
+  },
+  {
+   "id": "R01",
+   "path": "pending-agent-execution.ts, pending-agent-execution-sqlite-store.ts, pending-agent-execution-composition.ts, provider-attempt-admission.ts, canonical-web-gateway-execution.ts, sqlite_ledger.py, immutable_ledger.py, core_orchestrator.py",
+   "action": "READ_ONLY",
+   "owner": "other owners",
+   "reason": "pattern references only; frozen guards untouched",
+   "dependency": "none",
+   "phase": "all",
+   "sizeEstimateLines": "unchanged",
+   "split": "n/a",
+   "effectBoundary": "none",
+   "authority": "n/a"
+  },
+  {
+   "id": "R02",
+   "path": "route-governance-proof.ts, governance/evaluate/route.ts, governance-engine.ts, admin-session.ts, middleware-auth.ts, service-token-auth.ts, html-job-api.ts, html-draft-recovery-api.ts, html-job-contract.ts, html-draft-recovery-contract.ts, html-job-synthetic-profile.ts, html-draft-synthetic-profile.ts",
+   "action": "READ_ONLY",
+   "owner": "auth and artifacts contracts",
+   "reason": "consumed APIs (normalPrincipal, requireAdminApiSession, requestIdentity, VERSION_ID, getJob); route registry keeps export at R1",
+   "dependency": "none",
+   "phase": "all",
+   "sizeEstimateLines": "unchanged",
+   "split": "n/a",
+   "effectBoundary": "none",
+   "authority": "n/a"
+  }
+ ],
+ "proofPlan": [
+  {
+   "id": "PA1",
+   "case": "production environment with every flag set",
+   "pre": "NODE_ENV=production, profile vars present",
+   "expect": "DENY; no record, no store write",
+   "sends": 0,
+   "recovery": "none; nothing consumed"
+  },
+  {
+   "id": "PA2",
+   "case": "profile undeclared",
+   "pre": "no operation profile variable",
+   "expect": "legacy path unchanged; legacy oracle tests pass unchanged",
+   "sends": "legacy behaviour",
+   "recovery": "n/a (regression guard)"
+  },
+  {
+   "id": "PA3",
+   "case": "profile declared but invalid or disabled",
+   "pre": "marker missing or flag off",
+   "expect": "DENY and NO fall-through to legacy (receipt helper spy = 0)",
+   "sends": 0,
+   "recovery": "none"
+  },
+  {
+   "id": "PA4",
+   "case": "no session; service-token-only; break-glass; impersonated; foreign origin",
+   "pre": "each variant",
+   "expect": "401/403/SESSION_REFUSED; no store read of other owners",
+   "sends": 0,
+   "recovery": "none"
+  },
+  {
+   "id": "PA5",
+   "case": "forged permit or approval fields in body; forged selector headers of another owner",
+   "pre": "extra body keys; other owner job id",
+   "expect": "400 unknown field / NOT_FOUND via owner-scoped directory",
+   "sends": 0,
+   "recovery": "none"
+  },
+  {
+   "id": "PA6",
+   "case": "request identity mismatch, expired job, non-synthetic source record",
+   "pre": "job.requestSha256 differs; clock past TTL; source id without prefix",
+   "expect": "DENY before PREPARED",
+   "sends": 0,
+   "recovery": "none; no key consumed"
+  },
+  {
+   "id": "PB1",
+   "case": "intent write collision",
+   "pre": "intent file exists",
+   "expect": "DENY, existing bytes untouched",
+   "sends": 0,
+   "recovery": "key remains consumed"
+  },
+  {
+   "id": "PB2",
+   "case": "intent write error (EACCES/ENOSPC injected)",
+   "pre": "fs seam throws",
+   "expect": "DENY",
+   "sends": 0,
+   "recovery": "may leave consumed marker; no delete"
+  },
+  {
+   "id": "PB3",
+   "case": "intent truncated or unconfirmed",
+   "pre": "writeFile throws after open",
+   "expect": "DENY; later read is UNREADABLE not ABSENT; same key denied",
+   "sends": 0,
+   "recovery": "no delete-and-retry"
+  },
+  {
+   "id": "PB4",
+   "case": "readback mismatch",
+   "pre": "stored bytes differ",
+   "expect": "DENY",
+   "sends": 0,
+   "recovery": "key consumed"
+  },
+  {
+   "id": "PB5",
+   "case": "duplicate start",
+   "pre": "start file exists",
+   "expect": "second caller DENY",
+   "sends": "winner 1, loser 0",
+   "recovery": "unknown if winner crashed"
+  },
+  {
+   "id": "PB6",
+   "case": "start write unconfirmed",
+   "pre": "sync/close failure",
+   "expect": "DENY before invoker",
+   "sends": 0,
+   "recovery": "key consumed; derived UNKNOWN"
+  },
+  {
+   "id": "PB7",
+   "case": "per-owner cap reached; ENOSPC",
+   "pre": "cap fixture",
+   "expect": "DENY (bounded store-full)",
+   "sends": 0,
+   "recovery": "no eviction"
+  },
+  {
+   "id": "PC1",
+   "case": "happy path with injected invoker returning PRESENT",
+   "pre": "valid profile, session, job, empty store",
+   "expect": "intent, start, outcome RECEIPT_VERIFIED; response carries operation reference",
+   "sends": 1,
+   "recovery": "n/a"
+  },
+  {
+   "id": "PC2",
+   "case": "invoker returns typed NOT_CONFIGURED",
+   "pre": "pre-send refusal",
+   "expect": "FAILED_BEFORE_SEND; later attempt denied",
+   "sends": "invoker entered once; no remote send",
+   "recovery": "no automatic replay"
+  },
+  {
+   "id": "PC3",
+   "case": "invoker returns TIMED_OUT, UNAVAILABLE, INVALID_RESPONSE or throws",
+   "pre": "each",
+   "expect": "OUTCOME_UNKNOWN; later attempt denied",
+   "sends": 1,
+   "recovery": "reconcile only"
+  },
+  {
+   "id": "PC4",
+   "case": "outcome write fails after PRESENT",
+   "pre": "outcome fs fault",
+   "expect": "response does not claim verified; derived UNKNOWN",
+   "sends": 1,
+   "recovery": "reconcile only"
+  },
+  {
+   "id": "PC5",
+   "case": "concurrent starters (N=8 same key); optional two-process child",
+   "pre": "Promise.all",
+   "expect": "exactly one invoker call",
+   "sends": 1,
+   "recovery": "losers denied"
+  },
+  {
+   "id": "PC6",
+   "case": "restart simulation",
+   "pre": "new store instance, start without outcome",
+   "expect": "UNKNOWN; start denied; grant not reconstructable",
+   "sends": 0,
+   "recovery": "reconcile only"
+  },
+  {
+   "id": "PC7",
+   "case": "forged or cloned StartGrant",
+   "pre": "object literal, JSON clone, other-key grant",
+   "expect": "invoker refuses",
+   "sends": 0,
+   "recovery": "none"
+  },
+  {
+   "id": "PC8",
+   "case": "grant reuse after consumption",
+   "pre": "second call with spent grant",
+   "expect": "refused",
+   "sends": "unchanged",
+   "recovery": "none"
+  },
+  {
+   "id": "PC9",
+   "case": "same frozen request, new job id, after VERIFIED / UNKNOWN; changed endpoint or config; regenerated version",
+   "pre": "variants",
+   "expect": "same logical key: return existing record (VERIFIED) or DENY (UNKNOWN); no new send",
+   "sends": 0,
+   "recovery": "supersession is a separate contract"
+  },
+  {
+   "id": "PC10",
+   "case": "changed source content; different actor",
+   "pre": "variants",
+   "expect": "different key; allowed once",
+   "sends": 1,
+   "recovery": "n/a"
+  },
+  {
+   "id": "PD1",
+   "case": "reconcile with correct selectors",
+   "pre": "UNKNOWN record",
+   "expect": "reads only; invoker, evaluate, Build and Save counters all 0",
+   "sends": 0,
+   "recovery": "unknown preserved unless presence found"
+  },
+  {
+   "id": "PD2",
+   "case": "wrong actor, wrong id, wrong store root",
+   "pre": "variants",
+   "expect": "NOT_FOUND / absent; remains unknown, never declared failed-safe",
+   "sends": 0,
+   "recovery": "none"
+  },
+  {
+   "id": "PD3",
+   "case": "store read failure or malformed record",
+   "pre": "fs fault, corrupt bytes",
+   "expect": "unknown / not-approved",
+   "sends": 0,
+   "recovery": "none"
+  },
+  {
+   "id": "PD4",
+   "case": "ledger window lookup (option B) with fake governanceLedger",
+   "pre": "committed-then-lost simulation",
+   "expect": "presence noted without state replay; absence concludes nothing",
+   "sends": 0,
+   "recovery": "no replay"
+  },
+  {
+   "id": "PE1",
+   "case": "clock advanced beyond 24 hours",
+   "pre": "records untouched",
+   "expect": "key still consumed; admission never uses expiry validators; fs spy shows no unlink",
+   "sends": 0,
+   "recovery": "none"
+  },
+  {
+   "id": "PE2",
+   "case": "safe-copy migration and disable",
+   "pre": "copy store directory",
+   "expect": "original hashes unchanged; disabled profile denies new effects; unresolved records readable",
+   "sends": 0,
+   "recovery": "rollback = discard copy"
+  },
+  {
+   "id": "PE3",
+   "case": "envelope over 16384 bytes or containing a secret-like value",
+   "pre": "oversize or pattern",
+   "expect": "rejected before write",
+   "sends": 0,
+   "recovery": "none"
+  },
+  {
+   "id": "PF1",
+   "case": "legacy parity",
+   "pre": "default helper call",
+   "expect": "request body bytes (R0, REVIEW, slice 0-500) and receiptId behaviour identical; legacy oracles pass",
+   "sends": "unchanged",
+   "recovery": "n/a"
+  },
+  {
+   "id": "PG1",
+   "case": "import boundary",
+   "pre": "static scan of new modules",
+   "expect": "no imports of approvals store, pending-agent, provider-attempt, gateway",
+   "sends": 0,
+   "recovery": "n/a"
+  }
+ ],
+ "findings": [
+  {
+   "id": "F-01",
+   "severity": "HIGH",
+   "defectClass": "RUNTIME_SIGNAL_GAP",
+   "finding": "Legacy general receipt branch is env-switched and leaves no operation record; a controlled branch does not protect a deployment where the legacy branch stays reachable.",
+   "src": "S02 L56-L73; S01 L289-L291,L369",
+   "consequence": "Cutover must make legacy unreachable where the controlled profile is declared (HQ4).",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-02",
+   "severity": "HIGH",
+   "defectClass": "ORCHESTRATOR_PACKET_GAP",
+   "finding": "Locked logical key includes the job id, but each Build mints a new random job id, so the key is unique per click.",
+   "src": "S34 L145; S11 L127-L131",
+   "consequence": "D03 CONTRADICTED; amended key proposed (HQ1).",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-03",
+   "severity": "MEDIUM",
+   "defectClass": "RUNTIME_SIGNAL_GAP",
+   "finding": "Engine ledger events have no artifact id or payload digest and carry a wall-clock timestamp; the default JSON ledger does not enforce request id uniqueness.",
+   "src": "S29 L196-L208; S27 L32-L45; S26 L312-L317",
+   "consequence": "Remote reconcile can bind request id and decision only; duplicate protection is ledger-configuration dependent.",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-04",
+   "severity": "HIGH",
+   "defectClass": "RUNTIME_SIGNAL_GAP",
+   "finding": "No authenticated read-by-id exists over HTTP; historical W05 used file-level store inspection.",
+   "src": "S28 L229-L247; S25 L26-L31; S31 L206-L221",
+   "consequence": "D06 DESIGN_GAP; option B presence-only or option A new owners (HQ3).",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-05",
+   "severity": "MEDIUM",
+   "defectClass": "RUNTIME_SIGNAL_GAP",
+   "finding": "Attempt id equals receipt id and is generated inside the helper from a client-influenced slug and Date.now.",
+   "src": "S02 L77,L129,L147; S01 L369",
+   "consequence": "Helper needs an injected attempt id and a separately named outcome id.",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-06",
+   "severity": "MEDIUM",
+   "defectClass": "RUNTIME_SIGNAL_GAP",
+   "finding": "Helper timeout (4 s) is shorter than the engine client timeout (5 s) by default.",
+   "src": "S02 L2; S05 L32",
+   "consequence": "A commit after the caller times out is reachable by construction; unknown-outcome handling is not optional.",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-07",
+   "severity": "MEDIUM",
+   "defectClass": "RUNTIME_SIGNAL_GAP",
+   "finding": "The store's sidecar read collapses missing, corrupt and expired records into null.",
+   "src": "S11 L99-L110; S14 L80,L94,L111; S15 L87",
+   "consequence": "Admission must rest on wx collision with a tri-state read, never on validated reads.",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-08",
+   "severity": "HIGH",
+   "defectClass": "RUNTIME_SIGNAL_GAP",
+   "finding": "Disabling the job profile returns the export route to the legacy branch rather than stopping receipts.",
+   "src": "S01 L261,L289-L291",
+   "consequence": "A declared-but-disabled operation profile must deny, not fall through (HQ4).",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-09",
+   "severity": "MEDIUM",
+   "defectClass": "RUNTIME_SIGNAL_GAP",
+   "finding": "Engine hop carries no credential and the engine server shows no authentication construct; export-side service-token replay protection is process-local.",
+   "src": "S05 L61-L66; S28 whole-file grep; S23 L47",
+   "consequence": "Per-hop binding is declared configuration, not attested.",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-10",
+   "severity": "LOW",
+   "defectClass": "RUNTIME_SIGNAL_GAP",
+   "finding": "Evaluate route compares the presented token with plain equality while the export route uses constant-time HMAC verification.",
+   "src": "S04 L24; S23 L9-L21,L88-L114",
+   "consequence": "Weaker scheme on hop 1; scope is not narrowed per route.",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-11",
+   "severity": "LOW",
+   "defectClass": "RUNTIME_SIGNAL_GAP",
+   "finding": "Only the file handle is synced; POSIX file modes cannot be asserted on this Windows host.",
+   "src": "S11 L57,L120,L36",
+   "consequence": "D04 durability and mode claims stay unproven; proof limited to behaviour.",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-12",
+   "severity": "LOW",
+   "defectClass": "RUNTIME_SIGNAL_GAP",
+   "finding": "The receipt payload carries only content, so the engine records actor system for every receipt.",
+   "src": "S02 L88-L94; S29 L171",
+   "consequence": "Actor attribution lives only in the artifacts-domain record.",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-13",
+   "severity": "MEDIUM",
+   "defectClass": "ORCHESTRATOR_PACKET_GAP",
+   "finding": "Root candidate manifest omits the client transport site, a testable branch module, a profile resolver, a helper parity test and conditional registry or catalog updates.",
+   "src": "S33 L105-L108; S39",
+   "consequence": "Manifest amended in this evidence (M05-M10, M13, M17, M18).",
+   "status": "OPEN"
+  },
+  {
+   "id": "F-14",
+   "severity": "LOW",
+   "defectClass": "RUNTIME_SIGNAL_GAP",
+   "finding": "The payload phase literal REVIEW is not a key of the engine phase table (A to E).",
+   "src": "S02 L92; S30 L41-L56",
+   "consequence": "Effect on enrichment unverified; not changed.",
+   "status": "OPEN"
+  }
+ ],
+ "heldBuildQuestions": [
+  {
+   "id": "HQ1",
+   "criterion": "D03",
+   "question": "Ratify the amended logical key without job id, and choose behaviour for an identical frozen request after RECEIPT_VERIFIED (recommended: return existing record, zero sends)."
+  },
+  {
+   "id": "HQ2",
+   "criterion": "D02/D07",
+   "question": "Accept endpoint and backend-store identity as declared, unattested configuration for the first proof, or require engine-side attestation first."
+  },
+  {
+   "id": "HQ3",
+   "criterion": "D06",
+   "question": "Choose reconcile source: option B existing ledger tail window (presence-only) or option A new engine read-by-id plus Web proxy (adds Python and Web owners)."
+  },
+  {
+   "id": "HQ4",
+   "criterion": "D01/D11",
+   "question": "Rule that a declared-but-disabled operation profile never falls through to the legacy receipt branch, and decide the legacy branch disposition for deployments."
+  },
+  {
+   "id": "HQ5",
+   "criterion": "D02",
+   "question": "Confirm selector transport: two request headers versus body fields."
+  },
+  {
+   "id": "HQ6",
+   "criterion": "D04/D11",
+   "question": "Set the per-owner record cap and the retention rule for unknown-state keys (recommended: no expiry, explicit operator tombstone only)."
+  },
+  {
+   "id": "HQ7",
+   "criterion": "D08",
+   "question": "Confirm declared risk R1 for the controlled branch and keep the phase literal unchanged."
+  }
+ ],
+ "stateMapping": {
+  "records": [
+   "op-<logicalKeyHex>-intent.json (PREPARED)",
+   "op-<logicalKeyHex>-start.json (STARTED, exclusive)",
+   "op-<logicalKeyHex>-outcome.json (terminal)"
+  ],
+  "terminalMapping": {
+   "PRESENT": "RECEIPT_VERIFIED",
+   "NOT_CONFIGURED": "FAILED_BEFORE_SEND",
+   "TIMED_OUT": "OUTCOME_UNKNOWN",
+   "UNAVAILABLE": "OUTCOME_UNKNOWN",
+   "INVALID_RESPONSE": "OUTCOME_UNKNOWN",
+   "thrown": "OUTCOME_UNKNOWN",
+   "start without outcome": "OUTCOME_UNKNOWN (derived)"
+  },
+  "note": "Design proposal for Local ratification; file names are placeholders."
+ },
+ "scecDeclaration": {
+  "problemKey": "ncr-r2-w05-offline-operation-design-audit",
+  "chainMode": "SUCCESSOR",
+  "chainOrdinal": 1,
+  "counters": [
+   0,
+   0,
+   0,
+   1
+  ],
+  "claim": "DOCUMENTATION_ONLY / PROPOSAL_ONLY_NO_RUNTIME_READINESS",
+  "successorScope": "NO_SUCCESSOR"
+ },
+ "REQ-PROTOCOL": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-operation-contract-audit-worker-20261019.json#REQ-PROTOCOL",
+  "covers": "12 criterion verdicts with separated facts, root decisions and audit assumptions",
+  "ref": "criteria, verdictTally, stateMapping",
+  "verdictTally": {
+   "SUPPORTED_WITH_LIMITS": 8,
+   "DESIGN_GAP": 3,
+   "CONTRADICTED": 1
+  }
+ },
+ "REQ-OWNERS": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-operation-contract-audit-worker-20261019.json#REQ-OWNERS",
+  "covers": "existing-owner comparison and concrete producer/lookup/transport decision or held parts",
+  "ref": "ownerComparison, producerLookupTransportDecision"
+ },
+ "REQ-MANIFEST": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-operation-contract-audit-worker-20261019.json#REQ-MANIFEST",
+  "covers": "future manifest with dependencies and size, finite offline proof plan, held questions",
+  "ref": "futureManifest, proofPlan, heldBuildQuestions",
+  "manifestRows": 20,
+  "proofCases": 32
+ },
+ "REQ-RETURN": {
+  "locator": "docs/reviews/evidence/ncr-r2-w05-operation-contract-audit-worker-20261019.json#REQ-RETURN",
+  "covers": "exact two paths, source pins, read ledger with limits, gate attempts in the detached receipt",
+  "ref": "sources, preAuditPinsComparedAtEpBuild, firstReadOrder, readLimitsAndLateReads",
+  "gateAttemptsRecordedIn": ".cvf/runtime/ncr-r2-w05-operation-audit-20261019/worker/gate-receipt.json (detached, ignored)"
+ }
+}
