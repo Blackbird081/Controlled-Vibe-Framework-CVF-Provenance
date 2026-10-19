@@ -23,8 +23,8 @@
     "workOrderPath": "docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BINDING_REPAIR_2026-10-19.md",
     "workOrderSha256": "296000b92ac667e3b46008c27627cf86d753c80b8184275a4bdf2c2e07ab6b3d"
   },
-  "currentAuthoritySyncReason": "Material21 bc1ca6fc10563a77b7f2908f237c4f355e284e28 retains blocked source and locked Local decisions; independentFAIL requires integrated exact9 repair/manualtransfer; no Root source edit or worker invocation. Normal91PASS/P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. Local warning/panel/scratch dispositions qualified; all real effectsOFF.",
-  "currentMode": "cvf_ncr_r2_w05_binding_repair_manual_handoff_ready",
+  "currentAuthoritySyncReason": "Material12 7c0aa69c386884bd3d9193528b1ec32bae615c58 accepted offline via docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md; worker199/199 and Local10/10; productionDENY/legacyexplicitnonproduction. Normal91PASS/P4 SKIPPED_NO_ELIGIBLE_CANDIDATE; no source/worker/effect expansion. Next consolidated R2/W05 activation design only.",
+  "currentMode": "cvf_ncr_r2_w05_binding_repair_accepted_offline",
   "freezePosture": "governance_kernel_freeze_recommended",
   "historicalHandoffArchive": "CVF_SESSION/handoffs/archive",
   "jsonGeneratedAggregateDisciplineStandard": "docs/reference/CVF_JSON_GENERATED_AGGREGATE_DISCIPLINE_STANDARD_2026-06-12.md",
@@ -72,7 +72,7 @@
   "operatorLaneSelectionDate": "2026-05-19",
   "painPointClosureDirection": "docs/reviews/archive/CVF_REVIEW_CVF_PAIN_POINT_CLOSURE_DIRECTION_CODEX_2026-05-20.md",
   "postPainPointHardeningRoadmap": "docs/roadmaps/archive/CVF_POST_PAIN_POINT_CLOSURE_HARDENING_ROADMAP_2026-05-20.md",
-  "previousMode": "cvf_ncr_r2_w05_offline_source_manual_handoff_ready",
+  "previousMode": "cvf_ncr_r2_w05_binding_repair_manual_handoff_ready",
   "priorVerificationReuseUnicodeEvidenceHandlingHardening": "docs/reviews/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_HARDENING_2026-06-11.md",
   "priorVerificationReuseUnicodeEvidenceHandlingStandard": "docs/reference/CVF_PRIOR_VERIFICATION_REUSE_AND_UNICODE_EVIDENCE_HANDLING_STANDARD_2026-06-11.md",
   "relatedHandoffs": [

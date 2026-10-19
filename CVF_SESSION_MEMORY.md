@@ -35,20 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r2_w05_binding_repair_manual_handoff_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=boundrelease then operator manual transfer of one exact9 integrated binding repair; role=INTERNAL_AGENT Local reviewer/dispatcher; phase=SOURCE_BLOCKED_INTEGRATED_ROOT_REPAIR; decision owner=LOCAL; parked checkpoint=source acceptance until repaired proof and distinct Local probe, all real endpoint/provider/data/production/public/deploy effects.
+Startup acknowledged: current mode=`cvf_ncr_r2_w05_binding_repair_accepted_offline`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local consolidated R2/W05 activation design only after accepted offline binding repair; role=INTERNAL_AGENT Local reviewer/closer; phase=OFFLINE_SOURCE_ACCEPTED_EFFECTS_HELD; decision owner=LOCAL; parked checkpoint=actual destination/auth/store/data/provider/cost/business acceptance and production/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r2_w05_binding_repair_manual_handoff_ready`
-Current mode: `cvf_ncr_r2_w05_binding_repair_manual_handoff_ready`
+Current mode marker: `cvf_ncr_r2_w05_binding_repair_accepted_offline`
+Current mode: `cvf_ncr_r2_w05_binding_repair_accepted_offline`
 
-Original source remains BLOCKED after independent Local probe; one integrated exact9 repair packet prepared for operator manual transfer after actual release. Local decisions are recorded; no source acceptance or real effect.
+Finite binding repair accepted offline with procedure limits; next Local design/admission consolidation only. Production export denies; real effects remain OFF.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r2_w05_binding_repair_manual_handoff_ready`
+Mode: `cvf_ncr_r2_w05_binding_repair_accepted_offline`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=EXECUTE_BINDING_REPAIR_VIA_OPERATOR_MANUAL_TRANSFER; BATCH_ID=CVF-NCR-R2-W05-BINDING-REPAIR-20261019. Operator manually transfers docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BINDING_REPAIR_2026-10-19.md including exact9 offline source/verification after actual clean boundrelease PASS; Root does not invoke worker or repeat current product checks. Originalworker13BLOCKED preserved,115newpass/panel66pass4fail/tsc0; Local one ESLint150.812s exit1/0errors/1oldhookwarning/source11unchanged, originalmaxwarnings0notPASS; panel4baseline scopedexception; oldscratchretention16384files/64MiB/historynotcured. Local independent8checks4FAIL exposesrequestTOCTOU/genuinegrantpayloadswap/durableINTENTnewstart/missingmodetolegacy. One integrated repair:opaqueadmission/consumedoutcome authorities, immutable exactrequest/grant join, absentposturedeny and explicitnonproductionLEGACY_COMPATIBILITY_ONLY/nojobselectors. Exact7modifications+returnEP;180min,Vitest<=2,tsc<=2,changed7lint<=2,fullgate<=3;newworkerruntime16384files/64MiB,childstarts<=24. No old budget refill. LocalS2current1/counters0,1,0,0;dispatchS3current1/counters0,1,0,1/ROOT_CONTRACT_REQUIRED/INTEGRATED_ROOT_CONTRACT, workerS4actualWOhash; source defect regression proof distinctfrompendingLocalindependentacceptance. Sameimplementationchain,noINITIALreset. R1prelive/R2partial,R3R4open,R5R6deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 frozen. Network/provider/app/browser/active-data/production/public/deployOFF.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=CONSOLIDATE_R2_W05_ACTIVATION_DESIGN_ONLY; BATCH_ID=CVF-NCR-R2-W05-BINDING-REPAIR-20261019. Binding repair material12 7c0aa69c386884bd3d9193528b1ec32bae615c58 accepted bounded with procedure limits; Local review docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md and EP docs/reviews/evidence/ncr-r2-w05-binding-repair-local-20261019.json. Worker199of199/tsc0/changed7lint0; distinctLocal10of10PASS on actual production TS/freshsynthetic roots, no network. Production export intentionally DENY under locked R04; legacy explicitnonproductiononly. Internal start/admission, consume/envelope, outcome/opaquehandle changes require no route.ts or operation-branch.ts edit. Panel4baseline and hook1warning exceptions retained, panel/whole11lint not rerun; originalblockedsource/probe4of8FAIL/read/ADIF/scratch history not cured. WorkerS4current0/counters0,1,0,0; LocalS5current0/counters0,1,0,1, samechain/noINITIALreset/noautomaticworker. Next Local reconciles remaining endpoint/auth/store attestation, exactrequest mapping, effect/cost/Stop/UNKNOWN and acceptance gaps into one integrated design/admission packet; no implementation or activation grant. Real destination/data/writer/provider/cost/businessacceptance and production/public/deploy remain parked. R1prelive/R2partial/R3R4open/R5R6deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 frozen. All real network/provider/active-data/production/public/deployOFF.
 
 ## Parked Checkpoints
 
