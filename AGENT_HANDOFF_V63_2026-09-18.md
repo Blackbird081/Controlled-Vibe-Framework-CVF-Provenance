@@ -1,7 +1,7 @@
 # CVF Agent Handoff V63 - Current NCR Continuation
 
 <!-- CVF-GC020-MATERIAL-SHA:START -->
-Current HEAD recorded for this handoff: `7c0aa69c386884bd3d9193528b1ec32bae615c58`. Material `7c0aa69c386884bd3d9193528b1ec32bae615c58`; batch CVF-NCR-R2-W05-BINDING-REPAIR-20261019; immediate continuity parent 7c0aa69c386884bd3d9193528b1ec32bae615c58.
+Current HEAD recorded for this handoff: `c1f99e91c3ef1a8d2770a12f45301b1374d5140f`. Material `c1f99e91c3ef1a8d2770a12f45301b1374d5140f`; batch CVF-NCR-R2-W05-ACTIVATION-DESIGN-20261019; immediate continuity parent c1f99e91c3ef1a8d2770a12f45301b1374d5140f.
 <!-- CVF-GC020-MATERIAL-SHA:END -->
 Memory class: active-handoff
 Status: ACTIVE
@@ -13,30 +13,30 @@ Current continuation only. Root AGENTS.md and canonical routing owners retain fu
 Closed history is preserved byte-for-byte at `CVF_SESSION/handoffs/archive/AGENT_HANDOFF_V63_PRE_NCR_COMPACTION_2026-10-07.md` (SHA256 `54801fdcf14e9abe17592352ec3c69a0b0e855632991af0caacac7b65252ccba`); it is NOT_ACTIVE_AUTHORITY and not default startup reading.
 ## Scope / Target / Owner Boundary
 
-Dedicatedcurrent6 after accepted material12 7c0aa69c386884bd3d9193528b1ec32bae615c58; exact9worker + Localreview/EP/roadmap. No Root product source edit; no new worker. Offline source acceptance only, next consolidated design; actual effects held.
+Dedicatedcurrent6 after design material2 c1f99e91c3ef1a8d2770a12f45301b1374d5140f; newbaseline/roadmap only. No product source edit/test/runtime/worker. Next one integrated offline source packet; manual transfer only after actual release.
 
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r2_w05_binding_repair_accepted_offline`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local consolidated R2/W05 activation design only after accepted offline binding repair; role=INTERNAL_AGENT Local reviewer/closer; phase=OFFLINE_SOURCE_ACCEPTED_EFFECTS_HELD; decision owner=LOCAL; parked checkpoint=actual destination/auth/store/data/provider/cost/business acceptance and production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r2_w05_activation_design_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one integrated offline bound-receipt source packet from completed design; role=INTERNAL_AGENT Local orchestrator; phase=DESIGN_COMPLETE_SOURCE_DISPATCH_PENDING; decision owner=LOCAL; parked checkpoint=actual endpoint/key/data/store/writer/cost/acceptance and production/public/deploy.
 
 ## Current Mode
 
-`cvf_ncr_r2_w05_binding_repair_accepted_offline`
+`cvf_ncr_r2_w05_activation_design_ready`
 
-Current mode marker: `cvf_ncr_r2_w05_binding_repair_accepted_offline`
-Current mode: `cvf_ncr_r2_w05_binding_repair_accepted_offline`
+Current mode marker: `cvf_ncr_r2_w05_activation_design_ready`
+Current mode: `cvf_ncr_r2_w05_activation_design_ready`
 
-Finite binding repair accepted offline with procedure limits; next Local design/admission consolidation only. Production export denies; real effects remain OFF.
+Integrated activation design complete; next exact offline source packet, no source dispatch or actual effects granted. Production export DENY retained.
 
 ## Current Authority
 
-Baseline `docs/baselines/CVF_GC018_NCR_R2_W05_BINDING_REPAIR_2026-10-19.md` SHA256 `7f605ef26c9f078a1d9e66b5e2552a4a2e06892a7980d3b6141aadb1da00554a`; spent workorder `docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_BINDING_REPAIR_2026-10-19.md` SHA256 `296000b92ac667e3b46008c27627cf86d753c80b8184275a4bdf2c2e07ab6b3d`; accepted material12 7c0aa69c386884bd3d9193528b1ec32bae615c58; batch CVF-NCR-R2-W05-BINDING-REPAIR-20261019. Local review `docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md` SHA256 `a48dec3bc0ff8f30c45bb17c41a2267fc9bbc1ce38e3a2ca959d466a9f47d8b8`; independent proof10/10. Source accepted offline with procedure limits; no successor dispatch or activation grant.
+Design `docs/baselines/CVF_NCR_R2_W05_ACTIVATION_DESIGN_2026-10-19.md` SHA256 `b38bd2345432e5c0ebacb85e652c9af45ae6854314b797eb4dc5369be8bf40de`; material2 c1f99e91c3ef1a8d2770a12f45301b1374d5140f; batch CVF-NCR-R2-W05-ACTIVATION-DESIGN-20261019. DESIGN_ONLY, not a new dispatch pair. Prior accepted source pair remains currentAuthority in bootstrap; accepted source review `docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md` controls immutable source acceptance. No current worker work order is newly released.
 
 ## Accepted NCR Evidence And Continuation
 
-Binding repair material12 7c0aa69c386884bd3d9193528b1ec32bae615c58 accepted bounded with procedure limits: `docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md` SHA256 `a48dec3bc0ff8f30c45bb17c41a2267fc9bbc1ce38e3a2ca959d466a9f47d8b8`; Local EP `docs/reviews/evidence/ncr-r2-w05-binding-repair-local-20261019.json` SHA256 `327c16b136c6c55534d2aca33d36139eb49e32608601859978e8d8f2fa58a698`. Worker199/199, tsc0, changed7lint0; independentLocal10/10 on repaired source. Production export DENY confirmed, legacy explicitnonproduction; route/branch unchanged. Exact panel4/hook1 exceptions retained, no broad reruns. Original blockedsource/probe failure and worker late/partial reads/ADIF/EOL history immutable; finalgate LF digest qualified against stored CRLF log. WorkerS4current0 and LocalS5current0/counters0,1,0,1. Finite repair stops; next design only, fullR1prelive/R2partial and all parent/effect limits frozen.
+Integrated activation design `docs/baselines/CVF_NCR_R2_W05_ACTIVATION_DESIGN_2026-10-19.md` SHA256 `b38bd2345432e5c0ebacb85e652c9af45ae6854314b797eb4dc5369be8bf40de` in material2 c1f99e91c3ef1a8d2770a12f45301b1374d5140f reconciles8gaps/12designconditions/7proofgroups. Selected existing two-hop topology, dedicated signed endpoints, new real-effect schema separate from fixturev1, actualinstance/store launch and evaluation joins, fresh synthetic SQLite proposal, phase/actor mapping, truthful ENVI consumer disclosure and one later grouped effect checkpoint. No source/test/runtime/worker executed. Exact future mechanism/manifest/commands must be locked before manual dispatch; no extra audit. Prior binding repair/source acceptance and all frozen counters retained.
 
-Accepted audit and all procedurelimits/HQ dispositions: `docs/reviews/CVF_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_LOCAL_COMPLETION_REVIEW_2026-10-19.md`; immutable evidence preserved.
+Binding repair material12 7c0aa69c386884bd3d9193528b1ec32bae615c58 accepted bounded with procedure limits: `docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md` SHA256 `a48dec3bc0ff8f30c45bb17c41a2267fc9bbc1ce38e3a2ca959d466a9f47d8b8`; Local EP `docs/reviews/evidence/ncr-r2-w05-binding-repair-local-20261019.json` SHA256 `327c16b136c6c55534d2aca33d36139eb49e32608601859978e8d8f2fa58a698`. Worker199/199, tsc0, changed7lint0; independentLocal10/10 on repaired source. Production export DENY confirmed, legacy explicitnonproduction; route/branch unchanged. Exact panel4/hook1 exceptions retained, no broad reruns. Original blockedsource/probe failure and worker late/partial reads/ADIF/EOL history immutable; finalgate LF digest qualified against stored CRLF log. WorkerS4current0 and LocalS5current0/counters0,1,0,1. Finite repair stops; next design only, fullR1prelive/R2partial and all parent/effect limits frozen.
 
 R2W05 operation protocol/audit pair material3 30cb536a0330af2db450cd44f1a95c6ae4415548; baseline docs/baselines/CVF_GC018_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md SHA2569c16125c01aa00bb1ce4558977bc9e622471ab2e723db866747b8e73c0413018; workorder docs/work_orders/CVF_AGENT_WORK_ORDER_NCR_R2_W05_OPERATION_CONTRACT_AUDIT_2026-10-19.md SHA2562b8ab7fe667a395a0dcfb986c8d8880e474b9167754c334c6565e768c948a6c3. D01-D12 bind server envelope, logical/attempt/receipt identities, pre-effect exclusive start, unknown/revoke/retention and existingowner limits. Current generalexport lacks authenticated job/operation ref; sourceBUILD held, docs-only audit selected by SOP12. Workerexact2 return/EP;12verdicts/ownerdecision/futuremanifest/proofplan,0source/test/runtime/env/store/network. INITIAL0/documentationproof/NO_SUCCESSOR; workerS1 againstactualWO, no runtimechain/budgetreset. Rootworker/source/test/runtime0.
 
@@ -50,9 +50,9 @@ Focus Local material2f72bbf29/current6d06719b8a accepted6keyboard9required+2opti
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r2_w05_binding_repair_accepted_offline`
+Mode: `cvf_ncr_r2_w05_activation_design_ready`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=CONSOLIDATE_R2_W05_ACTIVATION_DESIGN_ONLY; BATCH_ID=CVF-NCR-R2-W05-BINDING-REPAIR-20261019. Binding repair material12 7c0aa69c386884bd3d9193528b1ec32bae615c58 accepted bounded with procedure limits; Local review docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md and EP docs/reviews/evidence/ncr-r2-w05-binding-repair-local-20261019.json. Worker199of199/tsc0/changed7lint0; distinctLocal10of10PASS on actual production TS/freshsynthetic roots, no network. Production export intentionally DENY under locked R04; legacy explicitnonproductiononly. Internal start/admission, consume/envelope, outcome/opaquehandle changes require no route.ts or operation-branch.ts edit. Panel4baseline and hook1warning exceptions retained, panel/whole11lint not rerun; originalblockedsource/probe4of8FAIL/read/ADIF/scratch history not cured. WorkerS4current0/counters0,1,0,0; LocalS5current0/counters0,1,0,1, samechain/noINITIALreset/noautomaticworker. Next Local reconciles remaining endpoint/auth/store attestation, exactrequest mapping, effect/cost/Stop/UNKNOWN and acceptance gaps into one integrated design/admission packet; no implementation or activation grant. Real destination/data/writer/provider/cost/businessacceptance and production/public/deploy remain parked. R1prelive/R2partial/R3R4open/R5R6deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 frozen. All real network/provider/active-data/production/public/deployOFF.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_INTEGRATED_BOUND_RECEIPT_OFFLINE_SOURCE_PACKET; BATCH_ID=CVF-NCR-R2-W05-ACTIVATION-DESIGN-20261019. Design docs/baselines/CVF_NCR_R2_W05_ACTIVATION_DESIGN_2026-10-19.md in material2 c1f99e91c3ef1a8d2770a12f45301b1374d5140f reconciles G01-G08/D01-D12/P01-P07: preserve fixturev1 and productionDENY; distinctboundeffect/schema; export->dedicatedWebproxy->dedicatedengine endpoint; exact rawsigned owner/request/config joins; authenticated actualinstance/openedstore binding and fresh isolated SQLite proposal; phaseR1 policy mapping; truthful current ENVI disclosure; Stop/UNKNOWN/no replay. Next Local locks actual source/test manifest, serialization/mechanism, source/dependency/size/budget and independentLocal proof in one integrated source-only workorder; operator manually transfers only after actual boundrelease. No extra audit, no worker invocation or implementation/runtime permit from design. Group later actual origins/keyrefs/data/access/storewriter/retention/finitecalls/timeout/cost/acceptance checkpoint once concrete; paid/provider/production/public/deploy held. Accepted prior repair worker199of199/tsc0/changed7lint0/Local10of10 reused, not rerun; procedure/baseline exceptions/history preserved. Frozen implementationLocalS5current0/counters0,1,0,1, no reset/successor. R1prelive/R2partial/R3R4open/R5R6deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 frozen. All real effectsOFF.
 
 ## Active Boundary
 T3B has a Local-verified active v1 specification. Party B is verified and T3C-C1 tooling accepted at `db78c87df`; T3C-C2 and Party C are verified. T3D-C1 tooling is accepted at `9ed844c2a` without source. T3D-C0-R1 closed at `2fffa1ef7`. T3D-C3 was accepted bounded at `88137e9a2`, but actual-mode prepare attempts failed before Party B/C execution; authorized cleanup removed the failed root and discarded unaccepted worker changes. G1 stopped, G2-G6 parked, and G7 research closed at `660601f0e` with `ADAPT_EXISTING_HANDOFF_ONLY`. Evidence-join sufficiency stays WATCH; no implementation successor exists. Rejected T2 paths remain archived; HRLTP-T2 paused.
@@ -81,13 +81,13 @@ Q001/Q004 actual-data source/writer,custody,retention/RPO/RTO/cost checkpoints a
 NCR send/B2 STOP and S05/C1 remain; IAB unavailable; repo Playwright Chromium present. Historical canonical release bundle9/9 PASS with real Alibaba at its recorded revision; this controls package provides no fresh current-source live result; full P04 and NCR R3/R4 remain open. No autonomous P11/public/deploy activation.
 ## P4 Post-Commit Safety Disposition
 
-Material12 7c0aa69c386884bd3d9193528b1ec32bae615c58 normal91PASS; automatic P4 SKIPPED_NO_ELIGIBLE_CANDIDATE. No unresolved marker at sync admission; preserve prior journal/7historicalblocked/C15FALSE_NEGATIVE/exclusions. No manual collector/scoring/promotion; routineM5/M10/safety/M20 only. Exact currentrow must be adjudicated if continuity creates a marker.
+Design material2 c1f99e91c3ef1a8d2770a12f45301b1374d5140f normal91PASS; actual automatic P4 disposition in .cvf/runtime/ncr-r2-w05-activation-design-20261019/root/material-commit.log. No unresolved marker at sync admission; preserve prior journal/7historicalblocked/C15 exclusions. No manual collector/scoring/promotion; routineM5/M10/safety/M20 only.
 
 ## Mixed Protected-Path Atomicity Authorization
 
 Disposition: AUTHORIZED_EXACT_MANIFEST
 
-Atomicity reason: exactcurrent6 binds accepted offline material12 and design-only frontier.
+Atomicity reason: exactcurrent6 binds completed design material2 and source-packet frontier.
 
 Exact changed manifest:
 - `AGENT_HANDOFF_V63_2026-09-18.md`
@@ -97,7 +97,7 @@ Exact changed manifest:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Rollback boundary: exact6 metadata only; accepted material separate.
+Rollback boundary: exact6 metadata only; material design separate.
 
 ## Core Guard Self-Protection Authorization
 
@@ -111,27 +111,27 @@ Protected paths:
 - `CVF_SESSION/ACTIVE_SESSION_STATE.json`
 - `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json`
 
-Operator authorization: standing roadmap continuation, Local reviewer/closer decisions and necessary session synchronization.
+Operator authorization: standing roadmap next/design work and necessary session synchronization.
 Rollback boundary: exact6 only.
 
 ## Agent Operation Trace Block
 
 | Field | Evidence |
 |---|---|
-| Actor | INTERNAL_AGENT Local reviewer/closer/session-sync; decision owner=LOCAL |
+| Actor | INTERNAL_AGENT Local orchestrator/session-sync; decision owner=LOCAL |
 | Provider or surface | private shared checkout |
-| Session or invocation | ncr-r2-w05-binding-repair-accepted-sync-20261019 |
+| Session or invocation | ncr-r2-w05-activation-design-sync-20261019 |
 | Working directory | repository root |
 | Command or tool surface | source current6/generator/governance gates |
 | Target paths | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
-| Allowed scope source | standing roadmap/reviewer authority and necessary accepted-source synchronization |
-| Before status evidence | 7c0aa69c386884bd3d9193528b1ec32bae615c58; clean worktree; empty stage; normal91PASS |
-| After status evidence | dedicatedcurrent6; no product/source/worker/effect expansion |
-| Diff evidence | git diff --name-status; git diff --check; exact6 |
-| Approval boundary | actual endpoint/data/writer/provider/cost/business/production/public/deploy held |
-| Claim boundary | accepted offline source and next design only |
+| Allowed scope source | standing roadmap design next and necessary continuity synchronization |
+| Before status evidence | c1f99e91c3ef1a8d2770a12f45301b1374d5140f clean/empty stage; normal91PASS |
+| After status evidence | dedicatedcurrent6; no source/test/runtime/worker/effect expansion |
+| Diff evidence | git diff --name-status; exact6 |
+| Approval boundary | actual endpoint/data/store/provider/cost/production/public/deploy held |
+| Claim boundary | design completion and next exact source packet only |
 | Agent type | INTERNAL_AGENT |
-| Invocation ID | ncr-r2-w05-binding-repair-accepted-sync-20261019 |
+| Invocation ID | ncr-r2-w05-activation-design-sync-20261019 |
 | Expected manifest | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Actual changed set | `AGENT_HANDOFF_V63_2026-09-18.md`; `CVF_SESSION_MEMORY.md`; `CVF_SESSION/state/ACTIVE_SESSION_STATE_CORE.json`; `CVF_SESSION/state/entries/nextAllowedMove.json`; `CVF_SESSION/ACTIVE_SESSION_STATE.json`; `CVF_SESSION/ACTIVE_SESSION_BOOTSTRAP_READ_MODEL.json` |
 | Manifest delta | MATCH exact6 |
@@ -139,7 +139,7 @@ Rollback boundary: exact6 only.
 
 ## Claim Boundary
 
-Bounded offline source accepted with procedure limits; no live/AIgovernance/attestation/provider/data/production/public/deploy acceptance. Real effects held; next Local consolidated design only. Original blocked provenance/read deviations and baseline exceptions retained. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and older chains frozen; R1prelive/R2partial/R3R4open/R5R6deferred.
+Activation design only; no source/worker/test/live/provider/store/production/public/deploy grant. Existing source acceptance retained, actual effects held. Next exact offline source packet/manual transfer after release. Frozen implementationLocalS5current0/counters0,1,0,1; parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 and R1prelive/R2partial/R3R4open/R5R6deferred unchanged.
 
 ## Historical Terminal Timing Disclosure - Prior Source Recovery
 

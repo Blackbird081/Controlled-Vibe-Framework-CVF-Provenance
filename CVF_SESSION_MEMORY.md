@@ -35,20 +35,20 @@ artifact.
 | Freeze posture | `governance_kernel_freeze_recommended` |
 ## Startup Acknowledgment
 
-Startup acknowledged: current mode=`cvf_ncr_r2_w05_binding_repair_accepted_offline`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=Local consolidated R2/W05 activation design only after accepted offline binding repair; role=INTERNAL_AGENT Local reviewer/closer; phase=OFFLINE_SOURCE_ACCEPTED_EFFECTS_HELD; decision owner=LOCAL; parked checkpoint=actual destination/auth/store/data/provider/cost/business acceptance and production/public/deploy.
+Startup acknowledged: current mode=`cvf_ncr_r2_w05_activation_design_ready`; active handoff=`AGENT_HANDOFF_V63_2026-09-18.md`; next allowed move=one integrated offline bound-receipt source packet from completed design; role=INTERNAL_AGENT Local orchestrator; phase=DESIGN_COMPLETE_SOURCE_DISPATCH_PENDING; decision owner=LOCAL; parked checkpoint=actual endpoint/key/data/store/writer/cost/acceptance and production/public/deploy.
 
 ## Current Mode
 
-Current mode marker: `cvf_ncr_r2_w05_binding_repair_accepted_offline`
-Current mode: `cvf_ncr_r2_w05_binding_repair_accepted_offline`
+Current mode marker: `cvf_ncr_r2_w05_activation_design_ready`
+Current mode: `cvf_ncr_r2_w05_activation_design_ready`
 
-Finite binding repair accepted offline with procedure limits; next Local design/admission consolidation only. Production export denies; real effects remain OFF.
+Integrated activation design complete; next exact offline source packet, no source dispatch or actual effects granted. Production export DENY retained.
 
 ## Next Allowed Move
 
-Mode: `cvf_ncr_r2_w05_binding_repair_accepted_offline`
+Mode: `cvf_ncr_r2_w05_activation_design_ready`
 
-PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=CONSOLIDATE_R2_W05_ACTIVATION_DESIGN_ONLY; BATCH_ID=CVF-NCR-R2-W05-BINDING-REPAIR-20261019. Binding repair material12 7c0aa69c386884bd3d9193528b1ec32bae615c58 accepted bounded with procedure limits; Local review docs/reviews/CVF_NCR_R2_W05_BINDING_REPAIR_LOCAL_COMPLETION_REVIEW_2026-10-19.md and EP docs/reviews/evidence/ncr-r2-w05-binding-repair-local-20261019.json. Worker199of199/tsc0/changed7lint0; distinctLocal10of10PASS on actual production TS/freshsynthetic roots, no network. Production export intentionally DENY under locked R04; legacy explicitnonproductiononly. Internal start/admission, consume/envelope, outcome/opaquehandle changes require no route.ts or operation-branch.ts edit. Panel4baseline and hook1warning exceptions retained, panel/whole11lint not rerun; originalblockedsource/probe4of8FAIL/read/ADIF/scratch history not cured. WorkerS4current0/counters0,1,0,0; LocalS5current0/counters0,1,0,1, samechain/noINITIALreset/noautomaticworker. Next Local reconciles remaining endpoint/auth/store attestation, exactrequest mapping, effect/cost/Stop/UNKNOWN and acceptance gaps into one integrated design/admission packet; no implementation or activation grant. Real destination/data/writer/provider/cost/businessacceptance and production/public/deploy remain parked. R1prelive/R2partial/R3R4open/R5R6deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 frozen. All real network/provider/active-data/production/public/deployOFF.
+PROGRAM_ID=CVF-NCR; NEXT_ACTION_CLASS=PREPARE_INTEGRATED_BOUND_RECEIPT_OFFLINE_SOURCE_PACKET; BATCH_ID=CVF-NCR-R2-W05-ACTIVATION-DESIGN-20261019. Design docs/baselines/CVF_NCR_R2_W05_ACTIVATION_DESIGN_2026-10-19.md in material2 c1f99e91c3ef1a8d2770a12f45301b1374d5140f reconciles G01-G08/D01-D12/P01-P07: preserve fixturev1 and productionDENY; distinctboundeffect/schema; export->dedicatedWebproxy->dedicatedengine endpoint; exact rawsigned owner/request/config joins; authenticated actualinstance/openedstore binding and fresh isolated SQLite proposal; phaseR1 policy mapping; truthful current ENVI disclosure; Stop/UNKNOWN/no replay. Next Local locks actual source/test manifest, serialization/mechanism, source/dependency/size/budget and independentLocal proof in one integrated source-only workorder; operator manually transfers only after actual boundrelease. No extra audit, no worker invocation or implementation/runtime permit from design. Group later actual origins/keyrefs/data/access/storewriter/retention/finitecalls/timeout/cost/acceptance checkpoint once concrete; paid/provider/production/public/deploy held. Accepted prior repair worker199of199/tsc0/changed7lint0/Local10of10 reused, not rerun; procedure/baseline exceptions/history preserved. Frozen implementationLocalS5current0/counters0,1,0,1, no reset/successor. R1prelive/R2partial/R3R4open/R5R6deferred. Parentgen9/SCEC2/counters2,0,2,0/blockers2/freeze/prior7/LHW24 frozen. All real effectsOFF.
 
 ## Parked Checkpoints
 
